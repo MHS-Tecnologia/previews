@@ -8,7 +8,7 @@
 <title>Direct Tooling Concepts, LLP, Versailles, Ohio</title>
 <meta name="description" content="Die, fixture and end-of-arm tooling, designed and built at 100 Subler Drive in Versailles, Ohio. Wire EDM, CNC machining and production work.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/saira.woff2" crossorigin>
-<link rel="preload" as="image" href="img/design.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/design.webp" fetchpriority="high" media="(min-width: 761px)">
 <style>
   @font-face { font-family: "Saira"; font-weight: 100 900; font-stretch: 50% 125%; font-display: swap; src: url(fonts/saira.woff2) format("woff2"); }
 
@@ -64,9 +64,9 @@
   .hero h1 span { display: block; font-weight: 300; color: var(--graphite); }
   .hero .lede { margin-top: 1.5rem; max-width: 31rem; font-size: clamp(1.08rem, 1.5vw, 1.22rem); color: #2f353a; }
   .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1rem; align-items: center; }
-  .pair { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 8px; margin-right: calc(-1 * var(--pad)); }
-  .pair img { width: 100%; height: clamp(20rem, 33vw, 30rem); object-fit: cover; }
-  .pair .a img { object-position: 30% 50%; }
+  .pair { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px; }
+  .pair img { width: 100%; height: clamp(20rem, 27vw, 24rem); object-fit: cover; }
+  .pair .a img { object-position: 58% 50%; }
   .pair .b img { object-position: 52% 50%; }
   .pair figcaption { font-size: .82rem; font-weight: 500; color: var(--graphite); padding-top: .45rem; }
 
@@ -208,8 +208,10 @@
     .sheet .axis { font-size: 2.3px; }
     .sheet .key { font-size: .8rem; gap: .3rem 1rem; }
     .hero .wrap { padding-top: 1rem; }
-    .pair { grid-template-columns: 1fr 1fr; gap: 6px; margin-right: 0; }
-    .pair img { height: auto; aspect-ratio: 4 / 5; }
+    .pair { grid-template-columns: minmax(0, 1fr); }
+    .pair .a { display: none; }
+    .pair img { height: auto; aspect-ratio: 4 / 3; }
+    .pair .b img { object-position: 40% 50%; }
     .pair .a img { object-position: 62% 50%; }
     .cols .col:first-child img { display: none; }
     .hero h1 { font-size: 3.5rem; }
