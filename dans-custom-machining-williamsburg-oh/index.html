@@ -7,11 +7,12 @@
 <meta name="theme-color" content="#231f20">
 <title>Dan’s Custom Machining, Williamsburg, Ohio</title>
 <meta name="description" content="Precision machined parts and tooling from a job shop in Williamsburg, Ohio.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/big-shoulders.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo.woff2" crossorigin>
 <link rel="preload" as="image" href="img/parts.webp" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  @font-face { font-family: "Big Shoulders Display"; font-weight: 100 900; font-display: swap; src: url(fonts/big-shoulders.woff2) format("woff2"); }
+  @font-face { font-family: "Archivo"; font-weight: 100 900; font-display: swap; src: url(fonts/archivo.woff2) format("woff2"); }
   /* Dan's own colors, taken from his current header: shop red and press black. */
   :root {
     --red: #c8191d;
@@ -45,10 +46,13 @@
   /* Hero: black panel with the type, his production photo beside it. */
   .hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); background: var(--black); color: #fff; min-height: min(88svh, 820px); }
   .hero-text { display: flex; flex-direction: column; padding: 1.5rem var(--pad) clamp(2rem, 5vw, 3.5rem); }
-  .mark { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; font-family: "Big Shoulders Display", sans-serif; font-weight: 800; font-size: 1.45rem; line-height: 1; }
-  .mark::before { content: ""; width: .55rem; height: 1.9rem; background: var(--red); }
-  .mark small { display: block; font-family: "Archivo", sans-serif; font-weight: 500; font-size: .75rem; color: var(--steel); margin-top: .2rem; }
-  .hero h1 { margin-top: auto; padding-top: 3rem; font-size: clamp(3.6rem, 9.2vw, 8.4rem); font-weight: 900; text-wrap: balance; }
+  .bar { background: var(--black); color: #fff; display: flex; align-items: stretch; justify-content: space-between; border-bottom: 1px solid #3d3839; }
+  .mark { display: block; background: var(--red); padding: .7rem var(--pad) .65rem; text-decoration: none; font-family: "Big Shoulders Display", sans-serif; font-weight: 900; font-size: clamp(1.35rem, 2.4vw, 1.75rem); line-height: 1; }
+  .mark small { display: block; font-family: "Archivo", sans-serif; font-weight: 500; font-size: .78rem; margin-top: .3rem; color: #ffe3e3; }
+  .bar nav { display: flex; align-items: center; gap: 1.75rem; padding: 0 var(--pad); font-weight: 500; font-size: .95rem; }
+  .bar nav a { text-decoration: none; color: #d9d5cf; }
+  .bar nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+  .hero h1 { margin-top: auto; padding-top: 2rem; font-size: clamp(3.6rem, 9.2vw, 8.4rem); font-weight: 900; text-wrap: balance; }
   .hero h1 em { font-style: normal; color: var(--red); }
   .hero p { margin-top: 1.4rem; max-width: 34rem; color: #d9d5cf; font-size: clamp(1.05rem, 1.6vw, 1.2rem); }
   .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; }
@@ -75,23 +79,21 @@
   .lede { margin-top: 1.1rem; max-width: 38rem; color: #4a4446; }
 
   /* Work: real photos from his shop, captions say only what is in the frame. */
-  .work-grid { margin-top: 2.75rem; display: grid; gap: .75rem; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 11rem; }
+  .work-grid { margin-top: 2.75rem; display: grid; gap: .75rem; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, minmax(14rem, 19rem)); }
   .work-grid figure { position: relative; overflow: hidden; background: var(--chip); }
   .work-grid img { width: 100%; height: 100%; object-fit: cover; }
   .work-grid figcaption { position: absolute; left: .6rem; bottom: .6rem; background: #fff; font-size: .8125rem; font-weight: 500; padding: .25rem .55rem; border-left: 3px solid var(--red); }
-  .w1 { grid-column: span 3; grid-row: span 3; }
-  .w2 { grid-column: span 3; grid-row: span 2; }
-  .w4 { grid-column: span 3; grid-row: span 1; }
-  .w4 img { object-position: 50% 80%; }
-  .w3 { grid-column: span 3; grid-row: span 2; }
-  .w5 { grid-column: span 3; grid-row: span 2; }
+  .w1 { grid-column: 1 / 3; grid-row: 1 / 3; }
   .inline-cta { margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
   .inline-cta p { font-weight: 500; }
 
   /* Machines: the shop floor inventory, a real table on desktop, cards on phones. */
   .machines { background: var(--black); color: #e6e2dc; }
   .machines .lede { color: var(--steel); }
-  .machine-list { margin-top: 2.75rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #3d3839; border: 1px solid #3d3839; }
+  .machines .wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .machines figure img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+  .machines figcaption { margin-top: .6rem; font-size: .875rem; color: var(--steel); }
+  .machine-list { margin-top: 2.25rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #3d3839; border: 1px solid #3d3839; }
   .machine { background: var(--black); padding: 1.5rem 1.4rem 1.6rem; display: grid; gap: .5rem; align-content: start; }
   .machine h3 { color: #fff; font-size: 2rem; }
   .machine p { color: var(--steel); font-size: .95rem; }
@@ -115,7 +117,7 @@
   .contact .lede { color: #ffe3e3; }
   .mail {
     display: inline-block; margin-top: 1.75rem; font-family: "Big Shoulders Display", sans-serif; font-weight: 800;
-    font-size: clamp(1.8rem, 3.6vw, 2.9rem); line-height: 1.05; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px;
+    font-size: clamp(1.6rem, 2.7vw, 2.5rem); line-height: 1.05; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px;
     overflow-wrap: normal;
   }
   .mail:focus-visible { outline-color: #fff; }
@@ -138,12 +140,13 @@
     .stats { gap: 0 1rem; }
     .stats .num { font-size: 1.9rem; white-space: nowrap; }
     .stats span:last-child { font-size: .8125rem; }
-    .work-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 9rem; }
-    .w1 { grid-column: span 2; grid-row: span 2; }
-    .w2, .w3 { grid-column: span 1; grid-row: span 1; }
-    .w5 { grid-column: span 2; grid-row: span 2; }
-    .w4 { display: none; }
-    .machine-list { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 15rem 11rem; }
+    .w1 { grid-column: 1 / 3; grid-row: 1; }
+    .machines .wrap { grid-template-columns: 1fr; }
+    .machines figure img { aspect-ratio: 4 / 3; }
+    .bar nav { display: none; }
+    .machine { padding: 1.1rem 1rem 1.2rem; }
+    .machine h3 { font-size: 1.45rem; }
     .services .wrap, .owner .wrap, .contact .wrap { grid-template-columns: 1fr; }
     .dock {
       display: block; position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom));
@@ -160,10 +163,14 @@
   <a class="skip" href="#main">Skip to content</a>
   <div class="demo">Unofficial demo built by MHS Tecnologia for Dan’s Custom Machining. Not affiliated with or endorsed by Dan’s Custom Machining.</div>
 
+  <header class="bar">
+    <a class="mark" href="#main" translate="no">Dan’s Custom Machining LLC<small>Quality machining at an affordable price</small></a>
+    <nav aria-label="Main"><a href="#work">Work</a><a href="#machines">Machines</a><a href="#contact">Get a quote</a></nav>
+  </header>
+
   <main id="main">
     <div class="hero">
       <div class="hero-text">
-        <a class="mark" href="#main" translate="no"><span>Dan’s Custom Machining<small>Williamsburg, Ohio</small></span></a>
         <h1>Parts made right, made <em>fast.</em></h1>
         <p>A precision job shop for low-volume, high-urgency parts and tooling, and for small to medium production runs.</p>
         <div class="actions">
@@ -188,10 +195,8 @@
         <p class="lede">Each part is checked multiple times with accurate measuring equipment before it leaves, under a quality process modeled on ISO&nbsp;9001.</p>
         <div class="work-grid">
           <figure class="w1"><img src="img/micrometer.webp" width="800" height="800" alt="Small machined parts next to a Mitutoyo micrometer" loading="lazy"><figcaption>Checked with a micrometer</figcaption></figure>
-          <figure class="w2"><img src="img/tray.webp" width="800" height="800" alt="Close-up of a part with a grid of machined pockets" loading="lazy"><figcaption>Pocket work</figcaption></figure>
-          <figure class="w4"><img src="img/insert.webp" width="800" height="800" alt="A squared aluminum block beside a box of cutting inserts" loading="lazy"></figure>
-          <figure class="w3"><img src="img/mill.webp" width="800" height="1066" alt="A part held in vises on the machining center table" loading="lazy"><figcaption>On the mill</figcaption></figure>
-          <figure class="w5"><img src="img/fixture.webp" width="800" height="800" alt="A finished part with rows of pockets standing in the shop" loading="lazy"><figcaption>Finished part</figcaption></figure>
+          <figure><img src="img/tray.webp" width="800" height="800" alt="Close-up of a part with a grid of machined pockets" loading="lazy"><figcaption>Pocket work</figcaption></figure>
+          <figure><img src="img/fixture.webp" width="800" height="800" alt="A finished part with rows of pockets standing in the shop" loading="lazy"><figcaption>Finished part</figcaption></figure>
         </div>
         <div class="inline-cta">
           <a class="btn" href="mailto:daniel@danscustommachining.com?subject=Quote%20request">Get a quote on your part</a>
@@ -202,6 +207,8 @@
 
     <section id="machines" class="machines" aria-labelledby="machines-title">
       <div class="wrap">
+        <figure><img src="img/mill.webp" width="900" height="1200" alt="A part clamped in vises on the machining center table" loading="lazy"><figcaption>A job on the machining center</figcaption></figure>
+        <div>
         <h2 id="machines-title">The machines on the floor</h2>
         <p class="lede">CNC and manual equipment under one roof, so your job doesn’t wait on an outside shop.</p>
         <div class="machine-list">
@@ -211,6 +218,7 @@
           <div class="machine"><h3 translate="no">Bridgeport</h3><p>Manual mills</p></div>
           <div class="machine"><h3 translate="no">LeBlond 19E7</h3><p>Manual lathe</p></div>
           <div class="machine"><h3>Weld &amp; cut</h3><p>AC/DC TIG welding and oxy-acetylene torch cutting</p></div>
+        </div>
         </div>
       </div>
     </section>
