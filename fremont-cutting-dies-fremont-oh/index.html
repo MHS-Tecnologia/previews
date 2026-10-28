@@ -172,7 +172,8 @@
   }
   @media (max-width: 860px) {
     header nav a:not(.btn) { display: none; }
-    header .full { display: none; }
+    header nav .call { display: none; }
+    header nav .shop-m { display: inline-flex; }
     .mark { font-size: 1.35rem; }
     .hero { grid-template-columns: 1fr; padding-top: 0; gap: 1.25rem; }
     .hero .shot { order: -1; }
@@ -219,6 +220,7 @@
     .dock.on { opacity: 1; transform: none; pointer-events: auto; }
   }
   .inv-m { display: none; }
+  header .shop-m { display: none; }
   .who h3 small { font-family: "Public Sans", sans-serif; font-weight: 500; font-size: .8125rem; color: #a9a59d; margin-left: .3rem; letter-spacing: 0; display: inline-block; white-space: nowrap; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -239,7 +241,8 @@
       <a href="https://fremontcuttingdies.com/shop/">Shop specimen dies</a>
       <a href="#shop">Machining</a>
       <a href="#contact">Contact</a>
-      <a class="btn dark" href="tel:+14193345153">Call<span class="full num"> 419.334.5153</span></a>
+      <a class="btn dark call" href="tel:+14193345153">Call<span class="num"> 419.334.5153</span></a>
+      <a class="btn dark shop-m" href="https://fremontcuttingdies.com/shop/">Shop dies</a>
     </nav>
   </header>
 
