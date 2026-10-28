@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f2efe8">
+<title>ESP Machining &amp; Mfg, North Lima, Ohio</title>
+<meta name="description" content="Tooling, prototypes and production parts from a 26,000 square foot shop in North Lima, Ohio.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/archivo.woff2" crossorigin>
+<link rel="preload" as="image" href="img/engine.webp" fetchpriority="high">
+<style>
+  @font-face { font-family: "Archivo"; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; src: url(fonts/archivo.woff2) format("woff2"); }
+
+  /* Salt-flat white, asphalt black, ESP's own red, and the brass from their parts. */
+  :root {
+    --salt: #f2efe8;
+    --salt-2: #e6e1d6;
+    --asphalt: #17181a;
+    --graphite: #55585c;
+    --red: #c4161c;
+    --brass: #a8823a;
+    --pad: clamp(1rem, 4vw, 3rem);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--salt); color: var(--asphalt); font: 400 1.0625rem/1.6 "Archivo", system-ui, sans-serif; font-stretch: 100%; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+  h1, h2, h3, .wide { font-stretch: 125%; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(2.1rem, 4.6vw, 3.6rem); text-wrap: balance; }
+  h3 { font-size: 1.15rem; letter-spacing: -0.01em; }
+  [id] { scroll-margin-top: 1rem; }
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 10; }
+  .skip:focus { left: .5rem; }
+
+  .demo { background: var(--asphalt); color: #c9c5bd; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .55rem 1rem; }
+
+  header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem var(--pad); }
+  .mark { text-decoration: none; font-stretch: 125%; font-weight: 900; font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1; }
+  .mark span { color: var(--red); }
+  .mark small { display: block; font-stretch: 100%; font-weight: 500; font-size: .75rem; letter-spacing: 0; color: var(--graphite); margin-top: .3rem; }
+  header nav { display: flex; align-items: center; gap: 1.5rem; font-weight: 500; font-size: .95rem; }
+  header nav a { text-decoration: none; }
+  header nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .btn { display: inline-block; background: var(--red); color: #fff; text-decoration: none; font-weight: 600; padding: .85rem 1.35rem; border-radius: 999px; transition: background-color .15s ease; }
+  .btn:hover { background: #9e1116; }
+  header .btn { padding: .6rem 1rem; }
+
+  /* Hero: the engine is the headline's evidence. */
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(1.5rem, 4vw, 3rem) var(--pad) clamp(3rem, 6vw, 5rem); }
+  .hero h1 { font-size: clamp(2.6rem, 5.6vw, 5.2rem); text-wrap: balance; }
+  .hero p { margin-top: 1.4rem; max-width: 34rem; color: var(--graphite); font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
+  .hero .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+  .hero .phone { font-weight: 600; text-decoration: none; font-variant-numeric: tabular-nums; }
+  .hero .phone:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .engine { position: relative; border-radius: 1.25rem; overflow: hidden; background: #b9b6b0; }
+  .engine img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .engine figcaption { position: absolute; left: 1rem; bottom: 1rem; background: rgba(23,24,26,.82); color: #fff; font-size: .8125rem; padding: .35rem .7rem; border-radius: 999px; }
+
+  /* The one loud moment: a land-speed timing card. */
+  .record { background: var(--asphalt); color: var(--salt); padding: clamp(3.5rem, 8vw, 6rem) var(--pad); }
+  .record .wrap { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .slip { border: 1px solid #3a3c40; border-radius: 1rem; padding: clamp(1.5rem, 3vw, 2.25rem); background: #1e2023; }
+  .slip .label { color: #a9a49b; font-size: .875rem; }
+  .speed { display: flex; align-items: baseline; gap: .6rem; margin-top: .35rem; font-stretch: 125%; font-weight: 900; font-size: clamp(3rem, 6.4vw, 5.4rem); line-height: .95; flex-wrap: wrap; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .speed small { font-size: .26em; letter-spacing: 0; color: var(--brass); font-weight: 700; }
+  .runs { margin-top: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #3a3c40; }
+  .runs div { padding-top: .9rem; }
+  .runs div + div { border-left: 1px solid #3a3c40; padding-left: 1rem; }
+  .runs dt { color: #a9a49b; font-size: .8125rem; }
+  .runs dd { margin: .2rem 0 0; font-stretch: 112%; font-weight: 700; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+  .record p { color: #cfcac1; }
+  .record p + p { margin-top: 1rem; }
+  .record h2 { margin-bottom: 1.25rem; }
+  .record figure { margin-top: 1.5rem; }
+  .record figure img { border-radius: .75rem; width: 100%; }
+  .record figcaption { margin-top: .5rem; font-size: .8125rem; color: #a9a49b; }
+
+  section { padding: clamp(4rem, 9vw, 7rem) var(--pad); }
+  .wrap { max-width: 74rem; margin: 0 auto; }
+  .lede { margin-top: 1rem; max-width: 40rem; color: var(--graphite); }
+
+  /* Work: their parts, big and close. Brass, chrome, anodized. */
+  .gallery { margin-top: 2.75rem; display: grid; gap: 1rem; grid-template-columns: repeat(12, 1fr); }
+  .gallery figure { border-radius: 1rem; overflow: hidden; background: var(--salt-2); }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; }
+  .g1 { grid-column: span 5; grid-row: span 2; }
+  .g2 { grid-column: span 4; }
+  .g3 { grid-column: span 3; }
+  .g4 { grid-column: span 3; }
+  .g5 { grid-column: span 4; }
+  .g1 img { aspect-ratio: 4 / 5; }
+  .g2 img, .g5 img { aspect-ratio: 4 / 3; }
+  .g3 img, .g4 img { aspect-ratio: 1; }
+
+  /* Capability: the numbers that matter to a buyer, then the full list. */
+  .numbers { margin-top: 2.75rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .numbers div { background: #fff; border-radius: 1rem; padding: 1.5rem 1.25rem; }
+  .numbers .wide { font-size: clamp(1.9rem, 3.6vw, 2.8rem); letter-spacing: -0.03em; }
+  .numbers p { margin-top: .5rem; color: var(--graphite); font-size: .95rem; line-height: 1.45; }
+  .split { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .split h3 { padding-bottom: .6rem; border-bottom: 2px solid var(--asphalt); margin-bottom: .8rem; }
+  .split ul { list-style: none; padding: 0; display: grid; gap: .35rem; color: var(--graphite); font-size: .975rem; }
+
+  .contact { background: var(--red); color: #fff; }
+  .contact .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .contact .lede { color: #ffe0e0; }
+  .big-phone { display: inline-block; margin-top: 1.75rem; font-stretch: 125%; font-weight: 900; font-size: clamp(2.2rem, 5vw, 3.8rem); letter-spacing: -0.03em; text-decoration: none; font-variant-numeric: tabular-nums; }
+  .big-phone:hover { text-decoration: underline; text-underline-offset: 8px; }
+  .big-phone:focus-visible, .contact a:focus-visible { outline-color: #fff; }
+  .mail { display: block; margin-top: .75rem; font-weight: 600; font-size: 1.15rem; }
+  .card { background: #fff; color: var(--asphalt); border-radius: 1rem; padding: 1.75rem; }
+  .card h3 { font-size: 1.05rem; }
+  .card .files { margin-top: .9rem; display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; }
+  .card .files li { background: var(--salt); border-radius: 999px; padding: .2rem .7rem; font-size: .875rem; font-weight: 500; }
+  .card address { font-style: normal; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--salt-2); color: var(--graphite); }
+
+  footer { background: var(--asphalt); color: #a9a49b; font-size: .875rem; padding: 2rem var(--pad) 6rem; }
+  footer p { max-width: 74rem; margin: 0 auto; }
+
+  .dock { display: none; }
+  @media (max-width: 860px) {
+    header nav a:not(.btn) { display: none; }
+    header .full { display: none; }
+    .mark { font-size: 1.05rem; white-space: nowrap; }
+    .hero { grid-template-columns: 1fr; padding-top: .5rem; }
+    .engine { order: -1; }
+    .engine img { aspect-ratio: 4 / 3; }
+    .record .wrap, .contact .wrap { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; gap: .75rem; }
+    .g1 { grid-column: span 2; grid-row: auto; }
+    .g1 img { aspect-ratio: 4 / 3; }
+    .g2, .g3, .g4, .g5 { grid-column: span 1; }
+    .g2 img, .g3 img, .g4 img, .g5 img { aspect-ratio: 1; }
+    .numbers { grid-template-columns: 1fr 1fr; }
+    .split { grid-template-columns: 1fr; gap: 2rem; }
+    .dock { display: block; position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 5;
+      background: var(--red); color: #fff; text-align: center; text-decoration: none; font-weight: 600; padding: .95rem 1rem; border-radius: 999px; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      opacity: 0; transform: translateY(1rem); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+    .dock.on { opacity: 1; transform: none; pointer-events: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, .dock { transition: none; } }
+</style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="demo">Unofficial demo built by MHS Tecnologia for ESP Machining &amp; Mfg. Not affiliated with or endorsed by ESP Machining &amp; Mfg.</div>
+
+  <header>
+    <a class="mark" href="#main" translate="no"><span>ESP</span> Machining &amp; Mfg<small>North Lima, Ohio</small></a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#story">Story</a>
+      <a class="btn" href="tel:+13304020777">Call<span class="full"> (330) 402-0777</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="hero">
+      <div>
+        <h1>Machined to the print, or engineered to spec.</h1>
+        <p>Tooling, prototypes and production parts for the transportation equipment industries, from a 26,000 square foot shop founded by the man behind Cobra’s racing mini cycles.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:espmachining@gmail.com?subject=Quote%20request">Email your drawings</a>
+          <a class="phone" href="tel:+13304020777">(330) 402-0777</a>
+        </div>
+      </div>
+      <figure class="engine">
+        <img src="img/engine.webp" width="1400" height="1408" alt="A machined aluminum engine block photographed on a studio background" fetchpriority="high">
+      </figure>
+    </div>
+
+    <section id="story" class="record" aria-labelledby="story-title">
+      <div class="wrap">
+        <div>
+          <h2 id="story-title">Race-bred since day one.</h2>
+          <p>Bud Maimone founded ESP to supply tooling essentials to the transportation equipment industries. He is also the founder behind Cobra mini cycles, the subject of a feature on how they changed racing in America.</p>
+          <p>Now in its second generation, the company still works one on one with every customer.</p>
+          <figure>
+            <img src="img/bonneville.webp" width="640" height="428" alt="A small record motorcycle running on the Bonneville salt flats" loading="lazy">
+            <figcaption>The Cobra-powered record bike at Bonneville</figcaption>
+          </figure>
+        </div>
+        <div class="slip" aria-label="Land speed record timing">
+          <span class="label">AMA 50cc altered gasoline record, Bonneville, October 2005</span>
+          <div class="speed">74.852<small>mph</small></div>
+          <dl class="runs">
+            <div><dt>First pass</dt><dd>78.399</dd></div>
+            <div><dt>Return pass</dt><dd>71.106</dd></div>
+            <div><dt>Old record</dt><dd>69.633</dd></div>
+          </dl>
+          <p style="margin-top:1.25rem;font-size:.9375rem">A Cobra-powered bike, built with Wagner Racing and Cobra engineer Alex Uspenski, set the official combined time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 id="work-title">Parts people stop and look at.</h2>
+        <p class="lede">From brass and chrome showpieces to fittings by the hundred. Every product is 100% satisfaction guaranteed.</p>
+        <div class="gallery">
+          <figure class="g1"><img src="img/twist.webp" width="768" height="955" alt="Two polished twisted metal parts, one brass and one chrome" loading="lazy"></figure>
+          <figure class="g2"><img src="img/knurl.webp" width="768" height="719" alt="Three knurled brass parts standing in a row" loading="lazy"></figure>
+          <figure class="g3"><img src="img/cover-red.webp" width="768" height="768" alt="A red machined cover with an American flag inlay" loading="lazy"></figure>
+          <figure class="g4"><img src="img/chrome.webp" width="768" height="768" alt="Four polished chrome caps on a dark wooden surface" loading="lazy"></figure>
+          <figure class="g5"><img src="img/fittings.webp" width="768" height="591" alt="An assortment of machined stainless steel fittings and shafts" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" style="background: var(--salt-2)" aria-labelledby="cap-title">
+      <div class="wrap">
+        <h2 id="cap-title">One building, the whole job.</h2>
+        <p class="lede">Design, machining, molding, finishing, inspection and packaging under one roof, compliant with ISO&nbsp;9000 and ISO&nbsp;9001.</p>
+        <div class="numbers">
+          <div><span class="wide">8-axis</span><p>Mazak Integrex mill-turn with dual spindles</p></div>
+          <div><span class="wide">5-axis</span><p>Tsugami Swiss turn, 32&nbsp;mm, with a 12′ bar feeder</p></div>
+          <div><span class="wide">300 ton</span><p>Injection molding, from 50 to 300 ton capacity</p></div>
+          <div><span class="wide">26,000</span><p>Square feet of manufacturing and office space</p></div>
+        </div>
+        <div class="split">
+          <div>
+            <h3>Services</h3>
+            <ul>
+              <li>Product design, research and development</li>
+              <li>Injection mold building</li>
+              <li>Parts production fixturing</li>
+              <li>Modeling and match plates for castings</li>
+              <li>Welding and fabricating</li>
+              <li>Aluminum protection coating (Chemcoat)</li>
+              <li>Tooling refurbishing and die rebuilding</li>
+              <li>Complete QC, assembly and packaging</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Turning and milling</h3>
+            <ul translate="no">
+              <li>Mazak Integrex, 5-axis, dual spindles</li>
+              <li>Tsugami Swiss turn, 5-axis</li>
+              <li>Kitamura horizontal, 5-axis</li>
+              <li>Mitsui Seiki horizontals, 4-axis (2)</li>
+              <li>Mori Seiki horizontal machining center</li>
+              <li>Mazak vertical machining centers (2)</li>
+              <li>Mazak Quick Turn CNC lathes (2)</li>
+              <li>Mori Seiki CNC lathes (4), Okuma (2)</li>
+              <li>Manual lathes up to 30″ (6)</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Grinding and finishing</h3>
+            <ul>
+              <li>Surface grinders, manual and hydraulic (6)</li>
+              <li>24″ lapping machine</li>
+              <li>Horizontal honing machine</li>
+              <li>Vibratory polishing and deburring (4)</li>
+              <li>Large buffing and polishing machines (4)</li>
+              <li>Full inspection and QC department</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div>
+          <h2 id="contact-title">Send the print. Get the price.</h2>
+          <p class="lede">Call the shop or email your drawings, quantities and due date.</p>
+          <a class="big-phone" href="tel:+13304020777">(330) 402-0777</a>
+          <a class="mail" href="mailto:espmachining@gmail.com?subject=Quote%20request">espmachining@gmail.com</a>
+        </div>
+        <div class="card">
+          <h3>File types accepted</h3>
+          <ul class="files" translate="no"><li>PDF</li><li>DXF</li><li>IGS</li><li>STP</li><li>SLDPRT</li><li>DWG</li><li>JPG</li><li>PNG</li></ul>
+          <address translate="no">ESP Machining &amp; Mfg, Inc.<br>11511 Springfield Road<br>North Lima, Ohio 44452</address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="dock" href="tel:+13304020777">Call (330) 402-0777</a>
+  <script>
+    // The floating call button appears once the hero's own buttons are off screen.
+    const dock = document.querySelector('.dock')
+    new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(document.querySelector('.hero .actions'))
+  </script>
+
+  <footer>
+    <p>Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by ESP Machining &amp; Mfg. Content and photos come from ESP Machining &amp; Mfg’s public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </footer>
+</body>
+</html>
