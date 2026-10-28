@@ -57,13 +57,12 @@
   .num { font-variant-numeric: tabular-nums; }
 
   /* Hero: the die set is the evidence for the headline. */
-  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); align-items: center; gap: clamp(1.5rem, 5vw, 4.5rem); padding: clamp(1rem, 3vw, 2.5rem) var(--pad) clamp(3rem, 6vw, 5rem); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); align-items: center; gap: clamp(1.5rem, 5vw, 4.5rem); padding: clamp(1rem, 3vw, 2rem) var(--pad) clamp(1.5rem, 2vw, 1.5rem); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
   .hero h1 { font-size: clamp(2.7rem, 6.4vw, 5.9rem); line-height: .98; text-wrap: balance; }
-  .hero h1 span { display: block; color: var(--steel); }
+  .hero h1 span { display: block; }
+  .hero h1 span::after { content: ""; display: block; width: 4.5rem; height: .45rem; margin-top: .35em; background: var(--yellow); border-radius: .1rem; }
   .hero .lede { margin-top: 1.3rem; max-width: 33rem; font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #33312e; }
   .actions { margin-top: 1.75rem; display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.5rem; }
-  .actions .phone { font-weight: 700; text-decoration: none; font-size: 1.1rem; }
-  .actions .phone:hover { text-decoration: underline; text-underline-offset: 4px; }
   .hint { margin-top: .9rem; font-size: .9rem; color: var(--steel); }
   .shot { position: relative; }
   .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .5rem; }
@@ -73,7 +72,7 @@
   .intro { max-width: 40rem; margin-top: 1rem; color: #33312e; }
 
   /* The one loud moment: die life on a ruler, read like a steel rule blade. */
-  .runs { background: var(--ink); color: #f2f0eb; }
+  .runs { background: var(--ink); color: #f2f0eb; padding-top: clamp(2.5rem, 3vw, 2.5rem); }
   .runs .intro { color: #c9c6bf; }
   .ruler { margin-top: 3rem; --label: 17rem; --inv: 9.5rem; }
   .axis, .die { display: grid; grid-template-columns: var(--label) minmax(0, 1fr) var(--inv); column-gap: 1.75rem; align-items: center; }
@@ -120,7 +119,8 @@
   .facts li { padding-left: 1.1rem; border-left: 3px solid var(--yellow); }
   .facts b { display: block; }
   .specimen .more { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: .9rem 1.5rem; align-items: center; }
-  .specimen .more a:not(.btn) { font-weight: 600; }
+  .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: #fff; }
 
   /* Work: their own gallery photos, kept at 4:3 the way they were shot. */
   .work { background: var(--floor-2); }
@@ -176,9 +176,17 @@
     .mark { font-size: 1.35rem; }
     .hero { grid-template-columns: 1fr; padding-top: 0; gap: 1.25rem; }
     .hero .shot { order: -1; }
-    .shot img { aspect-ratio: 16 / 9; object-position: 50% 40%; }
+    .shot img { aspect-ratio: 2 / 1; object-position: 50% 45%; }
     .shot figcaption { display: none; }
     .hero h1 { font-size: clamp(2.5rem, 10.5vw, 3.4rem); }
+    .hero h1 span::after { width: 3rem; height: .35rem; margin-top: .3em; }
+    .demo { font-size: .75rem; padding: .4rem .75rem; }
+    header { padding-top: .6rem; padding-bottom: .6rem; }
+    .actions { gap: .6rem; }
+    .actions .btn { flex: 1 1 100%; padding-top: .8rem; padding-bottom: .8rem; }
+    .hint { display: none; }
+    .gallery figure:nth-child(n+5) { display: none; }
+
     .hero .lede { margin-top: .9rem; font-size: 1rem; }
     .actions { margin-top: 1.25rem; }
     .actions .btn { flex: 1 1 auto; justify-content: center; }
@@ -195,10 +203,8 @@
     .specimen figure { order: -1; }
     .gallery { grid-template-columns: 1fr 1fr; gap: .75rem; }
     .gallery figure, .gallery .big { grid-column: span 1; grid-row: auto; }
-    .gallery .big { grid-column: span 2; }
+
     .gallery .big img { height: auto; aspect-ratio: 4 / 3; }
-    .gallery figure:last-child { grid-column: span 2; }
-    .gallery figure:last-child img { aspect-ratio: 16 / 9; }
     .gallery figcaption { font-size: .8125rem; }
     .equip { grid-template-columns: 1fr; }
     .more-equip summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; padding: 1rem 0; border-top: 2px solid var(--ink); font-weight: 700; }
@@ -230,7 +236,7 @@
     <a class="mark" href="#main" translate="no">Fremont Cutting Dies<small>Fremont, Ohio</small></a>
     <nav aria-label="Main">
       <a href="#dies">Die types</a>
-      <a href="#specimen">Specimen dies</a>
+      <a href="https://fremontcuttingdies.com/shop/">Shop specimen dies</a>
       <a href="#shop">Machining</a>
       <a href="#contact">Contact</a>
       <a class="btn dark" href="tel:+14193345153">Call<span class="full num"> 419.334.5153</span></a>
@@ -244,7 +250,7 @@
         <p class="lede">Steel rule, Viking, forged, contour trim, machined, specimen and match-metal dies, designed and built in-house by a team with over 40 years in the die industry.</p>
         <div class="actions">
           <a class="btn" href="mailto:requests@fremontcuttingdies.com?subject=Quote%20request">Request a quote by email</a>
-          <a class="phone num" href="tel:+14193345153">419.334.5153</a>
+          <a class="btn ghost phone num" href="tel:+14193345153">Call 419.334.5153</a>
         </div>
         <p class="hint">Attach your drawing or a photo of the part, with the material and quantity.</p>
       </div>
@@ -313,8 +319,8 @@
             <li><b>Shipped in a case</b>A durable case that doubles as storage. A custom shank or mallet handle can be added.</li>
           </ul>
           <div class="more">
-            <a class="btn dark" href="mailto:requests@fremontcuttingdies.com?subject=Specimen%20die%20sharpening%20or%20certification">Ask about sharpening</a>
-            <a href="https://fremontcuttingdies.com/shop/">Shop in-stock dies</a>
+            <a class="btn" href="https://fremontcuttingdies.com/shop/">Shop in-stock dies</a>
+            <a class="btn ghost" href="mailto:requests@fremontcuttingdies.com?subject=Specimen%20die%20sharpening%20or%20certification">Ask about sharpening</a>
           </div>
         </div>
         <figure>
@@ -329,12 +335,12 @@
         <h2 id="work-title">From the shop floor.</h2>
         <p class="intro">Dies and parts from Fremont Cutting Dies’ own project galleries.</p>
         <div class="gallery">
-          <figure class="big"><img src="img/viking-800.webp" srcset="img/viking-800.webp 800w, img/viking-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 780px" width="1400" height="1050" alt="A large polished Viking die with internal bridges, lying on a concrete floor" loading="lazy"><figcaption>Polished Viking die</figcaption></figure>
+          <figure class="big"><img src="img/viking-800.webp" srcset="img/viking-800.webp 800w, img/viking-1400.webp 1400w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 780px" width="1400" height="1050" alt="A large polished Viking die with internal bridges, lying on a concrete floor" loading="lazy"><figcaption>Polished Viking die</figcaption></figure>
           <figure><img src="img/pouch-800.webp" srcset="img/pouch-480.webp 480w, img/pouch-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="A Viking die next to the brown leather holster it cuts" loading="lazy"><figcaption>Viking die with the leather part it cuts</figcaption></figure>
           <figure><img src="img/forged-800.webp" srcset="img/forged-480.webp 480w, img/forged-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="Several forged dies of different shapes on a concrete floor" loading="lazy"><figcaption>Forged dies</figcaption></figure>
           <figure><img src="img/anvil-800.webp" srcset="img/anvil-480.webp 480w, img/anvil-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="A contour trim forged die and its machined anvil on a die shoe" loading="lazy"><figcaption>Contour trim die and anvil</figcaption></figure>
           <figure><img src="img/battery-800.webp" srcset="img/battery-480.webp 480w, img/battery-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="A yellow-based anode and cathode battery die with green guide pins" loading="lazy"><figcaption>Anode and cathode battery die</figcaption></figure>
-          <figure><img src="img/machined-part-800.webp" srcset="img/machined-part-480.webp 480w, img/machined-part-800.webp 800w" sizes="(max-width: 860px) calc(100vw - 2rem), 400px" width="800" height="600" alt="A machined steel link with bronze bushings at each end" loading="lazy"><figcaption>Contract machined part</figcaption></figure>
+          <figure><img src="img/machined-part-800.webp" srcset="img/machined-part-480.webp 480w, img/machined-part-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="A machined steel link with bronze bushings at each end" loading="lazy"><figcaption>Contract machined part</figcaption></figure>
         </div>
       </div>
     </section>
