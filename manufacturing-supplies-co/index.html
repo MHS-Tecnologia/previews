@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#16204a">
+<title>Manufacturers Supplies Company (MSC), cutting and converting machines since 1907</title>
+<meta name="description" content="Sales and service of ATOM, Chiesa, RFS Co.Mec, Guidolin Girotto, FEBA, IMESA, Antares and International cutting and converting machines, from Earth City, Missouri and Loveland, Ohio.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/saira.woff2" crossorigin>
+<link rel="preload" as="image" href="img/flashcut-800.webp" imagesrcset="img/flashcut-800.webp 800w, img/flashcut-1100.webp 1088w" imagesizes="(max-width: 900px) calc(100vw - 2rem), 640px" fetchpriority="high">
+<style>
+  @font-face { font-family: "Saira"; font-weight: 100 900; font-stretch: 50% 125%; font-display: swap; src: url(fonts/saira.woff2) format("woff2"); }
+  @font-face { font-family: "Instrument Sans"; font-weight: 400 700; font-display: swap; src: url(fonts/instrument.woff2) format("woff2"); }
+
+  /* MSC navy and MSC orange, from their own header and buttons. The orange is
+     also the LED strip on the FlashCut table. Machines sit on a cutting-table
+     stage: a millimetre grid with a ruler along its edge. */
+  :root {
+    --navy-900: #0e1530;
+    --navy-800: #16204a;
+    --navy-700: #1f2c5e;
+    --navy-600: #2b3a74;
+    --orange: #f06a1d;
+    --orange-ink: #a8430a;
+    --steel: #c3cad6;
+    --steel-dim: #8f9ab0;
+    --paper: #eef1f5;
+    --paper-2: #e1e6ee;
+    --ink: #121a36;
+    --muted: #4a5470;
+    --max: 76rem;
+    --pad: clamp(1rem, 4vw, 2.5rem);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+  h1, h2, h3, .wide { font-family: "Saira", "Arial", sans-serif; }
+  h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); font-weight: 700; font-stretch: 112%; line-height: 1.05; letter-spacing: -0.01em; text-wrap: balance; }
+  h3 { font-size: 1.3rem; font-weight: 650; font-stretch: 105%; line-height: 1.15; }
+  .cond { font-family: "Saira", "Arial Narrow", sans-serif; font-stretch: 78%; font-weight: 560; letter-spacing: .01em; }
+  [id] { scroll-margin-top: 1rem; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; color: var(--ink); padding: .5rem 1rem; z-index: 20; }
+  .skip:focus { left: .5rem; }
+
+  .demo { background: var(--navy-900); color: var(--steel); font-size: .78rem; line-height: 1.4; padding: .45rem var(--pad); text-align: center; }
+
+  /* ——— Buttons ——— */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.1rem; padding: .7rem 1.35rem; border-radius: 3px; font: 650 1.05rem/1.1 "Saira", sans-serif; font-stretch: 100%; text-decoration: none; white-space: nowrap; transition: background-color .15s, color .15s; }
+  .btn svg { width: 1.1em; height: 1.1em; flex: none; }
+  .btn.solid { background: var(--orange); color: var(--navy-900); }
+  .btn.solid:hover { background: #ff8a45; }
+  .btn.line { color: #fff; box-shadow: inset 0 0 0 2px var(--steel-dim); }
+  .btn.line:hover { box-shadow: inset 0 0 0 2px #fff; }
+
+  /* ——— Header ——— */
+  .top { background: var(--navy-800); color: #fff; }
+  .top .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 4rem; }
+  .mark { display: flex; align-items: baseline; gap: .7rem; text-decoration: none; margin-right: auto; }
+  .mark b { font: 800 1.75rem/1 "Saira", sans-serif; font-stretch: 125%; letter-spacing: .02em; color: var(--steel); }
+  .mark span { font-size: .82rem; color: var(--steel); line-height: 1.2; }
+  .top nav { display: flex; gap: 1.6rem; font-size: .95rem; }
+  .top nav a { text-decoration: none; color: #dfe4ee; }
+  .top nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: .3em; }
+  .top .call { font: 600 1rem/1 "Saira", sans-serif; text-decoration: none; color: #fff; display: inline-flex; align-items: center; gap: .45rem; padding: .6rem .2rem; }
+  .top .call svg { width: 1rem; height: 1rem; color: var(--orange); }
+
+  /* ——— Hero ——— */
+  .hero { background: var(--navy-800); color: #fff; padding: clamp(1.25rem, 4vw, 3.5rem) 0 clamp(2rem, 4vw, 3.5rem); }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+  .hero h1 { font-size: clamp(2.15rem, 3.7vw, 3.3rem); font-weight: 700; font-stretch: 116%; line-height: 1.02; letter-spacing: -0.015em; text-wrap: balance; }
+  .hero .lede { margin-top: 1.1rem; font-size: 1.12rem; color: #d3d9e6; max-width: 34rem; }
+  .hero .lede strong { color: #fff; font-weight: 600; }
+  .ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+  .offices { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: .3rem 1.6rem; font-size: .95rem; color: var(--steel); }
+  .offices a { text-decoration: none; }
+  .offices a:hover { text-decoration: underline; }
+
+  /* The cutting-table stage. Fine grid every 10 units, heavier every 50, ruler along the top. */
+  .stage { position: relative; background-color: var(--navy-700);
+    background-image:
+      linear-gradient(rgba(195,202,214,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(195,202,214,.10) 1px, transparent 1px),
+      linear-gradient(rgba(195,202,214,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(195,202,214,.045) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
+    background-position: -1px -1px; border-radius: 4px; overflow: hidden; }
+  .stage::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 14px; background:
+      repeating-linear-gradient(90deg, var(--steel-dim) 0 1px, transparent 1px 12px) 0 0 / 100% 6px no-repeat,
+      repeating-linear-gradient(90deg, var(--steel) 0 1px, transparent 1px 60px) 0 0 / 100% 14px no-repeat;
+    opacity: .75; }
+  .hero .stage { padding: 2.2rem clamp(1rem, 3vw, 2rem) 1rem; }
+  .hero .stage img { width: 100%; filter: drop-shadow(0 18px 18px rgba(5,8,20,.55)); }
+  .dim { position: relative; margin-top: .9rem; display: flex; justify-content: center; color: var(--steel); font-size: .92rem; }
+  .dim::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--orange); transform-origin: center; animation: draw .9s .25s cubic-bezier(.2,.7,.2,1) both; }
+  .dim i { position: absolute; top: calc(50% - 7px); width: 1px; height: 14px; background: var(--orange); }
+  .dim i:first-child { left: 0; } .dim i:last-of-type { right: 0; }
+  .dim span { position: relative; background: var(--navy-700); padding: 0 .7rem; text-align: center; }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .stage figcaption { margin-top: .5rem; text-align: right; font-size: .82rem; color: var(--steel-dim); }
+
+  /* ——— Open house ——— */
+  .open { background: var(--orange); color: var(--navy-900); }
+  .open .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; padding-top: 1.1rem; padding-bottom: 1.1rem; }
+  .open p { font-size: 1.05rem; max-width: 48rem; }
+  .open strong { font: 700 1.2rem/1.2 "Saira", sans-serif; font-stretch: 110%; display: block; }
+  .open a { font: 650 1rem/1 "Saira", sans-serif; color: var(--navy-900); text-underline-offset: .25em; text-decoration-thickness: 2px; white-space: nowrap; padding: .6rem 0; }
+
+  /* ——— Sections ——— */
+  section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+  .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem 3rem; align-items: end; margin-bottom: clamp(1.75rem, 4vw, 2.75rem); }
+  .head p { color: var(--muted); max-width: 36rem; }
+
+  /* Machines: six families, every photo on the same stage at the same size. */
+  .machines ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.5rem); }
+  .mach { background: #fff; border-radius: 4px; display: flex; flex-direction: column; box-shadow: 0 0 0 1px var(--paper-2); }
+  .mach .stage { aspect-ratio: 16 / 11; display: grid; place-items: center; padding: 1.4rem 1rem .9rem; border-radius: 4px 4px 0 0; }
+  .mach .stage img { max-height: 100%; width: auto; max-width: 100%; object-fit: contain; filter: drop-shadow(0 10px 10px rgba(5,8,20,.5)); }
+  .mach .txt { padding: 1.1rem 1.25rem 1.3rem; display: flex; flex-direction: column; gap: .35rem; flex: 1; }
+  .mach .by { color: var(--orange-ink); font-size: 1.02rem; }
+  .mach .txt p:not(.by):not(.shown) { color: var(--muted); font-size: .98rem; line-height: 1.5; }
+  .mach .shown { margin-top: auto; padding-top: .6rem; font-size: .85rem; color: var(--muted); }
+
+  /* ATOM: dark band with the FlashCut spec sheet. */
+  .atom { background: var(--navy-800); color: #fff; }
+  .atom .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+  .atom p { color: #d3d9e6; margin-top: 1rem; max-width: 34rem; }
+  .atom blockquote { margin-top: 1.6rem; padding-left: 1.1rem; border-left: 3px solid var(--orange); font: 500 1.2rem/1.45 "Saira", sans-serif; font-stretch: 96%; color: #fff; max-width: 32rem; }
+  .atom blockquote footer { margin-top: .5rem; font: 400 .9rem/1.4 "Instrument Sans", sans-serif; color: var(--steel); }
+  .spec { background: var(--navy-700); border-radius: 4px; padding: 1.6rem clamp(1.1rem, 3vw, 2rem) 1.4rem; position: relative; }
+  .spec h3 { margin-bottom: .2rem; }
+  .spec .sub { color: var(--steel); font-size: .95rem; margin: 0 0 1rem; }
+  .spec table { width: 100%; border-collapse: collapse; }
+  .spec th, .spec td { text-align: left; padding: .8rem 0; border-top: 1px solid rgba(195,202,214,.18); vertical-align: baseline; }
+  .spec th { font-weight: 400; color: var(--steel); font-size: .95rem; padding-right: 1rem; }
+  .spec td { font: 650 1.35rem/1.2 "Saira", sans-serif; font-stretch: 108%; text-align: right; font-variant-numeric: tabular-nums; }
+  .spec .src { margin-top: .9rem; font-size: .82rem; color: var(--steel-dim); }
+
+  /* Industries */
+  .ind .wrap { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+  .ind p { color: var(--muted); margin-top: 1rem; max-width: 30rem; }
+  .ind ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+  .ind li { padding: .85rem 0; border-bottom: 1px solid #c7cfdb; font: 600 1.15rem/1.2 "Saira", sans-serif; font-stretch: 104%; }
+  .ind li:nth-child(odd) { padding-right: 1rem; }
+  .ind li.core::after { content: ""; display: inline-block; width: .55rem; height: .55rem; margin-left: .55rem; background: var(--orange); border-radius: 50%; vertical-align: .12em; }
+  .ind .key { margin-top: 1rem; font-size: .9rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; }
+  .ind .key::before { content: ""; width: .55rem; height: .55rem; background: var(--orange); border-radius: 50%; }
+
+  /* History: a ruler down the left edge, one tick per year entry. */
+  .hist { background: var(--paper-2); }
+  .hist .wrap { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+  .hist .intro p { color: var(--muted); margin-top: 1rem; max-width: 26rem; }
+  .ruler { list-style: none; padding: 0 0 0 2.4rem; position: relative;
+    background: repeating-linear-gradient(180deg, #8f9ab0 0 1px, transparent 1px 10px) 0 0 / 10px 100% no-repeat,
+                linear-gradient(var(--ink), var(--ink)) 0 0 / 2px 100% no-repeat; }
+  .ruler li { position: relative; padding: 0 0 1.7rem; }
+  .ruler li::before { content: ""; position: absolute; left: -2.4rem; top: .8rem; width: 1.8rem; height: 2px; background: var(--orange); }
+  .ruler .yr { font: 700 1.6rem/1.2 "Saira", sans-serif; font-stretch: 118%; font-variant-numeric: tabular-nums; }
+  .ruler h3 { font-size: 1.1rem; margin-top: .15rem; }
+  .ruler p { color: var(--muted); margin-top: .3rem; font-size: .98rem; max-width: 34rem; }
+  .ruler details summary { display: none; }
+  .ruler .more-wrap { padding: 0; }
+  .ruler .more-wrap::before { display: none; }
+  .ruler-more { list-style: none; padding: 0; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  /* Contact */
+  .contact { background: var(--navy-900); color: #fff; }
+  .contact .head p { color: #c9d0de; }
+  .places { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .place { background: var(--navy-700); border-radius: 4px; padding: 1.5rem 1.4rem 1.6rem; display: flex; flex-direction: column; gap: .35rem; }
+  .place .cond { color: var(--steel); font-size: 1rem; }
+  .place address { font-style: normal; color: #dfe4ee; }
+  .place a.big { margin-top: auto; padding-top: 1rem; font: 650 1.45rem/1.2 "Saira", sans-serif; font-stretch: 108%; color: #fff; text-decoration: none; display: inline-flex; align-items: center; gap: .55rem; }
+  .place a.big svg { width: 1.1rem; height: 1.1rem; color: var(--orange); flex: none; }
+  .place a.big:hover { color: var(--orange); }
+  .place.mail a.big { font-size: 1.2rem; overflow-wrap: anywhere; }
+
+  footer.site { background: var(--navy-900); color: var(--steel-dim); border-top: 1px solid rgba(195,202,214,.15); font-size: .88rem; padding: 1.5rem 0 2rem; }
+  footer.site a { color: var(--steel); }
+  footer.site p + p { margin-top: .4rem; }
+
+  .dock { display: none; }
+
+  /* Desktop: the hero fills the screen so the open-house band sits on the fold line. */
+  @media (min-width: 901px) {
+    .hero { min-height: max(34rem, calc(100svh - 11.4rem)); display: flex; align-items: center; }
+    .hero .wrap { width: 100%; }
+  }
+
+  @media (max-width: 900px) {
+    .top nav { display: none; }
+    .hero .wrap, .atom .wrap, .ind .wrap, .hist .wrap, .head { grid-template-columns: minmax(0, 1fr); }
+    .hero .wrap { gap: 1.1rem; }
+    .hero .copy { display: contents; }
+    .hero h1 { order: 1; }
+    .hero .lede { order: 2; margin-top: 0; }
+    .hero figure { order: 3; }
+    .hero .ctas { order: 4; margin-top: 0; }
+    .hero .offices { order: 5; margin-top: 0; }
+    .machines ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .places { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 1rem; }
+    .demo { font-size: .72rem; padding-top: .35rem; padding-bottom: .35rem; }
+    .top .wrap { min-height: 3.3rem; gap: .75rem; }
+    .mark b { font-size: 1.45rem; }
+    .mark span { font-size: .72rem; max-width: 8rem; }
+    .top .call { white-space: nowrap; font-size: .95rem; }
+    .hero { padding-top: 1.1rem; padding-bottom: 1.6rem; }
+    .hero h1 { font-size: 2.05rem; font-stretch: 108%; }
+    .hero .lede { font-size: 1rem; line-height: 1.5; }
+    .hero .stage { padding: 1.6rem .75rem .7rem; }
+    .dim { font-size: .78rem; margin-top: .5rem; }
+    .stage figcaption { display: none; }
+    .ctas { display: grid; grid-template-columns: 1.35fr 1fr; gap: .6rem; }
+    .ctas .btn { padding: .7rem .6rem; font-size: 1rem; }
+    .offices { font-size: .88rem; }
+    .open p { font-size: .98rem; }
+    .machines ul { grid-template-columns: minmax(0, 1fr); gap: .9rem; }
+    .mach { display: grid; grid-template-columns: 42% minmax(0, 1fr); }
+    .mach .stage { aspect-ratio: auto; border-radius: 4px 0 0 4px; padding: 1.2rem .5rem .6rem; }
+    .mach .stage::before { height: 10px; }
+    .mach .txt { padding: .85rem .9rem .9rem; gap: .2rem; }
+    .mach h3 { font-size: 1.08rem; }
+    .mach .by { font-size: .92rem; }
+    .mach .txt p:not(.by):not(.shown) { font-size: .9rem; }
+    .mach .shown { font-size: .78rem; }
+    .spec td { font-size: 1.15rem; }
+    .ind li { font-size: 1rem; }
+    .ruler details summary { display: list-item; cursor: pointer; font: 650 1rem/1.3 "Saira", sans-serif; color: var(--orange-ink); padding: .4rem 0 1.4rem; text-decoration: underline; text-underline-offset: .25em; }
+    .ruler details[open] summary { display: none; }
+    body { padding-bottom: 4.6rem; }
+    .dock { display: grid; grid-template-columns: 1.35fr 1fr; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: var(--navy-900); border-top: 1px solid var(--navy-600); transform: translateY(110%); visibility: hidden; transition: transform .25s ease, visibility 0s .25s; }
+    .dock.on { transform: none; visibility: visible; transition: transform .25s ease; }
+    .dock .btn { min-height: 2.9rem; padding: .6rem .5rem; font-size: 1rem; }
+  }
+  @media (max-width: 370px) {
+    .hero h1 { font-size: 1.8rem; }
+    .mark span { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .dim::before { animation: none; }
+    .btn, .dock, .dock.on { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Manufacturers Supplies Company. Not affiliated with or endorsed by Manufacturers Supplies Company.</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#main"><b>MSC</b><span>Manufacturers Supplies Company</span></a>
+    <nav aria-label="Sections">
+      <a href="#machines">Machines</a>
+      <a href="#atom">ATOM</a>
+      <a href="#industries">Industries</a>
+      <a href="#history">Since 1907</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>(314) 770-0880</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div class="copy">
+        <h1 id="h1">Cutting and converting machines, sold and serviced since 1907.</h1>
+        <p class="lede">MSC brings in <strong>ATOM, Chiesa, RFS Co.Mec, Guidolin Girotto, FEBA, IMESA, Antares and International</strong> machines, and services them from Missouri and Ohio.</p>
+        <div class="ctas">
+          <a class="btn solid" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call MSC</a>
+          <a class="btn line" href="mailto:information@mfgsup.com?subject=Machine%20inquiry"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+        </div>
+        <p class="offices"><a href="#contact">Earth City, MO</a><a href="#contact">Loveland, OH</a></p>
+      </div>
+      <figure class="stage">
+        <img src="img/flashcut-800.webp" srcset="img/flashcut-800.webp 800w, img/flashcut-1100.webp 1088w" sizes="(max-width: 900px) calc(100vw - 2rem), 640px" width="1088" height="615" alt="ATOM FlashCut Flex Pro oscillating knife cutting table, with its control station and two overhead projector arms" fetchpriority="high">
+        <div class="dim" aria-hidden="true"><i></i><span class="cond">FlashCut cutting areas: 1000 × 600 mm up to 6100 × 2600 mm</span><i></i></div>
+        <figcaption>ATOM FlashCut Flex Pro</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="open">
+    <div class="wrap">
+      <p><strong>Open house in Earth City, November 10–12, 9 AM to 3 PM.</strong>See cutting and converting equipment running and meet the people who set it up.</p>
+      <a href="mailto:information@mfgsup.com?subject=Open%20house%2C%20November%2010%E2%80%9312">Email to reserve a spot</a>
+    </div>
+  </div>
+
+  <section class="machines" id="machines" aria-labelledby="h-machines">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="h-machines">Six kinds of machine, one dealer to call</h2>
+        <p>From a knife table for samples to a full slitting and laminating line, MSC handles the sale and the service in North America.</p>
+      </div>
+      <ul>
+        <li class="mach">
+          <div class="stage"><img src="img/flashcut-400.webp" srcset="img/flashcut-400.webp 400w, img/flashcut-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="362" alt="ATOM FlashCut knife cutting table" loading="lazy"></div>
+          <div class="txt">
+            <h3>Digital knife cutting</h3>
+            <p class="by cond">ATOM FlashCut</p>
+            <p>Oscillating knife tables with one or two heads. No cutting dies to make, manage or store.</p>
+          </div>
+        </li>
+        <li class="mach">
+          <div class="stage"><img src="img/chiesa-400.webp" srcset="img/chiesa-400.webp 400w, img/chiesa-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="373" alt="Chiesa traveling head die cutting press with its control cabinet" loading="lazy"></div>
+          <div class="txt">
+            <h3>Die cutting presses</h3>
+            <p class="by cond">ATOM, Chiesa and RFS Co.Mec</p>
+            <p>Chiesa built the first belt-fed die cutting press in the late 1980s and patented an all-electric CNC cutting press in 2006.</p>
+          </div>
+        </li>
+        <li class="mach">
+          <div class="stage"><img src="img/guidolin-400.webp" srcset="img/guidolin-400.webp 400w, img/guidolin-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="452" alt="Guidolin Girotto GD 654 kiss cutting press with material unwind" loading="lazy"></div>
+          <div class="txt">
+            <h3>Kiss cutting presses</h3>
+            <p class="by cond">Guidolin Girotto</p>
+            <p>Flat-bed, rotary, laser and guillotine cutting for flexible material in rolls or sheets.</p>
+          </div>
+        </li>
+        <li class="mach">
+          <div class="stage"><img src="img/imesa-400.webp" srcset="img/imesa-400.webp 400w, img/imesa-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="434" alt="IMESA 558 automatic log slitter" loading="lazy"></div>
+          <div class="txt">
+            <h3>Automatic log slitting</h3>
+            <p class="by cond">FEBA and IMESA</p>
+            <p>Fully automatic lathe slitting, single and multi-shaft, for cutting rolls into narrow rolls.</p>
+          </div>
+        </li>
+        <li class="mach">
+          <div class="stage"><img src="img/feba-400.webp" srcset="img/feba-400.webp 400w, img/feba-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="494" alt="FEBA FE 400 Duplex slitter rewinder in blue, loaded with white rolls" loading="lazy"></div>
+          <div class="txt">
+            <h3>Slitting and rewinding</h3>
+            <p class="by cond">FEBA, IMESA and Antares</p>
+            <p>FEBA has built converting machines near Varese, Italy, since 1968. MSC is its North American agent.</p>
+          </div>
+        </li>
+        <li class="mach">
+          <div class="stage"><img src="img/international-400.webp" srcset="img/international-400.webp 400w, img/international-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="411" alt="International ICZ-5H laminating machine with orange guarding" loading="lazy"></div>
+          <div class="txt">
+            <h3>Laminating systems</h3>
+            <p class="by cond">IMESA and International</p>
+            <p>International engineers, builds and tests its lines in-house in Zlín, Czech Republic.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="atom" id="atom" aria-labelledby="h-atom">
+    <div class="wrap">
+      <div>
+        <h2 id="h-atom">Fifty years with ATOM</h2>
+        <p>MSC signed with ATOM of Vigevano, Italy, in 1974. In 2006 the two formed ATOM-MSC USA, so North American plants get ATOM directly, side by side with MSC.</p>
+        <p>ATOM started with cutting presses for the shoe district around Vigevano. Its FlashCut tables now cut gaskets, foam, rubber, composites and technical textiles.</p>
+        <blockquote>“The beginning of our most important and longest-standing partnership, propelling MSC into new markets.”<footer>MSC, on the 1974 ATOM agreement</footer></blockquote>
+      </div>
+      <div class="spec">
+        <h3>ATOM FlashCut EASY</h3>
+        <p class="sub">For sample rooms, labs and short to medium runs.</p>
+        <table>
+          <caption class="sr">FlashCut EASY figures</caption>
+          <tr><th scope="row">Positioning tolerance</th><td>±0.1 mm</td></tr>
+          <tr><th scope="row">Cutting speed</th><td>80 m/min</td></tr>
+          <tr><th scope="row">Punching speed</th><td>220 holes/min</td></tr>
+          <tr><th scope="row">Cutting head</th><td>5 or 7 tools</td></tr>
+          <tr><th scope="row">Working areas</th><td>Two, independent</td></tr>
+        </table>
+        <p class="src">Figures as published by MSC for the EASY series. Two working areas on 888, M25 and L30 models.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ind" id="industries" aria-labelledby="h-ind">
+    <div class="wrap">
+      <div>
+        <h2 id="h-ind">Built on shoes, now serving industry</h2>
+        <p>MSC started in St. Louis selling to shoe and leather factories. When that trade declined in 1990, MSC turned to automotive, aerospace, medical and packaging, which today make up 90% of its business.</p>
+      </div>
+      <div>
+        <ul>
+          <li class="core">Automotive</li>
+          <li class="core">Aerospace</li>
+          <li class="core">Medical</li>
+          <li class="core">Packaging</li>
+          <li>Abrasives</li>
+          <li>Composites and technical textiles</li>
+          <li>Electronics</li>
+          <li>Security and defense</li>
+          <li>Oil and gas</li>
+          <li>Footwear and leather goods</li>
+        </ul>
+        <p class="key">90% of MSC’s business today</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hist" id="history" aria-labelledby="h-hist">
+    <div class="wrap">
+      <div class="intro">
+        <h2 id="h-hist">A family business since 1907</h2>
+        <p>Owned by the Goellner family since 1956, with offices in the St. Louis and Cincinnati areas.</p>
+      </div>
+      <ol class="ruler">
+        <li><p class="yr">1907</p><h3>Founded in St. Louis</h3><p>A small company serving the shoe and leather industries.</p></li>
+        <li><p class="yr">1956</p><h3>The Goellner family takes over</h3><p>Robert Goellner Sr. buys MSC from the Freeman family and widens the product range.</p></li>
+        <li><p class="yr">1974</p><h3>The ATOM agreement</h3><p>The start of MSC’s longest-standing partnership.</p></li>
+        <li><p class="yr">1990</p><h3>A turn to industry</h3><p>Steve Goellner Sr. refocuses MSC on automotive, aerospace, medical and packaging.</p></li>
+        <li class="more-wrap">
+          <details class="more" open>
+            <summary>Show 2006 to 2024</summary>
+            <ol class="ruler-more">
+              <li><p class="yr">1994–2024</p><h3>New industrial partners</h3><p>Guidolin, IMESA, FEBA, Chiesa and International join the line-up.</p></li>
+              <li><p class="yr">2006</p><h3>ATOM-MSC USA</h3><p>A joint venture with ATOM to serve North American industrial customers.</p></li>
+              <li><p class="yr">2024</p><h3>Cincinnati showroom renovated</h3><p>A new showroom for industrial machinery.</p></li>
+            </ol>
+          </details>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="h-contact">Talk to MSC about your material</h2>
+        <p>Call the office nearest you or send an email. Tell them what you cut or convert and how much of it.</p>
+      </div>
+      <div class="places">
+        <div class="place">
+          <p class="cond">St. Louis area</p>
+          <address>4220 Rider Trail North<br>Earth City, MO 63045</address>
+          <a class="big" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>(314) 770-0880</a>
+        </div>
+        <div class="place">
+          <p class="cond">Cincinnati area</p>
+          <address>106 Commerce Drive<br>Loveland, OH 45140</address>
+          <a class="big" href="tel:+15136773311"><svg aria-hidden="true"><use href="#i-phone"/></svg>(513) 677-3311</a>
+        </div>
+        <div class="place mail">
+          <p class="cond">Email</p>
+          <p style="color:#dfe4ee">Questions, quotes and service requests.</p>
+          <a class="big" href="mailto:information@mfgsup.com?subject=Machine%20inquiry"><svg aria-hidden="true"><use href="#i-mail"/></svg>information@mfgsup.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="dock" id="dock">
+  <a class="btn solid" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call MSC</a>
+  <a class="btn line" href="mailto:information@mfgsup.com?subject=Machine%20inquiry"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Manufacturers Supplies Company. Text and machine photos come from Manufacturers Supplies Company’s public website, mfgsup.com. Brand names are set in text; no logos are reproduced.</p>
+    <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+
+<script>
+  // Phones: the later timeline entries start folded.
+  if (matchMedia('(max-width: 640px)').matches) document.querySelector('.more').open = false
+  // The call/email bar docks once the hero has scrolled away.
+  const dock = document.getElementById('dock')
+  new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(document.querySelector('.hero'))
+</script>
+</body>
+</html>
