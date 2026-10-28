@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#1f2b23">
+<title>Metzler Forest Products, Reedsville, PA</title>
+<meta name="description" content="Timber harvesting, land clearing, contract chipping and trucking since 1986, plus the Landscape Center in Reedsville, Pennsylvania: mulch, stone, plants and firewood.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Metzler Forest Products, Reedsville, PA">
+<meta property="og:description" content="From standing timber to the mulch on your beds. Unofficial demo by MHS Tecnologia.">
+<meta property="og:image" content="https://demo.mhstecnologia.com/metzler-forest-products-reedsville-pa/email.jpg">
+<link rel="preload" as="font" type="font/woff2" href="fonts/bitter.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/sourcesans.woff2" crossorigin>
+<link rel="preload" as="image" href="img/yard-640.webp" imagesrcset="img/yard-640.webp 640w, img/yard-800.webp 800w, img/yard-960.webp 960w, img/yard-1400.webp 1400w" imagesizes="(max-width: 900px) 100vw, 640px" fetchpriority="high">
+<style>
+  @font-face { font-family: "Bitter"; font-weight: 100 900; font-display: swap; src: url(fonts/bitter.woff2) format("woff2"); }
+  @font-face { font-family: "Source Sans 3"; font-weight: 200 900; font-display: swap; src: url(fonts/sourcesans.woff2) format("woff2"); }
+  @font-face { font-family: "Source Sans fallback"; src: local("Arial"); size-adjust: 90%; ascent-override: 111%; descent-override: 43%; line-gap-override: 0%; }
+  @font-face { font-family: "Bitter fallback"; src: local("Georgia"); size-adjust: 104%; ascent-override: 90%; descent-override: 26%; line-gap-override: 0%; }
+
+  /* Valley fog over the yard, hemlock, bark, char, and the red of the Metzler mark. */
+  :root {
+    color-scheme: light;
+    --fog: #eceee8;
+    --fog-2: #dfe3da;
+    --paper: #f7f8f4;
+    --hemlock: #1f2b23;
+    --moss: #4c5a48;
+    --bark: #6a4a33;
+    --char: #2a2521;
+    --red: #b8261b;
+    --red-deep: #8f1c14;
+    --ember: #e5462c;
+    --line: #c3c9bb;
+    --pad: clamp(1rem, 4vw, 3rem);
+    --max: 74rem;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--fog); color: var(--hemlock); font: 400 1.0625rem/1.6 "Source Sans 3", "Source Sans fallback", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--ember); outline-offset: 3px; }
+  h1, h2, h3, .slab { font-family: "Bitter", "Bitter fallback", Georgia, serif; }
+  h1 { font-weight: 760; font-size: clamp(2.15rem, 4.6vw, 3.9rem); line-height: 1.02; letter-spacing: -0.02em; text-wrap: balance; }
+  h2 { font-weight: 720; font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.06; letter-spacing: -0.015em; text-wrap: balance; }
+  h3 { font-weight: 700; font-size: 1.35rem; line-height: 1.15; }
+  p { max-width: 62ch; }
+  [id] { scroll-margin-top: 1rem; }
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 10; }
+  .skip:focus { left: .5rem; }
+  .wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+  .num { font-variant-numeric: tabular-nums; }
+  .muted { color: var(--moss); }
+
+  .demo { background: var(--hemlock); color: #cfd6c8; font-size: .8125rem; line-height: 1.35; text-align: center; padding: .45rem 1rem; }
+
+  header.wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: .8rem; padding-bottom: .8rem; }
+  .mark { text-decoration: none; font-family: "Bitter", serif; font-weight: 800; font-size: 1.35rem; line-height: 1; letter-spacing: -0.01em; white-space: nowrap; }
+  .mark small { display: block; font-family: "Source Sans 3", sans-serif; font-weight: 600; font-size: .78rem; letter-spacing: 0; color: var(--moss); margin-top: .25rem; }
+  header nav { display: flex; align-items: center; gap: 1.5rem; font-weight: 600; font-size: .95rem; }
+  header nav a { text-decoration: none; }
+  header nav a:not(.btn):hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; background: var(--red); color: #fff; text-decoration: none; font-weight: 700; font-size: 1.05rem; padding: .85rem 1.35rem; border-radius: .3rem; box-shadow: inset 0 -3px 0 var(--red-deep); transition: background-color .15s ease; }
+  .btn:hover { background: var(--red-deep); }
+  .btn.quiet { background: transparent; color: var(--hemlock); box-shadow: inset 0 0 0 2px var(--hemlock); }
+  .btn.quiet:hover { background: var(--hemlock); color: #fff; }
+  .btn.small { padding: .5rem .9rem; font-size: .92rem; }
+  .btn svg { width: 1.05em; height: 1.05em; flex: none; }
+
+  /* Hero: words left, their own aerial of the yard right, framed no wider than the photo stays sharp. */
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 640px); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; padding-top: clamp(1rem, 3vw, 2.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+  .lede { font-size: 1.2rem; line-height: 1.5; margin-top: 1.1rem; color: #33402f; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+  .shot { margin: 0; }
+  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; }
+  .shot figcaption { font-size: .85rem; color: var(--moss); margin-top: .5rem; }
+
+  .lc-status { margin-top: 1.25rem; font-size: .98rem; }
+  .lc-status a { white-space: nowrap; }
+  .lc-status a { font-weight: 600; }
+  .dot { display: inline-block; width: .6rem; height: .6rem; border-radius: 50%; background: var(--moss); margin-right: .5rem; transform: translateY(-.05rem); }
+  .lc-status.open .dot { background: #2f8a3e; box-shadow: 0 0 0 3px rgba(47, 138, 62, .2); }
+  .lc-status.closed .dot { background: var(--bark); }
+  .lc-status strong { font-weight: 700; }
+
+  /* Who it is for: five ways into a company that does very different jobs. */
+  .doors { background: var(--hemlock); color: #e9ede4; }
+  .doors ul { list-style: none; padding: 0 var(--pad); display: grid; grid-template-columns: repeat(5, 1fr); }
+  .doors li:first-child a { padding-left: 0; }
+  .doors li + li { border-left: 1px solid #3b4a3f; }
+  .doors a { display: block; text-decoration: none; padding: 1.15rem 1.1rem 1.25rem; height: 100%; transition: background-color .15s ease; }
+  .doors a:hover { background: #2a3a2f; }
+  .doors .who { display: block; font-size: .9rem; color: #b5c2ad; }
+  .doors .what { display: block; font-family: "Bitter", serif; font-weight: 700; font-size: 1.15rem; line-height: 1.15; margin-top: .2rem; }
+
+  section { padding: clamp(3rem, 7vw, 6rem) 0; }
+  #services { padding-top: clamp(2.5rem, 4vw, 3.25rem); }
+  .intro { max-width: 46rem; }
+  .intro p { margin-top: .9rem; font-size: 1.12rem; }
+
+  /* Timber harvesting: the one real sequence on the page, so it gets numbers. */
+  .harvest { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 4rem); margin-top: 2.5rem; align-items: start; }
+  .harvest img { border-radius: .25rem; aspect-ratio: 1; object-fit: cover; width: 100%; }
+  .steps { list-style: none; padding: 0; counter-reset: s; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 2.6rem 1fr; gap: .9rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+  .steps li:last-child { border-bottom: 1px solid var(--line); }
+  .steps li::before { content: counter(s); font-family: "Bitter", serif; font-weight: 700; font-size: 1.6rem; line-height: 1; color: var(--red); }
+  .steps b { display: block; font-weight: 700; }
+  .harvest .actions { margin-top: 1.5rem; }
+
+  .jobs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: clamp(3rem, 6vw, 4.5rem); }
+  .job img { border-radius: .25rem; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; margin-bottom: 1rem; }
+  .job p { margin-top: .5rem; }
+  .job .tags { font-size: .95rem; color: var(--moss); margin-top: .6rem; }
+  .job a.mail { display: inline-block; margin-top: .7rem; font-weight: 700; color: var(--red); }
+  .loads { background: var(--hemlock); color: #e9ede4; border-radius: .25rem; padding: 1.4rem 1.4rem 1.5rem; aspect-ratio: 4 / 3; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 1rem; }
+  .loads .big { font-family: "Bitter", serif; font-weight: 800; font-size: clamp(3.4rem, 7vw, 5rem); line-height: .9; letter-spacing: -0.03em; }
+  .loads .big + span { margin-top: .5rem; font-size: 1.05rem; color: #c8d2c0; }
+
+  /* The Landscape Center: the part of Metzler a homeowner walks into. */
+  .lc { background: var(--paper); }
+  .lc-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+  .lc-photos { display: grid; grid-template-columns: 3fr 2fr; gap: .75rem; margin-top: 2rem; }
+  .lc-photos img { border-radius: .25rem; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+  .hours { background: var(--fog); border-radius: .3rem; padding: 1.4rem 1.5rem 1.5rem; }
+  .hours h3 { font-size: 1.2rem; }
+  .hours table { border-collapse: collapse; width: 100%; margin-top: .75rem; font-size: 1.02rem; }
+  .hours th { text-align: left; font-weight: 600; padding: .45rem 0; }
+  .hours td { text-align: right; padding: .45rem 0; }
+  .hours tr + tr { border-top: 1px solid var(--line); }
+  .hours tr.today th, .hours tr.today td { font-weight: 800; color: var(--red-deep); }
+  .hours .lc-status { margin-top: .9rem; }
+  .hours .btn { width: 100%; margin-top: 1.1rem; }
+  .hours .links { margin-top: 1rem; font-size: .98rem; display: grid; gap: .35rem; }
+  .hours .links a { font-weight: 600; }
+  .stock { columns: 2; column-gap: 2rem; margin-top: 1.4rem; padding-left: 1.1rem; }
+  .stock li { padding: .15rem 0; break-inside: avoid; }
+  .stock li::marker { color: var(--red); }
+
+  .mulch { margin-top: clamp(3rem, 6vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+  .mulch p { margin-top: .7rem; }
+  .swatches { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+  .swatches img { border-radius: 50%; aspect-ratio: 1; object-fit: cover; width: 100%; }
+  .swatches span { display: block; text-align: center; font-size: .9rem; line-height: 1.2; margin-top: .4rem; font-weight: 600; }
+
+  .fire { margin-top: clamp(3rem, 6vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+  .fire img { border-radius: .25rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+  .fire p { margin-top: .7rem; }
+  .cuts { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; list-style: none; padding: 0; }
+  .cuts li { border: 1.5px solid var(--bark); color: var(--bark); border-radius: 2rem; padding: .2rem .8rem; font-weight: 600; font-size: .95rem; }
+  .fire .actions { margin-top: 1.3rem; }
+
+  .bulk { margin-top: clamp(2.5rem, 5vw, 3.5rem); border-top: 2px solid var(--hemlock); padding-top: 1.4rem; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(1rem, 4vw, 3.5rem); }
+  .bulk h3 { font-size: 1.25rem; }
+
+  /* Biochar: the char itself sets the color. */
+  .char { background: var(--char); color: #ece6de; }
+  .char-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(1.5rem, 5vw, 4.5rem); align-items: start; }
+  .char p { margin-top: .9rem; color: #d6cec4; }
+  .char h2 { color: #fff; }
+  .chars { list-style: none; padding: 0; margin-top: .5rem; }
+  .chars li { padding: 1rem 0; border-top: 1px solid #4a423b; }
+  .chars li:last-child { border-bottom: 1px solid #4a423b; }
+  .chars b { font-family: "Bitter", serif; font-weight: 700; font-size: 1.3rem; color: #fff; display: block; }
+  .chars span { color: #c9c0b5; }
+  .char .btn { margin-top: 1.6rem; background: #ece6de; color: var(--char); box-shadow: none; }
+  .char .btn:hover { background: #fff; }
+
+  /* Since 1986: one ring for every year, drawn from the pith out. */
+  .rings-sec { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 5vw, 4.5rem); align-items: center; }
+  .cookie { position: relative; aspect-ratio: 1; max-width: 30rem; width: 100%; }
+  .cookie svg { width: 100%; height: 100%; overflow: visible; }
+  .story p { margin-top: .9rem; }
+  .story .quote { font-family: "Bitter", serif; font-weight: 600; font-size: 1.3rem; line-height: 1.3; margin-top: .8rem; color: var(--red-deep); }
+  .then { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.6rem; }
+  .then img { border-radius: .25rem; aspect-ratio: 3 / 2; object-fit: cover; width: 100%; filter: saturate(.9); }
+  .then figcaption { font-size: .85rem; color: var(--moss); margin-top: .35rem; }
+  .then figure { margin: 0; }
+
+  .safety { margin-top: clamp(3rem, 6vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(1rem, 4vw, 3.5rem); border-top: 2px solid var(--hemlock); padding-top: 1.4rem; }
+  .safety ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+  .safety li { background: var(--paper); border-radius: .25rem; padding: .3rem .7rem; font-weight: 600; font-size: .95rem; }
+
+  /* Pulpwood: for the loggers who bring wood in. */
+  .pulp { background: var(--fog-2); }
+  .pulp-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+  .pulp img { border-radius: .25rem; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .pulp .facts { list-style: none; padding: 0; margin-top: 1.2rem; }
+  .pulp .facts li { padding: .6rem 0; border-top: 1px solid #b9c0b1; }
+  .pulp .facts li:last-child { border-bottom: 1px solid #b9c0b1; }
+  .specs { margin-top: 1.4rem; }
+  .specs summary { cursor: pointer; font-weight: 700; padding: .6rem 0; list-style: none; display: flex; justify-content: space-between; border-bottom: 2px solid var(--hemlock); }
+  .specs summary::-webkit-details-marker { display: none; }
+  .specs summary::after { content: "+"; font-size: 1.3rem; line-height: 1; }
+  .specs[open] summary::after { content: "\2013"; }
+  .specs table { border-collapse: collapse; width: 100%; margin-top: .6rem; font-size: .98rem; }
+  .specs th, .specs td { text-align: left; padding: .45rem .5rem .45rem 0; border-bottom: 1px solid #b9c0b1; vertical-align: top; }
+  .specs th { font-weight: 700; }
+  .specs .note { font-size: .95rem; margin-top: .8rem; }
+
+  .crew { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+  .crew img { border-radius: .25rem; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 70%; }
+  .crew p { margin-top: .8rem; }
+  .crew .actions { margin-top: 1.2rem; }
+
+  /* Contact: the right inbox for each kind of job. */
+  .contact { background: var(--hemlock); color: #e9ede4; }
+  .contact h2 { color: #fff; }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2.5rem); margin-top: 2rem; }
+  .desk { border-top: 2px solid #5a6b5c; padding-top: 1rem; }
+  .desk h3 { font-size: 1.2rem; color: #fff; }
+  .desk p { margin-top: .4rem; color: #c8d2c0; font-size: 1rem; }
+  .desk a { display: block; font-weight: 700; margin-top: .45rem; color: #fff; text-underline-offset: 3px; }
+  .desk a.ph { font-size: 1.3rem; font-family: "Bitter", serif; }
+  .where { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; color: #c8d2c0; }
+  .where address { font-style: normal; color: #e9ede4; }
+  .where a { color: #fff; font-weight: 600; }
+
+  footer { background: var(--char); color: #c9c0b5; font-size: .9rem; padding: 1.4rem var(--pad) 1.6rem; text-align: center; }
+  footer p { margin: 0 auto; max-width: 60rem; }
+  footer a { color: #fff; }
+
+  .dock { display: none; }
+
+  @media (max-width: 1060px) {
+    .doors ul { grid-template-columns: repeat(3, 1fr); }
+    .doors li:nth-child(4) { border-left: 0; }
+    .doors li:nth-child(4) a { padding-left: 0; }
+    .doors li:nth-child(n + 4) { border-top: 1px solid #3b4a3f; }
+  }
+
+  @media (max-width: 900px) {
+    header nav .hide-m { display: none; }
+    .mark { font-size: 1.2rem; }
+    .hero { grid-template-columns: 1fr; padding-top: 0; gap: 1rem; }
+    .shot { order: -1; margin: 0 calc(-1 * var(--pad)); }
+    .shot img { aspect-ratio: 39 / 19; border-radius: 0; object-position: 50% 40%; }
+    .shot figcaption { padding: 0 var(--pad); }
+    .lede { font-size: 1.08rem; margin-top: .7rem; }
+    .actions { margin-top: 1.1rem; }
+    .hero .actions .btn { flex: 1 1 auto; }
+    .lc-status { margin-top: .8rem; font-size: .95rem; }
+
+    .doors ul { grid-template-columns: 1fr; }
+    .doors li + li { border-left: 0; border-top: 1px solid #3b4a3f; }
+    .doors a { padding: .85rem 0; display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 0 1rem; }
+    .doors .what { margin-top: 0; grid-row: 1; grid-column: 1; }
+    .doors .who { grid-row: 2; grid-column: 1; }
+
+    .harvest, .jobs, .lc-grid, .mulch, .fire, .bulk, .char-grid, .rings-sec, .safety, .pulp-grid, .crew, .contact-grid { grid-template-columns: 1fr; }
+    .harvest img { aspect-ratio: 3 / 2; }
+    .pulp img { aspect-ratio: 3 / 2; }
+    .swatches { grid-template-columns: repeat(4, 1fr); gap: .6rem .5rem; }
+    .swatches span { font-size: .8rem; }
+    .stock { column-gap: 1rem; font-size: .95rem; padding-left: 1rem; }
+    .cookie { max-width: 22rem; margin: 0 auto; }
+    .loads { aspect-ratio: auto; min-height: 11rem; }
+
+    .dock { display: flex; position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 5; gap: .5rem;
+      opacity: 0; transform: translateY(1rem); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+    .dock .btn { flex: 1; box-shadow: inset 0 -3px 0 var(--red-deep), 0 8px 24px rgba(0, 0, 0, .25); padding: .8rem .6rem; font-size: 1rem; }
+    .dock .btn.alt { background: var(--hemlock); box-shadow: 0 8px 24px rgba(0, 0, 0, .25); }
+    .dock.on { opacity: 1; transform: none; pointer-events: auto; }
+    footer { padding-bottom: 5.5rem; }
+  }
+  @media (max-width: 420px) {
+    .swatches { grid-template-columns: repeat(4, 1fr); }
+    h1 { font-size: 2.05rem; }
+  }
+
+  .bark { fill: none; stroke: #4a3324; stroke-width: 16; stroke-linejoin: round; }
+  .face { fill: url(#wood); }
+  .ring { fill: none; stroke: #9a6a3f; stroke-width: 1.3; stroke-opacity: .75; }
+  .ring.late { stroke: #8a5c35; }
+  .ring.mark-r { stroke: var(--red); stroke-width: 2.6; stroke-opacity: 1; }
+  .ruler text { paint-order: stroke; stroke: #e6c393; stroke-width: 4px; stroke-linejoin: round; }
+  .js .ring { opacity: 0; transition: opacity .25s ease; }
+  .js .cookie.in .ring { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .dock, .doors a { transition: none; }
+    .js .ring { opacity: 1; transition: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="demo">Unofficial demo built by MHS Tecnologia for Metzler Forest Products. Not affiliated with or endorsed by Metzler Forest Products.</div>
+
+  <header class="wrap">
+    <a class="mark" href="#main" translate="no">Metzler Forest Products<small>Reedsville, Pennsylvania · since 1986</small></a>
+    <nav aria-label="Main">
+      <a class="hide-m" href="#services">Services</a>
+      <a class="hide-m" href="#landscape">Landscape Center</a>
+      <a class="hide-m" href="#biochar">Biochar</a>
+      <a class="hide-m" href="#pulpwood">Sell pulpwood</a>
+      <a class="hide-m" href="#contact">Contact</a>
+      <a class="btn small" href="tel:+17176672924" aria-label="Call Metzler at 717-667-2924"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="hero wrap">
+      <div>
+        <h1>From standing timber to the mulch on your beds.</h1>
+        <p class="lede">Since 1986, Metzler has harvested timber, cleared land, and chipped and hauled wood across the Mid Atlantic. At home in Reedsville, the Landscape Center sells the mulch, stone, plants and firewood.</p>
+        <div class="actions">
+          <a class="btn" data-cta href="tel:+17176672924"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">Call 717-667-2924</span></a>
+          <a class="btn quiet" href="mailto:info@metzlerfp.com?subject=Project%20inquiry&amp;body=Hi%20Metzler%20team%2C%0A%0AWhat%20I%20need%20help%20with%3A%20%0AWhere%20the%20job%20is%20(town%20or%20county)%3A%20%0ABest%20phone%20number%3A%20%0A">Email the office</a>
+        </div>
+        <p class="lc-status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Landscape Center: Mon–Fri 8–5, Sat 8–1.</span> <a href="#landscape">Hours and products</a></p>
+      </div>
+      <figure class="shot">
+        <img src="img/yard-640.webp" srcset="img/yard-640.webp 640w, img/yard-800.webp 800w, img/yard-960.webp 960w, img/yard-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 640px" width="1400" height="1050" alt="Aerial view of the Metzler yard in a misty valley: mulch piles, log trucks, a white storage dome and red-roofed buildings beside farm fields" fetchpriority="high">
+        <figcaption>The Metzler yard at 26 Timber Lane, from the air.</figcaption>
+      </figure>
+    </div>
+
+    <nav class="doors" aria-label="What brings you here">
+      <ul class="wrap">
+        <li><a href="#harvest"><span class="who">I own woodland</span><span class="what">Timber harvesting</span></a></li>
+        <li><a href="#clearing"><span class="who">I have a site to clear</span><span class="what">Land clearing</span></a></li>
+        <li><a href="#chipping"><span class="who">I run a mill</span><span class="what">Chipping and trucking</span></a></li>
+        <li><a href="#landscape"><span class="who">I'm working on my yard</span><span class="what">Mulch, stone and firewood</span></a></li>
+        <li><a href="#pulpwood"><span class="who">I have wood to sell</span><span class="what">Pulpwood purchasing</span></a></li>
+      </ul>
+    </nav>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="intro">
+          <h2>Forest work for landowners, builders and mills</h2>
+          <p>Over 30 years of partnering with landowners and companies throughout the Mid Atlantic region, with Metzler's own foresters, operators, drivers and trucks.</p>
+        </div>
+
+        <div class="harvest" id="harvest">
+          <img src="img/harvest-600.webp" srcset="img/harvest-600.webp 600w, img/harvest-800.webp 800w, img/harvest-1000.webp 1000w" sizes="(max-width: 900px) calc(100vw - 2rem), 500px" width="1000" height="1000" alt="A red tracked harvester cutting a tree in the woods, with felled logs at its base" loading="lazy">
+          <div>
+            <h3>Timber harvesting</h3>
+            <p class="muted" style="margin-top:.4rem">For landowners who want to monetize the timber on their property, Metzler's professional foresters build a plan around your goals, for value, wildlife and recreation.</p>
+            <ol class="steps">
+              <li><span><b>Meet on site</b>Talk through your goals for the timber and how the process works.</span></li>
+              <li><span><b>Cruise the land</b>Foresters measure the species, health and quantity of the timber.</span></li>
+              <li><span><b>Plan the harvest</b>A plan for a healthier forest and better road access, using Metzler's market relationships to maximize your return.</span></li>
+              <li><span><b>Retire the job site</b>Every landing is seeded and the property returned to its pre-harvesting state, or better.</span></li>
+            </ol>
+            <div class="actions">
+              <a class="btn" href="mailto:info@metzlerfp.com?subject=Timber%20harvesting%3A%20on-site%20appointment&amp;body=Hi%20Metzler%20team%2C%0A%0AI%27d%20like%20to%20set%20up%20an%20on-site%20meeting%20about%20my%20timber.%0A%0AProperty%20location%3A%20%0AApproximate%20acreage%3A%20%0AMy%20goals%20for%20the%20timber%3A%20%0ABest%20phone%20number%3A%20%0A">Request an on-site meeting</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="jobs">
+          <article class="job" id="clearing">
+            <img src="img/clearing-600.webp" srcset="img/clearing-600.webp 600w, img/clearing-800.webp 800w, img/clearing-1000.webp 1000w" sizes="(max-width: 900px) calc(100vw - 2rem), 380px" width="1000" height="1000" alt="A yellow Metzler excavator clearing brush beside a highway" loading="lazy">
+            <h3>Land clearing</h3>
+            <p>Clearing and grubbing on any site, regardless of size or terrain, with specialized machinery and experienced operators. Crews work to your timetable, and Metzler trucks haul the wood waste away.</p>
+            <p class="tags">Highways, apartment complexes, gas well pads, farm fields, runways, golf courses.</p>
+            <a class="mail" href="mailto:estimating@metzlerfp.com?subject=Land%20clearing%20estimate&amp;body=Hi%20Metzler%20estimating%20team%2C%0A%0AProject%20type%3A%20%0ASite%20location%3A%20%0AApproximate%20acreage%3A%20%0ATimetable%3A%20%0ABest%20phone%20number%3A%20%0A">estimating@metzlerfp.com</a>
+          </article>
+          <article class="job" id="chipping">
+            <img src="img/chipper-480.webp" srcset="img/chipper-480.webp 480w, img/chipper-715.webp 715w" sizes="(max-width: 900px) calc(100vw - 2rem), 380px" width="715" height="536" alt="A Metzler worker in an orange hard hat and safety glasses at work, with piles of wood chips and a green ridge behind him" loading="lazy">
+            <h3>Contract chipping</h3>
+            <p>A long-term chip mill or wood yard operator, or short-term capacity to supplement your own: turnkey wood yard management, from receiving wood deliveries to delivering the finished chips to your mill.</p>
+            <p class="tags">More than 30 years supplying and operating within the paper industry.</p>
+          </article>
+          <article class="job" id="trucking">
+            <div class="loads"><span class="big num">500+</span><span>loads of wood chips and other forest products, every week, across the Mid Atlantic.</span></div>
+            <h3>Transportation</h3>
+            <p>From a few extra loads a week for a logging contractor to a steady trucking partner for a mill. Pulpwood, logs, heavy equipment, sawdust, bark and mulch.</p>
+            <p class="tags">Chip vans, walking floor trailers, log trailers, flatbeds and low boys.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lc" id="landscape">
+      <div class="wrap">
+        <div class="lc-grid">
+          <div>
+            <h2>The Landscape Center, open six days a week</h2>
+            <p style="margin-top:.9rem;font-size:1.12rem">Annuals, perennials, trees, shrubs and evergreens, with the topsoil, compost, mulch, stone and sand to put them in. Do it yourself, or have the team help with estimating, loading and delivery.</p>
+            <ul class="stock">
+              <li>Mulch, topsoil and compost</li>
+              <li>Firewood</li>
+              <li>Decorative stones</li>
+              <li>Limestone and sand</li>
+              <li>Hardscape products</li>
+              <li>Trees, shrubs and perennials</li>
+              <li>Fountains, pottery and statuary</li>
+              <li>Biochar soil products</li>
+            </ul>
+            <div class="lc-photos">
+              <img src="img/lc-front-600.webp" srcset="img/lc-front-600.webp 600w, img/lc-front-1000.webp 1000w" sizes="(max-width: 900px) 60vw, 430px" width="1000" height="642" alt="The red-roofed Landscape Center building with flowering plants, pots and statuary out front" loading="lazy">
+              <img src="img/trees-600.webp" srcset="img/trees-600.webp 600w, img/trees-1000.webp 1000w" sizes="(max-width: 900px) 40vw, 290px" width="1000" height="750" alt="Balled evergreen and ornamental trees lined up in the nursery yard" loading="lazy">
+            </div>
+          </div>
+          <aside class="hours" aria-labelledby="hours-h">
+            <h3 id="hours-h">Landscape Center hours</h3>
+            <table>
+              <tr data-days="1,2,3,4,5"><th scope="row">Monday to Friday</th><td>8 am – 5 pm</td></tr>
+              <tr data-days="6"><th scope="row">Saturday</th><td>8 am – 1 pm</td></tr>
+              <tr data-days="0"><th scope="row">Sunday</th><td>Closed</td></tr>
+            </table>
+            <p class="lc-status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Hours as posted on metzlerforestproducts.com.</span></p>
+            <a class="btn" href="tel:+17176673600"><span class="num">Call 717-667-3600</span></a>
+            <div class="links">
+              <a href="mailto:landscapecenter@metzlerfp.com?subject=Landscape%20Center%20question&amp;body=Hi%20Landscape%20Center%20team%2C%0A%0AProduct(s)%3A%20%0AHow%20much%20(scoops%2C%20bags%20or%20buckets)%3A%20%0APickup%20or%20delivery%3A%20%0ADelivery%20address%2C%20if%20delivered%3A%20%0ABest%20phone%20number%3A%20%0A">landscapecenter@metzlerfp.com</a>
+              <a href="https://www.metzlerforestproducts.com/landscape-center/current-sales-and-specials/">Current prices and specials</a>
+              <a href="https://www.metzlerforestproducts.com/wp-content/uploads/2026/09/Availability_9_11_26.pdf">Plant availability list (PDF)</a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=26+Timber+Lane+Reedsville+PA+17084">Directions to 26 Timber Lane</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="mulch">
+          <div>
+            <h3>Mulch made from natural fiber</h3>
+            <p>No recycled wood, pallets or demolition debris, and the same consistency from the first load of the season to the last.</p>
+            <p><strong>Order by 3 pm and it is delivered the next business day.</strong> Or pick it up by the scoop, half scoop or bag.</p>
+          </div>
+          <ul class="swatches" aria-label="Mulch styles">
+            <li><img src="img/m-triple-320.webp" width="320" height="213" alt="" loading="lazy"><span>Triple hardwood</span></li>
+            <li><img src="img/m-single-320.webp" width="320" height="213" alt="" loading="lazy"><span>Single hardwood</span></li>
+            <li><img src="img/m-hemlock-320.webp" width="320" height="213" alt="" loading="lazy"><span>Hemlock</span></li>
+            <li><img src="img/m-trubark-320.webp" width="320" height="213" alt="" loading="lazy"><span>Tru-Bark Black</span></li>
+            <li><img src="img/m-black-320.webp" width="320" height="213" alt="" loading="lazy"><span>Black</span></li>
+            <li><img src="img/m-brown-320.webp" width="320" height="213" alt="" loading="lazy"><span>Brown</span></li>
+            <li><img src="img/m-red-320.webp" width="320" height="213" alt="" loading="lazy"><span>Red</span></li>
+            <li><img src="img/m-mushroom-320.webp" width="320" height="213" alt="" loading="lazy"><span>Mushroom compost</span></li>
+          </ul>
+        </div>
+
+        <div class="fire" id="firewood">
+          <img src="img/firewood-600.webp" srcset="img/firewood-600.webp 600w, img/firewood-1000.webp 1000w" sizes="(max-width: 900px) calc(100vw - 2rem), 600px" width="1000" height="667" alt="A large pile of split hardwood firewood in front of a red building" loading="lazy">
+          <div>
+            <h3>Pennsylvania hardwood firewood</h3>
+            <p>Cut and split, delivered to your home or cabin, and left where you want it so you can stack it yourself. Choose unseasoned, or kiln dried and ready to burn in a wood stove.</p>
+            <ul class="cuts" aria-label="Firewood options">
+              <li>12″</li><li>16″</li><li>20″</li><li>16″ kiln dried</li><li>Chunk wood</li><li>20″ rounds</li>
+            </ul>
+            <div class="actions">
+              <a class="btn" href="tel:+17176673600"><span class="num">Order: 717-667-3600</span></a>
+              <a class="btn quiet" href="https://www.metzlerforestproducts.com/landscape-center/firewood/">Firewood prices</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bulk">
+          <h3>Contractors: buy it by the load</h3>
+          <p>Firewood, natural-fiber mulch, premium topsoil, compost, certified playground material and aged erosion control filter sock material, for commercial projects of every size. Pick up in Reedsville or have it delivered to your job site.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="char" id="biochar">
+      <div class="wrap char-grid">
+        <div>
+          <h2>Metzler now makes high-carbon biochar</h2>
+          <p>Making biochar at Metzler sequesters carbon and cuts the propane used at the firewood heat-treating facility. In the ground, biochar helps soil hold water and nutrients; in a barn or coop, it reduces moisture and ammonia.</p>
+          <p>It is made for Central Pennsylvania's soils, to help farmers and growers build healthier soil.</p>
+          <a class="btn" href="https://www.metzlerbiochar.com/">Visit metzlerbiochar.com</a>
+        </div>
+        <ul class="chars" aria-label="Biochar products">
+          <li><b>PureChar</b><span>Straight biochar, also sold in bulk supersacks.</span></li>
+          <li><b>EarthChar</b><span>A biochar soil product.</span></li>
+          <li><b>GrowChar</b><span>A biochar compost product.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="wrap rings-sec">
+        <div class="cookie" data-rings>
+          <svg viewBox="-230 -230 460 460" role="img" aria-labelledby="rings-t">
+            <title id="rings-t">A tree cross-section with 40 growth rings, one for each year from 1986 to 2026. A ring near the center marks the early 1990s.</title>
+            <defs>
+              <radialGradient id="wood" cx="0" cy="0" r="220" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#c9935f"/>
+                <stop offset=".35" stop-color="#ddb27d"/>
+                <stop offset=".8" stop-color="#e8c595"/>
+                <stop offset="1" stop-color="#d6a873"/>
+              </radialGradient>
+            </defs>
+            <g data-ring-g></g>
+            <g class="ruler" font-family="Source Sans 3, sans-serif" font-size="16" fill="#1f2b23" font-weight="700">
+              <line x1="0" y1="0" x2="214" y2="0" stroke="#1f2b23" stroke-width="2"/>
+              <circle r="5" fill="#1f2b23"/>
+              <line x1="45" y1="-7" x2="45" y2="7" stroke="#8f1c14" stroke-width="3"/>
+              <line x1="214" y1="-9" x2="214" y2="9" stroke="#1f2b23" stroke-width="3"/>
+              <text x="8" y="-12">1986</text>
+              <text x="40" y="28" fill="#8f1c14">early 1990s</text>
+              <text x="208" y="-14" text-anchor="end">2026</text>
+            </g>
+          </svg>
+        </div>
+        <div class="story">
+          <h2>Do it once, do it right.</h2>
+          <p class="quote">Metzler's promise since 1986. That is forty growth rings, one for every year.</p>
+          <p>In 1986, Alan Metzler went to work with a pickup truck, a John Deere 640 cable skidder, a strong work ethic and a commitment to integrity. In the early 1990s, Metzler pioneered in-woods chipping in Pennsylvania, which led to land clearing, excavation, trucking, and mulch and firewood production.</p>
+          <p>Today Metzler employs more than 75 full-time people.</p>
+          <div class="then">
+            <figure><img src="img/hist-1-480.webp" srcset="img/hist-1-480.webp 480w, img/hist-1-800.webp 800w" sizes="(max-width: 900px) 45vw, 300px" width="800" height="534" alt="An old faded photo of a felled tree and an early work truck in the snowy woods" loading="lazy"><figcaption>From the Metzler history page</figcaption></figure>
+            <figure><img src="img/hist-2-480.webp" srcset="img/hist-2-480.webp 480w, img/hist-2-800.webp 800w" sizes="(max-width: 900px) 45vw, 300px" width="800" height="534" alt="An older red Metzler log truck loaded with logs, parked on grass" loading="lazy"><figcaption>An early Metzler log truck</figcaption></figure>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="safety">
+          <h3>Safety first, and foremost</h3>
+          <div>
+            <p>Staff and crews are regularly trained and certified in industry programs, and the safety record is verified by contractor certification programs.</p>
+            <ul aria-label="Training programs and contractor certifications">
+              <li>Sustainable Forestry Initiative (SFI)</li><li>MSHA</li><li>OSHA</li><li>First Aid</li><li>CPR</li><li>ISNetworld</li><li>Avetta</li><li>BROWZ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pulp" id="pulpwood">
+      <div class="wrap pulp-grid">
+        <img src="img/logs-600.webp" srcset="img/logs-600.webp 600w, img/logs-1000.webp 1000w" sizes="(max-width: 900px) calc(100vw - 2rem), 500px" width="1000" height="1000" alt="Hardwood pulpwood logs in the grapple of a loader at the Reedsville yard" loading="lazy">
+        <div>
+          <h2>Bringing in pulpwood?</h2>
+          <p style="margin-top:.9rem">Metzler buys pulpwood and firewood poles at the Reedsville yard. Call 717-667-2924 for current species and pricing, and call before your first load.</p>
+          <ul class="facts">
+            <li>Unattended scale for pulpwood deliveries</li>
+            <li>Trained staff and quick truck turnaround</li>
+            <li>Deliveries Monday to Friday, 6:30 am – 5 pm, no weekends</li>
+            <li>Loads hauled Monday to Friday are paid the following Monday</li>
+          </ul>
+          <details class="specs" open>
+            <summary>Wood specifications</summary>
+            <table>
+              <tr><th scope="col">Wood</th><th scope="col">Length</th><th scope="col">Diameter</th></tr>
+              <tr><td>Hardwood pulpwood <span class="muted">(no walnut)</span></td><td>12′–25′</td><td>4″–20″</td></tr>
+              <tr><td>Hardwood firewood <span class="muted">(no poplar, basswood, aspen or topwood)</span></td><td>12′–25′</td><td>8″–16″</td></tr>
+              <tr><td>Pine pulpwood</td><td>12′–25′</td><td>4″–20″</td></tr>
+              <tr><td>Hemlock pulpwood</td><td>12′–25′</td><td>4″–20″</td></tr>
+            </table>
+            <p class="note">All wood reasonably free of mud, properly trimmed, reasonably straight, not fire damaged or charred, and free of excessive punk. Drivers wear a hard hat in the log yard and sweep off trucks before leaving.</p>
+          </details>
+          <div class="actions">
+            <a class="btn" href="tel:+17176672924"><span class="num">Call 717-667-2924</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap crew">
+        <img src="img/grinders-600.webp" srcset="img/grinders-600.webp 600w, img/grinders-1000.webp 1000w, img/grinders-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 640px" width="1400" height="1139" alt="Three orange horizontal grinders working at the foot of a huge pile of ground wood" loading="lazy">
+        <div>
+          <h2>Build your career at Metzler</h2>
+          <p>Metzler is looking for people who take pride in their work and never settle for less than a job well done. A team-oriented company focused on safety and quality, with competitive salaries and benefits.</p>
+          <div class="actions">
+            <a class="btn quiet" href="https://www.metzlerforestproducts.com/careers/">See open positions</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2>Reach the right desk</h2>
+        <div class="contact-grid">
+          <div class="desk">
+            <h3>Office, timber, chipping and trucking</h3>
+            <a class="ph num" href="tel:+17176672924">717-667-2924</a>
+            <a href="mailto:info@metzlerfp.com?subject=Project%20inquiry&amp;body=Hi%20Metzler%20team%2C%0A%0AWhat%20I%20need%20help%20with%3A%20%0AWhere%20the%20job%20is%20(town%20or%20county)%3A%20%0ABest%20phone%20number%3A%20%0A">info@metzlerfp.com</a>
+          </div>
+          <div class="desk">
+            <h3>Land clearing estimates</h3>
+            <a class="ph num" href="tel:+17176672924">717-667-2924</a>
+            <a href="mailto:estimating@metzlerfp.com?subject=Land%20clearing%20estimate&amp;body=Hi%20Metzler%20estimating%20team%2C%0A%0AProject%20type%3A%20%0ASite%20location%3A%20%0AApproximate%20acreage%3A%20%0ATimetable%3A%20%0ABest%20phone%20number%3A%20%0A">estimating@metzlerfp.com</a>
+          </div>
+          <div class="desk">
+            <h3>Landscape Center and firewood</h3>
+            <a class="ph num" href="tel:+17176673600">717-667-3600</a>
+            <a href="mailto:landscapecenter@metzlerfp.com?subject=Landscape%20Center%20question&amp;body=Hi%20Landscape%20Center%20team%2C%0A%0AProduct(s)%3A%20%0AHow%20much%20(scoops%2C%20bags%20or%20buckets)%3A%20%0APickup%20or%20delivery%3A%20%0ADelivery%20address%2C%20if%20delivered%3A%20%0ABest%20phone%20number%3A%20%0A">landscapecenter@metzlerfp.com</a>
+            <p>Mon–Fri 8 am – 5 pm, Sat 8 am – 1 pm</p>
+          </div>
+        </div>
+        <div class="where">
+          <address translate="no">Metzler Forest Products, LLC · 26 Timber Lane, Reedsville, PA 17084</address>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=26+Timber+Lane+Reedsville+PA+17084">Get directions</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="dock">
+    <a class="btn" href="tel:+17176672924">Call office</a>
+    <a class="btn alt" href="tel:+17176673600">Landscape Center</a>
+  </div>
+
+  <footer>
+    <p>Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Metzler Forest Products. Content and photos come from Metzler Forest Products' public websites. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </footer>
+
+  <script>
+    // Landscape Center open/closed, from the hours posted on their site, in Reedsville's time zone.
+    (function () {
+      const hours = { 1: [8, 17], 2: [8, 17], 3: [8, 17], 4: [8, 17], 5: [8, 17], 6: [8, 13] }
+      const names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      const fmt = (h) => (h === 12 ? '12 pm' : h > 12 ? (h - 12) + ' pm' : h + ' am')
+      const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date())
+      const get = (t) => parts.find((p) => p.type === t).value
+      const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'))
+      const now = +get('hour') + get('minute') / 60
+      const today = hours[day]
+      let open = false, text
+      if (today && now >= today[0] && now < today[1]) { open = true; text = 'Landscape Center is open now, until ' + fmt(today[1]) + '.' }
+      else {
+        let d = day
+        if (today && now < today[0]) text = 'Landscape Center opens today at ' + fmt(today[0]) + '.'
+        else {
+          do { d = (d + 1) % 7 } while (!hours[d])
+          text = 'Landscape Center is closed now. Opens ' + (d === (day + 1) % 7 ? 'tomorrow' : names[d]) + ' at ' + fmt(hours[d][0]) + '.'
+        }
+      }
+      document.querySelectorAll('[data-status]').forEach((el) => {
+        el.classList.add(open ? 'open' : 'closed')
+        el.querySelector('[data-status-text]').textContent = text
+      })
+      document.querySelectorAll('tr[data-days]').forEach((tr) => { if (tr.dataset.days.split(',').includes(String(day))) tr.classList.add('today') })
+    })()
+
+    // Forty rings, one per year since 1986. Slightly irregular, like a real cookie cut from a log.
+    ;(function () {
+      const g = document.querySelector('[data-ring-g]')
+      const NS = 'http://www.w3.org/2000/svg'
+      const R = 214, N = 40
+      let seed = 7
+      const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647)
+      const wob = Array.from({ length: 5 }, () => [rnd() * 2 * Math.PI, 0.5 + rnd()])
+
+      for (let i = 1; i <= N; i++) {
+        const r = R * Math.pow(i / N, 0.82)
+        let d = ''
+        for (let k = 0; k <= 72; k++) {
+          const a = (k / 72) * 2 * Math.PI
+          const w = wob.reduce((s, [p, m], j) => s + Math.sin(a * (j + 2) + p) * m, 0) * (0.35 + r * 0.007)
+          const x = Math.cos(a) * (r + w), y = Math.sin(a) * (r + w) * 0.97
+          d += (k ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1)
+        }
+        const p = document.createElementNS(NS, 'path')
+        p.setAttribute('d', d + 'Z')
+        p.setAttribute('class', 'ring' + (i === 6 ? ' mark-r' : i === N ? ' mark-r' : i > 30 ? ' late' : ''))
+        p.style.transitionDelay = (i * 28) + 'ms'
+        g.appendChild(p)
+
+      }
+      const outer = g.lastChild.getAttribute('d')
+      const bark = document.createElementNS(NS, 'path'); bark.setAttribute('d', outer); bark.setAttribute('class', 'bark')
+      const face = document.createElementNS(NS, 'path'); face.setAttribute('d', outer); face.setAttribute('class', 'face')
+      g.prepend(face); g.prepend(bark)
+      const cookie = document.querySelector('[data-rings]')
+      if (!('IntersectionObserver' in window)) return cookie.classList.add('in')
+      new IntersectionObserver(([e], o) => { if (e.isIntersecting) { cookie.classList.add('in'); o.disconnect() } }, { threshold: 0.3 }).observe(cookie)
+    })()
+
+    // Phones: the call buttons dock once the hero is scrolled past; the wood specs start closed.
+    if (matchMedia('(max-width: 900px)').matches) document.querySelector('.specs').open = false
+    const dock = document.querySelector('.dock')
+    new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(document.querySelector('.hero'))
+  </script>
+</body>
+</html>
