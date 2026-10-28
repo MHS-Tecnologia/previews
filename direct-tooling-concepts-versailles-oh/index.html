@@ -64,13 +64,11 @@
   .hero h1 span { display: block; font-weight: 300; color: var(--graphite); }
   .hero .lede { margin-top: 1.5rem; max-width: 31rem; font-size: clamp(1.08rem, 1.5vw, 1.22rem); color: #2f353a; }
   .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1rem; align-items: center; }
-  .pair { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto auto; }
-  .pair figure { position: relative; }
-  .pair .a { grid-column: 1 / 12; grid-row: 1; }
-  .pair .b { grid-column: 6 / 13; grid-row: 2; margin-top: -16%; margin-right: calc(-1 * var(--pad)); border: 6px solid var(--steel); }
-  .pair img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .pair { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 8px; margin-right: calc(-1 * var(--pad)); }
+  .pair img { width: 100%; height: clamp(20rem, 33vw, 30rem); object-fit: cover; }
+  .pair .a img { object-position: 30% 50%; }
+  .pair .b img { object-position: 52% 50%; }
   .pair figcaption { font-size: .82rem; font-weight: 500; color: var(--graphite); padding-top: .45rem; }
-  .pair .b figcaption { padding-left: .1rem; }
 
   /* What they do: two columns, design and build. */
   .work { background: var(--white); border-top: 1px solid var(--steel-2); border-bottom: 1px solid var(--steel-2); }
@@ -97,6 +95,8 @@
   .sheet text.tag { text-anchor: end; fill: var(--dye); font-size: 1.45px; font-weight: 600; font-family: inherit; transition: opacity .2s ease; }
   .sheet .edm text.tag { fill: var(--maroon); }
   .sheet text.tag.s { text-anchor: start; }
+  .sheet .axis.y { text-anchor: end; }
+  .sheet .lead { fill: none; stroke: var(--maroon); stroke-width: 1; vector-effect: non-scaling-stroke; transition: opacity .2s ease; }
   .readout { margin-top: .6rem; min-height: 1.6em; font-weight: 600; font-variant-numeric: tabular-nums; }
   .sheet g.m { opacity: 1; }
   .sheet[data-on] g.m { opacity: .22; }
@@ -108,7 +108,7 @@
   .sheet .key i.d { border-top: 2px dashed var(--maroon); }
   .picker h3 { font-size: 1.15rem; font-stretch: 85%; }
   .picker ul { margin-top: .6rem; }
-  .picker button { width: 100%; display: grid; grid-template-columns: 1fr auto; gap: .2rem 1rem; align-items: baseline; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-bottom: 1px solid var(--steel-2); padding: .6rem .3rem; cursor: pointer; }
+  .picker button { width: 100%; display: grid; grid-template-columns: 1fr auto; gap: .2rem 1rem; align-items: baseline; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-bottom: 1px solid var(--steel-2); padding: .5rem .3rem; cursor: pointer; }
   .picker button:hover, .picker button[aria-pressed="true"] { background: var(--white); }
   .picker button[aria-pressed="true"] { box-shadow: inset 4px 0 0 var(--dye); }
   .picker .edm-b[aria-pressed="true"] { box-shadow: inset 4px 0 0 var(--maroon); }
@@ -194,21 +194,24 @@
     .band { grid-template-columns: 1fr 1fr; }
     .band figure:first-child { grid-column: span 2; grid-row: auto; }
     .band figure:first-child img { aspect-ratio: 43 / 25; }
+    .band figure:nth-child(n+4) { display: none; }
     .line { grid-template-columns: minmax(0, 1fr); border-top: 0; border-left: 2px solid var(--ink); margin-left: 6px; row-gap: 1.4rem; }
     .line li { padding: 0 0 0 1.4rem; }
     .line li::before { top: .35rem; left: -7px; }
     details li { grid-template-columns: minmax(0, 1fr); }
     .dock { display: block; }
     .sheet { position: sticky; top: 0; z-index: 2; margin: 0 calc(-1 * var(--pad)); border-width: 0 0 1px; }
-    .sheet text.tag { display: none; }
+    .sheet text.tag, .sheet .lead { display: none; }
     .sheet[data-on] g.m.on text.tag { display: inline; font-size: 2.6px; }
+    .sheet[data-on] g.m.on .lead { display: inline; }
+    .sheet[data-on] g.edm.on text.tag { font-size: 2.4px; }
+    .sheet .axis { font-size: 2.3px; }
     .sheet .key { font-size: .8rem; gap: .3rem 1rem; }
     .hero .wrap { padding-top: 1rem; }
-    .pair { column-gap: 6px; }
-    .pair .a { grid-column: 1 / 7; }
-    .pair .b { grid-column: 7 / 13; grid-row: 1; margin: 0; border: 0; }
-    .pair img { aspect-ratio: 4 / 5; }
+    .pair { grid-template-columns: 1fr 1fr; gap: 6px; margin-right: 0; }
+    .pair img { height: auto; aspect-ratio: 4 / 5; }
     .pair .a img { object-position: 62% 50%; }
+    .cols .col:first-child img { display: none; }
     .hero h1 { font-size: 3.5rem; }
     header .btn { white-space: nowrap; }
   }
@@ -254,8 +257,8 @@
             <figcaption>Fixture design in 3D CAD</figcaption>
           </figure>
           <figure class="b">
-            <img src="img/floor.webp" width="1400" height="788" alt="A toolmaker in a denim apron assembling a fixture with toggle clamps on the shop floor" loading="lazy">
-            <figcaption>Fixture build on the shop floor</figcaption>
+            <img src="img/mill-vmx42.webp" width="1400" height="788" alt="A machinist in a green shirt running the Hurco VMX42 from its control pendant">
+            <figcaption>Machining on the Hurco VMX42</figcaption>
           </figure>
         </div>
       </div>
@@ -302,22 +305,22 @@
         </div>
         <div class="board">
           <div class="sheet" id="sheet">
-            <svg viewBox="-3 -3 70 41" role="img" aria-labelledby="sheet-title">
+            <svg viewBox="-5 -3 72 47" role="img" aria-labelledby="sheet-title">
               <title id="sheet-title">Machine travel envelopes drawn to scale, from 15.7 by 11.8 inches up to 64 by 34 inches</title>
               <g class="grid" aria-hidden="true" id="grid"></g>
               <g aria-hidden="true">
-                <text class="axis" x="0" y="36.2">0</text><text class="axis" x="31" y="36.2">32″</text><text class="axis" x="62" y="36.2">64″ X</text>
-                <text class="axis" x="-2.6" y="0.5">34″</text><text class="axis" x="-2.6" y="18.5">17″</text>
+                <text class="axis" x="0" y="36.2">0</text><text class="axis" x="32" y="36.2" text-anchor="middle">32″</text><text class="axis" x="64" y="36.2" text-anchor="end">64″ X</text>
+                <text class="axis y" x="-0.8" y="0.6">34″</text><text class="axis y" x="-0.8" y="17.6">17″</text>
               </g>
               <g class="m" data-m="64"><rect x="0" y="0" width="64" height="34"/><text class="tag" x="63.4" y="1.9">VMX64</text></g>
               <g class="m" data-m="6030"><rect x="0" y="4" width="60" height="30"/><text class="tag" x="59.4" y="5.9">VMX 6030i ×2</text></g>
               <g class="m" data-m="50"><rect x="0" y="8" width="50" height="26"/><text class="tag" x="49.4" y="9.9">VMX 50i</text></g>
               <g class="m" data-m="42"><rect x="0" y="10" width="42" height="24"/><text class="tag" x="41.4" y="11.9">VMX42 ×2</text></g>
               <g class="m" data-m="30"><rect x="0" y="14" width="30" height="20"/><text class="tag" x="29.4" y="15.9">VMX30i</text></g>
-              <g class="m" data-m="vm1"><rect x="0" y="20" width="26" height="14"/><text class="tag" x="26" y="19.6">VM1</text></g>
-              <g class="m edm" data-m="2400"><rect x="0" y="18.3" width="23.6" height="15.7"/><text class="tag s" x="0.5" y="19.75">MV2400S</text></g>
-              <g class="m edm" data-m="560"><rect x="0" y="19.8" width="22.1" height="14.2"/><text class="tag s" x="0.5" y="21.45">AL560 SA</text></g>
-              <g class="m edm" data-m="1200"><rect x="0" y="22.2" width="15.7" height="11.8"/><text class="tag s" x="0.5" y="23.75">MV1200S</text></g>
+              <g class="m" data-m="vm1"><rect x="0" y="20" width="26" height="14"/><text class="tag s" x="26.4" y="21.4">VM1</text></g>
+              <g class="m edm" data-m="2400"><rect x="0" y="18.3" width="23.6" height="15.7"/><path class="lead" d="M23.6 34V42.4"/><text class="tag s" x="24.1" y="42.6">MV2400S</text></g>
+              <g class="m edm" data-m="560"><rect x="0" y="19.8" width="22.1" height="14.2"/><path class="lead" d="M22.1 34V40.1"/><text class="tag s" x="22.6" y="40.3">AL560 SA</text></g>
+              <g class="m edm" data-m="1200"><rect x="0" y="22.2" width="15.7" height="11.8"/><path class="lead" d="M15.7 34V37.8"/><text class="tag s" x="16.2" y="38">MV1200S</text></g>
             </svg>
             <p class="key"><span><i></i>Machining center</span><span><i class="d"></i>Wire EDM</span><span>1 square = 1 inch</span></p>
             <p class="readout" id="readout" aria-live="polite">All machines shown</p>
@@ -349,7 +352,7 @@
     </section>
 
     <div class="band" role="group" aria-label="Photos from the shop">
-      <figure><img src="img/mill-vmx42.webp" width="1400" height="788" alt="A machinist in a green shirt running the Hurco VMX42 from its control pendant" loading="lazy"></figure>
+      <figure><img src="img/floor.webp" width="1400" height="788" alt="A toolmaker in a denim apron assembling a fixture with toggle clamps on the shop floor" loading="lazy"></figure>
       <figure><img src="img/edm-mitsubishi.webp" width="1000" height="486" alt="The Mitsubishi wire EDM with the Accutex AL560 beside it" loading="lazy"></figure>
       <figure><img src="img/part-set.webp" width="860" height="500" alt="Five machined steel details laid out on a bench" loading="lazy"></figure>
       <figure><img src="img/edm-cut-wide.webp" width="1400" height="508" alt="Coolant flooding a cutter as a machining center works a large plate" loading="lazy"></figure>
@@ -377,7 +380,7 @@
               <li><b>2007 Hurco VM1</b><span>26 × 14 × 18″, 20-station swing arm, WinMax control</span></li>
             </ul>
           </details>
-          <details open>
+          <details>
             <summary>Wire EDM <small>3</small></summary>
             <ul>
               <li><b>2020 Mitsubishi MV2400S</b><span>23.6 × 15.7 × 12.0″, fully submersible, auto threading</span></li>
@@ -385,7 +388,7 @@
               <li><b>2015 Accutex AL560 SA</b><span>22.1 × 14.2 × 12.0″, fully submersible, auto threading</span></li>
             </ul>
           </details>
-          <details open>
+          <details>
             <summary>Turning <small>3</small></summary>
             <ul>
               <li><b>2022 Smart NL2500S CNC lathe</b><span>12-station turret, 27.56″ swing over bed, 18.9″ max turning diameter, 20.87″ max turning length, 10″ hydraulic chuck, 4,000 rpm 25 hp spindle, Fanuc 0i-TF</span></li>
@@ -393,21 +396,21 @@
               <li><b>1995 Jet 1660 manual lathe</b><span>16″ swing over bed, 60″ between centers</span></li>
             </ul>
           </details>
-          <details open>
+          <details>
             <summary>Grinding and manual milling <small>2</small></summary>
             <ul>
               <li><b>2000 Kent SGS-1640 AHD wet grinder</b><span>16 × 40″ travels, over-the-head dresser, automatic incremental down feed</span></li>
               <li><b>2013 ProtoTRAK K3 knee mill</b><span>2-axis control, 16 × 32″</span></li>
             </ul>
           </details>
-          <details open>
+          <details>
             <summary>Inspection</summary>
             <ul>
               <li><b>Rahn surface plates</b><span>4 × 5′ and 2 × 4′</span></li>
               <li><b>Mitutoyo Height Master</b><span>Plus gage blocks, gage pins, height stands and other measuring tools</span></li>
             </ul>
           </details>
-          <details open>
+          <details>
             <summary>Saw and welding</summary>
             <ul>
               <li><b>2015 Marvel Mark III</b><span>Vertical tilt band saw, straight and miter cuts to 45° left and right</span></li>
@@ -415,7 +418,7 @@
               <li><b>Miller Econotig</b><span>TIG welder</span></li>
             </ul>
           </details>
-          <details open>
+          <details>
             <summary>Software</summary>
             <ul>
               <li><b>2024 Mastercam</b><span>Mill, wire EDM and lathe</span></li>
@@ -424,7 +427,7 @@
               <li><b>NX 12.0</b><span>Basic 3D CAD package (viewer)</span></li>
             </ul>
           </details>
-          <details open>
+          <details>
             <summary>Handling and delivery</summary>
             <ul>
               <li><b>2014 Crown C5 forklift</b><span>5,000 lb</span></li>
@@ -515,8 +518,10 @@
       if (on) { b.setAttribute('aria-pressed', 'true'); sheet.dataset.on = b.dataset.m } else delete sheet.dataset.on
     }))
 
-    // Phones: only the first equipment group starts open.
-    if (matchMedia('(max-width: 760px)').matches) document.querySelectorAll('.lists details').forEach((d, i) => { if (i > 0) d.open = false })
+    // Phones keep only "Machining centers" open; wider screens open every group.
+    if (matchMedia('(min-width: 761px)').matches) document.querySelectorAll('.lists details').forEach((d) => { d.open = true })
+    // Phones: chart labels show one machine at a time, so start on the largest.
+    if (matchMedia('(max-width: 760px)').matches) document.querySelector('.picker button[data-m="64"]').click()
 
     // The floating call button appears once the hero is scrolled past.
     const dock = document.querySelector('.dock')
