@@ -51,10 +51,12 @@
   .mark small { display: block; font-family: "Archivo", sans-serif; font-weight: 500; font-size: .78rem; margin-top: .3rem; color: #ffe3e3; }
   .bar nav { display: flex; align-items: center; gap: 1.75rem; padding: 0 var(--pad); font-weight: 500; font-size: .95rem; }
   .bar nav a { text-decoration: none; color: #d9d5cf; }
+  .bar nav a.quote { background: var(--red); color: #fff; padding: .55rem .9rem; border-radius: 3px; }
+  .bar nav a.quote:hover { background: var(--red-deep); text-decoration: none; }
   .bar nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
   .kicker { margin-top: auto; padding-top: 2rem; color: var(--steel); font-weight: 500; }
-  .hero h1 { margin-top: .6rem; font-size: clamp(3.2rem, 7.4vw, 7rem); font-weight: 900; text-wrap: balance; }
-  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero h1 { margin-top: .6rem; font-size: clamp(3rem, 6.2vw, 6rem); font-weight: 900; text-wrap: balance; }
+  .hero h1 em { font-style: normal; color: #ef3e42; } /* brand red, lifted for contrast on black */
   .hero p { margin-top: 1.4rem; max-width: 34rem; color: #d9d5cf; font-size: clamp(1.05rem, 1.6vw, 1.2rem); }
   .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; }
   .btn {
@@ -66,7 +68,7 @@
   .actions .alt { color: #d9d5cf; text-underline-offset: 4px; }
   .actions .alt:hover { color: #fff; }
 
-  .stats { margin-top: clamp(2.5rem, 5vw, 3.5rem); display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 clamp(1.5rem, 4vw, 3rem); border-top: 1px solid #3d3839; padding-top: 1.25rem; }
+  .stats { margin-top: clamp(2rem, 3.5vw, 2.75rem); display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 clamp(1.5rem, 4vw, 3rem); border-top: 1px solid #3d3839; padding-top: 1.25rem; }
   .stats div { display: grid; gap: .3rem; }
   .num { font-size: clamp(2.4rem, 4.4vw, 3.4rem); font-weight: 800; color: #fff; }
   .stats span:last-child { font-size: .875rem; color: var(--steel); line-height: 1.35; max-width: 11rem; }
@@ -172,7 +174,7 @@
 
   <header class="bar">
     <a class="mark" href="#main" translate="no">Dan’s Custom Machining LLC<small>Williamsburg, Ohio</small></a>
-    <nav aria-label="Main"><a href="#work">Work</a><a href="#machines">Machines</a><a href="#contact">Get a quote</a></nav>
+    <nav aria-label="Main"><a href="#work">Work</a><a href="#machines">Machines</a><a class="quote" href="mailto:daniel@danscustommachining.com?subject=Quote%20request">Email your drawings</a></nav>
   </header>
 
   <main id="main">
