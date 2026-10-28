@@ -9,7 +9,7 @@
 <title>Progress Wire Products, Ashland, Ohio</title>
 <meta name="description" content="Custom fabricated steel wire: wire forms, light guards, fan guards and motor mounts, wire mesh, grids, cable trays, baskets and displays, made to your specifications in Ashland, Ohio since 1953.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/geologica.woff2" crossorigin>
-<link rel="preload" as="image" href="img/round-guard-800.webp" imagesrcset="img/round-guard-800.webp 800w, img/round-guard-1400.webp 1400w" imagesizes="(max-width: 860px) 100vw, 660px" fetchpriority="high">
+<link rel="preload" as="image" href="img/round-guard-800.webp" imagesrcset="img/round-guard-800.webp 800w, img/round-guard-1500.webp 1500w" imagesizes="(max-width: 860px) 100vw, 660px" fetchpriority="high">
 <style>
   @font-face { font-family: "Geologica"; font-weight: 100 900; font-display: swap; src: url(fonts/geologica.woff2) format("woff2"); }
 
@@ -85,6 +85,7 @@
   .lines img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .5rem; box-shadow: inset 0 0 0 1px #222; }
   .lines .on-black img { outline: 1px solid #1f2123; outline-offset: -1px; }
   .lines h3 { margin-top: 1rem; }
+  .lines .draw { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; border-radius: .5rem; outline: 1px solid #1f2123; outline-offset: -1px; background: #000; }
   .lines p { margin-top: .35rem; font-size: .95rem; color: #b9bdc1; max-width: 34ch; }
 
   /* Capabilities on the white sweep, drawn to scale. */
@@ -124,10 +125,8 @@
   .years li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1.25rem; padding: 1.25rem 0; border-top: 1px solid var(--line); }
   .years .y { font-size: 2rem; line-height: 1; font-weight: 760; font-variation-settings: "slnt" -9; color: var(--blue); letter-spacing: -0.02em; }
   .years p { color: #c9cdd0; max-width: 40rem; }
-  .history figure { position: sticky; top: 2rem; }
-  .history figure img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
-  .history figcaption { font-size: .85rem; color: var(--zinc); margin-top: .5rem; }
-  .group { margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: .5rem; }
+  .history .group { position: sticky; top: 2rem; margin-top: 7.5rem; }
+  .group { padding: 1.75rem; border: 1px solid var(--line); border-radius: .5rem; }
   .group p { color: #c9cdd0; font-size: .95rem; margin-top: .5rem; }
   .group a { color: #7cc4ee; }
 
@@ -158,7 +157,8 @@
     .mark small { font-size: .7rem; }
     .hero .wrap { grid-template-columns: 1fr; gap: 0; padding-top: 0; }
     .hero figure { order: -1; margin: 0 calc(-1 * var(--pad)); }
-    .hero figure img { aspect-ratio: 16 / 9; object-position: 50% 52%; }
+    .hero figure { margin: 0; }
+    .hero figure img { aspect-ratio: 3 / 2; object-fit: contain; }
     .hero h1 { margin-top: .6rem; }
     .hero .lede { margin-top: .85rem; }
     .actions { margin-top: 1.25rem; }
@@ -168,7 +168,7 @@
     .lines li, .lines li.big { grid-column: span 1; }
     .lines li.big:first-child { grid-column: span 2; }
     .lines h3 { font-size: 1.05rem; margin-top: .7rem; }
-    .lines p { font-size: .875rem; }
+    .lines p { font-size: .9rem; }
     .scale { grid-template-columns: 1fr; }
     .panel { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.25rem; align-items: center; }
     .panel .wide { display: none; }
@@ -182,8 +182,7 @@
     details.more[open] summary::after { content: "\2212"; }
     details.more .shop { margin-top: .5rem; padding-top: 0; border-top: 0; }
     .history .wrap { grid-template-columns: 1fr; }
-    .history figure { position: static; order: -1; margin: 0 calc(-1 * var(--pad)); }
-    .history figcaption { padding: 0 var(--pad); }
+    .history .group { position: static; margin-top: 0; }
     .years li { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem; }
     .years .y { font-size: 1.5rem; }
     .quote .wrap { grid-template-columns: 1fr; }
@@ -238,7 +237,7 @@
         </ul>
       </div>
       <figure>
-        <img src="img/round-guard-800.webp" srcset="img/round-guard-800.webp 800w, img/round-guard-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 660px" width="1400" height="933" alt="A round welded wire guard with radial spokes and concentric rings, white finish, on black velvet" fetchpriority="high">
+        <img src="img/round-guard-800.webp" srcset="img/round-guard-800.webp 800w, img/round-guard-1500.webp 1500w" sizes="(max-width: 860px) 100vw, 660px" width="1500" height="1000" alt="A round welded wire guard with radial spokes and concentric rings, white finish, on black velvet" fetchpriority="high">
       </figure>
     </div>
   </section>
@@ -253,8 +252,15 @@
           <h3>Light guards</h3>
           <p>For LED, fluorescent, incandescent, halogen and tungsten fixtures.</p>
         </li>
-        <li class="big">
-          <img src="img/fan-guard-700.webp" srcset="img/fan-guard-350.webp 350w, img/fan-guard-700.webp 700w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="700" height="520" loading="lazy" alt="Black spiral wire fan guard, half section">
+        <li class="big on-black">
+          <svg class="draw" viewBox="0 0 400 300" role="img" aria-label="Line drawing of a spiral wire fan guard">
+            <g fill="none" stroke="#f1f1ee" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M208.0 150.0 A8.0 8.0 0 0 1 192.0 150.0 A13.0 13.0 0 0 1 218.0 150.0 A18.0 18.0 0 0 1 182.0 150.0 A23.0 23.0 0 0 1 228.0 150.0 A28.0 28.0 0 0 1 172.0 150.0 A33.0 33.0 0 0 1 238.0 150.0 A38.0 38.0 0 0 1 162.0 150.0 A43.0 43.0 0 0 1 248.0 150.0 A48.0 48.0 0 0 1 152.0 150.0 A53.0 53.0 0 0 1 258.0 150.0 A58.0 58.0 0 0 1 142.0 150.0 A63.0 63.0 0 0 1 268.0 150.0 A68.0 68.0 0 0 1 132.0 150.0 A73.0 73.0 0 0 1 278.0 150.0 A78.0 78.0 0 0 1 122.0 150.0 A83.0 83.0 0 0 1 288.0 150.0 A88.0 88.0 0 0 1 112.0 150.0 A93.0 93.0 0 0 1 298.0 150.0 A98.0 98.0 0 0 1 102.0 150.0 A103.0 103.0 0 0 1 308.0 150.0 A108.0 108.0 0 0 1 92.0 150.0 A113.0 113.0 0 0 1 318.0 150.0 A118.0 118.0 0 0 1 82.0 150.0" stroke-width="2.6"/>
+              <circle cx="200" cy="150" r="130" stroke-width="4"/>
+              <path d="M70 150H330M200 20V280M108 58L292 242M108 242L292 58" stroke-width="3"/>
+              <path d="M330 150h14a7 7 0 1 1 0 14h-6M56 150h-14a7 7 0 1 0 0 14h6" stroke-width="3"/>
+            </g>
+          </svg>
           <h3>Motor mounts, HVAC and fan guards</h3>
           <p>Large fan and belt guards, and guards for motor mounts, signs, speakers and cameras.</p>
         </li>
@@ -268,8 +274,8 @@
           <h3>Baskets, shelves, racks and displays</h3>
           <p>Steel and stainless baskets and shelves. Racks and displays designed with you.</p>
         </li>
-        <li>
-          <img src="img/hook-700.webp" srcset="img/hook-350.webp 350w, img/hook-700.webp 700w" sizes="(max-width: 860px) 50vw, 380px" width="700" height="520" loading="lazy" alt="Pair of black wavy wire display hooks on a mounting bracket">
+        <li class="on-black">
+          <img src="img/wire-form-800.webp" srcset="img/wire-form-800.webp 800w, img/wire-form-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="933" loading="lazy" alt="Bent stainless wire form with a looped end">
           <h3>Wire forms and fabricated wire</h3>
           <p>Complex 2D and 3D forms from CNC wire forming machines.</p>
         </li>
@@ -340,12 +346,12 @@
 
       <div class="pair">
         <figure>
-          <img src="img/tray-800.webp" srcset="img/tray-800.webp 800w, img/tray-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="933" loading="lazy" alt="Black welded wire tray with raised ends">
-          <figcaption>A welded wire tray from the Progress Wire gallery.</figcaption>
+          <img src="img/fan-guard-700.webp" srcset="img/fan-guard-350.webp 350w, img/fan-guard-700.webp 700w" sizes="(max-width: 860px) 50vw, 600px" width="700" height="520" loading="lazy" alt="Black spiral wire fan guard, half section">
+          <figcaption>A spiral wire fan guard from the Progress Wire gallery.</figcaption>
         </figure>
         <figure>
-          <img src="img/cage-800.webp" srcset="img/cage-800.webp 800w, img/cage-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="933" loading="lazy" alt="Stainless wire cage of rings joined by straight rods">
-          <figcaption>A cylindrical wire cage, rings welded to straight rods.</figcaption>
+          <img src="img/hook-700.webp" srcset="img/hook-350.webp 350w, img/hook-700.webp 700w" sizes="(max-width: 860px) 50vw, 600px" width="700" height="520" loading="lazy" alt="Pair of black wavy wire display hooks on a mounting bracket">
+          <figcaption>Wavy wire display hooks, formed on CNC wire forming machines.</figcaption>
         </figure>
       </div>
 
@@ -375,15 +381,11 @@
           <li><span class="y num">2007</span><p>Tahoma buys Progress Wire. With Tahoma's backing, it later buys the fan guard business of Horton, equipment and sales included.</p></li>
           <li><span class="y num">2018</span><p>On November 5, the move from Cleveland to Ashland is complete: forty-two wire processing machines into a building with better light, heat, ventilation and flow.</p></li>
         </ol>
-        <div class="group">
-          <h3>Part of Tahoma Engineered Solutions</h3>
-          <p>In Ashland, Progress Wire shares its location with <a href="http://www.tahomamachining.com/" rel="noopener">Tahoma Machining</a> and <a href="http://www.waynemachineinc.com/" rel="noopener">Wayne Machine</a>. Each company keeps its own name; together the group is called Tahoma Engineered Solutions, for large-component and high-tolerance CNC machining alongside the wire work.</p>
-        </div>
       </div>
-      <figure>
-        <img src="img/wire-form-800.webp" srcset="img/wire-form-800.webp 800w, img/wire-form-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 460px" width="1400" height="933" loading="lazy" alt="Bent stainless wire form with a looped end">
-        <figcaption>A formed wire part from the Progress Wire gallery.</figcaption>
-      </figure>
+      <aside class="group">
+        <h3>Part of Tahoma Engineered Solutions</h3>
+        <p>In Ashland, Progress Wire shares its location with <a href="http://www.tahomamachining.com/" rel="noopener">Tahoma Machining</a> and <a href="http://www.waynemachineinc.com/" rel="noopener">Wayne Machine</a>. Each company keeps its own name; together the group is called Tahoma Engineered Solutions, for large-component and high-tolerance CNC machining alongside the wire work.</p>
+      </aside>
     </div>
   </section>
 
