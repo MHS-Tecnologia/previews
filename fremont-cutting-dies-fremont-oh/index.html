@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#e7e5e0">
+<title>Fremont Cutting Dies, Fremont, Ohio</title>
+<meta name="description" content="Steel rule, Viking, forged, contour trim, machined, specimen and match-metal cutting dies, built in-house in Fremont, Ohio.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/bigshoulders.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-800.webp" imagesrcset="img/hero-800.webp 800w, img/hero-1400.webp 1400w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 600px" fetchpriority="high">
+<style>
+  @font-face { font-family: "Big Shoulders"; font-weight: 100 900; font-display: swap; src: url(fonts/bigshoulders.woff2) format("woff2"); }
+  @font-face { font-family: "Public Sans"; font-weight: 100 900; font-display: swap; src: url(fonts/publicsans.woff2) format("woff2"); }
+
+  /* The shop floor every photo sits on, the steel, and the safety yellow FCD paints its die sets. */
+  :root {
+    --floor: #e7e5e0;
+    --floor-2: #d9d6cf;
+    --ink: #1d1c1a;
+    --steel: #575b5f;
+    --yellow: #f4b400;
+    --yellow-deep: #d99e00;
+    --ply: #d7c39d;
+    --pad: clamp(1rem, 4vw, 3rem);
+    --max: 76rem;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--floor); color: var(--ink); font: 400 1.0625rem/1.6 "Public Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  h1, h2, h3, .display { font-family: "Big Shoulders", "Arial Narrow", sans-serif; font-weight: 800; line-height: .95; letter-spacing: -0.005em; }
+  h2 { font-size: clamp(2.4rem, 5vw, 4rem); text-wrap: balance; }
+  h3 { font-size: 1.5rem; line-height: 1.05; }
+  [id] { scroll-margin-top: 1rem; }
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 10; }
+  .skip:focus { left: .5rem; }
+  .wrap { max-width: var(--max); margin: 0 auto; }
+
+  .demo { background: var(--ink); color: #cfccc5; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .5rem 1rem; }
+
+  header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem var(--pad); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
+  .mark { text-decoration: none; font-family: "Big Shoulders", sans-serif; font-weight: 900; font-size: 1.55rem; line-height: 1; letter-spacing: .005em; white-space: nowrap; }
+  .mark small { display: block; font-family: "Public Sans", sans-serif; font-weight: 500; font-size: .75rem; letter-spacing: 0; color: var(--steel); margin-top: .2rem; }
+  header nav { display: flex; align-items: center; gap: 1.6rem; font-weight: 500; font-size: .95rem; }
+  header nav a { text-decoration: none; }
+  header nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  .btn { display: inline-flex; align-items: center; gap: .55rem; background: var(--yellow); color: var(--ink); text-decoration: none; font-weight: 700; padding: .9rem 1.4rem; border-radius: .35rem; box-shadow: inset 0 -3px 0 var(--yellow-deep); transition: background-color .15s ease; }
+  .btn:hover { background: #ffc414; }
+  .btn.dark { background: var(--ink); color: #fff; box-shadow: none; }
+  .btn.dark:hover { background: #3a3835; }
+  header .btn { padding: .55rem .95rem; font-size: .9rem; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Hero: the die set is the evidence for the headline. */
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); align-items: center; gap: clamp(1.5rem, 5vw, 4.5rem); padding: clamp(1rem, 3vw, 2.5rem) var(--pad) clamp(3rem, 6vw, 5rem); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
+  .hero h1 { font-size: clamp(2.7rem, 6.4vw, 5.9rem); line-height: .98; text-wrap: balance; }
+  .hero h1 span { display: block; color: var(--steel); }
+  .hero .lede { margin-top: 1.3rem; max-width: 33rem; font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #33312e; }
+  .actions { margin-top: 1.75rem; display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.5rem; }
+  .actions .phone { font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+  .actions .phone:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .hint { margin-top: .9rem; font-size: .9rem; color: var(--steel); }
+  .shot { position: relative; }
+  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .5rem; }
+  .shot figcaption { margin-top: .6rem; font-size: .8125rem; color: var(--steel); }
+
+  section { padding: clamp(4rem, 8vw, 6.5rem) var(--pad); }
+  .intro { max-width: 40rem; margin-top: 1rem; color: #33312e; }
+
+  /* The one loud moment: die life on a ruler, read like a steel rule blade. */
+  .runs { background: var(--ink); color: #f2f0eb; }
+  .runs .intro { color: #c9c6bf; }
+  .ruler { margin-top: 3rem; --label: 17rem; --inv: 9.5rem; }
+  .axis, .die { display: grid; grid-template-columns: var(--label) minmax(0, 1fr) var(--inv); column-gap: 1.75rem; align-items: center; }
+  .axis { padding-bottom: .6rem; font-size: .8125rem; color: #a9a59d; }
+  .axis .scale { position: relative; height: 1.2rem; }
+  .axis .scale span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+  .axis .scale span:first-child { transform: none; }
+  .axis .inv-h { text-align: left; }
+  .die { padding: 1rem 0; border-top: 1px solid #3a3835; }
+  .die:last-child { border-bottom: 1px solid #3a3835; }
+  .who { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: .9rem; align-items: center; }
+  .who img { width: 3.5rem; height: 3.5rem; border-radius: .3rem; object-fit: cover; }
+  .who h3 { font-size: 1.45rem; }
+  .who p { font-size: .875rem; color: #bdb9b1; line-height: 1.4; margin-top: .2rem; }
+  .track { position: relative; height: 1.6rem; border-radius: .2rem;
+    background:
+      repeating-linear-gradient(90deg, #4a4844 0 1px, transparent 1px 2.5%) bottom / 100% 35% no-repeat,
+      #2a2926; }
+  .track::before, .track::after { content: ""; position: absolute; top: 0; bottom: 0; width: 1px; background: #6d6a64; }
+  .track::before { left: 40%; }
+  .track::after { left: 80%; }
+  .bar { position: absolute; top: .2rem; bottom: .2rem; left: var(--from); width: calc(var(--to) - var(--from)); background: var(--yellow); border-radius: .15rem; transform-origin: left; }
+  .bar.open { background: linear-gradient(90deg, var(--yellow) 0 70%, rgba(244,180,0,.15)); }
+  .bar b { position: absolute; left: .5rem; white-space: nowrap; top: 50%; transform: translateY(-50%); font-family: "Big Shoulders", sans-serif; font-size: 1rem; color: var(--ink); line-height: 1; }
+  .inv { font-size: .9375rem; color: #dcd8d0; }
+  .inv small { display: block; font-size: .8125rem; color: #a9a59d; }
+  .ruler-note { margin-top: 1.5rem; font-size: .9375rem; color: #c9c6bf; max-width: 46rem; }
+  .ruler-note a { color: var(--yellow); }
+  .js .bar { transform: scaleX(0); transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js .ruler.in .bar { transform: none; }
+  .js .ruler.in .die:nth-child(3) .bar { transition-delay: .06s; }
+  .js .ruler.in .die:nth-child(4) .bar { transition-delay: .12s; }
+  .js .ruler.in .die:nth-child(5) .bar { transition-delay: .18s; }
+  .js .ruler.in .die:nth-child(6) .bar { transition-delay: .24s; }
+  .js .ruler.in .die:nth-child(7) .bar { transition-delay: .3s; }
+
+  /* Specimen dies: the in-stock line, and the resharpening service. */
+  .specimen .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .specimen img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .5rem; }
+  .specimen figcaption { margin-top: .6rem; font-size: .8125rem; color: var(--steel); }
+  .standards { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem; padding: 0; list-style: none; }
+  .standards li { font-family: "Big Shoulders", sans-serif; font-weight: 800; font-size: 1.35rem; line-height: 1; padding: .45rem .8rem .5rem; border: 2px solid var(--ink); border-radius: .3rem; }
+  .facts { margin-top: 1.75rem; display: grid; gap: 1rem; padding: 0; list-style: none; }
+  .facts li { padding-left: 1.1rem; border-left: 3px solid var(--yellow); }
+  .facts b { display: block; }
+  .specimen .more { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: .9rem 1.5rem; align-items: center; }
+  .specimen .more a:not(.btn) { font-weight: 600; }
+
+  /* Work: their own gallery photos, kept at 4:3 the way they were shot. */
+  .work { background: var(--floor-2); }
+  .gallery { margin-top: 2.75rem; display: grid; gap: 1rem; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .gallery figure { grid-column: span 4; }
+  .gallery .big { grid-column: span 8; grid-row: span 2; }
+  .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .4rem; }
+  .gallery .big img { height: calc(100% - 1.9rem); aspect-ratio: auto; }
+  .gallery figcaption { margin-top: .45rem; font-size: .875rem; color: #3f3d39; }
+
+  /* Machining and fabrication: the numbers, then the materials. */
+  .shop .wrap > p { max-width: 42rem; }
+  .equip { margin-top: 2.75rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 2.5rem; padding: 0; list-style: none; }
+  .equip li { padding: 1.25rem 0 1.35rem; border-top: 2px solid var(--ink); }
+  .equip .display { display: block; font-size: clamp(2rem, 3.4vw, 2.75rem); line-height: 1; }
+  .equip h3 { font-family: "Public Sans", sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.3; margin-top: .45rem; }
+  .equip p { font-size: .9375rem; color: #3f3d39; margin-top: .25rem; line-height: 1.45; }
+  .materials { margin-top: 2rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; }
+  .materials h3 { font-size: 1.6rem; margin-bottom: .6rem; }
+  .materials p { color: #33312e; }
+  .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; padding: 0; list-style: none; }
+  .tags li { background: #fff; border-radius: .3rem; padding: .25rem .65rem; font-size: .9rem; font-weight: 500; }
+  .more-equip summary { display: none; }
+
+  /* Contact: yellow, like the die sets. */
+  .contact { background: var(--yellow); }
+  .contact .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+  .contact .intro { color: #2b2925; }
+  .mail { display: inline-block; margin-top: 1.75rem; font-family: "Big Shoulders", sans-serif; font-weight: 800; font-size: clamp(1.9rem, 3.3vw, 2.6rem); line-height: 1.1; text-decoration: none; border-bottom: 3px solid var(--ink); }
+  .mail:hover { border-bottom-color: transparent; }
+  .phones { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; font-weight: 600; font-size: 1.15rem; }
+  .phones a { text-decoration: none; }
+  .phones a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .phones small { font-weight: 400; font-size: .875rem; color: #3b3832; margin-left: .3rem; }
+  .steps { background: var(--ink); color: #f2f0eb; border-radius: .5rem; padding: 1.75rem; }
+  .steps h3 { font-size: 1.6rem; }
+  .steps ol { margin-top: 1.1rem; padding: 0; list-style: none; counter-reset: s; display: grid; gap: .9rem; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: .6rem; color: #d6d2ca; line-height: 1.45; }
+  .steps li::before { content: counter(s); font-family: "Big Shoulders", sans-serif; font-weight: 800; font-size: 1.5rem; line-height: 1; color: var(--yellow); }
+  .steps address { font-style: normal; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #3a3835; color: #bdb9b1; font-size: .9375rem; }
+
+  footer { background: var(--ink); color: #b4b0a8; font-size: .875rem; padding: 2rem var(--pad) 6rem; }
+  footer p { max-width: var(--max); margin: 0 auto; }
+
+  .dock { display: none; }
+  @media (max-width: 1000px) {
+    .ruler { --label: 14rem; --inv: 8rem; }
+    .equip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 860px) {
+    header nav a:not(.btn) { display: none; }
+    header .full { display: none; }
+    .mark { font-size: 1.35rem; }
+    .hero { grid-template-columns: 1fr; padding-top: 0; gap: 1.25rem; }
+    .hero .shot { order: -1; }
+    .shot img { aspect-ratio: 16 / 9; object-position: 50% 40%; }
+    .shot figcaption { display: none; }
+    .hero h1 { font-size: clamp(2.5rem, 10.5vw, 3.4rem); }
+    .hero .lede { margin-top: .9rem; font-size: 1rem; }
+    .actions { margin-top: 1.25rem; }
+    .actions .btn { flex: 1 1 auto; justify-content: center; }
+
+    .axis, .die { grid-template-columns: minmax(0, 1fr); }
+    .axis .label-h, .axis .inv-h { display: none; }
+    .die { row-gap: .7rem; }
+    .who { grid-template-columns: 3rem minmax(0, 1fr); }
+    .who img { width: 3rem; height: 3rem; }
+    .inv { display: none; }
+    .who .inv-m { display: block; color: #a9a59d; }
+
+    .specimen .wrap, .materials, .contact .wrap { grid-template-columns: 1fr; }
+    .specimen figure { order: -1; }
+    .gallery { grid-template-columns: 1fr 1fr; gap: .75rem; }
+    .gallery figure, .gallery .big { grid-column: span 1; grid-row: auto; }
+    .gallery .big { grid-column: span 2; }
+    .gallery .big img { height: auto; aspect-ratio: 4 / 3; }
+    .gallery figure:last-child { grid-column: span 2; }
+    .gallery figure:last-child img { aspect-ratio: 16 / 9; }
+    .gallery figcaption { font-size: .8125rem; }
+    .equip { grid-template-columns: 1fr; }
+    .more-equip summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; padding: 1rem 0; border-top: 2px solid var(--ink); font-weight: 700; }
+    .more-equip summary::-webkit-details-marker { display: none; }
+    .more-equip summary::after { content: "+"; font-size: 1.4rem; line-height: 1; }
+    .more-equip[open] summary::after { content: "\2013"; }
+    .more-equip .equip { margin-top: 0; }
+
+    .dock { display: flex; justify-content: center; position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 5;
+      box-shadow: inset 0 -3px 0 var(--yellow-deep), 0 8px 24px rgba(0,0,0,.28);
+      opacity: 0; transform: translateY(1rem); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+    .dock.on { opacity: 1; transform: none; pointer-events: auto; }
+  }
+  .inv-m { display: none; }
+  .who h3 small { font-family: "Public Sans", sans-serif; font-weight: 500; font-size: .8125rem; color: #a9a59d; margin-left: .3rem; letter-spacing: 0; display: inline-block; white-space: nowrap; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .dock { transition: none; }
+    .js .bar { transform: none; transition: none; }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="demo">Unofficial demo built by MHS Tecnologia for Fremont Cutting Dies. Not affiliated with or endorsed by Fremont Cutting Dies.</div>
+
+  <header>
+    <a class="mark" href="#main" translate="no">Fremont Cutting Dies<small>Fremont, Ohio</small></a>
+    <nav aria-label="Main">
+      <a href="#dies">Die types</a>
+      <a href="#specimen">Specimen dies</a>
+      <a href="#shop">Machining</a>
+      <a href="#contact">Contact</a>
+      <a class="btn dark" href="tel:+14193345153">Call<span class="full num"> 419.334.5153</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="hero">
+      <div>
+        <h1>Seven kinds of cutting die. <span>One shop in Fremont, Ohio.</span></h1>
+        <p class="lede">Steel rule, Viking, forged, contour trim, machined, specimen and match-metal dies, designed and built in-house by a team with over 40 years in the die industry.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:requests@fremontcuttingdies.com?subject=Quote%20request">Request a quote by email</a>
+          <a class="phone num" href="tel:+14193345153">419.334.5153</a>
+        </div>
+        <p class="hint">Attach your drawing or a photo of the part, with the material and quantity.</p>
+      </div>
+      <figure class="shot">
+        <img src="img/hero-800.webp" srcset="img/hero-800.webp 800w, img/hero-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="1050" alt="A match-metal die set with yellow-painted plates and steel guide posts, stacked on a press bed" fetchpriority="high">
+        <figcaption>Match-metal die set, painted in the shop’s yellow</figcaption>
+      </figure>
+    </div>
+
+    <section id="dies" class="runs" aria-labelledby="dies-title">
+      <div class="wrap">
+        <h2 id="dies-title">Pick the die by the length of the run.</h2>
+        <p class="intro">Die life, tolerance and investment for each type Fremont builds, side by side. Not sure which one your part needs? Send it over and ask.</p>
+
+        <div class="ruler" role="table" aria-label="Die life by die type, in impressions">
+          <div class="axis" role="row">
+            <span class="label-h" role="columnheader">Die type and tolerance</span>
+            <div class="scale" role="columnheader" aria-label="Die life in impressions"><span style="left:0">10,000</span><span style="left:40%">100,000</span><span style="left:80%">1,000,000</span></div>
+            <span class="inv-h" role="columnheader">Investment</span>
+          </div>
+
+          <div class="die" role="row">
+            <div class="who" role="cell"><img src="img/t-steelrule.webp" width="120" height="120" alt="" loading="lazy"><div><h3>Steel rule</h3><p class="num">Tolerance 0.010″ to 0.060″<span class="inv-m">Low investment</span></p></div></div>
+            <div class="track" role="cell" aria-label="10,000 to 100,000 impressions"><span class="bar" style="--from:0%;--to:40%"><b>10k–100k</b></span></div>
+            <div class="inv" role="cell">Low</div>
+          </div>
+          <div class="die" role="row">
+            <div class="who" role="cell"><img src="img/t-vikingt.webp" width="120" height="120" alt="" loading="lazy"><div><h3>Viking <small>clicker</small></h3><p class="num">Tolerance 0.032″<span class="inv-m">Low investment</span></p></div></div>
+            <div class="track" role="cell" aria-label="10,000 to 100,000 impressions"><span class="bar" style="--from:0%;--to:40%"><b>10k–100k</b></span></div>
+            <div class="inv" role="cell">Low</div>
+          </div>
+          <div class="die" role="row">
+            <div class="who" role="cell"><img src="img/t-forgedt.webp" width="120" height="120" alt="" loading="lazy"><div><h3>Forged</h3><p class="num">Tolerance 0.005″ to 0.015″<span class="inv-m">Moderate investment</span></p></div></div>
+            <div class="track" role="cell" aria-label="100,000 impressions and up"><span class="bar open" style="--from:40%;--to:100%"><b>100k+</b></span></div>
+            <div class="inv" role="cell">Moderate</div>
+          </div>
+          <div class="die" role="row">
+            <div class="who" role="cell"><img src="img/t-contour.webp" width="120" height="120" alt="" loading="lazy"><div><h3>Contour trim</h3><p class="num">Tolerance 0.015″<span class="inv-m">Moderate to high investment</span></p></div></div>
+            <div class="track" role="cell" aria-label="100,000 impressions and up"><span class="bar open" style="--from:40%;--to:100%"><b>100k+</b></span></div>
+            <div class="inv" role="cell">Moderate to high</div>
+          </div>
+          <div class="die" role="row">
+            <div class="who" role="cell"><img src="img/t-machinedt.webp" width="120" height="120" alt="" loading="lazy"><div><h3>Machined</h3><p class="num">Tolerance 0.002″ to 0.005″, or 0.001″ with wire EDM<span class="inv-m">Moderate to high investment</span></p></div></div>
+            <div class="track" role="cell" aria-label="100,000 impressions and up"><span class="bar open" style="--from:40%;--to:100%"><b>100k+</b></span></div>
+            <div class="inv" role="cell">Moderate to high</div>
+          </div>
+          <div class="die" role="row">
+            <div class="who" role="cell"><img src="img/t-match.webp" width="120" height="120" alt="" loading="lazy"><div><h3>Match-metal <small>punch and die</small></h3><p class="num">Tolerance up to 0.001″<span class="inv-m">High investment</span></p></div></div>
+            <div class="track" role="cell" aria-label="1,000,000 impressions and up"><span class="bar open" style="--from:80%;--to:100%"><b>1M+</b></span></div>
+            <div class="inv" role="cell">High</div>
+          </div>
+        </div>
+        <p class="ruler-note">Figures are the die life and tolerance Fremont Cutting Dies publishes for each die type. Tolerance also depends on the shape of the part. Forged, contour trim and machined dies can be releveled and resharpened many times; steel rule and Viking dies are case hardened and get re-ruled or replaced.</p>
+      </div>
+    </section>
+
+    <section id="specimen" class="specimen" aria-labelledby="spec-title">
+      <div class="wrap">
+        <div>
+          <h2 id="spec-title">Specimen dies, in stock and certified.</h2>
+          <p class="intro">Test-standard specimen dies in premium tool steel. Many common standards are kept in stock for quick delivery, and custom specimen dies are made to order.</p>
+          <ul class="standards" aria-label="Standards"><li>ASTM</li><li>ISO</li><li>JIS</li><li>DIN</li></ul>
+          <ul class="facts">
+            <li><b>Certified in-house</b>In a climate-controlled inspection department, on ISO/IEC 17025 certified inspection equipment.</li>
+            <li><b>Resharpened and recertified</b>Any ASTM, ISO, JIS, DIN or EN cutting die, including dies from other makers.</li>
+            <li><b>Shipped in a case</b>A durable case that doubles as storage. A custom shank or mallet handle can be added.</li>
+          </ul>
+          <div class="more">
+            <a class="btn dark" href="mailto:requests@fremontcuttingdies.com?subject=Specimen%20die%20sharpening%20or%20certification">Ask about sharpening</a>
+            <a href="https://fremontcuttingdies.com/shop/">Shop in-stock dies</a>
+          </div>
+        </div>
+        <figure>
+          <img src="img/specimen-800.webp" srcset="img/specimen-800.webp 800w, img/specimen-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="1400" height="1050" alt="A group of dumbbell-shaped and rectangular specimen dies on a wooden bench" loading="lazy">
+          <figcaption>Specimen dies</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <h2 id="work-title">From the shop floor.</h2>
+        <p class="intro">Dies and parts from Fremont Cutting Dies’ own project galleries.</p>
+        <div class="gallery">
+          <figure class="big"><img src="img/viking-800.webp" srcset="img/viking-800.webp 800w, img/viking-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 780px" width="1400" height="1050" alt="A large polished Viking die with internal bridges, lying on a concrete floor" loading="lazy"><figcaption>Polished Viking die</figcaption></figure>
+          <figure><img src="img/pouch-800.webp" srcset="img/pouch-480.webp 480w, img/pouch-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="A Viking die next to the brown leather holster it cuts" loading="lazy"><figcaption>Viking die with the leather part it cuts</figcaption></figure>
+          <figure><img src="img/forged-800.webp" srcset="img/forged-480.webp 480w, img/forged-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="Several forged dies of different shapes on a concrete floor" loading="lazy"><figcaption>Forged dies</figcaption></figure>
+          <figure><img src="img/anvil-800.webp" srcset="img/anvil-480.webp 480w, img/anvil-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="A contour trim forged die and its machined anvil on a die shoe" loading="lazy"><figcaption>Contour trim die and anvil</figcaption></figure>
+          <figure><img src="img/battery-800.webp" srcset="img/battery-480.webp 480w, img/battery-800.webp 800w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 400px" width="800" height="600" alt="A yellow-based anode and cathode battery die with green guide pins" loading="lazy"><figcaption>Anode and cathode battery die</figcaption></figure>
+          <figure><img src="img/machined-part-800.webp" srcset="img/machined-part-480.webp 480w, img/machined-part-800.webp 800w" sizes="(max-width: 860px) calc(100vw - 2rem), 400px" width="800" height="600" alt="A machined steel link with bronze bushings at each end" loading="lazy"><figcaption>Contract machined part</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="shop" aria-labelledby="shop-title">
+      <div class="wrap">
+        <h2 id="shop-title">Contract machining and fabrication, same building.</h2>
+        <p class="intro">The machines that build the dies also take outside work: parts machined complete or a single feature added, plus welding, racks, carts and fixture tables.</p>
+        <ul class="equip">
+          <li><span class="display num">17″ × 24″ × 12″</span><h3>Wire EDM</h3><p>Approximate travel, for intricate shapes and tight tolerances.</p></li>
+          <li><span class="display num">42″</span><h3>Blanchard grinding</h3><p>Chuck size, for large components.</p></li>
+          <li><span class="display num">16″ × 32″</span><h3>Surface grinding</h3><p>Chuck, with a table load of about 1,500 lb.</p></li>
+        </ul>
+        <details class="more-equip" open>
+          <summary>More equipment</summary>
+          <ul class="equip">
+            <li><span class="display num">80 ton</span><h3>Sharp edge cutting press</h3><p>24″ × 72″, 4-post, for die try-outs and runs under 100 impressions.</p></li>
+            <li><span class="display num">2pt–4pt</span><h3>CNC auto bending</h3><p>Every steel rule die, 0.937″ to 2″ high.</p></li>
+            <li><span class="display">CO2 laser</span><h3>Laser cutting</h3><p>Thin gauge mild and stainless steel; short runs cut with no die at all.</p></li>
+          </ul>
+        </details>
+        <div class="materials">
+          <div>
+            <h3>Materials</h3>
+            <p>Fremont buys the material for the job, or works from material you supply.</p>
+            <ul class="tags"><li>Mild steel</li><li>Tool steel</li><li>Aluminum</li><li>Brass</li><li>HDPE</li><li>ABS</li><li>Delrin</li></ul>
+          </div>
+          <div>
+            <h3>Also on the floor</h3>
+            <ul class="tags"><li>Vertical machining centers</li><li>CNC lathe</li><li>Bridgeports</li><li>MIG and TIG welding</li><li>In-house 2-D and 3-D design</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div>
+          <h2 id="contact-title">Send the part. Get a price and a lead time.</h2>
+          <p class="intro">Email a drawing or a photo, the material and the quantity. Dies, sharpening, certification or contract machining.</p>
+          <a class="mail" href="mailto:requests@fremontcuttingdies.com?subject=Quote%20request">requests<wbr>@fremontcuttingdies.com</a>
+          <div class="phones num">
+            <a href="tel:+14193345153">419.334.5153<small>local</small></a>
+            <a href="tel:+18885668051">888.566.8051<small>toll-free</small></a>
+          </div>
+        </div>
+        <div class="steps">
+          <h3>How a machining job runs</h3>
+          <ol>
+            <li>You get a clear price and lead time.</li>
+            <li>On approval, Fremont orders the material or receives yours.</li>
+            <li>The parts are machined to your specifications.</li>
+            <li>The order ships, is delivered, or is ready for pickup.</li>
+          </ol>
+          <address translate="no">Fremont Cutting Dies, Inc.<br>3179 E State Street<br>Fremont, Ohio 43420</address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="btn dock" href="mailto:requests@fremontcuttingdies.com?subject=Quote%20request">Request a quote by email</a>
+
+  <footer>
+    <p>Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Fremont Cutting Dies. Content and photos come from Fremont Cutting Dies’ public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </footer>
+
+  <script>
+    // Phones: the second equipment row starts closed.
+    if (matchMedia('(max-width: 860px)').matches) document.querySelector('.more-equip').open = false
+    // The quote button docks once the hero is scrolled past.
+    const dock = document.querySelector('.dock')
+    new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(document.querySelector('.hero'))
+    // The die-life bars draw once, when the ruler comes into view.
+    const ruler = document.querySelector('.ruler')
+    new IntersectionObserver(([e], o) => { if (e.isIntersecting) { ruler.classList.add('in'); o.disconnect() } }, { threshold: .25 }).observe(ruler)
+  </script>
+</body>
+</html>
