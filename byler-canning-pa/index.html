@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://demo.mhstecnologia.com/byler-canning-pa/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="font" type="font/woff2" href="fonts/bitter.woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-600.webp" imagesrcset="img/hero-600.webp 600w, img/hero-1000.webp 1000w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 592px" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-600.webp" imagesrcset="img/hero-600.webp 600w, img/hero-1000.webp 1000w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 640px" fetchpriority="high">
 <style>
   @font-face { font-family: "Bitter"; font-weight: 100 900; font-display: swap; src: url(fonts/bitter.woff2) format("woff2"); }
   @font-face { font-family: "Karla"; font-weight: 200 800; font-display: swap; src: url(fonts/karla.woff2) format("woff2"); }
@@ -72,9 +72,9 @@
 
   /* Hero: the copy on the left, the pantry on the right. Pints on the top
      shelf, jam on the bottom, every jar at its true height. */
-  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 37rem); grid-template-areas: "copy a"; column-gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(1.5rem, 3vw, 2.5rem) var(--pad) clamp(2.5rem, 4vw, 3.5rem); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 40rem); grid-template-areas: "copy a"; column-gap: clamp(2rem, 5vw, 5rem); align-items: center; padding: clamp(1.5rem, 3vw, 2.5rem) var(--pad) clamp(2.5rem, 4vw, 3.5rem); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
   .copy { grid-area: copy; align-self: center; }
-  .hero h1 { font-size: clamp(2.35rem, 5vw, 4.4rem); line-height: 1.02; text-wrap: balance; max-width: 13ch; }
+  .hero h1 { font-size: clamp(2.35rem, 4.6vw, 4.05rem); line-height: 1.02; text-wrap: balance; max-width: 13ch; }
   .lede { margin-top: 1.2rem; max-width: 31rem; font-size: clamp(1.05rem, 1.35vw, 1.2rem); color: var(--ink-2); }
   .actions { margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: .75rem; }
   .hint { margin-top: .9rem; font-size: .925rem; color: var(--ink-2); }
@@ -89,7 +89,7 @@
       repeating-linear-gradient(90deg, rgba(60,35,10,.10) 0 1px, transparent 1px 7px, rgba(255,235,200,.08) 7px 8px, transparent 8px 19px),
       linear-gradient(#c79a5a 0, #b0823f 30%, #96692d 72%, #6b4a1f 72%, #5a3d18 100%);
     box-shadow: 0 -1px 0 rgba(255,230,190,.35) inset; }
-  .shelf a { position: relative; z-index: 1; display: block; flex: 0 1 6.4rem; border-radius: .4rem; margin-bottom: -2px; }
+  .shelf a { position: relative; z-index: 1; display: block; flex: 0 1 7.4rem; border-radius: .4rem; margin-bottom: -2px; }
   .shelf img { width: 100%; filter: drop-shadow(0 8px 6px rgba(20,12,4,.45)) drop-shadow(0 1px 1px rgba(20,12,4,.5)); }
   .chips { display: none; }
 
@@ -152,6 +152,9 @@
   .trade .btn { margin-top: 1.4rem; background: #e0b46c; color: var(--ink); }
   .trade .btn:hover { background: #ecc685; }
   .trade a:not(.btn) { color: #fff; }
+  .trade-top { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .trade-top img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: .6rem; }
+  .trade-top figcaption { margin-top: .55rem; font-size: .875rem; color: #b9ae9f; }
 
   .contact { padding-block: clamp(3rem, 5vw, 4.5rem); }
   .contact .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
@@ -188,7 +191,7 @@
     .chips { display: flex; gap: .5rem; margin-top: 1.1rem; }
     .chips a { flex: 1 1 0; text-align: center; padding: .6rem .4rem; border-radius: 2rem; background: rgba(255,255,255,.65); box-shadow: inset 0 0 0 1px rgba(43,30,22,.25); font-weight: 700; font-size: .925rem; text-decoration: none; }
 
-    .make .wrap, .fresh .wrap, .contact .wrap, .cols, .doors, .card { grid-template-columns: 1fr; }
+    .make .wrap, .fresh .wrap, .contact .wrap, .cols, .doors, .card, .trade-top { grid-template-columns: 1fr; }
     .aisles summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; list-style: none; padding: 1rem 0; border-top: 3px solid var(--ink); font-weight: 700; font-size: 1.05rem; }
     .aisles summary::-webkit-details-marker { display: none; }
     .aisles summary::after { content: "+"; font-size: 1.5rem; line-height: 1; }
@@ -231,14 +234,13 @@
     <main id="main">
       <div class="hero">
         <div class="stage">
-          <img src="img/hero-600.webp" srcset="img/hero-600.webp 600w, img/hero-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 592px" width="600" height="540" alt="A bowl of sliced pickles with fresh cucumbers, dill and coarse salt" fetchpriority="high">
+          <img src="img/hero-600.webp" srcset="img/hero-600.webp 600w, img/hero-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="600" height="540" alt="A bowl of sliced pickles with fresh cucumbers, dill and coarse salt" fetchpriority="high">
           <div class="shelf" role="group" aria-label="Byler jars">
-            <a href="https://bylercanningco.com/bread-and-butter-pickles/"><img src="img/cut-bread-butter-200.webp" srcset="img/cut-bread-butter-200.webp 200w, img/cut-bread-butter-400.webp 400w" sizes="(max-width: 860px) 66px, 92px" width="200" height="344" alt="Bread and Butter Pickles"></a>
-            <a href="https://bylercanningco.com/strawberry-jam-11-oz/"><img src="img/cut-strawberry-200.webp" srcset="img/cut-strawberry-200.webp 200w, img/cut-strawberry-400.webp 400w" sizes="(max-width: 860px) 66px, 92px" width="200" height="268" alt="Strawberry Jam"></a>
-            <a href="https://bylercanningco.com/dilly-beans/"><img src="img/cut-dilly-beans-200.webp" srcset="img/cut-dilly-beans-200.webp 200w, img/cut-dilly-beans-400.webp 400w" sizes="(max-width: 860px) 66px, 92px" width="200" height="341" alt="Dilly Beans"></a>
-            <a class="wide" href="https://bylercanningco.com/peach-jam-11-oz/"><img src="img/cut-peach-200.webp" srcset="img/cut-peach-200.webp 200w, img/cut-peach-400.webp 400w" sizes="(max-width: 860px) 66px, 92px" width="200" height="271" alt="Peach Jam"></a>
-            <a class="wide" href="https://bylercanningco.com/pickled-beets/"><img src="img/cut-beets-200.webp" srcset="img/cut-beets-200.webp 200w, img/cut-beets-400.webp 400w" sizes="(max-width: 860px) 66px, 92px" width="200" height="339" alt="Pickled Beets"></a>
-            <a href="https://bylercanningco.com/shredded-hot-peppers-in-oil/"><img src="img/cut-hot-peppers-200.webp" srcset="img/cut-hot-peppers-200.webp 200w, img/cut-hot-peppers-400.webp 400w" sizes="(max-width: 860px) 66px, 92px" width="200" height="338" alt="Shredded Hot Peppers in Oil"></a>
+            <a href="https://bylercanningco.com/bread-and-butter-pickles/"><img src="img/cut-bread-butter-200.webp" srcset="img/cut-bread-butter-200.webp 200w, img/cut-bread-butter-400.webp 400w" sizes="(max-width: 860px) 66px, 118px" width="200" height="344" alt="Bread and Butter Pickles"></a>
+            <a href="https://bylercanningco.com/strawberry-jam-11-oz/"><img src="img/cut-strawberry-200.webp" srcset="img/cut-strawberry-200.webp 200w, img/cut-strawberry-400.webp 400w" sizes="(max-width: 860px) 66px, 118px" width="200" height="268" alt="Strawberry Jam"></a>
+            <a href="https://bylercanningco.com/dilly-beans/"><img src="img/cut-dilly-beans-200.webp" srcset="img/cut-dilly-beans-200.webp 200w, img/cut-dilly-beans-400.webp 400w" sizes="(max-width: 860px) 66px, 118px" width="200" height="341" alt="Dilly Beans"></a>
+            <a class="wide" href="https://bylercanningco.com/pickled-beets/"><img src="img/cut-beets-200.webp" srcset="img/cut-beets-200.webp 200w, img/cut-beets-400.webp 400w" sizes="(max-width: 860px) 66px, 118px" width="200" height="339" alt="Pickled Beets"></a>
+            <a href="https://bylercanningco.com/shredded-hot-peppers-in-oil/"><img src="img/cut-hot-peppers-200.webp" srcset="img/cut-hot-peppers-200.webp 200w, img/cut-hot-peppers-400.webp 400w" sizes="(max-width: 860px) 66px, 118px" width="200" height="338" alt="Shredded Hot Peppers in Oil"></a>
           </div>
         </div>
 
@@ -310,7 +312,7 @@
       <p class="intro">Recipes from the Byler kitchen, each one built around something on the shelf.</p>
       <div class="grid">
         <figure><a href="https://bylercanningco.com/shop-online/recipes/lemon-asparagus-hummus/"><img src="img/r-hummus-480.webp" srcset="img/r-hummus-480.webp 480w, img/r-hummus-800.webp 800w" sizes="(max-width: 860px) 46vw, 380px" width="480" height="360" alt="Lemon asparagus hummus with crackers, carrots and deviled eggs" loading="lazy"><figcaption>Lemon Asparagus Hummus</figcaption></a></figure>
-        <figure><a href="https://bylercanningco.com/shop-online/recipes/chicken-salad/"><img src="img/r-chicken-480.webp" width="480" height="360" alt="Chicken salad on a sub roll, with jars of Byler relish behind it" loading="lazy"><figcaption>Chicken Salad</figcaption></a></figure>
+        <figure><a href="https://bylercanningco.com/shop-online/recipes/chicken-salad/"><img src="img/r-chicken-480.webp" width="480" height="360" alt="Chicken salad with lettuce on a whole-grain roll" loading="lazy"><figcaption>Chicken Salad</figcaption></a></figure>
         <figure><a href="https://bylercanningco.com/shop-now/recipes/honey-mustard-glazed-salmon/"><img src="img/r-salmon-480.webp" srcset="img/r-salmon-480.webp 480w, img/r-salmon-800.webp 800w" sizes="(max-width: 860px) 46vw, 380px" width="480" height="360" alt="Glazed salmon baked in parchment with zucchini and red onion" loading="lazy"><figcaption>Honey Mustard Glazed Salmon</figcaption></a></figure>
       </div>
       <p class="more"><a class="btn line" href="https://bylercanningco.com/recipes/">All the recipes</a></p>
@@ -341,8 +343,16 @@
 
   <section class="trade" id="trade" aria-labelledby="trade-h">
     <div class="wrap">
-      <h2 id="trade-h">For stores, delis and brands.</h2>
-      <p class="intro">Clean labels, true-to-recipe flavor and jars built for the shelf. Most orders ship the next day; seasonal or limited runs may take longer.</p>
+      <div class="trade-top">
+        <div>
+          <h2 id="trade-h">For stores, delis and brands.</h2>
+          <p class="intro">Clean labels, true-to-recipe flavor and jars built for the shelf. Most orders ship the next day; seasonal or limited runs may take longer.</p>
+        </div>
+        <figure>
+          <img src="img/mustard-640.webp" srcset="img/mustard-640.webp 640w, img/mustard-1100.webp 1100w" sizes="(max-width: 860px) calc(100vw - 2rem), 500px" width="640" height="512" alt="A jar of Byler's Mild Pepper Mustard beside a bowl of it, with red peppers and mustard seed" loading="lazy">
+          <figcaption>Byler’s Mild Pepper Mustard.</figcaption>
+        </figure>
+      </div>
       <div class="cols">
         <div>
           <h3>Wholesale, three ways to order</h3>
