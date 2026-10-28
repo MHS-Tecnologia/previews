@@ -37,10 +37,11 @@
 
   .demo { background: var(--asphalt); color: #c9c5bd; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .55rem 1rem; }
 
+  .top { background: var(--asphalt); color: var(--salt); }
   header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem var(--pad); }
   .mark { text-decoration: none; font-stretch: 125%; font-weight: 900; font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1; }
   .mark span { color: var(--red); }
-  .mark small { display: block; font-stretch: 100%; font-weight: 500; font-size: .75rem; letter-spacing: 0; color: var(--graphite); margin-top: .3rem; }
+  .mark small { display: block; font-stretch: 100%; font-weight: 500; font-size: .75rem; letter-spacing: 0; color: #a9a49b; margin-top: .3rem; }
   header nav { display: flex; align-items: center; gap: 1.5rem; font-weight: 500; font-size: .95rem; }
   header nav a { text-decoration: none; }
   header nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -51,12 +52,15 @@
   /* Hero: the engine is the headline's evidence. */
   .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(1.5rem, 4vw, 3rem) var(--pad) clamp(3rem, 6vw, 5rem); }
   .hero h1 { font-size: clamp(2.6rem, 5.6vw, 5.2rem); text-wrap: balance; }
-  .hero p { margin-top: 1.4rem; max-width: 34rem; color: var(--graphite); font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
+  .hero p { margin-top: 1.4rem; max-width: 34rem; color: #cfcac1; font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
   .hero .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
   .hero .phone { font-weight: 600; text-decoration: none; font-variant-numeric: tabular-nums; }
   .hero .phone:hover { text-decoration: underline; text-underline-offset: 4px; }
   .engine { position: relative; border-radius: 1.25rem; overflow: hidden; background: #b9b6b0; }
-  .engine img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .engine img { width: 100%; aspect-ratio: 1; object-fit: cover; transform: scale(1.18); transform-origin: 50% 58%; }
+  .tag { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; margin-top: 1.4rem; padding: .55rem .9rem; border: 1px solid #3a3c40; border-radius: .75rem; font-size: .9375rem; color: #cfcac1; }
+  .tag b { font-stretch: 125%; font-weight: 800; color: var(--brass); font-variant-numeric: tabular-nums; }
+  .tag a { color: inherit; }
   .engine figcaption { position: absolute; left: 1rem; bottom: 1rem; background: rgba(23,24,26,.82); color: #fff; font-size: .8125rem; padding: .35rem .7rem; border-radius: 999px; }
 
   /* The one loud moment: a land-speed timing card. */
@@ -102,7 +106,9 @@
   .numbers p { margin-top: .5rem; color: var(--graphite); font-size: .95rem; line-height: 1.45; }
   .split { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
   .split h3 { padding-bottom: .6rem; border-bottom: 2px solid var(--asphalt); margin-bottom: .8rem; }
-  .split ul { list-style: none; padding: 0; display: grid; gap: .35rem; color: var(--graphite); font-size: .975rem; }
+  .split ul { list-style: none; padding: 0; display: grid; gap: .45rem; color: #2c2e31; font-size: 1rem; }
+  .split summary { list-style: none; cursor: default; }
+  .split summary::-webkit-details-marker { display: none; }
 
   .contact { background: var(--red); color: #fff; }
   .contact .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
@@ -127,7 +133,7 @@
     .mark { font-size: 1.05rem; white-space: nowrap; }
     .hero { grid-template-columns: 1fr; padding-top: .5rem; }
     .engine { order: -1; }
-    .engine img { aspect-ratio: 4 / 3; }
+
     .record .wrap, .contact .wrap { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; gap: .75rem; }
     .g1 { grid-column: span 2; grid-row: auto; }
@@ -135,7 +141,12 @@
     .g2, .g3, .g4, .g5 { grid-column: span 1; }
     .g2 img, .g3 img, .g4 img, .g5 img { aspect-ratio: 1; }
     .numbers { grid-template-columns: 1fr 1fr; }
-    .split { grid-template-columns: 1fr; gap: 2rem; }
+    .split { grid-template-columns: 1fr; gap: 1rem; }
+    .split summary { cursor: pointer; }
+    .split summary h3 { display: flex; justify-content: space-between; align-items: center; }
+    .split summary h3::after { content: "+"; font-weight: 600; }
+    .split details[open] summary h3::after { content: "–"; }
+    .engine img { aspect-ratio: 16 / 10; }
     .dock { display: block; position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 5;
       background: var(--red); color: #fff; text-align: center; text-decoration: none; font-weight: 600; padding: .95rem 1rem; border-radius: 999px; box-shadow: 0 8px 24px rgba(0,0,0,.25);
       opacity: 0; transform: translateY(1rem); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
@@ -148,7 +159,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <div class="demo">Unofficial demo built by MHS Tecnologia for ESP Machining &amp; Mfg. Not affiliated with or endorsed by ESP Machining &amp; Mfg.</div>
 
-  <header>
+  <header class="top">
     <a class="mark" href="#main" translate="no"><span>ESP</span> Machining &amp; Mfg<small>North Lima, Ohio</small></a>
     <nav aria-label="Main">
       <a href="#work">Work</a>
@@ -159,10 +170,11 @@
   </header>
 
   <main id="main">
-    <div class="hero">
+    <div class="hero top">
       <div>
-        <h1>Machined to the print, or engineered to spec.</h1>
-        <p>Tooling, prototypes and production parts for the transportation equipment industries, from a 26,000 square foot shop founded by the man behind Cobra’s racing mini cycles.</p>
+        <h1>Race-bred machining, to the print or to spec.</h1>
+        <p>Tooling, prototypes and production parts for the transportation equipment industries, from a 26,000 square foot shop founded by Bud Maimone, the man behind Cobra’s racing mini cycles.</p>
+        <p class="tag"><b>74.852 mph</b><span>AMA land speed record at Bonneville, set by a Cobra-powered bike in 2005. <a href="#story">The story</a></span></p>
         <div class="actions">
           <a class="btn" href="mailto:espmachining@gmail.com?subject=Quote%20request">Email your drawings</a>
           <a class="phone" href="tel:+13304020777">(330) 402-0777</a>
@@ -222,8 +234,8 @@
           <div><span class="wide">26,000</span><p>Square feet of manufacturing and office space</p></div>
         </div>
         <div class="split">
-          <div>
-            <h3>Services</h3>
+          <details open>
+            <summary><h3>Services</h3></summary>
             <ul>
               <li>Product design, research and development</li>
               <li>Injection mold building</li>
@@ -234,9 +246,9 @@
               <li>Tooling refurbishing and die rebuilding</li>
               <li>Complete QC, assembly and packaging</li>
             </ul>
-          </div>
-          <div>
-            <h3>Turning and milling</h3>
+          </details>
+          <details open>
+            <summary><h3>Turning and milling</h3></summary>
             <ul translate="no">
               <li>Mazak Integrex, 5-axis, dual spindles</li>
               <li>Tsugami Swiss turn, 5-axis</li>
@@ -248,9 +260,9 @@
               <li>Mori Seiki CNC lathes (4), Okuma (2)</li>
               <li>Manual lathes up to 30″ (6)</li>
             </ul>
-          </div>
-          <div>
-            <h3>Grinding and finishing</h3>
+          </details>
+          <details open>
+            <summary><h3>Grinding and finishing</h3></summary>
             <ul>
               <li>Surface grinders, manual and hydraulic (6)</li>
               <li>24″ lapping machine</li>
@@ -259,7 +271,7 @@
               <li>Large buffing and polishing machines (4)</li>
               <li>Full inspection and QC department</li>
             </ul>
-          </div>
+          </details>
         </div>
       </div>
     </section>
@@ -283,6 +295,8 @@
 
   <a class="dock" href="tel:+13304020777">Call (330) 402-0777</a>
   <script>
+    // Phones: the long machine lists start closed.
+    if (matchMedia('(max-width: 860px)').matches) document.querySelectorAll('.split details').forEach((d, i) => { if (i > 0) d.open = false })
     // The floating call button appears once the hero's own buttons are off screen.
     const dock = document.querySelector('.dock')
     new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(document.querySelector('.hero .actions'))
