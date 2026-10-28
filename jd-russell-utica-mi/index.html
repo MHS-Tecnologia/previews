@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#0f2131">
+<title>The J D Russell Company, steel edging and concrete accessories</title>
+<meta name="description" content="DuraEdge steel landscape edging, shot blasted before powder coating, plus Reflex rubber expansion joints, Dura Dowel and concrete forming products. Made in the USA.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/sofiacond.woff2" crossorigin>
+<link rel="preload" as="image" media="(max-width: 860px)" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-760.webp 760w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 861px)" imagesrcset="img/hero-480.webp 480w, img/hero-900.webp 900w, img/hero-1320.webp 1320w" imagesizes="420px" fetchpriority="high">
+<style>
+  @font-face { font-family: "Sofia Sans Condensed"; font-weight: 400 900; font-display: swap; src: url(fonts/sofiacond.woff2) format("woff2"); }
+  @font-face { font-family: "Sofia Sans"; font-weight: 300 800; font-display: swap; src: url(fonts/sofia.woff2) format("woff2"); }
+
+  /* JDR's navy, a poured-concrete gray, the weathered steel of DuraRust,
+     zinc-gray steel for the edge, and the orange of a Dura Dowel sleeve. */
+  :root {
+    --night: #0f2131;
+    --night-2: #172d41;
+    --concrete: #dedfdb;
+    --slab: #c9cbc6;
+    --ink: #15202a;
+    --muted: #46515b;
+    --rust: #a44c22;
+    --rust-deep: #8a3d19;
+    --steel: #7b858c;
+    --dowel: #d9681e;
+    --on-night: #e9edf0;
+    --on-night-muted: #aebbc6;
+    --pad: clamp(1rem, 4vw, 3rem);
+    --max: 76rem;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--concrete); color: var(--ink); font: 400 1.0625rem/1.6 "Sofia Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+  img, svg { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--dowel); outline-offset: 3px; }
+  h1, h2, h3 { font-family: "Sofia Sans Condensed", "Arial Narrow", sans-serif; font-weight: 800; line-height: .98; letter-spacing: -.01em; text-wrap: balance; }
+  h2 { font-size: clamp(2.1rem, 4.6vw, 3.6rem); }
+  h3 { font-size: 1.55rem; line-height: 1.05; }
+  p { max-width: 64ch; }
+  [id] { scroll-margin-top: 1rem; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; color: var(--ink); padding: .5rem 1rem; z-index: 20; }
+  .skip:focus { left: .5rem; }
+
+  .demo { background: #fff; color: var(--ink); font-size: .8125rem; line-height: 1.35; padding: .45rem var(--pad); text-align: center; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.25rem; padding: .7rem 1.4rem; font: 700 1.0625rem/1.1 "Sofia Sans", sans-serif; text-decoration: none; border-radius: 3px; border: 2px solid transparent; }
+  .btn-rust { background: var(--rust); color: #fff; }
+  .btn-rust:hover { background: var(--rust-deep); }
+  .btn-line { border-color: currentColor; }
+  .btn-line:hover { background: rgba(255,255,255,.08); }
+  .btn svg { width: 1.15rem; height: 1.15rem; flex: none; }
+
+  /* Header */
+  .top { background: var(--night); color: var(--on-night); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 4rem; }
+  .brand { font: 800 1.45rem/1 "Sofia Sans Condensed", sans-serif; text-decoration: none; letter-spacing: .005em; }
+  .brand small { display: block; font: 500 .8rem/1.2 "Sofia Sans", sans-serif; color: var(--on-night-muted); letter-spacing: 0; margin-top: .2rem; }
+  .nav { display: flex; gap: 1.6rem; font-weight: 600; font-size: .98rem; }
+  .nav a { text-decoration: none; color: var(--on-night-muted); }
+  .nav a:hover { color: #fff; }
+  .top-tel { font-weight: 700; text-decoration: none; white-space: nowrap; }
+  .top-tel span { color: var(--on-night-muted); font-weight: 500; }
+
+  /* Hero */
+  .hero { background: var(--night); color: var(--on-night); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: clamp(2rem, 5vw, 4.5rem); align-items: end; padding-top: 2rem; }
+  .hero-copy { align-self: center; padding-bottom: 2.5rem; }
+  .hero h1 { font-size: clamp(2.5rem, 5.6vw, 5rem); max-width: 13ch; }
+  .lede { margin-top: 1.25rem; font-size: 1.1875rem; color: var(--on-night-muted); max-width: 46ch; }
+  .lede b { color: var(--on-night); font-weight: 700; }
+  .ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+  .hero-note { margin-top: 1rem; font-size: .95rem; color: var(--on-night-muted); }
+  .hero-note a { color: var(--on-night); font-weight: 700; }
+  .m-cat { display: none; }
+  .hero-photo { position: relative; }
+  .hero-photo img { width: 420px; height: auto; }
+  .hero-photo figcaption { position: absolute; left: .75rem; bottom: .75rem; background: rgba(15,33,49,.82); color: var(--on-night); font-size: .85rem; padding: .3rem .6rem; border-radius: 2px; }
+
+  /* The edge: a run of steel edging with its stake pockets, the line every product draws */
+  .edge { height: 16px; background:
+      repeating-linear-gradient(90deg, transparent 0 86px, rgba(10,16,22,.7) 86px 100px) 0 50% / 100% 6px no-repeat,
+      linear-gradient(#c3c8cc, #8b949a 45%, #5f676d); border-radius: 1px; transform-origin: left center; animation: drive .8s cubic-bezier(.2,.7,.2,1) .1s both; }
+  @keyframes drive { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .hero-edge { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+  .hero-band { height: 1.5rem; background: var(--night); }
+
+  /* Cross-section */
+  .xs { padding: 2.75rem 0 4rem; }
+  .xs-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem 4rem; align-items: start; }
+  .xs-head p { color: var(--muted); }
+  .xs-fig { margin-top: 2.25rem; }
+  .xs-labels { position: relative; height: 2.4rem; }
+  .xs-labels a { position: absolute; bottom: .35rem; transform: translateX(-50%); font: 800 1.15rem/1 "Sofia Sans Condensed", sans-serif; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
+  .xs-labels a:hover { border-bottom-color: currentColor; }
+  .xs-labels.below a { top: .35rem; bottom: auto; }
+  .xs-labels a.r { transform: translateX(-100%); }
+  .xs-svg { width: 100%; }
+  .xs-cap { margin-top: 1rem; color: var(--muted); font-size: .95rem; }
+
+  /* Sections */
+  .sec { padding: 4.5rem 0; }
+  .sec-intro { max-width: 44rem; }
+  .sec-intro p { margin-top: 1rem; color: var(--muted); font-size: 1.125rem; }
+
+  /* Edging */
+  .edging { background: #f1f1ee; }
+  .edging-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 5vw, 4rem); margin-top: 2.5rem; align-items: start; }
+  .edging-photo img { width: 100%; height: auto; border-radius: 2px; }
+  .edging-photo figcaption { margin-top: .6rem; font-size: .9rem; color: var(--muted); }
+  .specs { list-style: none; padding: 0; border-top: 2px solid var(--ink); }
+  .specs li { display: grid; grid-template-columns: 10.5rem minmax(0, 1fr); gap: .25rem 1.25rem; padding: 1rem 0; border-bottom: 1px solid #bfc2bd; }
+  .specs h3 { font-size: 1.4rem; }
+  .specs p { font-size: 1rem; }
+  .specs .dim { grid-column: 2; font-size: .95rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  details.more > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; min-height: 2.75rem; padding: .5rem 1rem; border: 2px solid var(--ink); border-radius: 3px; font-weight: 700; }
+  details.more > summary::-webkit-details-marker { display: none; }
+  details.more[open] > summary { display: none; }
+  .extras { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
+  .extras h3 { font-size: 1.3rem; }
+  .extras p { margin-top: .4rem; font-size: 1rem; color: var(--muted); }
+
+  /* Shot blast */
+  .blast { background: var(--night); color: var(--on-night); }
+  .blast-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .blast h2 { max-width: 16ch; }
+  .blast .claim { margin-top: 1.25rem; font-size: 1.15rem; color: var(--on-night-muted); }
+  .blast .claim b { color: var(--on-night); }
+  .stages { list-style: none; padding: 0; margin-top: 2rem; display: grid; gap: 0; counter-reset: s; }
+  .stages li { counter-increment: s; display: grid; grid-template-columns: 3.25rem minmax(0,1fr); gap: 1rem; padding: 1rem 0; border-top: 1px solid #2c4357; }
+  .stages li::before { content: counter(s); font: 800 2.6rem/.9 "Sofia Sans Condensed", sans-serif; color: var(--dowel); }
+  .stages h3 { font-size: 1.35rem; }
+  .stages p { margin-top: .25rem; color: var(--on-night-muted); font-size: 1rem; }
+  .blast-photo img { width: 100%; max-width: 480px; height: auto; margin-left: auto; border-radius: 2px; }
+  .blast-photo figcaption { margin-top: .6rem; font-size: .9rem; color: var(--on-night-muted); max-width: 480px; margin-left: auto; }
+  .blast-foot { margin-top: 1.5rem; font-size: .95rem; color: var(--on-night-muted); }
+  .blast-foot a { color: var(--on-night); font-weight: 700; }
+
+  /* Concrete */
+  .wide { margin-top: 2.5rem; }
+  .wide img { width: 100%; height: auto; aspect-ratio: 1400 / 520; object-fit: cover; object-position: 50% 60%; border-radius: 2px; }
+  .wide figcaption { margin-top: .6rem; font-size: .9rem; color: var(--muted); }
+  .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .tile { background: #f1f1ee; border-bottom: 4px solid var(--steel); display: flex; flex-direction: column; }
+  .tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .tile div { padding: 1rem 1rem 1.25rem; }
+  .tile h3 { font-size: 1.45rem; }
+  .tile p { margin-top: .4rem; font-size: .98rem; color: var(--muted); }
+  .swatches { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .7rem; padding: 0; list-style: none; }
+  .swatches li { width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 1px solid rgba(0,0,0,.25); }
+  .fine { font-size: .82rem !important; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .reflex-spec { margin-top: 2.5rem; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 1rem 3rem; padding: 1.5rem 0; border-top: 2px solid var(--ink); border-bottom: 1px solid #bfc2bd; }
+  .reflex-spec h3 { font-size: 1.5rem; }
+  .reflex-spec ul { margin: 0; padding-left: 1.1rem; }
+  .reflex-spec li { margin: .15rem 0; }
+  .lineup { margin-top: 3rem; }
+  .lineup > h3 { font-size: 1.9rem; }
+  .cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 2rem; margin-top: 1.25rem; }
+  .cols h4 { font: 700 1rem/1.3 "Sofia Sans", sans-serif; padding-bottom: .4rem; border-bottom: 2px solid var(--ink); }
+  .cols ul { list-style: none; padding: 0; margin-top: .5rem; }
+  .cols li { padding: .3rem 0; font-size: .98rem; border-bottom: 1px solid #c4c6c1; }
+  .cols li span { display: block; font-size: .85rem; color: var(--muted); }
+
+  /* Made in the USA */
+  .made { background: var(--slab); padding: 3rem 0; }
+  .made .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 4rem; }
+  .made blockquote { font: 700 clamp(1.5rem, 2.6vw, 2.1rem)/1.1 "Sofia Sans Condensed", sans-serif; }
+  .made cite { display: block; margin-top: .5rem; font: 400 .9rem/1.4 "Sofia Sans", sans-serif; font-style: normal; color: var(--muted); }
+
+  /* Contact */
+  .contact { background: var(--night); color: var(--on-night); }
+  .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 2.5rem 4rem; }
+  .contact .lede { margin-top: 1rem; }
+  .catalogs { margin-top: 1.5rem; font-size: .98rem; color: var(--on-night-muted); }
+  .catalogs a { color: var(--on-night); font-weight: 700; }
+  .regions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+  .regions div { border-top: 3px solid var(--steel); padding-top: .9rem; }
+  .regions h3 { font-size: 1.35rem; }
+  .regions p { margin-top: .4rem; font-size: .95rem; color: var(--on-night-muted); }
+  .regions a { display: inline-block; padding: .2rem 0; color: var(--on-night); font-weight: 700; text-decoration: none; border-bottom: 1px solid #47617a; }
+  .regions a:hover { border-bottom-color: currentColor; }
+  .email-row { margin-top: 1.75rem; font-size: 1rem; color: var(--on-night-muted); }
+  .email-row a { color: var(--on-night); font-weight: 700; }
+
+  footer { background: #0a1724; color: var(--on-night-muted); font-size: .88rem; padding: 2rem 0 2.5rem; }
+  footer p + p { margin-top: .5rem; }
+  footer a { color: var(--on-night); }
+
+  /* Sticky mobile CTA */
+  .sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; display: none; gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(15,33,49,.97); border-top: 1px solid #2c4357; transform: translateY(110%); transition: transform .25s ease; }
+  .sticky.on { transform: none; }
+  .sticky .btn { flex: 1; min-height: 3rem; padding: .5rem .75rem; font-size: 1rem; }
+  .sticky .btn-line { color: var(--on-night); }
+
+  @media (max-width: 1100px) {
+    .nav { display: none; }
+    .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 860px) {
+    body { font-size: 1rem; }
+    .top .wrap { min-height: 3.5rem; }
+    .brand { font-size: 1.25rem; }
+    .brand small { display: none; }
+    .top-tel span { display: none; }
+    .hero-grid { grid-template-columns: 1fr; gap: 0; padding-top: 1rem; }
+    .hero-photo { order: -1; }
+    .hero-photo img { width: 100%; height: 205px; object-fit: cover; object-position: 50% 50%; }
+    .hero-photo::after { content: ""; display: block; height: 12px; background:
+      repeating-linear-gradient(90deg, transparent 0 62px, rgba(10,16,22,.7) 62px 72px) 0 50% / 100% 5px no-repeat,
+      linear-gradient(#c3c8cc, #8b949a 45%, #5f676d); }
+    .hero-photo figcaption { bottom: 1.5rem; font-size: .78rem; }
+    .hero-copy { padding: 1.1rem 0 2rem; }
+    .hero h1 { font-size: 2.75rem; max-width: none; }
+    .lede { font-size: 1.02rem; margin-top: .8rem; line-height: 1.5; }
+    .ctas { margin-top: 1.1rem; }
+    .ctas .btn { flex: 1 1 100%; }
+    .ctas .btn-line { display: none; }
+    .m-cat { display: inline; }
+    .hero-note { margin-top: .75rem; }
+    .hero-edge, .hero-band { display: none; }
+    .xs { padding: 2.75rem 0 3rem; }
+    .xs-head { grid-template-columns: 1fr; }
+    .xs-labels a { font-size: .95rem; }
+    .xs-labels { height: 1.9rem; }
+    .sec { padding: 3.25rem 0; }
+    .edging-grid, .blast-grid, .contact-grid, .made .wrap, .reflex-spec, .extras { grid-template-columns: 1fr; }
+    .specs li { grid-template-columns: 1fr; }
+    .specs .dim { grid-column: 1; }
+    .blast-photo { order: -1; }
+    .blast-photo img, .blast-photo figcaption { margin-left: 0; }
+    .wide img { aspect-ratio: 4 / 3; }
+    .tiles { gap: .75rem; }
+    .tile div { padding: .75rem .75rem 1rem; }
+    .tile h3 { font-size: 1.2rem; }
+    .tile p { font-size: .9rem; }
+    .swatches li { width: 1.2rem; height: 1.2rem; }
+    .tile .swnames { display: none; }
+    .regions { grid-template-columns: 1fr; }
+    .sticky { display: flex; }
+    footer { padding-bottom: 6rem; }
+  }
+  @media (max-width: 520px) {
+    .cols { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 861px) {
+    details.more > summary { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .edge { animation: none; }
+    .sticky { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for The J D Russell Company. Not affiliated with or endorsed by The J D Russell Company.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#main">The J D Russell Company<small>Landscape and construction products</small></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#edging">Landscape edging</a>
+      <a href="#shot-blast">Shot blast finish</a>
+      <a href="#concrete">Concrete products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="top-tel" href="tel:+18008887425"><span>Call </span>(800) 888-7425</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="h1">Steel edging and concrete accessories, made in the USA.</h1>
+        <p class="lede"><b>DuraEdge</b> landscape edging, shot blasted before it is powder coated. <b>Reflex</b> expansion joints, <b>Dura Dowel</b> and form clips for the concrete crew.</p>
+        <div class="ctas">
+          <a class="btn btn-rust" id="hero-cta" href="mailto:contact@jdrussellco.com?subject=Quote%20or%20sample%20request">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
+            Request a quote or sample</a>
+          <a class="btn btn-line" href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+            2026 catalog (PDF)</a>
+        </div>
+        <p class="hero-note">Or call <a href="tel:+18008887425">(800) 888-7425</a><span class="m-cat">, or get the <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">2026 catalog (PDF)</a></span></p>
+      </div>
+      <figure class="hero-photo">
+        <picture><source media="(max-width: 860px)" srcset="img/hero-m-480.webp 480w, img/hero-m-760.webp 760w" sizes="calc(100vw - 2rem)" width="1320" height="755"><img src="img/hero-900.webp" srcset="img/hero-480.webp 480w, img/hero-900.webp 900w, img/hero-1320.webp 1320w" sizes="420px" width="1320" height="1878" alt="A raised bed framed in weathered steel edging, joined with steel brackets, with petunias planted inside" fetchpriority="high"></picture>
+        <figcaption>Raised steel edging, up to 12″ tall</figcaption>
+      </figure>
+    </div>
+    <div class="hero-edge"><div class="edge"></div></div>
+    <div class="hero-band" aria-hidden="true"></div>
+  </section>
+
+  <section class="xs" aria-labelledby="xs-h">
+    <div class="wrap">
+      <div class="xs-head">
+        <h2 id="xs-h">Everything JDR makes sits on a line between two materials.</h2>
+        <p>Edging between the lawn and the gravel. A rubber joint between two slabs. A dowel that carries the load across that joint. A clipped form that holds the wet concrete until it sets.</p>
+      </div>
+      <figure class="xs-fig">
+        <div class="xs-labels">
+          <a href="#edging" style="left:28.3%">DuraEdge</a>
+          <a href="#concrete" style="left:58.3%">Reflex joint</a>
+          <a class="r" href="#forming" style="left:100%">Form clips</a>
+        </div>
+        <svg class="xs-svg" viewBox="0 0 1200 260" role="img" aria-labelledby="xs-t">
+          <title id="xs-t">Cross-section: lawn and soil, a steel edge, a gravel bed, then two concrete slabs separated by a rubber expansion joint, a dowel crossing the joint inside its sleeve, and a wood form held by a clip at the far end.</title>
+          <defs>
+            <pattern id="grav" width="14" height="12" patternUnits="userSpaceOnUse"><rect width="14" height="12" fill="#b7b1a4"/><circle cx="4" cy="4" r="2.6" fill="#8f897d"/><circle cx="11" cy="9" r="2" fill="#9e988c"/></pattern>
+            <pattern id="base" width="18" height="14" patternUnits="userSpaceOnUse"><rect width="18" height="14" fill="#8a7b67"/><circle cx="5" cy="5" r="2" fill="#77695a"/><circle cx="13" cy="10" r="1.6" fill="#6f6254"/></pattern>
+            <pattern id="grass" width="12" height="16" patternUnits="userSpaceOnUse"><rect y="8" width="12" height="8" fill="#3f6b33"/><path d="M0 16 3 2 5 16M6 16 9 4 11 16" fill="#4f7d3d"/></pattern>
+          </defs>
+          <rect x="0" y="112" width="560" height="148" fill="#6b5640"/>
+          <rect x="0" y="96" width="336" height="18" fill="url(#grass)"/>
+          <rect x="344" y="112" width="216" height="62" fill="url(#grav)"/>
+          <rect x="336" y="86" width="8" height="104" fill="#a44c22"/>
+          <rect x="324" y="120" width="12" height="16" fill="#8a3d19"/>
+          <rect x="327" y="122" width="5" height="112" fill="#59615f"/>
+          <rect x="560" y="190" width="640" height="70" fill="url(#base)"/>
+          <rect x="560" y="102" width="134" height="88" fill="#c6c7c2" stroke="#9fa19c" stroke-width="2"/>
+          <rect x="706" y="102" width="404" height="88" fill="#c6c7c2" stroke="#9fa19c" stroke-width="2"/>
+          <rect x="694" y="102" width="12" height="88" fill="#1c2125"/>
+          <rect x="612" y="143" width="160" height="8" fill="#6f7a82"/>
+          <rect x="700" y="139" width="92" height="16" rx="2" fill="#d9681e"/>
+          <rect x="700" y="143" width="72" height="8" fill="#6f7a82"/>
+          <rect x="1110" y="94" width="16" height="104" fill="#c9a46a"/>
+          <rect x="1136" y="70" width="10" height="180" fill="#a07c48"/>
+          <rect x="1104" y="92" width="48" height="8" fill="#59615f"/>
+          <g stroke="#15202a" stroke-width="2">
+            <line x1="340" y1="0" x2="340" y2="80"/>
+            <line x1="700" y1="0" x2="700" y2="96"/>
+            <line x1="1196" y1="0" x2="1196" y2="40"/><line x1="1196" y1="40" x2="1156" y2="92"/>
+            <line x1="746" y1="160" x2="746" y2="260"/>
+          </g>
+        </svg>
+        <div class="xs-labels below">
+          <a href="#concrete" style="left:62.2%">Dura Dowel</a>
+        </div>
+        <figcaption class="xs-cap">Not to scale. Tap a name to jump to the product.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec edging" id="edging" aria-labelledby="edging-h">
+    <div class="wrap">
+      <div class="sec-intro">
+        <h2 id="edging-h">Landscape edging</h2>
+        <p>DuraEdge is American-made steel edging, in a powder coat finish, unpainted, or weathered. It installs permanently, will not crack, and is flexible enough for curves and custom layouts.</p>
+      </div>
+      <div class="edging-grid">
+        <figure class="edging-photo">
+          <img src="img/rust-800.webp" srcset="img/rust-800.webp 800w, img/rust-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 540px" width="1400" height="1039" alt="A park with stepped lawns edged in rust-colored steel, a paved path and a row of trees" loading="lazy">
+          <figcaption>DuraRust develops its rust-colored patina as it weathers.</figcaption>
+        </figure>
+        <div>
+          <ul class="specs">
+            <li><h3>DuraEdge</h3><p>Steel, powder coated, unpainted or weathered.</p><p class="dim">14 Ga, 12 Ga, ⅛″, 3⁄16″, ¼″ · 8′, 10′, 16′ lengths</p></li>
+            <li><h3>Roll Top DuraEdge</h3><p>Rolled top edge for parks, schools and walkways, where pets or bare feet may be present.</p><p class="dim">14 Ga, 12 Ga · 4″ and 6″ high · 8′, 10′</p></li>
+            <li><h3>DuraRust</h3><p>Self-weathering steel that turns a natural rust color over time.</p><p class="dim">14 Ga, 12 Ga, ⅛″, 3⁄16″, ¼″ · 8′, 10′, 16′</p></li>
+          </ul>
+          <details class="more">
+            <summary>Show all 6 edging lines</summary>
+            <ul class="specs" style="border-top:0">
+              <li><h3>Galvanized DuraEdge</h3><p>Hot-dipped zinc coating for salt air, humidity and irrigation.</p><p class="dim">14 Ga to ¼″ · 4″ to 6″ high · 8′, 10′, 16′</p></li>
+              <li><h3>Duraroll</h3><p>Unpunched galvanized edging, straight or rolled edge.</p><p class="dim">14 to 22 Ga · 4″ × 10′ strips · 12″ hairpin stakes</p></li>
+              <li><h3>Duralum</h3><p>Aluminum that won’t rust. Mill finish or powder coated.</p><p class="dim">⅛″ or 3⁄16″ · 4″ or 5.5″ high · 8′, 16′</p></li>
+            </ul>
+          </details>
+          <div class="extras">
+            <div><h3>Any color you need</h3><p>Powder coat in almost any custom color: your team, your college, your company. Textured or glossy finish.</p></div>
+            <div><h3>Accessories</h3><p>Start and end sections, inside and outside corners, universal corners, couplers, and one-piece tree rings in 3′, 4′ and 5′.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec blast" id="shot-blast" aria-labelledby="blast-h">
+    <div class="wrap blast-grid">
+      <div>
+        <h2 id="blast-h">Blasted to near white metal before the powder coat goes on.</h2>
+        <p class="claim">JDR is <b>the first and only landscape edging manufacturer in the nation</b> to use the Blastec shot blast system before powder coating. Every piece of DuraEdge goes through three stages.</p>
+        <ol class="stages">
+          <li><div><h3>Detergent pre-wash</h3><p>Removes the oils, grease and contaminants left from making and handling the steel.</p></div></li>
+          <li><div><h3>Shot blasting</h3><p>A centrifugal wheel throws abrasive at the steel, stripping rust, mill scale and impurities, to SSPC preparation standards.</p></div></li>
+          <li><div><h3>Powder coating</h3><p>An ASTM-compliant TGIC powder coat, baked hard against humidity, salt spray and sunlight.</p></div></li>
+        </ol>
+        <p class="blast-foot">Powder coating can last up to three times longer than liquid paint. Specifying it? <a href="https://www.jdrussellco.com/wp-content/uploads/ShotBlast-Specifier.pdf">Specifier insert (PDF)</a></p>
+      </div>
+      <figure class="blast-photo">
+        <img src="img/plant-768.webp" srcset="img/plant-480.webp 480w, img/plant-768.webp 768w" sizes="(max-width: 860px) calc(100vw - 2rem), 480px" width="768" height="634" alt="Steel edging hanging on racks beside the blue shot blast machine in JDR’s plant" loading="lazy">
+        <figcaption>Edging on the racks, going into the shot blaster.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="concrete" aria-labelledby="concrete-h">
+    <div class="wrap">
+      <div class="sec-intro">
+        <h2 id="concrete-h">For the concrete crew</h2>
+        <p>Expansion joints, dowel systems, form clips, ties and stakes, for driveways and sidewalks up to bridges and roadways.</p>
+      </div>
+      <div class="tiles">
+        <article class="tile">
+          <img src="img/reflex-480.webp" srcset="img/reflex-480.webp 480w, img/reflex-900.webp 900w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="900" height="486" alt="Close-up of a black rubber expansion joint between concrete" loading="lazy">
+          <div><h3>Reflex</h3><p>Rubber expansion joint from recycled rubber and plastic. Won’t rot, doesn’t need sealing.</p></div>
+        </article>
+        <article class="tile">
+          <img src="img/reflexc-480.webp" srcset="img/reflexc-480.webp 480w, img/reflexc-900.webp 900w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="900" height="562" alt="A curved concrete sidewalk with a gray rubber joint between slabs" loading="lazy">
+          <div><h3>Reflex Color</h3><p>A UV-stable colored edge. Flip it over for black.</p>
+            <ul class="swatches" aria-label="Five colors plus black">
+              <li style="background:#b8b3a8"><span class="vh">Concrete color</span></li><li style="background:#cfcfcb"><span class="vh">Light gray</span></li><li style="background:#b4623e"><span class="vh">Terra cotta</span></li><li style="background:#c9ad85"><span class="vh">Tan</span></li><li style="background:#8e3b2e"><span class="vh">Red brick</span></li><li style="background:#1c2125"><span class="vh">Black</span></li>
+            </ul>
+            <p class="fine swnames" aria-hidden="true">Concrete color, light gray, terra cotta, tan, red brick. Screen colors are approximate.</p></div>
+        </article>
+        <article class="tile">
+          <img src="img/dowel-480.webp" srcset="img/dowel-480.webp 480w, img/dowel-900.webp 900w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="900" height="464" alt="A Dura Dowel strip with orange sleeves set along the edge of a concrete slab" loading="lazy">
+          <div><h3>Dura Dowel Strip</h3><p>Sleeves factory-set in one strip, so every pocket lands aligned and evenly spaced.</p></div>
+        </article>
+        <article class="tile" id="forming">
+          <img src="img/form-480.webp" srcset="img/form-480.webp 480w, img/form-820.webp 820w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="820" height="1152" alt="A fresh concrete sidewalk formed with green steel edging held by wood stakes" loading="lazy">
+          <div><h3>Forming with DuraEdge</h3><p>The same steel edging, staked in as the form for a sidewalk pour.</p></div>
+        </article>
+      </div>
+
+      <div class="reflex-spec">
+        <div><h3>Reflex meets or exceeds</h3><p class="fine" style="margin-top:.5rem;color:var(--muted)">Applies to Reflex ½″ or greater in thickness. Pre-approved for roadway construction in most U.S. states, and in Canada.</p></div>
+        <ul>
+          <li>ASTM D1751-04, D1752-04a and D994</li>
+          <li>AASHTO M-213-95 and M-153-98</li>
+          <li>Federal Specification HH-F-341f, Type 1</li>
+          <li>FAA “Standard Specifications for Construction of Airports”, paragraph 501-2-4</li>
+        </ul>
+      </div>
+
+      <div class="lineup">
+        <h3>The full construction line</h3>
+        <details class="more" id="lineup-more">
+          <summary>Show all 19 products</summary>
+          <div class="cols">
+            <div><h4>Expansion joint</h4><ul>
+              <li>Reflex rubber</li><li>Reflex Color</li><li>Reflex Tear Tab<span>Pull cord leaves a clean ½″ sealant void</span></li><li>Fiberflex</li><li>Curbing expansion joint</li><li>Homex 300</li><li>Zip Strip, keyway and void cap</li></ul></div>
+            <div><h4>Concrete forming</h4><ul>
+              <li>EZ-Strip form clips<span>U.S. Patent No. 10,961,727 · for ¾″ and 1-⅛″ panels</span></li><li>Standard form clips</li><li>Aluminum form ties</li><li>Flat stacking ties and wedges</li><li>X-Flat ties</li><li>Metal screed joint and keyway</li></ul></div>
+            <div><h4>Dowels</h4><ul>
+              <li>Dura Dowel Strip</li><li>Dura Dowel singles</li><li>Smooth concrete dowels</li></ul></div>
+            <div><h4>Jobsite accessories</h4><ul>
+              <li>Nail stakes</li><li>Impalement caps</li><li>Rebar isolators</li></ul></div>
+          </div>
+        </details>
+      </div>
+
+      <figure class="wide">
+        <img src="img/found-800.webp" srcset="img/found-800.webp 800w, img/found-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 1120px" width="1400" height="911" alt="Formed concrete foundation walls on a residential job site, with framed houses behind" loading="lazy">
+        <figcaption>Foundation walls formed on a residential job site.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="made" aria-label="Made in the USA">
+    <div class="wrap">
+      <blockquote><p>“All of our products are made in the USA and are guaranteed high quality.”</p><cite>The J D Russell Company</cite></blockquote>
+      <blockquote><p>“Many of our products are made from 100% recycled material.”</p><cite>The J D Russell Company</cite></blockquote>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-h">Ask for a quote, a sample or the catalog.</h2>
+        <p class="lede">Tell us the product, the size and the quantity. A regional office will get back to you.</p>
+        <div class="ctas">
+          <a class="btn btn-rust" href="mailto:contact@jdrussellco.com?subject=Quote%20or%20sample%20request">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
+            Request a quote or sample</a>
+        </div>
+        <p class="catalogs">2026 master catalog: <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">English (PDF)</a> · <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-2026-Spanish_05-2026-SM2-1.pdf" hreflang="es">Español (PDF)</a></p>
+      </div>
+      <div>
+        <div class="regions">
+          <div><h3>Northern region</h3><p>PO Box 183471<br>Shelby Township, MI 48318</p><p><a href="tel:+15862548500">(586) 254-8500</a><br><a href="tel:+18008889708">(800) 888-9708</a></p></div>
+          <div><h3>Western region</h3><p>PO Box 36795<br>Tucson, AZ 85740</p><p><a href="tel:+15207426194">(520) 742-6194</a><br><a href="tel:+18008887425">(800) 888-7425</a></p></div>
+          <div><h3>Southern region</h3><p>129 Second St<br>Henderson, KY 42420</p><p><a href="tel:+12708267008">(270) 826-7008</a><br><a href="tel:+18008886872">(800) 888-6872</a></p></div>
+        </div>
+        <p class="email-row">Email <a href="mailto:contact@jdrussellco.com">contact@jdrussellco.com</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Unofficial demo built by MHS Tecnologia for The J D Russell Company. Not affiliated with or endorsed by The J D Russell Company. Content and photos come from The J D Russell Company’s public website.</p>
+    <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="btn btn-line" href="tel:+18008887425" tabindex="-1">Call</a>
+  <a class="btn btn-rust" href="mailto:contact@jdrussellco.com?subject=Quote%20or%20sample%20request" tabindex="-1">Request a quote</a>
+</div>
+
+<script>
+  (function () {
+    if (matchMedia('(min-width: 861px)').matches) {
+      document.querySelectorAll('details.more').forEach(function (d) { d.open = true; });
+    }
+    var bar = document.getElementById('sticky'), cta = document.getElementById('hero-cta');
+    if (!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (e) {
+      var past = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
+      bar.classList.toggle('on', past);
+      bar.setAttribute('aria-hidden', past ? 'false' : 'true');
+      bar.querySelectorAll('a').forEach(function (a) { a.tabIndex = past ? 0 : -1; });
+    }).observe(cta);
+  })();
+</script>
+</body>
+</html>
