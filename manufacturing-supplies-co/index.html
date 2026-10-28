@@ -103,11 +103,11 @@
     opacity: .75; }
   .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; background: var(--navy-700); }
   .shot figcaption { margin-top: .7rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem 1rem; font-size: .88rem; color: var(--steel); }
-  .dim { position: relative; margin-top: .9rem; display: flex; justify-content: center; color: var(--steel); font-size: .95rem; }
-  .dim::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--orange); transform-origin: center; animation: draw .9s .25s cubic-bezier(.2,.7,.2,1) both; }
-  .dim i { position: absolute; top: calc(50% - 7px); width: 1px; height: 14px; background: var(--orange); }
+  .dim { position: relative; margin-top: auto; padding-top: .7rem; display: flex; justify-content: center; color: var(--ink); font-size: .9rem; }
+  .dim::before { content: ""; position: absolute; left: 0; right: 0; top: calc(50% + .35rem); height: 1px; background: var(--orange); transform-origin: center; animation: draw .9s .25s cubic-bezier(.2,.7,.2,1) both; }
+  .dim i { position: absolute; top: calc(50% + .35rem - 7px); width: 1px; height: 14px; background: var(--orange); }
   .dim i:first-child { left: 0; } .dim i:last-of-type { right: 0; }
-  .dim span { position: relative; background: var(--navy-800); padding: 0 .7rem; text-align: center; }
+  .dim span { position: relative; background: #fff; padding: 0 .7rem; text-align: center; }
   @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
   /* ——— Open house ——— */
@@ -242,7 +242,6 @@
     .shot img { aspect-ratio: 16 / 10; }
     .shot figcaption { margin-top: .4rem; font-size: .8rem; }
     .shot figcaption span + span { display: none; }
-    .dim { font-size: .82rem; margin-top: .35rem; }
     .ctas { display: grid; grid-template-columns: 1.35fr 1fr; gap: .6rem; }
     .ctas .btn { padding: .7rem .6rem; font-size: 1rem; }
     .offices { font-size: .88rem; }
@@ -252,6 +251,9 @@
     .mach .txt { padding: .95rem 1.1rem 1.1rem; gap: .25rem; }
     .spec td { font-size: 1.15rem; }
     .ind li { font-size: 1rem; }
+    .ruler p:not(.yr) { display: none; }
+    .ruler li { padding-bottom: 1rem; }
+    .ruler .yr { font-size: 1.3rem; }
     .ruler details summary { display: list-item; cursor: pointer; font: 650 1rem/1.3 "Saira", sans-serif; color: var(--orange-ink); padding: .4rem 0 1.4rem; text-decoration: underline; text-underline-offset: .25em; }
     .ruler details[open] summary { display: none; }
     body.docked { padding-bottom: 4.6rem; }
@@ -287,6 +289,7 @@
       <a href="#atom">ATOM</a>
       <a href="#industries">Industries</a>
       <a href="#history">Since 1907</a>
+      <a href="#service">Service</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="call" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>(314) 770-0880</a>
@@ -308,7 +311,6 @@
       <figure class="shot">
         <img src="img/knife-800.webp" srcset="img/knife-560.webp 560w, img/knife-800.webp 800w, img/knife-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 660px" width="1400" height="1050" alt="An ATOM knife cutting head tracing rings into a sheet of orange gasket material" fetchpriority="high">
         <figcaption><span>An ATOM knife head cutting gasket rings</span><span>Still from MSC’s showroom video</span></figcaption>
-        <p class="dim"><i></i><span class="cond">FlashCut cutting areas: 1000 × 600 mm up to 6100 × 2600 mm</span><i></i></p>
       </figure>
     </div>
   </section>
@@ -344,6 +346,7 @@
             <h3>Digital knife cutting</h3>
             <p class="by cond">ATOM FlashCut</p>
             <p>Oscillating knife tables with one or two heads. No cutting dies to make, manage or store.</p>
+            <p class="dim"><i></i><span class="cond">Cutting areas 1000 × 600 mm to 6100 × 2600 mm</span><i></i></p>
           </div>
         </li>
         <li class="mach">
@@ -486,7 +489,7 @@
           <a class="big" href="mailto:information@mfgsup.com?subject=Machine%20inquiry"><svg aria-hidden="true"><use href="#i-mail"/></svg>information@mfgsup.com</a>
         </div>
       </div>
-      <div class="service">
+      <div class="service" id="service">
         <h3>Service and parts</h3>
         <p>Call either office or email <a href="mailto:information@mfgsup.com?subject=Service%20request">information@mfgsup.com</a> for service. Operating manuals are in MSC’s <a href="https://mfgsup.com/service-center/">online service center</a>, and MSC also supplies cutting pads and boards, cutting belts and material handling.</p>
       </div>
