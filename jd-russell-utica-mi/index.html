@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://demo.mhstecnologia.com/jd-russell-utica-mi/email.jpg">
 <meta property="og:type" content="website">
 <link rel="preload" as="font" type="font/woff2" href="fonts/sofiacond.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/sofia.woff2" crossorigin>
 <link rel="preload" as="image" media="(max-width: 860px)" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-760.webp 760w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
 <link rel="preload" as="image" media="(min-width: 861px)" imagesrcset="img/hero-480.webp 480w, img/hero-900.webp 900w, img/hero-1320.webp 1320w" imagesizes="420px" fetchpriority="high">
 <style>
@@ -39,11 +40,12 @@
     --max: 76rem;
   }
   * { box-sizing: border-box; margin: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body { background: var(--concrete); color: var(--ink); font: 400 1.0625rem/1.6 "Sofia Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
   img, svg { display: block; max-width: 100%; height: auto; }
   a { color: inherit; }
-  :focus-visible { outline: 3px solid var(--dowel); outline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .top :focus-visible, .hero :focus-visible, .blast :focus-visible, .contact :focus-visible, footer :focus-visible, .sticky :focus-visible { outline-color: var(--dowel); }
   h1, h2, h3 { font-family: "Sofia Sans Condensed", "Arial Narrow", sans-serif; font-weight: 800; line-height: .98; letter-spacing: -.01em; text-wrap: balance; }
   h2 { font-size: clamp(2.1rem, 4.6vw, 3.6rem); }
   h3 { font-size: 1.55rem; line-height: 1.05; }
@@ -196,7 +198,7 @@
   .regions div { border-top: 3px solid var(--steel); padding-top: .9rem; }
   .regions h3 { font-size: 1.35rem; }
   .regions p { margin-top: .4rem; font-size: .95rem; color: var(--on-night-muted); }
-  .regions a { display: inline-block; padding: .2rem 0; color: var(--on-night); font-weight: 700; text-decoration: none; border-bottom: 1px solid #47617a; }
+  .regions a { white-space: nowrap; display: inline-block; padding: .2rem 0; color: var(--on-night); font-weight: 700; text-decoration: none; border-bottom: 1px solid #47617a; }
   .regions a:hover { border-bottom-color: currentColor; }
   .email-row { margin-top: 1.75rem; font-size: 1rem; color: var(--on-night-muted); }
   .email-row a { color: var(--on-night); font-weight: 700; }
@@ -250,7 +252,7 @@
     .edging-photo { position: static; }
     .edging-photo img { aspect-ratio: 1400 / 1039; }
     .proof { grid-template-columns: 1fr 1fr; }
-    .xs-labels a { pointer-events: none; }
+    .xs-labels { display: none; }
     .xs-cap { display: none; }
     .xs-list { display: grid; }
     .blast-photo img, .blast-photo figcaption { margin-left: 0; }
@@ -402,7 +404,7 @@
             <li><h3>Roll Top DuraEdge</h3><p>Rolled top edge for parks, schools and walkways, where pets or bare feet may be present.</p><p class="dim">14 Ga, 12 Ga · 4″ and 6″ high · 8′, 10′</p></li>
             <li><h3>DuraRust</h3><p>Self-weathering steel that turns a natural rust color over time.</p><p class="dim">14 Ga, 12 Ga, ⅛″, 3⁄16″, ¼″ · 8′, 10′, 16′</p></li>
           </ul>
-          <details class="more">
+          <details class="more" open>
             <summary>Show all 6 edging lines</summary>
             <ul class="specs" style="border-top:0">
               <li><h3>Galvanized DuraEdge</h3><p>Hot-dipped zinc coating for salt air, humidity and irrigation.</p><p class="dim">14 Ga to ¼″ · 4″ to 6″ high · 8′, 10′, 16′</p></li>
@@ -479,7 +481,7 @@
 
       <div class="lineup">
         <h3>The full construction line</h3>
-        <details class="more" id="lineup-more">
+        <details class="more" id="lineup-more" open>
           <summary>Show all 19 products</summary>
           <div class="cols">
             <div><h4>Expansion joint</h4><ul>
@@ -540,8 +542,8 @@
 
 <script>
   (function () {
-    if (matchMedia('(min-width: 861px)').matches) {
-      document.querySelectorAll('details.more').forEach(function (d) { d.open = true; });
+    if (matchMedia('(max-width: 860px)').matches) {
+      document.querySelectorAll('details.more').forEach(function (d) { d.open = false; });
     }
     var bar = document.getElementById('sticky'), cta = document.getElementById('hero-cta');
     if (!('IntersectionObserver' in window)) return;
