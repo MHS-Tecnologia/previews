@@ -9,7 +9,12 @@
 <title>Manufacturers Supplies Company (MSC), cutting and converting machines since 1907</title>
 <meta name="description" content="Sales and service of ATOM, Chiesa, RFS Co.Mec, Guidolin Girotto, FEBA, IMESA, Antares and International cutting and converting machines, from Earth City, Missouri and Loveland, Ohio.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/saira.woff2" crossorigin>
-<link rel="preload" as="image" href="img/flashcut-800.webp" imagesrcset="img/flashcut-800.webp 800w, img/flashcut-1100.webp 1088w" imagesizes="(max-width: 900px) calc(100vw - 2rem), 640px" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="fonts/instrument.woff2" crossorigin>
+<link rel="preload" as="image" href="img/knife-800.webp" imagesrcset="img/knife-560.webp 560w, img/knife-800.webp 800w, img/knife-1400.webp 1400w" imagesizes="(max-width: 900px) calc(100vw - 2rem), 660px" fetchpriority="high">
+<meta property="og:title" content="Manufacturers Supplies Company (MSC): cutting and converting machines since 1907">
+<meta property="og:description" content="Unofficial demo. ATOM, Chiesa, RFS Co.Mec, Guidolin Girotto, FEBA, IMESA, Antares and International machines, sold and serviced from Earth City, MO and Loveland, OH.">
+<meta property="og:image" content="https://demo.mhstecnologia.com/manufacturing-supplies-co/email.jpg">
+<meta property="og:type" content="website">
 <style>
   @font-face { font-family: "Saira"; font-weight: 100 900; font-stretch: 50% 125%; font-display: swap; src: url(fonts/saira.woff2) format("woff2"); }
   @font-face { font-family: "Instrument Sans"; font-weight: 400 700; font-display: swap; src: url(fonts/instrument.woff2) format("woff2"); }
@@ -18,6 +23,7 @@
      also the LED strip on the FlashCut table. Machines sit on a cutting-table
      stage: a millimetre grid with a ruler along its edge. */
   :root {
+    color-scheme: light;
     --navy-900: #0e1530;
     --navy-800: #16204a;
     --navy-700: #1f2c5e;
@@ -30,7 +36,7 @@
     --paper-2: #e1e6ee;
     --ink: #121a36;
     --muted: #4a5470;
-    --max: 76rem;
+    --max: 84rem;
     --pad: clamp(1rem, 4vw, 2.5rem);
   }
   * { box-sizing: border-box; margin: 0; }
@@ -49,6 +55,7 @@
   .skip:focus { left: .5rem; }
 
   .demo { background: var(--navy-900); color: var(--steel); font-size: .78rem; line-height: 1.4; padding: .45rem var(--pad); text-align: center; }
+  .open a { white-space: nowrap; }
 
   /* ——— Buttons ——— */
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.1rem; padding: .7rem 1.35rem; border-radius: 3px; font: 650 1.05rem/1.1 "Saira", sans-serif; font-stretch: 100%; text-decoration: none; white-space: nowrap; transition: background-color .15s, color .15s; }
@@ -72,8 +79,8 @@
 
   /* ——— Hero ——— */
   .hero { background: var(--navy-800); color: #fff; padding: clamp(1.25rem, 4vw, 3.5rem) 0 clamp(2rem, 4vw, 3.5rem); }
-  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
-  .hero h1 { font-size: clamp(2.15rem, 3.7vw, 3.3rem); font-weight: 700; font-stretch: 116%; line-height: 1.02; letter-spacing: -0.015em; text-wrap: balance; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 36rem) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+  .hero h1 { font-size: clamp(2.15rem, 3.4vw, 3rem); font-weight: 700; font-stretch: 116%; line-height: 1.02; letter-spacing: -0.015em; text-wrap: balance; }
   .hero .lede { margin-top: 1.1rem; font-size: 1.12rem; color: #d3d9e6; max-width: 34rem; }
   .hero .lede strong { color: #fff; font-weight: 600; }
   .ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
@@ -94,22 +101,30 @@
       repeating-linear-gradient(90deg, var(--steel-dim) 0 1px, transparent 1px 12px) 0 0 / 100% 6px no-repeat,
       repeating-linear-gradient(90deg, var(--steel) 0 1px, transparent 1px 60px) 0 0 / 100% 14px no-repeat;
     opacity: .75; }
-  .hero .stage { padding: 2.2rem clamp(1rem, 3vw, 2rem) 1rem; }
-  .hero .stage img { width: 100%; filter: drop-shadow(0 18px 18px rgba(5,8,20,.55)); }
-  .dim { position: relative; margin-top: .9rem; display: flex; justify-content: center; color: var(--steel); font-size: .92rem; }
+  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; background: var(--navy-700); }
+  .shot figcaption { margin-top: .7rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem 1rem; font-size: .88rem; color: var(--steel); }
+  .dim { position: relative; margin-top: .9rem; display: flex; justify-content: center; color: var(--steel); font-size: .95rem; }
   .dim::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--orange); transform-origin: center; animation: draw .9s .25s cubic-bezier(.2,.7,.2,1) both; }
   .dim i { position: absolute; top: calc(50% - 7px); width: 1px; height: 14px; background: var(--orange); }
   .dim i:first-child { left: 0; } .dim i:last-of-type { right: 0; }
-  .dim span { position: relative; background: var(--navy-700); padding: 0 .7rem; text-align: center; }
+  .dim span { position: relative; background: var(--navy-800); padding: 0 .7rem; text-align: center; }
   @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-  .stage figcaption { margin-top: .5rem; text-align: right; font-size: .82rem; color: var(--steel-dim); }
 
   /* ——— Open house ——— */
   .open { background: var(--orange); color: var(--navy-900); }
   .open .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; padding-top: 1.1rem; padding-bottom: 1.1rem; }
   .open p { font-size: 1.05rem; max-width: 48rem; }
   .open strong { font: 700 1.2rem/1.2 "Saira", sans-serif; font-stretch: 110%; display: block; }
-  .open a { font: 650 1rem/1 "Saira", sans-serif; color: var(--navy-900); text-underline-offset: .25em; text-decoration-thickness: 2px; white-space: nowrap; padding: .6rem 0; }
+  .open a { font: 650 1rem/1 "Saira", sans-serif; color: var(--navy-900); text-underline-offset: .25em; text-decoration-thickness: 2px; padding: .6rem 0; }
+
+  /* ——— Showroom stills ——— */
+  .floor { background: var(--navy-900); padding: clamp(1rem, 2.5vw, 1.75rem) 0; }
+  .floor .grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: clamp(.5rem, 1.2vw, 1rem); }
+  .floor figure { position: relative; }
+  .floor img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+  .floor figure:first-child img { aspect-ratio: auto; }
+  .floor figcaption { position: absolute; left: .5rem; bottom: .5rem; background: rgba(14,21,48,.86); color: #fff; font-size: .82rem; padding: .25rem .55rem; border-radius: 3px; }
+  .floor .note { margin-top: .6rem; font-size: .82rem; color: var(--steel-dim); }
 
   /* ——— Sections ——— */
   section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
@@ -180,6 +195,10 @@
   .place a.big svg { width: 1.1rem; height: 1.1rem; color: var(--orange); flex: none; }
   .place a.big:hover { color: var(--orange); }
   .place.mail a.big { font-size: 1.2rem; overflow-wrap: anywhere; }
+  .place .note { color: #dfe4ee; }
+  .service { margin-top: 1rem; background: var(--navy-800); border-left: 3px solid var(--orange); border-radius: 4px; padding: 1.1rem 1.4rem; color: #dfe4ee; }
+  .service h3 { color: #fff; font-size: 1.15rem; margin-bottom: .3rem; }
+  .service a { color: #fff; }
 
   footer.site { background: var(--navy-900); color: var(--steel-dim); border-top: 1px solid rgba(195,202,214,.15); font-size: .88rem; padding: 1.5rem 0 2rem; }
   footer.site a { color: var(--steel); }
@@ -205,10 +224,14 @@
     .hero .offices { order: 5; margin-top: 0; }
     .machines ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .places { grid-template-columns: minmax(0, 1fr); }
+    .floor .grid { grid-template-columns: 1fr 1fr; }
+    .floor figure:first-child { grid-column: 1 / -1; }
+    .floor figure:first-child img { aspect-ratio: 16 / 9; }
   }
   @media (max-width: 640px) {
     body { font-size: 1rem; }
-    .demo { font-size: .72rem; padding-top: .35rem; padding-bottom: .35rem; }
+    .demo { font: 500 .72rem/1.3 "Saira", sans-serif; font-stretch: 72%; padding: .3rem .5rem; }
+    .open a { white-space: normal; }
     .top .wrap { min-height: 3.3rem; gap: .75rem; }
     .mark b { font-size: 1.45rem; }
     .mark span { font-size: .72rem; max-width: 8rem; }
@@ -216,27 +239,22 @@
     .hero { padding-top: 1.1rem; padding-bottom: 1.6rem; }
     .hero h1 { font-size: 2.05rem; font-stretch: 108%; }
     .hero .lede { font-size: 1rem; line-height: 1.5; }
-    .hero .stage { padding: 1.6rem .75rem .7rem; }
-    .dim { font-size: .78rem; margin-top: .5rem; }
-    .stage figcaption { display: none; }
+    .shot img { aspect-ratio: 16 / 10; }
+    .shot figcaption { margin-top: .4rem; font-size: .8rem; }
+    .shot figcaption span + span { display: none; }
+    .dim { font-size: .82rem; margin-top: .35rem; }
     .ctas { display: grid; grid-template-columns: 1.35fr 1fr; gap: .6rem; }
     .ctas .btn { padding: .7rem .6rem; font-size: 1rem; }
     .offices { font-size: .88rem; }
     .open p { font-size: .98rem; }
     .machines ul { grid-template-columns: minmax(0, 1fr); gap: .9rem; }
-    .mach { display: grid; grid-template-columns: 42% minmax(0, 1fr); }
-    .mach .stage { aspect-ratio: auto; border-radius: 4px 0 0 4px; padding: 1.2rem .5rem .6rem; }
-    .mach .stage::before { height: 10px; }
-    .mach .txt { padding: .85rem .9rem .9rem; gap: .2rem; }
-    .mach h3 { font-size: 1.08rem; }
-    .mach .by { font-size: .92rem; }
-    .mach .txt p:not(.by):not(.shown) { font-size: .9rem; }
-    .mach .shown { font-size: .78rem; }
+    .mach .stage { aspect-ratio: 16 / 10; padding: 1.3rem 1rem .8rem; }
+    .mach .txt { padding: .95rem 1.1rem 1.1rem; gap: .25rem; }
     .spec td { font-size: 1.15rem; }
     .ind li { font-size: 1rem; }
     .ruler details summary { display: list-item; cursor: pointer; font: 650 1rem/1.3 "Saira", sans-serif; color: var(--orange-ink); padding: .4rem 0 1.4rem; text-decoration: underline; text-underline-offset: .25em; }
     .ruler details[open] summary { display: none; }
-    body { padding-bottom: 4.6rem; }
+    body.docked { padding-bottom: 4.6rem; }
     .dock { display: grid; grid-template-columns: 1.35fr 1fr; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: var(--navy-900); border-top: 1px solid var(--navy-600); transform: translateY(110%); visibility: hidden; transition: transform .25s ease, visibility 0s .25s; }
     .dock.on { transform: none; visibility: visible; transition: transform .25s ease; }
     .dock .btn { min-height: 2.9rem; padding: .6rem .5rem; font-size: 1rem; }
@@ -282,23 +300,34 @@
         <h1 id="h1">Cutting and converting machines, sold and serviced since 1907.</h1>
         <p class="lede">MSC brings in <strong>ATOM, Chiesa, RFS Co.Mec, Guidolin Girotto, FEBA, IMESA, Antares and International</strong> machines, and services them from Missouri and Ohio.</p>
         <div class="ctas">
-          <a class="btn solid" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call MSC</a>
-          <a class="btn line" href="mailto:information@mfgsup.com?subject=Machine%20inquiry"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+          <a class="btn solid" href="mailto:information@mfgsup.com?subject=Quote%20request"><svg aria-hidden="true"><use href="#i-mail"/></svg>Request a quote</a>
+          <a class="btn line" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>Book service</a>
         </div>
         <p class="offices"><a href="#contact">Earth City, MO</a><a href="#contact">Loveland, OH</a></p>
       </div>
-      <figure class="stage">
-        <img src="img/flashcut-800.webp" srcset="img/flashcut-800.webp 800w, img/flashcut-1100.webp 1088w" sizes="(max-width: 900px) calc(100vw - 2rem), 640px" width="1088" height="615" alt="ATOM FlashCut Flex Pro oscillating knife cutting table, with its control station and two overhead projector arms" fetchpriority="high">
-        <div class="dim" aria-hidden="true"><i></i><span class="cond">FlashCut cutting areas: 1000 × 600 mm up to 6100 × 2600 mm</span><i></i></div>
-        <figcaption>ATOM FlashCut Flex Pro</figcaption>
+      <figure class="shot">
+        <img src="img/knife-800.webp" srcset="img/knife-560.webp 560w, img/knife-800.webp 800w, img/knife-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 660px" width="1400" height="1050" alt="An ATOM knife cutting head tracing rings into a sheet of orange gasket material" fetchpriority="high">
+        <figcaption><span>An ATOM knife head cutting gasket rings</span><span>Still from MSC’s showroom video</span></figcaption>
+        <p class="dim"><i></i><span class="cond">FlashCut cutting areas: 1000 × 600 mm up to 6100 × 2600 mm</span><i></i></p>
       </figure>
     </div>
   </section>
 
   <div class="open">
     <div class="wrap">
-      <p><strong>Open house in Earth City, November 10–12, 9 AM to 3 PM.</strong>See cutting and converting equipment running and meet the people who set it up.</p>
+      <p><strong>Open house in Earth City, November 10–12, 9 AM to 3 PM.</strong>See cutting and converting equipment in action and meet industry experts.</p>
       <a href="mailto:information@mfgsup.com?subject=Open%20house%2C%20November%2010%E2%80%9312">Email to reserve a spot</a>
+    </div>
+  </div>
+
+  <div class="floor">
+    <div class="wrap">
+      <div class="grid">
+        <figure><img src="img/showroom-640.webp" srcset="img/showroom-640.webp 640w, img/showroom-1100.webp 1100w" sizes="(max-width: 900px) calc(100vw - 2rem), 600px" width="1100" height="619" alt="MSC showroom floor with an ATOM FlashCut table, converting lines and high tables for visitors" loading="lazy"><figcaption>The showroom floor</figcaption></figure>
+        <figure><img src="img/slitting-480.webp" srcset="img/slitting-480.webp 480w, img/slitting-800.webp 800w" sizes="(max-width: 900px) calc(50vw - 1.3rem), 300px" width="800" height="600" alt="A yellow web running under a roller on a converting line" loading="lazy"><figcaption>Web on a converting line</figcaption></figure>
+        <figure><img src="img/laminating-480.webp" srcset="img/laminating-480.webp 480w, img/laminating-800.webp 800w" sizes="(max-width: 900px) calc(50vw - 1.3rem), 300px" width="800" height="600" alt="Green film feeding off a roll into a red converting machine" loading="lazy"><figcaption>Film feeding a line</figcaption></figure>
+      </div>
+      <p class="note">Stills from MSC’s own showroom video on mfgsup.com.</p>
     </div>
   </div>
 
@@ -310,7 +339,7 @@
       </div>
       <ul>
         <li class="mach">
-          <div class="stage"><img src="img/flashcut-400.webp" srcset="img/flashcut-400.webp 400w, img/flashcut-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="362" alt="ATOM FlashCut knife cutting table" loading="lazy"></div>
+          <div class="stage"><img src="img/flashcut-400.webp" srcset="img/flashcut-400.webp 400w, img/flashcut-640.webp 640w" sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 900px) 45vw, 380px" width="640" height="362" alt="ATOM FlashCut knife cutting table" loading="lazy"></div>
           <div class="txt">
             <h3>Digital knife cutting</h3>
             <p class="by cond">ATOM FlashCut</p>
@@ -318,7 +347,7 @@
           </div>
         </li>
         <li class="mach">
-          <div class="stage"><img src="img/chiesa-400.webp" srcset="img/chiesa-400.webp 400w, img/chiesa-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="373" alt="Chiesa traveling head die cutting press with its control cabinet" loading="lazy"></div>
+          <div class="stage"><img src="img/chiesa-400.webp" srcset="img/chiesa-400.webp 400w, img/chiesa-640.webp 640w" sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 900px) 45vw, 380px" width="640" height="373" alt="Chiesa traveling head die cutting press with its control cabinet" loading="lazy"></div>
           <div class="txt">
             <h3>Die cutting presses</h3>
             <p class="by cond">ATOM, Chiesa and RFS Co.Mec</p>
@@ -326,7 +355,7 @@
           </div>
         </li>
         <li class="mach">
-          <div class="stage"><img src="img/guidolin-400.webp" srcset="img/guidolin-400.webp 400w, img/guidolin-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="452" alt="Guidolin Girotto GD 654 kiss cutting press with material unwind" loading="lazy"></div>
+          <div class="stage"><img src="img/guidolin-400.webp" srcset="img/guidolin-400.webp 400w, img/guidolin-640.webp 640w" sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 900px) 45vw, 380px" width="640" height="452" alt="Guidolin Girotto GD 654 kiss cutting press with material unwind" loading="lazy"></div>
           <div class="txt">
             <h3>Kiss cutting presses</h3>
             <p class="by cond">Guidolin Girotto</p>
@@ -334,7 +363,7 @@
           </div>
         </li>
         <li class="mach">
-          <div class="stage"><img src="img/imesa-400.webp" srcset="img/imesa-400.webp 400w, img/imesa-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="434" alt="IMESA 558 automatic log slitter" loading="lazy"></div>
+          <div class="stage"><img src="img/imesa-400.webp" srcset="img/imesa-400.webp 400w, img/imesa-640.webp 640w" sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 900px) 45vw, 380px" width="640" height="434" alt="IMESA 558 automatic log slitter" loading="lazy"></div>
           <div class="txt">
             <h3>Automatic log slitting</h3>
             <p class="by cond">FEBA and IMESA</p>
@@ -342,7 +371,7 @@
           </div>
         </li>
         <li class="mach">
-          <div class="stage"><img src="img/feba-400.webp" srcset="img/feba-400.webp 400w, img/feba-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="494" alt="FEBA FE 400 Duplex slitter rewinder in blue, loaded with white rolls" loading="lazy"></div>
+          <div class="stage"><img src="img/feba-400.webp" srcset="img/feba-400.webp 400w, img/feba-640.webp 640w" sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 900px) 45vw, 380px" width="640" height="494" alt="FEBA FE 400 Duplex slitter rewinder in blue, loaded with white rolls" loading="lazy"></div>
           <div class="txt">
             <h3>Slitting and rewinding</h3>
             <p class="by cond">FEBA, IMESA and Antares</p>
@@ -350,7 +379,7 @@
           </div>
         </li>
         <li class="mach">
-          <div class="stage"><img src="img/international-400.webp" srcset="img/international-400.webp 400w, img/international-640.webp 640w" sizes="(max-width: 640px) 40vw, (max-width: 900px) 45vw, 380px" width="640" height="411" alt="International ICZ-5H laminating machine with orange guarding" loading="lazy"></div>
+          <div class="stage"><img src="img/international-400.webp" srcset="img/international-400.webp 400w, img/international-640.webp 640w" sizes="(max-width: 640px) calc(100vw - 4rem), (max-width: 900px) 45vw, 380px" width="640" height="411" alt="International ICZ-5H laminating machine with orange guarding" loading="lazy"></div>
           <div class="txt">
             <h3>Laminating systems</h3>
             <p class="by cond">IMESA and International</p>
@@ -453,17 +482,21 @@
         </div>
         <div class="place mail">
           <p class="cond">Email</p>
-          <p style="color:#dfe4ee">Questions, quotes and service requests.</p>
+          <p class="note">Questions, quotes and service requests.</p>
           <a class="big" href="mailto:information@mfgsup.com?subject=Machine%20inquiry"><svg aria-hidden="true"><use href="#i-mail"/></svg>information@mfgsup.com</a>
         </div>
+      </div>
+      <div class="service">
+        <h3>Service and parts</h3>
+        <p>Call either office or email <a href="mailto:information@mfgsup.com?subject=Service%20request">information@mfgsup.com</a> for service. Operating manuals are in MSC’s <a href="https://mfgsup.com/service-center/">online service center</a>, and MSC also supplies cutting pads and boards, cutting belts and material handling.</p>
       </div>
     </div>
   </section>
 </main>
 
 <div class="dock" id="dock">
-  <a class="btn solid" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call MSC</a>
-  <a class="btn line" href="mailto:information@mfgsup.com?subject=Machine%20inquiry"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+  <a class="btn solid" href="mailto:information@mfgsup.com?subject=Quote%20request"><svg aria-hidden="true"><use href="#i-mail"/></svg>Request a quote</a>
+  <a class="btn line" href="tel:+13147700880"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
 </div>
 
 <footer class="site">
@@ -475,10 +508,10 @@
 
 <script>
   // Phones: the later timeline entries start folded.
-  if (matchMedia('(max-width: 640px)').matches) document.querySelector('.more').open = false
+  if (matchMedia('(max-width: 640px)').matches) { const more = document.querySelector('.more'); if (more) more.open = false }
   // The call/email bar docks once the hero has scrolled away.
   const dock = document.getElementById('dock')
-  new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(document.querySelector('.hero'))
+  new IntersectionObserver(([e]) => { dock.classList.toggle('on', !e.isIntersecting); document.body.classList.toggle('docked', !e.isIntersecting) }).observe(document.querySelector('.hero'))
 </script>
 </body>
 </html>
