@@ -152,9 +152,11 @@
   .blast-foot a { color: var(--on-night); font-weight: 700; }
 
   /* Concrete */
-  .wide { margin-top: 3rem; display: grid; grid-template-columns: minmax(0, 640px) minmax(0, 1fr); gap: 1rem 2rem; align-items: end; }
+  .wide { margin-top: 3rem; display: grid; grid-template-columns: minmax(0, 640px) minmax(0, 1fr); gap: 1rem 2rem; align-items: center; }
   .wide img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 60%; border-radius: 2px; }
-  .wide figcaption { font-size: .95rem; color: var(--muted); max-width: 22rem; }
+  .wide figcaption { font-size: 1rem; color: var(--muted); max-width: 24rem; }
+  .wide-h { display: block; margin-bottom: .6rem; font: 800 1.7rem/1.05 "Sofia Sans Condensed", sans-serif; color: var(--ink); }
+  .wide figcaption a { color: var(--ink); font-weight: 700; }
   .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
   .tile { background: #f1f1ee; border-bottom: 4px solid var(--steel); display: flex; flex-direction: column; }
   .tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
@@ -178,7 +180,7 @@
   .cols li span { display: block; font-size: .85rem; color: var(--muted); }
 
   /* Made in the USA */
-  .made { background: var(--slab); padding: 3rem 0; }
+  .made { background: var(--slab); padding: 2rem 0; }
   .proof { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem 2rem; }
   .proof li { border-left: 4px solid var(--rust); padding-left: 1rem; }
   .proof b { display: block; font: 800 clamp(1.5rem, 2.4vw, 2rem)/1 "Sofia Sans Condensed", sans-serif; }
@@ -316,6 +318,15 @@
     </div>
     <div class="hero-edge"><div class="edge"></div></div>
     <div class="hero-band" aria-hidden="true"></div>
+  </section>
+
+  <section class="made" aria-label="At a glance">
+    <ul class="wrap proof">
+      <li><b>Made in the USA</b><span>Every JDR product</span></li>
+      <li><b>100% recycled</b><span>The material in many JDR products</span></li>
+      <li><b>Shot blasted</b><span>Blastec system before powder coat, first in landscape edging</span></li>
+      <li><b>Roadway approved</b><span>Reflex is pre-approved in most U.S. states and in Canada</span></li>
+    </ul>
   </section>
 
   <section class="xs" aria-labelledby="xs-h">
@@ -485,19 +496,11 @@
 
       <figure class="wide">
         <img src="img/found-800.webp" srcset="img/found-800.webp 800w, img/found-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="1400" height="911" alt="Formed concrete foundation walls on a residential job site, with framed houses behind" loading="lazy">
-        <figcaption>Foundation walls formed on a residential job site.</figcaption>
+        <figcaption><b class="wide-h">Need the details on any of these?</b>Download the <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">2026 master catalog (PDF)</a>, or <a href="#contact">ask for a quote or sample</a>.<span style="display:block;margin-top:.8rem;font-size:.9rem">Photo: foundation walls formed on a residential job site.</span></figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="made" aria-label="At a glance">
-    <ul class="wrap proof">
-      <li><b>Made in the USA</b><span>Every JDR product</span></li>
-      <li><b>100% recycled</b><span>The material in many JDR products</span></li>
-      <li><b>Shot blasted</b><span>Blastec system before powder coat, first in landscape edging</span></li>
-      <li><b>Roadway pre-approved</b><span>Reflex, in most U.S. states and in Canada</span></li>
-    </ul>
-  </section>
 
   <section class="sec contact" id="contact" aria-labelledby="contact-h">
     <div class="wrap contact-grid">
