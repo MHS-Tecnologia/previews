@@ -7,6 +7,9 @@
 <link rel="icon" href="data:,">
 <meta name="theme-color" content="#0e2b5c">
 <title>IPS Assembly, Livonia, Michigan</title>
+<meta property="og:title" content="IPS Assembly, Livonia, Michigan">
+<meta property="og:description" content="PCB assembly, cable and wire harnesses and box builds in a 42,000 sq. ft. plant in Livonia, Michigan, about 20 minutes from Detroit.">
+<meta property="og:image" content="https://demo.mhstecnologia.com/ips-assembly-mi/email.jpg">
 <meta name="description" content="PCB assembly, cable and wire harnesses and box builds in a 42,000 sq. ft. facility in Livonia, Michigan. ISO 9001, IATF 16949, ITAR registered.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/archivo.woff2" crossorigin>
 <style>
@@ -15,6 +18,7 @@
   /* The board is the brand: their navy read as blue solder mask, their orange read as
      bare copper, white as silkscreen. Steel and concrete come from the plant on Merriman Rd. */
   :root {
+    color-scheme: light;
     --mask: #0e2b5c;
     --mask-deep: #0a1f45;
     --mask-line: #2a4677;
@@ -65,7 +69,13 @@
   .btn.ghost:hover { box-shadow: inset 0 0 0 2px var(--silk); }
 
   /* ---------- hero ---------- */
-  .hero { background: var(--mask); color: var(--silk); }
+  .hero { position: relative; padding: 0; background: var(--mask); color: var(--silk); }
+  .hero .wrap { position: relative; z-index: 1; }
+  /* A thin trace from the call-to-action to the photo's corner: the route's language, first screen. */
+  .lead-trace { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 0; }
+  .lead-trace path { fill: none; stroke: var(--copper); stroke-width: 2.5; stroke-linejoin: round; opacity: .9; }
+  .lead-trace circle { fill: var(--mask); stroke: var(--copper); stroke-width: 2.5; }
+  @media (max-width: 960px) { .lead-trace circle { r: 4px; } }
   .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: clamp(2rem, 4.5vw, 4rem); align-items: center; padding-top: clamp(2.5rem, 5vw, 4rem); padding-bottom: clamp(2.5rem, 4vw, 3.5rem); }
   .hero h1 { font-size: clamp(2.35rem, 5.4vw, 4.6rem); font-weight: 850; font-stretch: 115%; line-height: .98; letter-spacing: -0.02em; text-wrap: balance; }
   .hero .lede { margin-top: 1.4rem; font-size: clamp(1.0625rem, 1.4vw, 1.2rem); line-height: 1.55; color: #d6dde8; max-width: 36rem; }
@@ -150,7 +160,7 @@
   .quote .send { margin-top: 1.4rem; color: var(--ink-soft); max-width: 32rem; }
   .files { margin-top: 1.4rem; display: grid; gap: .65rem; }
   .files li { display: flex; gap: .8rem; align-items: baseline; font-size: 1.0625rem; }
-  .files li::before { content: ""; flex: none; width: .85rem; height: .85rem; border: 2px solid var(--ink); border-radius: 2px; transform: translateY(.1rem); }
+  .files li::before { content: ""; flex: none; width: 1.1rem; height: 1.1rem; transform: translateY(.15rem); background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff5e14' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z'/%3E%3Cpath d='M14 3v5h5M9 13h6M9 17h6'/%3E%3C/svg%3E"); }
   .quote .ctas { margin-top: 2rem; }
   .quote .btn.ghost { color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
   .quote .btn.ghost:hover { background: var(--paper); }
@@ -270,7 +280,8 @@
 </header>
 
 <main id="main">
-  <section class="hero" aria-labelledby="h1" style="padding:0">
+  <section class="hero" aria-labelledby="h1">
+    <svg class="lead-trace" id="lead-trace" aria-hidden="true" focusable="false"><path d=""/><circle class="p1" r="5"/><circle class="p2" r="5"/></svg>
     <div class="wrap">
       <div>
         <h1 id="h1">Bring your boards back to Michigan.</h1>
@@ -280,12 +291,12 @@
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
             <span>Email <span class="long">your BOM </span>for a quote</span>
           </a>
-          <a class="btn ghost" href="tel:+17343910080">Call</a>
+          <a class="btn ghost" id="hero-call" href="tel:+17343910080">Call</a>
         </div>
       </div>
-      <figure class="placed">
+      <figure class="placed" id="hero-frame">
         <span class="fid a" aria-hidden="true"></span><span class="fid b" aria-hidden="true"></span><span class="fid c" aria-hidden="true"></span>
-        <img src="img/plant-800.webp" srcset="img/plant-800.webp 800w, img/plant-1400.webp 1400w" sizes="(max-width: 960px) calc(100vw - 2rem - 20px), 560px" width="1400" height="879" alt="The IPS Assembly building on Merriman Road in Livonia, with the IATF 16949 and ISO 9001 marks on the sign" fetchpriority="high">
+        <img src="img/plant-800.webp" srcset="img/plant-800.webp 800w, img/plant-1400.webp 1400w" sizes="(max-width: 960px) calc(100vw - 2rem - 20px), 560px" width="1400" height="879" alt="The IPS Assembly building on Merriman Road in Livonia, with the IATF 16949 and ISO 9001 marks on the sign" fetchpriority="high" loading="eager">
         <figcaption><b>12077 Merriman Rd., Livonia</b>. Customer visits and facility tours welcome.</figcaption>
       </figure>
     </div>
@@ -314,7 +325,7 @@
             <h3>PCB assembly</h3>
             <p class="what">Surface mount, thru-hole and mixed technology, inspected to IPC-A-610 Class 2 and 3.</p>
           </div>
-          <details class="cap" open><summary>PCB assembly capabilities</summary>
+          <details class="cap"><summary>PCB assembly capabilities</summary>
           <ul class="specs">
             <li>Fine pitch components, down to 12 mil</li>
             <li>BGA and micro-BGA packages</li>
@@ -330,7 +341,7 @@
             <h3>Cable &amp; wire harness</h3>
             <p class="what">Point-to-point cables, multi-branch harnesses and wire-to-PCB, built to IPC/WHMA-A-620 by a dedicated harness team.</p>
           </div>
-          <details class="cap" open><summary>Harness capabilities</summary>
+          <details class="cap"><summary>Harness capabilities</summary>
           <ul class="specs">
             <li>Automated wire cut, strip and crimp</li>
             <li>Connector overmolding</li>
@@ -346,7 +357,7 @@
             <h3>Box build &amp; integration</h3>
             <p class="what">PCB assemblies, harnesses, power and I/O integrated into enclosures and sub-assemblies, functionally tested and packaged.</p>
           </div>
-          <details class="cap" open><summary>Box build capabilities</summary>
+          <details class="cap"><summary>Box build capabilities</summary>
           <ul class="specs">
             <li>Custom enclosures</li>
             <li>System integration</li>
@@ -356,6 +367,8 @@
           </details>
         </li>
       </ul>
+      <script>/* Open the capability lists before first paint on wider screens; phones start collapsed. */
+        if (!matchMedia('(max-width: 640px)').matches) document.querySelectorAll('.cap').forEach((d) => { d.open = true })</script>
       <div class="also">
         <div><h3>Testing &amp; inspection</h3><p>3D solder paste inspection, 3D AOI, X-ray and functional test.</p></div>
         <div><h3>Repair &amp; rework</h3><p>Replacing BGAs, connectors, microprocessors, LEDs and ICs, and finding the root cause of failures.</p></div>
@@ -372,7 +385,7 @@
         <p>Twenty-one stations, from new product introduction to the shipping dock, with inspection after paste print, at first article, after reflow and before anything ships.</p>
       </div>
       <div class="board">
-        <ol class="steps short" id="steps">
+        <ol class="steps short" id="steps" role="list">
           <li class="to-r" style="--r:1;--c:1;--i:0"><span class="pd">1</span><span class="t">New product introduction</span></li>
           <li class="to-r" style="--r:1;--c:2;--i:1"><span class="pd">2</span><span class="t">Procurement, receiving &amp; inspection</span></li>
           <li class="to-r" style="--r:1;--c:3;--i:2"><span class="pd">3</span><span class="t">Kitting &amp; programming</span></li>
@@ -453,7 +466,7 @@
         </div>
       </div>
       <div>
-        <ol class="flow">
+        <ol class="flow" role="list">
           <li><b>Quote</b><span>IPS receives your RFQ with scope, timeline and specifications, and walks you through the process.</span></li>
           <li><b>Verify</b><span>Engineers review the BOM, confirm component availability and settle questions such as alternate parts.</span></li>
           <li><b>Assemble</b><span>Production under in-process inspection and ERP-driven traceability.</span></li>
@@ -517,7 +530,37 @@
   const phone = matchMedia('(max-width: 640px)')
   const caps = document.querySelectorAll('.cap')
   const sync = () => caps.forEach((d) => { d.open = !phone.matches })
-  sync(); phone.addEventListener('change', sync)
+  phone.addEventListener('change', sync)
+
+  // Route the hero trace from the Call button to the photo's courtyard corner.
+  const hero = document.querySelector('.hero')
+  const trace = document.getElementById('lead-trace')
+  const call = document.getElementById('hero-call')
+  const frame = document.getElementById('hero-frame')
+  function route() {
+    const h = hero.getBoundingClientRect(), c = call.getBoundingClientRect(), f = frame.getBoundingClientRect()
+    const cl = f.left - 9 - h.left, ct = f.top - 9 - h.top, cb = f.bottom + 9 - h.top
+    let d, a, b
+    if (f.left > c.right) {
+      // side by side: leave the button, jog 45 degrees, land on the bottom-left corner
+      const sx = c.right - h.left + 14, sy = c.top + c.height / 2 - h.top, ex = cl, ey = cb
+      const dy = ey - sy, run = Math.abs(dy)
+      const x1 = Math.max(sx + 8, sx + (ex - sx - run) / 2)
+      d = `M${sx} ${sy}H${x1}L${x1 + run} ${ey}H${ex}`
+      a = [sx, sy]; b = [ex, ey]
+    } else {
+      // stacked: drop straight from the button onto the courtyard's top edge
+      const x = c.left + c.width / 2 - h.left, sy = c.bottom - h.top
+      d = `M${x} ${sy}V${ct}`
+      a = [-99, -99]; b = [x, ct]
+    }
+    trace.querySelector('path').setAttribute('d', d)
+    trace.querySelector('.p1').setAttribute('cx', a[0]); trace.querySelector('.p1').setAttribute('cy', a[1])
+    trace.querySelector('.p2').setAttribute('cx', b[0]); trace.querySelector('.p2').setAttribute('cy', b[1])
+  }
+  route()
+  if (document.fonts) document.fonts.ready.then(route)
+  addEventListener('resize', route)
 
   // The sticky quote bar shows up once the hero is gone.
   const dock = document.getElementById('dock')
