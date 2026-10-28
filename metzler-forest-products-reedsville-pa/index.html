@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://demo.mhstecnologia.com/metzler-forest-products-reedsville-pa/email.jpg">
 <link rel="preload" as="font" type="font/woff2" href="fonts/bitter.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/sourcesans.woff2" crossorigin>
-<link rel="preload" as="image" href="img/yard-640.webp" imagesrcset="img/yard-640.webp 640w, img/yard-800.webp 800w, img/yard-960.webp 960w, img/yard-1400.webp 1400w" imagesizes="(max-width: 900px) 100vw, 640px" fetchpriority="high">
+<link rel="preload" as="image" href="img/yard-640.webp" imagesrcset="img/yard-640.webp 640w, img/yard-960.webp 960w, img/yard-1400.webp 1400w, img/yard-1920.webp 1920w, img/yard-2560.webp 2560w" imagesizes="(max-width: 900px) 100vw, 60vw" fetchpriority="high">
 <style>
   @font-face { font-family: "Bitter"; font-weight: 100 900; font-display: swap; src: url(fonts/bitter.woff2) format("woff2"); }
   @font-face { font-family: "Source Sans 3"; font-weight: 200 900; font-display: swap; src: url(fonts/sourcesans.woff2) format("woff2"); }
@@ -54,10 +54,11 @@
   .skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 10; }
   .skip:focus { left: .5rem; }
   .wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
-  .num { font-variant-numeric: tabular-nums; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
   .muted { color: var(--moss); }
 
   .demo { background: var(--hemlock); color: #cfd6c8; font-size: .8125rem; line-height: 1.35; text-align: center; padding: .45rem 1rem; }
+  @media (max-width: 900px) { .demo { font-size: .72rem; line-height: 1.3; padding: .35rem .75rem; } }
 
   header.wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: .8rem; padding-bottom: .8rem; }
   .mark { text-decoration: none; font-family: "Bitter", serif; font-weight: 800; font-size: 1.35rem; line-height: 1; letter-spacing: -0.01em; white-space: nowrap; }
@@ -74,12 +75,15 @@
   .btn svg { width: 1.05em; height: 1.05em; flex: none; }
 
   /* Hero: words left, their own aerial of the yard right, framed no wider than the photo stays sharp. */
-  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 640px); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; padding-top: clamp(1rem, 3vw, 2.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+  /* Desktop: their 2560px aerial runs from 40% of the window to its right edge. */
+  .hero { display: grid; grid-template-columns: minmax(0, 40fr) minmax(0, 60fr); align-items: stretch; }
+  .hero-copy { align-self: center; padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 3.5vw, 3.5rem) clamp(2rem, 4vw, 3rem) max(var(--pad), calc((100vw - var(--max)) / 2)); }
+  .hero h1 { font-size: clamp(2.15rem, 3.7vw, 3.6rem); }
   .lede { font-size: 1.2rem; line-height: 1.5; margin-top: 1.1rem; color: #33402f; }
   .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
-  .shot { margin: 0; }
-  .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; }
-  .shot figcaption { font-size: .85rem; color: var(--moss); margin-top: .5rem; }
+  .shot { margin: 0; position: relative; }
+  .shot img { width: 100%; height: 100%; min-height: clamp(32rem, calc(100vh - 15rem), 46rem); object-fit: cover; object-position: 50% 45%; }
+  .shot figcaption { position: absolute; left: 1rem; bottom: 1rem; background: rgba(31, 43, 35, .82); color: #eef1ea; font-size: .85rem; padding: .3rem .65rem; border-radius: .2rem; }
 
   .lc-status { margin-top: 1.25rem; font-size: .98rem; }
   .lc-status a { white-space: nowrap; }
@@ -102,7 +106,9 @@
   section { padding: clamp(3rem, 7vw, 6rem) 0; }
   #services { padding-top: clamp(2.5rem, 4vw, 3.25rem); }
   .intro { max-width: 46rem; }
-  .intro p { margin-top: .9rem; font-size: 1.12rem; }
+  .intro p, .lc-lede { margin-top: .9rem; font-size: 1.12rem; }
+  .harvest-lede { margin-top: .4rem; }
+  .pulp-lede { margin-top: .9rem; }
 
   /* Timber harvesting: the one real sequence on the page, so it gets numbers. */
   .harvest { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 4rem); margin-top: 2.5rem; align-items: start; }
@@ -156,8 +162,12 @@
   .cuts li { border: 1.5px solid var(--bark); color: var(--bark); border-radius: 2rem; padding: .2rem .8rem; font-weight: 600; font-size: .95rem; }
   .fire .actions { margin-top: 1.3rem; }
 
-  .bulk { margin-top: clamp(2.5rem, 5vw, 3.5rem); border-top: 2px solid var(--hemlock); padding-top: 1.4rem; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(1rem, 4vw, 3.5rem); }
-  .bulk h3 { font-size: 1.25rem; }
+  .bulk { margin-top: clamp(3rem, 6vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+  .bulk img { border-radius: .25rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+  .bulk p { margin-top: .7rem; }
+  .bulk-list { list-style: none; padding: 0; margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.25rem; }
+  .bulk-list li { padding: .45rem 0; border-top: 1px solid var(--line); font-weight: 600; }
+  .bulk .actions { margin-top: 1.2rem; }
 
   /* Biochar: the char itself sets the color. */
   .char { background: var(--char); color: #ece6de; }
@@ -204,10 +214,8 @@
   .specs th { font-weight: 700; }
   .specs .note { font-size: .95rem; margin-top: .8rem; }
 
-  .crew { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
-  .crew img { border-radius: .25rem; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 70%; }
-  .crew p { margin-top: .8rem; }
-  .crew .actions { margin-top: 1.2rem; }
+  .safety.careers { margin-top: 2rem; }
+  .careers .btn { margin-top: 1rem; }
 
   /* Contact: the right inbox for each kind of job. */
   .contact { background: var(--hemlock); color: #e9ede4; }
@@ -217,7 +225,7 @@
   .desk h3 { font-size: 1.2rem; color: #fff; }
   .desk p { margin-top: .4rem; color: #c8d2c0; font-size: 1rem; }
   .desk a { display: block; font-weight: 700; margin-top: .45rem; color: #fff; text-underline-offset: 3px; }
-  .desk a.ph { font-size: 1.3rem; font-family: "Bitter", serif; }
+  .desk a.ph { font-size: 1.3rem; font-family: "Bitter", serif; white-space: nowrap; }
   .where { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; color: #c8d2c0; }
   .where address { font-style: normal; color: #e9ede4; }
   .where a { color: #fff; font-weight: 600; }
@@ -238,36 +246,43 @@
   @media (max-width: 900px) {
     header nav .hide-m { display: none; }
     .mark { font-size: 1.2rem; }
-    .hero { grid-template-columns: 1fr; padding-top: 0; gap: 1rem; }
-    .shot { order: -1; margin: 0 calc(-1 * var(--pad)); }
-    .shot img { aspect-ratio: 39 / 19; border-radius: 0; object-position: 50% 40%; }
-    .shot figcaption { padding: 0 var(--pad); }
-    .lede { font-size: 1.08rem; margin-top: .7rem; }
-    .actions { margin-top: 1.1rem; }
-    .hero .actions .btn { flex: 1 1 auto; }
-    .lc-status { margin-top: .8rem; font-size: .95rem; }
+    .hide-m { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-copy { padding: .9rem var(--pad) 1rem; }
+    .shot { order: -1; }
+    .shot img { min-height: 0; aspect-ratio: 39 / 17; object-position: 50% 40%; }
+    .shot figcaption { display: none; }
+    .lede { font-size: 1.05rem; margin-top: .6rem; }
+    .actions { margin-top: 1rem; }
+    .hero .actions { flex-wrap: nowrap; gap: .6rem; }
+    .hero .actions .btn { flex: 1 1 auto; padding-left: .9rem; padding-right: .9rem; }
+    .hero .actions .btn.quiet { flex: 0 0 auto; }
+    .lc-status { margin-top: .7rem; font-size: .92rem; line-height: 1.4; }
 
-    .doors ul { grid-template-columns: 1fr; }
-    .doors li + li { border-left: 0; border-top: 1px solid #3b4a3f; }
-    .doors a { padding: .85rem 0; display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 0 1rem; }
-    .doors .what { margin-top: 0; grid-row: 1; grid-column: 1; }
-    .doors .who { grid-row: 2; grid-column: 1; }
+    .doors ul { grid-template-columns: 1fr 1fr; gap: .5rem; padding-top: .75rem; padding-bottom: .75rem; }
+    .doors li + li, .doors li:nth-child(n + 4) { border: 0; }
+    .doors li:last-child { grid-column: 1 / -1; }
+    .doors a, .doors li:first-child a, .doors li:nth-child(4) a { padding: .5rem .7rem .55rem; border-radius: .3rem; background: #2c3b31; }
+    .doors .who { font-size: .78rem; line-height: 1.25; }
+    .doors .what { font-size: 1rem; margin-top: .1rem; }
 
-    .harvest, .jobs, .lc-grid, .mulch, .fire, .bulk, .char-grid, .rings-sec, .safety, .pulp-grid, .crew, .contact-grid { grid-template-columns: 1fr; }
+    .harvest, .jobs, .lc-grid, .mulch, .fire, .bulk, .char-grid, .rings-sec, .safety, .pulp-grid, .contact-grid { grid-template-columns: 1fr; }
     .harvest img { aspect-ratio: 3 / 2; }
     .pulp img { aspect-ratio: 3 / 2; }
     .swatches { grid-template-columns: repeat(4, 1fr); gap: .6rem .5rem; }
     .swatches span { font-size: .8rem; }
+    .lc-photos { grid-template-columns: 1fr; }
     .stock { column-gap: 1rem; font-size: .95rem; padding-left: 1rem; }
     .cookie { max-width: 22rem; margin: 0 auto; }
     .loads { aspect-ratio: auto; min-height: 11rem; }
 
     .dock { display: flex; position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 5; gap: .5rem;
-      opacity: 0; transform: translateY(1rem); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+      visibility: hidden; opacity: 0; transform: translateY(1rem); pointer-events: none; transition: opacity .2s ease, transform .2s ease, visibility .2s; }
+    body.dock-on { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom)); }
+    .btn.small { min-height: 44px; }
     .dock .btn { flex: 1; box-shadow: inset 0 -3px 0 var(--red-deep), 0 8px 24px rgba(0, 0, 0, .25); padding: .8rem .6rem; font-size: 1rem; }
     .dock .btn.alt { background: var(--hemlock); box-shadow: 0 8px 24px rgba(0, 0, 0, .25); }
-    .dock.on { opacity: 1; transform: none; pointer-events: auto; }
-    footer { padding-bottom: 5.5rem; }
+    .dock.on { visibility: visible; opacity: 1; transform: none; pointer-events: auto; }
   }
   @media (max-width: 420px) {
     .swatches { grid-template-columns: repeat(4, 1fr); }
@@ -307,18 +322,18 @@
   </header>
 
   <main id="main">
-    <div class="hero wrap">
-      <div>
+    <div class="hero">
+      <div class="hero-copy">
         <h1>From standing timber to the mulch on your beds.</h1>
-        <p class="lede">Since 1986, Metzler has harvested timber, cleared land, and chipped and hauled wood across the Mid Atlantic. At home in Reedsville, the Landscape Center sells the mulch, stone, plants and firewood.</p>
+        <p class="lede">Since 1986, Metzler has harvested timber, cleared land, and chipped and hauled wood across the Mid Atlantic.<span class="hide-m"> At home in Reedsville, the Landscape Center sells the mulch, stone, plants and firewood.</span></p>
         <div class="actions">
           <a class="btn" data-cta href="tel:+17176672924"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">Call 717-667-2924</span></a>
-          <a class="btn quiet" href="mailto:info@metzlerfp.com?subject=Project%20inquiry&amp;body=Hi%20Metzler%20team%2C%0A%0AWhat%20I%20need%20help%20with%3A%20%0AWhere%20the%20job%20is%20(town%20or%20county)%3A%20%0ABest%20phone%20number%3A%20%0A">Email the office</a>
+          <a class="btn quiet" href="mailto:info@metzlerfp.com?subject=Project%20inquiry&amp;body=Hi%20Metzler%20team%2C%0A%0AWhat%20I%20need%20help%20with%3A%20%0AWhere%20the%20job%20is%20(town%20or%20county)%3A%20%0ABest%20phone%20number%3A%20%0A"><span>Email<span class="hide-m"> the office</span></span></a>
         </div>
         <p class="lc-status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Landscape Center: Mon–Fri 8–5, Sat 8–1.</span> <a href="#landscape">Hours and products</a></p>
       </div>
       <figure class="shot">
-        <img src="img/yard-640.webp" srcset="img/yard-640.webp 640w, img/yard-800.webp 800w, img/yard-960.webp 960w, img/yard-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 640px" width="1400" height="1050" alt="Aerial view of the Metzler yard in a misty valley: mulch piles, log trucks, a white storage dome and red-roofed buildings beside farm fields" fetchpriority="high">
+        <img src="img/yard-960.webp" srcset="img/yard-640.webp 640w, img/yard-960.webp 960w, img/yard-1400.webp 1400w, img/yard-1920.webp 1920w, img/yard-2560.webp 2560w" sizes="(max-width: 900px) 100vw, 60vw" width="2560" height="1920" alt="Aerial view of the Metzler yard in a misty valley: mulch piles, log trucks, a white storage dome and red-roofed buildings beside farm fields" fetchpriority="high">
         <figcaption>The Metzler yard at 26 Timber Lane, from the air.</figcaption>
       </figure>
     </div>
@@ -344,7 +359,7 @@
           <img src="img/harvest-600.webp" srcset="img/harvest-600.webp 600w, img/harvest-800.webp 800w, img/harvest-1000.webp 1000w" sizes="(max-width: 900px) calc(100vw - 2rem), 500px" width="1000" height="1000" alt="A red tracked harvester cutting a tree in the woods, with felled logs at its base" loading="lazy">
           <div>
             <h3>Timber harvesting</h3>
-            <p class="muted" style="margin-top:.4rem">For landowners who want to monetize the timber on their property, Metzler's professional foresters build a plan around your goals, for value, wildlife and recreation.</p>
+            <p class="muted harvest-lede">For landowners who want to monetize the timber on their property, Metzler's professional foresters build a plan around your goals, for value, wildlife and recreation.</p>
             <ol class="steps">
               <li><span><b>Meet on site</b>Talk through your goals for the timber and how the process works.</span></li>
               <li><span><b>Cruise the land</b>Foresters measure the species, health and quantity of the timber.</span></li>
@@ -386,7 +401,7 @@
         <div class="lc-grid">
           <div>
             <h2>The Landscape Center, open six days a week</h2>
-            <p style="margin-top:.9rem;font-size:1.12rem">Annuals, perennials, trees, shrubs and evergreens, with the topsoil, compost, mulch, stone and sand to put them in. Do it yourself, or have the team help with estimating, loading and delivery.</p>
+            <p class="lc-lede">Annuals, perennials, trees, shrubs and evergreens, with the topsoil, compost, mulch, stone and sand to put them in. Do it yourself, or have the team help with estimating, loading and delivery.</p>
             <ul class="stock">
               <li>Mulch, topsoil and compost</li>
               <li>Firewood</li>
@@ -454,8 +469,19 @@
         </div>
 
         <div class="bulk">
-          <h3>Contractors: buy it by the load</h3>
-          <p>Firewood, natural-fiber mulch, premium topsoil, compost, certified playground material and aged erosion control filter sock material, for commercial projects of every size. Pick up in Reedsville or have it delivered to your job site.</p>
+          <img src="img/grinders-600.webp" srcset="img/grinders-600.webp 600w, img/grinders-1000.webp 1000w, img/grinders-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 560px" width="1400" height="1139" alt="Three orange horizontal grinders working at the foot of a huge pile of ground wood" loading="lazy">
+          <div>
+            <h3>Contractors: buy it by the load</h3>
+            <p>Bulk products for commercial projects of every size, from companies throughout Pennsylvania and the surrounding regions.</p>
+            <ul class="bulk-list">
+              <li>Firewood</li><li>Natural-fiber mulch</li><li>Premium topsoil</li><li>Compost</li><li>Certified playground material</li><li>Erosion control filter sock material</li>
+            </ul>
+            <p>Pick up in Reedsville, or have it delivered straight to your job site.</p>
+            <div class="actions">
+              <a class="btn" href="tel:+17176672924"><span class="num">Call 717-667-2924</span></a>
+              <a class="btn quiet" href="mailto:info@metzlerfp.com?subject=Bulk%20order%20for%20a%20job%20site&amp;body=Hi%20Metzler%20team%2C%0A%0AProduct%3A%20%0AQuantity%3A%20%0AJob%20site%20address%3A%20%0ANeeded%20by%3A%20%0ABest%20phone%20number%3A%20%0A">Email a bulk order</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -522,6 +548,13 @@
             </ul>
           </div>
         </div>
+        <div class="safety careers">
+          <h3>Build your career at Metzler</h3>
+          <div>
+            <p>Metzler is looking for people who take pride in their work and never settle for less than a job well done: a team-oriented company focused on safety and quality, with competitive salaries and benefits.</p>
+            <a class="btn quiet" href="https://www.metzlerforestproducts.com/careers/">See open positions</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -530,7 +563,7 @@
         <img src="img/logs-600.webp" srcset="img/logs-600.webp 600w, img/logs-1000.webp 1000w" sizes="(max-width: 900px) calc(100vw - 2rem), 500px" width="1000" height="1000" alt="Hardwood pulpwood logs in the grapple of a loader at the Reedsville yard" loading="lazy">
         <div>
           <h2>Bringing in pulpwood?</h2>
-          <p style="margin-top:.9rem">Metzler buys pulpwood and firewood poles at the Reedsville yard. Call 717-667-2924 for current species and pricing, and call before your first load.</p>
+          <p class="pulp-lede">Metzler buys pulpwood and firewood poles at the Reedsville yard. Call 717-667-2924 for current species and pricing, and call before your first load.</p>
           <ul class="facts">
             <li>Unattended scale for pulpwood deliveries</li>
             <li>Trained staff and quick truck turnaround</li>
@@ -550,19 +583,6 @@
           </details>
           <div class="actions">
             <a class="btn" href="tel:+17176672924"><span class="num">Call 717-667-2924</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap crew">
-        <img src="img/grinders-600.webp" srcset="img/grinders-600.webp 600w, img/grinders-1000.webp 1000w, img/grinders-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 640px" width="1400" height="1139" alt="Three orange horizontal grinders working at the foot of a huge pile of ground wood" loading="lazy">
-        <div>
-          <h2>Build your career at Metzler</h2>
-          <p>Metzler is looking for people who take pride in their work and never settle for less than a job well done. A team-oriented company focused on safety and quality, with competitive salaries and benefits.</p>
-          <div class="actions">
-            <a class="btn quiet" href="https://www.metzlerforestproducts.com/careers/">See open positions</a>
           </div>
         </div>
       </div>
@@ -597,10 +617,10 @@
     </section>
   </main>
 
-  <div class="dock">
-    <a class="btn" href="tel:+17176672924">Call office</a>
-    <a class="btn alt" href="tel:+17176673600">Landscape Center</a>
-  </div>
+  <nav class="dock" aria-label="Call">
+    <a class="btn" href="tel:+17176672924" aria-label="Call the Metzler office, 717-667-2924">Call office</a>
+    <a class="btn alt" href="tel:+17176673600" aria-label="Call the Landscape Center, 717-667-3600">Landscape Center</a>
+  </nav>
 
   <footer>
     <p>Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Metzler Forest Products. Content and photos come from Metzler Forest Products' public websites. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
@@ -631,7 +651,7 @@
         el.classList.add(open ? 'open' : 'closed')
         el.querySelector('[data-status-text]').textContent = text
       })
-      document.querySelectorAll('tr[data-days]').forEach((tr) => { if (tr.dataset.days.split(',').includes(String(day))) tr.classList.add('today') })
+      document.querySelectorAll('tr[data-days]').forEach((tr) => { if (tr.dataset.days.split(',').includes(String(day))) { tr.classList.add('today'); tr.setAttribute('aria-current', 'date') } })
     })()
 
     // Forty rings, one per year since 1986. Slightly irregular, like a real cookie cut from a log.
@@ -671,7 +691,10 @@
     // Phones: the call buttons dock once the hero is scrolled past; the wood specs start closed.
     if (matchMedia('(max-width: 900px)').matches) document.querySelector('.specs').open = false
     const dock = document.querySelector('.dock')
-    new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(document.querySelector('.hero'))
+    new IntersectionObserver(([e]) => {
+      dock.classList.toggle('on', !e.isIntersecting)
+      document.body.classList.toggle('dock-on', !e.isIntersecting)
+    }).observe(document.querySelector('.hero .actions'))
   </script>
 </body>
 </html>
