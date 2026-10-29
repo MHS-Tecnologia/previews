@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#22272b">
+<title>Church stained glass: restoration and new windows | Williams Stained Glass Studio</title>
+<meta name="description" content="Free site inspections, recommendations and estimates for churches and synagogues. Restoration, repair, protective glazing and new stained glass windows.">
+<meta property="og:title" content="Church stained glass: restoration and new windows | Williams Stained Glass Studio">
+<meta property="og:description" content="Free site inspections, recommendations and estimates for churches and synagogues. Restoration, repair, protective glazing and new stained glass windows.">
+<meta property="og:image" content="https://demo.mhstecnologia.com/williams-stained-glass-pittsburgh-pa/email.jpg">
+<meta property="og:type" content="website">
+<link rel="preload" as="font" type="font/woff2" href="fonts/marcellus.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
+
+<script>document.documentElement.className += ' js';</script>
+<style>
+@font-face { font-family: "Marcellus"; font-weight: 400; font-display: swap; src: url(fonts/marcellus.woff2) format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-weight: 400 700; font-display: swap; src: url(fonts/hanken.woff2) format("woff2"); }
+
+/* Opalescent white, lead came, and the colours of their glass. */
+:root {
+  color-scheme: light;
+  --opal: #edf0eb;
+  --opal-2: #e2e7e0;
+  --came: #22272b;
+  --came-2: #2c3237;
+  --ink: #1b2024;
+  --muted: #4a545b;
+  --green: #1d5a43;
+  --green-deep: #154533;
+  --ruby: #9b2337;
+  --amber: #d6952a;
+  --cobalt: #27489b;
+  --on-came: #e9ede9;
+  --on-came-muted: #b3bdb8;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 75rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { background: var(--opal); color: var(--ink); font: 400 1.0625rem/1.6 "Hanken Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+.leaded :focus-visible, .dark :focus-visible, .studio-band :focus-visible, .foot :focus-visible, .sticky :focus-visible, .lightbox :focus-visible { outline-color: var(--amber); }
+h1, h2, h3 { font-family: "Marcellus", Georgia, serif; font-weight: 400; line-height: 1.08; text-wrap: balance; }
+h1 { font-size: clamp(2.25rem, 4.6vw, 4rem); letter-spacing: -.005em; }
+h2 { font-size: clamp(1.85rem, 3.3vw, 2.75rem); }
+h3 { font-size: 1.4rem; line-height: 1.15; }
+p { max-width: 64ch; }
+[id] { scroll-margin-top: 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; color: var(--ink); padding: .5rem 1rem; z-index: 30; }
+.skip:focus { left: .5rem; }
+
+.demo { background: var(--came); color: var(--on-came); font-size: .8125rem; line-height: 1.35; padding: .45rem var(--pad); text-align: center; }
+
+/* Header */
+.top { background: var(--opal); border-bottom: 1px solid #cfd6cd; position: relative; z-index: 10; }
+.top-in { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
+.brand { display: block; flex: none; }
+.logo { width: 158px; height: auto; }
+nav { margin-left: auto; }
+.bar { display: flex; gap: 1.6rem; list-style: none; padding: 0; }
+.bar a, .menu a { text-decoration: none; font-weight: 500; }
+.bar a { padding: .4rem 0; border-bottom: 2px solid transparent; }
+.bar a:hover, .bar a[aria-current="page"] { border-bottom-color: var(--ruby); }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; padding: .55rem 1rem; border: 1.5px solid var(--ink); border-radius: 2rem; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu ul { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--opal); border: 1px solid #c4ccc2; list-style: none; padding: .5rem 0; min-width: 13rem; box-shadow: 0 12px 30px rgba(27, 32, 36, .18); }
+.menu li a { display: block; padding: .7rem 1.2rem; }
+.menu li a[aria-current="page"] { color: var(--ruby); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .7rem 1.4rem; border-radius: 2rem; background: var(--green); color: #fff; font-weight: 600; text-decoration: none; border: 2px solid var(--green); transition: background-color .2s, border-color .2s; }
+.btn:hover { background: var(--green-deep); border-color: var(--green-deep); }
+.btn-line { background: transparent; color: var(--green); }
+.btn-line:hover { background: rgba(29, 90, 67, .08); color: var(--green-deep); }
+.btn-sm { min-height: 2.6rem; padding: .45rem 1.1rem; font-size: .95rem; }
+.ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.go { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.go-light { color: var(--amber); }
+
+/* Arched frame: the lancet shape of their windows, edged in came */
+.arch-frame { border-radius: 999px 999px 0 0; overflow: hidden; background: var(--came); border: 6px solid var(--came); }
+.arch-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero-in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-top: clamp(2rem, 5vw, 4.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.hero h1 { max-width: 15ch; }
+.lead { font-size: 1.2rem; line-height: 1.55; margin-top: 1.25rem; color: #2b3338; max-width: 38rem; }
+.note { margin-top: 1.1rem; color: var(--muted); font-size: .98rem; }
+.hero-window { position: relative; justify-self: center; width: min(100%, 440px); margin-bottom: 150px; }
+.hero-window .arch-frame { position: relative; z-index: 2; border-width: 9px; aspect-ratio: 800 / 816; box-shadow: 0 30px 60px -30px rgba(27, 32, 36, .55); }
+.sill { position: relative; z-index: 2; height: 14px; margin: 0 -18px; background: var(--came-2); border-radius: 2px; }
+/* The colour the window throws on the floor in front of it: their own glass,
+   blurred, laid down in perspective under the sill. */
+.cast { position: absolute; z-index: 1; left: -22%; right: -22%; top: calc(100% + 2px); height: 210px; background: url(img/heron-cast.webp) center top / 100% 100% no-repeat; opacity: .9; mix-blend-mode: multiply; transform-origin: 50% 0; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .cast { animation: daylight 24s ease-in-out infinite alternate; }
+  @keyframes daylight {
+    from { transform: skewX(-12deg); opacity: .78; }
+    to { transform: skewX(12deg); opacity: 1; }
+  }
+}
+.hero-window .arch-frame img { transform: scale(1.08); transform-origin: 50% 65%; }
+@media (min-width: 861px) {
+  .hero-in { min-height: calc(100svh - 6.6rem); padding-bottom: clamp(5rem, 9vw, 8rem); }
+}
+
+/* Three kinds of work */
+.kinds { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); }
+.kinds h2 { max-width: 22ch; }
+.kinds-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: 2.5rem; }
+.kind .arch-frame { aspect-ratio: 4 / 5; margin-bottom: 1.4rem; }
+.kind p { margin-top: .6rem; color: #2f383d; }
+
+/* Leaded gallery: pieces of glass between dark came */
+.leaded, .dark { background: var(--came); color: var(--on-came); }
+.leaded { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.leaded p, .dark p { color: var(--on-came-muted); }
+.sec-head { display: grid; gap: .8rem; margin-bottom: 2rem; }
+.sec-head p { max-width: 58ch; }
+.panel { display: grid; gap: 7px; background: #15191c; padding: 7px; border-radius: 3px; }
+.row { display: flex; gap: 7px; }
+.pane { position: relative; background: #101315; overflow: hidden; flex: 1 1 0; min-width: 0; }
+.pane .open { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; }
+.pane .open:focus-visible { outline: 3px solid var(--amber); outline-offset: -3px; }
+.pane img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .5s ease; }
+.pane:hover img { transform: scale(1.03); filter: brightness(1.08); }
+.pane figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem .75rem .55rem; font-size: .82rem; line-height: 1.3; color: #fff; background: linear-gradient(transparent, rgba(16, 19, 21, .85)); opacity: 0; transition: opacity .25s; pointer-events: none; }
+.pane:hover figcaption, .pane:focus-within figcaption { opacity: 1; }
+.more { display: none; margin-top: 1rem; font: inherit; font-weight: 600; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 2rem; padding: .7rem 1.3rem; min-height: 44px; cursor: pointer; }
+
+/* Restoration story */
+.story { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.story-in { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.story-text p { margin-top: 1rem; color: #2f383d; }
+.story-text h2 { max-width: 18ch; }
+.ask { font-weight: 600; color: var(--ink) !important; }
+.story-text .btn { margin-top: 1.25rem; }
+.triptych { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; align-items: start; }
+.triptych figure { background: var(--came); padding: 6px; }
+.triptych img { width: 100%; }
+.triptych figcaption { color: var(--on-came); font-size: .85rem; padding: .45rem .2rem .1rem; }
+.t-after { grid-column: 2; grid-row: 1 / span 2; }
+.t-before { grid-column: 1; }
+.t-during { grid-column: 1; }
+.detail { margin-top: 1.5rem; width: 200px; background: var(--came); padding: 6px; }
+.detail figcaption { color: var(--on-came); font-size: .85rem; padding: .4rem .2rem 0; }
+
+/* Steps: a real sequence, so numbered */
+.steps-sec { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); border-top: 1px solid #cfd6cd; }
+.steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: s; border-top: 3px solid var(--came); }
+.steps li { counter-increment: s; padding: 1.4rem 1.4rem 1.2rem 0; border-right: 1px solid #c4ccc2; }
+.steps li + li { padding-left: 1.4rem; }
+.steps li:last-child { border-right: 0; }
+.steps li::before { content: counter(s); display: block; font-family: "Marcellus", serif; font-size: 2.4rem; line-height: 1; color: var(--ruby); margin-bottom: .8rem; }
+.steps h3 { font-size: 1.25rem; }
+.steps p { margin-top: .5rem; color: #2f383d; font-size: 1rem; }
+.season { margin-top: 2rem; padding: .9rem 1.1rem; border-left: 4px solid var(--amber); background: rgba(214, 149, 42, .12); max-width: 60ch; }
+.dark .season { color: var(--on-came); }
+
+/* Studio band */
+.studio-band { background: var(--came); color: var(--on-came); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.band-in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.band-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; background: #15191c; padding: 7px; }
+.bp-1 { grid-column: 1 / -1; }
+.band-pics img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+.band-text p { margin-top: 1rem; color: var(--on-came-muted); }
+.hours { margin-top: 1.5rem; display: grid; gap: 1rem; }
+.hours dt { font-weight: 600; color: var(--on-came); }
+.hours dd { margin: .15rem 0 0; color: var(--on-came-muted); }
+
+/* Quotes */
+.words { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: 2.25rem; }
+.quote { border-top: 3px solid var(--ruby); padding-top: 1.1rem; }
+.quote:nth-child(3n+2) { border-top-color: var(--cobalt); }
+.quote:nth-child(3n) { border-top-color: var(--amber); }
+.quote blockquote p { font-family: "Marcellus", Georgia, serif; font-size: 1.2rem; line-height: 1.45; }
+.quote figcaption { margin-top: .8rem; color: var(--muted); font-weight: 600; }
+.quote.big blockquote p { font-size: 1.5rem; }
+.quote.on-dark { margin-top: 1.75rem; }
+.quote.on-dark figcaption { color: var(--on-came-muted); }
+
+/* Closing */
+.closing { background: var(--green); color: #fff; padding: clamp(3rem, 6vw, 5rem) 0; }
+.closing h2 { max-width: 22ch; }
+.closing p { margin-top: .8rem; color: #dbe8e1; }
+.closing .btn { background: #fff; color: var(--green-deep); border-color: #fff; }
+.closing .btn:hover { background: var(--opal-2); }
+.closing .btn-line { background: transparent; color: #fff; border-color: #fff; }
+.closing .btn-line:hover { background: rgba(255, 255, 255, .1); }
+.closing :focus-visible { outline-color: #fff; }
+
+/* Footer */
+.foot { background: var(--came); color: var(--on-came-muted); padding: 3.5rem 0 2rem; font-size: .97rem; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; }
+.foot-logo { width: 190px; margin-bottom: 1rem; }
+.foot-h { font-family: "Hanken Grotesk", sans-serif; font-size: 1rem; font-weight: 700; color: var(--on-came); margin-bottom: .5rem; }
+.foot a { color: var(--on-came); }
+.foot-nav { list-style: none; padding: 0; display: grid; gap: .35rem; margin-bottom: .75rem; }
+.legal { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #3a4248; font-size: .85rem; display: grid; gap: .3rem; }
+
+/* Inner pages */
+.phero { padding: clamp(2rem, 5vw, 4rem) 0; }
+.phero-in { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.phero-pic { justify-self: center; width: min(100%, 340px); aspect-ratio: 4 / 5; }
+.jump { display: flex; flex-wrap: wrap; gap: .5rem; padding-bottom: 2rem; }
+.jump a { text-decoration: none; padding: .5rem 1rem; border: 1.5px solid #b8c1b6; border-radius: 2rem; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; }
+.jump a:hover { border-color: var(--ink); }
+.gsec { padding: clamp(3rem, 6vw, 5rem) 0; }
+.gsec:not(.dark) + .gsec:not(.dark) { padding-top: 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.two p { margin-top: 1rem; }
+.two .btn { margin-top: 1.25rem; }
+.ticks { list-style: none; padding: 0; margin-top: 1.25rem; display: grid; gap: .6rem; }
+.ticks li { padding-left: 1.6rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .45em; width: .7rem; height: .7rem; background: var(--ruby); transform: rotate(45deg); }
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.card h3 { margin-top: 1.1rem; }
+.card p { margin-top: .5rem; color: #2f383d; font-size: 1rem; }
+.pic-dark { background: var(--came); padding: 6px; }
+.pic-dark img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+.pic-dark.lamp img { aspect-ratio: auto; }
+.places { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.place { border-top: 3px solid var(--came); padding-top: 1.1rem; }
+.place p { margin-top: .6rem; }
+.place .addr { font-size: 1.15rem; }
+.contact-hero h1 { max-width: 16ch; }
+
+/* Mobile sticky call bar */
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; display: none; gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(34, 39, 43, .97); transform: translateY(110%); transition: transform .25s; }
+.sticky.on { transform: none; }
+.sticky .btn { flex: 1; min-height: 3rem; }
+.sticky .btn-ghost { background: transparent; border-color: var(--on-came); color: var(--on-came); }
+
+/* Lightbox */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 96vh; margin: auto; color: var(--on-came); }
+.lightbox::backdrop { background: rgba(16, 19, 21, .92); }
+.lightbox img { max-width: 92vw; max-height: 78vh; width: auto; height: auto; margin: 0 auto; border: 6px solid var(--came); }
+.lb-cap { text-align: center; margin: .8rem auto 0; color: var(--on-came); }
+.lb-nav { display: flex; justify-content: center; gap: .5rem; margin-top: .8rem; }
+.lb-nav button { font: inherit; font-weight: 600; background: var(--came-2); color: var(--on-came); border: 1px solid #4a535a; border-radius: 2rem; padding: .55rem 1.1rem; min-height: 44px; cursor: pointer; }
+
+@media (max-width: 1100px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .bar, .top-call { display: none; }
+  .menu { display: block; }
+  .top-in { min-height: 3.75rem; }
+  .logo { width: 132px; }
+  .hero-in, .story-in, .band-in, .phero-in, .two { grid-template-columns: 1fr; }
+  .hero-in { padding-top: 1.4rem; gap: 2rem; }
+  .hero-window { width: min(100% - 2rem, 420px); margin-bottom: 80px; }
+  .cast { height: 110px; left: -12%; right: -12%; }
+  .kinds-grid, .cards3, .places, .quotes { grid-template-columns: 1fr; }
+  .kind .arch-frame { aspect-ratio: 3 / 2; max-width: 30rem; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .steps li { border-right: 0; padding-left: 0 !important; border-bottom: 1px solid #c4ccc2; }
+  .steps li:nth-child(odd) { padding-right: 1.2rem; }
+  .phero-pic { width: min(100%, 380px); justify-self: start; aspect-ratio: 4 / 3; }
+  .sticky { display: flex; }
+  body { padding-bottom: 4.5rem; }
+}
+@media (max-width: 640px) {
+  .panel { grid-template-columns: 1fr 1fr; }
+  .row { display: contents; }
+  .row .pane { aspect-ratio: 1; }
+  .row .pane.mw { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+  .js .panel[data-collapsed] .pane.x { display: none; }
+  .js .more { display: inline-flex; }
+  .pane figcaption { opacity: 1; font-size: .75rem; padding: 1.2rem .5rem .4rem; }
+  .steps { grid-template-columns: 1fr; }
+  .steps li:nth-child(odd) { padding-right: 0; }
+  .lead { font-size: 1.08rem; }
+  .ctas .btn { flex: 1 1 100%; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .triptych { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pane img, .sticky, .btn, .pane figcaption { transition: none; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Williams Stained Glass Studio. Not affiliated with or endorsed by Williams Stained Glass Studio.</div>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html"><img class="logo" src="img/logo-ink.webp" width="420" height="127" alt="Williams Stained Glass Studio"></a>
+    <nav aria-label="Main">
+      <details class="menu">
+        <summary><span>Menu</span></summary>
+        <ul><li><a href="new-glass.html">New glass</a></li><li><a href="restoration.html">Restoration</a></li><li><a href="churches.html" aria-current="page">Churches</a></li><li><a href="studio.html">The studio</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </details>
+      <ul class="bar"><li><a href="new-glass.html">New glass</a></li><li><a href="restoration.html">Restoration</a></li><li><a href="churches.html" aria-current="page">Churches</a></li><li><a href="studio.html">The studio</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+    <a class="btn btn-sm top-call" href="tel:+14123440220">Call 412-344-0220</a>
+  </div>
+</header>
+<main id="main">
+<section class="phero">
+  <div class="wrap phero-in">
+    <div class="phero-text">
+      <h1>Stained glass for churches and synagogues</h1>
+      <p class="lead">Williams offers preservation, restoration and repair of existing church windows, and designs and fabricates new ones. Site inspections, recommendations, planning, design and cost estimates are free of charge.</p>
+      <div class="ctas">
+      <a class="btn" href="tel:+14123440220">Call 412-344-0220</a>
+      <a class="btn btn-line" href="mailto:wsg@williamsstainedglass.com">Email the studio</a>
+    </div>
+    </div>
+    <div class="phero-pic arch-frame"><img src="img/eccl-arch-545.webp" srcset="img/eccl-arch-545.webp 545w, img/eccl-arch-1090.webp 1090w" sizes="(max-width: 860px) 60vw, 360px" width="1090" height="850" alt="Half-round church window with a blue cross and red flames" loading="eager" fetchpriority="high"></div>
+  </div>
+</section>
+
+<section class="gsec">
+  <div class="wrap two">
+    <div>
+      <h2>What the studio does for congregations</h2>
+      <ul class="ticks">
+        <li>Comprehensive site inspections, recommendations, project planning, design services and cost estimates, free of charge</li>
+        <li>Restoration of stained glass windows</li>
+        <li>Repair of individual windows and vents</li>
+        <li>Protective glazing systems</li>
+        <li>New windows, designed and fabricated in the studio</li>
+      </ul>
+    </div>
+    <div>
+      <figure class="quote big"><blockquote><p>Every one admired the lovely addition to Faith Lutheran Church, the beauty of the medallions and how well the colors blend. Many said it brought tears to their eyes.</p></blockquote><figcaption>Helen T.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="gsec dark">
+  <div class="wrap">
+    <div class="sec-head"><h2>From the ecclesiastical gallery</h2></div>
+    <div class="panel " data-gallery="eccl">
+<div class="row" style="aspect-ratio:4.087">
+<figure class="pane" style="flex-grow:0.670"><button type="button" class="open" data-full="img/eccl-cross-858.webp" aria-label="Enlarge: Three pointed panels with crosses"><img src="img/eccl-cross-430.webp" srcset="img/eccl-cross-430.webp 430w, img/eccl-cross-858.webp 858w" sizes="(max-width: 640px) 50vw, 20vw" width="858" height="1280" alt="Three pointed panels with crosses" loading="lazy" decoding="async"></button><figcaption>Three pointed panels with crosses</figcaption></figure>
+<figure class="pane" style="flex-grow:1.333"><button type="button" class="open" data-full="img/eccl-trio-640.webp" aria-label="Enlarge: Three illuminated panels with symbols"><img src="img/eccl-trio-640.webp" width="640" height="480" alt="Three illuminated panels with symbols" loading="lazy" decoding="async"></button><figcaption>Three illuminated panels with symbols</figcaption></figure>
+<figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/eccl-saint-480.webp" aria-label="Enlarge: Saint in a diamond-paned window"><img src="img/eccl-saint-480.webp" width="480" height="640" alt="Saint in a diamond-paned window" loading="lazy" decoding="async"></button><figcaption>Saint in a diamond-paned window</figcaption></figure>
+<figure class="pane" style="flex-grow:1.333"><button type="button" class="open" data-full="img/eccl-clerestory-640.webp" aria-label="Enlarge: Row of clerestory windows"><img src="img/eccl-clerestory-640.webp" width="640" height="480" alt="Row of clerestory windows" loading="lazy" decoding="async"></button><figcaption>Row of clerestory windows</figcaption></figure>
+</div>
+<div class="row" style="aspect-ratio:3.242">
+<figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/eccl-tulips-461.webp" aria-label="Enlarge: Memorial window with tulips"><img src="img/eccl-tulips-461.webp" width="461" height="615" alt="Memorial window with tulips" loading="lazy" decoding="async"></button><figcaption>Memorial window with tulips</figcaption></figure>
+<figure class="pane" style="flex-grow:0.812"><button type="button" class="open" data-full="img/eccl-bible-461.webp" aria-label="Enlarge: Window with an open Bible"><img src="img/eccl-bible-461.webp" width="461" height="568" alt="Window with an open Bible" loading="lazy" decoding="async"></button><figcaption>Window with an open Bible</figcaption></figure>
+<figure class="pane x" style="flex-grow:0.750"><button type="button" class="open" data-full="img/eccl-lancet-461.webp" aria-label="Enlarge: Gothic lancet window"><img src="img/eccl-lancet-461.webp" width="461" height="615" alt="Gothic lancet window" loading="lazy" decoding="async"></button><figcaption>Gothic lancet window</figcaption></figure>
+<figure class="pane x" style="flex-grow:0.931"><button type="button" class="open" data-full="img/eccl-vent-596.webp" aria-label="Enlarge: Small window with a chalice, cross and book"><img src="img/eccl-vent-596.webp" width="596" height="640" alt="Small window with a chalice, cross and book" loading="lazy" decoding="async"></button><figcaption>Small window with a chalice, cross and book</figcaption></figure>
+</div>
+</div>
+<button type="button" class="more" data-more="eccl" aria-expanded="false">Show all 8 photos</button>
+  </div>
+</section>
+<section class="closing">
+  <div class="wrap closing-in">
+    <h2>Ask for a free site inspection</h2>
+    <p>Call or email for a free estimate. Walk-ins are welcome at the Pittsburgh studio, Monday to Friday, 9 to 4.</p>
+    <div class="ctas">
+      <a class="btn" href="tel:+14123440220">Call 412-344-0220</a>
+      <a class="btn btn-line" href="mailto:wsg@williamsstainedglass.com">Email the studio</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <img class="logo foot-logo" src="img/logo-light.webp" width="420" height="127" alt="Williams Stained Glass Studio" loading="lazy">
+      <p>Family-owned stained and leaded glass studio, serving Pittsburgh, West Virginia, Ohio and Maryland since 1984.</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Pittsburgh</h2>
+      <p>1115 Castle Shannon Blvd<br>Pittsburgh, PA 15234<br><a href="tel:+14123440220">412-344-0220</a><br>Mon to Fri, 9 to 4</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Cumberland</h2>
+      <p>123 Baltimore Street<br>Cumberland, MD 21502<br><a href="tel:+13017220220">301-722-0220</a><br>Thu to Sat, call for hours</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Pages</h2>
+      <ul class="foot-nav"><li><a href="index.html">Home</a></li><li><a href="new-glass.html">New glass</a></li><li><a href="restoration.html">Restoration</a></li><li><a href="churches.html">Churches</a></li><li><a href="studio.html">The studio</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <p><a href="mailto:wsg@williamsstainedglass.com">wsg@williamsstainedglass.com</a></p>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>Unofficial demo built by MHS Tecnologia for Williams Stained Glass Studio. Not affiliated with or endorsed by Williams Stained Glass Studio. Text and photos come from the studio's public website.</p>
+    <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="btn" href="tel:+14123440220" tabindex="-1">Call the studio</a>
+  <a class="btn btn-ghost" href="mailto:wsg@williamsstainedglass.com" tabindex="-1">Email</a>
+</div>
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
+  <img src="data:," alt="" width="1" height="1">
+  <p class="lb-cap"></p>
+  <div class="lb-nav">
+    <button type="button" data-step="-1">Previous</button>
+    <button type="button" data-step="1">Next</button>
+    <button type="button" class="lb-close">Close</button>
+  </div>
+</dialog>
+<script>
+(function () {
+  // Sticky call bar on phones, once the first call-to-action has scrolled away.
+  var bar = document.getElementById('sticky');
+  var cta = document.getElementById('hero-cta') || document.querySelector('main .ctas');
+  if (bar && cta && 'IntersectionObserver' in window) {
+    var links = bar.querySelectorAll('a');
+    new IntersectionObserver(function (e) {
+      var on = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
+      bar.classList.toggle('on', on);
+      bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+      for (var i = 0; i < links.length; i++) links[i].tabIndex = on ? 0 : -1;
+    }).observe(cta);
+  }
+
+  // Long galleries collapse on phones.
+  var mores = document.querySelectorAll('.more');
+  for (var m = 0; m < mores.length; m++) {
+    (function (btn) {
+      var panel = document.querySelector('[data-gallery="' + btn.getAttribute('data-more') + '"]');
+      if (!panel) return;
+      panel.setAttribute('data-collapsed', '');
+      var label = btn.textContent;
+      btn.addEventListener('click', function () {
+        var open = panel.hasAttribute('data-collapsed');
+        if (open) panel.removeAttribute('data-collapsed'); else panel.setAttribute('data-collapsed', '');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Show fewer photos' : label;
+      });
+    })(mores[m]);
+  }
+
+  // Lightbox: click a piece of glass to see it larger.
+  var box = document.getElementById('lightbox');
+  if (!box || typeof box.showModal !== 'function') return;
+  var big = box.querySelector('img'), cap = box.querySelector('.lb-cap');
+  var list = [], at = 0, opener = null;
+  function show(i) {
+    at = (i + list.length) % list.length;
+    var b = list[at], im = b.querySelector('img');
+    big.removeAttribute('width'); big.removeAttribute('height');
+    big.src = b.getAttribute('data-full');
+    big.alt = im.alt;
+    cap.textContent = im.alt;
+  }
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest && ev.target.closest('.open');
+    if (!b) return;
+    var panel = b.closest('.panel');
+    list = Array.prototype.slice.call(panel.querySelectorAll('.open'));
+    opener = b;
+    show(list.indexOf(b));
+    box.showModal();
+  });
+  box.addEventListener('click', function (ev) {
+    var step = ev.target.getAttribute && ev.target.getAttribute('data-step');
+    if (step) return show(at + Number(step));
+    if (ev.target === box || ev.target.classList.contains('lb-close')) box.close();
+  });
+  box.addEventListener('keydown', function (ev) {
+    if (ev.key === 'ArrowRight') show(at + 1);
+    if (ev.key === 'ArrowLeft') show(at - 1);
+  });
+  box.addEventListener('close', function () { if (opener) opener.focus(); });
+})();
+
+</script>
+</body>
+</html>

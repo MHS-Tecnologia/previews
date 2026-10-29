@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#22272b">
+<title>Williams Stained Glass Studio, Pittsburgh: custom stained glass and restoration</title>
+<meta name="description" content="Family-owned Pittsburgh studio since 1984. Custom stained, beveled and etched glass, and restoration of stained and leaded glass for homes, churches and businesses.">
+<meta property="og:title" content="Williams Stained Glass Studio, Pittsburgh: custom stained glass and restoration">
+<meta property="og:description" content="Family-owned Pittsburgh studio since 1984. Custom stained, beveled and etched glass, and restoration of stained and leaded glass for homes, churches and businesses.">
+<meta property="og:image" content="https://demo.mhstecnologia.com/williams-stained-glass-pittsburgh-pa/email.jpg">
+<meta property="og:type" content="website">
+<link rel="preload" as="font" type="font/woff2" href="fonts/marcellus.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
+
+<script>document.documentElement.className += ' js';</script>
+<style>
+@font-face { font-family: "Marcellus"; font-weight: 400; font-display: swap; src: url(fonts/marcellus.woff2) format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-weight: 400 700; font-display: swap; src: url(fonts/hanken.woff2) format("woff2"); }
+
+/* Opalescent white, lead came, and the colours of their glass. */
+:root {
+  color-scheme: light;
+  --opal: #edf0eb;
+  --opal-2: #e2e7e0;
+  --came: #22272b;
+  --came-2: #2c3237;
+  --ink: #1b2024;
+  --muted: #4a545b;
+  --green: #1d5a43;
+  --green-deep: #154533;
+  --ruby: #9b2337;
+  --amber: #d6952a;
+  --cobalt: #27489b;
+  --on-came: #e9ede9;
+  --on-came-muted: #b3bdb8;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 75rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { background: var(--opal); color: var(--ink); font: 400 1.0625rem/1.6 "Hanken Grotesk", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+.leaded :focus-visible, .dark :focus-visible, .studio-band :focus-visible, .foot :focus-visible, .sticky :focus-visible, .lightbox :focus-visible { outline-color: var(--amber); }
+h1, h2, h3 { font-family: "Marcellus", Georgia, serif; font-weight: 400; line-height: 1.08; text-wrap: balance; }
+h1 { font-size: clamp(2.25rem, 4.6vw, 4rem); letter-spacing: -.005em; }
+h2 { font-size: clamp(1.85rem, 3.3vw, 2.75rem); }
+h3 { font-size: 1.4rem; line-height: 1.15; }
+p { max-width: 64ch; }
+[id] { scroll-margin-top: 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; color: var(--ink); padding: .5rem 1rem; z-index: 30; }
+.skip:focus { left: .5rem; }
+
+.demo { background: var(--came); color: var(--on-came); font-size: .8125rem; line-height: 1.35; padding: .45rem var(--pad); text-align: center; }
+
+/* Header */
+.top { background: var(--opal); border-bottom: 1px solid #cfd6cd; position: relative; z-index: 10; }
+.top-in { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
+.brand { display: block; flex: none; }
+.logo { width: 158px; height: auto; }
+nav { margin-left: auto; }
+.bar { display: flex; gap: 1.6rem; list-style: none; padding: 0; }
+.bar a, .menu a { text-decoration: none; font-weight: 500; }
+.bar a { padding: .4rem 0; border-bottom: 2px solid transparent; }
+.bar a:hover, .bar a[aria-current="page"] { border-bottom-color: var(--ruby); }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; padding: .55rem 1rem; border: 1.5px solid var(--ink); border-radius: 2rem; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu ul { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--opal); border: 1px solid #c4ccc2; list-style: none; padding: .5rem 0; min-width: 13rem; box-shadow: 0 12px 30px rgba(27, 32, 36, .18); }
+.menu li a { display: block; padding: .7rem 1.2rem; }
+.menu li a[aria-current="page"] { color: var(--ruby); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .7rem 1.4rem; border-radius: 2rem; background: var(--green); color: #fff; font-weight: 600; text-decoration: none; border: 2px solid var(--green); transition: background-color .2s, border-color .2s; }
+.btn:hover { background: var(--green-deep); border-color: var(--green-deep); }
+.btn-line { background: transparent; color: var(--green); }
+.btn-line:hover { background: rgba(29, 90, 67, .08); color: var(--green-deep); }
+.btn-sm { min-height: 2.6rem; padding: .45rem 1.1rem; font-size: .95rem; }
+.ctas { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.go { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.go-light { color: var(--amber); }
+
+/* Arched frame: the lancet shape of their windows, edged in came */
+.arch-frame { border-radius: 999px 999px 0 0; overflow: hidden; background: var(--came); border: 6px solid var(--came); }
+.arch-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero-in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-top: clamp(2rem, 5vw, 4.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.hero h1 { max-width: 15ch; }
+.lead { font-size: 1.2rem; line-height: 1.55; margin-top: 1.25rem; color: #2b3338; max-width: 38rem; }
+.note { margin-top: 1.1rem; color: var(--muted); font-size: .98rem; }
+.hero-window { position: relative; justify-self: center; width: min(100%, 440px); margin-bottom: 150px; }
+.hero-window .arch-frame { position: relative; z-index: 2; border-width: 9px; aspect-ratio: 800 / 816; box-shadow: 0 30px 60px -30px rgba(27, 32, 36, .55); }
+.sill { position: relative; z-index: 2; height: 14px; margin: 0 -18px; background: var(--came-2); border-radius: 2px; }
+/* The colour the window throws on the floor in front of it: their own glass,
+   blurred, laid down in perspective under the sill. */
+.cast { position: absolute; z-index: 1; left: -22%; right: -22%; top: calc(100% + 2px); height: 210px; background: url(img/heron-cast.webp) center top / 100% 100% no-repeat; opacity: .9; mix-blend-mode: multiply; transform-origin: 50% 0; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .cast { animation: daylight 24s ease-in-out infinite alternate; }
+  @keyframes daylight {
+    from { transform: skewX(-12deg); opacity: .78; }
+    to { transform: skewX(12deg); opacity: 1; }
+  }
+}
+.hero-window .arch-frame img { transform: scale(1.08); transform-origin: 50% 65%; }
+@media (min-width: 861px) {
+  .hero-in { min-height: calc(100svh - 6.6rem); padding-bottom: clamp(5rem, 9vw, 8rem); }
+}
+
+/* Three kinds of work */
+.kinds { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); }
+.kinds h2 { max-width: 22ch; }
+.kinds-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: 2.5rem; }
+.kind .arch-frame { aspect-ratio: 4 / 5; margin-bottom: 1.4rem; }
+.kind p { margin-top: .6rem; color: #2f383d; }
+
+/* Leaded gallery: pieces of glass between dark came */
+.leaded, .dark { background: var(--came); color: var(--on-came); }
+.leaded { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.leaded p, .dark p { color: var(--on-came-muted); }
+.sec-head { display: grid; gap: .8rem; margin-bottom: 2rem; }
+.sec-head p { max-width: 58ch; }
+.panel { display: grid; gap: 7px; background: #15191c; padding: 7px; border-radius: 3px; }
+.row { display: flex; gap: 7px; }
+.pane { position: relative; background: #101315; overflow: hidden; flex: 1 1 0; min-width: 0; }
+.pane .open { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; }
+.pane .open:focus-visible { outline: 3px solid var(--amber); outline-offset: -3px; }
+.pane img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, filter .5s ease; }
+.pane:hover img { transform: scale(1.03); filter: brightness(1.08); }
+.pane figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem .75rem .55rem; font-size: .82rem; line-height: 1.3; color: #fff; background: linear-gradient(transparent, rgba(16, 19, 21, .85)); opacity: 0; transition: opacity .25s; pointer-events: none; }
+.pane:hover figcaption, .pane:focus-within figcaption { opacity: 1; }
+.more { display: none; margin-top: 1rem; font: inherit; font-weight: 600; background: transparent; color: inherit; border: 1.5px solid currentColor; border-radius: 2rem; padding: .7rem 1.3rem; min-height: 44px; cursor: pointer; }
+
+/* Restoration story */
+.story { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.story-in { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.story-text p { margin-top: 1rem; color: #2f383d; }
+.story-text h2 { max-width: 18ch; }
+.ask { font-weight: 600; color: var(--ink) !important; }
+.story-text .btn { margin-top: 1.25rem; }
+.triptych { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; align-items: start; }
+.triptych figure { background: var(--came); padding: 6px; }
+.triptych img { width: 100%; }
+.triptych figcaption { color: var(--on-came); font-size: .85rem; padding: .45rem .2rem .1rem; }
+.t-after { grid-column: 2; grid-row: 1 / span 2; }
+.t-before { grid-column: 1; }
+.t-during { grid-column: 1; }
+.detail { margin-top: 1.5rem; width: 200px; background: var(--came); padding: 6px; }
+.detail figcaption { color: var(--on-came); font-size: .85rem; padding: .4rem .2rem 0; }
+
+/* Steps: a real sequence, so numbered */
+.steps-sec { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); border-top: 1px solid #cfd6cd; }
+.steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: s; border-top: 3px solid var(--came); }
+.steps li { counter-increment: s; padding: 1.4rem 1.4rem 1.2rem 0; border-right: 1px solid #c4ccc2; }
+.steps li + li { padding-left: 1.4rem; }
+.steps li:last-child { border-right: 0; }
+.steps li::before { content: counter(s); display: block; font-family: "Marcellus", serif; font-size: 2.4rem; line-height: 1; color: var(--ruby); margin-bottom: .8rem; }
+.steps h3 { font-size: 1.25rem; }
+.steps p { margin-top: .5rem; color: #2f383d; font-size: 1rem; }
+.season { margin-top: 2rem; padding: .9rem 1.1rem; border-left: 4px solid var(--amber); background: rgba(214, 149, 42, .12); max-width: 60ch; }
+.dark .season { color: var(--on-came); }
+
+/* Studio band */
+.studio-band { background: var(--came); color: var(--on-came); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.band-in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.band-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; background: #15191c; padding: 7px; }
+.bp-1 { grid-column: 1 / -1; }
+.band-pics img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+.band-text p { margin-top: 1rem; color: var(--on-came-muted); }
+.hours { margin-top: 1.5rem; display: grid; gap: 1rem; }
+.hours dt { font-weight: 600; color: var(--on-came); }
+.hours dd { margin: .15rem 0 0; color: var(--on-came-muted); }
+
+/* Quotes */
+.words { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); margin-top: 2.25rem; }
+.quote { border-top: 3px solid var(--ruby); padding-top: 1.1rem; }
+.quote:nth-child(3n+2) { border-top-color: var(--cobalt); }
+.quote:nth-child(3n) { border-top-color: var(--amber); }
+.quote blockquote p { font-family: "Marcellus", Georgia, serif; font-size: 1.2rem; line-height: 1.45; }
+.quote figcaption { margin-top: .8rem; color: var(--muted); font-weight: 600; }
+.quote.big blockquote p { font-size: 1.5rem; }
+.quote.on-dark { margin-top: 1.75rem; }
+.quote.on-dark figcaption { color: var(--on-came-muted); }
+
+/* Closing */
+.closing { background: var(--green); color: #fff; padding: clamp(3rem, 6vw, 5rem) 0; }
+.closing h2 { max-width: 22ch; }
+.closing p { margin-top: .8rem; color: #dbe8e1; }
+.closing .btn { background: #fff; color: var(--green-deep); border-color: #fff; }
+.closing .btn:hover { background: var(--opal-2); }
+.closing .btn-line { background: transparent; color: #fff; border-color: #fff; }
+.closing .btn-line:hover { background: rgba(255, 255, 255, .1); }
+.closing :focus-visible { outline-color: #fff; }
+
+/* Footer */
+.foot { background: var(--came); color: var(--on-came-muted); padding: 3.5rem 0 2rem; font-size: .97rem; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 2rem; }
+.foot-logo { width: 190px; margin-bottom: 1rem; }
+.foot-h { font-family: "Hanken Grotesk", sans-serif; font-size: 1rem; font-weight: 700; color: var(--on-came); margin-bottom: .5rem; }
+.foot a { color: var(--on-came); }
+.foot-nav { list-style: none; padding: 0; display: grid; gap: .35rem; margin-bottom: .75rem; }
+.legal { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #3a4248; font-size: .85rem; display: grid; gap: .3rem; }
+
+/* Inner pages */
+.phero { padding: clamp(2rem, 5vw, 4rem) 0; }
+.phero-in { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.phero-pic { justify-self: center; width: min(100%, 340px); aspect-ratio: 4 / 5; }
+.jump { display: flex; flex-wrap: wrap; gap: .5rem; padding-bottom: 2rem; }
+.jump a { text-decoration: none; padding: .5rem 1rem; border: 1.5px solid #b8c1b6; border-radius: 2rem; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; }
+.jump a:hover { border-color: var(--ink); }
+.gsec { padding: clamp(3rem, 6vw, 5rem) 0; }
+.gsec:not(.dark) + .gsec:not(.dark) { padding-top: 0; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.two p { margin-top: 1rem; }
+.two .btn { margin-top: 1.25rem; }
+.ticks { list-style: none; padding: 0; margin-top: 1.25rem; display: grid; gap: .6rem; }
+.ticks li { padding-left: 1.6rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .45em; width: .7rem; height: .7rem; background: var(--ruby); transform: rotate(45deg); }
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.card h3 { margin-top: 1.1rem; }
+.card p { margin-top: .5rem; color: #2f383d; font-size: 1rem; }
+.pic-dark { background: var(--came); padding: 6px; }
+.pic-dark img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+.pic-dark.lamp img { aspect-ratio: auto; }
+.places { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.place { border-top: 3px solid var(--came); padding-top: 1.1rem; }
+.place p { margin-top: .6rem; }
+.place .addr { font-size: 1.15rem; }
+.contact-hero h1 { max-width: 16ch; }
+
+/* Mobile sticky call bar */
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; display: none; gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(34, 39, 43, .97); transform: translateY(110%); transition: transform .25s; }
+.sticky.on { transform: none; }
+.sticky .btn { flex: 1; min-height: 3rem; }
+.sticky .btn-ghost { background: transparent; border-color: var(--on-came); color: var(--on-came); }
+
+/* Lightbox */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 96vh; margin: auto; color: var(--on-came); }
+.lightbox::backdrop { background: rgba(16, 19, 21, .92); }
+.lightbox img { max-width: 92vw; max-height: 78vh; width: auto; height: auto; margin: 0 auto; border: 6px solid var(--came); }
+.lb-cap { text-align: center; margin: .8rem auto 0; color: var(--on-came); }
+.lb-nav { display: flex; justify-content: center; gap: .5rem; margin-top: .8rem; }
+.lb-nav button { font: inherit; font-weight: 600; background: var(--came-2); color: var(--on-came); border: 1px solid #4a535a; border-radius: 2rem; padding: .55rem 1.1rem; min-height: 44px; cursor: pointer; }
+
+@media (max-width: 1100px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .bar, .top-call { display: none; }
+  .menu { display: block; }
+  .top-in { min-height: 3.75rem; }
+  .logo { width: 132px; }
+  .hero-in, .story-in, .band-in, .phero-in, .two { grid-template-columns: 1fr; }
+  .hero-in { padding-top: 1.4rem; gap: 2rem; }
+  .hero-window { width: min(100% - 2rem, 420px); margin-bottom: 80px; }
+  .cast { height: 110px; left: -12%; right: -12%; }
+  .kinds-grid, .cards3, .places, .quotes { grid-template-columns: 1fr; }
+  .kind .arch-frame { aspect-ratio: 3 / 2; max-width: 30rem; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .steps li { border-right: 0; padding-left: 0 !important; border-bottom: 1px solid #c4ccc2; }
+  .steps li:nth-child(odd) { padding-right: 1.2rem; }
+  .phero-pic { width: min(100%, 380px); justify-self: start; aspect-ratio: 4 / 3; }
+  .sticky { display: flex; }
+  body { padding-bottom: 4.5rem; }
+}
+@media (max-width: 640px) {
+  .panel { grid-template-columns: 1fr 1fr; }
+  .row { display: contents; }
+  .row .pane { aspect-ratio: 1; }
+  .row .pane.mw { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+  .js .panel[data-collapsed] .pane.x { display: none; }
+  .js .more { display: inline-flex; }
+  .pane figcaption { opacity: 1; font-size: .75rem; padding: 1.2rem .5rem .4rem; }
+  .steps { grid-template-columns: 1fr; }
+  .steps li:nth-child(odd) { padding-right: 0; }
+  .lead { font-size: 1.08rem; }
+  .ctas .btn { flex: 1 1 100%; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .triptych { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pane img, .sticky, .btn, .pane figcaption { transition: none; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Williams Stained Glass Studio. Not affiliated with or endorsed by Williams Stained Glass Studio.</div>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html"><img class="logo" src="img/logo-ink.webp" width="420" height="127" alt="Williams Stained Glass Studio"></a>
+    <nav aria-label="Main">
+      <details class="menu">
+        <summary><span>Menu</span></summary>
+        <ul><li><a href="new-glass.html">New glass</a></li><li><a href="restoration.html">Restoration</a></li><li><a href="churches.html">Churches</a></li><li><a href="studio.html">The studio</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </details>
+      <ul class="bar"><li><a href="new-glass.html">New glass</a></li><li><a href="restoration.html">Restoration</a></li><li><a href="churches.html">Churches</a></li><li><a href="studio.html">The studio</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </nav>
+    <a class="btn btn-sm top-call" href="tel:+14123440220">Call 412-344-0220</a>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <h1>Stained glass, made and mended in Pittsburgh since 1984</h1>
+      <p class="lead">A family-owned studio on Castle Shannon Boulevard. We design and build leaded, beveled and etched glass for homes, churches and businesses, and we restore the windows that are already there.</p>
+      <div class="ctas" id="hero-cta">
+      <a class="btn" href="tel:+14123440220">Call 412-344-0220</a>
+      <a class="btn btn-line" href="mailto:wsg@williamsstainedglass.com?subject=Stained%20glass%20repair%20estimate&body=Hello%2C%0A%0AI%27d%20like%20an%20estimate%20for%20a%20stained%20glass%20repair.%20Photos%20are%20attached.%0A%0AApproximate%20glass%20size%3A%0ALocation%20%28city%20or%20town%29%3A%0AWhat%20is%20damaged%3A%0A%0AThank%20you%2C%0A">Email photos of your window</a>
+    </div>
+      <p class="note">Scale drawings and firm pricing are free. Walk-ins are welcome, Monday to Friday, 9 to 4.</p>
+    </div>
+    <div class="hero-window">
+      <div class="cast" aria-hidden="true"></div>
+      <div class="arch-frame big"><img src="img/heron-440.webp" srcset="img/heron-440.webp 440w, img/heron-600.webp 600w, img/heron-800.webp 800w" sizes="(max-width: 860px) calc(100vw - 4rem), 440px" width="800" height="816" alt="Arched stained glass window: two herons over water, irises and lilies, with pink and violet sky" loading="eager"></div>
+      <div class="sill" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section class="kinds">
+  <div class="wrap">
+    <h2>New glass, and the old glass you already have</h2>
+    <div class="kinds-grid">
+      <article class="kind">
+        <div class="arch-frame"><img src="img/frenchdoors-640.webp" srcset="img/frenchdoors-640.webp 640w, img/frenchdoors-1280.webp 1280w" sizes="(max-width: 860px) 90vw, 360px" width="1280" height="868" alt="Pair of French doors with clear beveled leaded glass panels" loading="lazy" decoding="async"></div>
+        <h3>New windows, doors and etched glass</h3>
+        <p>Custom stained, beveled and etched glass for windows, entryways, interior and cabinet doors, transoms, sidelights and mirrors. Thermopane options on any project, and installation across the Tri-State area.</p>
+        <a class="go" href="new-glass.html">See new work</a>
+      </article>
+      <article class="kind">
+        <div class="arch-frame"><img src="img/r-after-294.webp" width="294" height="413" alt="An 1890s-era arched window after restoration: a woman beneath a tree between two columns" loading="lazy" decoding="async"></div>
+        <h3>Restoration and repair</h3>
+        <p>Broken or bowed windows, door panels, sidelights, transoms, hanging panels, Tiffany-style shades and custom bevels. Existing leaded glass can also be retrofitted into new windows.</p>
+        <a class="go" href="restoration.html">See restoration</a>
+      </article>
+      <article class="kind">
+        <div class="arch-frame"><img src="img/eccl-cross-430.webp" srcset="img/eccl-cross-430.webp 430w, img/eccl-cross-858.webp 858w" sizes="(max-width: 860px) 90vw, 360px" width="858" height="1280" alt="Church window with three pointed panels, crosses in red, blue and gold" loading="lazy" decoding="async"></div>
+        <h3>Churches and institutions</h3>
+        <p>Site inspections, recommendations, project planning, design and cost estimates, free of charge. Then restoration, repair, protective glazing and new windows.</p>
+        <a class="go" href="churches.html">See church work</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="leaded">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>A few windows from the studio's gallery</h2>
+      <p>Each piece is drawn for its own opening. In the studio's words, the result is an original work of art, which they are proud to sign.</p>
+    </div>
+    <div class="panel home-panel" data-gallery="home">
+<div class="row" style="aspect-ratio:4.564">
+<figure class="pane mw" style="flex-grow:1.408"><button type="button" class="open" data-full="img/peacocks-1400.webp" aria-label="Enlarge: Three casement windows: two peacocks and a jewelled centrepiece in clear leaded glass"><img src="img/peacocks-640.webp" srcset="img/peacocks-640.webp 640w, img/peacocks-1000.webp 1000w, img/peacocks-1400.webp 1400w" sizes="(max-width: 640px) 100vw, 37vw" width="1400" height="994" alt="Three casement windows: two peacocks and a jewelled centrepiece in clear leaded glass" loading="lazy" decoding="async"></button><figcaption>Three casement windows: two peacocks and a jewelled centrepiece in clear leaded glass</figcaption></figure>
+<figure class="pane" style="flex-grow:0.744"><button type="button" class="open" data-full="img/koi-598.webp" aria-label="Enlarge: Koi and water lilies in a framed panel"><img src="img/koi-400.webp" srcset="img/koi-400.webp 400w, img/koi-598.webp 598w" sizes="(max-width: 640px) 50vw, 20vw" width="598" height="804" alt="Koi and water lilies in a framed panel" loading="lazy" decoding="async"></button><figcaption>Koi and water lilies in a framed panel</figcaption></figure>
+<figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/abstract-720.webp" aria-label="Enlarge: Modern abstract window of circles and bars"><img src="img/abstract-480.webp" srcset="img/abstract-480.webp 480w, img/abstract-720.webp 720w" sizes="(max-width: 640px) 50vw, 20vw" width="720" height="960" alt="Modern abstract window of circles and bars" loading="lazy" decoding="async"></button><figcaption>Modern abstract window of circles and bars</figcaption></figure>
+<figure class="pane" style="flex-grow:1.062"><button type="button" class="open" data-full="img/octagon-1340.webp" aria-label="Enlarge: Octagonal window with an iris"><img src="img/octagon-640.webp" srcset="img/octagon-640.webp 640w, img/octagon-1340.webp 1340w" sizes="(max-width: 640px) 50vw, 28vw" width="1340" height="1262" alt="Octagonal window with an iris" loading="lazy" decoding="async"></button><figcaption>Octagonal window with an iris</figcaption></figure>
+<figure class="pane" style="flex-grow:0.601"><button type="button" class="open" data-full="img/tree-406.webp" aria-label="Enlarge: A tree against a red sunset"><img src="img/tree-406.webp" width="406" height="676" alt="A tree against a red sunset" loading="lazy" decoding="async"></button><figcaption>A tree against a red sunset</figcaption></figure>
+</div>
+<div class="row" style="aspect-ratio:4.501">
+<figure class="pane" style="flex-grow:1.145"><button type="button" class="open" data-full="img/pinktree-1280.webp" aria-label="Enlarge: Blossom tree against a pink sky"><img src="img/pinktree-640.webp" srcset="img/pinktree-640.webp 640w, img/pinktree-1280.webp 1280w" sizes="(max-width: 640px) 50vw, 31vw" width="1280" height="1118" alt="Blossom tree against a pink sky" loading="lazy" decoding="async"></button><figcaption>Blossom tree against a pink sky</figcaption></figure>
+<figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/palmdoor-960.webp" aria-label="Enlarge: Door panel with a palm tree over the sea"><img src="img/palmdoor-480.webp" srcset="img/palmdoor-480.webp 480w, img/palmdoor-960.webp 960w" sizes="(max-width: 640px) 50vw, 20vw" width="960" height="1280" alt="Door panel with a palm tree over the sea" loading="lazy" decoding="async"></button><figcaption>Door panel with a palm tree over the sea</figcaption></figure>
+<figure class="pane x" style="flex-grow:1.217"><button type="button" class="open" data-full="img/oval-908.webp" aria-label="Enlarge: Oval ceiling-style panel in rose and green"><img src="img/oval-480.webp" srcset="img/oval-480.webp 480w, img/oval-908.webp 908w" sizes="(max-width: 640px) 50vw, 32vw" width="908" height="746" alt="Oval ceiling-style panel in rose and green" loading="lazy" decoding="async"></button><figcaption>Oval ceiling-style panel in rose and green</figcaption></figure>
+<figure class="pane x" style="flex-grow:1.389"><button type="button" class="open" data-full="img/autumn-1036.webp" aria-label="Enlarge: Autumn landscape with a stream"><img src="img/autumn-520.webp" srcset="img/autumn-520.webp 520w, img/autumn-1036.webp 1036w" sizes="(max-width: 640px) 50vw, 37vw" width="1036" height="746" alt="Autumn landscape with a stream" loading="lazy" decoding="async"></button><figcaption>Autumn landscape with a stream</figcaption></figure>
+</div>
+</div>
+<button type="button" class="more" data-more="home" aria-expanded="false">Show all 9 photos</button>
+    <a class="go go-light" href="new-glass.html">See more new work</a>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap story-in">
+    <div class="story-text">
+      <h2>An 1890s window, taken apart and put back together</h2>
+      <p>From the studio's own record of a private commission: the window as it arrived in its old frame, its panels opened up on the bench, and the arch back in its light.</p>
+      <p>Much of the country's stained glass is nearing its 100th birthday, and much of it has not been cleaned or repaired since the day it was installed. Williams is an accredited member of the Stained Glass Association of America and follows the Secretary of the Interior's guidelines for the preservation and repair of stained and leaded glass.</p>
+      <p class="ask">For a repair estimate, email a few photos with the approximate glass size, your location and a short description of the damage.</p>
+      <a class="btn" href="mailto:wsg@williamsstainedglass.com?subject=Stained%20glass%20repair%20estimate&body=Hello%2C%0A%0AI%27d%20like%20an%20estimate%20for%20a%20stained%20glass%20repair.%20Photos%20are%20attached.%0A%0AApproximate%20glass%20size%3A%0ALocation%20%28city%20or%20town%29%3A%0AWhat%20is%20damaged%3A%0A%0AThank%20you%2C%0A">Email photos of your window</a>
+    </div>
+    <div class="triptych">
+      <figure class="t-before"><img src="img/r-before-308.webp" width="308" height="226" alt="The 1890s window before restoration, standing in its weathered wooden frame" loading="lazy" decoding="async"><figcaption>Before</figcaption></figure>
+      <figure class="t-during"><img src="img/r-during-319.webp" width="319" height="239" alt="The window&#x27;s panels laid out on the studio bench during restoration" loading="lazy" decoding="async"><figcaption>During</figcaption></figure>
+      <figure class="t-after"><img src="img/r-after-294.webp" width="294" height="413" alt="The restored 1890s window, lit from behind" loading="lazy" decoding="async"><figcaption>After</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How a commission is priced</h2>
+      <p>Custom glass is priced by its size in square feet and the intricacy of the design, so a firm price comes with a drawing.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Tell the studio about the opening</h3><p>Call, email or stop by. Walk-ins are welcome; an appointment makes sure the right person is there to talk through your project.</p></li>
+      <li><h3>Get a scale drawing and a firm price</h3><p>Free, with no obligation. After five free designs or revisions, the studio asks for a deposit toward the project.</p></li>
+      <li><h3>Choose the glass</h3><p>The staff help you pick the design, the glass colours and the method of installation.</p></li>
+      <li><h3>Have it installed</h3><p>Expert installation across the Tri-State area, with Thermopane options on any project.</p></li>
+    </ol>
+    <p class="season">Ordering for the holidays? Custom pieces need to be ordered by late September or early October.</p>
+  </div>
+</section>
+
+<section class="studio-band">
+  <div class="wrap band-in">
+    <div class="band-pics">
+      <figure class="bp-1"><img src="img/shop-floor-480.webp" srcset="img/shop-floor-480.webp 480w, img/shop-floor-768.webp 768w" sizes="(max-width: 860px) 90vw, 520px" width="768" height="576" alt="The Pittsburgh workshop: long work tables, glass racks, and a koi panel in the window" loading="lazy" decoding="async"></figure>
+      <figure class="bp-2"><img src="img/glazing-384.webp" width="384" height="288" alt="A craftsman assembling a leaded panel by the studio window" loading="lazy" decoding="async"></figure>
+      <figure class="bp-3"><img src="img/cartoon-480.webp" srcset="img/cartoon-480.webp 480w, img/cartoon-768.webp 768w" sizes="(max-width: 860px) 45vw, 250px" width="768" height="576" alt="A full-size drawing on the bench, with the first pieces of glass and lead in place" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="band-text">
+      <h2>A working studio you can walk into</h2>
+      <p>Williams is family owned, with over 100 years of combined experience in custom stained glass. The showroom and the workshop share the building on Castle Shannon Boulevard, and a second studio is open in Cumberland, Maryland.</p>
+      <dl class="hours">
+        <div><dt>Pittsburgh</dt><dd>Monday to Friday, 9 to 4. Evening and Saturday appointments can be arranged for specialty projects.</dd></div>
+        <div><dt>Cumberland, MD</dt><dd>Thursday to Saturday. Please call for hours.</dd></div>
+      </dl>
+      <a class="go go-light" href="studio.html">Look around the studio</a>
+    </div>
+  </div>
+</section>
+
+<section class="words">
+  <div class="wrap">
+    <h2>What clients wrote to the studio</h2>
+    <div class="quotes">
+      <figure class="quote "><blockquote><p>Every one admired the lovely addition to Faith Lutheran Church, the beauty of the medallions and how well the colors blend. Many said it brought tears to their eyes.</p></blockquote><figcaption>Helen T.</figcaption></figure>
+      <figure class="quote "><blockquote><p>Every aspect of your operation from the showroom, design, fabrication to final installation is first rate. It is still nice to know that there are still artisans who place quality above quantity.</p></blockquote><figcaption>Robert W.</figcaption></figure>
+      <figure class="quote "><blockquote><p>I want to express my thanks to Williams Stained Glass for the exquisite work they did restoring my antique lamp.</p></blockquote><figcaption>Matt D.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap closing-in">
+    <h2>Have a window in mind, or one that needs help?</h2>
+    <p>Call or email for a free estimate.</p>
+    <div class="ctas">
+      <a class="btn" href="tel:+14123440220">Call 412-344-0220</a>
+      <a class="btn btn-line" href="mailto:wsg@williamsstainedglass.com?subject=New%20stained%20glass%20project&body=Hello%2C%0A%0AI%27m%20thinking%20about%20a%20new%20piece%20of%20stained%20glass.%0A%0AWhere%20it%20will%20go%20%28window%2C%20door%2C%20transom%2C%20cabinet...%29%3A%0AApproximate%20size%3A%0ALocation%20%28city%20or%20town%29%3A%0AIdeas%2C%20colours%20or%20photos%3A%0A%0AThank%20you%2C%0A">Email the studio</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <img class="logo foot-logo" src="img/logo-light.webp" width="420" height="127" alt="Williams Stained Glass Studio" loading="lazy">
+      <p>Family-owned stained and leaded glass studio, serving Pittsburgh, West Virginia, Ohio and Maryland since 1984.</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Pittsburgh</h2>
+      <p>1115 Castle Shannon Blvd<br>Pittsburgh, PA 15234<br><a href="tel:+14123440220">412-344-0220</a><br>Mon to Fri, 9 to 4</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Cumberland</h2>
+      <p>123 Baltimore Street<br>Cumberland, MD 21502<br><a href="tel:+13017220220">301-722-0220</a><br>Thu to Sat, call for hours</p>
+    </div>
+    <div>
+      <h2 class="foot-h">Pages</h2>
+      <ul class="foot-nav"><li><a href="index.html">Home</a></li><li><a href="new-glass.html">New glass</a></li><li><a href="restoration.html">Restoration</a></li><li><a href="churches.html">Churches</a></li><li><a href="studio.html">The studio</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <p><a href="mailto:wsg@williamsstainedglass.com">wsg@williamsstainedglass.com</a></p>
+    </div>
+  </div>
+  <div class="wrap legal">
+    <p>Unofficial demo built by MHS Tecnologia for Williams Stained Glass Studio. Not affiliated with or endorsed by Williams Stained Glass Studio. Text and photos come from the studio's public website.</p>
+    <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="btn" href="tel:+14123440220" tabindex="-1">Call the studio</a>
+  <a class="btn btn-ghost" href="mailto:wsg@williamsstainedglass.com" tabindex="-1">Email</a>
+</div>
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
+  <img src="data:," alt="" width="1" height="1">
+  <p class="lb-cap"></p>
+  <div class="lb-nav">
+    <button type="button" data-step="-1">Previous</button>
+    <button type="button" data-step="1">Next</button>
+    <button type="button" class="lb-close">Close</button>
+  </div>
+</dialog>
+<script>
+(function () {
+  // Sticky call bar on phones, once the first call-to-action has scrolled away.
+  var bar = document.getElementById('sticky');
+  var cta = document.getElementById('hero-cta') || document.querySelector('main .ctas');
+  if (bar && cta && 'IntersectionObserver' in window) {
+    var links = bar.querySelectorAll('a');
+    new IntersectionObserver(function (e) {
+      var on = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
+      bar.classList.toggle('on', on);
+      bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+      for (var i = 0; i < links.length; i++) links[i].tabIndex = on ? 0 : -1;
+    }).observe(cta);
+  }
+
+  // Long galleries collapse on phones.
+  var mores = document.querySelectorAll('.more');
+  for (var m = 0; m < mores.length; m++) {
+    (function (btn) {
+      var panel = document.querySelector('[data-gallery="' + btn.getAttribute('data-more') + '"]');
+      if (!panel) return;
+      panel.setAttribute('data-collapsed', '');
+      var label = btn.textContent;
+      btn.addEventListener('click', function () {
+        var open = panel.hasAttribute('data-collapsed');
+        if (open) panel.removeAttribute('data-collapsed'); else panel.setAttribute('data-collapsed', '');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'Show fewer photos' : label;
+      });
+    })(mores[m]);
+  }
+
+  // Lightbox: click a piece of glass to see it larger.
+  var box = document.getElementById('lightbox');
+  if (!box || typeof box.showModal !== 'function') return;
+  var big = box.querySelector('img'), cap = box.querySelector('.lb-cap');
+  var list = [], at = 0, opener = null;
+  function show(i) {
+    at = (i + list.length) % list.length;
+    var b = list[at], im = b.querySelector('img');
+    big.removeAttribute('width'); big.removeAttribute('height');
+    big.src = b.getAttribute('data-full');
+    big.alt = im.alt;
+    cap.textContent = im.alt;
+  }
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest && ev.target.closest('.open');
+    if (!b) return;
+    var panel = b.closest('.panel');
+    list = Array.prototype.slice.call(panel.querySelectorAll('.open'));
+    opener = b;
+    show(list.indexOf(b));
+    box.showModal();
+  });
+  box.addEventListener('click', function (ev) {
+    var step = ev.target.getAttribute && ev.target.getAttribute('data-step');
+    if (step) return show(at + Number(step));
+    if (ev.target === box || ev.target.classList.contains('lb-close')) box.close();
+  });
+  box.addEventListener('keydown', function (ev) {
+    if (ev.key === 'ArrowRight') show(at + 1);
+    if (ev.key === 'ArrowLeft') show(at - 1);
+  });
+  box.addEventListener('close', function () { if (opener) opener.focus(); });
+})();
+
+</script>
+</body>
+</html>
