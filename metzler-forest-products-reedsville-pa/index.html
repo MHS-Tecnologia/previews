@@ -125,7 +125,9 @@
   .job p { margin-top: .5rem; }
   .job .tags { font-size: .95rem; color: var(--moss); margin-top: .6rem; }
   .job a.mail { display: inline-block; margin-top: .7rem; font-weight: 700; color: var(--red); }
-  .loads { background: var(--hemlock); color: #e9ede4; border-radius: .25rem; padding: 1.4rem 1.4rem 1.5rem; aspect-ratio: 4 / 3; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 1rem; }
+  .loads { position: relative; isolation: isolate; overflow: hidden; background: var(--hemlock); color: #e9ede4; border-radius: .25rem; padding: 1.4rem 1.4rem 1.5rem; aspect-ratio: 4 / 3; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 1rem; }
+  .loads img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+  .loads::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(22, 31, 25, .94) 0%, rgba(22, 31, 25, .86) 50%, rgba(22, 31, 25, .35) 100%); }
   .loads .big { font-family: "Bitter", serif; font-weight: 800; font-size: clamp(3.4rem, 7vw, 5rem); line-height: .9; letter-spacing: -0.03em; }
   .loads .big + span { margin-top: .5rem; font-size: 1.05rem; color: #c8d2c0; }
 
@@ -328,7 +330,7 @@
         <p class="lede">Since 1986, Metzler has harvested timber, cleared land, and chipped and hauled wood across the Mid Atlantic.<span class="hide-m"> At home in Reedsville, the Landscape Center sells the mulch, stone, plants and firewood.</span></p>
         <div class="actions">
           <a class="btn" data-cta href="tel:+17176672924"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">Call 717-667-2924</span></a>
-          <a class="btn quiet" href="mailto:info@metzlerfp.com?subject=Project%20inquiry&amp;body=Hi%20Metzler%20team%2C%0A%0AWhat%20I%20need%20help%20with%3A%20%0AWhere%20the%20job%20is%20(town%20or%20county)%3A%20%0ABest%20phone%20number%3A%20%0A"><span>Email<span class="hide-m"> the office</span></span></a>
+          <a class="btn quiet" href="mailto:info@metzlerfp.com?subject=Project%20inquiry&amp;body=Hi%20Metzler%20team%2C%0A%0AWhat%20I%20need%20help%20with%3A%20%0AWhere%20the%20job%20is%20(town%20or%20county)%3A%20%0ABest%20phone%20number%3A%20%0A"><span>Email<span class="hide-m"> the</span> office</span></a>
         </div>
         <p class="lc-status" data-status><span class="dot" aria-hidden="true"></span><span data-status-text>Landscape Center: Mon–Fri 8–5, Sat 8–1.</span> <a href="#landscape">Hours and products</a></p>
       </div>
@@ -387,7 +389,7 @@
             <p class="tags">More than 30 years supplying and operating within the paper industry.</p>
           </article>
           <article class="job" id="trucking">
-            <div class="loads"><span class="big num">500+</span><span>loads of wood chips and other forest products, every week, across the Mid Atlantic.</span></div>
+            <div class="loads"><img src="img/loads-600.webp" srcset="img/loads-600.webp 600w, img/loads-900.webp 900w" sizes="(max-width: 900px) calc(100vw - 2rem), 380px" width="900" height="675" alt="" loading="lazy"><span class="big num">500+</span><span>loads of wood chips and other forest products, every week, across the Mid Atlantic.</span></div>
             <h3>Transportation</h3>
             <p>From a few extra loads a week for a logging contractor to a steady trucking partner for a mill. Pulpwood, logs, heavy equipment, sawdust, bark and mulch.</p>
             <p class="tags">Chip vans, walking floor trailers, log trailers, flatbeds and low boys.</p>
