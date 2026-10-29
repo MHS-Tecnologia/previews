@@ -9,13 +9,14 @@
 <title>The J D Russell Company, steel edging and concrete accessories</title>
 <meta name="description" content="DuraEdge steel landscape edging, shot blasted before powder coating, plus Reflex rubber expansion joints, Dura Dowel and concrete forming products. Made in the USA.">
 <meta property="og:title" content="The J D Russell Company, steel edging and concrete accessories">
-<meta property="og:description" content="DuraEdge steel landscape edging, Reflex expansion joints, Dura Dowel and forming products. Made in the USA.">
+<meta property="og:description" content="DuraEdge steel landscape edging, shot blasted before powder coating, plus Reflex rubber expansion joints, Dura Dowel and concrete forming products. Made in the USA.">
 <meta property="og:image" content="https://demo.mhstecnologia.com/jd-russell-utica-mi/email.jpg">
 <meta property="og:type" content="website">
 <link rel="preload" as="font" type="font/woff2" href="fonts/sofiacond.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/sofia.woff2" crossorigin>
 <link rel="preload" as="image" media="(max-width: 860px)" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-760.webp 760w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
 <link rel="preload" as="image" media="(min-width: 861px)" imagesrcset="img/hero-480.webp 480w, img/hero-900.webp 900w, img/hero-1320.webp 1320w" imagesizes="420px" fetchpriority="high">
+<script>document.documentElement.className += ' js';</script>
 <style>
   @font-face { font-family: "Sofia Sans Condensed"; font-weight: 400 900; font-display: swap; src: url(fonts/sofiacond.woff2) format("woff2"); }
   @font-face { font-family: "Sofia Sans"; font-weight: 300 800; font-display: swap; src: url(fonts/sofia.woff2) format("woff2"); }
@@ -45,7 +46,7 @@
   img, svg { display: block; max-width: 100%; height: auto; }
   a { color: inherit; }
   :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
-  .top :focus-visible, .hero :focus-visible, .blast :focus-visible, .contact :focus-visible, footer :focus-visible, .sticky :focus-visible { outline-color: var(--dowel); }
+  .top :focus-visible, .hero :focus-visible, .blast :focus-visible, .contact :focus-visible, footer :focus-visible, .sticky :focus-visible, .phero :focus-visible, .qband :focus-visible { outline-color: var(--dowel); }
   h1, h2, h3 { font-family: "Sofia Sans Condensed", "Arial Narrow", sans-serif; font-weight: 800; line-height: .98; letter-spacing: -.01em; text-wrap: balance; }
   h2 { font-size: clamp(2.1rem, 4.6vw, 3.6rem); }
   h3 { font-size: 1.55rem; line-height: 1.05; }
@@ -278,22 +279,163 @@
     .edge { animation: none; }
     .sticky { transition: none; }
   }
+
+  /* ---- Shared header: their logo, nav, menu ---- */
+  .top { position: relative; z-index: 12; }
+  .brand { display: block; flex: none; }
+  .brand img { width: 335px; height: 40px; }
+  .nav a[aria-current="page"] { color: #fff; box-shadow: inset 0 -2px 0 var(--dowel); }
+  .menu { display: none; }
+  .menu > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .45rem; min-height: 2.75rem; padding: .4rem .8rem; border: 2px solid #47617a; border-radius: 3px; font-weight: 700; color: var(--on-night); }
+  .menu > summary::-webkit-details-marker { display: none; }
+  .menu > summary svg { width: 1.1rem; height: 1.1rem; }
+  .menu-panel { position: absolute; left: 0; right: 0; top: 100%; background: var(--night); border-top: 1px solid #2c4357; border-bottom: 3px solid var(--steel); padding: .5rem var(--pad) 1rem; }
+  .menu-panel a { display: flex; align-items: center; min-height: 3rem; border-bottom: 1px solid #22394d; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+  .menu-panel a[aria-current="page"] { color: var(--dowel); }
+  .top-right { display: flex; align-items: center; gap: 1rem; }
+
+  /* ---- Inner page hero ---- */
+  .phero { background: var(--night); color: var(--on-night); }
+  .phero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-top: 2.5rem; padding-bottom: 2.25rem; }
+  .crumb { font-size: .95rem; color: var(--on-night-muted); margin-bottom: 1rem; }
+  .crumb a { color: var(--on-night); }
+  .phero h1 { font-size: clamp(2.4rem, 4.8vw, 4.1rem); max-width: 15ch; }
+  .phero-img img { width: 100%; height: auto; border-radius: 2px; }
+  .phero-img.cut img { filter: drop-shadow(0 18px 24px rgba(0,0,0,.45)); }
+  .phero-img figcaption { margin-top: .6rem; font-size: .88rem; color: var(--on-night-muted); }
+
+  /* ---- Inner page content ---- */
+  .page-sec { padding: 4rem 0; }
+  .page-sec + .page-sec { padding-top: 0; }
+  .alt { background: #f1f1ee; }
+  .alt + .page-sec, .page-sec + .alt { padding-top: 4rem; }
+  .two { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .two.flip { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+  .two figure img { width: 100%; height: auto; border-radius: 2px; }
+  .two figcaption { margin-top: .6rem; font-size: .9rem; color: var(--muted); }
+  .prose > * + * { margin-top: 1rem; }
+  .prose p { color: var(--muted); font-size: 1.0625rem; }
+  .prose h2 + p { margin-top: 1.1rem; }
+  .ticks { list-style: none; padding: 0; display: grid; gap: .1rem; }
+  .ticks li { position: relative; padding: .45rem 0 .45rem 1.6rem; border-bottom: 1px solid #c4c6c1; }
+  .ticks li::before { content: ""; position: absolute; left: 0; top: .95rem; width: .7rem; height: .3rem; background: var(--rust); }
+  .ticks.cols2 { grid-template-columns: 1fr 1fr; column-gap: 2rem; }
+  .specs li .more-text { grid-column: 2; font-size: .98rem; color: var(--muted); }
+  .specs .tagrow { grid-column: 2; display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .2rem; }
+  .tag { font-size: .85rem; font-weight: 700; padding: .15rem .55rem; border: 1px solid #9fa39d; border-radius: 2px; font-variant-numeric: tabular-nums; }
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 2rem; border-top: 2px solid var(--ink); }
+  .vs > div { padding: 1.25rem 1.5rem 1.5rem 0; }
+  .vs > div + div { padding-left: 1.5rem; border-left: 1px solid #bfc2bd; }
+  .vs h3 { font-size: 1.5rem; margin-bottom: .6rem; }
+  .vs .ticks li::before { background: var(--steel); }
+  .vs > div + div .ticks li::before { background: var(--rust); }
+  .docs { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .6rem; margin-top: 1.25rem; }
+  .docs li { display: flex; gap: .6rem; align-items: center; padding: .7rem .9rem; background: #e9eae6; border-radius: 2px; font-size: .95rem; color: var(--muted); }
+  .docs svg { width: 1.2rem; height: 1.2rem; flex: none; color: var(--steel); }
+  .note { font-size: .92rem; color: var(--muted); margin-top: .9rem; }
+  .note a { color: var(--ink); font-weight: 700; }
+  .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+  .card { position: relative; background: #f1f1ee; border-bottom: 4px solid var(--steel); }
+  .card:hover { border-bottom-color: var(--rust); }
+  .card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .card div { padding: 1rem 1rem 1.25rem; }
+  .card h3 { font-size: 1.45rem; }
+  .card h3 a { text-decoration: none; }
+  .card h3 a::after { content: ""; position: absolute; inset: 0; }
+  .card p { margin-top: .35rem; font-size: .97rem; color: var(--muted); }
+  .index-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 4rem; }
+  .index-grid h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 1rem; }
+  .index-grid h3 { font: 700 1rem/1.3 "Sofia Sans", sans-serif; padding: .9rem 0 .4rem; border-bottom: 2px solid var(--ink); }
+  .plist { list-style: none; padding: 0; }
+  .plist li { border-bottom: 1px solid #c4c6c1; }
+  .plist a, .plist span.item { display: block; padding: .55rem 0; text-decoration: none; }
+  .plist a b, .plist span.item b { display: block; font-weight: 700; }
+  .plist a:hover b { text-decoration: underline; }
+  .plist small { display: block; font-size: .9rem; color: var(--muted); line-height: 1.45; }
+  .tiles .tile { position: relative; }
+  .tile h3 a { text-decoration: none; }
+  .tile h3 a::after { content: ""; position: absolute; inset: 0; }
+  .tile:hover { border-bottom-color: var(--rust); }
+  .sec-more { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: 1.25rem; font-weight: 700; }
+  .blast .sec-more { color: var(--on-night); }
+  .cols li a { text-decoration: none; }
+  .cols li a:hover { text-decoration: underline; }
+  .reg-full .regions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  /* Quote band, closing every inner page */
+  .qband { background: var(--night); color: var(--on-night); padding: 3.5rem 0; }
+  .qband .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem 3rem; align-items: center; }
+  .qband h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+  .qband p { margin-top: .6rem; color: var(--on-night-muted); }
+  .qband p a { color: var(--on-night); font-weight: 700; }
+  .qband .ctas { margin-top: 0; }
+
+  /* ---- Motion: the cross-section assembles, layer by layer, once ---- */
+  .js .xs-svg .lay { transition: opacity .45s ease, transform .6s cubic-bezier(.2,.75,.25,1); }
+  .js .xs-svg:not(.in) .lay { opacity: 0; transform: translateY(-26px); }
+  .js .xs-svg:not(.in) .lay.drive { transform: translateY(-60px); }
+  .js .xs-svg:not(.in) .lay.slide { transform: translateX(40px); }
+  .xs-svg .d1 { transition-delay: .05s; } .xs-svg .d2 { transition-delay: .25s; } .xs-svg .d3 { transition-delay: .45s; }
+  .xs-svg .d4 { transition-delay: .65s; } .xs-svg .d5 { transition-delay: .85s; } .xs-svg .d6 { transition-delay: 1.05s; } .xs-svg .d7 { transition-delay: 1.3s; }
+
+  @media (max-width: 1100px) {
+    .menu { display: block; }
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .docs { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 860px) {
+    .brand img { width: 87px; height: 34px; }
+    .top-right { gap: .6rem; }
+    .phero-grid { grid-template-columns: 1fr; padding-top: 1.5rem; padding-bottom: 1.75rem; gap: 1.5rem; }
+    .phero h1 { font-size: 2.5rem; max-width: none; }
+    .two, .two.flip, .index-grid, .qband .wrap { grid-template-columns: 1fr; }
+    .vs { grid-template-columns: 1fr; }
+    .vs > div { padding-right: 0; }
+    .vs > div + div { padding-left: 0; border-left: 0; border-top: 1px solid #bfc2bd; }
+    .ticks.cols2 { grid-template-columns: 1fr; }
+    .docs { grid-template-columns: 1fr; }
+    .page-sec, .alt + .page-sec, .page-sec + .alt { padding: 3rem 0; }
+    .page-sec + .page-sec { padding-top: 0; }
+    .cards { gap: .75rem; }
+    .card div { padding: .75rem .75rem 1rem; }
+    .card h3 { font-size: 1.2rem; }
+    .card p { font-size: .9rem; }
+    .reg-full .regions { grid-template-columns: 1fr; }
+    .specs li .more-text, .specs .tagrow { grid-column: 1; }
+  }
+  @media (max-width: 400px) {
+    .top-tel { font-size: .95rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .xs-svg .lay { transition: none; }
+    .js .xs-svg:not(.in) .lay { opacity: 1; transform: none; }
+  }
+  .light-regions .regions p { color: var(--muted); }
+  .light-regions .regions a { color: var(--ink); border-bottom-color: #9fa39d; }
+  .light-regions .regions div { border-top-color: var(--ink); }
+  .phero .contact { background: transparent; }
+  .docs li { background: transparent; border-top: 1px dashed #a9ada7; border-radius: 0; padding: .6rem 0; }
+  .phero .contact .regions { grid-template-columns: 1fr; gap: 0; }
+  .phero .contact .regions > div { display: grid; grid-template-columns: 9rem 1fr 1fr; gap: .25rem 1.25rem; padding: .9rem 0; border-top: 1px solid #2c4357; }
+  .phero .contact .regions p { margin-top: 0; }
+  @media (max-width: 860px) {
+    .phero .contact .regions > div { grid-template-columns: 1fr 1fr; }
+    .phero .contact .regions h3 { grid-column: 1 / -1; }
+  }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="demo" role="note">Unofficial demo built by MHS Tecnologia for The J D Russell Company. Not affiliated with or endorsed by The J D Russell Company.</div>
-
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#main">The J D Russell Company<small>Landscape and construction products</small></a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#edging">Landscape edging</a>
-      <a href="#shot-blast">Shot blast finish</a>
-      <a href="#concrete">Concrete products</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="top-tel" href="tel:+18008887425"><span>Call </span>(800) 888-7425</a>
+    <a class="brand" href="index.html"><picture><source media="(max-width: 860px)" srcset="img/logo-mark.webp" width="204" height="80"><img src="img/logo-350.webp" srcset="img/logo-350.webp 1x, img/logo-700.webp 2x" width="350" height="42" alt="The J D Russell Company, home"></picture></a>
+    <nav class="nav" aria-label="Main"><a href="products.html">Products</a><a href="edging.html">Landscape edging</a><a href="shot-blast.html">Shot blast finish</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <div class="top-right">
+      <a class="top-tel" href="tel:+18008887425"><span>Call </span>(800) 888-7425</a>
+      <details class="menu"><summary aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</summary>
+        <nav class="menu-panel" aria-label="Main, mobile"><a href="index.html" aria-current="page">Home</a><a href="products.html">Products</a><a href="edging.html">Landscape edging</a><a href="shot-blast.html">Shot blast finish</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></details>
+    </div>
   </div>
 </header>
 
@@ -307,11 +449,9 @@
           <a class="btn btn-rust" id="hero-cta" href="mailto:contact@jdrussellco.com?subject=Quote%20or%20sample%20request&amp;body=Product%3A%20%0ASize%3A%20%0AQuantity%3A%20%0AShip-to%20ZIP%3A%20%0A">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
             Request a quote or sample</a>
-          <a class="btn btn-line" href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
-            2026 catalog (PDF)</a>
+          <a class="btn btn-line" href="products.html">Browse all products</a>
         </div>
-        <p class="hero-note">Or call <a href="tel:+18008887425">(800) 888-7425</a><span class="m-cat">, or get the <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">2026 catalog (PDF)</a></span></p>
+        <p class="hero-note">Or call <a href="tel:+18008887425">(800) 888-7425</a><span class="m-cat">, or <a href="products.html">browse all products</a></span></p>
       </div>
       <figure class="hero-photo">
         <picture><source media="(max-width: 860px)" srcset="img/hero-m-480.webp 480w, img/hero-m-760.webp 760w" sizes="calc(100vw - 2rem)" width="1320" height="755"><img src="img/hero-900.webp" srcset="img/hero-480.webp 480w, img/hero-900.webp 900w, img/hero-1320.webp 1320w" sizes="420px" width="1320" height="1878" alt="A raised bed framed in weathered steel edging, joined with steel brackets, with petunias planted inside" fetchpriority="high"></picture>
@@ -339,9 +479,9 @@
       </div>
       <figure class="xs-fig">
         <div class="xs-labels">
-          <a href="#edging" style="left:28.3%">DuraEdge</a>
-          <a href="#concrete" style="left:58.3%">Reflex joint</a>
-          <a class="r" href="#forming" style="left:100%">Form clips</a>
+          <a href="edging.html" style="left:28.3%">DuraEdge</a>
+          <a href="reflex.html" style="left:58.3%">Reflex joint</a>
+          <a class="r" href="forming.html" style="left:100%">Form clips</a>
         </div>
         <svg class="xs-svg" viewBox="0 0 1200 260" role="img" aria-labelledby="xs-t">
           <title id="xs-t">Cross-section: lawn and soil, a steel edge, a gravel bed, then two concrete slabs separated by a rubber expansion joint, a dowel crossing the joint inside its sleeve, and a wood form held by a clip at the far end.</title>
@@ -350,23 +490,23 @@
             <pattern id="base" width="18" height="14" patternUnits="userSpaceOnUse"><rect width="18" height="14" fill="#8a7b67"/><circle cx="5" cy="5" r="2" fill="#77695a"/><circle cx="13" cy="10" r="1.6" fill="#6f6254"/></pattern>
             <pattern id="grass" width="12" height="16" patternUnits="userSpaceOnUse"><rect y="8" width="12" height="8" fill="#3f6b33"/><path d="M0 16 3 2 5 16M6 16 9 4 11 16" fill="#4f7d3d"/></pattern>
           </defs>
-          <rect x="0" y="112" width="560" height="148" fill="#6b5640"/>
+          <g class="lay d1"><rect x="0" y="112" width="560" height="148" fill="#6b5640"/>
           <rect x="0" y="96" width="336" height="18" fill="url(#grass)"/>
           <rect x="344" y="112" width="216" height="62" fill="url(#grav)"/>
-          <rect x="336" y="86" width="8" height="104" fill="#a44c22"/>
+          <rect x="560" y="190" width="640" height="70" fill="url(#base)"/></g>
+          <g class="lay drive d2"><rect x="336" y="86" width="8" height="104" fill="#a44c22"/>
           <rect x="324" y="120" width="12" height="16" fill="#8a3d19"/>
-          <rect x="327" y="122" width="5" height="112" fill="#59615f"/>
-          <rect x="560" y="190" width="640" height="70" fill="url(#base)"/>
-          <rect x="560" y="102" width="134" height="88" fill="#c6c7c2" stroke="#9fa19c" stroke-width="2"/>
-          <rect x="706" y="102" width="404" height="88" fill="#c6c7c2" stroke="#9fa19c" stroke-width="2"/>
-          <rect x="694" y="102" width="12" height="88" fill="#1c2125"/>
-          <rect x="612" y="143" width="160" height="8" fill="#6f7a82"/>
-          <rect x="700" y="139" width="92" height="16" rx="2" fill="#d9681e"/>
-          <rect x="700" y="143" width="72" height="8" fill="#6f7a82"/>
-          <rect x="1110" y="94" width="16" height="104" fill="#c9a46a"/>
+          <rect x="327" y="122" width="5" height="112" fill="#59615f"/></g>
+          <g class="lay d3"><rect x="1110" y="94" width="16" height="104" fill="#c9a46a"/>
           <rect x="1136" y="70" width="10" height="180" fill="#a07c48"/>
-          <rect x="1104" y="92" width="48" height="8" fill="#59615f"/>
-          <g stroke="#15202a" stroke-width="2">
+          <rect x="1104" y="92" width="48" height="8" fill="#59615f"/></g>
+          <g class="lay d6"><rect x="560" y="102" width="134" height="88" fill="#c6c7c2" stroke="#9fa19c" stroke-width="2"/>
+          <rect x="706" y="102" width="404" height="88" fill="#c6c7c2" stroke="#9fa19c" stroke-width="2"/></g>
+          <g class="lay drive d4"><rect x="694" y="102" width="12" height="88" fill="#1c2125"/></g>
+          <g class="lay slide d5"><rect x="612" y="143" width="160" height="8" fill="#6f7a82"/>
+          <rect x="700" y="139" width="92" height="16" rx="2" fill="#d9681e"/>
+          <rect x="700" y="143" width="72" height="8" fill="#6f7a82"/></g>
+          <g class="lay d7" stroke="#15202a" stroke-width="2">
             <line x1="340" y1="0" x2="340" y2="80"/>
             <line x1="700" y1="0" x2="700" y2="96"/>
             <line x1="1196" y1="0" x2="1196" y2="40"/><line x1="1196" y1="40" x2="1156" y2="92"/>
@@ -374,15 +514,15 @@
           </g>
         </svg>
         <div class="xs-labels below">
-          <a href="#concrete" style="left:62.2%">Dura Dowel</a>
+          <a href="dura-dowel.html" style="left:62.2%">Dura Dowel</a>
         </div>
-        <figcaption class="xs-cap">Not to scale. Click a name to jump to the product.</figcaption>
+        <figcaption class="xs-cap">Not to scale. Click a name to open the product.</figcaption>
       </figure>
       <ul class="xs-list" aria-label="Jump to a product">
-        <li><a href="#edging">DuraEdge edging</a></li>
-        <li><a href="#concrete">Reflex joint</a></li>
-        <li><a href="#concrete">Dura Dowel</a></li>
-        <li><a href="#forming">Form clips</a></li>
+        <li><a href="edging.html">DuraEdge edging</a></li>
+        <li><a href="reflex.html">Reflex joint</a></li>
+        <li><a href="dura-dowel.html">Dura Dowel</a></li>
+        <li><a href="forming.html">Form clips</a></li>
       </ul>
     </div>
   </section>
@@ -416,6 +556,7 @@
             <div><h3>Any color you need</h3><p>Powder coat in almost any custom color: your team, your college, your company. Textured or glossy finish.</p></div>
             <div><h3>Accessories</h3><p>Start and end sections, inside and outside corners, universal corners, couplers, and one-piece tree rings in 3′, 4′ and 5′.</p></div>
           </div>
+          <a class="sec-more" href="edging.html">Sizes, finishes and accessories for all six lines</a>
         </div>
       </div>
     </div>
@@ -425,13 +566,14 @@
     <div class="wrap blast-grid">
       <div>
         <h2 id="blast-h">Blasted to near white metal before the powder coat goes on.</h2>
-        <p class="claim">JDR is <b>the first and only landscape edging manufacturer in the nation</b> to use the Blastec shot blast system before powder coating. Every piece of DuraEdge goes through three stages.</p>
+        <p class="claim">JDR is <b>the first and only landscape edging manufacturer in the nation</b> to use the Blastec shot blast system before powder coating. Powder-coated DuraEdge goes through three stages.</p>
         <ol class="stages">
           <li><div><h3>Detergent pre-wash</h3><p>Removes the oils, grease and contaminants left from making and handling the steel.</p></div></li>
           <li><div><h3>Shot blasting</h3><p>A centrifugal wheel throws abrasive at the steel, stripping rust, mill scale and impurities, to SSPC preparation standards.</p></div></li>
           <li><div><h3>Powder coating</h3><p>An ASTM-compliant TGIC powder coat, baked hard against humidity, salt spray and sunlight.</p></div></li>
         </ol>
-        <p class="blast-foot">Powder coating can last up to three times longer than liquid paint. Specifying it? <a href="https://www.jdrussellco.com/wp-content/uploads/ShotBlast-Specifier.pdf">Specifier insert (PDF)</a></p>
+        <p class="blast-foot">Powder coating can last up to three times longer than liquid paint.</p>
+        <a class="sec-more" href="shot-blast.html">How the finish is made, paint vs. powder coat</a>
       </div>
       <figure class="blast-photo">
         <img src="img/plant-768.webp" srcset="img/plant-480.webp 480w, img/plant-768.webp 768w" sizes="(max-width: 860px) calc(100vw - 2rem), 480px" width="768" height="634" alt="Steel edging hanging on racks beside the blue shot blast machine in JDR’s plant" loading="lazy">
@@ -449,11 +591,11 @@
       <div class="tiles">
         <article class="tile">
           <img src="img/reflex-480.webp" srcset="img/reflex-480.webp 480w, img/reflex-900.webp 900w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="900" height="486" alt="Close-up of a black rubber expansion joint between concrete" loading="lazy">
-          <div><h3>Reflex</h3><p>Rubber expansion joint from recycled rubber and plastic. Won’t rot, doesn’t need sealing.</p></div>
+          <div><h3><a href="reflex.html">Reflex</a></h3><p>Rubber expansion joint from recycled rubber and plastic. Won’t rot, doesn’t need sealing.</p></div>
         </article>
         <article class="tile">
           <img src="img/reflexc-480.webp" srcset="img/reflexc-480.webp 480w, img/reflexc-900.webp 900w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="900" height="562" alt="A curved concrete sidewalk with a gray rubber joint between slabs" loading="lazy">
-          <div><h3>Reflex Color</h3><p>A UV-stable colored edge. Flip it over for black.</p>
+          <div><h3><a href="reflex.html#color">Reflex Color</a></h3><p>A UV-stable colored edge. Flip it over for black.</p>
             <ul class="swatches" aria-label="Five colors plus black">
               <li style="background:#b8b3a8"><span class="vh">Concrete color</span></li><li style="background:#cfcfcb"><span class="vh">Light gray</span></li><li style="background:#b4623e"><span class="vh">Terra cotta</span></li><li style="background:#c9ad85"><span class="vh">Tan</span></li><li style="background:#8e3b2e"><span class="vh">Red brick</span></li><li style="background:#1c2125"><span class="vh">Black</span></li>
             </ul>
@@ -461,11 +603,11 @@
         </article>
         <article class="tile">
           <img src="img/dowel-480.webp" srcset="img/dowel-480.webp 480w, img/dowel-900.webp 900w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="900" height="464" alt="A Dura Dowel strip with orange sleeves set along the edge of a concrete slab" loading="lazy">
-          <div><h3>Dura Dowel Strip</h3><p>Sleeves factory-set in one strip, so every pocket lands aligned and evenly spaced.</p></div>
+          <div><h3><a href="dura-dowel.html#strip">Dura Dowel Strip</a></h3><p>Sleeves factory-set in one strip, so every pocket lands aligned and evenly spaced.</p></div>
         </article>
         <article class="tile" id="forming">
           <img src="img/form-480.webp" srcset="img/form-480.webp 480w, img/form-820.webp 820w" sizes="(max-width: 1100px) calc(50vw - 2rem), 290px" width="820" height="1152" alt="A fresh concrete sidewalk formed with green steel edging held by wood stakes" loading="lazy">
-          <div><h3>Forming with DuraEdge</h3><p>The same steel edging, staked in as the form for a sidewalk pour.</p></div>
+          <div><h3><a href="forming.html#duraedge">Forming with DuraEdge</a></h3><p>The same steel edging, staked in as the form for a sidewalk pour.</p></div>
         </article>
       </div>
 
@@ -485,20 +627,20 @@
           <summary>Show all 19 products</summary>
           <div class="cols">
             <div><h4>Expansion joint</h4><ul>
-              <li>Reflex rubber</li><li>Reflex Color</li><li>Reflex Tear Tab<span>Pull cord leaves a clean ½″ sealant void</span></li><li>Fiberflex</li><li>Curbing expansion joint</li><li>Homex 300</li><li>Zip Strip, keyway and void cap</li></ul></div>
+              <li><a href="reflex.html">Reflex rubber</a></li><li><a href="reflex.html#color">Reflex Color</a></li><li><a href="reflex.html#tear-tab">Reflex Tear Tab</a><span>Pull cord leaves a clean ½″ sealant void</span></li><li><a href="products.html#fiberflex">Fiberflex</a></li><li><a href="products.html#curbing">Curbing expansion joint</a></li><li><a href="products.html#homex">Homex 300</a></li><li><a href="forming.html#zip-strip">Zip Strip, keyway and void cap</a></li></ul></div>
             <div><h4>Concrete forming</h4><ul>
-              <li>EZ-Strip form clips<span>U.S. Patent No. 10,961,727 · for ¾″ and 1-⅛″ panels</span></li><li>Standard form clips</li><li>Aluminum form ties</li><li>Flat stacking ties and wedges</li><li>X-Flat ties</li><li>Metal screed joint and keyway</li></ul></div>
+              <li><a href="forming.html#ez-strip">EZ-Strip form clips</a><span>U.S. Patent No. 10,961,727 · for ¾″ and 1-⅛″ panels</span></li><li><a href="forming.html#form-clips">Standard form clips</a></li><li><a href="forming.html#ties">Aluminum form ties</a></li><li><a href="forming.html#ties">Flat stacking ties and wedges</a></li><li><a href="forming.html#ties">X-Flat ties</a></li><li><a href="forming.html#keyway">Metal screed joint and keyway</a></li></ul></div>
             <div><h4>Dowels</h4><ul>
-              <li>Dura Dowel Strip</li><li>Dura Dowel singles</li><li>Smooth concrete dowels</li></ul></div>
+              <li><a href="dura-dowel.html#strip">Dura Dowel Strip</a></li><li><a href="dura-dowel.html">Dura Dowel singles</a></li><li><a href="dura-dowel.html#smooth">Smooth concrete dowels</a></li></ul></div>
             <div><h4>Jobsite accessories</h4><ul>
-              <li>Nail stakes</li><li>Impalement caps</li><li>Rebar isolators</li></ul></div>
+              <li><a href="forming.html#stakes">Nail stakes</a></li><li><a href="forming.html#safety">Impalement caps</a></li><li><a href="forming.html#safety">Rebar isolators</a></li></ul></div>
           </div>
         </details>
       </div>
 
       <figure class="wide">
         <img src="img/found-800.webp" srcset="img/found-800.webp 800w, img/found-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="1400" height="911" alt="Formed concrete foundation walls on a residential job site, with framed houses behind" loading="lazy">
-        <figcaption><b class="wide-h">Need the details on any of these?</b>Download the <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">2026 master catalog (PDF)</a>, or <a href="#contact">ask for a quote or sample</a>.<span style="display:block;margin-top:.8rem;font-size:.9rem">Photo: foundation walls formed on a residential job site.</span></figcaption>
+        <figcaption><b class="wide-h">Need the details on any of these?</b>Open any product above, <a href="mailto:contact@jdrussellco.com?subject=2026%20catalog%20request&amp;body=Please%20send%20the%202026%20master%20catalog%20(English%20%2F%20Spanish).%0AName%3A%20%0ACompany%3A%20%0A">ask for the 2026 master catalog</a>, or <a href="contact.html">request a quote or sample</a>.<span style="display:block;margin-top:.8rem;font-size:.9rem">Photo: foundation walls formed on a residential job site.</span></figcaption>
       </figure>
     </div>
   </section>
@@ -508,13 +650,13 @@
     <div class="wrap contact-grid">
       <div>
         <h2 id="contact-h">Ask for a quote, a sample or the catalog.</h2>
-        <p class="lede">Tell us the product, the size and the quantity. A regional office will get back to you.</p>
+        <p class="lede">Tell JDR the product, size, quantity and ship-to ZIP. The email opens pre-filled.</p>
         <div class="ctas">
           <a class="btn btn-rust" href="mailto:contact@jdrussellco.com?subject=Quote%20or%20sample%20request&amp;body=Product%3A%20%0ASize%3A%20%0AQuantity%3A%20%0AShip-to%20ZIP%3A%20%0A">
             <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
             Request a quote or sample</a>
         </div>
-        <p class="catalogs">2026 master catalog: <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-5_2026SM-1.pdf">English (PDF)</a> · <a href="https://www.jdrussellco.com/wp-content/uploads/JDR-Master-Catalog-2026-Spanish_05-2026-SM2-1.pdf" hreflang="es">Español (PDF)</a></p>
+        <p class="catalogs">The 2026 master catalog comes in English and Spanish. <a href="mailto:contact@jdrussellco.com?subject=2026%20catalog%20request&amp;body=Please%20send%20the%202026%20master%20catalog%20(English%20%2F%20Spanish).%0AName%3A%20%0ACompany%3A%20%0A">Ask for a copy</a>.</p>
       </div>
       <div>
         <div class="regions">
@@ -527,7 +669,6 @@
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <p>Unofficial demo built by MHS Tecnologia for The J D Russell Company. Not affiliated with or endorsed by The J D Russell Company. Content and photos come from The J D Russell Company’s public website.</p>
@@ -545,8 +686,13 @@
     if (matchMedia('(max-width: 860px)').matches) {
       document.querySelectorAll('details.more').forEach(function (d) { d.open = false; });
     }
+    if (!('IntersectionObserver' in window)) { document.querySelectorAll('.xs-svg').forEach(function (s) { s.classList.add('in'); }); return; }
+    document.querySelectorAll('.xs-svg').forEach(function (s) {
+      var o = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { s.classList.add('in'); o.disconnect(); } }, { threshold: .35 });
+      o.observe(s);
+    });
     var bar = document.getElementById('sticky'), cta = document.getElementById('hero-cta');
-    if (!('IntersectionObserver' in window)) return;
+    if (!cta) return;
     new IntersectionObserver(function (e) {
       var past = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
       bar.classList.toggle('on', past);
