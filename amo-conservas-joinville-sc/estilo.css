@@ -640,3 +640,4 @@ p { margin: 0; text-wrap: pretty; }
 .duo-card .duo-acoes { margin-top: auto; padding-top: 16px; }
 .selo-novo { position: absolute; top: 12px; left: 12px; z-index: 1; background: var(--vermelho); color: #fff; font-weight: 700; font-size: .8125rem; padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 16px -6px rgba(0,0,0,.5); }
 @media (max-width: 760px) { .duo { grid-template-columns: 1fr; } }
+.aviso a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
