@@ -270,8 +270,9 @@ footer .cols4 > :first-child { grid-column: 1 / -1; }
 @media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
 aside.side .hours tr { display: block; padding: .3rem 0; }
 aside.side .hours th, aside.side .hours td { display: block; text-align: left; padding: 0; }
-.tiles { list-style: none; padding: 0 !important; margin: 1rem 0 1.4rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .6rem; }
-.tiles li { margin: 0 !important; background: var(--cool); border-radius: 8px; padding: .85rem 1rem; font-weight: 700; display: flex; align-items: center; gap: .6rem; }
+.tiles { list-style: none; padding: 0 !important; margin: 1rem 0 1.4rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.tiles.c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tiles li { margin: 0 !important; background: transparent; border: 1px solid var(--line); border-radius: 4px; font-weight: 500 !important; padding: .85rem 1rem; font-weight: 700; display: flex; align-items: center; gap: .6rem; }
 .tiles li::before { content: ''; width: 12px; height: 12px; flex: none; background: var(--iris); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
 .tiles li:nth-child(3n+2)::before { background: var(--wine); }
 .tiles li:nth-child(3n)::before { background: #b39556; }
@@ -284,6 +285,13 @@ aside.side .hours th, aside.side .hours td { display: block; text-align: left; p
 .divider { display: flex; align-items: center; gap: 1rem; margin: 2.8rem 0 0; }
 .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--line); }
 .divider .mark { width: 44px; height: 44px; }
+@media (max-width: 820px) { .tiles.c3 { grid-template-columns: 1fr; } }
+.divider-doc { margin: 2.6rem 0 0; display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 1.5rem; align-items: center; padding: 1.25rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.divider-doc img { width: 160px; border-radius: 50%; }
+.divider-doc figcaption { color: var(--muted); }
+.divider-doc strong { display: block; color: var(--wine); font-family: var(--disp); font-weight: 600; font-size: 1.5rem; margin-bottom: .3rem; }
+@media (max-width: 820px) { .divider-doc { grid-template-columns: 96px minmax(0, 1fr); gap: 1rem; } .divider-doc img { width: 96px; } .divider-doc strong { font-size: 1.25rem; } }
+aside.side .tip { border-left: 3px solid var(--sand); padding-left: .75rem; font-weight: 700; color: var(--ink); }
 </style>
 </head>
 <body>
