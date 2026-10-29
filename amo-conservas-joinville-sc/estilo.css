@@ -458,3 +458,7 @@ p { margin: 0; text-wrap: pretty; }
 .pagina-topo .cartao-visita p, .cartao-visita p { color: var(--tinta-2); font-size: 1rem; margin-top: 0; max-width: none; }
 .pagina-topo .cartao-visita .end, .cartao-visita .end { color: var(--tinta); font-size: 1.45rem; margin-top: 8px; }
 .cartao-visita .contatos svg { color: var(--vermelho); }
+
+/* batatinha: o vidro em tamanho natural (fonte pequena), num painel de papel */
+.produto figure.vidro-so { background: var(--papel-2); border-radius: 16px; padding: clamp(24px, 4vw, 40px); display: flex; justify-content: center; }
+.produto figure.vidro-so img { width: 246px; max-width: 100%; border-radius: 10px; box-shadow: 0 20px 40px -24px rgba(60, 30, 10, .55); }
