@@ -112,7 +112,7 @@ p { max-width: 64ch; }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(245,185,40,.55); } 70%, 100% { box-shadow: 0 0 0 .6rem rgba(245,185,40,0); } }
 .hero-photo { position: relative; margin: 0; }
 .hero-photo > img { position: relative; }
-.sun { position: absolute; width: 15rem; height: 15rem; border-radius: 50%; background: var(--sun); right: -4.5rem; top: -4.5rem; }
+.sun { position: absolute; width: 17rem; height: 13rem; right: -2.4rem; top: -2.4rem; border-radius: 10px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 48'%3E%3Cpath fill='%232b6cc4' d='M0 30C20 14 44 12 60 24c6 5 0 10-6 6 4 7 18 6 26-2 20-14 44-16 60-4 6 5 0 10-6 6 4 7 18 4 26 0v18H0z'/%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' d='M54 30c4 7 18 6 26-2M134 30c4 7 18 4 26 0M0 30c4-3 8-6 12-8'/%3E%3Cpath fill='%235cc2e6' d='M0 41q20-12 40 0t40 0 40 0 40 0v7H0z'/%3E%3C/svg%3E") repeat 0 0 / 120px 36px, var(--wave-2); }
 .hero-photo > img { width: 100%; border-radius: 10px; }
 .sticker { position: absolute; left: -2.6rem; bottom: -2.2rem; width: 9.5rem; height: 9.5rem; border-radius: 50%; background: var(--porcelain); border: 5px solid var(--sun); display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0,0,0,.35); }
 .sticker img { width: 82%; }
@@ -221,6 +221,28 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
 .checks li { padding-left: 1.6rem; position: relative; }
 .checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: .8rem; height: .45rem; border-left: 3px solid var(--wrench); border-bottom: 3px solid var(--wrench); transform: rotate(-45deg); }
 .checks-title { font-weight: 700; margin-top: 1.4rem; }
+.em-band { background: var(--wrench); color: #fff; padding-block: clamp(3rem, 6vw, 4.5rem); scroll-margin-top: 1rem; }
+.em-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.em-band h2 { margin-bottom: 1rem; }
+.em-band p { font-size: 1.125rem; color: #fff; }
+.em-band p + p { margin-top: .9rem; }
+.em-band .intro { font-size: 1.3rem; font-weight: 700; }
+.em-band .s-photo { margin: 0; }
+.em-band .s-photo img { border-radius: 10px; width: 100%; }
+.btn-white { background: #fff; color: var(--wrench-deep); margin-top: 1.6rem; font-size: 1.15rem; }
+.btn-white:hover { background: var(--porcelain); }
+.checks-em { background: rgba(0,0,0,.18); border-left-color: var(--sun); color: #fff; margin-bottom: 0; }
+.checks-em li { color: #fff; }
+.checks-em li::before { border-color: var(--sun); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem); }
+.card { scroll-margin-top: 1rem; border-top: 5px solid var(--sky); padding-top: 1.4rem; }
+.card-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; margin-bottom: 1.2rem; }
+.card h2 { font-size: clamp(2rem, 3.4vw, 2.7rem); margin-bottom: .7rem; }
+.card .intro { font-weight: 700; font-size: 1.15rem; margin-bottom: .6rem; }
+.card p { font-size: 1.0625rem; color: #333; }
+.card p + p { margin-top: .7rem; }
+.card .checks { margin: 1.1rem 0; grid-template-columns: 1fr 1fr; gap: .4rem 1rem; font-size: 1rem; }
+.card-call { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--wrench); text-underline-offset: .2em; }
 .service.em-service h2 { color: var(--wrench); }
 .prose p + p { margin-top: 1rem; }
 .prose h2 { margin: 2.5rem 0 1rem; }
@@ -289,6 +311,8 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
   .owner, .quotes, .closer-grid, .foot, .two, .contact-grid { grid-template-columns: 1fr; }
   .service, .service:nth-of-type(even) { grid-template-columns: 1fr; }
   .service:nth-of-type(even) .s-photo { order: 0; }
+  .em-grid, .cards { grid-template-columns: 1fr; }
+  .card .checks { grid-template-columns: 1fr; }
   .closer .call { width: 100%; display: grid; }
   .facts li { grid-template-columns: 7rem 1fr; }
   .sticky { display: flex; }
@@ -327,72 +351,64 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
   </div>
   <div class="waves" aria-hidden="true"></div>
 </section>
-<div class="wrap"><section class="service em-service" id="emergency" aria-labelledby="emergency-h">
-  <div>
-    <h2 id="emergency-h">Emergency drain service</h2>
-    <p class="intro">Drain and sewer backups don’t wait.</p>
-    <p>If you have standing water, an overflowing drain, or a sudden sewage smell, you may need emergency service. Drain-Flo prioritizes fast response for urgent clogs and backups so you can protect your home and avoid further damage.</p><p>Emergency service can include clearing a blocked fixture, addressing a floor drain backup, or helping diagnose a main line issue when multiple drains are affected.</p><p>If you’re unsure what’s happening, call. Describing the symptoms (which drains, when it started, whether water backs up elsewhere) helps them guide you right away.</p>
-    <p class="checks-title">What they can help with</p>
-    <ul class="checks"><li>Fast response for urgent clogs and backups</li><li>Help limit water damage</li><li>Main line and multi-fixture troubleshooting</li><li>Clear guidance based on your symptoms</li></ul>
-    <a class="btn btn-red" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about emergency drain service</a>
+<section class="em-band dark" id="emergency" aria-labelledby="emergency-h">
+  <div class="wrap em-grid">
+    <div>
+      <h2 id="emergency-h">Emergency drain service</h2>
+      <p class="intro">Drain and sewer backups don’t wait.</p>
+      <p>If you have standing water, an overflowing drain, or a sudden sewage smell, you may need emergency service. Drain-Flo prioritizes fast response for urgent clogs and backups so you can protect your home and avoid further damage.</p><p>Emergency service can include clearing a blocked fixture, addressing a floor drain backup, or helping diagnose a main line issue when multiple drains are affected.</p><p>If you’re unsure what’s happening, call. Describing the symptoms (which drains, when it started, whether water backs up elsewhere) helps them guide you right away.</p>
+      <a class="btn btn-white" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call (570) 357-4228 now</a>
+    </div>
+    <div>
+      <figure class="s-photo"><img src="img/pipe-cleaning-480.webp" srcset="img/pipe-cleaning-480.webp 480w, img/pipe-cleaning-960.webp 960w, img/pipe-cleaning-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 30rem" width="960" height="723" alt="Professional pipe cleaning" loading="lazy" decoding="async"></figure>
+      <ul class="checks checks-em"><li>Fast response for urgent clogs and backups</li><li>Help limit water damage</li><li>Main line and multi-fixture troubleshooting</li><li>Clear guidance based on your symptoms</li></ul>
+    </div>
   </div>
-  <figure class="s-photo"><img src="img/pipe-cleaning-480.webp" srcset="img/pipe-cleaning-480.webp 480w, img/pipe-cleaning-960.webp 960w, img/pipe-cleaning-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 26rem" width="960" height="723" alt="Professional pipe cleaning" loading="lazy" decoding="async"><figcaption>Professional pipe cleaning</figcaption></figure>
 </section>
-<section class="service" id="drain-cleaning" aria-labelledby="drain-cleaning-h">
-  <div>
-    <h2 id="drain-cleaning-h">Drain cleaning</h2>
-    <p class="intro">Slow drains and recurring backups usually mean buildup inside the pipe.</p>
-    <p>Soap scum, grease, hair and debris keep catching more material over time. Drain cleaning clears the line thoroughly to restore proper flow and help reduce repeat clogs, whether it’s a kitchen sink that keeps slowing down or a tub that won’t drain right.</p><p>Drain-Flo services common household drains (sinks, tubs, showers, floor drains) and helps identify when a problem is likely deeper in the main line.</p><p>If you’ve tried plungers or store-bought cleaners and the problem keeps returning, professional drain cleaning is often the fastest path back to normal.</p>
-    <p class="checks-title">What they can help with</p>
-    <ul class="checks"><li>Clear slow drains and restore flow</li><li>Reduce odors caused by buildup</li><li>Help prevent repeat clogs</li><li>Identify signs of a deeper main-line issue</li></ul>
-    <a class="btn btn-red" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about drain cleaning</a>
+<section class="band" aria-label="Drain and sewer services"><div class="wrap cards"><article class="card" id="drain-cleaning" aria-labelledby="drain-cleaning-h">
+  <img class="card-img" src="img/line-cleaning-480.webp" srcset="img/line-cleaning-480.webp 480w, img/line-cleaning-960.webp 960w" sizes="(max-width: 860px) 100vw, 36rem" width="960" height="640" alt="Drain line cleaning in Duryea" loading="lazy" decoding="async">
+  <h2 id="drain-cleaning-h">Drain cleaning</h2>
+  <p class="intro">Slow drains and recurring backups usually mean buildup inside the pipe.</p>
+  <p>Soap scum, grease, hair and debris keep catching more material over time. Drain cleaning clears the line thoroughly to restore proper flow and help reduce repeat clogs, whether it’s a kitchen sink that keeps slowing down or a tub that won’t drain right.</p><p>Drain-Flo services common household drains (sinks, tubs, showers, floor drains) and helps identify when a problem is likely deeper in the main line.</p><p>If you’ve tried plungers or store-bought cleaners and the problem keeps returning, professional drain cleaning is often the fastest path back to normal.</p>
+  <ul class="checks"><li>Clear slow drains and restore flow</li><li>Reduce odors caused by buildup</li><li>Help prevent repeat clogs</li><li>Identify signs of a deeper main-line issue</li></ul>
+  <a class="card-call" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about drain cleaning</a>
+</article>
+<article class="card" id="clog-removal" aria-labelledby="clog-removal-h">
+  <img class="card-img" src="img/clog-removal-480.webp" srcset="img/clog-removal-480.webp 480w" sizes="(max-width: 860px) 100vw, 36rem" width="480" height="638" alt="Professional clog removal" loading="lazy" decoding="async">
+  <h2 id="clog-removal-h">Clog removal</h2>
+  <p class="intro">When a drain is fully blocked, you need targeted clog removal, not guesswork.</p>
+  <p>Drain-Flo clears common clogs caused by hair, wipes, paper, grease, and buildup that traps debris. It starts by identifying the fixture and symptoms (slow drain vs. full backup) to use the right approach and avoid unnecessary mess or damage.</p><p>It’s the right service for single-fixture problems like a backed-up bathroom sink, a slow shower drain, or a floor drain that starts pooling water.</p><p>If multiple fixtures are affected, that can indicate a main line issue, and sewer line cleaning may be the right next step.</p>
+  <ul class="checks"><li>Sinks, tubs, showers, toilets, and floor drains</li><li>Fast, targeted clearing (no guesswork)</li><li>Helps stop backups and standing water</li><li>Guidance when symptoms suggest a main line issue</li></ul>
+  <a class="card-call" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about clog removal</a>
+</article>
+<article class="card" id="sewer-line-cleaning" aria-labelledby="sewer-line-cleaning-h">
+  <img class="card-img" src="img/sewer-cleaning-480.webp" srcset="img/sewer-cleaning-480.webp 480w, img/sewer-cleaning-960.webp 960w, img/sewer-cleaning-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 36rem" width="960" height="723" alt="Sewer cleaning in Duryea" loading="lazy" decoding="async">
+  <h2 id="sewer-line-cleaning-h">Sewer line cleaning</h2>
+  <p class="intro">More than one slow drain usually means the main line.</p>
+  <p>If more than one drain is slow, or you’re seeing backups in a basement drain, your main sewer line may be restricted. Sewer line cleaning clears buildup and obstructions in the main line to restore proper drainage from the entire home.</p><p>Older properties in NEPA can be more prone to main line issues due to aging piping, shifts over time, and debris that accumulates in low spots.</p><p>Regular sewer line cleaning can be a smart preventative step if you’ve had repeat backups or slow drains throughout the house.</p>
+  <ul class="checks"><li>Clear restrictions in the main sewer line</li><li>Improve whole-home drainage</li><li>Reduce basement drain backups</li><li>Preventative option for repeat issues</li></ul>
+  <a class="card-call" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about sewer line cleaning</a>
+</article>
+<article class="card" id="sewer-excavation" aria-labelledby="sewer-excavation-h">
+  <img class="card-img" src="img/line-excavation-480.webp" srcset="img/line-excavation-480.webp 480w, img/line-excavation-960.webp 960w" sizes="(max-width: 860px) 100vw, 36rem" width="960" height="640" alt="Excavated line repair in progress" loading="lazy" decoding="async">
+  <h2 id="sewer-excavation-h">Sewer excavation</h2>
+  <p class="intro">Some problems can’t be solved from the inside.</p>
+  <p>A collapsed line, severe damage, or a failed section that needs replacement means digging. Sewer excavation supports repairs and replacements where digging is required to access the pipe safely and correctly.</p><p>Drain-Flo can help when a line is broken, shifted, or repeatedly clogging due to structural issues that cleaning alone won’t fix.</p><p>If you’re dealing with persistent backups despite repeated cleanings, excavation may be the right long-term solution. They explain what they’re seeing and what options make sense before any major work.</p>
+  <ul class="checks"><li>Repairs or replacement when digging is required</li><li>Fix damaged or collapsed sewer sections</li><li>Resolve repeat backups caused by structural issues</li><li>Clear explanation of options before major work</li></ul>
+  <a class="card-call" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about sewer excavation</a>
+</article>
+</div></section>
+<section class="band porcelain" id="more" aria-labelledby="more-h">
+  <div class="wrap two">
+    <div class="prose">
+      <h2 id="more-h" style="margin-top:0">Below the surface, and beyond the drain</h2>
+      <p>Work commonly includes clearing blocked drains and toilets, restoring flow in main sewer lines, and detailed inspections with video camera technology to locate issues within pipes. Advanced jobs can involve removing invasive tree roots, repairing damaged sections of pipe, and full sewer line replacements when necessary. Preventative maintenance is available to help reduce the risk of recurring problems.</p>
+      <p>Drain-Flo also handles water heater installations and excavation projects, a more complete solution when plumbing issues extend below the surface.</p>
+      <ul class="also"><li>Also on the list:</li><li>Sewer camera inspection</li><li>Hydro jetting</li><li>Tree root removal</li><li>Pipe repair</li><li>Sewer line replacement</li><li>Water heater installation</li><li>Preventative maintenance</li></ul>
+    </div>
+    <img src="img/camera-inspection-480.webp" srcset="img/camera-inspection-480.webp 480w" sizes="(max-width: 860px) 100vw, 40vw" width="480" height="320" alt="Sewer camera inspection equipment" loading="lazy" decoding="async">
   </div>
-  <figure class="s-photo"><img src="img/line-cleaning-480.webp" srcset="img/line-cleaning-480.webp 480w, img/line-cleaning-960.webp 960w" sizes="(max-width: 860px) 100vw, 26rem" width="960" height="640" alt="Drain line cleaning in Duryea" loading="lazy" decoding="async"><figcaption>Drain line cleaning in Duryea</figcaption></figure>
 </section>
-<section class="service" id="clog-removal" aria-labelledby="clog-removal-h">
-  <div>
-    <h2 id="clog-removal-h">Clog removal</h2>
-    <p class="intro">When a drain is fully blocked, you need targeted clog removal, not guesswork.</p>
-    <p>Drain-Flo clears common clogs caused by hair, wipes, paper, grease, and buildup that traps debris. It starts by identifying the fixture and symptoms (slow drain vs. full backup) to use the right approach and avoid unnecessary mess or damage.</p><p>It’s the right service for single-fixture problems like a backed-up bathroom sink, a slow shower drain, or a floor drain that starts pooling water.</p><p>If multiple fixtures are affected, that can indicate a main line issue, and sewer line cleaning may be the right next step.</p>
-    <p class="checks-title">What they can help with</p>
-    <ul class="checks"><li>Sinks, tubs, showers, toilets, and floor drains</li><li>Fast, targeted clearing (no guesswork)</li><li>Helps stop backups and standing water</li><li>Guidance when symptoms suggest a main line issue</li></ul>
-    <a class="btn btn-red" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about clog removal</a>
-  </div>
-  <figure class="s-photo"><img src="img/clog-removal-480.webp" srcset="img/clog-removal-480.webp 480w" sizes="(max-width: 860px) 100vw, 26rem" width="480" height="638" alt="Professional clog removal" loading="lazy" decoding="async"><figcaption>Professional clog removal</figcaption></figure>
-</section>
-<section class="service" id="sewer-line-cleaning" aria-labelledby="sewer-line-cleaning-h">
-  <div>
-    <h2 id="sewer-line-cleaning-h">Sewer line cleaning</h2>
-    <p class="intro">More than one slow drain usually means the main line.</p>
-    <p>If more than one drain is slow, or you’re seeing backups in a basement drain, your main sewer line may be restricted. Sewer line cleaning clears buildup and obstructions in the main line to restore proper drainage from the entire home.</p><p>Older properties in NEPA can be more prone to main line issues due to aging piping, shifts over time, and debris that accumulates in low spots.</p><p>Regular sewer line cleaning can be a smart preventative step if you’ve had repeat backups or slow drains throughout the house.</p>
-    <p class="checks-title">What they can help with</p>
-    <ul class="checks"><li>Clear restrictions in the main sewer line</li><li>Improve whole-home drainage</li><li>Reduce basement drain backups</li><li>Preventative option for repeat issues</li></ul>
-    <a class="btn btn-red" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about sewer line cleaning</a>
-  </div>
-  <figure class="s-photo"><img src="img/sewer-cleaning-480.webp" srcset="img/sewer-cleaning-480.webp 480w, img/sewer-cleaning-960.webp 960w, img/sewer-cleaning-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 26rem" width="960" height="723" alt="Sewer cleaning in Duryea" loading="lazy" decoding="async"><figcaption>Sewer cleaning in Duryea</figcaption></figure>
-</section>
-<section class="service" id="sewer-excavation" aria-labelledby="sewer-excavation-h">
-  <div>
-    <h2 id="sewer-excavation-h">Sewer excavation</h2>
-    <p class="intro">Some problems can’t be solved from the inside.</p>
-    <p>A collapsed line, severe damage, or a failed section that needs replacement means digging. Sewer excavation supports repairs and replacements where digging is required to access the pipe safely and correctly.</p><p>Drain-Flo can help when a line is broken, shifted, or repeatedly clogging due to structural issues that cleaning alone won’t fix.</p><p>If you’re dealing with persistent backups despite repeated cleanings, excavation may be the right long-term solution. They explain what they’re seeing and what options make sense before any major work.</p>
-    <p class="checks-title">What they can help with</p>
-    <ul class="checks"><li>Repairs or replacement when digging is required</li><li>Fix damaged or collapsed sewer sections</li><li>Resolve repeat backups caused by structural issues</li><li>Clear explanation of options before major work</li></ul>
-    <a class="btn btn-red" href="tel:+15703574228"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call about sewer excavation</a>
-  </div>
-  <figure class="s-photo"><img src="img/line-excavation-480.webp" srcset="img/line-excavation-480.webp 480w, img/line-excavation-960.webp 960w" sizes="(max-width: 860px) 100vw, 26rem" width="960" height="640" alt="Excavated line repair in progress" loading="lazy" decoding="async"><figcaption>Excavated line repair in progress</figcaption></figure>
-</section>
-<section class="service" id="more" aria-labelledby="more-h">
-  <div>
-    <h2 id="more-h">Below the surface, and beyond the drain</h2>
-    <p class="intro">From simple clogs to complex underground repairs.</p>
-    <p>Work commonly includes clearing blocked drains and toilets, restoring flow in main sewer lines, and detailed inspections with video camera technology to locate issues within pipes. Advanced jobs can involve removing invasive tree roots, repairing damaged sections of pipe, and full sewer line replacements when necessary. Preventative maintenance is available to help reduce the risk of recurring problems.</p>
-    <p>Drain-Flo also handles water heater installations and excavation projects, a more complete solution when plumbing issues extend below the surface.</p>
-    <ul class="also"><li>Also on the list:</li><li>Sewer camera inspection</li><li>Hydro jetting</li><li>Tree root removal</li><li>Pipe repair</li><li>Sewer line replacement</li><li>Water heater installation</li><li>Preventative maintenance</li></ul>
-  </div>
-  <figure class="s-photo"><img src="img/camera-inspection-480.webp" srcset="img/camera-inspection-480.webp 480w" sizes="(max-width: 860px) 100vw, 26rem" width="480" height="320" alt="Sewer camera inspection equipment" loading="lazy" decoding="async"><figcaption>Sewer camera inspection equipment</figcaption></figure>
-</section>
-</div>
 <section class="closer dark" aria-labelledby="closer-h">
   <div class="waves waves-top" aria-hidden="true"></div>
   <div class="wrap closer-grid">

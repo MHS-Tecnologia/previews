@@ -112,7 +112,7 @@ p { max-width: 64ch; }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(245,185,40,.55); } 70%, 100% { box-shadow: 0 0 0 .6rem rgba(245,185,40,0); } }
 .hero-photo { position: relative; margin: 0; }
 .hero-photo > img { position: relative; }
-.sun { position: absolute; width: 15rem; height: 15rem; border-radius: 50%; background: var(--sun); right: -4.5rem; top: -4.5rem; }
+.sun { position: absolute; width: 17rem; height: 13rem; right: -2.4rem; top: -2.4rem; border-radius: 10px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 48'%3E%3Cpath fill='%232b6cc4' d='M0 30C20 14 44 12 60 24c6 5 0 10-6 6 4 7 18 6 26-2 20-14 44-16 60-4 6 5 0 10-6 6 4 7 18 4 26 0v18H0z'/%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' d='M54 30c4 7 18 6 26-2M134 30c4 7 18 4 26 0M0 30c4-3 8-6 12-8'/%3E%3Cpath fill='%235cc2e6' d='M0 41q20-12 40 0t40 0 40 0 40 0v7H0z'/%3E%3C/svg%3E") repeat 0 0 / 120px 36px, var(--wave-2); }
 .hero-photo > img { width: 100%; border-radius: 10px; }
 .sticker { position: absolute; left: -2.6rem; bottom: -2.2rem; width: 9.5rem; height: 9.5rem; border-radius: 50%; background: var(--porcelain); border: 5px solid var(--sun); display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0,0,0,.35); }
 .sticker img { width: 82%; }
@@ -221,6 +221,28 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
 .checks li { padding-left: 1.6rem; position: relative; }
 .checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: .8rem; height: .45rem; border-left: 3px solid var(--wrench); border-bottom: 3px solid var(--wrench); transform: rotate(-45deg); }
 .checks-title { font-weight: 700; margin-top: 1.4rem; }
+.em-band { background: var(--wrench); color: #fff; padding-block: clamp(3rem, 6vw, 4.5rem); scroll-margin-top: 1rem; }
+.em-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.em-band h2 { margin-bottom: 1rem; }
+.em-band p { font-size: 1.125rem; color: #fff; }
+.em-band p + p { margin-top: .9rem; }
+.em-band .intro { font-size: 1.3rem; font-weight: 700; }
+.em-band .s-photo { margin: 0; }
+.em-band .s-photo img { border-radius: 10px; width: 100%; }
+.btn-white { background: #fff; color: var(--wrench-deep); margin-top: 1.6rem; font-size: 1.15rem; }
+.btn-white:hover { background: var(--porcelain); }
+.checks-em { background: rgba(0,0,0,.18); border-left-color: var(--sun); color: #fff; margin-bottom: 0; }
+.checks-em li { color: #fff; }
+.checks-em li::before { border-color: var(--sun); }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3.5rem); }
+.card { scroll-margin-top: 1rem; border-top: 5px solid var(--sky); padding-top: 1.4rem; }
+.card-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; margin-bottom: 1.2rem; }
+.card h2 { font-size: clamp(2rem, 3.4vw, 2.7rem); margin-bottom: .7rem; }
+.card .intro { font-weight: 700; font-size: 1.15rem; margin-bottom: .6rem; }
+.card p { font-size: 1.0625rem; color: #333; }
+.card p + p { margin-top: .7rem; }
+.card .checks { margin: 1.1rem 0; grid-template-columns: 1fr 1fr; gap: .4rem 1rem; font-size: 1rem; }
+.card-call { display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--wrench); text-underline-offset: .2em; }
 .service.em-service h2 { color: var(--wrench); }
 .prose p + p { margin-top: 1rem; }
 .prose h2 { margin: 2.5rem 0 1rem; }
@@ -289,6 +311,8 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
   .owner, .quotes, .closer-grid, .foot, .two, .contact-grid { grid-template-columns: 1fr; }
   .service, .service:nth-of-type(even) { grid-template-columns: 1fr; }
   .service:nth-of-type(even) .s-photo { order: 0; }
+  .em-grid, .cards { grid-template-columns: 1fr; }
+  .card .checks { grid-template-columns: 1fr; }
   .closer .call { width: 100%; display: grid; }
   .facts li { grid-template-columns: 7rem 1fr; }
   .sticky { display: flex; }
