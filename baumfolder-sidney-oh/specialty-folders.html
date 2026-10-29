@@ -247,7 +247,7 @@ footer a { color: #fff; }
 .legal p + p { margin-top: .4rem; }
 .dock { position: fixed; left: 1rem; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 10; display: none; transform: translateY(160%); transition: transform .25s; box-shadow: 0 10px 28px rgba(20, 26, 68, .28); }
 .dock.on { transform: none; }
-@media (max-width: 1120px) {
+@media (max-width: 1240px) {
 .top nav > a:not(.btn) { display: none; }
 .menu { display: block; }
 .top nav { gap: .6rem; }
@@ -320,6 +320,62 @@ html { scroll-behavior: auto; }
 }
 .phead figure.photo.small img { width: auto; max-width: 100%; max-height: 24rem; margin-left: auto; }
 @media (max-width: 900px) { .phead figure.photo.small img { width: 100%; margin: 0; } }
+.top .btn.util { color: var(--ink); background: none; box-shadow: inset 0 0 0 2px var(--ink); }
+.top .btn.util:hover, .top .btn.util[aria-current] { background: var(--ink); color: #fff; }
+.partsline { margin-top: 1.1rem; font-size: .9375rem; color: var(--ink-2); max-width: 52ch; }
+.partsline a { font-weight: 600; }
+.mark { margin-bottom: 1rem; }
+.mark .glyph, .glyphpanel .glyph { overflow: visible; }
+.mark .glyph { width: 5.5rem; height: 2.75rem; }
+.glyph .p { fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.glyph .c { fill: none; stroke: var(--blue); stroke-width: 1.6; stroke-dasharray: 3 3; }
+.glyph .k { fill: var(--blue); }
+.glyph .r { fill: none; stroke: var(--ink); stroke-width: 2; }
+.chev { display: flex; }
+.chev i { width: 2.4rem; height: 1.6rem; margin-left: -4px; background: var(--c); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%, 10px 50%); }
+.chev i:first-child { margin-left: 0; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%); }
+.chev i:nth-child(1) { --c: var(--blue); } .chev i:nth-child(2) { --c: var(--sky); } .chev i:nth-child(3) { --c: var(--green); } .chev i:nth-child(4) { --c: var(--yellow); }
+.model .shot.panel { background: var(--sheet); padding: 2rem; border-radius: 3px; }
+.model .shot.panel img { filter: drop-shadow(0 14px 12px rgba(20, 26, 68, .12)); }
+.glyphpanel { display: grid; place-items: center; gap: 1rem; min-height: 15rem; }
+.glyphpanel .glyph { width: 11rem; height: 5.5rem; }
+.glyphpanel figcaption { font-size: .9375rem; color: var(--ink-2); }
+.mosaic { display: grid; grid-template-columns: repeat(2, minmax(0, 175px)); gap: .6rem; justify-content: end; }
+.mosaic img { width: 100%; height: 150px; object-fit: cover; border-radius: 2px; }
+@media (max-width: 900px) {
+.hero figure { height: 11rem; }
+.hero figure img { object-fit: contain; object-position: 50% 50%; padding: .5rem 0; }
+.mosaic { justify-content: start; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.mosaic img { height: 90px; }
+.glyphpanel { min-height: 10rem; }
+.folds { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0; border-top: 2px solid var(--ink); }
+.fold, .fold + .fold, .fold:nth-child(even) { flex: 0 0 62%; scroll-snap-align: start; padding: 1.4rem 1rem 1.5rem 0; border-left: 0; border-right: 1px solid var(--rule); margin-right: 1rem; }
+.shots figure:not(:first-child) { display: none; }
+.shots, .shots.two { grid-template-columns: 1fr; }
+#support .photo { display: none; }
+}
+@media (max-width: 560px) {
+.panel { grid-template-columns: 1fr 6.5rem; gap: 1rem; padding: 1.25rem; }
+.panel img { height: 6.5rem; }
+}
+@media (max-width: 900px) {
+section { padding-block: 3rem; }
+.line { padding-block: 1.75rem; gap: 1.25rem; }
+.line + .line { margin-top: .5rem; }
+.shots figure img { max-height: 12rem; width: auto; margin-inline: auto; }
+#insertion .ticks, #insertion .photo { display: none; }
+#specialty .special-body > figure { display: none; }
+#specialty .special-body { margin-top: 1.5rem; }
+.head { margin-bottom: 1.75rem; }
+}
+@media (max-width: 560px) {
+.foot { grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; }
+.foot > div:first-child { grid-column: 1 / -1; }
+.quote .card dl { display: none; }
+.quote .card .btn:first-of-type { margin-top: 0; }
+}
+.top nav > a { white-space: nowrap; }
+@media (min-width: 1241px) { .top nav { gap: 1.1rem; } .top .btn { padding-inline: 1rem; } }
 </style>
 </head>
 <body>
@@ -332,8 +388,8 @@ html { scroll-behavior: auto; }
         <a href="document-insertion.html">Document insertion</a>
         <a href="feeding-finishing.html">Feeding &amp; finishing</a>
         <a href="contract-manufacturing.html">Contract manufacturing</a>
-        <a href="parts-service.html">Parts &amp; service</a>
         <a href="about.html">About</a>
+        <a class="btn btn-line util" href="parts-service.html">Parts &amp; manuals</a>
         <a class="btn btn-main" href="mailto:baumfolder@baumfolder.com?subject=Custom%20quote%20request">Request a quote</a>
         <details class="menu">
           <summary><i aria-hidden="true"></i>Menu</summary>
@@ -361,6 +417,7 @@ html { scroll-behavior: auto; }
       <div class="phead-in">
         <div>
           <p class="crumbs"><a href="index.html">Home</a> / <a href="folding-machines.html">Folding machines</a> / Specialty</p>
+          <div class="mark"><svg class="glyph" viewBox="0 0 64 32" aria-hidden="true"><rect class="k" x="30.5" y="0" width="3" height="11"/><path class="p" d="M4 13H60"/><circle class="r" cx="26" cy="23" r="5"/><circle class="r" cx="38" cy="23" r="5"/></svg></div>
           <h1>When a standard folder can’t, they build one that can.</h1>
           <p class="lede">Baumfolder’s engineers design folders around non-standard sizes, complex folds and materials beyond paper, with intuitive HMI controls and gear drives built to last.</p>
           <div class="cta">
@@ -391,7 +448,7 @@ html { scroll-behavior: auto; }
     <div class="wrap">
       <div class="head"><h2>Six machines they have built.</h2><p class="lede">The material, the problem the customer had and what the machine changed, as Baumfolder publishes them.</p></div>
       <article class="model" id="xv">
-        <figure class="shot"><img src="img/714xv.webp" width="1100" height="746" alt="BAUM 714 XV folder and gatherer" loading="lazy"></figure>
+        <figure class="shot panel"><img src="img/714xv.webp" width="1100" height="746" alt="BAUM 714 XV folder and gatherer" loading="lazy"></figure>
         <div>
           <h2>BAUM 714 XV folder, gatherer</h2>
           <p class="sub">Pages gathered before folding</p>
@@ -403,9 +460,20 @@ html { scroll-behavior: auto; }
           
         </div>
       </article>
-      <article class="model" id="tabber"><div><h2>BAUM 714 with tabber</h2><p class="sub">Fold and tab self-mailers in line, to USPS rules</p></div><div><p class="desc">A BAUM 714 in line with a Kirk Rudy tabber. Load once and have a finished product: half fold, letter fold and tab, or half fold, cross fold, then tab. Meeting USPS rules for self-mailers saves postage.</p><dl class="keys"><div><dt>Height</dt><dd>3.5″ to 6″</dd></div><div><dt>Length</dt><dd>5″ to 10.5″</dd></div><div><dt>Thickness</dt><dd>0.009″ to 0.25″</dd></div><div><dt>Weight</dt><dd>Up to 3 oz, aspect ratio 1.3 to 2.5</dd></div></dl></div></article>
+      <article class="model" id="tabber">
+        <figure class="shot panel glyphpanel"><svg class="glyph" viewBox="0 0 64 32" aria-hidden="true"><path class="p" d="M56 4H11Q4 4 4 15Q4 28 11 28H56"/><rect class="k" x="50" y="0" width="8" height="32" rx="1"/></svg><figcaption>Letter fold, then tab</figcaption></figure>
+        <div>
+          <h2>BAUM 714 with tabber</h2>
+          <p class="sub">Fold and tab self-mailers in line, to USPS rules</p>
+          <p class="desc">A BAUM 714 in line with a Kirk Rudy tabber. Load once and have a finished product: half fold, letter fold and tab, or half fold, cross fold, then tab. Meeting USPS rules for self-mailers saves postage.</p>
+          <dl class="keys"><div><dt>Height</dt><dd>3.5″ to 6″</dd></div><div><dt>Length</dt><dd>5″ to 10.5″</dd></div><div><dt>Thickness</dt><dd>0.009″ to 0.25″</dd></div><div><dt>Weight</dt><dd>Up to 3 oz, aspect ratio 1.3 to 2.5</dd></div></dl>
+          
+          
+          
+        </div>
+      </article>
       <article class="model" id="spedo">
-        <figure class="shot flat dark"><img src="img/spedo-inf.webp" width="1100" height="628" alt="BAUM INF folder with a Spedo cutter, on black" loading="lazy"></figure>
+        <figure class="shot panel"><img src="img/spedo-cut.webp" width="971" height="520" alt="BAUM INF folder with a Spedo cutter" loading="lazy"></figure>
         <div>
           <h2>BAUM 20 in line with Spedo unwinder and forms cutter</h2>
           <p class="sub">Unwind, cut and fold in one operation</p>
@@ -417,9 +485,44 @@ html { scroll-behavior: auto; }
           
         </div>
       </article>
-      <article class="model" id="k20"><div><h2>BAUM K20 knife folder</h2><p class="sub">The last fold on bulky booklets</p></div><div><p class="desc">Runs in line with booklet makers, saddle stitchers, floor model buckle folders and tabletop folders, and makes the last fold when it exceeds what a buckle folder can do. Print, bind and fold the booklet in line, without handling it again.</p><p class="desc">Fold orientation is down. At order you can choose an up fold, straight delivery instead of left, or right-hand delivery.</p><dl class="keys"><div><dt>Speed</dt><dd>180 cycles a minute</dd></div><div><dt>Max signature</dt><dd>20.47″ × 14.17″</dd></div><div><dt>Min signature</dt><dd>5″ × 7″</dd></div><div><dt>Fold rolls</dt><dd>Urethane/steel</dd></div></dl></div></article>
-      <article class="model" id="poly"><div><h2>Poly bag folder</h2><p class="sub">Return packaging, folded 2 to 5 times</p></div><div><p class="desc">A Baum continuous feeder, a series of Baum knife folders and a stacker, for poly bags, Tyvek and paper bags. The folded bag goes into a label feeder on an automation line; a bad fold stops the line, and folding by hand needs people who are hard to find.</p><dl class="keys"><div><dt>Labor savings</dt><dd>5 to 10 operators</dd></div><div><dt>Folds</dt><dd>2 to 5</dd></div></dl></div></article>
-      <article class="model" id="parchment"><div><h2>Pile feeder with 4 knife folders</h2><p class="sub">10″ round parchment into a 2.6″ square</p></div><div><p class="desc">A Baum IPF feeder, four K14 knife folders and a horizontal stacker feed, fold and stack round paper for commercial print, packaging and food. The feeder canister is made to fit the product, which matters with slick stock like parchment.</p><p class="desc">Baumfolder worked with the customer on a fold and fold size that fits the funnel on their automation line.</p><dl class="keys"><div><dt>Labor savings</dt><dd>5 to 10 operators</dd></div><div><dt>From → to</dt><dd>10″ round → 2.6″ square</dd></div></dl></div></article>
+      <article class="model" id="k20">
+        <figure class="shot panel glyphpanel"><svg class="glyph" viewBox="0 0 64 32" aria-hidden="true"><rect class="k" x="30.5" y="0" width="3" height="11"/><path class="p" d="M4 13H60"/><circle class="r" cx="26" cy="23" r="5"/><circle class="r" cx="38" cy="23" r="5"/></svg><figcaption>Knife fold between two rolls</figcaption></figure>
+        <div>
+          <h2>BAUM K20 knife folder</h2>
+          <p class="sub">The last fold on bulky booklets</p>
+          <p class="desc">Runs in line with booklet makers, saddle stitchers, floor model buckle folders and tabletop folders, and makes the last fold when it exceeds what a buckle folder can do. Print, bind and fold the booklet in line, without handling it again.</p>
+          <p class="desc">Fold orientation is down. At order you can choose an up fold, straight delivery instead of left, or right-hand delivery.</p>
+          <dl class="keys"><div><dt>Speed</dt><dd>180 cycles a minute</dd></div><div><dt>Max signature</dt><dd>20.47″ × 14.17″</dd></div><div><dt>Min signature</dt><dd>5″ × 7″</dd></div><div><dt>Fold rolls</dt><dd>Urethane/steel</dd></div></dl>
+          
+          
+          
+        </div>
+      </article>
+      <article class="model" id="poly">
+        <figure class="shot panel glyphpanel"><svg class="glyph" viewBox="0 0 64 32" aria-hidden="true"><path class="p" d="M60 3H10Q4 3 4 8.5Q4 14 10 14H54Q60 14 60 19.5Q60 25 54 25H4"/></svg><figcaption>2 to 5 folds</figcaption></figure>
+        <div>
+          <h2>Poly bag folder</h2>
+          <p class="sub">Return packaging, folded 2 to 5 times</p>
+          <p class="desc">A Baum continuous feeder, a series of Baum knife folders and a stacker, for poly bags, Tyvek and paper bags. The folded bag goes into a label feeder on an automation line; a bad fold stops the line, and folding by hand needs people who are hard to find.</p>
+          <dl class="keys"><div><dt>Labor savings</dt><dd>5 to 10 operators</dd></div><div><dt>Folds</dt><dd>2 to 5</dd></div></dl>
+          
+          
+          
+        </div>
+      </article>
+      <article class="model" id="parchment">
+        <figure class="shot panel glyphpanel"><svg class="glyph" viewBox="0 0 64 32" aria-hidden="true"><circle class="r" cx="16" cy="16" r="13"/><path class="c" d="M3 16H29M16 3V29"/><path class="p" d="M36 16H44M41 12L45 16L41 20"/><rect class="r" x="50" y="10" width="12" height="12"/></svg><figcaption>10″ round to a 2.6″ square</figcaption></figure>
+        <div>
+          <h2>Pile feeder with 4 knife folders</h2>
+          <p class="sub">10″ round parchment into a 2.6″ square</p>
+          <p class="desc">A Baum IPF feeder, four K14 knife folders and a horizontal stacker feed, fold and stack round paper for commercial print, packaging and food. The feeder canister is made to fit the product, which matters with slick stock like parchment.</p>
+          <p class="desc">Baumfolder worked with the customer on a fold and fold size that fits the funnel on their automation line.</p>
+          <dl class="keys"><div><dt>Labor savings</dt><dd>5 to 10 operators</dd></div><div><dt>From → to</dt><dd>10″ round → 2.6″ square</dd></div></dl>
+          
+          
+          
+        </div>
+      </article>
     </div>
   </section>
 
