@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://demo.mhstecnologia.com/dual-temp-allentown-pa/email.jpg">
 <link rel="preload" as="font" type="font/woff2" href="fonts/anybody.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="img/hero-home-480.webp 480w, img/hero-home-800.webp 800w, img/hero-home-1200.webp 1200w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 640px" fetchpriority="high">
+<link rel="preload" as="image" imagesrcset="img/hero-home-480.webp 480w, img/hero-home-800.webp 800w, img/hero-home-1200.webp 1200w, img/hero-home-1600.webp 1600w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 640px" fetchpriority="high">
 <script>document.documentElement.className += ' js';</script>
 <style>
 @font-face { font-family: "Anybody"; font-weight: 100 900; font-stretch: 50% 150%; font-display: swap; src: url(fonts/anybody.woff2) format("woff2"); }
@@ -108,6 +108,24 @@ p { max-width: 64ch; }
   @keyframes inR { from { transform: translateX(28px); } }
   @keyframes pop { from { transform: rotate(45deg) scale(.3); } }
 }
+/* home / building switch: picks which half of the plate is lit */
+.who { display: none; margin-top: 1.4rem; background: var(--white); border: 2px solid var(--ink); border-radius: 999px; padding: 4px; gap: 4px; width: max-content; max-width: 100%; }
+.js .who { display: inline-flex; }
+.who button { font: 700 1rem/1 "Hanken Grotesk", system-ui, sans-serif; color: var(--ink); background: none; border: 0; border-radius: 999px; padding: .7rem 1.1rem; min-height: 2.75rem; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; transition: background-color .2s, color .2s; }
+.who .sw { width: .6rem; height: .6rem; transform: rotate(45deg); border: 2px solid currentColor; }
+.who button[aria-pressed="true"][data-side="home"] { background: var(--red); color: #fff; }
+.who button[aria-pressed="true"][data-side="work"] { background: var(--navy); color: #fff; }
+.who button[aria-pressed="true"] .sw { background: #fff; border-color: #fff; }
+.chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem; }
+.chips a { display: inline-flex; align-items: center; min-height: 2.25rem; padding: .3rem .8rem; border: 1px solid #b9c3cc; background: var(--white); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.chips a:hover { border-color: var(--ink); }
+.half img { transition: filter .45s ease; }
+.plate[data-side="home"] .half.b img, .plate[data-side="work"] .half.a img { filter: grayscale(.7) brightness(.88); }
+.plate[data-side="home"] .half.b .tag, .plate[data-side="work"] .half.a .tag { opacity: .55; }
+.tag { transition: opacity .3s; }
+.diamond { transition: transform .5s cubic-bezier(.3,1.4,.5,1); }
+.plate[data-side="work"] .diamond { transform: rotate(225deg); }
+@media (prefers-reduced-motion: reduce) { .half img, .tag, .diamond, .who button { transition: none; } }
 /* page hero (internal pages) */
 .phero { padding: clamp(1.5rem, 4vw, 3.25rem) 0 clamp(1.5rem, 3.5vw, 3rem); }
 .phero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
@@ -200,6 +218,10 @@ p { max-width: 64ch; }
 .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--sheet-2); border: 1px solid var(--sheet-2); }
 .grid3 > div { background: var(--white); padding: 1.25rem 1.35rem 1.4rem; }
 .grid3 h3 { margin-bottom: .45rem; }
+@media (min-width: 1101px) {
+  .grid3 > div:last-child:nth-child(3n+1) { grid-column: span 3; }
+  .grid3 > div:last-child:nth-child(3n+2) { grid-column: span 2; }
+}
 .grid3 p { color: var(--muted); font-size: .98rem; }
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .split + .split { margin-top: clamp(3rem, 6vw, 5rem); }
@@ -271,6 +293,10 @@ footer .fine p + p { margin-top: .5rem; }
   footer .cols { grid-template-columns: 1fr; }
   .sticky { display: flex; }
   .mob-hide { display: none; }
+  .demo { font-size: .66rem; line-height: 1.3; padding: .25rem .5rem; letter-spacing: -.01em; }
+  .who { margin-top: 1rem; }
+  .who button { padding: .6rem .85rem; font-size: .95rem; }
+  .hero .chips { margin-top: .7rem; }
   .home-proj .pj:nth-child(n+4) { display: none; }
   .lane li a { flex-direction: column; gap: .1rem; }
   .lane li a span { text-align: left; }
@@ -279,7 +305,7 @@ footer .fine p + p { margin-top: .5rem; }
   .top .callm { margin-left: auto; }
   .menu { margin-left: 0; }
 }
-@media (min-width: 861px) and (max-width: 1100px) { .grid3 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 861px) and (max-width: 1100px) { .grid3 { grid-template-columns: 1fr 1fr; } .grid3 > div:last-child:nth-child(odd) { grid-column: span 2; } }
 @media (prefers-reduced-motion: reduce) { .sticky, .btn { transition: none; } }
 </style>
 </head>
@@ -300,23 +326,50 @@ footer .fine p + p { margin-top: .5rem; }
   <div class="wrap">
     <div>
       <h1>Allentown’s comfort experts since 1970.</h1>
-      <p class="lede">Heating, cooling, hot water and plumbing for homes across the Lehigh Valley, and full mechanical service for buildings across Eastern Pennsylvania and New Jersey.</p>
-      <div class="ctas" id="hero-cta"><a class="btn btn-red" href="tel:+16107919100"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (610) 791-9100</a><a class="btn btn-line" href="mailto:info@dualtemp.com?subject=Service%20request&amp;body=Name%3A%20%0AAddress%3A%20%0AHome%20or%20business%3A%20%0AWhat%E2%80%99s%20going%20on%3A%20%0A"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>Request service</a></div>
+      <div class="who" role="group" aria-label="Who needs service">
+        <button type="button" aria-pressed="true" data-side="home"><span class="sw" aria-hidden="true"></span>For my home</button>
+        <button type="button" aria-pressed="false" data-side="work"><span class="sw" aria-hidden="true"></span>For my building</button>
+      </div>
+      <div data-for="home">
+        <p class="lede">Heating, cooling and hot water for homes across the Lehigh Valley. Same-day scheduling in most cases.</p>
+        <ul class="chips"><li><a href="home-services.html#heating">Heating</a></li><li><a href="home-services.html#cooling">Cooling</a></li><li><a href="home-services.html#hot-water">Hot water</a></li></ul>
+      </div>
+      <div data-for="work" hidden>
+        <p class="lede">Service, emergency response, construction and controls for buildings across Eastern Pennsylvania and New Jersey.</p>
+        <ul class="chips"><li><a href="commercial.html">Service &amp; repair</a></li><li><a href="commercial.html#emergency">Emergency</a></li><li><a href="construction.html">Construction</a></li><li><a href="automation.html">Controls</a></li></ul>
+      </div>
+      <div class="ctas" id="hero-cta"><a class="btn btn-red" href="tel:+16107919100"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (610) 791-9100</a><a class="btn btn-line" id="hero-mail" href="mailto:info@dualtemp.com?subject=Service%20request&amp;body=Name%3A%20%0AAddress%3A%20%0AHome%20or%20business%3A%20%0AWhat%E2%80%99s%20going%20on%3A%20%0A" data-home="mailto:info@dualtemp.com?subject=Service%20request&amp;body=Name%3A%20%0AAddress%3A%20%0AHome%20or%20business%3A%20%0AWhat%E2%80%99s%20going%20on%3A%20%0A" data-work="mailto:info@dualtemp.com?subject=Project%20inquiry&amp;body=Company%3A%20%0ASite%20location%3A%20%0AProject%20type%3A%20%0ASchedule%3A%20%0A"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg><span>Request service</span></a></div>
       <p class="urgent"><span class="dot" aria-hidden="true"></span><span>No heat or no cooling? Call <a href="tel:+16107919100">(610) 791-9100</a></span></p>
     </div>
-    <div class="plate">
-      <div class="half a"><img src="img/hero-home-800.webp" srcset="img/hero-home-480.webp 480w, img/hero-home-800.webp 800w, img/hero-home-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="1200" height="515" alt="Two Dual Temp Home Services vans parked outside a house" style="object-position:50% 62%" fetchpriority="high" decoding="async"><span class="tag">Homes across the Lehigh Valley</span></div>
+    <div class="plate" id="plate" data-side="home">
+      <div class="half a"><img src="img/hero-home-800.webp" srcset="img/hero-home-480.webp 480w, img/hero-home-800.webp 800w, img/hero-home-1200.webp 1200w, img/hero-home-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="1600" height="686" alt="Two Dual Temp Home Services vans parked outside a house" style="object-position:50% 62%" fetchpriority="high" decoding="async"><span class="tag">Homes across the Lehigh Valley</span></div>
       <div class="half b"><img src="img/hero-tech-800.webp" srcset="img/hero-tech-480.webp 480w, img/hero-tech-800.webp 800w, img/hero-tech-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="1200" height="720" alt="Dual Temp technician wiring a rooftop equipment panel" style="object-position:50% 40%" fetchpriority="high" decoding="async"><span class="tag">Buildings across Eastern PA and New Jersey</span></div>
       <span class="diamond" aria-hidden="true"></span>
     </div>
   </div>
 </section>
+<script>
+(function () {
+  var plate = document.getElementById('plate'), mail = document.getElementById('hero-mail');
+  var btns = document.querySelectorAll('.who button');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var side = b.getAttribute('data-side');
+      btns.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      document.querySelectorAll('[data-for]').forEach(function (el) { el.hidden = el.getAttribute('data-for') !== side; });
+      plate.setAttribute('data-side', side);
+      mail.href = mail.getAttribute('data-' + side);
+      mail.querySelector('span').textContent = side === 'home' ? 'Request service' : 'Email the service team';
+    });
+  });
+})();
+</script>
 <section class="sec white" aria-labelledby="lanes-h">
   <div class="wrap">
-    <div class="intro"><h2 id="lanes-h">One company, two kinds of customer.</h2><p>Dual Temp Home Services looks after houses. The commercial, construction and building automation teams look after offices, hospitals, schools and plants. Same phone number for both.</p></div>
+    <div class="intro"><h2 id="lanes-h">One company, two kinds of customer.</h2><p>Dual Temp Home Services looks after houses. Our commercial, construction and building automation teams look after offices, hospitals, schools and plants. One phone number for both.</p></div>
     <div class="lanes">
       <article class="lane">
-        <div class="pic"><img src="img/condensers-760.webp" srcset="img/condensers-480.webp 480w, img/condensers-760.webp 760w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="760" height="723" alt="Two new outdoor air conditioning condensers beside a stone house" loading="lazy" decoding="async"></div>
+        <div class="pic"><img src="img/condensers-800.webp" srcset="img/condensers-480.webp 480w, img/condensers-800.webp 800w, img/condensers-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1200" height="1143" alt="Two new outdoor air conditioning condensers beside a stone house" loading="lazy" decoding="async"></div>
         <div class="body">
           <p class="where">Home Services, Greater Lehigh Valley</p>
           <h3>For your home</h3>
@@ -330,7 +383,7 @@ footer .fine p + p { margin-top: .5rem; }
         </div>
       </article>
       <article class="lane b">
-        <div class="pic"><img src="img/crane-900.webp" srcset="img/crane-480.webp 480w, img/crane-900.webp 900w, img/crane-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="1307" alt="Dual Temp crew rigging a rooftop unit off a flatbed in downtown Allentown" style="object-position:50% 60%" loading="lazy" decoding="async"></div>
+        <div class="pic"><img src="img/crane-800.webp" srcset="img/crane-480.webp 480w, img/crane-800.webp 800w, img/crane-1200.webp 1200w, img/crane-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1600" height="1493" alt="Dual Temp crew rigging a rooftop unit off a flatbed in downtown Allentown" style="object-position:50% 60%" loading="lazy" decoding="async"></div>
         <div class="body">
           <p class="where">Commercial, Eastern Pennsylvania and New Jersey</p>
           <h3>For your building</h3>
@@ -350,8 +403,8 @@ footer .fine p + p { margin-top: .5rem; }
   <div class="wrap">
     <div>
       <h2 id="em-h">A heating failure in January and a cooling failure in July are not maintenance items.</h2>
-      <p class="lead">When you call, Dual Temp establishes what failed, what is at risk, and whether anything can be stabilized while a technician is on the way.</p>
-      <p style="margin-top:.9rem">Commercial customers get after-hours and same-day emergency response across Eastern Pennsylvania and New Jersey. Maintenance agreement customers receive priority dispatch.</p>
+      <p class="lead">When you call, we establish what failed, what is at risk, and whether anything can be stabilized while a technician is on the way.</p>
+      <ul class="ticks" style="margin-top:1rem;color:var(--on-deep)"><li><b>At home in the Lehigh Valley.</b> A broken AC in a heat wave is a household emergency, and a heating failure is a safety concern. We treat them that way, with priority scheduling and fast response times.</li><li><b>At your building in Eastern PA and NJ.</b> After-hours and same-day emergency response. Maintenance agreement customers receive priority dispatch.</li></ul>
       <div class="ctas"><a class="btn btn-red" href="tel:+16107919100"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Emergency? Call (610) 791-9100</a><a class="btn btn-line" href="commercial.html#emergency">How emergency calls work</a></div>
     </div>
     <div class="truck">
@@ -364,38 +417,38 @@ footer .fine p + p { margin-top: .5rem; }
 <section class="sec" aria-labelledby="steps-h">
   <div class="wrap steps-wrap">
     <div>
-      <div class="intro" style="margin-bottom:1.5rem"><h2 id="steps-h">How a home service call goes</h2><p>The five steps Dual Temp Home Services follows on every visit.</p></div>
+      <div class="intro" style="margin-bottom:1.5rem"><h2 id="steps-h">How a home service call goes</h2><p>The five steps we follow on every home visit.</p></div>
       <ol class="steps">
-        <li><h3>You call or email</h3><p>Share a few details so they can dispatch the right technician with the right equipment.</p></li>
+        <li><h3>You call or email</h3><p>Share a few details so we can dispatch the right technician with the right equipment.</p></li>
         <li><h3>A certified technician comes out</h3><p>Same-day scheduling in most cases, ready to diagnose the problem.</p></li>
         <li><h3>You get a written estimate</h3><p>No hidden fees, no pressure. Honest numbers before any work begins.</p></li>
         <li><h3>The work gets done</h3><p>Trucks travel fully stocked, so most problems are resolved in a single visit.</p></li>
-        <li><h3>They check it and clean up</h3><p>The system is verified before they leave, and the work area is cleaned completely.</p></li>
+        <li><h3>We check it and clean up</h3><p>We verify your system before we leave, and clean up the work area completely.</p></li>
       </ol>
     </div>
-    <figure class="steps-pic"><img src="img/attic-900.webp" srcset="img/attic-480.webp 480w, img/attic-900.webp 900w, img/attic-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 620px" width="1400" height="1050" alt="New air handler and insulated ductwork installed in an attic" loading="lazy" decoding="async"><figcaption class="cap">An attic air handler and duct installation by Dual Temp Home Services.</figcaption></figure>
+    <figure class="steps-pic"><img src="img/attic-800.webp" srcset="img/attic-480.webp 480w, img/attic-800.webp 800w, img/attic-1200.webp 1200w, img/attic-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 620px" width="1600" height="1200" alt="New air handler and insulated ductwork installed in an attic" loading="lazy" decoding="async"><figcaption class="cap">An attic air handler and duct installation by our Home Services team.</figcaption></figure>
   </div>
 </section>
 <section class="sec white home-proj" aria-labelledby="pj-h">
   <div class="wrap">
     <div class="intro"><h2 id="pj-h">Built by Dual Temp, still running today</h2><p>Self-performed mechanical trades on hospitals, campuses, offices and homes across the region.</p></div>
-    <div class="proj"><article class="pj big"><div class="pic"><img src="img/p-waterfront-1000.webp" srcset="img/p-waterfront-480.webp 480w, img/p-waterfront-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1000" height="556" alt="615 Waterfront office building beside the river in Allentown" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Commercial office</p><h3>615 Waterfront</h3><p>Full-scope HVAC, plumbing, and VRF installation for a mixed-use office building on Allentown’s waterfront.</p><p class="team">General contractor: High Construction<br>Engineer: Bala Consulting Engineers, Inc.<br>Architect: Nelson Architecture &amp; Interiors, Inc.</p></div></article><article class="pj big"><div class="pic"><img src="img/p-fahy-900.webp" srcset="img/p-fahy-480.webp 480w, img/p-fahy-900.webp 900w, img/p-fahy-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="934" alt="Fahy Commons student center at dusk" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Education</p><h3>Fahy Commons, Muhlenberg College</h3><p>VRF and BAS integration for Muhlenberg College’s LEED Platinum, Living Building Challenge-certified student center.</p><p class="team">General contractor: The Whiting-Turner Contracting Company<br>Engineer: Building Systems Engineering Group<br>Architect: Re:Vision Architecture</p></div></article><article class="pj"><div class="pic"><img src="img/p-moravian-900.webp" srcset="img/p-moravian-480.webp 480w, img/p-moravian-900.webp 900w, img/p-moravian-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="934" alt="Laboratory exhaust fans on the Moravian Health Sciences roof" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Education and healthcare</p><h3>Moravian Health Sciences</h3><p>Seven-month design collaboration delivering acid waste piping, laboratory exhaust and ventilation, medical gas systems, cadaver cold storage, and energy metering.</p><p class="team">General contractor: Iron Hill Construction Management Co.<br>Architect: Earl Swensson Associates, Inc.</p></div></article><article class="pj"><div class="pic"><img src="img/p-anderson-900.webp" srcset="img/p-anderson-480.webp 480w, img/p-anderson-900.webp 900w, img/p-anderson-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="980" alt="Control panels mounted along a mechanical room wall" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Healthcare</p><h3>St. Luke’s Anderson Specialty Pavilion</h3><p>Multi-trade HVAC, plumbing, medical gas, and controls installation, with coordinated system relocations and in-field redesigns across all mechanical disciplines.</p><p class="team">General contractor: Boyle Construction<br>Architect: BDA Architects</p></div></article><article class="pj"><div class="pic"><img src="img/p-commodore-1000.webp" srcset="img/p-commodore-480.webp 480w, img/p-commodore-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1000" height="556" alt="The Commodore residential building in Easton" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Residential</p><h3>The Commodore</h3><p>VRF system for a luxury residential development in Easton, PA, delivering quiet operation and long-term energy savings.</p><p class="team">General contractor: H.C. Pody Company<br>Engineer: Snyder Hoffman Associates, Inc.<br>Architect: Artefact, Inc.</p></div></article></div>
+    <div class="proj"><article class="pj big"><div class="pic"><img src="img/p-waterfront-800.webp" srcset="img/p-waterfront-480.webp 480w, img/p-waterfront-800.webp 800w, img/p-waterfront-1200.webp 1200w, img/p-waterfront-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1600" height="889" alt="615 Waterfront office building beside the river in Allentown" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Commercial office</p><h3>615 Waterfront</h3><p>Full-scope HVAC, plumbing, and VRF installation for a mixed-use office building on Allentown’s waterfront.</p><p class="team">General contractor: High Construction<br>Engineer: Bala Consulting Engineers, Inc.<br>Architect: Nelson Architecture &amp; Interiors, Inc.</p></div></article><article class="pj big"><div class="pic"><img src="img/p-fahy-800.webp" srcset="img/p-fahy-480.webp 480w, img/p-fahy-800.webp 800w, img/p-fahy-1200.webp 1200w, img/p-fahy-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1600" height="1067" alt="Fahy Commons student center at dusk" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Education</p><h3>Fahy Commons, Muhlenberg College</h3><p>VRF and BAS integration for Muhlenberg College’s LEED Platinum, Living Building Challenge-certified student center.</p><p class="team">General contractor: The Whiting-Turner Contracting Company<br>Engineer: Building Systems Engineering Group<br>Architect: Re:Vision Architecture</p></div></article><article class="pj"><div class="pic"><img src="img/p-moravian-800.webp" srcset="img/p-moravian-480.webp 480w, img/p-moravian-800.webp 800w, img/p-moravian-1200.webp 1200w, img/p-moravian-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1600" height="1068" alt="Laboratory exhaust fans on the Moravian Health Sciences roof" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Education and healthcare</p><h3>Moravian Health Sciences</h3><p>Seven-month design collaboration delivering acid waste piping, laboratory exhaust and ventilation, medical gas systems, cadaver cold storage, and energy metering.</p><p class="team">General contractor: Iron Hill Construction Management Co.<br>Architect: Earl Swensson Associates, Inc.</p></div></article><article class="pj"><div class="pic"><img src="img/p-anderson-800.webp" srcset="img/p-anderson-480.webp 480w, img/p-anderson-800.webp 800w, img/p-anderson-1200.webp 1200w, img/p-anderson-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1600" height="1120" alt="Control panels mounted along a mechanical room wall" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Healthcare</p><h3>St. Luke’s Anderson Specialty Pavilion</h3><p>Multi-trade HVAC, plumbing, medical gas, and controls installation, with coordinated system relocations and in-field redesigns across all mechanical disciplines.</p><p class="team">General contractor: Boyle Construction<br>Architect: BDA Architects</p></div></article><article class="pj"><div class="pic"><img src="img/p-commodore-800.webp" srcset="img/p-commodore-480.webp 480w, img/p-commodore-800.webp 800w, img/p-commodore-1029.webp 1029w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1029" height="572" alt="The Commodore residential building in Easton" loading="lazy" decoding="async"></div><div class="body"><p class="kind">Residential</p><h3>The Commodore</h3><p>VRF system for a luxury residential development in Easton, PA, delivering quiet operation and long-term energy savings.</p><p class="team">General contractor: H.C. Pody Company<br>Engineer: Snyder Hoffman Associates, Inc.<br>Architect: Artefact, Inc.</p></div></article></div>
     <p class="more-link"><a class="btn btn-line btn-sm" href="projects.html">All projects</a></p>
   </div>
 </section>
 <section class="sec" aria-labelledby="q-h">
   <div class="wrap">
     <div class="intro"><h2 id="q-h">What customers say</h2></div>
-    <div class="quotes"><figure><blockquote><p>“Our furnace decided to give us a problem and stop working on one of the coldest days of the year!!! … Our technician David returned my call, got info he needed to see if he could help and got back to me immediately to say he had the part and could be here in 30 minutes.”</p></blockquote><figcaption>Home Services customer, review shown on dualtemp.com</figcaption></figure><figure><blockquote><p>“After using another company to try to figure out an issue with our mini splits over the course of several visits, we called Dual Temp. They sent 2 people out the same morning who identified the issue within an hour.”</p></blockquote><figcaption>Home Services customer, review shown on dualtemp.com</figcaption></figure><figure><blockquote><p>“Our commercial building has a unique HVAC system, to say the least … Dual Temp responds to calls and emails quickly and keeps the customer updated of progress.”</p></blockquote><figcaption>Commercial customer, review shown on dualtemp.com</figcaption></figure></div>
+    <div class="quotes"><figure><blockquote><p>“Our furnace decided to give us a problem and stop working on one of the coldest days of the year!!! … Our technician David returned my call, got info he needed to see if he could help and got back to me immediately to say he had the part and could be here in 30 minutes.”</p></blockquote><figcaption>Home Services customer</figcaption></figure><figure><blockquote><p>“After using another company to try to figure out an issue with our mini splits over the course of several visits, we called Dual Temp – they sent 2 people out the same morning who identified the issue within an hour.”</p></blockquote><figcaption>Home Services customer</figcaption></figure><figure><blockquote><p>“Our commercial building has a unique HVAC system, to say the least … Dual Temp responds to calls and emails quickly and keeps the customer updated of progress.”</p></blockquote><figcaption>Commercial customer</figcaption></figure></div>
   </div>
 </section>
 <section class="since deep" aria-labelledby="since-h">
-  <img src="img/allentown-bw-1400.webp" srcset="img/allentown-bw-800.webp 800w, img/allentown-bw-1400.webp 1400w" sizes="100vw" width="1400" height="738" alt="" loading="lazy" decoding="async">
+  <img src="img/allentown-bw-1400.webp" srcset="img/allentown-bw-800.webp 800w, img/allentown-bw-1400.webp 1400w, img/allentown-bw-2560.webp 2560w" sizes="(max-width: 860px) 250vw, 100vw" width="2560" height="1350" alt="" loading="lazy" decoding="async">
   <div class="wrap">
     <div><p class="year" aria-hidden="true">1970</p><h2 id="since-h" style="margin-top:1rem">Headquartered in Allentown since the start.</h2></div>
     <div>
-      <p>Dual Temp grew from an Allentown HVAC company into a full-service mechanical contractor: HVAC, plumbing and pipefitting, construction, and building automation controls.</p>
-      <p>It is independently owned and unaffiliated with utility providers, so the recommendation is what you need, never what they sell.</p>
+      <p>We grew from an Allentown HVAC company into a full-service mechanical contractor: HVAC, plumbing and pipefitting, construction, and building automation controls.</p>
+      <p>We are independently owned and unaffiliated with utility providers, so we recommend only what you need, never what we “sell.”</p>
       <p class="lic">Licensed: NJ Plumbing # 36BI01024500, NJ HVAC # 19HC00615300, DE HVAC # HM-0001042</p>
       <p style="margin-top:1.25rem"><a class="btn btn-line btn-sm" href="about.html">About Dual Temp</a></p>
     </div>
@@ -403,9 +456,9 @@ footer .fine p + p { margin-top: .5rem; }
 </section>
 <section class="sec white area" aria-labelledby="area-h">
   <div class="wrap">
-    <figure class="map"><img src="img/map-1100.webp" srcset="img/map-600.webp 600w, img/map-1100.webp 1100w, img/map-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 660px" width="1400" height="1050" alt="Map of Dual Temp's service areas: Home Services around Allentown, commercial work across Eastern Pennsylvania and New Jersey" loading="lazy" decoding="async"></figure>
+    <figure class="map"><img src="img/map-1100.webp" srcset="img/map-600.webp 600w, img/map-1100.webp 1100w, img/map-1400.webp 1400w, img/map-2048.webp 2048w" sizes="(max-width: 860px) calc(100vw - 2rem), 660px" width="2048" height="1536" alt="Map of Dual Temp's service areas: Home Services around Allentown, commercial work across Eastern Pennsylvania and New Jersey" loading="lazy" decoding="async"></figure>
     <div>
-      <h2 id="area-h">Where they work</h2>
+      <h2 id="area-h">Where we work</h2>
       <ul class="key">
         <li class="h"><i aria-hidden="true"></i><span><b>Home Services</b><br>The Greater Lehigh Valley: Allentown, Bethlehem, Easton and the surrounding communities.</span></li>
         <li class="c"><i aria-hidden="true"></i><span><b>Commercial, construction and building automation</b><br>Eastern Pennsylvania and New Jersey.</span></li>
@@ -432,7 +485,7 @@ footer .fine p + p { margin-top: .5rem; }
         <ul><li><a href="home-services.html">Home Services</a></li><li><a href="commercial.html">Commercial Services</a></li><li><a href="construction.html">Construction Services</a></li><li><a href="automation.html">Building Automation</a></li></ul>
       </div>
       <div>
-        <h2>Licenses listed on their site</h2>
+        <h2>Licenses</h2>
         <ul><li>NJ Plumbing Lic # 36BI01024500</li><li>NJ HVAC Lic # 19HC00615300</li><li>DE HVAC Lic # HM-0001042</li></ul>
       </div>
     </div>

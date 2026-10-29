@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://demo.mhstecnologia.com/dual-temp-allentown-pa/email.jpg">
 <link rel="preload" as="font" type="font/woff2" href="fonts/anybody.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="img/vans-480.webp 480w, img/vans-900.webp 900w, img/vans-1400.webp 1400w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 600px" fetchpriority="high">
+<link rel="preload" as="image" imagesrcset="img/vans-480.webp 480w, img/vans-800.webp 800w, img/vans-1200.webp 1200w, img/vans-1600.webp 1600w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 760px" fetchpriority="high">
 <script>document.documentElement.className += ' js';</script>
 <style>
 @font-face { font-family: "Anybody"; font-weight: 100 900; font-stretch: 50% 150%; font-display: swap; src: url(fonts/anybody.woff2) format("woff2"); }
@@ -108,6 +108,24 @@ p { max-width: 64ch; }
   @keyframes inR { from { transform: translateX(28px); } }
   @keyframes pop { from { transform: rotate(45deg) scale(.3); } }
 }
+/* home / building switch: picks which half of the plate is lit */
+.who { display: none; margin-top: 1.4rem; background: var(--white); border: 2px solid var(--ink); border-radius: 999px; padding: 4px; gap: 4px; width: max-content; max-width: 100%; }
+.js .who { display: inline-flex; }
+.who button { font: 700 1rem/1 "Hanken Grotesk", system-ui, sans-serif; color: var(--ink); background: none; border: 0; border-radius: 999px; padding: .7rem 1.1rem; min-height: 2.75rem; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; transition: background-color .2s, color .2s; }
+.who .sw { width: .6rem; height: .6rem; transform: rotate(45deg); border: 2px solid currentColor; }
+.who button[aria-pressed="true"][data-side="home"] { background: var(--red); color: #fff; }
+.who button[aria-pressed="true"][data-side="work"] { background: var(--navy); color: #fff; }
+.who button[aria-pressed="true"] .sw { background: #fff; border-color: #fff; }
+.chips { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem; }
+.chips a { display: inline-flex; align-items: center; min-height: 2.25rem; padding: .3rem .8rem; border: 1px solid #b9c3cc; background: var(--white); text-decoration: none; font-weight: 600; font-size: .95rem; }
+.chips a:hover { border-color: var(--ink); }
+.half img { transition: filter .45s ease; }
+.plate[data-side="home"] .half.b img, .plate[data-side="work"] .half.a img { filter: grayscale(.7) brightness(.88); }
+.plate[data-side="home"] .half.b .tag, .plate[data-side="work"] .half.a .tag { opacity: .55; }
+.tag { transition: opacity .3s; }
+.diamond { transition: transform .5s cubic-bezier(.3,1.4,.5,1); }
+.plate[data-side="work"] .diamond { transform: rotate(225deg); }
+@media (prefers-reduced-motion: reduce) { .half img, .tag, .diamond, .who button { transition: none; } }
 /* page hero (internal pages) */
 .phero { padding: clamp(1.5rem, 4vw, 3.25rem) 0 clamp(1.5rem, 3.5vw, 3rem); }
 .phero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
@@ -200,6 +218,10 @@ p { max-width: 64ch; }
 .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--sheet-2); border: 1px solid var(--sheet-2); }
 .grid3 > div { background: var(--white); padding: 1.25rem 1.35rem 1.4rem; }
 .grid3 h3 { margin-bottom: .45rem; }
+@media (min-width: 1101px) {
+  .grid3 > div:last-child:nth-child(3n+1) { grid-column: span 3; }
+  .grid3 > div:last-child:nth-child(3n+2) { grid-column: span 2; }
+}
 .grid3 p { color: var(--muted); font-size: .98rem; }
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .split + .split { margin-top: clamp(3rem, 6vw, 5rem); }
@@ -271,6 +293,10 @@ footer .fine p + p { margin-top: .5rem; }
   footer .cols { grid-template-columns: 1fr; }
   .sticky { display: flex; }
   .mob-hide { display: none; }
+  .demo { font-size: .66rem; line-height: 1.3; padding: .25rem .5rem; letter-spacing: -.01em; }
+  .who { margin-top: 1rem; }
+  .who button { padding: .6rem .85rem; font-size: .95rem; }
+  .hero .chips { margin-top: .7rem; }
   .home-proj .pj:nth-child(n+4) { display: none; }
   .lane li a { flex-direction: column; gap: .1rem; }
   .lane li a span { text-align: left; }
@@ -279,7 +305,7 @@ footer .fine p + p { margin-top: .5rem; }
   .top .callm { margin-left: auto; }
   .menu { margin-left: 0; }
 }
-@media (min-width: 861px) and (max-width: 1100px) { .grid3 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 861px) and (max-width: 1100px) { .grid3 { grid-template-columns: 1fr 1fr; } .grid3 > div:last-child:nth-child(odd) { grid-column: span 2; } }
 @media (prefers-reduced-motion: reduce) { .sticky, .btn { transition: none; } }
 </style>
 </head>
@@ -304,13 +330,13 @@ footer .fine p + p { margin-top: .5rem; }
       <p class="lede">Dual Temp Home Services installs, repairs and maintains furnaces, boilers, heat pumps, central air, mini-splits and water heaters, backed by decades of the Dual Temp name.</p>
       <div class="ctas" id="hero-cta"><a class="btn btn-red" href="tel:+16107919100"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (610) 791-9100</a><a class="btn btn-line" href="mailto:info@dualtemp.com?subject=Service%20request&amp;body=Name%3A%20%0AAddress%3A%20%0AHome%20or%20business%3A%20%0AWhat%E2%80%99s%20going%20on%3A%20%0A"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>Request service</a></div>
     </div>
-    <div class="shot"><img src="img/vans-900.webp" srcset="img/vans-480.webp 480w, img/vans-900.webp 900w, img/vans-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="788" alt="Two Dual Temp Home Services vans parked outside a house" style="object-position:62% 70%" fetchpriority="high" decoding="async"></div>
+    <div class="shot"><img src="img/vans-800.webp" srcset="img/vans-480.webp 480w, img/vans-800.webp 800w, img/vans-1200.webp 1200w, img/vans-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 760px" width="1600" height="900" alt="Two Dual Temp Home Services vans parked outside a house" style="object-position:62% 70%" fetchpriority="high" decoding="async"></div>
   </div>
 </section>
 <section class="sec white">
   <div class="wrap">
     <div class="split" id="heating">
-      <div class="pic"><img src="img/boiler-room-900.webp" srcset="img/boiler-room-480.webp 480w, img/boiler-room-900.webp 900w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="900" height="900" alt="Water heater, boiler and copper piping in a basement mechanical room" loading="lazy" decoding="async"></div>
+      <div class="pic"><img src="img/boiler-room-800.webp" srcset="img/boiler-room-480.webp 480w, img/boiler-room-800.webp 800w, img/boiler-room-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1200" height="1200" alt="Water heater, boiler and copper piping in a basement mechanical room" loading="lazy" decoding="async"></div>
       <div>
         <h2>Heating</h2>
         <p>When temperatures drop below freezing across Allentown, Bethlehem and Easton, a heating system is not optional. Certified technicians work on every major system type and brand.</p>
@@ -319,7 +345,7 @@ footer .fine p + p { margin-top: .5rem; }
       </div>
     </div>
     <div class="split flip" id="cooling">
-      <div class="pic"><img src="img/condensers-760.webp" srcset="img/condensers-480.webp 480w, img/condensers-760.webp 760w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="760" height="723" alt="Two new outdoor air conditioning condensers beside a stone house" loading="lazy" decoding="async"></div>
+      <div class="pic"><img src="img/condensers-800.webp" srcset="img/condensers-480.webp 480w, img/condensers-800.webp 800w, img/condensers-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1200" height="1143" alt="Two new outdoor air conditioning condensers beside a stone house" loading="lazy" decoding="async"></div>
       <div>
         <h2>Cooling</h2>
         <p>When July and August bring 90°+ days, a struggling air conditioner goes from annoying to dangerous fast, especially for children, older family members and pets.</p>
@@ -328,7 +354,7 @@ footer .fine p + p { margin-top: .5rem; }
       </div>
     </div>
     <div class="split" id="hot-water">
-      <div class="pic"><img src="img/water-heater-900.webp" srcset="img/water-heater-480.webp 480w, img/water-heater-900.webp 900w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="900" height="900" alt="Gas water heater and boiler piping installed by Dual Temp" loading="lazy" decoding="async"></div>
+      <div class="pic"><img src="img/water-heater-800.webp" srcset="img/water-heater-480.webp 480w, img/water-heater-800.webp 800w, img/water-heater-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1200" height="1200" alt="Gas water heater and boiler piping installed by Dual Temp" loading="lazy" decoding="async"></div>
       <div>
         <h2>Hot water</h2>
         <p>Dependable hot water year-round, with installation, repair, maintenance and replacement of residential water heaters across the Lehigh Valley.</p>
@@ -342,22 +368,22 @@ footer .fine p + p { margin-top: .5rem; }
     <div>
       <div class="intro" style="margin-bottom:1.5rem"><h2 id="hs-steps">Getting your home back to comfortable</h2></div>
       <ol class="steps">
-        <li><h3>You call or email</h3><p>A few details let them send the right technician with the right equipment.</p></li>
+        <li><h3>You call or email</h3><p>A few details let us send the right technician with the right equipment.</p></li>
         <li><h3>A certified technician comes out</h3><p>Same-day scheduling in most cases.</p></li>
         <li><h3>You get a written estimate</h3><p>Tailored to your home and budget. No hidden fees, no pressure.</p></li>
         <li><h3>The work gets done</h3><p>Fully stocked trucks, so most problems are resolved in one visit.</p></li>
-        <li><h3>They check it and clean up</h3><p>Your system is verified and the work area left spotless.</p></li>
+        <li><h3>We check it and clean up</h3><p>We verify your system and leave the work area spotless.</p></li>
       </ol>
     </div>
     <div>
-      <figure class="steps-pic"><img src="img/attic-900.webp" srcset="img/attic-480.webp 480w, img/attic-900.webp 900w, img/attic-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 620px" width="1400" height="1050" alt="New air handler and insulated ductwork installed in an attic" loading="lazy" decoding="async"></figure>
-      <p class="brands"><b>Brands they service include</b> Carrier, Trane, Lennox, Rheem, Amana, Bryant, Goodman, York, Daikin, Mitsubishi Electric, Fujitsu, LG, Samsung, Bosch, Johnson Controls and Tempstar.</p>
+      <figure class="steps-pic"><img src="img/attic-800.webp" srcset="img/attic-480.webp 480w, img/attic-800.webp 800w, img/attic-1200.webp 1200w, img/attic-1600.webp 1600w" sizes="(max-width: 860px) calc(100vw - 2rem), 620px" width="1600" height="1200" alt="New air handler and insulated ductwork installed in an attic" loading="lazy" decoding="async"></figure>
+      <p class="brands"><b>Brands we service include</b> Carrier, Trane, Lennox, Rheem, Amana, Bryant, Goodman, York, Daikin, Mitsubishi Electric, Fujitsu, LG, Samsung, Bosch, Johnson Controls and Tempstar.</p>
     </div>
   </div>
 </section>
 <section class="sec white"><div class="wrap">
   <div class="intro"><h2>From Home Services customers</h2></div>
-  <div class="quotes"><figure><blockquote><p>“Our furnace decided to give us a problem and stop working on one of the coldest days of the year!!! … Our technician David returned my call, got info he needed to see if he could help and got back to me immediately to say he had the part and could be here in 30 minutes.”</p></blockquote><figcaption>Home Services customer, review shown on dualtemp.com</figcaption></figure><figure><blockquote><p>“After using another company to try to figure out an issue with our mini splits over the course of several visits, we called Dual Temp. They sent 2 people out the same morning who identified the issue within an hour.”</p></blockquote><figcaption>Home Services customer, review shown on dualtemp.com</figcaption></figure><figure><blockquote><p>“Our commercial building has a unique HVAC system, to say the least … Dual Temp responds to calls and emails quickly and keeps the customer updated of progress.”</p></blockquote><figcaption>Commercial customer, review shown on dualtemp.com</figcaption></figure></div>
+  <div class="quotes"><figure><blockquote><p>“Our furnace decided to give us a problem and stop working on one of the coldest days of the year!!! … Our technician David returned my call, got info he needed to see if he could help and got back to me immediately to say he had the part and could be here in 30 minutes.”</p></blockquote><figcaption>Home Services customer</figcaption></figure><figure><blockquote><p>“After using another company to try to figure out an issue with our mini splits over the course of several visits, we called Dual Temp – they sent 2 people out the same morning who identified the issue within an hour.”</p></blockquote><figcaption>Home Services customer</figcaption></figure><figure><blockquote><p>“Our commercial building has a unique HVAC system, to say the least … Dual Temp responds to calls and emails quickly and keeps the customer updated of progress.”</p></blockquote><figcaption>Commercial customer</figcaption></figure></div>
 </div></section>
 <section class="close" aria-labelledby="close-h">
   <div class="wrap">
@@ -379,7 +405,7 @@ footer .fine p + p { margin-top: .5rem; }
         <ul><li><a href="home-services.html">Home Services</a></li><li><a href="commercial.html">Commercial Services</a></li><li><a href="construction.html">Construction Services</a></li><li><a href="automation.html">Building Automation</a></li></ul>
       </div>
       <div>
-        <h2>Licenses listed on their site</h2>
+        <h2>Licenses</h2>
         <ul><li>NJ Plumbing Lic # 36BI01024500</li><li>NJ HVAC Lic # 19HC00615300</li><li>DE HVAC Lic # HM-0001042</li></ul>
       </div>
     </div>
