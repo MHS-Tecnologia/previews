@@ -209,9 +209,9 @@ p { max-width: 62ch; text-wrap: pretty; }
 @media (max-width: 860px) { .fluids { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fluids a { min-height: 7rem; padding: 1rem; } .fl-name { font-size: 1.1rem; } }
 
 /* Shop floor */
-.floor { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 1rem; align-items: end; }
-.floor img { width: 100%; height: auto; border-radius: 2px; }
-.floor figure:last-child img { max-width: 600px; }
+.floor { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; align-items: start; }
+.floor img { width: 100%; max-width: 600px; height: auto; border-radius: 2px; }
+.floor figure:first-child img { max-width: none; }
 .floor-copy { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem 4rem; margin-top: 2.5rem; align-items: start; }
 .floor-copy blockquote { font-family: var(--display); font-stretch: 105%; font-size: clamp(1.45rem, 2.6vw, 2.05rem); line-height: 1.2; font-weight: 600; color: var(--navy); }
 .floor-copy blockquote p { max-width: 30ch; }
@@ -224,7 +224,7 @@ p { max-width: 62ch; text-wrap: pretty; }
 
 /* Story */
 .story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem 5rem; align-items: center; }
-.story figure img { width: 100%; height: auto; }
+.story figure img { width: auto; max-width: 100%; height: auto; margin: 0 auto; }
 .story p + p { margin-top: 1rem; }
 .story .btn { margin-top: 1.75rem; }
 @media (max-width: 860px) { .story { grid-template-columns: 1fr; gap: 1.5rem; } }
