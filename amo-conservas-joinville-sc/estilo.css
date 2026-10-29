@@ -626,3 +626,6 @@ p { margin: 0; text-wrap: pretty; }
   .cat-intro { grid-template-columns: 1fr; gap: 16px; }
   .cat-intro .cat-foto { max-width: 280px; }
 }
+
+/* v4: a parede de vidros no par da tábua, sem esticar a altura */
+.par .a-parede img { aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 40%; }
