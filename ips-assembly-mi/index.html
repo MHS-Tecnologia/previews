@@ -162,8 +162,8 @@
         <h2 id="h-route">The route every board takes through the plant.</h2>
         <p>Twenty-one stations, from new product introduction to the shipping dock, with inspection after paste print, at first article, after reflow and before anything ships.</p>
       </div>
-      <div class="board">
-        <ol class="steps short" id="steps" role="list">
+      <div class="board desk-only">
+        <ol class="steps" id="steps" role="list">
           <li class="to-r" style="--r:1;--c:1;--i:0"><span class="pd">1</span><span class="t">New product introduction</span></li>
           <li class="to-r" style="--r:1;--c:2;--i:1"><span class="pd">2</span><span class="t">Procurement, receiving &amp; inspection</span></li>
           <li class="to-r" style="--r:1;--c:3;--i:2"><span class="pd">3</span><span class="t">Kitting &amp; programming</span></li>
@@ -186,8 +186,30 @@
           <li class="to-r" style="--r:3;--c:6;--i:19"><span class="pd">20</span><span class="t">Packaging</span></li>
           <li class="end" style="--r:3;--c:7;--i:20"><span class="pd">21</span><span class="t">Shipping</span></li>
         </ol>
-        <button class="btn more" type="button" id="more" aria-controls="steps" aria-expanded="false">Show all 21 stations</button>
       </div>
+      <ol class="stations compact mob-only" role="list" aria-label="The 21 stations">
+        <li><span>New product introduction</span></li>
+        <li><span>Procurement, receiving &amp; inspection</span></li>
+        <li><span>Kitting &amp; programming</span></li>
+        <li><span>Feeder loading</span></li>
+        <li><span>Screen printing</span></li>
+        <li class="key"><span>3D solder paste inspection</span></li>
+        <li><span>Surface mount assembly</span></li>
+        <li class="key"><span>First article inspection</span></li>
+        <li><span>Reflow, oven profiling</span></li>
+        <li><span>Feeder unloading</span></li>
+        <li class="key"><span>Automated optical inspection</span></li>
+        <li class="key"><span>X-ray inspection</span></li>
+        <li><span>In-process inspection</span></li>
+        <li><span>Wave, selective &amp; manual solder</span></li>
+        <li><span>De-panel</span></li>
+        <li><span>Conformal coating</span></li>
+        <li><span>Box build</span></li>
+        <li><span>Functional &amp; in-circuit testing</span></li>
+        <li class="key"><span>Final inspection</span></li>
+        <li><span>Packaging</span></li>
+        <li><span>Shipping</span></li>
+      </ol>
       <p class="foot">Production runs under ERP-driven traceability, and every shipment leaves with its documentation and quality reports. <a class="more-link" href="process.html">What happens at each station</a></p>
     </div>
   </section>
@@ -302,13 +324,7 @@
         </ul>
       </div>
       <div>
-        <h2>Also on their site</h2>
-        <ul>
-          <li class="nolink">The Circuit blog</li>
-          <li class="nolink">Careers</li>
-          <li class="nolink">Capability statement (PDF)</li>
-          <li class="nolink"><small>Not part of this demo</small></li>
-        </ul>
+        <p class="offsite">Their blog, careers page and capability statement PDF live on ipsassembly.com and are not part of this demo.</p>
       </div>
     </div>
     <div class="legal">

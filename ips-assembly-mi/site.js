@@ -9,14 +9,6 @@ if (steps) {
     const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { steps.classList.add('in'); io.disconnect() } }, { threshold: .25 })
     io.observe(steps)
   } else steps.classList.add('in')
-
-  // On phones the route shows seven stations until asked for the rest.
-  const more = document.getElementById('more')
-  if (more) more.addEventListener('click', () => {
-    const open = steps.classList.toggle('short') === false
-    more.setAttribute('aria-expanded', String(open))
-    more.textContent = open ? 'Show fewer stations' : 'Show all 21 stations'
-  })
 }
 
 // Capability lists collapse on phones only (the initial state is set inline, before paint).

@@ -112,7 +112,19 @@ h3 { font-size: 1.3rem; font-weight: 750; font-stretch: 104%; line-height: 1.15;
 .side-facts li { padding: .8rem 0; border-bottom: 1px solid var(--mask-line); font-size: .95rem; color: #c3cddb; line-height: 1.4; }
 .side-facts b { display: block; color: #fff; font-weight: 700; font-size: 1.05rem; }
 .side-facts a { color: #fff; text-underline-offset: 4px; }
-.rail-note {font-size: .9rem; color: var(--steel); line-height: 1.4; }
+/* Small drawings in the route's language: copper traces, silkscreen outlines, pads. */
+.sketch { display: block; width: 100%; max-width: 460px; height: auto; margin-left: auto; overflow: visible; }
+.sketch .silk { fill: none; stroke: rgba(243, 245, 248, .6); stroke-width: 1.5; }
+.sketch .cu { fill: none; stroke: var(--copper); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.sketch .cu-thin { fill: none; stroke: var(--copper); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sketch .pad { fill: var(--copper); }
+.sketch .ring { fill: var(--mask); stroke: var(--copper); stroke-width: 2.5; }
+.sketch .dim { fill: var(--mask); stroke: var(--steel); stroke-width: 2; opacity: .6; }
+.sketch .trace-dim { fill: none; stroke: #46679e; stroke-width: 3; }
+.sketch .chip { fill: #12233f; stroke: rgba(243, 245, 248, .6); stroke-width: 1.5; }
+.sketch .band { fill: var(--steel); }
+.sketch .lit { fill: var(--copper); stroke: var(--copper); stroke-width: 2.5; }
+.rail-note { font-size: .9rem; color: var(--steel); line-height: 1.4; }
 .rail-note b { color: var(--silk); font-weight: 600; }
 
 /* ---------- sections ---------- */
@@ -178,7 +190,6 @@ section.tight { padding-top: clamp(2.5rem, 5vw, 4rem); }
 .steps .end .pd { background: var(--copper); color: var(--ink); }
 .steps .end::before { display: none; }
 .steps .key .t { color: #fff; font-weight: 700; }
-.route .more { display: none; }
 .armed .steps li::before { transform: scaleX(0); transition: transform .28s ease-out; transition-delay: calc(var(--i) * 70ms); }
 .armed .steps .to-d::before { transform: scaleY(0); }
 .armed .steps.in li::before { transform: none; }
@@ -202,6 +213,19 @@ section.tight { padding-top: clamp(2.5rem, 5vw, 4rem); }
     .stations > li::before { animation: lit linear both; animation-timeline: view(); animation-range: entry 10% cover 30%; }
   }
 }
+/* the same trace on dark, compact: the home page route on phones */
+.on-dark .stations > li::before { background: var(--mask); color: var(--silk); }
+.on-dark .stations > li:last-child::before { background: var(--copper); color: var(--ink); }
+.stations.compact > li { padding-bottom: .85rem; align-items: center; }
+.stations.compact > li::before { width: 2.6rem; height: 2.6rem; font-size: .9rem; grid-row: auto; }
+.stations.compact > li::after { left: calc(1.3rem - 2px); top: 1.3rem; }
+.stations.compact span { font-size: 1rem; line-height: 1.3; color: #dfe5ee; }
+.stations.compact .key span { color: #fff; font-weight: 700; }
+.mob-only { display: none; }
+/* process page: the whole station on the diagram jumps to its description */
+.steps a.t::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+.stations > li:target h3 { color: var(--copper); }
+.stations > li { scroll-margin-top: 1.5rem; }
 @keyframes lay { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 @keyframes lit { from { box-shadow: inset 0 0 0 3px var(--rule); } to { box-shadow: inset 0 0 0 3px var(--copper); } }
 
@@ -281,8 +305,7 @@ footer { background: var(--mask-deep); color: #c3cddb; font-size: .9rem; line-he
 .foot-grid li + li { margin-top: .35rem; }
 .foot-grid a { color: #e3e8ef; text-decoration: none; }
 .foot-grid a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
-.foot-grid .nolink { color: #8f9db0; }
-.foot-grid .nolink small { font-size: .75rem; }
+.foot-grid .offsite { margin-top: 0; padding-top: 1.75rem; font-size: .85rem; line-height: 1.5; color: #8f9db0; max-width: 17rem; }
 .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--mask-line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; font-size: .85rem; }
 .legal a { color: #fff; text-underline-offset: 3px; }
 
@@ -310,22 +333,14 @@ footer { background: var(--mask-deep); color: #c3cddb; font-size: .9rem; line-he
   .readout li:nth-child(n+3) { border-top: 1px solid var(--mask-line); }
   .intro, .cols, .quote .cols, .on-dark .cols, .split { grid-template-columns: 1fr; }
   .desk-only { display: none; }
+  .mob-only { display: block; }
+  .sketch { margin: 0; max-width: 360px; }
   .sticky-head { position: static; }
   .sheet > li { grid-template-columns: 1fr; }
   .also { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .inds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foot-grid > div:first-child { grid-column: 1 / -1; }
-  .steps { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .steps li { grid-row: auto; grid-column: auto; display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 1rem; align-items: center; text-align: left; padding: 0 0 .9rem; }
-  .steps .pd { margin: 0; }
-  .steps li:not(.end)::before, .steps .to-r::before, .steps .to-l::before, .steps .to-d.out-r::before, .steps .to-d.out-l::before { left: calc(1.3rem - 2px); right: auto; top: 1.3rem; width: 4px; height: 100%; transform-origin: center top; border: 0; border-radius: 0; background: var(--copper); }
-  .armed .steps li::before { transform: scaleY(0); }
-  .armed .steps.in li::before { transform: none; }
-  .steps .t { font-size: 1rem; }
-  .route .more { display: inline-flex; margin-top: .25rem; background: transparent; color: var(--silk); box-shadow: inset 0 0 0 2px #5d76a3; font: inherit; font-weight: 700; cursor: pointer; }
-  .steps.short li:nth-child(n+8) { display: none; }
-  .steps.short li:nth-child(7)::before { display: none; }
   .lead-trace circle { r: 4px; }
 }
 @media (max-width: 640px) {
@@ -348,7 +363,7 @@ footer { background: var(--mask-deep); color: #c3cddb; font-size: .9rem; line-he
   .hero .ctas .long { display: none; }
   .placed { margin: 10px 10px 2.6rem; }
   .placed::before { inset: -7px; }
-  .placed img { aspect-ratio: 16 / 9; object-position: 40% 60%; }
+  .placed img { aspect-ratio: 16 / 9; object-position: 30% 45%; }
   .fid { width: 12px; height: 12px; }
   .fid.a { top: -17px; left: -17px; } .fid.b { top: -17px; right: -17px; } .fid.c { bottom: -17px; right: -17px; }
   .placed figcaption { top: calc(100% + 12px); left: -7px; font-size: .8125rem; }
