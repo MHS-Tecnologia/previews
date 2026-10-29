@@ -96,17 +96,17 @@ nav { margin-left: auto; }
 .hero h1 { max-width: 15ch; }
 .lead { font-size: 1.2rem; line-height: 1.55; margin-top: 1.25rem; color: #2b3338; max-width: 38rem; }
 .note { margin-top: 1.1rem; color: var(--muted); font-size: .98rem; }
-.hero-window { position: relative; justify-self: center; width: min(100%, 440px); margin-bottom: 150px; }
+.hero-window { position: relative; justify-self: center; width: min(100%, 440px); margin-bottom: 170px; }
 .hero-window .arch-frame { position: relative; z-index: 2; border-width: 9px; aspect-ratio: 800 / 816; box-shadow: 0 30px 60px -30px rgba(27, 32, 36, .55); }
 .sill { position: relative; z-index: 2; height: 14px; margin: 0 -18px; background: var(--came-2); border-radius: 2px; }
 /* The colour the window throws on the floor in front of it: their own glass,
    blurred, laid down in perspective under the sill. */
-.cast { position: absolute; z-index: 1; left: -22%; right: -22%; top: calc(100% + 2px); height: 210px; background: url(img/heron-cast.webp) center top / 100% 100% no-repeat; opacity: .9; mix-blend-mode: multiply; transform-origin: 50% 0; pointer-events: none; }
+.cast { position: absolute; z-index: 1; left: -30%; right: -30%; top: calc(100% + 2px); aspect-ratio: 900 / 230; background: url(img/heron-cast.webp) center top / 100% 100% no-repeat; opacity: .5; mix-blend-mode: multiply; transform-origin: 50% 0; pointer-events: none; }
 @media (prefers-reduced-motion: no-preference) {
   .cast { animation: daylight 24s ease-in-out infinite alternate; }
   @keyframes daylight {
-    from { transform: skewX(-12deg); opacity: .78; }
-    to { transform: skewX(12deg); opacity: 1; }
+    from { transform: skewX(-7deg); opacity: .42; }
+    to { transform: skewX(7deg); opacity: .56; }
   }
 }
 .hero-window .arch-frame img { transform: scale(1.08); transform-origin: 50% 65%; }
@@ -118,7 +118,7 @@ nav { margin-left: auto; }
 .kinds { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); }
 .kinds h2 { max-width: 22ch; }
 .kinds-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: 2.5rem; }
-.kind .arch-frame { aspect-ratio: 4 / 5; margin-bottom: 1.4rem; }
+.kind .arch-frame { aspect-ratio: 4 / 5; margin-bottom: 1.4rem; max-width: 306px; }
 .kind p { margin-top: .6rem; color: #2f383d; }
 
 /* Leaded gallery: pieces of glass between dark came */
@@ -147,13 +147,14 @@ nav { margin-left: auto; }
 .story-text .btn { margin-top: 1.25rem; }
 .triptych { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; align-items: start; }
 .triptych figure { background: var(--came); padding: 6px; }
-.triptych img { width: 100%; }
+.triptych img { width: 100%; max-width: max-content; }
 .triptych figcaption { color: var(--on-came); font-size: .85rem; padding: .45rem .2rem .1rem; }
-.t-after { grid-column: 2; grid-row: 1 / span 2; }
+.t-after { grid-column: 2; grid-row: 1 / span 3; }
+.t-detail { grid-column: 1; }
+.t-detail img { width: auto; max-width: 100%; margin: 0 auto; }
+.triptych img { max-width: 100%; }
 .t-before { grid-column: 1; }
 .t-during { grid-column: 1; }
-.detail { margin-top: 1.5rem; width: 200px; background: var(--came); padding: 6px; }
-.detail figcaption { color: var(--on-came); font-size: .85rem; padding: .4rem .2rem 0; }
 
 /* Steps: a real sequence, so numbered */
 .steps-sec { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); border-top: 1px solid #cfd6cd; }
@@ -228,8 +229,9 @@ nav { margin-left: auto; }
 .card h3 { margin-top: 1.1rem; }
 .card p { margin-top: .5rem; color: #2f383d; font-size: 1rem; }
 .pic-dark { background: var(--came); padding: 6px; }
-.pic-dark img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
-.pic-dark.lamp img { aspect-ratio: auto; }
+.pic-dark { display: flex; justify-content: center; }
+.pic-dark img { width: auto; max-width: 100%; height: auto; }
+.cards3 .pic-dark { min-height: 0; align-items: center; }
 .places { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
 .place { border-top: 3px solid var(--came); padding-top: 1.1rem; }
 .place p { margin-top: .6rem; }
@@ -260,10 +262,19 @@ nav { margin-left: auto; }
   .logo { width: 132px; }
   .hero-in, .story-in, .band-in, .phero-in, .two { grid-template-columns: 1fr; }
   .hero-in { padding-top: 1.4rem; gap: 2rem; }
-  .hero-window { width: min(100% - 2rem, 420px); margin-bottom: 80px; }
-  .cast { height: 110px; left: -12%; right: -12%; }
+  .hero-in { gap: 0; padding-top: 1rem; }
+  .hero-text { display: contents; }
+  .hero h1 { order: 1; }
+  .hero-window { order: 2; width: 60%; margin: 1rem auto 3.6rem; }
+  .cast { left: -18%; right: -18%; }
+  .hero-window .arch-frame { border-width: 6px; }
+  .sill { height: 9px; margin: 0 -10px; }
+  .hero .lead { order: 3; margin-top: 0; }
+  .hero .ctas { order: 4; margin-top: 1.1rem; }
+  .hero .note { order: 5; }
+  .demo { font-size: .6875rem; line-height: 1.3; padding: .3rem .75rem; }
   .kinds-grid, .cards3, .places, .quotes { grid-template-columns: 1fr; }
-  .kind .arch-frame { aspect-ratio: 3 / 2; max-width: 30rem; }
+  .kind .arch-frame { aspect-ratio: 3 / 2; max-width: 306px; }
   .steps { grid-template-columns: 1fr 1fr; }
   .steps li { border-right: 0; padding-left: 0 !important; border-bottom: 1px solid #c4ccc2; }
   .steps li:nth-child(odd) { padding-right: 1.2rem; }
@@ -319,7 +330,7 @@ nav { margin-left: auto; }
       <a class="btn btn-line" href="mailto:wsg@williamsstainedglass.com">Email the studio</a>
     </div>
     </div>
-    <div class="phero-pic arch-frame"><img src="img/sign-window-288.webp" width="288" height="384" alt="The studio&#x27;s own window: its name in etched glass under a leaded arch with tulips" loading="eager" fetchpriority="high"></div>
+    <div class="phero-pic arch-frame" style="max-width:300px"><img src="img/sign-window-288.webp" width="288" height="384" alt="The studio&#x27;s own window: its name in etched glass under a leaded arch with tulips" loading="eager" fetchpriority="high"></div>
   </div>
 </section>
 
@@ -350,10 +361,11 @@ nav { margin-left: auto; }
   <div class="wrap">
     <div class="sec-head"><h2>The showroom</h2><p>Walk-ins are always welcome. Appointments are appreciated, so the right person is at the studio to talk through your project.</p></div>
     <div class="panel " data-gallery="showroom">
-<div class="row" style="aspect-ratio:3.572">
-<figure class="pane mw" style="flex-grow:1.362"><button type="button" class="open" data-full="img/showroom-768.webp" aria-label="Enlarge: Leaded and etched panels on display"><img src="img/showroom-384.webp" srcset="img/showroom-384.webp 384w, img/showroom-768.webp 768w" sizes="(max-width: 640px) 100vw, 46vw" width="768" height="564" alt="Leaded and etched panels on display" loading="lazy" decoding="async"></button><figcaption>Leaded and etched panels on display</figcaption></figure>
+<div class="row" style="aspect-ratio:4.322">
+<figure class="pane" style="flex-grow:1.362"><button type="button" class="open" data-full="img/showroom-768.webp" aria-label="Enlarge: Leaded and etched panels on display"><img src="img/showroom-384.webp" srcset="img/showroom-384.webp 384w, img/showroom-768.webp 768w" sizes="(max-width: 640px) 50vw, 38vw" width="768" height="564" alt="Leaded and etched panels on display" loading="lazy" decoding="async"></button><figcaption>Leaded and etched panels on display</figcaption></figure>
 <figure class="pane" style="flex-grow:1.460"><button type="button" class="open" data-full="img/showroom-2-384.webp" aria-label="Enlarge: Display screens with leaded panels and lamps"><img src="img/showroom-2-384.webp" width="384" height="263" alt="Display screens with leaded panels and lamps" loading="lazy" decoding="async"></button><figcaption>Display screens with leaded panels and lamps</figcaption></figure>
 <figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/screens-288.webp" aria-label="Enlarge: Folding screens with leaded glass"><img src="img/screens-288.webp" width="288" height="384" alt="Folding screens with leaded glass" loading="lazy" decoding="async"></button><figcaption>Folding screens with leaded glass</figcaption></figure>
+<figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/sign-window-288.webp" aria-label="Enlarge: The studio&#x27;s own window, its name etched under a leaded arch"><img src="img/sign-window-288.webp" width="288" height="384" alt="The studio&#x27;s own window, its name etched under a leaded arch" loading="lazy" decoding="async"></button><figcaption>The studio&#x27;s own window, its name etched under a leaded arch</figcaption></figure>
 </div>
 </div>
   </div>

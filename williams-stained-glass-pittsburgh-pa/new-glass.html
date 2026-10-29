@@ -96,17 +96,17 @@ nav { margin-left: auto; }
 .hero h1 { max-width: 15ch; }
 .lead { font-size: 1.2rem; line-height: 1.55; margin-top: 1.25rem; color: #2b3338; max-width: 38rem; }
 .note { margin-top: 1.1rem; color: var(--muted); font-size: .98rem; }
-.hero-window { position: relative; justify-self: center; width: min(100%, 440px); margin-bottom: 150px; }
+.hero-window { position: relative; justify-self: center; width: min(100%, 440px); margin-bottom: 170px; }
 .hero-window .arch-frame { position: relative; z-index: 2; border-width: 9px; aspect-ratio: 800 / 816; box-shadow: 0 30px 60px -30px rgba(27, 32, 36, .55); }
 .sill { position: relative; z-index: 2; height: 14px; margin: 0 -18px; background: var(--came-2); border-radius: 2px; }
 /* The colour the window throws on the floor in front of it: their own glass,
    blurred, laid down in perspective under the sill. */
-.cast { position: absolute; z-index: 1; left: -22%; right: -22%; top: calc(100% + 2px); height: 210px; background: url(img/heron-cast.webp) center top / 100% 100% no-repeat; opacity: .9; mix-blend-mode: multiply; transform-origin: 50% 0; pointer-events: none; }
+.cast { position: absolute; z-index: 1; left: -30%; right: -30%; top: calc(100% + 2px); aspect-ratio: 900 / 230; background: url(img/heron-cast.webp) center top / 100% 100% no-repeat; opacity: .5; mix-blend-mode: multiply; transform-origin: 50% 0; pointer-events: none; }
 @media (prefers-reduced-motion: no-preference) {
   .cast { animation: daylight 24s ease-in-out infinite alternate; }
   @keyframes daylight {
-    from { transform: skewX(-12deg); opacity: .78; }
-    to { transform: skewX(12deg); opacity: 1; }
+    from { transform: skewX(-7deg); opacity: .42; }
+    to { transform: skewX(7deg); opacity: .56; }
   }
 }
 .hero-window .arch-frame img { transform: scale(1.08); transform-origin: 50% 65%; }
@@ -118,7 +118,7 @@ nav { margin-left: auto; }
 .kinds { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); }
 .kinds h2 { max-width: 22ch; }
 .kinds-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: 2.5rem; }
-.kind .arch-frame { aspect-ratio: 4 / 5; margin-bottom: 1.4rem; }
+.kind .arch-frame { aspect-ratio: 4 / 5; margin-bottom: 1.4rem; max-width: 306px; }
 .kind p { margin-top: .6rem; color: #2f383d; }
 
 /* Leaded gallery: pieces of glass between dark came */
@@ -147,13 +147,14 @@ nav { margin-left: auto; }
 .story-text .btn { margin-top: 1.25rem; }
 .triptych { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; align-items: start; }
 .triptych figure { background: var(--came); padding: 6px; }
-.triptych img { width: 100%; }
+.triptych img { width: 100%; max-width: max-content; }
 .triptych figcaption { color: var(--on-came); font-size: .85rem; padding: .45rem .2rem .1rem; }
-.t-after { grid-column: 2; grid-row: 1 / span 2; }
+.t-after { grid-column: 2; grid-row: 1 / span 3; }
+.t-detail { grid-column: 1; }
+.t-detail img { width: auto; max-width: 100%; margin: 0 auto; }
+.triptych img { max-width: 100%; }
 .t-before { grid-column: 1; }
 .t-during { grid-column: 1; }
-.detail { margin-top: 1.5rem; width: 200px; background: var(--came); padding: 6px; }
-.detail figcaption { color: var(--on-came); font-size: .85rem; padding: .4rem .2rem 0; }
 
 /* Steps: a real sequence, so numbered */
 .steps-sec { padding: clamp(3.5rem, 7vw, 6rem) 0; background: var(--opal-2); border-top: 1px solid #cfd6cd; }
@@ -228,8 +229,9 @@ nav { margin-left: auto; }
 .card h3 { margin-top: 1.1rem; }
 .card p { margin-top: .5rem; color: #2f383d; font-size: 1rem; }
 .pic-dark { background: var(--came); padding: 6px; }
-.pic-dark img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
-.pic-dark.lamp img { aspect-ratio: auto; }
+.pic-dark { display: flex; justify-content: center; }
+.pic-dark img { width: auto; max-width: 100%; height: auto; }
+.cards3 .pic-dark { min-height: 0; align-items: center; }
 .places { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
 .place { border-top: 3px solid var(--came); padding-top: 1.1rem; }
 .place p { margin-top: .6rem; }
@@ -260,10 +262,19 @@ nav { margin-left: auto; }
   .logo { width: 132px; }
   .hero-in, .story-in, .band-in, .phero-in, .two { grid-template-columns: 1fr; }
   .hero-in { padding-top: 1.4rem; gap: 2rem; }
-  .hero-window { width: min(100% - 2rem, 420px); margin-bottom: 80px; }
-  .cast { height: 110px; left: -12%; right: -12%; }
+  .hero-in { gap: 0; padding-top: 1rem; }
+  .hero-text { display: contents; }
+  .hero h1 { order: 1; }
+  .hero-window { order: 2; width: 60%; margin: 1rem auto 3.6rem; }
+  .cast { left: -18%; right: -18%; }
+  .hero-window .arch-frame { border-width: 6px; }
+  .sill { height: 9px; margin: 0 -10px; }
+  .hero .lead { order: 3; margin-top: 0; }
+  .hero .ctas { order: 4; margin-top: 1.1rem; }
+  .hero .note { order: 5; }
+  .demo { font-size: .6875rem; line-height: 1.3; padding: .3rem .75rem; }
   .kinds-grid, .cards3, .places, .quotes { grid-template-columns: 1fr; }
-  .kind .arch-frame { aspect-ratio: 3 / 2; max-width: 30rem; }
+  .kind .arch-frame { aspect-ratio: 3 / 2; max-width: 306px; }
   .steps { grid-template-columns: 1fr 1fr; }
   .steps li { border-right: 0; padding-left: 0 !important; border-bottom: 1px solid #c4ccc2; }
   .steps li:nth-child(odd) { padding-right: 1.2rem; }
@@ -319,7 +330,7 @@ nav { margin-left: auto; }
       <a class="btn btn-line" href="mailto:wsg@williamsstainedglass.com?subject=New%20stained%20glass%20project&body=Hello%2C%0A%0AI%27m%20thinking%20about%20a%20new%20piece%20of%20stained%20glass.%0A%0AWhere%20it%20will%20go%20%28window%2C%20door%2C%20transom%2C%20cabinet...%29%3A%0AApproximate%20size%3A%0ALocation%20%28city%20or%20town%29%3A%0AIdeas%2C%20colours%20or%20photos%3A%0A%0AThank%20you%2C%0A">Email the studio</a>
     </div>
     </div>
-    <div class="phero-pic arch-frame"><img src="img/archdoor-640.webp" srcset="img/archdoor-640.webp 640w, img/archdoor-1280.webp 1280w" sizes="(max-width: 860px) 60vw, 360px" width="1280" height="960" alt="Arched entry with a half-round leaded transom over a beveled glass door" loading="eager" fetchpriority="high"></div>
+    <div class="phero-pic arch-frame" style="max-width:1292px"><img src="img/archdoor-640.webp" srcset="img/archdoor-640.webp 640w, img/archdoor-1280.webp 1280w" sizes="(max-width: 860px) 60vw, 360px" width="1280" height="960" alt="Arched entry with a half-round leaded transom over a beveled glass door" loading="eager" fetchpriority="high"></div>
   </div>
 </section>
 <nav class="jump wrap" aria-label="On this page">
@@ -420,15 +431,12 @@ nav { margin-left: auto; }
       <p>Custom etched designs for entryways, shower doors, mirrors, bathroom windows, and cabinet and furniture doors. Single-stage or multi-stage etching, and the studio can sandblast on-site.</p>
     </div>
     <div class="panel " data-gallery="etched">
-<div class="row" style="aspect-ratio:2.619">
-<figure class="pane" style="flex-grow:0.641"><button type="button" class="open" data-full="img/etch-doors-820.webp" aria-label="Enlarge: Pair of doors with etched Art Nouveau lines"><img src="img/etch-doors-410.webp" srcset="img/etch-doors-410.webp 410w, img/etch-doors-820.webp 820w" sizes="(max-width: 640px) 50vw, 29vw" width="820" height="1280" alt="Pair of doors with etched Art Nouveau lines" loading="lazy" decoding="async"></button><figcaption>Pair of doors with etched Art Nouveau lines</figcaption></figure>
+<div class="row" style="aspect-ratio:4.118">
+<figure class="pane mw" style="flex-grow:0.641"><button type="button" class="open" data-full="img/etch-doors-820.webp" aria-label="Enlarge: Pair of doors with etched Art Nouveau lines"><img src="img/etch-doors-410.webp" srcset="img/etch-doors-410.webp 410w, img/etch-doors-820.webp 820w" sizes="(max-width: 640px) 100vw, 19vw" width="820" height="1280" alt="Pair of doors with etched Art Nouveau lines" loading="lazy" decoding="async"></button><figcaption>Pair of doors with etched Art Nouveau lines</figcaption></figure>
 <figure class="pane" style="flex-grow:0.645"><button type="button" class="open" data-full="img/etch-mermaid-413.webp" aria-label="Enlarge: Door with an etched mermaid"><img src="img/etch-mermaid-413.webp" width="413" height="640" alt="Door with an etched mermaid" loading="lazy" decoding="async"></button><figcaption>Door with an etched mermaid</figcaption></figure>
 <figure class="pane" style="flex-grow:1.333"><button type="button" class="open" data-full="img/etch-italia-568.webp" aria-label="Enlarge: Etched skyline mirror"><img src="img/etch-italia-568.webp" width="568" height="426" alt="Etched skyline mirror" loading="lazy" decoding="async"></button><figcaption>Etched skyline mirror</figcaption></figure>
-</div>
-<div class="row" style="aspect-ratio:2.970">
 <figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/etch-city-461.webp" aria-label="Enlarge: Round etched city skyline"><img src="img/etch-city-461.webp" width="461" height="615" alt="Round etched city skyline" loading="lazy" decoding="async"></button><figcaption>Round etched city skyline</figcaption></figure>
 <figure class="pane" style="flex-grow:0.750"><button type="button" class="open" data-full="img/etch-pantry-461.webp" aria-label="Enlarge: Etched pantry door"><img src="img/etch-pantry-461.webp" width="461" height="615" alt="Etched pantry door" loading="lazy" decoding="async"></button><figcaption>Etched pantry door</figcaption></figure>
-<figure class="pane" style="flex-grow:1.471"><button type="button" class="open" data-full="img/etch-window-250.webp" aria-label="Enlarge: Etched mountain scene"><img src="img/etch-window-250.webp" width="250" height="170" alt="Etched mountain scene" loading="lazy" decoding="async"></button><figcaption>Etched mountain scene</figcaption></figure>
 </div>
 </div>
   </div>
@@ -441,11 +449,10 @@ nav { margin-left: auto; }
       <p>The studio's work appears in some of the most prestigious buildings in the Tri-State area. From concept to installation, quality is not traded for profit, and each finished piece is signed.</p>
     </div>
     <div class="panel " data-gallery="commercial">
-<div class="row" style="aspect-ratio:4.596">
-<figure class="pane" style="flex-grow:1.285"><button type="button" class="open" data-full="img/office-1228.webp" aria-label="Enlarge: Office entry with leaded glass doors and partition"><img src="img/office-614.webp" srcset="img/office-614.webp 614w, img/office-1228.webp 1228w" sizes="(max-width: 640px) 50vw, 34vw" width="1228" height="956" alt="Office entry with leaded glass doors and partition" loading="lazy" decoding="async"></button><figcaption>Office entry with leaded glass doors and partition</figcaption></figure>
-<figure class="pane" style="flex-grow:1.333"><button type="button" class="open" data-full="img/restaurant-1280.webp" aria-label="Enlarge: Restaurant booths behind textured glass panels"><img src="img/restaurant-640.webp" srcset="img/restaurant-640.webp 640w, img/restaurant-1280.webp 1280w" sizes="(max-width: 640px) 50vw, 35vw" width="1280" height="960" alt="Restaurant booths behind textured glass panels" loading="lazy" decoding="async"></button><figcaption>Restaurant booths behind textured glass panels</figcaption></figure>
+<div class="row" style="aspect-ratio:3.266">
+<figure class="pane mw" style="flex-grow:1.285"><button type="button" class="open" data-full="img/office-1228.webp" aria-label="Enlarge: Office entry with leaded glass doors and partition"><img src="img/office-614.webp" srcset="img/office-614.webp 614w, img/office-1228.webp 1228w" sizes="(max-width: 640px) 100vw, 47vw" width="1228" height="956" alt="Office entry with leaded glass doors and partition" loading="lazy" decoding="async"></button><figcaption>Office entry with leaded glass doors and partition</figcaption></figure>
+<figure class="pane" style="flex-grow:1.333"><button type="button" class="open" data-full="img/restaurant-1280.webp" aria-label="Enlarge: Restaurant booths behind textured glass panels"><img src="img/restaurant-640.webp" srcset="img/restaurant-640.webp 640w, img/restaurant-1280.webp 1280w" sizes="(max-width: 640px) 50vw, 49vw" width="1280" height="960" alt="Restaurant booths behind textured glass panels" loading="lazy" decoding="async"></button><figcaption>Restaurant booths behind textured glass panels</figcaption></figure>
 <figure class="pane" style="flex-grow:0.648"><button type="button" class="open" data-full="img/lady-415.webp" aria-label="Enlarge: Tall commercial panel with a woman in a red gown"><img src="img/lady-415.webp" width="415" height="640" alt="Tall commercial panel with a woman in a red gown" loading="lazy" decoding="async"></button><figcaption>Tall commercial panel with a woman in a red gown</figcaption></figure>
-<figure class="pane" style="flex-grow:1.330"><button type="button" class="open" data-full="img/dining-250.webp" aria-label="Enlarge: Dining room divided by glass screens"><img src="img/dining-250.webp" width="250" height="188" alt="Dining room divided by glass screens" loading="lazy" decoding="async"></button><figcaption>Dining room divided by glass screens</figcaption></figure>
 </div>
 </div>
     <p class="season">The studio does not sell supplies or sheets of glass, and does not buy or sell stained glass made by others.</p>
