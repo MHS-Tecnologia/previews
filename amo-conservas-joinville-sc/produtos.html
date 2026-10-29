@@ -4,267 +4,194 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="data:,">
-<meta name="theme-color" content="#fffcf6">
-<title>Produtos, Amo Conservas</title>
-<meta name="description" content="Beterraba agridoce, mini milho, cebola em filetes sabor defumado e geleia colonial Amo. Preço pelo WhatsApp.">
-<link rel="preload" as="font" type="font/woff2" href="fonts/bitter.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/albert.woff2" crossorigin>
-<style>
-@font-face { font-family: "Bitter"; font-weight: 100 900; font-display: swap; src: url(fonts/bitter.woff2) format("woff2"); }
-@font-face { font-family: "Albert Sans"; font-weight: 100 900; font-display: swap; src: url(fonts/albert.woff2) format("woff2"); }
-
-/* The label paper, the red of the logo and the neon, the green wall of the
-   shop, the wood of the counter and shelves, and the beet inside the big jar. */
-:root {
-  --papel: #fffcf6;
-  --papel-2: #f6eee2;
-  --vermelho: #c41e28;
-  --vermelho-escuro: #9c141d;
-  --parede: #22361f;
-  --parede-2: #2f4a2a;
-  --madeira: #8a5530;
-  --beterraba: #4a0f22;
-  --tinta: #2b1d17;
-  --tinta-2: #5d4a40;
-  --max: 75rem;
-  --pad: clamp(1rem, 4vw, 2.5rem);
-  /* the red gingham band printed on every AMO label */
-  --xadrez: linear-gradient(90deg, rgba(196,30,40,.5) 50%, transparent 0) 0 0 / 8px 8px,
-            linear-gradient(rgba(196,30,40,.5) 50%, transparent 0) 0 0 / 8px 8px, #fff;
-}
-* { box-sizing: border-box; margin: 0; }
-body { background: var(--papel); color: var(--tinta); font: 400 1.0625rem/1.6 "Albert Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-img { display: block; max-width: 100%; height: auto; }
-a { color: inherit; }
-:focus-visible { outline: 3px solid var(--vermelho); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { font-family: "Bitter", Georgia, serif; color: var(--beterraba); line-height: 1.08; letter-spacing: -0.01em; text-wrap: balance; }
-h1 { font-size: clamp(2.05rem, 4.6vw, 3.6rem); font-weight: 760; }
-h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-weight: 720; }
-h3 { font-size: 1.25rem; font-weight: 700; }
-p { max-width: 62ch; }
-.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
-.skip:focus { left: .5rem; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-.ico { width: 1.25em; height: 1.25em; flex: none; }
-.estrela { width: 1em; height: 1em; color: #d99a00; vertical-align: -.12em; }
-.num { font-variant-numeric: tabular-nums; }
-
-.demo { background: var(--tinta); color: #e9ded3; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .45rem 1rem; }
-
-/* Header: their wordmark, lifted from the label, and the three pages. */
-.topo { background: var(--papel); position: relative; z-index: 2; }
-.topo::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 6px; background: var(--xadrez); }
-.topo .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
-.marca { display: block; flex: none; }
-.marca img { width: 118px; height: auto; }
-.nav { display: flex; gap: 1.6rem; margin-left: auto; }
-.nav a { text-decoration: none; font-weight: 600; font-size: 1rem; padding: .4rem 0; border-bottom: 2px solid transparent; }
-.nav a:hover { border-color: var(--vermelho); }
-.nav a[aria-current] { color: var(--vermelho); border-color: var(--vermelho); }
-
-.bt { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.25rem; padding: .8rem 1.35rem; border-radius: 999px;
-      background: var(--vermelho); color: #fff; font-weight: 700; font-size: 1.0625rem; text-decoration: none; line-height: 1.2;
-      box-shadow: 0 2px 0 var(--vermelho-escuro); transition: background-color .15s, transform .1s; }
-.bt:hover { background: var(--vermelho-escuro); }
-.bt:active { transform: translateY(1px); box-shadow: none; }
-.bt.pq { min-height: 2.75rem; padding: .55rem 1.1rem; font-size: .9375rem; }
-.bt.claro { background: #fff; color: var(--vermelho-escuro); box-shadow: 0 2px 0 rgba(0,0,0,.25); }
-.bt.claro:hover { background: var(--papel-2); }
-.lk { font-weight: 700; color: var(--vermelho-escuro); text-underline-offset: .2em; text-decoration-thickness: 2px; }
-.lk:hover { color: var(--vermelho); }
-
-/* A photo framed by the label's gingham band. */
-.rotulo { background: var(--xadrez); padding: 9px; border-radius: 4px; }
-.rotulo img { border-radius: 1px; }
-figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line-height: 1.4; }
-
-.secao { padding: clamp(3.5rem, 8vw, 6rem) 0; }
-.intro { margin-bottom: 2.25rem; }
-.intro p { margin-top: .8rem; color: var(--tinta-2); font-size: 1.125rem; }
-
-/* Label plate: the white band of an AMO label, gingham top and bottom. */
-.placa { background: #fff; position: relative; padding: 1.4rem 1.4rem 1.5rem; border-radius: 3px; box-shadow: 0 1px 0 rgba(43,29,23,.08), 0 8px 24px -14px rgba(43,29,23,.35); }
-.placa::before, .placa::after { content: ""; position: absolute; left: 0; right: 0; height: 8px; background: var(--xadrez); }
-.placa::before { top: 0; border-radius: 3px 3px 0 0; }
-.placa::after { bottom: 0; border-radius: 0 0 3px 3px; }
-.nome { font-family: "Bitter", Georgia, serif; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; color: var(--tinta); line-height: 1.1; }
-
-/* Footer: the green wall. */
-.rodape { background: var(--parede); color: #e6eadf; padding: 3.5rem 0 2rem; }
-.rodape .wrap { display: grid; gap: 2rem; grid-template-columns: 1.3fr 1fr 1fr; }
-.rodape h2 { color: #fff; font-size: 1.25rem; margin-bottom: .6rem; }
-.rodape p, .rodape li { font-size: .9375rem; color: #d6dccd; }
-.rodape ul { list-style: none; padding: 0; display: grid; gap: 0; }
-.rodape ul a, .legal a { display: inline-flex; align-items: center; min-height: 44px; }
-.rodape a { color: #fff; }
-.legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.18); padding-top: 1.4rem; font-size: .8125rem !important; color: #b9c2b0 !important; max-width: none; }
-.horas { display: grid; grid-template-columns: auto 1fr; gap: .15rem 1rem; }
-.horas dt { font-weight: 600; }
-
-/* Mobile WhatsApp bar, shown once the page's main button has scrolled away. */
-.fixo { display: none; }
-
-@media (max-width: 760px) {
-  body { font-size: 1rem; }
-  .topo .wrap { flex-wrap: wrap; min-height: 0; padding-top: .55rem; padding-bottom: .1rem; gap: .2rem 1rem; }
-  .marca img { width: 92px; }
-  .topo .bt { margin-left: auto; min-height: 2.5rem; padding: .45rem .9rem; font-size: .875rem; }
-  .nav { order: 3; width: 100%; margin: 0; gap: 1.4rem; overflow-x: auto; }
-  .nav a { font-size: .9375rem; padding: .45rem 0 .5rem; }
-  .rodape .wrap { grid-template-columns: 1fr; }
-  .fixo { display: flex; position: fixed; left: .75rem; right: .75rem; bottom: .75rem; z-index: 30; transform: translateY(160%); transition: transform .25s ease; }
-  .fixo.on { transform: none; }
-  .fixo .bt { width: 100%; box-shadow: 0 6px 20px -6px rgba(0,0,0,.45); }
-  body { padding-bottom: 4.5rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-}
-
-.cabeca { padding: clamp(2.25rem, 6vw, 4rem) 0 clamp(1.5rem, 4vw, 2.5rem); }
-.cabeca p { font-size: 1.1875rem; color: var(--tinta-2); margin-top: .9rem; max-width: 46rem; }
-.cabeca .bt { margin-top: 1.5rem; }
-@media (max-width: 760px) { .cabeca .bt { width: 100%; } .cabeca p { font-size: 1.0625rem; } }
-
-.produto { display: grid; grid-template-columns: minmax(0, 26rem) minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; padding: 2.5rem 0; border-top: 1px solid #e6d9c8; }
-.produto:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); }
-.produto:nth-of-type(even) .quadro { order: 2; }
-.quadro { background: var(--papel-2); border-radius: 4px; overflow: hidden; position: relative; aspect-ratio: 4 / 4.2; display: flex; align-items: flex-end; justify-content: center; }
-.quadro.foto img { width: 100%; height: 100%; object-fit: cover; }
-.quadro.alto { aspect-ratio: 620 / 911; width: 100%; max-width: 22rem; justify-self: center; }
-.quadro.corte { padding: 1.5rem 1.5rem 0; }
-.quadro.corte::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: #a36a3c url(img/balcao-800.webp) center 30% / cover; }
-.quadro.corte img { position: relative; z-index: 1; margin-bottom: 9%; filter: drop-shadow(0 12px 9px rgba(60,30,10,.3)); }
-.quadro.corte .bet { width: 46%; }
-.quadro.corte .gel { width: 100%; }
-.quadro.larga { aspect-ratio: 4 / 2.6; }
-.produto .nome { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--beterraba); }
-.produto .tipo { font-size: 1rem; color: var(--tinta-2); margin-top: .35rem; }
-.produto dl { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1.25rem; margin: 1.25rem 0 1.5rem; font-size: 1rem; }
-.produto dt { color: var(--tinta-2); }
-.produto dd { font-weight: 600; margin: 0; }
-.sabores { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 1.1rem 0 1.4rem; }
-.sabores li { background: #fff; border: 1px solid #e3d3bf; border-radius: 999px; padding: .3rem .85rem; font-weight: 600; font-size: .9375rem; }
-.outras { background: var(--papel-2); }
-.outras .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.outras ul { margin: 1.1rem 0 1.6rem; padding-left: 1.1rem; display: grid; gap: .45rem; }
-.outras .fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.outras .fotos img { aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; }
-@media (max-width: 760px) {
-  .produto, .produto:nth-of-type(even) { grid-template-columns: 1fr; padding: 2rem 0; gap: 1.25rem; }
-  .produto:nth-of-type(even) .quadro { order: 0; }
-  .quadro { aspect-ratio: 4 / 3.4; }
-  .quadro.corte .bet { width: 40%; }
-  .quadro.corte .gel { width: 92%; }
-  .produto .bt { width: 100%; }
-  .outras .wrap { grid-template-columns: 1fr; }
-  .outras .bt { width: 100%; }
-}
-</style>
+<title>Produtos Amo · Amo Conservas</title>
+<meta name="description" content="Geleias coloniais, legumes em conserva, mini milho, beterraba agridoce, mix seleta e defumados com o rótulo Amo. Tabela pelo WhatsApp.">
+<meta name="theme-color" content="#14291b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23c0203a' d='M16 29s-12-7.4-12-16a6.5 6.5 0 0 1 12-3.5A6.5 6.5 0 0 1 28 13c0 8.6-12 16-12 16z'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/brygada-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/cebola-560.webp" imagesrcset="img/cebola-560.webp 560w, img/cebola-820.webp 820w, img/cebola-1120.webp 1120w" imagesizes="(max-width: 900px) 92vw, 460px" fetchpriority="high">
+<link rel="stylesheet" href="estilo.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a>
-<div class="demo" role="note">Demonstração não oficial feita pela MHS Tecnologia para a AMO Conservas. Sem vínculo com a AMO Conservas.</div>
-<header class="topo">
+<div class="aviso" role="note">Demonstração não oficial feita pela MHS Tecnologia para a AMO Conservas. Sem vínculo com a AMO Conservas.</div>
+<header class="cab">
   <div class="wrap">
-    <a class="marca" href="index.html"><img src="img/logo-amo.webp" width="307" height="155" alt="Amo Conservas, página inicial"></a>
-    <nav class="nav" aria-label="Páginas"><a href="produtos.html" aria-current="page">Produtos</a><a href="loja.html">A loja</a><a href="pedir.html">Como pedir</a></nav>
-    <a class="bt pq" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>WhatsApp</span></a>
+    <a class="marca" href="index.html" aria-label="Amo Conservas, página inicial"><img src="img/logo-200.webp" srcset="img/logo-200.webp 1x, img/logo-400.webp 2x" width="200" height="104" alt="Amo Conservas"></a>
+    <nav class="nav" aria-label="Principal"><a href="index.html">Início</a><a href="produtos.html" aria-current="page">Produtos Amo</a><a href="loja.html">A loja</a><a href="historia.html">Nossa história</a><a href="como-pedir.html">Como pedir</a></nav>
+    <details class="menu"><summary>Menu</summary><nav class="nav" aria-label="Principal (celular)"><a href="index.html">Início</a><a href="produtos.html" aria-current="page">Produtos Amo</a><a href="loja.html">A loja</a><a href="historia.html">Nossa história</a><a href="como-pedir.html">Como pedir</a></nav></details>
+    <a class="btn btn-wa btn-peq btn-cab" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20Amo%20Conservas."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>WhatsApp</a>
   </div>
 </header>
 <main id="conteudo">
-
-<div class="wrap">
-  <div class="cabeca">
-    <h1>Os produtos Amo</h1>
-    <p>Os preços estão na tabela, que a loja manda pelo WhatsApp. Cada produto tem um botão que já abre a conversa com o nome dele.</p>
-    <a class="bt" data-cta href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir a tabela no WhatsApp</span></a>
+<section class="pagina-topo" aria-labelledby="pt">
+  <div class="wrap">
+    <div>
+      <h1 id="pt">Produtos Amo</h1>
+      <p>A linha com o nosso rótulo xadrez, assinada com “qualidade que apaixona”. Os preços não ficam no site: a tabela vai pelo WhatsApp.</p>
+      <div class="acoes"><a class="btn btn-wa" data-cta-topo href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20dos%20produtos%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela no WhatsApp</a></div>
+    </div>
+    <figure><img src="img/cebola-560.webp" srcset="img/cebola-560.webp 560w, img/cebola-820.webp 820w, img/cebola-1120.webp 1120w" sizes="(max-width: 900px) 92vw, 460px" width="560" height="657" alt="Atendente segurando um vidro de cebola em filetes sabor defumado Amo, em frente às prateleiras da loja" fetchpriority="high"></figure>
   </div>
+</section>
 
-  <article class="produto" aria-labelledby="p-bet">
-    <div class="quadro foto alto"><img src="img/beterraba-550-480.webp" srcset="img/beterraba-550-480.webp 480w, img/beterraba-550-620.webp 620w" sizes="(max-width: 760px) 92vw, 416px" width="620" height="911" alt="Pote de 550 g de beterraba agridoce Amo, num post da loja sobre papel quadriculado" loading="lazy" decoding="async"></div>
-    <div>
-      <h2 class="nome" id="p-bet">Beterraba agridoce</h2>
-      <p class="tipo">Em conserva</p>
-      <dl>
-        <dt>Pote</dt><dd class="num">550 g, com 300 g drenado</dd>
-        <dt>Pote grande</dt><dd class="num">3,1 kg, com 1,8 kg drenado</dd>
-      </dl>
-      <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20o%20pre%C3%A7o%20de%3A%20Beterraba%20agridoce%20Amo."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir preço no WhatsApp</span></a>
+<section class="fundo-claro">
+  <div class="wrap">
+  <article class="produto" id="seleta" aria-labelledby="seleta-t">
+    <figure><img src="img/seleta-560.webp" srcset="img/seleta-560.webp 560w, img/seleta-820.webp 820w, img/seleta-1120.webp 1120w" sizes="(max-width: 900px) 92vw, 480px" width="560" height="747" alt="Dois vidros de Mix Seleta Amo com setas indicando azeitona, cebolinha cristal, pimenta biquinho e pepino" loading="lazy" decoding="async"></figure>
+    <div class="rotulo">
+      <h2 class="nome" id="seleta-t">Mix Seleta</h2>
+      <p class="sabor">em conserva</p>
+      
+      <p class="desc">Uma mistura num vidro só. No post da Amo, as setas mostram o que vai dentro: azeitona, cebolinha cristal, pimenta biquinho e pepino.</p>
+      
+      <a class="btn btn-wa" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20do%20Mix%20Seleta%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela no WhatsApp</a>
     </div>
   </article>
+  <article class="produto inverte" id="mini-milho" aria-labelledby="mini-milho-t">
+    <figure><img src="img/mini-milho-560.webp" srcset="img/mini-milho-560.webp 560w, img/mini-milho-820.webp 820w, img/mini-milho-1120.webp 1120w" sizes="(max-width: 900px) 92vw, 480px" width="560" height="687" alt="Dois vidros de mini milho Amo em conserva sobre palha, diante da parede verde" loading="lazy" decoding="async"></figure>
+    <div class="rotulo">
+      <h2 class="nome" id="mini-milho-t">Mini milho</h2>
+      <p class="sabor">em conserva</p>
+      
+      <p class="desc">Espigas inteiras de mini milho no vidro, prontas para a salada, a tábua ou o espetinho.</p>
+      <dl><div><dt>peso líquido</dt><dd>530 g</dd></div><div><dt>peso drenado</dt><dd>300 g</dd></div></dl>
+      <a class="btn btn-wa" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20do%20mini%20milho%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela no WhatsApp</a>
+    </div>
+  </article>
+  <article class="produto" id="batatinha" aria-labelledby="batatinha-t">
+    <figure><img src="img/batatinha-367.webp" srcset="img/batatinha-367.webp 367w, img/batatinha-367.webp 367w" sizes="(max-width: 900px) 92vw, 400px" width="367" height="432" alt="Vidro de batatinha rústica sabor defumado Amo, produto exclusivo" loading="lazy" decoding="async"></figure>
+    <div class="rotulo">
+      <h2 class="nome" id="batatinha-t">Batatinha rústica</h2>
+      <p class="sabor">sabor defumado</p>
+      <span class="selo">Produto exclusivo</span>
+      <p class="desc">A novidade da casa, anunciada como produto exclusivo. Defumada, no vidro, com o rótulo Amo.</p>
+      <dl><div><dt>peso líquido</dt><dd>530 g</dd></div><div><dt>peso drenado</dt><dd>300 g</dd></div></dl>
+      <a class="btn btn-wa" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20batatinha%20r%C3%BAstica%20defumada%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela no WhatsApp</a>
+    </div>
+  </article>
+  </div>
+</section>
 
-  <article class="produto" aria-labelledby="p-gel">
-    <div class="quadro corte larga"><img class="gel" src="img/pote-geleias-640.webp" srcset="img/pote-geleias-640.webp 640w, img/pote-geleias-1280.webp 1280w" sizes="(max-width: 760px) 86vw, 400px" width="1280" height="556" alt="Cinco potes de geleia colonial Amo: uva, tangerina, frutas vermelhas, laranja e amora" loading="lazy" decoding="async"></div>
+<section class="secao fundo-papel" aria-labelledby="linha-t">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="linha-t">Também na linha Amo</h2>
+      <p>Os mesmos vidros que estão na prateleira da página inicial, com o que está escrito em cada rótulo.</p>
+    </div>
+    <div class="cartoes">
+      <div class="rotulo" id="geleias">
+      <h3 class="nome">Geleias coloniais</h3>
+      <ul><li><span class="cor" style="background:#2a0f22"></span>Uva</li><li><span class="cor" style="background:#e0861c"></span>Tangerina</li><li><span class="cor" style="background:#6d0f22"></span>Frutas vermelhas</li><li><span class="cor" style="background:#ee9a24"></span>Laranja</li><li><span class="cor" style="background:#3a0d1e"></span>Amora</li></ul>
+      <p class="desc" style="margin:0 0 20px">Vidros de 400 g.</p>
+      <a class="btn btn-wa btn-peq" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20das%20geleias%20coloniais%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela</a>
+    </div>
+      <div class="rotulo" id="legumes">
+      <h3 class="nome">Legumes em conserva</h3>
+      <ul><li><span class="cor" style="background:#6f7d2a"></span>Pepino · 540 g</li><li><span class="cor" style="background:#efe6cf"></span>Couve-flor · 530 g</li><li><span class="cor" style="background:#e2621c"></span>Cenoura · 530 g</li></ul>
+      <p class="desc" style="margin:0 0 20px">300 g drenados em cada vidro.</p>
+      <a class="btn btn-wa btn-peq" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20dos%20legumes%20em%20conserva%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela</a>
+    </div>
+      <div class="rotulo" id="beterraba">
+      <h3 class="nome">Beterraba agridoce</h3>
+      <ul><li><span class="cor" style="background:#5e1129"></span>Vidro de 3,1 kg</li><li><span class="cor" style="background:#7c1734"></span>1,8 kg drenados</li></ul>
+      <p class="desc" style="margin:0 0 20px">Também no tamanho grande, para mercados e restaurantes.</p>
+      <a class="btn btn-wa btn-peq" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20beterraba%20agridoce%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela</a>
+    </div>
+      <div class="rotulo" id="cebola-filetes">
+      <h3 class="nome">Cebola em filetes</h3>
+      <ul><li><span class="cor" style="background:#e7b23a"></span>Sabor defumado</li><li><span class="cor" style="background:#c79a33"></span>Produto artesanal</li></ul>
+      <p class="desc" style="margin:0 0 20px">530 g de peso líquido, 300 g drenados. É o vidro da foto lá em cima.</p>
+      <a class="btn btn-wa btn-peq" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20cebola%20em%20filetes%20defumada%20Amo."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="vidros-camp" aria-labelledby="vidros-t">
+  <div class="wrap">
+    <svg class="pote" viewBox="0 0 120 150" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"><rect x="22" y="8" width="76" height="22" rx="5"/><path d="M28 30v8c-10 6-14 14-14 26v62c0 9 6 16 16 16h60c10 0 16-7 16-16V64c0-12-4-20-14-26v-8"/><path d="M14 72h92M14 112h92" stroke-dasharray="8 6"/><path d="M60 82c-6-7-17-3-15 6 2 6 15 14 15 14s13-8 15-14c2-9-9-13-15-6Z" fill="currentColor" stroke="none"/></svg>
     <div>
-      <h2 class="nome" id="p-gel">Geleia colonial</h2>
-      <p class="tipo">Pote de 400 g, em cinco sabores</p>
-      <ul class="sabores" aria-label="Sabores">
-        <li>Uva</li><li>Tangerina</li><li>Frutas vermelhas</li><li>Laranja</li><li>Amora</li>
+      <h2 id="vidros-t">Traga seus vidros vazios e ganhe desconto</h2>
+      <p>Uma campanha da casa: o vidro volta para a loja, você ganha desconto e ajuda o meio ambiente. Pergunte pelo WhatsApp como funciona.</p>
+    </div>
+  </div>
+</section>
+<section class="secao fundo-escuro" aria-labelledby="visita-t">
+  <div class="wrap visita">
+    <div>
+      <h2 id="visita-t">Passe na loja, ou peça pelo WhatsApp</h2>
+      <table class="horario">
+        <caption class="sr">Horário de atendimento</caption>
+        <tr><th scope="row">Segunda a sexta</th><td>9h às 12h e 14h às 18h</td></tr>
+        <tr><th scope="row">Sábado</th><td>9h às 12h</td></tr>
+      </table>
+      <ul class="contatos">
+        <li><a href="https://wa.me/5547996331583"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>(47) 99633-1583 · WhatsApp</a></li>
+        <li><a href="tel:+554734292273"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>(47) 3429-2273</a></li>
+        <li><span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@amo.conservas no Instagram</span></li>
       </ul>
-      <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20o%20pre%C3%A7o%20de%3A%20Geleia%20colonial%20Amo."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir preço no WhatsApp</span></a>
     </div>
-  </article>
-
-  <article class="produto" aria-labelledby="p-milho">
-    <div class="quadro foto"><img src="img/milho-480.webp" srcset="img/milho-480.webp 480w, img/milho-900.webp 900w, img/milho-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 416px" width="1200" height="1600" alt="Dois potes de mini milho Amo sobre palha, na frente de folhagens" loading="lazy" decoding="async"></div>
-    <div>
-      <h2 class="nome" id="p-milho">Mini milho</h2>
-      <p class="tipo">Em conserva</p>
-      <dl>
-        <dt>Pote</dt><dd class="num">530 g, com 300 g drenado</dd>
-      </dl>
-      <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20o%20pre%C3%A7o%20de%3A%20Mini%20milho%20Amo."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir preço no WhatsApp</span></a>
+    <div class="cartao-visita">
+      <p>Endereço</p>
+      <p class="end">Rua dos Aimorés, 4897<br>Petrópolis, Joinville – SC</p>
+      <p style="margin-top:6px">CEP 89208-720</p>
+      <a class="btn btn-wa" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20Amo%20Conservas."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela no WhatsApp</a>
     </div>
-  </article>
-
-  <article class="produto" aria-labelledby="p-cebola">
-    <div class="quadro foto"><img src="img/cebola-480.webp" srcset="img/cebola-480.webp 480w, img/cebola-900.webp 900w, img/cebola-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 416px" width="1200" height="1600" alt="Uma atendente mostra dois potes de cebola em filetes Amo na frente das prateleiras de madeira" loading="lazy" decoding="async"></div>
-    <div>
-      <h2 class="nome" id="p-cebola">Cebola em filetes sabor defumado</h2>
-      <p class="tipo">Produto artesanal, em conserva</p>
-      <dl>
-        <dt>Pote</dt><dd class="num">530 g, com 300 g drenado</dd>
-      </dl>
-      <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20o%20pre%C3%A7o%20de%3A%20Cebola%20em%20filetes%20sabor%20defumado%20Amo."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir preço no WhatsApp</span></a>
-    </div>
-  </article>
-</div>
-
-
+  </div>
+</section>
 </main>
 <footer class="rodape">
   <div class="wrap">
-    <div>
-      <h2>Amo Conservas</h2>
-      <p>Rua dos Aimorés, 4897, Petrópolis<br>Joinville, SC, 89208-720</p>
-      <p style="margin-top:.8rem"><svg class="estrela" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m10 1.8 2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.7l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z" fill="currentColor"/></svg> 4,9 no Google, 186 avaliações<br>Instagram @amo.conservas</p>
+    <div class="cols">
+      <div>
+        <img src="img/logo-claro-200.webp" srcset="img/logo-claro-200.webp 200w, img/logo-claro-400.webp 400w" sizes="150px" width="200" height="104" alt="Amo Conservas" loading="lazy" decoding="async" class="logo">
+        <img src="img/slogan-claro-300.webp" srcset="img/slogan-claro-300.webp 300w, img/slogan-claro-486.webp 486w" sizes="220px" width="300" height="50" alt="Qualidade que apaixona!" loading="lazy" decoding="async" class="slogan">
+        <p style="margin-top:18px">Tabela pelo WhatsApp. Instagram <strong style="color:#fff">@amo.conservas</strong>.</p>
+      </div>
+      <div>
+        <h2>Visite</h2>
+        <address>Rua dos Aimorés, 4897<br>Petrópolis, Joinville – SC<br>CEP 89208-720</address>
+        <p style="margin-top:12px">Seg. a sex.: 9h às 12h e 14h às 18h<br>Sábado: 9h às 12h</p>
+        <ul style="margin-top:8px">
+          <li><a href="https://wa.me/5547996331583">WhatsApp (47) 99633-1583</a></li>
+          <li><a href="tel:+554734292273">Telefone (47) 3429-2273</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Páginas</h2>
+        <ul><li><a href="index.html">Início</a></li><li><a href="produtos.html">Produtos Amo</a></li><li><a href="loja.html">A loja</a></li><li><a href="historia.html">Nossa história</a></li><li><a href="como-pedir.html">Como pedir</a></li></ul>
+      </div>
     </div>
-    <div>
-      <h2>Horário</h2>
-      <dl class="horas">
-        <dt>Seg a sex</dt><dd class="num">9h às 12h e 14h às 18h</dd>
-        <dt>Sábado</dt><dd class="num">9h às 12h</dd>
-      </dl>
+    <div class="legal">
+      <p>Demonstração não oficial feita pela MHS Tecnologia para a AMO Conservas. Sem vínculo com a AMO Conservas.</p>
+      <p>Removido a pedido: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
     </div>
-    <div>
-      <h2>Pedidos</h2>
-      <ul>
-        <li><a href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os.">WhatsApp (47) 99633-1583</a></li>
-        <li><a href="tel:+5547996331583">Ligar (47) 99633-1583</a></li>
-        <li><a href="pedir.html">Como pedir</a></li>
-      </ul>
-    </div>
-    <p class="legal">Demonstração não oficial feita pela MHS Tecnologia para a AMO Conservas. Sem vínculo com a AMO Conservas. Fotos e textos vêm dos perfis públicos da própria AMO. Removido a pedido: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
   </div>
 </footer>
-<div class="fixo"><a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir a tabela no WhatsApp</span></a></div>
+<div class="barra-wa" id="barra-wa" aria-hidden="true">
+  <a class="btn btn-wa" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20Amo%20Conservas." tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg>Pedir a tabela no WhatsApp</a>
+</div>
 <script>
-(() => {
-  const bar = document.querySelector('.fixo'), cta = document.querySelector('[data-cta]');
-  if (!bar || !cta || !('IntersectionObserver' in window)) return;
-  new IntersectionObserver(([e]) => bar.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(cta);
+document.documentElement.classList.add('js');
+(function () {
+  var barra = document.getElementById('barra-wa'), alvo = document.querySelector('[data-cta-topo]');
+  if (barra && alvo && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      var fora = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
+      barra.classList.toggle('mostra', fora);
+      barra.setAttribute('aria-hidden', fora ? 'false' : 'true');
+      barra.querySelector('a').tabIndex = fora ? 0 : -1;
+    }).observe(alvo);
+  }
+  var p = document.querySelector('.prateleira');
+  if (p && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { p.classList.add('viu'); io.disconnect(); }
+    }, { threshold: 0.25 });
+    io.observe(p);
+  } else if (p) { p.classList.add('viu'); }
 })();
 </script>
 </body>
