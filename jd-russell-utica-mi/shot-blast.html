@@ -421,6 +421,17 @@
     .phero .contact .regions > div { grid-template-columns: 1fr 1fr; }
     .phero .contact .regions h3 { grid-column: 1 / -1; }
   }
+  .docblock { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #bfc2bd; }
+  .docblock p { font-size: .95rem; color: var(--muted); }
+  .docblock b { color: var(--ink); }
+  .btn-ink { margin-top: .9rem; border-color: var(--ink); color: var(--ink); min-height: 2.9rem; font-size: 1rem; padding: .55rem 1.1rem; }
+  .btn-ink:hover { background: var(--ink); color: #fff; }
+  .phero-grid:has(.wide-cut) { grid-template-columns: minmax(0, 1fr) minmax(0, 620px); }
+  .wide-cut img { width: 100%; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .pair img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+  .pair figcaption { margin-top: .5rem; font: 800 1.2rem/1 "Sofia Sans Condensed", sans-serif; color: var(--on-night); }
+  @media (max-width: 860px) { .phero-grid:has(.wide-cut) { grid-template-columns: 1fr; } .pair img { aspect-ratio: 4 / 3; } }
 </style>
 </head>
 <body>
@@ -486,7 +497,7 @@
         <h2 id="spec-h">For specifiers</h2>
         <p>Blast cleaning follows SSPC Surface Preparation Specification 6: dirt, grease, rust scale, mill scale, old paint and slag are removed, leaving at most light shadows, slight streaks or minor stains. After blasting, every surface is cleaned of blast residue with compressed air or vacuum.</p>
       </div>
-      <div><ul class="docs" aria-label="Documents JDR publishes"><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Specifier insert for steel header</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Hot rolled carbon steel SDS</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Powder coat safety data sheet</span></li></ul><p class="note">These documents are published by JDR as PDFs. <a href="mailto:contact@jdrussellco.com?subject=Shot%20blast%20specifier%20insert%20request">Ask for any of them by email</a>.</p></div>
+      <div><div class="docblock"><p><b>Documents, on request:</b> Specifier insert for steel header, Hot rolled carbon steel SDS, Powder coat safety data sheet.</p><a class="btn btn-ink" href="mailto:contact@jdrussellco.com?subject=Shot%20blast%20specifier%20insert%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg> Email for these documents</a></div></div>
     </div>
   </section>
 <section class="qband" aria-label="Request a quote">

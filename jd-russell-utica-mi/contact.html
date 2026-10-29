@@ -420,6 +420,17 @@
     .phero .contact .regions > div { grid-template-columns: 1fr 1fr; }
     .phero .contact .regions h3 { grid-column: 1 / -1; }
   }
+  .docblock { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #bfc2bd; }
+  .docblock p { font-size: .95rem; color: var(--muted); }
+  .docblock b { color: var(--ink); }
+  .btn-ink { margin-top: .9rem; border-color: var(--ink); color: var(--ink); min-height: 2.9rem; font-size: 1rem; padding: .55rem 1.1rem; }
+  .btn-ink:hover { background: var(--ink); color: #fff; }
+  .phero-grid:has(.wide-cut) { grid-template-columns: minmax(0, 1fr) minmax(0, 620px); }
+  .wide-cut img { width: 100%; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .pair img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+  .pair figcaption { margin-top: .5rem; font: 800 1.2rem/1 "Sofia Sans Condensed", sans-serif; color: var(--on-night); }
+  @media (max-width: 860px) { .phero-grid:has(.wide-cut) { grid-template-columns: 1fr; } .pair img { aspect-ratio: 4 / 3; } }
 </style>
 </head>
 <body>

@@ -421,6 +421,17 @@
     .phero .contact .regions > div { grid-template-columns: 1fr 1fr; }
     .phero .contact .regions h3 { grid-column: 1 / -1; }
   }
+  .docblock { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #bfc2bd; }
+  .docblock p { font-size: .95rem; color: var(--muted); }
+  .docblock b { color: var(--ink); }
+  .btn-ink { margin-top: .9rem; border-color: var(--ink); color: var(--ink); min-height: 2.9rem; font-size: 1rem; padding: .55rem 1.1rem; }
+  .btn-ink:hover { background: var(--ink); color: #fff; }
+  .phero-grid:has(.wide-cut) { grid-template-columns: minmax(0, 1fr) minmax(0, 620px); }
+  .wide-cut img { width: 100%; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  .pair img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+  .pair figcaption { margin-top: .5rem; font: 800 1.2rem/1 "Sofia Sans Condensed", sans-serif; color: var(--on-night); }
+  @media (max-width: 860px) { .phero-grid:has(.wide-cut) { grid-template-columns: 1fr; } .pair img { aspect-ratio: 4 / 3; } }
 </style>
 </head>
 <body>
@@ -473,11 +484,13 @@
         <p>The J D Russell Company is an equal opportunity provider and employer.</p>
       </div>
       <div class="prose">
-        <h2>Product videos</h2>
-        <p>JDR publishes short videos on its products and process:</p>
-        <ul class="docs" style="grid-template-columns:1fr">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Dura Dowel install video</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Landscape edging shot blast process</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Types of edging</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Reflex rubber expansion joint</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>Reflex Tear Tab</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>EZ-Strip</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg><span>DuraEdge, en español</span></li>
+        <h2>What JDR makes</h2>
+        <ul class="ticks">
+          <li><a href="edging.html"><b>Landscape edging</b></a> in steel and aluminum, six lines</li>
+          <li><a href="shot-blast.html"><b>Shot blast finish</b></a>, a three-stage process before powder coat</li>
+          <li><a href="products.html"><b>Construction products</b></a>: Reflex, Dura Dowel, form clips, ties and stakes</li>
         </ul>
+        <p>JDR also publishes short product videos, from a Dura Dowel install guide to the shot blast process.</p>
       </div>
     </div>
   </section>
