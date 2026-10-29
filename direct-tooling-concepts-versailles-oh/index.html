@@ -10,7 +10,7 @@
 <link rel="icon" href="data:,">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preload" as="font" type="font/woff2" href="fonts/saira.woff2" crossorigin>
-<link rel="preload" as="image" href="img/mill-vmx42.webp" fetchpriority="high">
+<link rel="preload" as="image" href="img/floor.webp" fetchpriority="high">
 <style>
 @font-face { font-family: "Saira"; font-weight: 100 900; font-stretch: 50% 125%; font-display: swap; src: url(fonts/saira.woff2) format("woff2"); }
 :root {
@@ -60,15 +60,14 @@ h3 { font-size: 1.45rem; line-height: 1.05; }
 .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
 .btn.ghost:hover { background: var(--ink); color: var(--white); }
 .navs .btn { padding: .55rem 1rem; }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 14fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: center; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(3rem, 6vw, 5.5rem); }
-.hero h1 { font-size: clamp(3.2rem, 6.6vw, 6rem); font-weight: 850; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 10fr) minmax(0, 13fr); gap: clamp(2rem, 3.5vw, 3.5rem); align-items: start; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(3rem, 6vw, 5.5rem); }
+.hero h1 { font-size: clamp(3.2rem, 5.5vw, 5rem); font-weight: 850; }
+.hero h1 .l1 { display: block; white-space: nowrap; font-weight: inherit; color: inherit; }
 .hero h1 span { display: block; font-weight: 300; color: var(--graphite); }
 .hero .lede { margin-top: 1.5rem; max-width: 31rem; font-size: clamp(1.08rem, 1.5vw, 1.22rem); color: #2f353a; }
 .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1rem; align-items: center; }
-.pair { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px; }
-.pair img { width: 100%; height: clamp(20rem, 27vw, 24rem); object-fit: cover; }
-.pair .a img { object-position: 58% 50%; }
-.pair .b img { object-position: 52% 50%; }
+.shot { margin-top: .45rem; }
+.shot img { width: 100%; height: clamp(22rem, 32vw, 29rem); object-fit: cover; object-position: 50% 45%; }
 figcaption { font-size: .82rem; font-weight: 500; color: var(--graphite); padding-top: .45rem; }
 .head .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: end; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
 .head h1 { font-size: clamp(2.9rem, 6vw, 5.2rem); font-weight: 850; }
@@ -267,16 +266,16 @@ footer .legal a { color: #d5d9dc; }
   .dock { display: block; }
   .sheet { position: sticky; top: 0; z-index: 2; margin: 0 calc(-1 * var(--pad)); border-width: 0 0 1px; }
   .sheet text.tag, .sheet .lead { display: none; }
-  .sheet[data-on] g.m.on text.tag { display: inline; font-size: 2.6px; }
+  .sheet[data-on] g.m.on text.tag { display: inline; font-size: 3px; }
+  .sheet[data-on] g.m.on:not(.edm) text.tag { dominant-baseline: hanging; }
+  .sheet .axis:not(.y) { transform: translateY(.6px); }
   .sheet[data-on] g.m.on .lead { display: inline; }
-  .sheet[data-on] g.edm.on text.tag { font-size: 2.4px; }
-  .sheet .axis { font-size: 2.3px; }
+  .sheet[data-on] g.edm.on text.tag { font-size: 2.8px; }
+  .sheet .axis { font-size: 2.7px; }
   .sheet .key { font-size: .8rem; gap: .3rem 1rem; }
   .hero .wrap { padding-top: .9rem; }
-  .pair { grid-template-columns: minmax(0, 1fr); }
-  .pair .a { display: none; }
-  .pair img { height: auto; aspect-ratio: 16 / 10; }
-  .pair .b img { object-position: 40% 50%; }
+  .shot { margin-top: 0; }
+  .shot img { height: auto; aspect-ratio: 16 / 10; object-position: 45% 50%; }
   .cols .col:first-child img { display: none; }
   .hero h1 { font-size: 3.3rem; }
   .hero .lede { margin-top: 1rem; font-size: 1.05rem; }
@@ -323,23 +322,17 @@ footer .legal a { color: #d5d9dc; }
 <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <div>
-          <h1 id="hero-title">Designed here. <span>Built here.</span></h1>
+          <h1 id="hero-title"><span class="l1">Designed here.</span> <span>Built here.</span></h1>
           <p class="lede">Dies, weld and machining fixtures, and end-of-arm tooling for automated cells. Drawn in SolidWorks, then cut on wire EDM and CNC machining centers in Versailles, Ohio.</p>
           <div class="actions">
             <a class="btn" href="mailto:eric@directtoolingconcepts.com?subject=Quote%20request">Email a print for a quote</a>
             <a class="btn ghost num" href="tel:+19375264447">Call (937) 526-4447</a>
           </div>
         </div>
-        <div class="pair">
-          <figure class="a">
-            <img src="img/design.webp" width="1400" height="788" alt="A designer at two monitors, a fixture model open in 3D CAD and a 2D drawing beside it">
-            <figcaption>Fixture design in 3D CAD</figcaption>
-          </figure>
-          <figure class="b">
-            <img src="img/mill-vmx42.webp" width="1400" height="788" alt="A machinist in a green shirt running the Hurco VMX42 from its control pendant" fetchpriority="high">
-            <figcaption>Machining on the Hurco VMX42</figcaption>
-          </figure>
-        </div>
+        <figure class="shot">
+          <img src="img/floor.webp" width="1400" height="788" alt="A toolmaker in a denim apron assembling a fixture with toggle clamps on the shop floor" fetchpriority="high">
+          <figcaption>Fixture assembly on the shop floor in Versailles</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -431,7 +424,7 @@ footer .legal a { color: #d5d9dc; }
     </section>
 
     <div class="band" role="group" aria-label="Photos from the shop">
-      <figure><img src="img/floor.webp" width="1400" height="788" alt="A toolmaker in a denim apron assembling a fixture with toggle clamps on the shop floor" loading="lazy"></figure>
+      <figure><img src="img/mill-vmx42.webp" width="1400" height="788" alt="A machinist in a green shirt running the Hurco VMX42 from its control pendant" loading="lazy"></figure>
       <figure><img src="img/edm-mitsubishi.webp" width="1000" height="486" alt="The Mitsubishi wire EDM with the Accutex AL560 beside it" loading="lazy"></figure>
       <figure><img src="img/part-set.webp" width="860" height="500" alt="Five machined steel details laid out on a bench" loading="lazy"></figure>
       <figure><img src="img/edm-cut-wide.webp" width="1400" height="508" alt="Coolant flooding a cutter as a machining center works a large plate" loading="lazy"></figure>
@@ -538,15 +531,22 @@ footer .legal a { color: #d5d9dc; }
     }))
 
     // The tables grow out of the zero corner once, smallest first, when the drawing comes into view.
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && sheet.getBoundingClientRect().top > innerHeight) {
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!still) {
       sheet.classList.add('grow')
       const io = new IntersectionObserver(([e]) => {
         if (!e.isIntersecting) return
         io.disconnect()
-        requestAnimationFrame(() => { sheet.classList.add('grown'); sheet.classList.remove('grow') })
-      }, { threshold: .35 })
+        requestAnimationFrame(() => requestAnimationFrame(() => { sheet.classList.add('grown'); sheet.classList.remove('grow') }))
+      }, { threshold: .15 })
       io.observe(sheet)
     }
+    // A picked machine redraws its own travel out of the zero corner.
+    buttons.forEach((b) => b.addEventListener('click', () => {
+      if (still || b.getAttribute('aria-pressed') !== 'true') return
+      const g = sheet.querySelector(`g.m[data-m="${b.dataset.m}"]`)
+      g.animate([{ transform: 'scale(.15)' }, { transform: 'scale(1)' }], { duration: 450, easing: 'cubic-bezier(.2, .7, .2, 1)' })
+    }))
 
     // Phones: chart labels show one machine at a time, so start on the largest.
     if (matchMedia('(max-width: 760px)').matches) document.querySelector('.picker button[data-m="64"]').click()

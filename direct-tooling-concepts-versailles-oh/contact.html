@@ -59,15 +59,14 @@ h3 { font-size: 1.45rem; line-height: 1.05; }
 .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
 .btn.ghost:hover { background: var(--ink); color: var(--white); }
 .navs .btn { padding: .55rem 1rem; }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 14fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: center; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(3rem, 6vw, 5.5rem); }
-.hero h1 { font-size: clamp(3.2rem, 6.6vw, 6rem); font-weight: 850; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 10fr) minmax(0, 13fr); gap: clamp(2rem, 3.5vw, 3.5rem); align-items: start; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(3rem, 6vw, 5.5rem); }
+.hero h1 { font-size: clamp(3.2rem, 5.5vw, 5rem); font-weight: 850; }
+.hero h1 .l1 { display: block; white-space: nowrap; font-weight: inherit; color: inherit; }
 .hero h1 span { display: block; font-weight: 300; color: var(--graphite); }
 .hero .lede { margin-top: 1.5rem; max-width: 31rem; font-size: clamp(1.08rem, 1.5vw, 1.22rem); color: #2f353a; }
 .actions { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: .8rem 1rem; align-items: center; }
-.pair { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px; }
-.pair img { width: 100%; height: clamp(20rem, 27vw, 24rem); object-fit: cover; }
-.pair .a img { object-position: 58% 50%; }
-.pair .b img { object-position: 52% 50%; }
+.shot { margin-top: .45rem; }
+.shot img { width: 100%; height: clamp(22rem, 32vw, 29rem); object-fit: cover; object-position: 50% 45%; }
 figcaption { font-size: .82rem; font-weight: 500; color: var(--graphite); padding-top: .45rem; }
 .head .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: end; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
 .head h1 { font-size: clamp(2.9rem, 6vw, 5.2rem); font-weight: 850; }
@@ -266,16 +265,16 @@ footer .legal a { color: #d5d9dc; }
   .dock { display: block; }
   .sheet { position: sticky; top: 0; z-index: 2; margin: 0 calc(-1 * var(--pad)); border-width: 0 0 1px; }
   .sheet text.tag, .sheet .lead { display: none; }
-  .sheet[data-on] g.m.on text.tag { display: inline; font-size: 2.6px; }
+  .sheet[data-on] g.m.on text.tag { display: inline; font-size: 3px; }
+  .sheet[data-on] g.m.on:not(.edm) text.tag { dominant-baseline: hanging; }
+  .sheet .axis:not(.y) { transform: translateY(.6px); }
   .sheet[data-on] g.m.on .lead { display: inline; }
-  .sheet[data-on] g.edm.on text.tag { font-size: 2.4px; }
-  .sheet .axis { font-size: 2.3px; }
+  .sheet[data-on] g.edm.on text.tag { font-size: 2.8px; }
+  .sheet .axis { font-size: 2.7px; }
   .sheet .key { font-size: .8rem; gap: .3rem 1rem; }
   .hero .wrap { padding-top: .9rem; }
-  .pair { grid-template-columns: minmax(0, 1fr); }
-  .pair .a { display: none; }
-  .pair img { height: auto; aspect-ratio: 16 / 10; }
-  .pair .b img { object-position: 40% 50%; }
+  .shot { margin-top: 0; }
+  .shot img { height: auto; aspect-ratio: 16 / 10; object-position: 45% 50%; }
   .cols .col:first-child img { display: none; }
   .hero h1 { font-size: 3.3rem; }
   .hero .lede { margin-top: 1rem; font-size: 1.05rem; }
