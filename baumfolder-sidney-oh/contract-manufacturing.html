@@ -376,6 +376,52 @@ section { padding-block: 3rem; }
 }
 .top nav > a { white-space: nowrap; }
 @media (min-width: 1241px) { .top nav { gap: 1.1rem; } .top .btn { padding-inline: 1rem; } }
+@media (max-width: 900px) {
+.sheet { grid-template-rows: 9rem 1fr 0; }
+.hero-in { padding-top: 0; gap: 1.25rem; }
+.hero figure { height: 9rem; max-width: none; background: none; margin-inline: calc(-1 * clamp(1.25rem, 4vw, 3.5rem)); width: auto; }
+.hero figure img { padding: .6rem 0; }
+.model { padding-block: 1.75rem; gap: 1rem; }
+.model .shot img { max-height: 10rem; }
+.model .shot.panel { padding: 1rem; }
+.glyphpanel { min-height: 0; padding: 1rem; }
+.glyphpanel .glyph { width: 7rem; height: 3.5rem; }
+.model .desc + .desc { display: none; }
+.keys { margin-top: 1rem; }
+.keys div { padding: .6rem .75rem .6rem 0; }
+.keys div:nth-child(even) { padding-left: .75rem; }
+details.more { margin-top: .25rem; }
+details.more summary { padding: .7rem 0; }
+.doc { margin-top: .75rem; }
+.callout { padding: 1.1rem 1.25rem; }
+.callout .ticks { margin-top: 1rem; gap: .5rem; }
+}
+@media (max-width: 560px) {
+.top .btn.util { display: inline-flex; min-height: 2.75rem; padding: .5rem .8rem; font-size: .9375rem; }
+.util .long { display: none; }
+.top nav { gap: .5rem; }
+.keys dd { font-size: 1rem; }
+}
+@media (max-width: 900px) {
+.phead figure img { max-height: 8rem; }
+.phead figure.photo img { height: 8rem; }
+.phead-in { padding-top: 1.25rem; padding-bottom: 1.5rem; gap: 1rem; }
+.toc { flex-wrap: nowrap; overflow-x: auto; margin-top: 0; padding-bottom: .25rem; }
+.toc li { flex: none; }
+.model .shot img { max-height: 8.5rem; }
+.model h2 { font-size: 1.6rem; }
+}
+@media (max-width: 560px) {
+.glyphpanel { display: none; }
+.model { padding-block: 1.5rem; }
+.model .shot img { max-height: 7.5rem; }
+footer { padding-top: 2.5rem; font-size: .875rem; }
+.foot { grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem .75rem; }
+.foot img { width: 140px; height: 55px; }
+.foot address { margin-top: .75rem; line-height: 1.55; }
+.foot ul { gap: .3rem; }
+.legal { margin-top: 1.75rem; padding-top: 1.1rem; }
+}
 </style>
 </head>
 <body>
@@ -389,7 +435,7 @@ section { padding-block: 3rem; }
         <a href="feeding-finishing.html">Feeding &amp; finishing</a>
         <a href="contract-manufacturing.html" aria-current="page">Contract manufacturing</a>
         <a href="about.html">About</a>
-        <a class="btn btn-line util" href="parts-service.html">Parts &amp; manuals</a>
+        <a class="btn btn-line util" href="parts-service.html">Parts<span class="long"> &amp; manuals</span></a>
         <a class="btn btn-main" href="mailto:baumfolder@baumfolder.com?subject=Custom%20quote%20request">Request a quote</a>
         <details class="menu">
           <summary><i aria-hidden="true"></i>Menu</summary>
