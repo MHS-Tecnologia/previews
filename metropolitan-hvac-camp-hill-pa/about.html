@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#0a1f4f">
+<title>About | Metro HVAC, Camp Hill, PA</title>
+<meta name="description" content="Metro HVAC is a locally owned, founder-led home comfort company in Camp Hill, PA, built around clear answers, proper diagnostics and accurate system design.">
+<meta property="og:title" content="About | Metro HVAC, Camp Hill, PA">
+<meta property="og:description" content="Metro HVAC is a locally owned, founder-led home comfort company in Camp Hill, PA, built around clear answers, proper diagnostics and accurate system design.">
+<meta property="og:image" content="https://demo.mhstecnologia.com/metropolitan-hvac-camp-hill-pa/email.jpg">
+<meta property="og:type" content="website">
+<link rel="preload" as="font" type="font/woff2" href="fonts/overpass.woff2" crossorigin>
+<script>document.documentElement.className+=' js'</script>
+<style>@font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
+/* Metro HVAC's logo blue and navy, the orange of the mascot's shirt and toolbox,
+and a cool sheet-metal paper. Overpass descends from Highway Gothic, the
+lettering on the Pennsylvania road signs the vans drive under. */
+:root{color-scheme:light;--navy:#0a1f4f;--navy-2:#13306e;--blue:#0049a8;--orange:#f25c05;--orange-dk:#c84a00;--ink:#14213d;--muted:#46536d;--paper:#eef2f7;--rule:#cdd6e3;--white:#fff;--on-navy:#eaf0fa;--on-navy-2:#b8c6e0;--pad:clamp(1rem,4vw,3rem);--max:76rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--white);color:var(--ink);font:400 1.0625rem/1.6 "Overpass",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+h1,h2,h3{font-weight:800;line-height:1.02;letter-spacing:-.015em;text-wrap:balance;color:var(--navy)}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+h3{font-size:1.35rem;line-height:1.15}
+p{max-width:64ch}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:30}
+.skip:focus{left:.5rem}
+.demo{background:var(--navy);color:var(--on-navy);font-size:.8125rem;line-height:1.35;padding:.45rem var(--pad);text-align:center}
+/* header */
+.top{background:var(--white);border-bottom:1px solid var(--rule);position:relative;z-index:10}
+.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:5rem}
+.brand{flex:none;display:block}
+.brand img{width:172px;height:auto}
+.top nav{margin-left:auto}
+.nav{display:flex;gap:1.6rem;list-style:none;padding:0}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:1rem;padding:.4rem 0;border-bottom:3px solid transparent}
+.nav a:hover{border-color:var(--rule)}
+.nav a[aria-current=page]{border-color:var(--orange)}
+.call-top{flex:none}
+.menu{display:none}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.25rem;padding:.7rem 1.35rem;border-radius:999px;font:700 1.0625rem/1.1 "Overpass",sans-serif;text-decoration:none;white-space:nowrap}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-call{background:var(--orange);color:var(--navy)}
+.btn-call:hover{background:#ff6a12}
+.btn-line{color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+.btn-line:hover{background:var(--paper)}
+.navy .btn-call,.sticky .btn-call{color:var(--navy)}
+.on-navy .btn-line{color:var(--on-navy);box-shadow:inset 0 0 0 2px var(--on-navy-2)}
+.on-navy .btn-line:hover{background:var(--navy-2)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1.05rem;font-size:1rem}
+/* hero */
+.hero{background:var(--paper);padding:clamp(2rem,4vw,3.5rem) 0 0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{font-size:clamp(2.2rem,3.8vw,3.3rem);line-height:.98}
+.lede{font-size:1.1875rem;color:var(--muted);margin-top:1.1rem;max-width:34rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+.hours{margin-top:1rem;font-size:.9375rem;color:var(--muted)}
+.hours b{color:var(--ink)}
+.hero-photo{margin:0;position:relative}
+.hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 30%;border-radius:6px}
+.hero-photo figcaption{font-size:.875rem;color:var(--muted);margin-top:.5rem}
+/* the Metro line strip */
+.strip{background:var(--paper);padding:2.25rem 0 2.5rem}
+.strip-t{font-weight:700;color:var(--navy);font-size:.9375rem;margin-bottom:.9rem}
+.line{list-style:none;padding:0;display:grid;grid-template-columns:repeat(8,1fr);position:relative}
+.line::before{content:"";position:absolute;left:calc(100%/16);right:calc(100%/16);top:9px;height:6px;border-radius:3px;background:var(--orange);transform-origin:left;}
+.line li{position:relative;text-align:center;padding-top:1.9rem;line-height:1.2}
+.stn{position:absolute;left:50%;top:0;width:24px;height:24px;margin-left:-12px;border-radius:50%;background:var(--white);border:5px solid var(--navy)}
+.home .stn{width:34px;height:34px;margin-left:-17px;top:-5px;border-width:6px;box-shadow:0 0 0 4px var(--paper),0 0 0 7px var(--navy)}
+.nm{font-weight:700;color:var(--navy);font-size:1rem;display:block}
+.home .nm{font-size:1.125rem;margin-top:.45rem}
+.nm small{display:block;font-weight:400;color:var(--muted);font-size:.8125rem;margin-top:.15rem}
+.js .line::before{animation:draw 1.1s cubic-bezier(.6,.05,.2,1) .25s both}
+.js .line li{animation:stop .35s ease-out both;animation-delay:calc(.3s + var(--i)*.11s)}
+@keyframes draw{from{transform:scaleX(0)}}
+@keyframes stop{from{opacity:0;transform:translateY(4px)}}
+/* sections */
+.sec{padding:clamp(3.5rem,7vw,6rem) 0}
+.sec-head{max-width:46rem;margin-bottom:2.25rem}
+.sec-head p{margin-top:.8rem;color:var(--muted);font-size:1.125rem}
+.navy{background:var(--navy);color:var(--on-navy)}
+.navy h2,.navy h3{color:var(--white)}
+.navy .sec-head p,.navy .muted{color:var(--on-navy-2)}
+.navy a{color:var(--white)}
+.paper{background:var(--paper)}
+/* three paths */
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.path{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--rule);border-radius:6px;overflow:hidden;text-decoration:none;color:inherit}
+.path img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.path div{padding:1.25rem 1.35rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.path h3{color:var(--navy)}
+.path p{color:var(--muted);font-size:1rem}
+.path .go{margin-top:auto;padding-top:.5rem;font-weight:700;color:var(--blue)}
+.path:hover{border-color:var(--navy)}
+.path:hover .go{text-decoration:underline}
+/* process: five stops */
+.proc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.proc-photo img{border-radius:6px;width:100%;aspect-ratio:3/4;object-fit:cover}
+.proc-photo figcaption{font-size:.875rem;color:var(--on-navy-2);margin-top:.5rem}
+.stops{list-style:none;padding:0;margin-top:2rem;position:relative}
+.stops::before{content:"";position:absolute;left:14px;top:16px;bottom:16px;width:5px;border-radius:3px;background:var(--orange)}
+.stops li{position:relative;padding:0 0 1.6rem 3.4rem}
+.stops li:last-child{padding-bottom:0}
+.stops li::before{content:counter(s);counter-increment:s;position:absolute;left:0;top:-2px;width:33px;height:33px;border-radius:50%;background:var(--navy);border:5px solid var(--white);color:var(--white);font:800 .875rem/23px "Overpass",sans-serif;text-align:center}
+.stops{counter-reset:s}
+.stops b{display:block;color:var(--white);font-size:1.1875rem;line-height:1.25;margin-bottom:.2rem}
+.stops span{color:var(--on-navy-2)}
+/* reviews */
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem)}
+.quotes blockquote{border-left:6px solid var(--orange);padding:.2rem 0 .2rem 1.4rem}
+.quotes p{font-size:clamp(1.25rem,2vw,1.5rem);line-height:1.4;color:var(--navy);font-weight:600}
+.src{margin-top:1.5rem;color:var(--muted);font-size:.9375rem}
+/* installs */
+.installs{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.installs figure{margin:0}
+.installs img{border-radius:6px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.installs figcaption{font-weight:700;color:var(--navy);margin-top:.55rem;line-height:1.3}
+.installs figcaption span{display:block;font-weight:400;color:var(--muted);font-size:.9375rem}
+.more{margin-top:2rem}
+/* credentials */
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.creds li{list-style:none;padding:1.25rem 1.25rem 1.25rem 0;border-bottom:1px solid var(--rule)}
+.creds b{display:block;color:var(--navy);font-size:1.1875rem;line-height:1.25}
+.creds span{color:var(--muted);font-size:.9688rem}
+.creds{padding:0}
+/* final call */
+.final .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.final img.mascot{width:clamp(150px,18vw,230px);height:auto}
+.final h2{font-size:clamp(2rem,4vw,3.2rem)}
+.final p{margin-top:.8rem;font-size:1.125rem}
+.contact-lines{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.75rem}
+/* inner pages */
+.phero{background:var(--paper);padding:clamp(2.25rem,5vw,4rem) 0 clamp(2rem,4vw,3rem);border-bottom:1px solid var(--rule)}
+.phero h1{font-size:clamp(2.3rem,5vw,4rem)}
+.phero p{margin-top:1rem;font-size:1.1875rem;color:var(--muted);max-width:44rem}
+.phero .ctas{margin-top:1.4rem}
+.svc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding:clamp(2.5rem,5vw,4rem) 0;border-bottom:1px solid var(--rule)}
+.svc:nth-of-type(even) .svc-photo{order:2}
+.svc-photo img{border-radius:6px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.svc h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+.svc p{margin-top:.8rem;color:var(--muted)}
+.svc ul{margin-top:1rem;padding-left:1.15rem;columns:2;column-gap:2rem}
+.svc li{margin-bottom:.3rem;break-inside:avoid}
+.svc li::marker{color:var(--orange)}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.tool{background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:1.4rem}
+.tool h3{margin-bottom:.5rem}
+.tool p{color:var(--muted);font-size:1rem}
+.tool .note{margin-top:.8rem;font-size:.875rem;color:var(--muted);font-style:italic}
+.brands{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin-top:1rem}
+.brands li{border:1px solid var(--rule);border-radius:999px;padding:.35rem .9rem;font-weight:700;color:var(--navy);background:var(--white)}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start;padding:clamp(2.5rem,5vw,4rem) 0;border-bottom:1px solid var(--rule)}
+.case:nth-of-type(even) .case-photo{order:2}
+.case-photo img{border-radius:6px;width:100%;max-height:640px;object-fit:cover}
+.case h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+.case p{margin-top:.8rem;color:var(--muted)}
+.where{font-weight:700;color:var(--blue);margin-bottom:.4rem}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.gal figure{margin:0}
+.gal img{border-radius:6px;width:100%;aspect-ratio:4/5;object-fit:cover}
+.gal figcaption{font-size:.9375rem;color:var(--muted);margin-top:.45rem}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.two p+p{margin-top:.9rem}
+.checks{list-style:none;padding:0;margin-top:1.2rem;display:grid;gap:.55rem}
+.checks li{padding-left:1.8rem;position:relative}
+.checks li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:12px;border-radius:50%;border:4px solid var(--orange)}
+.photo-r img{border-radius:6px;width:100%}
+.photo-r figcaption{font-size:.875rem;color:var(--muted);margin-top:.5rem}
+.motto{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;color:var(--white);line-height:1.05}
+/* service-area map */
+.map{background:var(--navy);border-radius:8px;padding:clamp(1rem,3vw,2rem);overflow:hidden}
+.map svg{display:block;width:100%;height:auto}
+.map .route{fill:none;stroke:var(--orange);stroke-width:9;stroke-linecap:round;stroke-linejoin:round}
+.map .branch{fill:none;stroke:#6f9ae0;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.map .county{fill:none;stroke:#2c4a8a;stroke-width:2;stroke-dasharray:6 7}
+.map .cty{fill:#8fa6cf;font:600 15px "Overpass",sans-serif}
+.map .s{fill:#fff;stroke:var(--navy);stroke-width:5}
+.map .s-ring{fill:none;stroke:#fff;stroke-width:5}
+.map text.t{fill:#fff;font:700 19px "Overpass",sans-serif}
+.map text.h{fill:#fff;font:800 24px "Overpass",sans-serif}
+.map text.sub{fill:#b8c6e0;font:400 15px "Overpass",sans-serif}
+.js .map.go .route,.js .map.go .branch{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:route 1.6s cubic-bezier(.6,.05,.2,1) forwards}
+.js .map.go .branch{animation-delay:1s;animation-duration:.8s}
+@keyframes route{to{stroke-dashoffset:0}}
+.towns{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
+.towns h3{font-size:1.1rem;color:var(--navy);border-top:5px solid var(--orange);padding-top:.6rem;margin-bottom:.4rem}
+.towns ul{list-style:none;padding:0;color:var(--ink)}
+.towns li{padding:.15rem 0}
+.towns small{color:var(--muted)}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.notes h3{margin-bottom:.5rem}
+.notes p{color:var(--muted)}
+/* contact */
+.bigcall{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.dial{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;color:var(--navy);text-decoration:none;line-height:1;display:inline-block;letter-spacing:-.02em}
+.dial:hover{color:var(--blue)}
+.facts{list-style:none;padding:0;display:grid;gap:1.1rem}
+.facts b{display:block;color:var(--navy)}
+.facts span,.facts a{color:var(--muted)}
+.facts a{color:var(--blue)}
+.faq{max-width:52rem}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{cursor:pointer;padding:1.1rem 2rem 1.1rem 0;font-weight:700;color:var(--navy);font-size:1.125rem;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:.3rem;top:1.45rem;width:10px;height:10px;border-right:3px solid var(--orange);border-bottom:3px solid var(--orange);transform:rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(-135deg);top:1.7rem}
+.faq details p{padding:0 0 1.2rem;color:var(--muted)}
+.ready{margin-top:1.5rem}
+/* footer */
+footer{background:var(--navy);color:var(--on-navy-2);padding:3rem 0 2.5rem;font-size:.9375rem}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem;align-items:start}
+footer .flogo{background:var(--white);border-radius:6px;padding:.6rem .8rem;display:inline-block}
+footer .flogo img{width:160px}
+footer b{color:var(--white);display:block;margin-bottom:.35rem}
+footer ul{list-style:none;padding:0;display:grid;gap:.3rem}
+footer a{color:var(--on-navy)}
+.fine{border-top:1px solid #2a437c;margin-top:2.25rem;padding-top:1.25rem;display:grid;gap:.4rem}
+.fine p{max-width:none}
+/* sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(10,31,79,.97);transform:translateY(110%);transition:transform .25s ease}
+.sticky.on{transform:none}
+.sticky .btn{flex:1;min-height:3rem;padding:.5rem .75rem}
+@media (max-width:1000px){
+.nav{gap:1.1rem}
+.nav a{font-size:.9375rem}
+.installs{grid-template-columns:repeat(2,1fr)}
+.towns{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:860px){
+body{font-size:1rem}
+.top .wrap{min-height:4rem;gap:.75rem}
+.brand img{width:128px}
+.nav{display:none}
+.call-top{margin-left:auto}
+.sr-wide{display:none}
+.menu{display:block;position:relative}
+.menu summary{list-style:none;cursor:pointer;min-height:2.75rem;min-width:2.75rem;display:grid;place-items:center;border-radius:6px;color:var(--navy)}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary svg{width:26px;height:26px}
+.menu ul{position:absolute;right:0;top:calc(100% + .5rem);background:var(--white);border:1px solid var(--rule);border-radius:6px;list-style:none;padding:.4rem;min-width:13rem;box-shadow:0 12px 28px rgba(10,31,79,.18)}
+.menu a{display:block;padding:.7rem .9rem;color:var(--ink);text-decoration:none;font-weight:600}
+.menu a[aria-current=page]{color:var(--blue)}
+.hero{padding-top:1.4rem}
+.hero .wrap{grid-template-columns:1fr;gap:1.25rem}
+.hero h1{font-size:2.15rem}
+.lede{font-size:1.0625rem;margin-top:.75rem}
+.ctas{margin-top:1.1rem;gap:.6rem}
+.ctas .btn{flex:1 1 auto}
+.hours{font-size:.875rem;margin-top:.7rem}
+.hero-photo img{aspect-ratio:16/10}
+.strip{padding:1.25rem 0 1.75rem}
+.line{margin-top:6.4rem}
+.line li{padding-top:0;height:24px}
+.nm{position:absolute;left:50%;bottom:34px;transform-origin:left bottom;transform:rotate(-48deg);white-space:nowrap;font-size:.8125rem;text-align:left}
+.home .nm{font-size:.9375rem}
+.nm small{display:none}
+.home .stn{top:-5px}
+.paths,.quotes,.proc,.svc,.case,.two,.bigcall,.tools,.notes{grid-template-columns:1fr}
+.proc-photo{display:none}
+.svc:nth-of-type(even) .svc-photo,.case:nth-of-type(even) .case-photo{order:0}
+.svc ul{columns:1}
+.case-photo img{aspect-ratio:4/3;max-height:none}
+.path img{aspect-ratio:16/9}
+.creds{grid-template-columns:1fr}
+.gal{grid-template-columns:repeat(2,1fr)}
+.final .wrap{grid-template-columns:1fr}
+.final img.mascot{width:130px}
+footer .cols{grid-template-columns:1fr}
+footer{padding-bottom:6rem}
+.sticky{display:flex}
+.map{padding:.75rem;overflow-x:auto}
+.map svg{min-width:640px}
+}
+@media (max-width:520px){
+.installs{grid-template-columns:1fr 1fr;gap:.75rem}
+.towns{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+.js .line::before,.js .line li{animation:none}
+.js .map.go .route,.js .map.go .branch{animation:none;stroke-dashoffset:0}
+.sticky,.faq summary::after{transition:none}
+}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Metro HVAC. Not affiliated with or endorsed by Metro HVAC.</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Metro HVAC home"><img src="img/logo-440.webp" srcset="img/logo-220.webp 220w, img/logo-440.webp 440w, img/logo-660.webp 660w" sizes="172px" width="172" height="70" alt="Metro HVAC, Your Comfort. Our Mission." decoding="async"></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="work.html">Our work</a></li><li><a href="service-area.html">Service area</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <a class="btn btn-call btn-sm call-top" href="tel:+17178742030"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg><span>Call<span class="sr-wide"> (717) 874-2030</span></span></a>
+    <details class="menu">
+      <summary aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2.2H3zm0 4.9h18v2.2H3zm0 4.9h18V18H3z"/></svg></summary>
+      <nav aria-label="Mobile"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="work.html">Our work</a></li><li><a href="service-area.html">Service area</a></li><li><a href="about.html" aria-current="page">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="phero">
+  <div class="wrap">
+    <h1>Doing HVAC the right way, in Camp Hill</h1>
+    <p>Metro HVAC is not built around high-pressure sales. It is built around clear answers, proper diagnostics, accurate system design, and doing the job right the first time.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap two">
+    <div>
+      <h2>Meet Steven McKeon</h2>
+      <p style="margin-top:1rem">Steven founded Metro HVAC with a simple belief: homeowners deserve more than rushed diagnoses, quick equipment swaps, and one-size-fits-all recommendations.</p>
+      <p>Every home is different. That is why Metro focuses on proper system sizing, airflow, ductwork, equipment matching, and clear communication before recommending a repair, replacement, or installation.</p>
+      <p>From Manual J load calculations to detailed troubleshooting, the goal is not just to install equipment. It is to make sure the system performs the way it should.</p>
+      <ul class="checks">
+        <li>Manual J load calculations</li><li>Accurate diagnostics</li><li>No-pressure recommendations</li><li>Proper system matching</li><li>Airflow and ductwork focus</li><li>Long-term comfort planning</li>
+      </ul>
+    </div>
+    <figure class="photo-r" style="margin:0">
+      <img src="img/crew-480.webp" srcset="img/crew-480.webp 480w, img/crew-760.webp 760w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="760" height="570" alt="Four Metro HVAC technicians standing in front of a Metro service van" loading="lazy" decoding="async">
+      <figcaption>The Metro HVAC team.</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="sec navy on-navy">
+  <div class="wrap two">
+    <p class="motto">Your Comfort. Our Mission.</p>
+    <div>
+      <p>If replacement is recommended, Metro explains why. If repair makes sense, you’ll hear that too.</p>
+      <ul class="checks" style="color:var(--on-navy)">
+        <li>Locally owned and based in Camp Hill, PA</li>
+        <li>Honest recommendations with no-pressure guidance</li>
+        <li>Proper system sizing for comfort and efficiency</li>
+        <li>Licensed and insured service</li>
+        <li>Clear communication before work begins</li>
+        <li>Respect for your home during service and installation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap two">
+    <div>
+      <h2>Credentials</h2>
+      <ul class="checks">
+        <li>BBB A+ rated</li><li>Listed in ACCA’s Contractor Directory</li><li>Daikin dealer</li><li>PA HIC #PA181988</li><li>15 years of experience in high-end system design</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Equipment</h2>
+      <p style="margin-top:1rem;color:var(--muted)">Metro works with trusted manufacturers to offer durable, efficient options chosen for your home and comfort goals.</p>
+      <ul class="brands"><li>Daikin</li><li>Goodman</li><li>Amana</li><li>A. O. Smith</li><li>Rheem</li><li>Bosch IDS</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec paper">
+  <div class="wrap">
+    <div class="gal" style="grid-template-columns:1fr 1fr">
+      <figure><img src="img/tech-480.webp" srcset="img/tech-480.webp 480w, img/tech-900.webp 900w" sizes="(max-width: 860px) 46vw, 540px" width="900" height="1200" alt="Metro HVAC technician kneeling at an open furnace" loading="lazy" decoding="async"><figcaption>On a furnace call.</figcaption></figure>
+      <figure><img src="img/analyzer-480.webp" srcset="img/analyzer-480.webp 480w, img/analyzer-900.webp 900w" sizes="(max-width: 860px) 46vw, 540px" width="900" height="1200" alt="Metro HVAC technician taking a reading at a gas furnace" loading="lazy" decoding="async"><figcaption>Readings before recommendations.</figcaption></figure>
+    </div>
+    <div class="ctas" style="margin-top:1.75rem"><a class="btn btn-call " href="tel:+17178742030"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call (717) 874-2030</a><a class="btn btn-line " href="mailto:office@metrohvacpa.com?subject=Service%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.6l8 5.6 8-5.6V7h-.4L12 12.2z"/></svg>Email the office</a></div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="flogo" href="index.html" aria-label="Metro HVAC home"><img src="img/logo-440.webp" srcset="img/logo-220.webp 220w, img/logo-440.webp 440w, img/logo-660.webp 660w" sizes="160px" width="160" height="65" alt="Metro HVAC, Your Comfort. Our Mission." loading="lazy" decoding="async"></a>
+        <p style="margin-top:1rem">Heating, cooling, plumbing and water service for homes across South Central Pennsylvania. Locally owned in Camp Hill.</p>
+      </div>
+      <div>
+        <b>Reach the office</b>
+        <ul>
+          <li><a href="tel:+17178742030">(717) 874-2030</a></li>
+          <li><a href="mailto:office@metrohvacpa.com?subject=Service%20request">office@metrohvacpa.com</a></li>
+          <li>913 Kranzel Drive, Camp Hill, PA 17011</li>
+          <li>Seven days a week, 6:00 AM to 6:00 PM</li>
+        </ul>
+      </div>
+      <div>
+        <b>Pages</b>
+        <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="work.html">Our work</a></li><li><a href="service-area.html">Service area</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="fine">
+      <p>PA HIC #PA181988. Licensed and insured.</p>
+      <p>Unofficial demo built by MHS Tecnologia for Metro HVAC. Not affiliated with or endorsed by Metro HVAC. Text, logo and photos come from Metro HVAC’s public website.</p>
+      <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+    </div>
+  </div>
+</footer>
+<div class="sticky on-navy" id="sticky" aria-hidden="true">
+  <a tabindex="-1" class="btn btn-call " href="tel:+17178742030"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Call now</a>
+  <a tabindex="-1" class="btn btn-line " href="mailto:office@metrohvacpa.com?subject=Service%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.6l8 5.6 8-5.6V7h-.4L12 12.2z"/></svg>Email the office</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('sticky'),cta=document.getElementById('hero-cta')||document.querySelector('.phero .btn-call');
+  if(bar&&cta&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){var on=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;bar.classList.toggle('on',on);bar.setAttribute('aria-hidden',on?'false':'true');bar.querySelectorAll('a').forEach(function(a){a.tabIndex=on?0:-1})}).observe(cta);
+  }
+  
+})();
+</script>
+</body>
+</html>
