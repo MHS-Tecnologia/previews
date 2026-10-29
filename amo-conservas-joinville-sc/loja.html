@@ -95,7 +95,8 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 .rodape .wrap { display: grid; gap: 2rem; grid-template-columns: 1.3fr 1fr 1fr; }
 .rodape h2 { color: #fff; font-size: 1.25rem; margin-bottom: .6rem; }
 .rodape p, .rodape li { font-size: .9375rem; color: #d6dccd; }
-.rodape ul { list-style: none; padding: 0; display: grid; gap: .25rem; }
+.rodape ul { list-style: none; padding: 0; display: grid; gap: 0; }
+.rodape ul a, .legal a { display: inline-flex; align-items: center; min-height: 44px; }
 .rodape a { color: #fff; }
 .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.18); padding-top: 1.4rem; font-size: .8125rem !important; color: #b9c2b0 !important; max-width: none; }
 .horas { display: grid; grid-template-columns: auto 1fr; gap: .15rem 1rem; }
@@ -133,7 +134,12 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 .citacao .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .citacao blockquote p { font: 700 clamp(1.7rem, 3.4vw, 2.6rem)/1.2 "Bitter", Georgia, serif; color: #fff; max-width: 20ch; }
 .citacao cite { display: block; margin-top: 1rem; font-style: normal; color: #c9d2be; font-size: .9375rem; }
-.citacao img { border-radius: 4px; }
+.citacao .rotulo-nota { color: #d5ddcc; font-size: 1.0625rem; border-left: 3px solid var(--vermelho); padding-left: 1rem; }
+.prateleira { background: var(--papel-2); }
+.galeria { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.galeria img { border-radius: 3px; width: 100%; }
+.galeria figure:last-child img { aspect-ratio: 3 / 4; object-fit: cover; }
+.outras-lista { margin: 1.6rem 0 1.6rem; padding-left: 1.1rem; display: grid; gap: .35rem; }
 .citacao figure { max-width: 25rem; justify-self: end; }
 .citacao figcaption { color: #c9d2be; }
 .detalhes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
@@ -144,7 +150,8 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 .fatos li { padding-left: 1.6rem; position: relative; }
 .fatos li::before { content: ""; position: absolute; left: 0; top: .5em; width: .7rem; height: .7rem; background: var(--xadrez); border-radius: 2px; }
 @media (max-width: 760px) {
-  .abre, .citacao .wrap, .detalhes { grid-template-columns: 1fr; }
+  .abre, .citacao .wrap, .detalhes, .galeria { grid-template-columns: 1fr; }
+  .prateleira .bt { width: 100%; }
   .abre figure { justify-self: stretch; }
 }
 </style>
@@ -164,35 +171,37 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 <div class="wrap abre">
   <div class="cabeca">
     <h1>A loja da Amo, no Petrópolis</h1>
-    <p>Rua dos Aimorés, 4897, em Joinville. Em 2026 a loja fez seis anos, e comemorou debaixo do neon.</p>
+    <p>Rua dos Aimorés, 4897, em Joinville. Parede verde, neon vermelho e prateleiras de madeira: além da linha Amo, a loja vende conservas, doces e farinha de outras marcas.</p>
     <a class="bt" data-cta href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir a tabela no WhatsApp</span></a>
   </div>
   <figure>
-    <div class="rotulo"><img src="img/seis-anos-480.webp" srcset="img/seis-anos-480.webp 480w, img/seis-anos-800.webp 800w, img/seis-anos-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 462px" width="1200" height="1564" alt="Um casal sorri debaixo do neon Amo segurando balões com o número 6" loading="lazy" decoding="async"></div>
-    <figcaption>O post de seis anos da loja.</figcaption>
+    <div class="rotulo"><img src="img/neon-pepino-480.webp" srcset="img/neon-pepino-480.webp 480w, img/neon-pepino-900.webp 900w, img/neon-pepino-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 462px" width="1200" height="1446" alt="O letreiro de neon vermelho Amo atrás de dois potes de pepino em salmoura" loading="lazy" decoding="async"></div>
+    <figcaption>O neon da loja, atrás de potes de pepino em salmoura Danimar.</figcaption>
   </figure>
 </div>
+
+<section class="secao prateleira" aria-labelledby="h-outras">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="h-outras">Na prateleira, outras marcas também</h2>
+      <p>A Amo revende produtos de outras marcas ao lado dos seus potes. Alguns que já passaram pela loja:</p>
+    </div>
+    <div class="galeria">
+      <figure><img src="img/doces-480.webp" srcset="img/doces-480.webp 480w, img/doces-900.webp 900w, img/doces-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 560px" width="1200" height="1138" alt="Sete potes de doce cremoso Recanto da Serra empilhados sobre a madeira" loading="lazy" decoding="async"><figcaption>Recanto da Serra: foundant de leite com geleia de maracujá, de morango e com chocolate, e cocada cremosa com geleia de maracujá, com doce de goiaba, com nozes e com geleia de morango.</figcaption></figure>
+      <figure><img src="img/farinha-480.webp" srcset="img/farinha-480.webp 480w, img/farinha-900.webp 900w" sizes="(max-width: 760px) 92vw, 300px" width="900" height="1200" alt="Uma atendente segura um pacote de 1 kg de farinha de mandioca fina debaixo do neon da loja" loading="lazy" decoding="async"><figcaption>Farinha de mandioca fina Morretes, pacote de 1 kg.</figcaption></figure>
+    </div>
+    <ul class="outras-lista">
+      <li>Pepino em salmoura Danimar</li>
+      <li>Salame com queijo</li>
+    </ul>
+    <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20O%20que%20tem%20na%20prateleira%20da%20loja%20hoje%3F"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Perguntar o que tem hoje</span></a>
+  </div>
+</section>
 
 <section class="secao citacao" aria-label="O que a Amo diz">
   <div class="wrap">
     <blockquote><p>“Nós amamos levar a Amo até você.”</p><cite>A bio da Amo no Instagram, @amo.conservas</cite></blockquote>
-    <figure class="entrega"><img src="img/cebola-480.webp" srcset="img/cebola-480.webp 480w, img/cebola-800.webp 800w" sizes="(max-width: 760px) 92vw, 400px" width="800" height="1067" alt="Uma atendente estende dois potes de cebola em filetes Amo na direção da câmera, na frente das prateleiras de madeira" loading="lazy" decoding="async"><figcaption>Cebola em filetes sabor defumado, nas prateleiras de madeira da loja.</figcaption></figure>
-  </div>
-</section>
-
-<section class="secao" aria-labelledby="h-como">
-  <div class="wrap detalhes">
-    <div>
-      <h2 id="h-como">Como é lá dentro</h2>
-      <p>Uma parede verde de folhagens, o neon vermelho com o nome da Amo e prateleiras de madeira com potes de todas as cores. É ali que a loja fotografa os produtos que posta no Instagram.</p>
-      <p>O endereço da loja é o mesmo que vai impresso no rótulo dos potes Amo.</p>
-      <ul class="fatos">
-        <li><svg class="estrela" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m10 1.8 2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.7l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z" fill="currentColor"/></svg> 4,9 no Google, com 186 avaliações</li>
-        <li>Cerca de 13 mil seguidores no Instagram, @amo.conservas</li>
-        <li>Seg a sex, 9h às 12h e 14h às 18h. Sábado, 9h às 12h</li>
-      </ul>
-    </div>
-    <figure><img src="img/geleias-480.webp" srcset="img/geleias-480.webp 480w, img/geleias-800.webp 800w, img/geleias-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 560px" width="1200" height="1600" alt="Cinco potes de geleia colonial Amo sobre o balcão de madeira, com a parede verde e o neon atrás" loading="lazy" decoding="async"><figcaption>Geleias coloniais no balcão, com a parede verde atrás.</figcaption></figure>
+    <p class="rotulo-nota">O endereço da loja é o mesmo que vai impresso no rótulo dos potes Amo: Rua dos Aimorés, 4897, Petrópolis.</p>
   </div>
 </section>
 

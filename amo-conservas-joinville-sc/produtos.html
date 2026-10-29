@@ -95,7 +95,8 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 .rodape .wrap { display: grid; gap: 2rem; grid-template-columns: 1.3fr 1fr 1fr; }
 .rodape h2 { color: #fff; font-size: 1.25rem; margin-bottom: .6rem; }
 .rodape p, .rodape li { font-size: .9375rem; color: #d6dccd; }
-.rodape ul { list-style: none; padding: 0; display: grid; gap: .25rem; }
+.rodape ul { list-style: none; padding: 0; display: grid; gap: 0; }
+.rodape ul a, .legal a { display: inline-flex; align-items: center; min-height: 44px; }
 .rodape a { color: #fff; }
 .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.18); padding-top: 1.4rem; font-size: .8125rem !important; color: #b9c2b0 !important; max-width: none; }
 .horas { display: grid; grid-template-columns: auto 1fr; gap: .15rem 1rem; }
@@ -131,6 +132,7 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 .produto:nth-of-type(even) .quadro { order: 2; }
 .quadro { background: var(--papel-2); border-radius: 4px; overflow: hidden; position: relative; aspect-ratio: 4 / 4.2; display: flex; align-items: flex-end; justify-content: center; }
 .quadro.foto img { width: 100%; height: 100%; object-fit: cover; }
+.quadro.alto { aspect-ratio: 620 / 911; width: 100%; max-width: 22rem; justify-self: center; }
 .quadro.corte { padding: 1.5rem 1.5rem 0; }
 .quadro.corte::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: #a36a3c url(img/balcao-800.webp) center 30% / cover; }
 .quadro.corte img { position: relative; z-index: 1; margin-bottom: 9%; filter: drop-shadow(0 12px 9px rgba(60,30,10,.3)); }
@@ -180,7 +182,7 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
   </div>
 
   <article class="produto" aria-labelledby="p-bet">
-    <div class="quadro corte"><img class="bet" src="img/pote-beterraba-240.webp" srcset="img/pote-beterraba-240.webp 240w, img/pote-beterraba-480.webp 480w" sizes="(max-width: 760px) 30vw, 190px" width="480" height="833" alt="Pote de 3,1 kg de beterraba agridoce Amo" loading="lazy" decoding="async"></div>
+    <div class="quadro foto alto"><img src="img/beterraba-550-480.webp" srcset="img/beterraba-550-480.webp 480w, img/beterraba-550-620.webp 620w" sizes="(max-width: 760px) 92vw, 416px" width="620" height="911" alt="Pote de 550 g de beterraba agridoce Amo, num post da loja sobre papel quadriculado" loading="lazy" decoding="async"></div>
     <div>
       <h2 class="nome" id="p-bet">Beterraba agridoce</h2>
       <p class="tipo">Em conserva</p>
@@ -193,7 +195,7 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
   </article>
 
   <article class="produto" aria-labelledby="p-gel">
-    <div class="quadro foto"><img src="img/geleias-480.webp" srcset="img/geleias-480.webp 480w, img/geleias-800.webp 800w" sizes="(max-width: 760px) 92vw, 416px" width="800" height="1067" alt="Cinco potes de geleia colonial Amo sobre o balcão de madeira, com a parede verde e o neon atrás" loading="lazy" decoding="async"></div>
+    <div class="quadro foto"><img src="img/geleias-480.webp" srcset="img/geleias-480.webp 480w, img/geleias-900.webp 900w, img/geleias-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 416px" width="1200" height="1600" alt="Cinco potes de geleia colonial Amo sobre o balcão de madeira, com a parede verde e o neon atrás" loading="lazy" decoding="async"></div>
     <div>
       <h2 class="nome" id="p-gel">Geleia colonial</h2>
       <p class="tipo">Pote de 400 g, em cinco sabores</p>
@@ -205,7 +207,7 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
   </article>
 
   <article class="produto" aria-labelledby="p-milho">
-    <div class="quadro foto"><img src="img/milho-480.webp" srcset="img/milho-480.webp 480w, img/milho-800.webp 800w" sizes="(max-width: 760px) 92vw, 416px" width="800" height="1067" alt="Dois potes de mini milho Amo sobre palha, na frente de folhagens" loading="lazy" decoding="async"></div>
+    <div class="quadro foto"><img src="img/milho-480.webp" srcset="img/milho-480.webp 480w, img/milho-900.webp 900w, img/milho-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 416px" width="1200" height="1600" alt="Dois potes de mini milho Amo sobre palha, na frente de folhagens" loading="lazy" decoding="async"></div>
     <div>
       <h2 class="nome" id="p-milho">Mini milho</h2>
       <p class="tipo">Em conserva</p>
@@ -217,7 +219,7 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
   </article>
 
   <article class="produto" aria-labelledby="p-cebola">
-    <div class="quadro foto"><img src="img/cebola-480.webp" srcset="img/cebola-480.webp 480w, img/cebola-800.webp 800w" sizes="(max-width: 760px) 92vw, 416px" width="800" height="1067" alt="Uma atendente mostra dois potes de cebola em filetes Amo na frente das prateleiras de madeira" loading="lazy" decoding="async"></div>
+    <div class="quadro foto"><img src="img/cebola-480.webp" srcset="img/cebola-480.webp 480w, img/cebola-900.webp 900w, img/cebola-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 416px" width="1200" height="1600" alt="Uma atendente mostra dois potes de cebola em filetes Amo na frente das prateleiras de madeira" loading="lazy" decoding="async"></div>
     <div>
       <h2 class="nome" id="p-cebola">Cebola em filetes sabor defumado</h2>
       <p class="tipo">Produto artesanal, em conserva</p>
@@ -229,25 +231,6 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
   </article>
 </div>
 
-<section class="secao outras" aria-labelledby="h-outras">
-  <div class="wrap">
-    <div>
-      <h2 id="h-outras">Na loja também tem outras marcas</h2>
-      <p style="margin-top:.9rem">As prateleiras vão além da linha Amo. Algumas coisas que já passaram por lá:</p>
-      <ul>
-        <li>Doces cremosos Recanto da Serra: foundant de leite e cocada cremosa</li>
-        <li>Pepino em salmoura Danimar</li>
-        <li>Farinha de mandioca fina Morretes, 1 kg</li>
-        <li>Salame com queijo</li>
-      </ul>
-      <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20O%20que%20tem%20na%20prateleira%20da%20loja%20hoje%3F"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Perguntar o que tem hoje</span></a>
-    </div>
-    <div class="fotos">
-      <figure><img src="img/doces-480.webp" srcset="img/doces-480.webp 480w, img/doces-800.webp 800w" sizes="(max-width: 760px) 45vw, 270px" width="800" height="675" alt="Potes de doce cremoso Recanto da Serra empilhados sobre a madeira" loading="lazy" decoding="async"><figcaption>Doces Recanto da Serra</figcaption></figure>
-      <figure><img src="img/pepino-480.webp" srcset="img/pepino-480.webp 480w, img/pepino-800.webp 800w" sizes="(max-width: 760px) 45vw, 270px" width="800" height="964" alt="Dois potes de pepino em salmoura Danimar na frente do neon Amo" loading="lazy" decoding="async"><figcaption>Pepino Danimar</figcaption></figure>
-    </div>
-  </div>
-</section>
 
 </main>
 <footer class="rodape">
