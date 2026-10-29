@@ -388,3 +388,27 @@
   .dark .dim, .hero .dim { --dim-bg: var(--navy-800); }
   .ctas.wrapit { display: flex; flex-wrap: wrap; }
   @media (max-width: 640px) { .ctas.wrapit .btn { flex: 1 1 100%; } }
+
+  /* Round 3: logo mark + live name, plain material lists */
+  .mark { display: flex; align-items: center; gap: .75rem; text-decoration: none; margin: 0 auto 0 0; }
+  .mark img { width: 130px; height: auto; }
+  .mark span { font: 600 .92rem/1.15 "Saira", sans-serif; font-stretch: 92%; color: #dfe4ee; max-width: 9.5rem; }
+  .sitemap .mark { margin: 0; }
+  .tags { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; }
+  .tags li { border: 0; border-radius: 0; padding: .45rem 0 .45rem 1rem; position: relative; font: 500 1.02rem/1.35 "Instrument Sans", sans-serif; border-bottom: 1px solid #d3d9e3; }
+  .tags li::before { content: ""; position: absolute; left: 0; top: .95rem; width: .45rem; height: 2px; background: var(--orange); }
+  .dark .tags li { border-bottom-color: rgba(195,202,214,.2); }
+  details.more-tags .tags { margin-top: 0; }
+  @media (max-width: 1180px) and (min-width: 901px) { .top nav.main { gap: 1rem; font-size: .9rem; } .top .mark span { display: none; } }
+  @media (max-width: 640px) {
+    .m-hide { display: none; }
+    .mark { gap: .5rem; }
+    .mark img { width: 84px; }
+    .mark span { font-size: .8rem; max-width: 7.6rem; }
+    .top .call::after { content: none; }
+    .top .call { padding: .55rem .65rem; }
+    .menu summary { padding: .55rem .6rem; }
+    .tags { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 1rem; }
+    .tags li { font-size: .95rem; }
+  }
+  @media (max-width: 370px) { .mark span { display: none; } }
