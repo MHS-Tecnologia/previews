@@ -264,7 +264,10 @@ footer .legal a { color: #d5d9dc; }
   .line li::before { top: .35rem; left: -7px; }
   details.grp li { grid-template-columns: minmax(0, 1fr); }
   .dock { display: block; }
-  .sheet { position: sticky; top: 0; z-index: 2; margin: 0 calc(-1 * var(--pad)); border-width: 0 0 1px; }
+  .sheet { position: sticky; top: 0; z-index: 2; margin: 0 calc(-1 * var(--pad)); border-width: 0 0 1px; box-shadow: 0 10px 14px -6px rgba(30, 34, 38, .28); }
+  .sheet::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 1.5rem; background: linear-gradient(var(--steel), rgba(232, 234, 235, 0)); pointer-events: none; }
+  .sheet { position: sticky; }
+  .env .wrap.sec { padding-bottom: calc(clamp(3.5rem, 7vw, 6rem) + 58px); }
   .sheet text.tag, .sheet .lead { display: none; }
   .sheet[data-on] g.m.on text.tag { display: inline; font-size: 3px; }
   .sheet[data-on] g.m.on:not(.edm) text.tag { dominant-baseline: hanging; }
