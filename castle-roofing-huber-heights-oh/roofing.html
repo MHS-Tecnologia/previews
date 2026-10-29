@@ -54,10 +54,10 @@ p{margin:0}
 .btn-sm{min-height:44px;padding:0 18px;font-size:.95rem}
 .menu-btn{display:none}
 /* hero (home) */
-.hero{background:var(--slate);color:var(--white);overflow:hidden}
+.hero{background:var(--slate);color:var(--white);overflow:hidden;position:relative;padding-bottom:30px}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.4fr);grid-template-areas:"h h" "c f";column-gap:56px;align-items:end}
 .hero-copy{grid-area:c;padding:30px 0 60px;align-self:start}
-.hero-fig{grid-area:f;max-width:940px;justify-self:end;width:100%}
+.hero-fig{grid-area:f;max-width:940px;justify-self:end;width:100%;align-self:start;margin-top:32px}
 .hero h1{grid-area:h;font-size:clamp(2.45rem,4.9vw,4.3rem);padding-top:58px;text-wrap:nowrap}
 .hero .hero-lede{margin-top:0}
 .hero-lede{margin-top:22px;font-size:1.15rem;color:#dfe3e7;max-width:34em}
@@ -99,6 +99,21 @@ p{margin:0}
 .card.slate .go{color:#ffb4b4}
 .card.third{grid-column:span 6}
 .card.third .txt{padding:26px 26px 28px}
+/* services as a castle skyline: the keep in the middle, towers stepping down */
+.towers{display:grid;grid-template-columns:1fr 1fr 1.25fr 1fr 1fr;gap:14px;align-items:end;border-bottom:8px solid var(--slate);padding-bottom:0}
+.tower{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--stone);
+clip-path:polygon(0 0,20% 0,20% 20px,40% 20px,40% 0,60% 0,60% 20px,80% 20px,80% 0,100% 0,100% 100%,0 100%)}
+.tower img{width:100%;object-fit:cover;height:220px}
+.tower.t2 img{height:290px}
+.tower.keep img{height:380px}
+.tower.keep{background:var(--slate);color:var(--white)}
+.tower.keep p{color:#cfd4d9}
+.tower.keep .go{color:#ffb4b4}
+.tower .txt{padding:16px 18px 20px}
+.tower h3{font-size:1.5rem}
+.tower p{margin-top:6px;color:var(--muted);font-size:.95rem;line-height:1.5}
+.tower .go{display:inline-block;margin-top:10px;font-weight:700;color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.tower:hover img{filter:brightness(1.06)}
 /* one-day band */
 .day{position:relative;background:var(--slate);color:var(--white)}
 .day .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:0;align-items:stretch;padding-top:0;padding-bottom:0}
@@ -116,7 +131,7 @@ p{margin:0}
 .rec-more p{color:var(--muted)}
 .rec-more strong{color:var(--ink)}
 /* storm band */
-.storm{background:var(--red);color:var(--white);padding:56px 0}
+.storm{background:var(--red);color:var(--white);padding:56px 0 84px;position:relative}
 .storm .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
 .storm h2{font-size:clamp(2rem,3.6vw,3rem);max-width:16ch}
 .storm p{margin-top:10px;color:#f8e1e1;max-width:34em}
@@ -229,6 +244,10 @@ details.fold > summary{display:none}
 .block,.block.b3{grid-column:span 1}
 .block.b4{grid-column:1 / -1}
 .svc{grid-template-columns:1fr}
+.towers{grid-template-columns:1fr 1fr;align-items:stretch}
+.tower.keep{grid-column:1 / -1;order:-1}
+.tower img,.tower.t2 img{height:180px}
+.tower.keep img{height:240px}
 .card.big,.card.mid,.card.third{grid-column:auto;grid-row:auto}
 .card.big img{min-height:0;aspect-ratio:3/2}
 .day .wrap{grid-template-columns:1fr;padding:0}
@@ -264,6 +283,8 @@ body{font-size:1rem}
 .hero-creds{display:none}
 .hero-rate{margin-top:14px;font-size:.92rem}
 .gal{grid-template-columns:1fr}
+.towers{grid-template-columns:1fr}
+.tower img,.tower.t2 img{height:200px}
 .wall{grid-template-columns:1fr}
 .block.b4{grid-column:auto}
 .block{padding:18px}
