@@ -138,6 +138,7 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 .quadro.corte img { position: relative; z-index: 1; margin-bottom: 9%; filter: drop-shadow(0 12px 9px rgba(60,30,10,.3)); }
 .quadro.corte .bet { width: 46%; }
 .quadro.corte .gel { width: 100%; }
+.quadro.larga { aspect-ratio: 4 / 2.6; }
 .produto .nome { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--beterraba); }
 .produto .tipo { font-size: 1rem; color: var(--tinta-2); margin-top: .35rem; }
 .produto dl { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1.25rem; margin: 1.25rem 0 1.5rem; font-size: 1rem; }
@@ -195,7 +196,7 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
   </article>
 
   <article class="produto" aria-labelledby="p-gel">
-    <div class="quadro foto"><img src="img/geleias-480.webp" srcset="img/geleias-480.webp 480w, img/geleias-900.webp 900w, img/geleias-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 416px" width="1200" height="1600" alt="Cinco potes de geleia colonial Amo sobre o balcão de madeira, com a parede verde e o neon atrás" loading="lazy" decoding="async"></div>
+    <div class="quadro corte larga"><img class="gel" src="img/pote-geleias-640.webp" srcset="img/pote-geleias-640.webp 640w, img/pote-geleias-1280.webp 1280w" sizes="(max-width: 760px) 86vw, 400px" width="1280" height="556" alt="Cinco potes de geleia colonial Amo: uva, tangerina, frutas vermelhas, laranja e amora" loading="lazy" decoding="async"></div>
     <div>
       <h2 class="nome" id="p-gel">Geleia colonial</h2>
       <p class="tipo">Pote de 400 g, em cinco sabores</p>

@@ -136,9 +136,9 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
 .citacao cite { display: block; margin-top: 1rem; font-style: normal; color: #c9d2be; font-size: .9375rem; }
 .citacao .rotulo-nota { color: #d5ddcc; font-size: 1.0625rem; border-left: 3px solid var(--vermelho); padding-left: 1rem; }
 .prateleira { background: var(--papel-2); }
-.galeria { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.galeria { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
 .galeria img { border-radius: 3px; width: 100%; }
-.galeria figure:last-child img { aspect-ratio: 3 / 4; object-fit: cover; }
+.galeria figure + figure img { aspect-ratio: 3 / 4; object-fit: cover; }
 .outras-lista { margin: 1.6rem 0 1.6rem; padding-left: 1.1rem; display: grid; gap: .35rem; }
 .citacao figure { max-width: 25rem; justify-self: end; }
 .citacao figcaption { color: #c9d2be; }
@@ -175,8 +175,8 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
     <a class="bt" data-cta href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20Quero%20receber%20a%20tabela%20de%20pre%C3%A7os."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Pedir a tabela no WhatsApp</span></a>
   </div>
   <figure>
-    <div class="rotulo"><img src="img/neon-pepino-480.webp" srcset="img/neon-pepino-480.webp 480w, img/neon-pepino-900.webp 900w, img/neon-pepino-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 462px" width="1200" height="1446" alt="O letreiro de neon vermelho Amo atrás de dois potes de pepino em salmoura" loading="lazy" decoding="async"></div>
-    <figcaption>O neon da loja, atrás de potes de pepino em salmoura Danimar.</figcaption>
+    <div class="rotulo"><img src="img/geleias-480.webp" srcset="img/geleias-480.webp 480w, img/geleias-900.webp 900w, img/geleias-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 462px" width="1200" height="1600" alt="Cinco potes de geleia colonial Amo sobre o balcão de madeira, com a parede verde e o neon Amo conservas atrás" loading="lazy" decoding="async"></div>
+    <figcaption>Geleias coloniais Amo no balcão de madeira, com a parede verde e o neon atrás.</figcaption>
   </figure>
 </div>
 
@@ -189,9 +189,9 @@ figcaption { font-size: .875rem; color: var(--tinta-2); margin-top: .55rem; line
     <div class="galeria">
       <figure><img src="img/doces-480.webp" srcset="img/doces-480.webp 480w, img/doces-900.webp 900w, img/doces-1200.webp 1200w" sizes="(max-width: 760px) 92vw, 560px" width="1200" height="1138" alt="Sete potes de doce cremoso Recanto da Serra empilhados sobre a madeira" loading="lazy" decoding="async"><figcaption>Recanto da Serra: foundant de leite com geleia de maracujá, de morango e com chocolate, e cocada cremosa com geleia de maracujá, com doce de goiaba, com nozes e com geleia de morango.</figcaption></figure>
       <figure><img src="img/farinha-480.webp" srcset="img/farinha-480.webp 480w, img/farinha-900.webp 900w" sizes="(max-width: 760px) 92vw, 300px" width="900" height="1200" alt="Uma atendente segura um pacote de 1 kg de farinha de mandioca fina debaixo do neon da loja" loading="lazy" decoding="async"><figcaption>Farinha de mandioca fina Morretes, pacote de 1 kg.</figcaption></figure>
+      <figure><img src="img/neon-pepino-480.webp" srcset="img/neon-pepino-480.webp 480w, img/neon-pepino-900.webp 900w" sizes="(max-width: 760px) 92vw, 300px" width="900" height="1084" alt="Dois potes de pepino em salmoura Danimar na frente do neon vermelho Amo" loading="lazy" decoding="async"><figcaption>Pepino em salmoura Danimar, na frente do neon.</figcaption></figure>
     </div>
     <ul class="outras-lista">
-      <li>Pepino em salmoura Danimar</li>
       <li>Salame com queijo</li>
     </ul>
     <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%2C%20Amo%21%20O%20que%20tem%20na%20prateleira%20da%20loja%20hoje%3F"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.3 20.7l4.4-1.1A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M8.9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.2 1.5 2 2 .2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.1-.6 1.4-.5.4-1.2.5-1.9.3a8.3 8.3 0 0 1-4.8-4.7 c-.3-.8-.2-1.6.3-2.2Z" fill="currentColor"/></svg><span>Perguntar o que tem hoje</span></a>
