@@ -416,3 +416,19 @@ footer { background: var(--char); color: #c9c0b5; font-size: .9rem; }
 @media (max-width: 900px) {
   .swatches small { display: none; }
 }
+
+/* Round 3 polish. */
+.m-only { display: none; }
+.values { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 28rem; }
+.formats { gap: 0; }
+.formats li { border: 0; border-top: 1px solid #4a423b; border-radius: 0; padding: .8rem 0; display: flex; align-items: baseline; gap: .6rem; }
+.formats li::before { content: ""; flex: none; width: .5rem; height: .5rem; background: var(--ember); border-radius: 50%; transform: translateY(-.1rem); }
+.formats { grid-template-columns: 1fr; max-width: 26rem; }
+.formats li:last-child { border-bottom: 1px solid #4a423b; }
+#safety .safety:first-child { margin-top: 0; }
+@media (max-width: 900px) {
+  .m-only { display: block; }
+  .brand span { font-size: 1.05rem; line-height: 1.1; }
+  .brand img { height: 3.1rem; }
+}
+#safety { padding-top: clamp(2rem, 3.5vw, 3rem); }
