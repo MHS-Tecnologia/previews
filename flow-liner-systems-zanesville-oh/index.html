@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="img/logo-120.webp" type="image/webp">
+<meta name="theme-color" content="#252935">
+<title>Flow-Liner Systems: trenchless pipe lining systems and installer training</title>
+<meta name="description" content="Flow-Liner makes CIPP, Neofit+Plus, CIP-Conduit and CIP-Duct lining systems in Zanesville, Ohio, and trains certified installers.">
+<meta property="og:title" content="Flow-Liner Systems: trenchless pipe lining systems and installer training">
+<meta property="og:description" content="Flow-Liner makes CIPP, Neofit+Plus, CIP-Conduit and CIP-Duct lining systems in Zanesville, Ohio, and trains certified installers.">
+<meta property="og:image" content="https://demo.mhstecnologia.com/flow-liner-systems-zanesville-oh/email.jpg">
+<meta property="og:type" content="website">
+<link rel="preload" as="font" type="font/woff2" href="fonts/chivo.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/franklin.woff2" crossorigin>
+<link rel="preload" as="image" imagesrcset="img/bore-320.webp 320w, img/bore-480.webp 480w, img/bore-720.webp 720w" imagesizes="(max-width: 640px) 100px, 370px" fetchpriority="high">
+<script>document.documentElement.className += ' js';</script>
+<style>
+@font-face { font-family: "Chivo"; font-weight: 300 900; font-display: swap; src: url(fonts/chivo.woff2) format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 300 800; font-display: swap; src: url(fonts/franklin.woff2) format("woff2"); }
+
+/* Flow-Liner's own two colors: the orange of the liner tube in their logo and
+   the blue of the wordmark. Around them: PVC white, drawing-paper white, and the
+   cast iron of the host pipes they line. */
+:root {
+  color-scheme: light;
+  --pvc: #f1f3f5;
+  --paper: #ffffff;
+  --iron: #252935;
+  --iron-2: #31364a;
+  --flow: #3b3f95;
+  --flow-deep: #2b2e73;
+  --liner: #e8731e;
+  --liner-ink: #a3460b;
+  --ink: #1f2330;
+  --muted: #535b6b;
+  --rule: #c9ced6;
+  --on-iron: #e9ecf1;
+  --on-iron-muted: #b3bac8;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 76rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { background: var(--pvc); color: var(--ink); font: 400 1.0625rem/1.62 "Libre Franklin", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img, svg { display: block; max-width: 100%; height: auto; }
+a { color: var(--flow-deep); text-underline-offset: .18em; }
+:focus-visible { outline: 3px solid var(--flow); outline-offset: 3px; }
+.iron :focus-visible, footer :focus-visible, .sticky :focus-visible { outline-color: var(--liner); }
+h1, h2, h3 { font-family: "Chivo", "Arial Narrow", sans-serif; font-weight: 800; line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; color: var(--flow-deep); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.25rem); }
+h3 { font-size: 1.375rem; line-height: 1.12; letter-spacing: -.01em; }
+p { max-width: 64ch; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; color: var(--ink); padding: .5rem 1rem; z-index: 30; }
+.skip:focus { left: .5rem; }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+
+/* Demo notice */
+.demo { background: var(--iron); color: var(--on-iron); font-size: .8125rem; line-height: 1.35; padding: .45rem var(--pad); text-align: center; }
+
+/* Header */
+.top { background: var(--paper); border-bottom: 1px solid var(--rule); position: relative; z-index: 10; }
+.top .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 4.25rem; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: var(--ink); flex: none; }
+.brand img { width: 104px; height: auto; }
+.brand span { font: 600 .8125rem/1.25 "Libre Franklin", sans-serif; color: var(--muted); max-width: 11rem; }
+.nav { display: flex; gap: 1.35rem; margin-left: auto; }
+.nav a { white-space: nowrap; text-decoration: none; color: var(--ink); font-weight: 600; font-size: .9375rem; padding: .35rem 0; border-bottom: 2px solid transparent; }
+.nav a:hover { border-bottom-color: var(--rule); }
+.nav a[aria-current] { border-bottom-color: var(--liner); }
+.top-call { margin-left: .25rem; font-weight: 700; text-decoration: none; color: var(--flow-deep); white-space: nowrap; font-size: .9375rem; }
+.menu { display: none; margin-left: auto; position: relative; }
+.menu summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--rule); border-radius: 6px; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu nav { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--paper); border: 1px solid var(--rule); border-radius: 8px; padding: .5rem; width: min(17rem, calc(100vw - 2rem)); box-shadow: 0 12px 30px rgba(37, 41, 53, .18); }
+.menu nav a { display: block; padding: .7rem .8rem; text-decoration: none; color: var(--ink); font-weight: 600; border-radius: 4px; }
+.menu nav a[aria-current] { background: var(--pvc); box-shadow: inset 3px 0 0 var(--liner); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.1rem; padding: .7rem 1.35rem; border-radius: 999px; font: 700 1rem/1.15 "Libre Franklin", sans-serif; text-decoration: none; transition: background-color .15s, border-color .15s, color .15s; }
+.btn svg { width: 1.15rem; height: 1.15rem; flex: none; }
+.btn-liner { background: var(--liner); color: var(--iron); }
+.btn-liner:hover { background: #f08a3e; }
+.btn-line { border: 2px solid var(--flow-deep); color: var(--flow-deep); }
+.btn-line:hover { background: var(--flow-deep); color: #fff; }
+.iron .btn-line { border-color: var(--on-iron-muted); color: var(--on-iron); }
+.iron .btn-line:hover { background: var(--on-iron); color: var(--iron); border-color: var(--on-iron); }
+.ctas { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* Home hero */
+.hero { padding: clamp(1.25rem, 4vw, 3.5rem) 0 0; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.tagline { font: 700 .9375rem/1.3 "Chivo", sans-serif; color: var(--liner-ink); letter-spacing: .01em; margin-bottom: 1rem; }
+.hero h1 { font-size: clamp(2.45rem, 5.6vw, 4.6rem); line-height: .98; letter-spacing: -.03em; }
+.hero .lede { font-size: clamp(1.0625rem, 1.5vw, 1.25rem); margin: 1.25rem 0 1.75rem; color: var(--ink); max-width: 36rem; }
+.bore { position: relative; width: min(100%, 31rem); margin-left: auto; aspect-ratio: 1; }
+.bore img { position: absolute; inset: 13%; width: 74%; height: 74%; border-radius: 50%; object-fit: cover; }
+.bore svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.bore .host { fill: none; stroke: var(--iron); stroke-width: 34; }
+.bore .host-cut { fill: none; stroke: var(--pvc); stroke-width: 3; stroke-dasharray: 2 9; }
+.bore .liner { fill: none; stroke: var(--liner); stroke-width: 12; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 250px 250px; }
+.bore .lead { stroke: var(--ink); stroke-width: 1.5; fill: none; }
+.bore .tick { fill: var(--ink); }
+.bore text { font: 600 15px "Libre Franklin", sans-serif; fill: var(--ink); }
+.js .bore .liner { stroke-dasharray: 1131; stroke-dashoffset: 1131; animation: invert 1.6s cubic-bezier(.6, 0, .2, 1) .25s forwards; }
+@keyframes invert { to { stroke-dashoffset: 0; } }
+
+/* Title block: drawing-style facts strip under the hero */
+.titleblock { margin-top: clamp(1.5rem, 3.5vw, 3rem); display: grid; grid-template-columns: repeat(4, 1fr); border: 2px solid var(--iron); background: var(--paper); }
+.titleblock div { padding: .8rem 1rem; border-left: 1px solid var(--iron); }
+.titleblock div:first-child { border-left: 0; }
+.titleblock dt { font-size: .8125rem; color: var(--muted); }
+.titleblock dd { font: 700 1.0625rem/1.25 "Chivo", sans-serif; color: var(--ink); margin-top: .15rem; }
+
+/* Sections */
+.sec { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+.sec-head { max-width: 46rem; margin-bottom: clamp(1.75rem, 4vw, 3rem); }
+.sec-head p { margin-top: .9rem; color: var(--muted); font-size: 1.125rem; }
+.paper { background: var(--paper); }
+.iron { background: var(--iron); color: var(--on-iron); }
+.iron h2, .iron h3 { color: #fff; }
+.iron a { color: #fff; }
+.iron .btn-liner, .sticky .btn-liner { color: var(--iron); }
+.iron .muted, .iron .sec-head p { color: var(--on-iron-muted); }
+
+/* Two doors */
+.doors { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 2rem); }
+.door { background: var(--paper); border: 1px solid var(--rule); border-top: 6px solid var(--flow); display: flex; flex-direction: column; }
+.door.contractor { border-top-color: var(--liner); }
+.door img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.door-body { padding: clamp(1.25rem, 3vw, 2rem); display: flex; flex-direction: column; gap: .9rem; flex: 1; }
+.door-for { font: 700 .9375rem/1.2 "Chivo", sans-serif; color: var(--liner-ink); }
+.door.owner .door-for { color: var(--flow); }
+.door ul { padding-left: 1.1rem; display: grid; gap: .35rem; }
+.door .btn { align-self: flex-start; margin-top: auto; }
+
+/* Systems table */
+.systems { border-top: 2px solid var(--iron); }
+.sys { display: grid; grid-template-columns: 4.5rem minmax(0, 13rem) minmax(0, 1fr) minmax(0, 15rem); gap: 1.5rem; align-items: center; padding: 1.4rem 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: inherit; }
+.sys:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; }
+.sys svg { width: 4.5rem; height: 4.5rem; }
+.sys h3 { color: var(--flow-deep); }
+.sys p { color: var(--muted); }
+.sys .spec { font: 600 .9375rem/1.35 "Chivo", sans-serif; color: var(--ink); border-left: 3px solid var(--liner); padding-left: .8rem; }
+
+/* CIPP steps */
+.steps-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.steps { list-style: none; padding: 0; counter-reset: s; display: grid; gap: 1.4rem; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; }
+.steps li::before { content: counter(s); font: 800 1.25rem/1 "Chivo", sans-serif; width: 3rem; height: 3rem; border-radius: 50%; border: 3px solid var(--liner); display: grid; place-items: center; color: var(--ink); background: var(--paper); }
+.steps h3 { font-size: 1.2rem; margin: .55rem 0 .3rem; }
+.steps p { color: var(--muted); }
+.figure img { width: 100%; height: auto; }
+.figure figcaption, .cap { font-size: .875rem; color: var(--muted); margin-top: .6rem; }
+.iron .figure figcaption, .iron .cap { color: var(--on-iron-muted); }
+
+/* Neofit band */
+.neo { position: relative; overflow: hidden; }
+.neo-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.neo-cut { margin-right: calc(-1 * var(--pad) - 4vw); }
+.facts { display: grid; grid-template-columns: repeat(3, auto); gap: 1.25rem 2rem; margin: 1.75rem 0 2rem; justify-content: start; }
+.facts dt { font-size: .875rem; color: var(--on-iron-muted); }
+.facts dd { font: 800 1.6rem/1.1 "Chivo", sans-serif; color: #fff; }
+.paper .facts dt, .facts.light dt { color: var(--muted); }
+.paper .facts dd, .facts.light dd { color: var(--ink); }
+
+/* Training band */
+.train-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.train-pics { display: grid; grid-template-columns: 2fr 1fr; gap: .75rem; }
+.train-pics img { width: 100%; height: 100%; object-fit: cover; }
+.train-pics .tall { grid-row: span 2; }
+
+/* Clients */
+.clients { columns: 4 12rem; column-gap: 2rem; list-style: none; padding: 0; }
+.clients li { padding: .45rem 0; border-bottom: 1px solid var(--rule); break-inside: avoid; font-weight: 500; }
+.callout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+.callout div { border-left: 4px solid var(--liner); padding-left: 1rem; }
+.callout b { font: 800 1.25rem/1.2 "Chivo", sans-serif; display: block; color: var(--flow-deep); margin-bottom: .25rem; }
+
+/* Closer */
+.closer-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.lines { display: grid; gap: .1rem; }
+.line { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--iron-2); align-items: baseline; }
+.line span { color: var(--on-iron-muted); font-size: .9375rem; }
+.line a, .line b { font: 700 1.25rem/1.25 "Chivo", sans-serif; color: #fff; text-decoration: none; }
+.line a:hover { text-decoration: underline; }
+
+/* Inner page hero */
+.phero { padding: clamp(1.5rem, 5vw, 4rem) 0 clamp(2rem, 5vw, 3.5rem); border-bottom: 1px solid var(--rule); background: var(--paper); }
+.phero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.phero h1 { font-size: clamp(2.3rem, 5vw, 4rem); line-height: 1; letter-spacing: -.025em; }
+.phero .lede { font-size: clamp(1.0625rem, 1.4vw, 1.1875rem); margin: 1rem 0 1.5rem; }
+.phero .pic img { width: 100%; height: auto; }
+.crumb { font: 700 .9375rem/1.3 "Chivo", sans-serif; color: var(--liner-ink); margin-bottom: .8rem; }
+
+/* Content blocks */
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: clamp(1.25rem, 3vw, 2.25rem); }
+.card { background: var(--paper); border: 1px solid var(--rule); padding: 1.4rem 1.5rem; }
+.iron .card { background: var(--iron-2); border-color: #424861; }
+.card h3 { margin-bottom: .5rem; }
+.card p { color: var(--muted); }
+.iron .card p { color: var(--on-iron-muted); }
+.ticks { list-style: none; padding: 0; display: grid; gap: .55rem; }
+.ticks li { padding-left: 1.6rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .5em; width: .8rem; height: .8rem; border-radius: 50%; border: 3px solid var(--liner); }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.split.top { align-items: start; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
+.gallery figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.story { border-left: 4px solid var(--flow); padding: .25rem 0 .25rem 1.25rem; }
+.story p + p { margin-top: .8rem; }
+.note { font-size: .9375rem; color: var(--muted); margin-top: 1rem; }
+.notlink { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .9rem; border: 1px dashed var(--rule); border-radius: 6px; color: var(--muted); font-size: .9375rem; }
+
+/* Timeline */
+.timeline { list-style: none; padding: 0; border-left: 2px solid var(--iron); margin-left: .5rem; }
+.timeline li { position: relative; padding: 0 0 1.6rem 1.75rem; }
+.timeline li::before { content: ""; position: absolute; left: -.6rem; top: .2rem; width: .9rem; height: .9rem; border-radius: 50%; background: var(--paper); border: 3px solid var(--liner); }
+.timeline b { font: 800 1.35rem/1.1 "Chivo", sans-serif; color: var(--flow-deep); display: block; }
+
+/* Contact routes */
+.routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.route { background: var(--paper); border: 1px solid var(--rule); border-top: 5px solid var(--flow); padding: 1.4rem 1.5rem; display: flex; flex-direction: column; gap: .7rem; }
+.route .btn { margin-top: auto; align-self: flex-start; }
+
+/* Footer */
+footer { background: var(--iron); color: var(--on-iron-muted); padding: 3rem 0 6rem; font-size: .9375rem; border-top: 6px solid var(--liner); }
+footer a { color: var(--on-iron); }
+.foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+.foot h2 { font-size: 1rem; color: #fff; margin-bottom: .6rem; letter-spacing: 0; }
+.foot ul { list-style: none; padding: 0; display: grid; gap: .3rem; }
+.foot .flogo { background: #fff; padding: .5rem .75rem; border-radius: 6px; display: inline-block; margin-bottom: 1rem; }
+.foot .flogo img { width: 132px; }
+.legal { border-top: 1px solid var(--iron-2); margin-top: 2rem; padding-top: 1.25rem; display: grid; gap: .4rem; }
+
+/* Sticky mobile bar */
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: none; gap: .5rem; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(37, 41, 53, .97); transform: translateY(110%); transition: transform .25s; }
+.sticky.on { transform: none; }
+.sticky .btn { flex: 1; min-height: 2.9rem; }
+.sticky .btn-line { flex: 0 0 3.2rem; padding: 0; border-color: var(--on-iron-muted); color: #fff; }
+
+@media (max-width: 1240px) {
+  .brand span { display: none; }
+}
+@media (max-width: 1060px) {
+  .nav { gap: 1rem; }
+  .top-call { display: none; }
+}
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .menu { display: block; }
+  .sys { grid-template-columns: 3.25rem 1fr; gap: .4rem 1rem; }
+  .sys svg { width: 3.25rem; height: 3.25rem; grid-row: span 3; align-self: start; }
+  .sys .spec { margin-top: .4rem; }
+  .doors, .steps-grid, .neo-grid, .train-grid, .closer-grid, .phero-grid, .split, .routes { grid-template-columns: 1fr; }
+  .neo-cut { margin: 0 calc(-1 * var(--pad)) 0 0; max-width: 34rem; }
+  .titleblock { grid-template-columns: 1fr 1fr; }
+  .titleblock div:nth-child(3) { border-left: 0; }
+  .titleblock div:nth-child(n+3) { border-top: 1px solid var(--iron); }
+  .foot { grid-template-columns: 1fr 1fr; }
+  .foot > div:first-child { grid-column: 1 / -1; }
+  .sticky { display: flex; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .callout { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .top .wrap { min-height: 3.75rem; gap: .75rem; }
+  .brand img { width: 88px; }
+  .hero { padding-top: 1rem; }
+  .hero-grid { grid-template-columns: 1fr 8.5rem; gap: 0 1rem; }
+  .hero-text { display: contents; }
+  .hero-text > * { grid-column: 1 / -1; }
+  .hero-text > .tagline { grid-column: 1; grid-row: 1; }
+  .bore { width: 8.5rem; margin: 0 0 .9rem; grid-column: 2; grid-row: 1; }
+  .bore .lbl { display: none; }
+  .tagline { margin: 0; font-size: .9375rem; }
+  .hero h1 { font-size: 2.35rem; }
+  .hero .lede { margin: .8rem 0 1.1rem; font-size: 1.0625rem; line-height: 1.5; }
+  .ctas .btn { width: 100%; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .line { grid-template-columns: 1fr; gap: .1rem; }
+  .phero .ctas .btn { width: 100%; }
+  .clients { columns: 2; }
+  .gallery { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .bore .liner { animation: none; stroke-dashoffset: 0; }
+  .sticky, .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Flow-Liner Systems. Not affiliated with or endorsed by Flow-Liner Systems.</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo-120.webp" srcset="img/logo-120.webp 120w, img/logo-240.webp 240w" sizes="104px" width="120" height="58" alt="Flow-Liner Systems, home"><span>Trenchless lining systems, Zanesville, Ohio</span></a>
+    <nav class="nav" aria-label="Main"><a href="sewer-drain.html">Sewer &amp; drain</a><a href="neofit.html">Neofit+Plus</a><a href="conduit-hvac.html">Conduit &amp; HVAC</a><a href="installers.html">Installers</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <a class="top-call" href="tel:+18003480020">(800) 348-0020</a>
+    <details class="menu"><summary aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" d="M3 6h18M3 12h18M3 18h18"/></svg></summary><nav aria-label="Main (mobile)"><a href="index.html" aria-current="page">Home</a><a href="sewer-drain.html">Sewer &amp; drain</a><a href="neofit.html">Neofit+Plus</a><a href="conduit-hvac.html">Conduit &amp; HVAC</a><a href="installers.html">Installers</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="tel:+18003480020">Call toll-free (800) 348-0020</a></nav></details>
+  </div>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="tagline">We keep the world flowing</p>
+        <h1 id="h1">We put a new pipe inside the old one.</h1>
+        <p class="lede">Flow-Liner® makes the liners, resins and equipment that rehabilitate sewer, water, conduit and HVAC lines without excavation. Then we train the crews who install them.</p>
+        <div class="ctas">
+          <a class="btn btn-liner" id="hero-cta" href="installers.html">Become a certified installer</a>
+          <a class="btn btn-line" href="contact.html">Send us a project</a>
+        </div>
+      </div>
+      <div class="bore">
+        <img src="img/bore-320.webp" srcset="img/bore-320.webp 320w, img/bore-480.webp 480w, img/bore-720.webp 720w" sizes="(max-width: 640px) 100px, 370px" width="720" height="720" alt="Looking into a lined pipe at its brass fitting: a smooth white liner inside" fetchpriority="high">
+        <svg viewBox="0 0 500 500" aria-hidden="true">
+  <circle class="host" cx="250" cy="250" r="203"/>
+  <circle class="host-cut" cx="250" cy="250" r="203"/>
+  <circle class="liner" cx="250" cy="250" r="180"/>
+  <g class="lbl">
+    <path class="lead" d="M108 108 L52 52 L-4 52"/><circle class="tick" cx="108" cy="108" r="5"/>
+    <text x="-4" y="40">The old pipe stays put</text>
+    <path class="lead" d="M292 294 L392 452 L470 452"/><circle class="tick" cx="292" cy="294" r="5"/>
+    <text x="352" y="482">A new pipe wall inside it</text>
+  </g>
+</svg>
+      </div>
+    </div>
+    <dl class="titleblock">
+      <div><dt>Lining systems since</dt><dd class="num">2001</dd></div>
+      <div><dt>Quality management</dt><dd>ISO 9001:2015 certified</dd></div>
+      <div><dt>Projects we take</dt><dd>Up to 18″ ID, North America</dd></div>
+      <div><dt>Corporate office</dt><dd>Zanesville, Ohio</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="doors-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="doors-h">Two ways to work with us</h2>
+      <p>Most of our lining is done by Certified Flow-Liner® Installers. Either you become one, or we put one on your project.</p>
+    </div>
+    <div class="doors">
+      <article class="door contractor">
+        <img src="img/bench-640.webp" srcset="img/bench-640.webp 640w, img/bench-960.webp 960w, img/bench-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 600px" width="1400" height="1050" alt="A Flow-Liner trainer shows a crew how to prepare a copper service line on the shop bench" loading="lazy" decoding="async">
+        <div class="door-body">
+          <p class="door-for">For plumbing, drain and utility contractors</p>
+          <h3>Add trenchless lining to your business</h3>
+          <ul>
+            <li>Hands-on training on CIPP and Neofit®+Plus, at your site or ours</li>
+            <li>The equipment, liners and resins, from one manufacturer</li>
+            <li>Ongoing technical support after you’re certified</li>
+            <li>Financing available for installers</li>
+          </ul>
+          <a class="btn btn-liner" href="installers.html">See the training</a>
+        </div>
+      </article>
+      <article class="door owner">
+        <img src="img/basement-640.webp" srcset="img/basement-640.webp 640w, img/basement-960.webp 960w, img/basement-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 600px" width="1400" height="680" alt="Three men in a building basement beside a Flow-Liner inversion drum connected to a drain line" loading="lazy" decoding="async">
+        <div class="door-body">
+          <p class="door-for">For facility owners, engineers and water authorities</p>
+          <h3>Get a failing line lined, not dug up</h3>
+          <ul>
+            <li>Commercial and municipal projects up to 18″ ID in North America</li>
+            <li>A Certified Installer can evaluate the site first</li>
+            <li>Our Technical Design Division works out the lining options</li>
+            <li>Residential projects in Ohio, with 0% financing for qualified customers</li>
+          </ul>
+          <a class="btn btn-line" href="contact.html">Send us a project</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="sys-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="sys-h">What we line</h2>
+      <p>Water, sewer, electric, oil, gas and HVAC, inside and outside commercial and residential buildings.</p>
+    </div>
+    <div class="systems">
+      <a class="sys" href="sewer-drain.html"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="30" fill="none" stroke="#252935" stroke-width="8"/><circle cx="36" cy="36" r="22.5" fill="none" stroke="#e8731e" stroke-width="5"/></svg><h3>Sewer & drain</h3><p>Cured-in-place pipe (CIPP) for sewer and sanitary lines, roof drains and storm drains.</p><span class="spec">Tested to a minimum life expectancy of 50+ years</span></a>
+      <a class="sys" href="neofit.html"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="26" fill="none" stroke="#252935" stroke-width="10"/><circle cx="36" cy="36" r="18" fill="none" stroke="#e8731e" stroke-width="3"/><circle cx="36" cy="36" r="12" fill="#3b3f95" opacity=".25"/></svg><h3>Potable water</h3><p>Neofit®+Plus expandable pressure pipe for water service lines, including lead service lines.</p><span class="spec">NSF 61 certified, ½″ to 2″ ID, up to 300 ft</span></a>
+      <a class="sys" href="conduit-hvac.html"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="30" fill="none" stroke="#252935" stroke-width="8"/><circle cx="36" cy="36" r="22.5" fill="none" stroke="#e8731e" stroke-width="5"/><circle cx="30" cy="32" r="5" fill="#3b3f95"/><circle cx="42" cy="32" r="5" fill="#3b3f95"/><circle cx="36" cy="43" r="5" fill="#3b3f95"/></svg><h3>Utilities</h3><p>CIP-Conduit® for underground electrical and telecommunications conduit, vault to vault.</p><span class="spec">Approved by IAPMO UES, UEL-5054</span></a>
+      <a class="sys" href="conduit-hvac.html#hvac"><svg viewBox="0 0 72 72" aria-hidden="true"><rect x="6" y="14" width="60" height="44" rx="22" fill="none" stroke="#252935" stroke-width="8"/><rect x="13.5" y="21.5" width="45" height="29" rx="14.5" fill="none" stroke="#e8731e" stroke-width="5"/></svg><h3>HVAC</h3><p>CIP-Duct® for underground HVAC ducts, and EPP for leaking radiant floor piping.</p><span class="spec">Engineer tested to a minimum of 50+ years</span></a>
+      <a class="sys" href="conduit-hvac.html#industrial"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="26" fill="none" stroke="#252935" stroke-width="8"/><circle cx="36" cy="36" r="19" fill="none" stroke="#e8731e" stroke-width="5"/><circle cx="69" cy="36" r="2.6" fill="#252935"/><circle cx="3" cy="36" r="2.6" fill="#252935"/><circle cx="36" cy="69" r="2.6" fill="#252935"/><circle cx="36" cy="3" r="2.6" fill="#252935"/><circle cx="59.331" cy="59.331" r="2.6" fill="#252935"/><circle cx="12.669" cy="59.331" r="2.6" fill="#252935"/><circle cx="59.331" cy="12.669" r="2.6" fill="#252935"/><circle cx="12.669" cy="12.669" r="2.6" fill="#252935"/></svg><h3>Multi-industry</h3><p>Process, chiller, cooling tower, fire main, mining and refinery pipe. Gas lines by winch-in-place pipe.</p><span class="spec">Industrial, mechanical, refinery, mine, fire main</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="cipp-h">
+  <div class="wrap steps-grid">
+    <div>
+      <div class="sec-head">
+        <h2 id="cipp-h">How cured-in-place pipe goes in</h2>
+        <p>A textile liner tube, a liquid resin, and air pressure. No trench.</p>
+      </div>
+      <ol class="steps">
+        <li><div><h3>Wet-out</h3><p>The textile liner is impregnated with the resin mixture, an epoxy base with a pre-determined hardener.</p></div></li>
+        <li><div><h3>Inversion</h3><p>Air pressure inverts the liner into the pipe, so the resin ends up against the existing pipe wall.</p></div></li>
+        <li><div><h3>Cure</h3><p>A calibration tube goes in behind it, and the liner cures with ambient air, hot water or steam into a smooth, corrosion-resistant new pipe wall.</p></div></li>
+        <li><div><h3>Reinstate</h3><p>If needed, a robotic cutter opens the branch line connections from inside the new pipe.</p></div></li>
+      </ol>
+    </div>
+    <figure class="figure">
+      <img src="img/camera-450.webp" srcset="img/camera-450.webp 450w, img/camera-900.webp 900w" sizes="(max-width: 900px) 100vw, 560px" width="900" height="900" alt="Six pipe camera frames: three before lining with cracks, roots and debris, and three after with a smooth lined wall" loading="lazy" decoding="async">
+      <figcaption>Camera inspection before and after Flow-Liner CIPP lining.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec iron neo" aria-labelledby="neo-h">
+  <div class="wrap neo-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:0">
+        <h2 id="neo-h">Lead service lines, lined in hours</h2>
+        <p>Neofit®+Plus is an NSF 61 certified expandable pressure pipe that forms a continuous barrier between the old pipe and the drinking water. It often needs only one small access pit.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Typical install</dt><dd class="num">2–3 hours</dd></div>
+        <div><dt>Versus dig-and-replace</dt><dd class="num">Save up to 85%</dd></div>
+        <div><dt>Lead in our test water</dt><dd class="num">0% detected</dd></div>
+      </dl>
+      <a class="btn btn-liner" href="neofit.html">How Neofit+Plus works</a>
+    </div>
+    <div class="neo-cut"><img src="img/neofit-cut-560.webp" srcset="img/neofit-cut-560.webp 560w, img/neofit-cut-900.webp 900w, img/neofit-cut-1264.webp 1264w" sizes="(max-width: 900px) 90vw, 640px" width="1264" height="851" alt="Two old metal service pipes cut open, each with a white Neofit liner running through it" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="train-h">
+  <div class="wrap train-grid">
+    <div class="train-pics">
+      <img class="tall" src="img/field-640.webp" srcset="img/field-640.webp 640w, img/field-960.webp 960w, img/field-1400.webp 1400w" sizes="(max-width: 900px) 66vw, 480px" width="1400" height="736" alt="Crew in safety vests watching a Neofit+Plus training on copper lines laid on gravel" loading="lazy" decoding="async">
+      <img src="img/shop-640.webp" srcset="img/shop-640.webp 640w" sizes="(max-width: 900px) 33vw, 240px" width="640" height="480" alt="A Flow-Liner inversion unit and demonstration pipe in the training shop" loading="lazy" decoding="async">
+      <img src="img/class-640.webp" srcset="img/class-640.webp 640w" sizes="(max-width: 900px) 33vw, 240px" width="640" height="480" alt="Classroom session with slides before hands-on training" loading="lazy" decoding="async">
+    </div>
+    <div>
+      <h2 id="train-h">Training is half of what we sell</h2>
+      <p style="margin-top:1rem;font-size:1.125rem">Lining takes a trained and certified installer. Our trainers teach straight runs, bends, multiple pipe diameters and hard jobsites, and how to estimate, bid and sell the work. Our Technical Team travels nationally and internationally to support our dealers and installers.</p>
+      <div class="ctas" style="margin-top:1.5rem"><a class="btn btn-line" href="installers.html">Become an installer</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="clients-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="clients-h">Where our liners have gone</h2>
+      <p>Our CIP-Conduit® was used in The White House utility renovation project, and in a project for the US Navy in 2012. Some of the clients we list:</p>
+    </div>
+    <ul class="clients"><li>AEP</li><li>Air National Guard</li><li>AK Steel</li><li>Anheuser-Busch</li><li>Bloomsburg University</li><li>Coshocton Fire Department</li><li>Duke Energy</li><li>ERGON</li><li>FBI</li><li>Grand Central Station</li><li>Grove City Medical Center</li><li>Kalahari Resort</li><li>Lane Aviation</li><li>McDonald’s</li><li>Morris Sheppard Dam</li><li>Navy</li><li>Ohio State University</li><li>Palace Theatre</li><li>PECO</li><li>Roosevelt Memorial</li><li>Starbucks</li><li>The Columbus Zoo</li><li>The Pentagon</li><li>The White House</li><li>Wayne County Courthouse</li><li>West Virginia University</li></ul>
+  </div>
+</section>
+<section class="sec iron" aria-labelledby="closer-h">
+  <div class="wrap closer-grid">
+    <div>
+      <h2 id="closer-h">Tell us about the line.</h2>
+      <p class="muted" style="margin-top:1rem;font-size:1.125rem">Send the pipe size, the length, what it’s made of and what’s wrong with it. Our team will tell you whether it can be lined, and who can line it.</p>
+      <div class="ctas" style="margin-top:1.75rem">
+        <a class="btn btn-liner" href="mailto:info@flow-liner.com?subject=Project%20inquiry"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email the project</a>
+        <a class="btn btn-line" href="tel:+18003480020"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call (800) 348-0020</a>
+      </div>
+    </div>
+    <div class="lines">
+      <div class="line"><span>Email</span><a href="mailto:info@flow-liner.com">info@flow-liner.com</a></div>
+      <div class="line"><span>Toll-free</span><a href="tel:+18003480020">(800) 348-0020</a></div>
+      <div class="line"><span>International</span><a href="tel:+17404539387">1 (740) 453-9387</a></div>
+      <div class="line"><span>Offices</span><b>Corporate office in Zanesville, Ohio. Sales offices in Las Vegas and Washington, DC.</b></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <span class="flogo"><img src="img/logo-240.webp" width="240" height="115" alt="Flow-Liner logo: an orange pipe over the blue Flow-Liner name" loading="lazy" decoding="async"></span>
+        <p>Flow-Liner® Systems, Ltd. designs and manufactures trenchless lining systems for sewer, water, conduit and HVAC lines, and trains the installers who use them.</p>
+        <p style="margin-top:.8rem"><a href="mailto:info@flow-liner.com">info@flow-liner.com</a><br>Toll-free <a href="tel:+18003480020">(800) 348-0020</a><br>International <a href="tel:+17404539387">1 (740) 453-9387</a><br>Fax 740-453-8622</p>
+      </div>
+      <div><h2>Systems</h2><ul>
+        <li><a href="sewer-drain.html">Sewer & drain CIPP</a></li>
+        <li><a href="neofit.html">Neofit®+Plus potable water</a></li>
+        <li><a href="conduit-hvac.html">CIP-Conduit® and CIP-Duct®</a></li>
+        <li><a href="conduit-hvac.html#industrial">Multi-industry lining</a></li>
+      </ul></div>
+      <div><h2>Company</h2><ul>
+        <li><a href="installers.html">Become an installer</a></li>
+        <li><a href="about.html">About Flow-Liner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="legal">
+      <p>Unofficial demo built by MHS Tecnologia for Flow-Liner Systems. Not affiliated with or endorsed by Flow-Liner Systems. Content and photos come from Flow-Liner Systems’ public website. Flow-Liner®, Neofit®+Plus, CIP-Conduit® and CIP-Duct® are their trademarks.</p>
+      <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+    </div>
+  </div>
+</footer>
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="btn btn-liner" href="tel:+18003480020" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call toll-free</a>
+  <a class="btn btn-line" href="mailto:info@flow-liner.com" tabindex="-1" aria-label="Email Flow-Liner"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg></a>
+</div>
+<script>
+(function () {
+  var bar = document.getElementById('sticky'), cta = document.getElementById('hero-cta');
+  if (!cta || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) {
+    var past = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
+    bar.classList.toggle('on', past);
+    bar.setAttribute('aria-hidden', past ? 'false' : 'true');
+    bar.querySelectorAll('a').forEach(function (a) { a.tabIndex = past ? 0 : -1; });
+  }).observe(cta);
+})();
+</script>
+</body>
+</html>
