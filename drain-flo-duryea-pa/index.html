@@ -29,6 +29,8 @@
   --wave: #0f3366;
   --wave-2: #164480;
   --foam: #8fd3ee;
+  --sky: #5cc2e6;
+  --sea: #2b6cc4;
   --wrench: #c21f1a;
   --wrench-deep: #9f1712;
   --sun: #f5b928;
@@ -53,6 +55,8 @@ h1, h2, h3 { font-family: "Big Shoulders", "Arial Narrow", sans-serif; font-weig
 h2 { font-size: clamp(2.3rem, 5vw, 3.9rem); }
 h3 { font-size: 1.65rem; line-height: 1; font-weight: 800; }
 p { max-width: 64ch; }
+.waves { height: 64px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 48'%3E%3Cpath fill='%232b6cc4' d='M0 30C20 14 44 12 60 24c6 5 0 10-6 6 4 7 18 6 26-2 20-14 44-16 60-4 6 5 0 10-6 6 4 7 18 4 26 0v18H0z'/%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' d='M54 30c4 7 18 6 26-2M134 30c4 7 18 4 26 0M0 30c4-3 8-6 12-8'/%3E%3Cpath fill='%235cc2e6' d='M0 41q20-12 40 0t40 0 40 0 40 0v7H0z'/%3E%3C/svg%3E") repeat-x left bottom / 210px 64px; border-bottom: 5px solid var(--sky); }
+.waves-top { transform: scaleY(-1); margin-top: calc(clamp(3.5rem, 7vw, 5.5rem) * -1); margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 .skip { position: absolute; left: -999px; top: .5rem; background: #fff; color: var(--ink); padding: .5rem 1rem; z-index: 30; }
 .skip:focus { left: .5rem; }
@@ -96,8 +100,9 @@ p { max-width: 64ch; }
 
 /* Hero */
 .hero { background: var(--wave); color: var(--on-dark); }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 33rem); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-block: clamp(2.5rem, 5vw, 4.5rem); }
-.hero h1 { font-size: clamp(3rem, 5.4vw, 5.1rem); max-width: 12.5ch; }
+.hero { position: relative; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 33rem); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-block: clamp(2.5rem, 4.5vw, 3.5rem) 1.5rem; }
+.hero h1 { font-size: clamp(3rem, 5vw, 4.6rem); max-width: 14ch; }
 .lede { margin-top: 1.3rem; font-size: 1.2rem; color: var(--on-dark-muted); max-width: 42ch; }
 .lede b { color: var(--on-dark); }
 .hero .call { margin-top: 2rem; }
@@ -108,8 +113,10 @@ p { max-width: 64ch; }
 .js .dot { animation: ping 2.4s ease-out infinite; }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(245,185,40,.55); } 70%, 100% { box-shadow: 0 0 0 .6rem rgba(245,185,40,0); } }
 .hero-photo { position: relative; margin: 0; }
+.hero-photo > img { position: relative; }
+.sun { position: absolute; width: 15rem; height: 15rem; border-radius: 50%; background: var(--sun); right: -4.5rem; top: -4.5rem; }
 .hero-photo > img { width: 100%; border-radius: 10px; }
-.sticker { position: absolute; left: -2.6rem; bottom: -2.2rem; width: 9.5rem; height: 9.5rem; border-radius: 50%; background: var(--porcelain); display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0,0,0,.35); }
+.sticker { position: absolute; left: -2.6rem; bottom: -2.2rem; width: 9.5rem; height: 9.5rem; border-radius: 50%; background: var(--porcelain); border: 5px solid var(--sun); display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0,0,0,.35); }
 .sticker img { width: 82%; }
 .hero-photo figcaption { margin-top: .7rem; padding-left: 7.5rem; font-size: .9rem; color: var(--on-dark-muted); }
 .hero-m { display: none; }
@@ -117,7 +124,7 @@ p { max-width: 64ch; }
 /* Section rhythm */
 .band { padding-block: clamp(3.5rem, 7vw, 6rem); }
 .porcelain { background: var(--porcelain); }
-.dark-surface { background: var(--cellar); color: var(--on-dark); }
+.dark-surface { background: var(--cellar); color: var(--on-dark); border-top: 5px solid var(--sun); }
 .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.2rem; }
 .sec-head p { color: var(--muted); max-width: 46ch; }
 .dark-surface .sec-head p { color: var(--on-dark-muted); }
@@ -125,8 +132,10 @@ p { max-width: 64ch; }
 .dark-surface .more-link { color: var(--foam); }
 
 /* Symptom guide */
-.signs { list-style: none; padding: 0; border-top: 3px solid var(--ink); }
-.signs li { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.4fr) auto; gap: 1.5rem 2.5rem; align-items: start; padding: 1.5rem 0; border-bottom: 1px solid #c9d0d4; }
+.signs { list-style: none; padding: 0; border-top: 5px solid var(--sky); }
+.signs li { display: grid; grid-template-columns: 4.5rem minmax(0, 1.05fr) minmax(0, 1.4fr) 10rem; gap: 1.5rem 2rem; align-items: start; padding: 1.5rem 0; border-bottom: 1px solid #c9d0d4; }
+.sym { width: 4.5rem; height: 4.5rem; border-radius: 50%; object-fit: cover; border: 3px solid var(--sky); }
+.signs li.urgent .sym { border-color: var(--wrench); }
 .signs h3 { font-size: clamp(1.55rem, 2.4vw, 2rem); }
 .signs p { color: var(--muted); }
 .signs a.svc { font-weight: 700; color: var(--wave); white-space: nowrap; text-underline-offset: .2em; padding-top: .2rem; }
@@ -145,7 +154,7 @@ p { max-width: 64ch; }
 .jobs.all { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 /* Services */
-.svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 3px solid var(--ink); }
+.svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 5px solid var(--sky); }
 .svc-grid a { display: block; padding: 1.5rem 1.5rem 1.6rem 0; border-bottom: 1px solid #c9d0d4; text-decoration: none; }
 .svc-grid a:nth-child(3n+2), .svc-grid a:nth-child(3n) { padding-left: 1.5rem; border-left: 1px solid #c9d0d4; }
 .svc-grid h3 { margin-bottom: .55rem; }
@@ -165,14 +174,14 @@ p { max-width: 64ch; }
 
 /* Reviews */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
-.quotes figure { margin: 0; border-top: 3px solid var(--wave); padding-top: 1.1rem; }
+.quotes figure { margin: 0; border-top: 5px solid var(--sun); padding-top: 1.1rem; }
 .quotes blockquote { font-size: 1.08rem; }
 .quotes figcaption { margin-top: .9rem; font-weight: 700; }
-.stars { color: #9a6a00; letter-spacing: .1em; display: block; margin-bottom: .4rem; }
+.stars { display: block; width: 6.5rem; height: 1.3rem; fill: var(--sun); stroke: #b07f00; stroke-width: .8; margin-bottom: .5rem; }
 .quotes-note { margin-top: 2rem; color: var(--muted); font-size: .95rem; }
 
 /* Closing call band */
-.closer { background: var(--wave); color: var(--on-dark); padding-block: clamp(3.5rem, 7vw, 5.5rem); }
+.closer { background: var(--wave); color: var(--on-dark); padding-block: clamp(3.5rem, 7vw, 5.5rem); overflow: hidden; }
 .closer-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.5rem 4rem; align-items: center; }
 .closer h2 { max-width: 14ch; }
 .closer .towns { margin-top: 1.2rem; color: var(--on-dark-muted); max-width: 46ch; }
@@ -192,7 +201,8 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
 .legal a { color: #fff; }
 
 /* Inner pages */
-.phero { background: var(--wave); color: var(--on-dark); padding-block: clamp(2.5rem, 5vw, 4rem); }
+.phero { background: var(--wave); color: var(--on-dark); padding-top: clamp(2.5rem, 5vw, 4rem); }
+.phero .wrap { padding-bottom: clamp(2rem, 4vw, 3rem); }
 .phero h1 { font-size: clamp(2.8rem, 6vw, 5rem); max-width: 16ch; }
 .phero p { margin-top: 1rem; color: var(--on-dark-muted); font-size: 1.15rem; max-width: 52ch; }
 .phero .btn { margin-top: 1.6rem; }
@@ -205,9 +215,11 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
 .service h2 { margin-bottom: 1rem; }
 .service .intro { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
 .service p + p { margin-top: .9rem; }
+.service p, .service li, .prose p, .facts li, .contact-grid p, .contact-grid li { font-size: 1.125rem; color: #333; }
+.service .intro { color: var(--ink); }
 .service .s-photo img { border-radius: 10px; width: 100%; }
 .service .s-photo figcaption { font-size: .9rem; color: var(--muted); margin-top: .45rem; }
-.checks { list-style: none; padding: 1.1rem 1.25rem; margin: 1.4rem 0; background: var(--porcelain); border-radius: 8px; display: grid; gap: .45rem; }
+.checks { list-style: none; padding: 1.1rem 1.25rem; margin: 1.4rem 0; background: var(--porcelain); border-left: 5px solid var(--sky); border-radius: 0 8px 8px 0; display: grid; gap: .45rem; }
 .checks li { padding-left: 1.6rem; position: relative; }
 .checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: .8rem; height: .45rem; border-left: 3px solid var(--wrench); border-bottom: 3px solid var(--wrench); transform: rotate(-45deg); }
 .checks-title { font-weight: 700; margin-top: 1.4rem; }
@@ -216,7 +228,7 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
 .prose h2 { margin: 2.5rem 0 1rem; }
 .two { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
 .two img { border-radius: 10px; width: 100%; }
-.facts { list-style: none; padding: 0; border-top: 3px solid var(--ink); margin-top: 1.5rem; }
+.facts { list-style: none; padding: 0; border-top: 5px solid var(--sky); margin-top: 1.5rem; }
 .facts li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid #c9d0d4; }
 .facts b { font-family: "Big Shoulders", sans-serif; font-size: 1.25rem; font-weight: 800; }
 .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); }
@@ -256,7 +268,9 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
   .hero-grid { grid-template-columns: 1fr; padding-block: 0 2rem; gap: 0; }
   .hero-photo { display: none; }
   .hero-m { display: block; margin: 0 calc(var(--pad) * -1) 1.3rem; position: relative; }
-  .hero-m img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; }
+  .hero-m img { width: 100%; aspect-ratio: 16 / 7; object-fit: cover; object-position: 50% 0; }
+  .waves { height: 34px; background-size: 112px 34px; }
+  .hero .waves { margin-top: -.5rem; }
   .hero h1 { font-size: clamp(2.45rem, 11vw, 3.4rem); max-width: 14ch; }
   .lede { font-size: 1.05rem; margin-top: .8rem; line-height: 1.5; }
   .hero .call { margin-top: 1.2rem; display: grid; width: 100%; padding: .7rem 1rem .75rem; }
@@ -264,7 +278,9 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
   .call b { font-size: 2.3rem; }
   .hero-alt { font-size: .95rem; margin-top: .75rem; }
   .now { margin-top: 1rem; padding-top: .9rem; font-size: .95rem; }
-  .signs li { grid-template-columns: 1fr; gap: .5rem; }
+  .signs li { grid-template-columns: 3.6rem 1fr; gap: .5rem .9rem; }
+  .signs li > :not(.sym) { grid-column: 2; }
+  .sym { width: 3.6rem; height: 3.6rem; grid-row: span 3; }
   .signs li { padding-inline: 0; }
   .signs li.urgent { margin-inline: calc(var(--pad) * -1); padding-inline: calc(var(--pad) - 6px) var(--pad); }
   .jobs, .jobs.all { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
@@ -315,23 +331,25 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
       <p class="now"><span class="dot" aria-hidden="true"></span><span><span id="now-time"></span>Drain-Flo takes calls 24/7, residential and commercial.</span></p>
     </div>
     <figure class="hero-photo">
+      <div class="sun" aria-hidden="true"></div>
       <img src="img/hero-560.webp" srcset="img/hero-560.webp 560w, img/hero-840.webp 840w, img/hero-1200.webp 1200w" sizes="(max-width: 1240px) 42vw, 528px" width="840" height="663" alt="Eric of Drain-Flo clearing a basement drain line with a drum machine" fetchpriority="high">
       <div class="sticker"><img src="img/logo-192.webp" srcset="img/logo-192.webp 1x, img/logo-320.webp 2x" width="192" height="178" alt="Drain-Flo logo"></div>
       <figcaption>Clearing a basement line, from Drain-Flo’s own job photos.</figcaption>
     </figure>
   </div>
+  <div class="waves" aria-hidden="true"></div>
 </section>
 
 <section class="band porcelain" aria-labelledby="signs-h">
   <div class="wrap">
     <div class="sec-head"><h2 id="signs-h">What is your drain doing?</h2><p>The symptoms usually point to the fix. Here is how Drain-Flo reads them.</p></div>
-    <ul class="signs"><li class=""><h3>One sink, tub, shower or toilet is slow or blocked</h3><p>Usually a single-fixture clog: hair, wipes, paper, grease or buildup. Drain-Flo starts by identifying the fixture and the symptoms, so the right approach is used without extra mess.</p><a class="svc" href="services.html#clog-removal">Clog removal</a></li><li class=""><h3>More than one drain is slow, or the basement drain backs up</h3><p>Your main sewer line may be restricted. Older NEPA properties are more prone to it: aging pipe, shifts over time, debris that settles in low spots.</p><a class="svc" href="services.html#sewer-line-cleaning">Sewer line cleaning</a></li><li class=""><h3>Backups keep coming back after every cleaning</h3><p>A broken, shifted or collapsed section can’t be fixed from the inside. Drain-Flo explains what it sees and which options make sense before any major work.</p><a class="svc" href="services.html#sewer-excavation">Sewer excavation</a></li><li class="urgent"><h3>Standing water, an overflowing drain, or a sudden sewage smell</h3><p>That’s an emergency. Call and describe it: which drains, when it started, and whether water backs up anywhere else. It helps them guide you right away.</p><a class="svc" href="services.html#emergency">Emergency service</a></li></ul>
+    <ul class="signs"><li><img class="sym" src="img/t-sink.webp" width="192" height="192" alt="" loading="lazy"><h3>One sink, tub, shower or toilet is slow or blocked</h3><p>Usually a single-fixture clog: hair, wipes, paper, grease or buildup. Drain-Flo starts by identifying the fixture and the symptoms, so the right approach is used without extra mess.</p><a class="svc" href="services.html#clog-removal">Clog removal</a></li><li><img class="sym" src="img/t-main.webp" width="192" height="192" alt="" loading="lazy"><h3>More than one drain is slow, or the basement drain backs up</h3><p>Your main sewer line may be restricted. Older NEPA properties are more prone to it: aging pipe, shifts over time, debris that settles in low spots.</p><a class="svc" href="services.html#sewer-line-cleaning">Sewer line cleaning</a></li><li><img class="sym" src="img/t-dig.webp" width="192" height="192" alt="" loading="lazy"><h3>Backups keep coming back after every cleaning</h3><p>A broken, shifted or collapsed section can’t be fixed from the inside. Drain-Flo explains what it sees and which options make sense before any major work.</p><a class="svc" href="services.html#sewer-excavation">Sewer excavation</a></li><li class="urgent"><img class="sym" src="img/t-flood.webp" width="192" height="192" alt="" loading="lazy"><h3>Standing water, an overflowing drain, or a sudden sewage smell</h3><p>That’s an emergency. Call and describe it: which drains, when it started, and whether water backs up anywhere else. It helps them guide you right away.</p><a class="svc" href="services.html#emergency">Emergency service</a></li></ul>
   </div>
 </section>
 
 <section class="band dark-surface" aria-labelledby="work-h">
   <div class="wrap">
-    <div class="sec-head"><h2 id="work-h">Recent jobs, photographed on site</h2><a class="more-link" href="work.html">See all 14 job photos</a></div>
+    <div class="sec-head"><h2 id="work-h">Recent jobs, photographed on site</h2><a class="more-link" href="work.html">See all 15 job photos</a></div>
     <div class="jobs">
       <figure class="big"><img src="img/sewer-cleaning-480.webp" srcset="img/sewer-cleaning-480.webp 480w, img/sewer-cleaning-960.webp 960w, img/sewer-cleaning-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 50vw" width="960" height="723" alt="Sewer cleaning in Duryea" loading="lazy" decoding="async"><figcaption>Sewer cleaning in Duryea</figcaption></figure>
       <figure><img src="img/line-excavation-480.webp" srcset="img/line-excavation-480.webp 480w, img/line-excavation-960.webp 960w" sizes="(max-width: 860px) 50vw, 25vw" width="960" height="640" alt="Excavated line repair in progress" loading="lazy" decoding="async"><figcaption>Excavated line repair in progress</figcaption></figure>
@@ -365,11 +383,12 @@ footer { background: var(--cellar); color: #c3ccd2; font-size: .95rem; padding-b
 <section class="band porcelain" aria-labelledby="rev-h">
   <div class="wrap">
     <div class="sec-head"><h2 id="rev-h">Late nights, flooded basements, five stars</h2><a class="more-link" href="about.html#reviews">Read more reviews</a></div>
-    <div class="quotes"><figure><blockquote><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><p>Eric came to my store late at night and with short notice. He quickly noticed the issue and resolved it. He was very kind and we greatly appreciate his help!!</p></blockquote><figcaption>Paige Murdock</figcaption></figure><figure><blockquote><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><p>Excellent experience!! I had an emergency with my sump pump breaking and water in my basement. Made a phone call and Eric came quickly to fix the issue. I was so grateful for the prompt response and fast professional service!! Thank you!!! Highly recommend!!</p></blockquote><figcaption>Pam Hart</figcaption></figure><div class="q-more"><figure><blockquote><span class="stars" aria-label="5 out of 5 stars">★★★★★</span><p>I called Drain-Flo when I had a very high water bill due to a leak I could not find. Eric showed up the same day and assessed and fixed the leak in a very short amount of time. He also pointed out other issues I didn’t know I had and was very knowledgeable. I’ll be calling them for future plumbing issues definitely.</p></blockquote><figcaption>Carly Tansits</figcaption></figure></div></div>
+    <div class="quotes"><figure><blockquote><svg class="stars" viewBox="0 0 100 20" role="img" aria-label="5 out of 5 stars"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g></svg><p>Eric came to my store late at night and with short notice. He quickly noticed the issue and resolved it. He was very kind and we greatly appreciate his help!!</p></blockquote><figcaption>Paige Murdock</figcaption></figure><figure><blockquote><svg class="stars" viewBox="0 0 100 20" role="img" aria-label="5 out of 5 stars"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g></svg><p>Excellent experience!! I had an emergency with my sump pump breaking and water in my basement. Made a phone call and Eric came quickly to fix the issue. I was so grateful for the prompt response and fast professional service!! Thank you!!! Highly recommend!!</p></blockquote><figcaption>Pam Hart</figcaption></figure><div class="q-more"><figure><blockquote><svg class="stars" viewBox="0 0 100 20" role="img" aria-label="5 out of 5 stars"><g transform="translate(0 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(20 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(40 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(60 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g><g transform="translate(80 0)"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></g></svg><p>I called Drain-Flo when I had a very high water bill due to a leak I could not find. Eric showed up the same day and assessed and fixed the leak in a very short amount of time. He also pointed out other issues I didn’t know I had and was very knowledgeable. I’ll be calling them for future plumbing issues definitely.</p></blockquote><figcaption>Carly Tansits</figcaption></figure></div></div>
     <p class="quotes-note">Google reviews, as shown on drainflonepa.com.</p>
   </div>
 </section>
 <section class="closer dark" aria-labelledby="closer-h">
+  <div class="waves waves-top" aria-hidden="true"></div>
   <div class="wrap closer-grid">
     <div>
       <h2 id="closer-h">Water where it shouldn’t be? Call now.</h2>
