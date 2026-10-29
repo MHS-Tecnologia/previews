@@ -74,12 +74,13 @@ p { margin: 0 0 1em; }
 .menu li a { display: block; padding: .75rem .9rem; color: var(--ink); text-decoration: none; border-radius: 4px; }
 .menu li a:hover, .menu li a[aria-current="page"] { background: var(--cool); color: var(--wine); }
 .call-sm { display: none; }
-.hero { overflow: clip; padding: clamp(1.25rem, 4vw, 4rem) 0 clamp(2.5rem, 5vw, 4.5rem); }
+.hero { overflow: clip; padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(2.5rem, 5vw, 4.5rem); }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); grid-template-areas: 'copy shot' 'copy hh'; gap: 1.6rem clamp(2rem, 5vw, 4.5rem); align-items: start; }
 .hero .copy { grid-area: copy; align-self: center; }
 .hero .shot { grid-area: shot; }
 .hero .hh { grid-area: hh; }
-.hero .hh .hours { margin-top: 0; max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 1.5rem; align-items: start; }
+.hero .hh .hours { margin-top: 0; max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 1.5rem; align-items: start; }
+.hero .hh .status { white-space: nowrap; }
 .hero h1 { max-width: 13ch; }
 .lede { font-size: 1.1875rem; color: var(--muted); max-width: 34rem; margin: 1.1rem 0 1.6rem; }
 .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
@@ -96,7 +97,8 @@ p { margin: 0 0 1em; }
 .shot .frame { position: relative; z-index: 1; border-radius: 10px; overflow: hidden; box-shadow: 0 30px 60px -36px rgba(36, 28, 30, .55); }
 .shot img { width: 100%; }
 .shot figcaption { position: relative; z-index: 1; font-size: .9375rem; color: var(--muted); margin-top: .7rem; }
-.iris { position: absolute; z-index: 0; width: 280px; height: 280px; top: -62px; right: -92px; }
+.iris { position: absolute; z-index: 0; width: 260px; height: 260px; top: -36px; right: -84px; }
+.lede .short { display: none; }
 .iris .facets { transform-origin: 50% 50%; }
 @media (prefers-reduced-motion: no-preference) {
 .hero h1 { animation: focus 1.1s cubic-bezier(.2, .7, .2, 1) both; }
@@ -153,13 +155,21 @@ section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
 .visit .btn:hover { background: var(--sand); border-color: var(--sand); color: var(--wine-dark); }
 .urgent { border-left: 4px solid var(--sand); padding-left: 1rem; }
 .visit dl { margin: 0; }
-.visit dt { font-weight: 700; color: #fff; margin-top: .9rem; }
+.visit dt, .visit .label { font-weight: 700; color: #fff; margin: .9rem 0 0; font-size: 1.0625rem; }
+.visit dt:first-child, .visit .label { margin-top: 0; }
+.visit .label { margin-bottom: .5rem; }
+.visit .status { margin-bottom: .5rem; }
 .visit dd { margin: 0; color: #ecdcdc; }
 .phead { padding: clamp(1.75rem, 5vw, 3.75rem) 0 clamp(2rem, 4vw, 3rem); border-bottom: 1px solid var(--line); overflow: clip; position: relative; }
-.phead .wrap { position: relative; }
+.phead .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 2rem 4rem; align-items: center; }
+.facts { position: relative; }
+.facts .iris.small { position: static; display: block; width: 96px; height: 96px; margin: 0 0 1rem; }
+.facts dl { margin: 0; border-top: 2px solid var(--wine); }
+.facts dl > div { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.facts dt { font-family: var(--disp); font-weight: 600; font-size: 1.75rem; line-height: 1.05; color: var(--wine); }
+.facts dd { margin: .15rem 0 0; color: var(--muted); font-size: .9375rem; }
 .phead h1 { max-width: 18ch; }
 .phead .lede { margin-bottom: 1.4rem; }
-.phead .iris { width: 260px; height: 260px; top: -60px; right: -40px; opacity: .9; }
 .crumbs { font-size: .9375rem; margin: 0 0 .8rem; color: var(--muted); }
 .crumbs a { color: var(--muted); }
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
@@ -217,17 +227,20 @@ body { font-size: 1.03rem; }
 .nav { gap: .5rem; }
 .nav .btn { display: none; }
 .call-sm { display: inline-flex; min-height: 46px; padding: .5rem .8rem; font-size: .9375rem; }
-.hero { padding-top: 1rem; }
+.hero { padding-top: 2rem; }
 .hero .wrap { grid-template-columns: 1fr; grid-template-areas: 'shot' 'copy' 'hh'; gap: 1.1rem; }
 .hero .hh .hours { display: block; }
 .demo { font-size: .75rem; padding: .4rem .75rem; }
 .shot { order: -1; margin-right: 0; }
 .shot figcaption { display: none; }
-.iris { width: 150px; height: 150px; top: -46px; right: -52px; }
+.iris { width: 120px; height: 120px; top: -28px; right: -10px; }
+.lede .long, .cta .long { display: none; }
+.lede .short { display: inline; }
 .hero h1 { font-size: 2.45rem; max-width: none; }
 .lede { font-size: 1.0625rem; margin: .7rem 0 1rem; }
-.cta { flex-direction: column; gap: .6rem; }
-.cta .btn { width: 100%; }
+.cta { gap: .6rem; flex-wrap: nowrap; }
+.cta .btn { flex: 1 1 0; padding: .7rem .6rem; }
+.hero .hh .hours th, .hero .hh .hours td { padding: .18rem 0; }
 .hours { margin-top: 1.4rem; max-width: none; }
 .hero .hh .hours { margin-top: .4rem; }
 .reasons { grid-template-columns: 1fr; }
@@ -243,7 +256,12 @@ aside.side { position: static; }
 .bio { grid-template-columns: 1fr; }
 .bio img { width: 180px; }
 .contact-grid { grid-template-columns: 1fr; }
-.phead .iris { width: 140px; height: 140px; top: -40px; right: -50px; }
+.phead .wrap { grid-template-columns: 1fr; gap: 1rem; }
+.facts .iris.small { display: none; }
+.facts dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; border-top: 0; }
+.facts dl > div { border-bottom: 0; border-top: 2px solid var(--wine); padding: .5rem 0 0; }
+.facts dt { font-size: 1.3rem; }
+.facts dd { font-size: .8125rem; line-height: 1.35; }
 footer .cols4 { grid-template-columns: 1fr 1fr; }
 footer .cols4 > :first-child { grid-column: 1 / -1; }
 .dock { display: flex; position: fixed; left: .75rem; right: .75rem; bottom: .75rem; z-index: 30; box-shadow: 0 14px 30px -10px rgba(36, 28, 30, .6); transform: translateY(160%); transition: transform .3s ease; }
@@ -252,6 +270,20 @@ footer .cols4 > :first-child { grid-column: 1 / -1; }
 @media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
 aside.side .hours tr { display: block; padding: .3rem 0; }
 aside.side .hours th, aside.side .hours td { display: block; text-align: left; padding: 0; }
+.tiles { list-style: none; padding: 0 !important; margin: 1rem 0 1.4rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .6rem; }
+.tiles li { margin: 0 !important; background: var(--cool); border-radius: 8px; padding: .85rem 1rem; font-weight: 700; display: flex; align-items: center; gap: .6rem; }
+.tiles li::before { content: ''; width: 12px; height: 12px; flex: none; background: var(--iris); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
+.tiles li:nth-child(3n+2)::before { background: var(--wine); }
+.tiles li:nth-child(3n)::before { background: #b39556; }
+.divider-shot { margin: 2.6rem 0 0; }
+.divider-shot img { border-radius: 10px; }
+.divider-shot figcaption { font-size: .9375rem; color: var(--muted); margin-top: .6rem; }
+.pull { margin: 2.8rem 0 0; padding: 1.6rem 0; border-top: 2px solid var(--wine); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 1.2rem; align-items: center; }
+.pull .mark { width: 56px; height: 56px; }
+.pull p { margin: 0; font-family: var(--disp); font-weight: 600; font-size: clamp(1.45rem, 2.4vw, 1.9rem); line-height: 1.15; color: var(--ink); }
+.divider { display: flex; align-items: center; gap: 1rem; margin: 2.8rem 0 0; }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.divider .mark { width: 44px; height: 44px; }
 </style>
 </head>
 <body>
@@ -285,11 +317,20 @@ aside.side .hours th, aside.side .hours td { display: block; text-align: left; p
 
   <main id="main">
     <div class="phead">
-      <svg class="iris" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g class="facets" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><path d="M138.0,100.0L196.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M196.0,100.0L188.7,136.7L173.8,108.7Z" fill="#e2cca4"/><path d="M188.7,136.7L135.1,114.5L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L138.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L188.7,136.7L160.4,138.1Z" fill="#e2cca4"/><path d="M188.7,136.7L167.9,167.9L160.4,138.1Z" fill="#2d5e93"/><path d="M167.9,167.9L126.9,126.9L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L135.1,114.5L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L167.9,167.9L132.1,153.6Z" fill="#a9bad6"/><path d="M167.9,167.9L136.7,188.7L132.1,153.6Z" fill="#e2cca4"/><path d="M136.7,188.7L114.5,135.1L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L126.9,126.9L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L136.7,188.7L111.1,165.5Z" fill="#a9bad6"/><path d="M136.7,188.7L100.0,196.0L111.1,165.5Z" fill="#5e2a2e"/><path d="M100.0,196.0L100.0,138.0L111.1,165.5Z" fill="#a9bad6"/><path d="M100.0,138.0L114.5,135.1L111.1,165.5Z" fill="#2d5e93"/><path d="M100.0,138.0L100.0,196.0L81.7,167.9Z" fill="#e2cca4"/><path d="M100.0,196.0L63.3,188.7L81.7,167.9Z" fill="#e2cca4"/><path d="M63.3,188.7L85.5,135.1L81.7,167.9Z" fill="#5e2a2e"/><path d="M85.5,135.1L100.0,138.0L81.7,167.9Z" fill="#e2cca4"/><path d="M85.5,135.1L63.3,188.7L65.4,154.0Z" fill="#2d5e93"/><path d="M63.3,188.7L32.1,167.9L65.4,154.0Z" fill="#5e2a2e"/><path d="M32.1,167.9L73.1,126.9L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L85.5,135.1L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L32.1,167.9L47.7,135.8Z" fill="#5e2a2e"/><path d="M32.1,167.9L11.3,136.7L47.7,135.8Z" fill="#5e2a2e"/><path d="M11.3,136.7L64.9,114.5L47.7,135.8Z" fill="#2d5e93"/><path d="M64.9,114.5L73.1,126.9L47.7,135.8Z" fill="#a9bad6"/><path d="M64.9,114.5L11.3,136.7L39.2,116.6Z" fill="#2d5e93"/><path d="M11.3,136.7L4.0,100.0L39.2,116.6Z" fill="#a9bad6"/><path d="M4.0,100.0L62.0,100.0L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L64.9,114.5L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L4.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M4.0,100.0L11.3,63.3L42.7,84.7Z" fill="#2d5e93"/><path d="M11.3,63.3L64.9,85.5L42.7,84.7Z" fill="#a9bad6"/><path d="M64.9,85.5L62.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M64.9,85.5L11.3,63.3L49.2,65.9Z" fill="#5e2a2e"/><path d="M11.3,63.3L32.1,32.1L49.2,65.9Z" fill="#5e2a2e"/><path d="M32.1,32.1L73.1,73.1L49.2,65.9Z" fill="#2d5e93"/><path d="M73.1,73.1L64.9,85.5L49.2,65.9Z" fill="#a9bad6"/><path d="M73.1,73.1L32.1,32.1L61.0,44.8Z" fill="#a9bad6"/><path d="M32.1,32.1L63.3,11.3L61.0,44.8Z" fill="#a9bad6"/><path d="M63.3,11.3L85.5,64.9L61.0,44.8Z" fill="#e2cca4"/><path d="M85.5,64.9L73.1,73.1L61.0,44.8Z" fill="#2d5e93"/><path d="M85.5,64.9L63.3,11.3L90.4,31.3Z" fill="#e2cca4"/><path d="M63.3,11.3L100.0,4.0L90.4,31.3Z" fill="#a9bad6"/><path d="M100.0,4.0L100.0,62.0L90.4,31.3Z" fill="#5e2a2e"/><path d="M100.0,62.0L85.5,64.9L90.4,31.3Z" fill="#e2cca4"/><path d="M100.0,62.0L100.0,4.0L117.1,37.1Z" fill="#2d5e93"/><path d="M100.0,4.0L136.7,11.3L117.1,37.1Z" fill="#2d5e93"/><path d="M136.7,11.3L114.5,64.9L117.1,37.1Z" fill="#a9bad6"/><path d="M114.5,64.9L100.0,62.0L117.1,37.1Z" fill="#5e2a2e"/><path d="M114.5,64.9L136.7,11.3L134.7,44.9Z" fill="#2d5e93"/><path d="M136.7,11.3L167.9,32.1L134.7,44.9Z" fill="#2d5e93"/><path d="M167.9,32.1L126.9,73.1L134.7,44.9Z" fill="#2d5e93"/><path d="M126.9,73.1L114.5,64.9L134.7,44.9Z" fill="#5e2a2e"/><path d="M126.9,73.1L167.9,32.1L151.8,60.2Z" fill="#e2cca4"/><path d="M167.9,32.1L188.7,63.3L151.8,60.2Z" fill="#a9bad6"/><path d="M188.7,63.3L135.1,85.5L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L126.9,73.1L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L188.7,63.3L159.9,89.4Z" fill="#2d5e93"/><path d="M188.7,63.3L196.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M196.0,100.0L138.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M138.0,100.0L135.1,85.5L159.9,89.4Z" fill="#2d5e93"/></g><circle class="pupil" cx="100" cy="100" r="37" fill="#fff"/></svg>
       <div class="wrap">
-        <p class="crumbs"><a href="index.html">Home</a> / Glasses &amp; contacts</p>
-        <h1>Glasses, contacts, or both</h1>
-        <p class="lede">Choosing eyewear takes into account much more than clear vision. It’s also a form of self-expression. We’ll help you find the right eyewear for your lifestyle and your eyes.</p>
+        <div>
+          <p class="crumbs"><a href="index.html">Home</a> / Glasses &amp; contacts</p>
+          <h1>Glasses, contacts, or both</h1>
+          <p class="lede">Choosing eyewear takes into account much more than clear vision. It’s also a form of self-expression. We’ll help you find the right eyewear for your lifestyle and your eyes.</p>
+        </div>
+        <div class="facts">
+          <svg class="iris small" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g class="facets" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><path d="M138.0,100.0L196.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M196.0,100.0L188.7,136.7L173.8,108.7Z" fill="#e2cca4"/><path d="M188.7,136.7L135.1,114.5L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L138.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L188.7,136.7L160.4,138.1Z" fill="#e2cca4"/><path d="M188.7,136.7L167.9,167.9L160.4,138.1Z" fill="#2d5e93"/><path d="M167.9,167.9L126.9,126.9L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L135.1,114.5L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L167.9,167.9L132.1,153.6Z" fill="#a9bad6"/><path d="M167.9,167.9L136.7,188.7L132.1,153.6Z" fill="#e2cca4"/><path d="M136.7,188.7L114.5,135.1L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L126.9,126.9L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L136.7,188.7L111.1,165.5Z" fill="#a9bad6"/><path d="M136.7,188.7L100.0,196.0L111.1,165.5Z" fill="#5e2a2e"/><path d="M100.0,196.0L100.0,138.0L111.1,165.5Z" fill="#a9bad6"/><path d="M100.0,138.0L114.5,135.1L111.1,165.5Z" fill="#2d5e93"/><path d="M100.0,138.0L100.0,196.0L81.7,167.9Z" fill="#e2cca4"/><path d="M100.0,196.0L63.3,188.7L81.7,167.9Z" fill="#e2cca4"/><path d="M63.3,188.7L85.5,135.1L81.7,167.9Z" fill="#5e2a2e"/><path d="M85.5,135.1L100.0,138.0L81.7,167.9Z" fill="#e2cca4"/><path d="M85.5,135.1L63.3,188.7L65.4,154.0Z" fill="#2d5e93"/><path d="M63.3,188.7L32.1,167.9L65.4,154.0Z" fill="#5e2a2e"/><path d="M32.1,167.9L73.1,126.9L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L85.5,135.1L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L32.1,167.9L47.7,135.8Z" fill="#5e2a2e"/><path d="M32.1,167.9L11.3,136.7L47.7,135.8Z" fill="#5e2a2e"/><path d="M11.3,136.7L64.9,114.5L47.7,135.8Z" fill="#2d5e93"/><path d="M64.9,114.5L73.1,126.9L47.7,135.8Z" fill="#a9bad6"/><path d="M64.9,114.5L11.3,136.7L39.2,116.6Z" fill="#2d5e93"/><path d="M11.3,136.7L4.0,100.0L39.2,116.6Z" fill="#a9bad6"/><path d="M4.0,100.0L62.0,100.0L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L64.9,114.5L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L4.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M4.0,100.0L11.3,63.3L42.7,84.7Z" fill="#2d5e93"/><path d="M11.3,63.3L64.9,85.5L42.7,84.7Z" fill="#a9bad6"/><path d="M64.9,85.5L62.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M64.9,85.5L11.3,63.3L49.2,65.9Z" fill="#5e2a2e"/><path d="M11.3,63.3L32.1,32.1L49.2,65.9Z" fill="#5e2a2e"/><path d="M32.1,32.1L73.1,73.1L49.2,65.9Z" fill="#2d5e93"/><path d="M73.1,73.1L64.9,85.5L49.2,65.9Z" fill="#a9bad6"/><path d="M73.1,73.1L32.1,32.1L61.0,44.8Z" fill="#a9bad6"/><path d="M32.1,32.1L63.3,11.3L61.0,44.8Z" fill="#a9bad6"/><path d="M63.3,11.3L85.5,64.9L61.0,44.8Z" fill="#e2cca4"/><path d="M85.5,64.9L73.1,73.1L61.0,44.8Z" fill="#2d5e93"/><path d="M85.5,64.9L63.3,11.3L90.4,31.3Z" fill="#e2cca4"/><path d="M63.3,11.3L100.0,4.0L90.4,31.3Z" fill="#a9bad6"/><path d="M100.0,4.0L100.0,62.0L90.4,31.3Z" fill="#5e2a2e"/><path d="M100.0,62.0L85.5,64.9L90.4,31.3Z" fill="#e2cca4"/><path d="M100.0,62.0L100.0,4.0L117.1,37.1Z" fill="#2d5e93"/><path d="M100.0,4.0L136.7,11.3L117.1,37.1Z" fill="#2d5e93"/><path d="M136.7,11.3L114.5,64.9L117.1,37.1Z" fill="#a9bad6"/><path d="M114.5,64.9L100.0,62.0L117.1,37.1Z" fill="#5e2a2e"/><path d="M114.5,64.9L136.7,11.3L134.7,44.9Z" fill="#2d5e93"/><path d="M136.7,11.3L167.9,32.1L134.7,44.9Z" fill="#2d5e93"/><path d="M167.9,32.1L126.9,73.1L134.7,44.9Z" fill="#2d5e93"/><path d="M126.9,73.1L114.5,64.9L134.7,44.9Z" fill="#5e2a2e"/><path d="M126.9,73.1L167.9,32.1L151.8,60.2Z" fill="#e2cca4"/><path d="M167.9,32.1L188.7,63.3L151.8,60.2Z" fill="#a9bad6"/><path d="M188.7,63.3L135.1,85.5L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L126.9,73.1L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L188.7,63.3L159.9,89.4Z" fill="#2d5e93"/><path d="M188.7,63.3L196.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M196.0,100.0L138.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M138.0,100.0L135.1,85.5L159.9,89.4Z" fill="#2d5e93"/></g><circle class="pupil" cx="100" cy="100" r="37" fill="#fff"/></svg>
+          <dl>
+            <div><dt>Hard-to-fit</dt><dd>Contact lens patients welcome</dd></div>
+            <div><dt>12 plans</dt><dd>3 vision and 9 medical plans accepted</dd></div>
+            <div><dt>740-450-2733</dt><dd><a href="tel:+17404502733">Call to book an exam</a></dd></div>
+          </dl>
+        </div>
       </div>
     </div>
     <section>
@@ -300,10 +341,12 @@ aside.side .hours th, aside.side .hours td { display: block; text-align: left; p
           <p>Drop in anytime to browse our large selection of designer eyeglass frames and sunglasses.</p>
           <p>Working at a screen all day? Ask us about anti-glare lenses and blue light protection.</p>
 
+          <blockquote class="pull"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g class="facets" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><path d="M138.0,100.0L196.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M196.0,100.0L188.7,136.7L173.8,108.7Z" fill="#e2cca4"/><path d="M188.7,136.7L135.1,114.5L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L138.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L188.7,136.7L160.4,138.1Z" fill="#e2cca4"/><path d="M188.7,136.7L167.9,167.9L160.4,138.1Z" fill="#2d5e93"/><path d="M167.9,167.9L126.9,126.9L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L135.1,114.5L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L167.9,167.9L132.1,153.6Z" fill="#a9bad6"/><path d="M167.9,167.9L136.7,188.7L132.1,153.6Z" fill="#e2cca4"/><path d="M136.7,188.7L114.5,135.1L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L126.9,126.9L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L136.7,188.7L111.1,165.5Z" fill="#a9bad6"/><path d="M136.7,188.7L100.0,196.0L111.1,165.5Z" fill="#5e2a2e"/><path d="M100.0,196.0L100.0,138.0L111.1,165.5Z" fill="#a9bad6"/><path d="M100.0,138.0L114.5,135.1L111.1,165.5Z" fill="#2d5e93"/><path d="M100.0,138.0L100.0,196.0L81.7,167.9Z" fill="#e2cca4"/><path d="M100.0,196.0L63.3,188.7L81.7,167.9Z" fill="#e2cca4"/><path d="M63.3,188.7L85.5,135.1L81.7,167.9Z" fill="#5e2a2e"/><path d="M85.5,135.1L100.0,138.0L81.7,167.9Z" fill="#e2cca4"/><path d="M85.5,135.1L63.3,188.7L65.4,154.0Z" fill="#2d5e93"/><path d="M63.3,188.7L32.1,167.9L65.4,154.0Z" fill="#5e2a2e"/><path d="M32.1,167.9L73.1,126.9L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L85.5,135.1L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L32.1,167.9L47.7,135.8Z" fill="#5e2a2e"/><path d="M32.1,167.9L11.3,136.7L47.7,135.8Z" fill="#5e2a2e"/><path d="M11.3,136.7L64.9,114.5L47.7,135.8Z" fill="#2d5e93"/><path d="M64.9,114.5L73.1,126.9L47.7,135.8Z" fill="#a9bad6"/><path d="M64.9,114.5L11.3,136.7L39.2,116.6Z" fill="#2d5e93"/><path d="M11.3,136.7L4.0,100.0L39.2,116.6Z" fill="#a9bad6"/><path d="M4.0,100.0L62.0,100.0L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L64.9,114.5L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L4.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M4.0,100.0L11.3,63.3L42.7,84.7Z" fill="#2d5e93"/><path d="M11.3,63.3L64.9,85.5L42.7,84.7Z" fill="#a9bad6"/><path d="M64.9,85.5L62.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M64.9,85.5L11.3,63.3L49.2,65.9Z" fill="#5e2a2e"/><path d="M11.3,63.3L32.1,32.1L49.2,65.9Z" fill="#5e2a2e"/><path d="M32.1,32.1L73.1,73.1L49.2,65.9Z" fill="#2d5e93"/><path d="M73.1,73.1L64.9,85.5L49.2,65.9Z" fill="#a9bad6"/><path d="M73.1,73.1L32.1,32.1L61.0,44.8Z" fill="#a9bad6"/><path d="M32.1,32.1L63.3,11.3L61.0,44.8Z" fill="#a9bad6"/><path d="M63.3,11.3L85.5,64.9L61.0,44.8Z" fill="#e2cca4"/><path d="M85.5,64.9L73.1,73.1L61.0,44.8Z" fill="#2d5e93"/><path d="M85.5,64.9L63.3,11.3L90.4,31.3Z" fill="#e2cca4"/><path d="M63.3,11.3L100.0,4.0L90.4,31.3Z" fill="#a9bad6"/><path d="M100.0,4.0L100.0,62.0L90.4,31.3Z" fill="#5e2a2e"/><path d="M100.0,62.0L85.5,64.9L90.4,31.3Z" fill="#e2cca4"/><path d="M100.0,62.0L100.0,4.0L117.1,37.1Z" fill="#2d5e93"/><path d="M100.0,4.0L136.7,11.3L117.1,37.1Z" fill="#2d5e93"/><path d="M136.7,11.3L114.5,64.9L117.1,37.1Z" fill="#a9bad6"/><path d="M114.5,64.9L100.0,62.0L117.1,37.1Z" fill="#5e2a2e"/><path d="M114.5,64.9L136.7,11.3L134.7,44.9Z" fill="#2d5e93"/><path d="M136.7,11.3L167.9,32.1L134.7,44.9Z" fill="#2d5e93"/><path d="M167.9,32.1L126.9,73.1L134.7,44.9Z" fill="#2d5e93"/><path d="M126.9,73.1L114.5,64.9L134.7,44.9Z" fill="#5e2a2e"/><path d="M126.9,73.1L167.9,32.1L151.8,60.2Z" fill="#e2cca4"/><path d="M167.9,32.1L188.7,63.3L151.8,60.2Z" fill="#a9bad6"/><path d="M188.7,63.3L135.1,85.5L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L126.9,73.1L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L188.7,63.3L159.9,89.4Z" fill="#2d5e93"/><path d="M188.7,63.3L196.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M196.0,100.0L138.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M138.0,100.0L135.1,85.5L159.9,89.4Z" fill="#2d5e93"/></g><circle class="pupil" cx="100" cy="100" r="37" fill="#fff"/></svg><p>“Snag a pair of runway-ready frames and express your personal style, whenever, wherever.”</p></blockquote>
           <h2 id="contacts">Contact lenses</h2>
           <p>We offer a wide range of contact lenses, with contact lens exams and fittings. We are able to fit most patients, even hard-to-fit.</p>
-          <ul class="chips"><li>Disposable soft contacts</li><li>Bifocal and multifocal</li><li>Toric</li><li>Conventional lenses</li><li>Colored lenses</li><li>Rigid gas permeable (RGP)</li></ul>
+          <ul class="tiles"><li>Disposable soft contacts</li><li>Bifocal and multifocal</li><li>Toric</li><li>Conventional lenses</li><li>Colored lenses</li><li>Rigid gas permeable (RGP)</li></ul>
 
+          <div class="divider" aria-hidden="true"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g class="facets" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"><path d="M138.0,100.0L196.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M196.0,100.0L188.7,136.7L173.8,108.7Z" fill="#e2cca4"/><path d="M188.7,136.7L135.1,114.5L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L138.0,100.0L173.8,108.7Z" fill="#5e2a2e"/><path d="M135.1,114.5L188.7,136.7L160.4,138.1Z" fill="#e2cca4"/><path d="M188.7,136.7L167.9,167.9L160.4,138.1Z" fill="#2d5e93"/><path d="M167.9,167.9L126.9,126.9L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L135.1,114.5L160.4,138.1Z" fill="#a9bad6"/><path d="M126.9,126.9L167.9,167.9L132.1,153.6Z" fill="#a9bad6"/><path d="M167.9,167.9L136.7,188.7L132.1,153.6Z" fill="#e2cca4"/><path d="M136.7,188.7L114.5,135.1L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L126.9,126.9L132.1,153.6Z" fill="#e2cca4"/><path d="M114.5,135.1L136.7,188.7L111.1,165.5Z" fill="#a9bad6"/><path d="M136.7,188.7L100.0,196.0L111.1,165.5Z" fill="#5e2a2e"/><path d="M100.0,196.0L100.0,138.0L111.1,165.5Z" fill="#a9bad6"/><path d="M100.0,138.0L114.5,135.1L111.1,165.5Z" fill="#2d5e93"/><path d="M100.0,138.0L100.0,196.0L81.7,167.9Z" fill="#e2cca4"/><path d="M100.0,196.0L63.3,188.7L81.7,167.9Z" fill="#e2cca4"/><path d="M63.3,188.7L85.5,135.1L81.7,167.9Z" fill="#5e2a2e"/><path d="M85.5,135.1L100.0,138.0L81.7,167.9Z" fill="#e2cca4"/><path d="M85.5,135.1L63.3,188.7L65.4,154.0Z" fill="#2d5e93"/><path d="M63.3,188.7L32.1,167.9L65.4,154.0Z" fill="#5e2a2e"/><path d="M32.1,167.9L73.1,126.9L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L85.5,135.1L65.4,154.0Z" fill="#2d5e93"/><path d="M73.1,126.9L32.1,167.9L47.7,135.8Z" fill="#5e2a2e"/><path d="M32.1,167.9L11.3,136.7L47.7,135.8Z" fill="#5e2a2e"/><path d="M11.3,136.7L64.9,114.5L47.7,135.8Z" fill="#2d5e93"/><path d="M64.9,114.5L73.1,126.9L47.7,135.8Z" fill="#a9bad6"/><path d="M64.9,114.5L11.3,136.7L39.2,116.6Z" fill="#2d5e93"/><path d="M11.3,136.7L4.0,100.0L39.2,116.6Z" fill="#a9bad6"/><path d="M4.0,100.0L62.0,100.0L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L64.9,114.5L39.2,116.6Z" fill="#5e2a2e"/><path d="M62.0,100.0L4.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M4.0,100.0L11.3,63.3L42.7,84.7Z" fill="#2d5e93"/><path d="M11.3,63.3L64.9,85.5L42.7,84.7Z" fill="#a9bad6"/><path d="M64.9,85.5L62.0,100.0L42.7,84.7Z" fill="#2d5e93"/><path d="M64.9,85.5L11.3,63.3L49.2,65.9Z" fill="#5e2a2e"/><path d="M11.3,63.3L32.1,32.1L49.2,65.9Z" fill="#5e2a2e"/><path d="M32.1,32.1L73.1,73.1L49.2,65.9Z" fill="#2d5e93"/><path d="M73.1,73.1L64.9,85.5L49.2,65.9Z" fill="#a9bad6"/><path d="M73.1,73.1L32.1,32.1L61.0,44.8Z" fill="#a9bad6"/><path d="M32.1,32.1L63.3,11.3L61.0,44.8Z" fill="#a9bad6"/><path d="M63.3,11.3L85.5,64.9L61.0,44.8Z" fill="#e2cca4"/><path d="M85.5,64.9L73.1,73.1L61.0,44.8Z" fill="#2d5e93"/><path d="M85.5,64.9L63.3,11.3L90.4,31.3Z" fill="#e2cca4"/><path d="M63.3,11.3L100.0,4.0L90.4,31.3Z" fill="#a9bad6"/><path d="M100.0,4.0L100.0,62.0L90.4,31.3Z" fill="#5e2a2e"/><path d="M100.0,62.0L85.5,64.9L90.4,31.3Z" fill="#e2cca4"/><path d="M100.0,62.0L100.0,4.0L117.1,37.1Z" fill="#2d5e93"/><path d="M100.0,4.0L136.7,11.3L117.1,37.1Z" fill="#2d5e93"/><path d="M136.7,11.3L114.5,64.9L117.1,37.1Z" fill="#a9bad6"/><path d="M114.5,64.9L100.0,62.0L117.1,37.1Z" fill="#5e2a2e"/><path d="M114.5,64.9L136.7,11.3L134.7,44.9Z" fill="#2d5e93"/><path d="M136.7,11.3L167.9,32.1L134.7,44.9Z" fill="#2d5e93"/><path d="M167.9,32.1L126.9,73.1L134.7,44.9Z" fill="#2d5e93"/><path d="M126.9,73.1L114.5,64.9L134.7,44.9Z" fill="#5e2a2e"/><path d="M126.9,73.1L167.9,32.1L151.8,60.2Z" fill="#e2cca4"/><path d="M167.9,32.1L188.7,63.3L151.8,60.2Z" fill="#a9bad6"/><path d="M188.7,63.3L135.1,85.5L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L126.9,73.1L151.8,60.2Z" fill="#2d5e93"/><path d="M135.1,85.5L188.7,63.3L159.9,89.4Z" fill="#2d5e93"/><path d="M188.7,63.3L196.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M196.0,100.0L138.0,100.0L159.9,89.4Z" fill="#a9bad6"/><path d="M138.0,100.0L135.1,85.5L159.9,89.4Z" fill="#2d5e93"/></g><circle class="pupil" cx="100" cy="100" r="37" fill="#fff"/></svg></div>
           <h2 id="multifocal">Contacts if you wear multifocal glasses</h2>
           <p>Dr. Whitaker has a special interest in multifocal contact lenses. There are bifocal, multifocal and monovision lenses to choose from, in rigid gas permeable or soft lenses, and we fit each patient with the one that is most comfortable and corrects their vision best.</p>
           <p>Most patients can be successful with multifocal contact lenses or monovision, and both options would make you glasses-free. Some people prefer contacts for distance and “cheaters” for reading. The right choice usually depends on your lifestyle and what you need to see.</p>
