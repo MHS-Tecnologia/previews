@@ -179,7 +179,10 @@ p { max-width: 64ch; }
 .train-pics .tall { grid-row: span 2; }
 
 /* Clients */
-.clients { columns: 4 12rem; column-gap: 2rem; list-style: none; padding: 0; }
+.top-clients { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.top-clients li { font: 800 clamp(1.25rem, 2.2vw, 1.75rem)/1.15 "Chivo", sans-serif; color: var(--flow-deep); padding-top: .8rem; border-top: 4px solid var(--liner); }
+@media (max-width: 640px) { .top-clients { grid-template-columns: 1fr 1fr; } }
+.clients { font-size: .9375rem; color: var(--muted); columns: 4 12rem; column-gap: 2rem; list-style: none; padding: 0; }
 .clients li { padding: .45rem 0; border-bottom: 1px solid var(--rule); break-inside: avoid; font-weight: 500; }
 .callout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
 .callout div { border-left: 4px solid var(--liner); padding-left: 1rem; }

@@ -179,7 +179,10 @@ p { max-width: 64ch; }
 .train-pics .tall { grid-row: span 2; }
 
 /* Clients */
-.clients { columns: 4 12rem; column-gap: 2rem; list-style: none; padding: 0; }
+.top-clients { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.top-clients li { font: 800 clamp(1.25rem, 2.2vw, 1.75rem)/1.15 "Chivo", sans-serif; color: var(--flow-deep); padding-top: .8rem; border-top: 4px solid var(--liner); }
+@media (max-width: 640px) { .top-clients { grid-template-columns: 1fr 1fr; } }
+.clients { font-size: .9375rem; color: var(--muted); columns: 4 12rem; column-gap: 2rem; list-style: none; padding: 0; }
 .clients li { padding: .45rem 0; border-bottom: 1px solid var(--rule); break-inside: avoid; font-weight: 500; }
 .callout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
 .callout div { border-left: 4px solid var(--liner); padding-left: 1rem; }
@@ -327,8 +330,8 @@ footer a { color: var(--flow-deep); }
         <h1 id="h1">We put a new pipe inside the old one.</h1>
         <p class="lede">Flow-Liner® makes the liners, resins and equipment that rehabilitate sewer, water, conduit and HVAC lines without excavation. Then we train the crews who install them.</p>
         <div class="ctas">
-          <a class="btn btn-liner" id="hero-cta" href="installers.html">Become a certified installer</a>
-          <a class="btn btn-line" href="contact.html">Get a lining quote</a>
+          <a class="btn btn-liner" id="hero-cta" href="contact.html">Get a lining quote</a>
+          <a class="btn btn-line" href="installers.html">Become a certified installer</a>
         </div>
       </div>
       <div class="bore">
@@ -476,7 +479,8 @@ footer a { color: var(--flow-deep); }
       <h2 id="clients-h">Where our liners have gone</h2>
       <p>Our CIP-Conduit® was used in The White House utility renovation project, and in a project for the US Navy in 2012. Some of the clients we list:</p>
     </div>
-    <ul class="clients"><li>AEP</li><li>Air National Guard</li><li>AK Steel</li><li>Anheuser-Busch</li><li>Bloomsburg University</li><li>Coshocton Fire Department</li><li>Duke Energy</li><li>ERGON</li><li>FBI</li><li>Grand Central Station</li><li>Grove City Medical Center</li><li>Kalahari Resort</li><li>Lane Aviation</li><li>McDonald’s</li><li>Morris Sheppard Dam</li><li>Navy</li><li>Ohio State University</li><li>Palace Theatre</li><li>PECO</li><li>Roosevelt Memorial</li><li>Starbucks</li><li>The Columbus Zoo</li><li>The Pentagon</li><li>The White House</li><li>Wayne County Courthouse</li><li>West Virginia University</li></ul>
+    <ul class="top-clients"><li>The White House</li><li>FBI</li><li>Anheuser-Busch</li><li>Ohio State University</li></ul>
+    <ul class="clients"><li>AEP</li><li>Air National Guard</li><li>AK Steel</li><li>Bloomsburg University</li><li>Coshocton Fire Department</li><li>Duke Energy/Austin Technical Services</li><li>ERGON</li><li>Grand Central Station/GTF Joint Venture</li><li>Grove City Medical Center</li><li>Kalahari Resort</li><li>Lane Aviation</li><li>McDonalds</li><li>Morris Sheppard Dam/Conti Corporation</li><li>Navy</li><li>Palace Theatre/Sauer Group</li><li>PECO</li><li>Roosevelt Memorial/Potomac Restoration</li><li>Starbucks</li><li>The Columbus Zoo</li><li>The Pentagon/B3 Enterprises</li><li>Wayne County Courthouse</li><li>West Virginia University</li></ul>
   </div>
 </section>
 <section class="sec iron" aria-labelledby="closer-h">
