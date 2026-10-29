@@ -57,7 +57,7 @@ p{margin:0}
 .hero{background:var(--slate);color:var(--white);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.4fr);grid-template-areas:"h h" "c f";column-gap:56px;align-items:end}
 .hero-copy{grid-area:c;padding:30px 0 60px;align-self:start}
-.hero-fig{grid-area:f}
+.hero-fig{grid-area:f;max-width:940px;justify-self:end;width:100%}
 .hero h1{grid-area:h;font-size:clamp(2.45rem,4.9vw,4.3rem);padding-top:58px;text-wrap:nowrap}
 .hero .hero-lede{margin-top:0}
 .hero-lede{margin-top:22px;font-size:1.15rem;color:#dfe3e7;max-width:34em}
@@ -191,6 +191,22 @@ details.fold > summary{display:none}
 .contact-list a:hover{color:var(--red)}
 .contact-list .lbl{font-size:.95rem;color:var(--muted);margin-top:14px}
 .contact-list .mail{font-size:clamp(1.15rem,2.2vw,1.6rem);word-break:break-all}
+.hero-rate{margin-top:20px;font-size:.98rem;color:#dfe3e7}
+.hero-rate .stars{color:#f2b705;letter-spacing:2px;margin-right:4px}
+.hero-rate strong{color:var(--white)}
+.hero-creds{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:8px;max-width:30em}
+.hero-creds li{padding:2px 0 2px 14px;border-left:3px solid var(--red);font-size:.95rem;color:#e8ebee;line-height:1.35}
+.inline{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;color:var(--ink);font-weight:600}
+.inline li:not(:last-child)::after{content:"\00B7";margin:0 .55em;color:var(--red);font-weight:700}
+.fig{margin:0}
+.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig.team img{aspect-ratio:auto;max-width:860px}
+.fig figcaption,.gal figcaption{margin-top:8px;font-size:.92rem;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.gal figure{margin:0}
+.gal img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.cols2 > .fig{align-self:center}
+.card.third img{aspect-ratio:16/7}
 /* sticky mobile cta */
 .mbar{display:none}
 @media (max-width:1060px){
@@ -207,7 +223,7 @@ details.fold > summary{display:none}
 .hero .wrap{grid-template-columns:1fr;grid-template-areas:"h" "c" "f";gap:0}
 .hero h1{padding-top:30px;text-wrap:balance}
 .hero-copy{padding:14px 0 26px}
-.hero-fig{margin:0 calc(-1 * var(--gut))}
+.hero-fig{margin:0 calc(-1 * var(--gut));justify-self:stretch;width:auto;max-width:none}
 .sec-head{flex-direction:column;align-items:start}
 .wall{grid-template-columns:1fr 1fr}
 .block,.block.b3{grid-column:span 1}
@@ -245,7 +261,9 @@ body{font-size:1rem}
 .hero-lede{font-size:1.02rem;margin-top:14px}
 .hero-cta{margin-top:20px;flex-direction:column}
 .hero-cta .btn{width:100%}
-.hero-note{display:none}
+.hero-creds{display:none}
+.hero-rate{margin-top:14px;font-size:.92rem}
+.gal{grid-template-columns:1fr}
 .wall{grid-template-columns:1fr}
 .block.b4{grid-column:auto}
 .block{padding:18px}
@@ -283,17 +301,27 @@ html{scroll-behavior:auto}
 <p class="lede">For privacy, for security, or to mark out your yard. We plan every fence around your property lines, local rules and the lay of the land.</p>
 <div class="hero-cta"><a class="btn btn-red" href="tel:+19372300091"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (937) 230-0091</a><a class="btn btn-line" href="mailto:castleroofingdayton@yahoo.com?subject=Free%20estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email for a free estimate</a></div>
 </div>
-
+<img src="img/cedar-fence-800.webp" srcset="img/cedar-fence-800.webp 800w, img/cedar-fence-1400.webp 1400w" sizes="(max-width:860px) 100vw, 520px" width="1400" height="900" alt="Stained cedar privacy fence on a stone retaining wall" fetchpriority="high">
 </div>
 <div class="crenel" style="--next:var(--white)" aria-hidden="true"></div>
 </section>
 <section class="body-sec">
 <div class="wrap">
 <div class="types">
-<div><h3>Fence installation</h3><p>Wood, vinyl, aluminum and chain-link, to fit your needs and budget. We look at grading and drainage too, because a fence that traps groundwater rots early.</p><ul class="chips"><li>Privacy</li><li>Picket</li><li>Rail</li><li>Ornamental</li><li>Pool</li><li>Garden</li><li>Cedar</li><li>Composite</li></ul></div>
-<div><h3>Gates, manual or automated</h3><p>From a simple garden gate to a driveway entrance, matched to your fence and built for daily use.</p><ul class="chips"><li>Swing</li><li>Sliding</li><li>Wooden</li><li>Manual</li></ul></div>
+<div><h3>Fence installation</h3><p>Wood, vinyl, aluminum and chain-link, to fit your needs and budget. We look at grading and drainage too, because a fence that traps groundwater rots early.</p><ul class="inline"><li>Privacy</li><li>Picket</li><li>Rail</li><li>Ornamental</li><li>Pool</li><li>Garden</li><li>Cedar</li><li>Composite</li></ul></div>
+<div><h3>Gates, manual or automated</h3><p>From a simple garden gate to a driveway entrance, matched to your fence and built for daily use.</p><ul class="inline"><li>Swing</li><li>Sliding</li><li>Wooden</li><li>Manual</li></ul></div>
 <div><h3>Painting and finishing</h3><p>Painting, staining and refinishing for fences and gates, so they keep their looks and their strength.</p></div>
 <div><h3>Repair and maintenance</h3><p>Fence and gate repair, including emergency fence repair after a storm.</p></div>
+</div>
+</div>
+</section>
+<section class="body-sec stone">
+<div class="wrap">
+<h2>Pick the fence for the job</h2>
+<div class="gal"><figure><img src="img/vinyl-fence-800.webp" srcset="img/vinyl-fence-800.webp 800w, img/vinyl-fence-1400.webp 1400w" sizes="(max-width:860px) 100vw, 400px" width="1400" height="933" alt="A long white vinyl privacy fence behind a row of homes" loading="lazy" decoding="async"><figcaption>Vinyl privacy fence</figcaption></figure><figure><img src="img/wood-fence-800.webp" srcset="img/wood-fence-800.webp 800w, img/wood-fence-1400.webp 1400w" sizes="(max-width:860px) 100vw, 400px" width="1400" height="933" alt="A new wooden privacy fence along a green lawn" loading="lazy" decoding="async"><figcaption>Wood privacy fence</figcaption></figure><figure><img src="img/iron-gate-800.webp" srcset="img/iron-gate-800.webp 800w, img/iron-gate-1400.webp 1400w" sizes="(max-width:860px) 100vw, 400px" width="1400" height="933" alt="A black ornamental metal driveway gate" loading="lazy" decoding="async"><figcaption>Ornamental driveway gate</figcaption></figure></div>
+<div class="cols2" style="margin-top:36px">
+<p><strong>Cedar</strong> is the natural, eco-friendly choice: we source high-quality cedar and build it to last. <strong>Composite</strong> gives you the look of wood with synthetic durability, and resists rot, warping and insects.</p>
+<p><strong>Garden fences</strong> keep unwanted visitors away from your plants without hiding them. For anything that needs a gate, we match it to the fence and build it for daily use.</p>
 </div>
 </div>
 </section>

@@ -57,7 +57,7 @@ p{margin:0}
 .hero{background:var(--slate);color:var(--white);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.4fr);grid-template-areas:"h h" "c f";column-gap:56px;align-items:end}
 .hero-copy{grid-area:c;padding:30px 0 60px;align-self:start}
-.hero-fig{grid-area:f}
+.hero-fig{grid-area:f;max-width:940px;justify-self:end;width:100%}
 .hero h1{grid-area:h;font-size:clamp(2.45rem,4.9vw,4.3rem);padding-top:58px;text-wrap:nowrap}
 .hero .hero-lede{margin-top:0}
 .hero-lede{margin-top:22px;font-size:1.15rem;color:#dfe3e7;max-width:34em}
@@ -191,6 +191,22 @@ details.fold > summary{display:none}
 .contact-list a:hover{color:var(--red)}
 .contact-list .lbl{font-size:.95rem;color:var(--muted);margin-top:14px}
 .contact-list .mail{font-size:clamp(1.15rem,2.2vw,1.6rem);word-break:break-all}
+.hero-rate{margin-top:20px;font-size:.98rem;color:#dfe3e7}
+.hero-rate .stars{color:#f2b705;letter-spacing:2px;margin-right:4px}
+.hero-rate strong{color:var(--white)}
+.hero-creds{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:8px;max-width:30em}
+.hero-creds li{padding:2px 0 2px 14px;border-left:3px solid var(--red);font-size:.95rem;color:#e8ebee;line-height:1.35}
+.inline{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;color:var(--ink);font-weight:600}
+.inline li:not(:last-child)::after{content:"\00B7";margin:0 .55em;color:var(--red);font-weight:700}
+.fig{margin:0}
+.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig.team img{aspect-ratio:auto;max-width:860px}
+.fig figcaption,.gal figcaption{margin-top:8px;font-size:.92rem;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.gal figure{margin:0}
+.gal img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.cols2 > .fig{align-self:center}
+.card.third img{aspect-ratio:16/7}
 /* sticky mobile cta */
 .mbar{display:none}
 @media (max-width:1060px){
@@ -207,7 +223,7 @@ details.fold > summary{display:none}
 .hero .wrap{grid-template-columns:1fr;grid-template-areas:"h" "c" "f";gap:0}
 .hero h1{padding-top:30px;text-wrap:balance}
 .hero-copy{padding:14px 0 26px}
-.hero-fig{margin:0 calc(-1 * var(--gut))}
+.hero-fig{margin:0 calc(-1 * var(--gut));justify-self:stretch;width:auto;max-width:none}
 .sec-head{flex-direction:column;align-items:start}
 .wall{grid-template-columns:1fr 1fr}
 .block,.block.b3{grid-column:span 1}
@@ -245,7 +261,9 @@ body{font-size:1rem}
 .hero-lede{font-size:1.02rem;margin-top:14px}
 .hero-cta{margin-top:20px;flex-direction:column}
 .hero-cta .btn{width:100%}
-.hero-note{display:none}
+.hero-creds{display:none}
+.hero-rate{margin-top:14px;font-size:.92rem}
+.gal{grid-template-columns:1fr}
 .wall{grid-template-columns:1fr}
 .block.b4{grid-column:auto}
 .block{padding:18px}
@@ -283,7 +301,7 @@ html{scroll-behavior:auto}
 <p class="lede">Your roof is the shield over your family and everything you own. We’ve installed and repaired roofs for Miami Valley homes and businesses since 1979.</p>
 <div class="hero-cta"><a class="btn btn-red" href="tel:+19372300091"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (937) 230-0091</a><a class="btn btn-line" href="mailto:castleroofingdayton@yahoo.com?subject=Free%20estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email for a free estimate</a></div>
 </div>
-<img src="img/roof-ridge-800.webp" srcset="img/roof-ridge-800.webp 800w, img/roof-ridge-1400.webp 1400w" sizes="(max-width:860px) 100vw, 520px" width="1400" height="900" alt="Gray architectural shingles meeting at a ridge, with a dormer window" fetchpriority="high">
+<img src="img/dormers-800.webp" srcset="img/dormers-800.webp 800w, img/dormers-1400.webp 1400w" sizes="(max-width:860px) 100vw, 520px" width="1400" height="900" alt="Dark architectural shingle roof with two dormer windows" fetchpriority="high">
 </div>
 <div class="crenel" style="--next:var(--white)" aria-hidden="true"></div>
 </section>
@@ -303,7 +321,7 @@ html{scroll-behavior:auto}
 <div class="wrap">
 <h2>New roofs we install</h2>
 <div class="types">
-<div><h3>Asphalt shingles</h3><p>The most popular roof for homes here, in many colors and styles. With good installation they last 20 to 30 years.</p><ul class="chips"><li>3-tab</li><li>Architectural</li><li>Impact-resistant</li><li>Energy-efficient cool roof</li></ul></div>
+<div><h3>Asphalt shingles</h3><p>The most popular roof for homes here, in many colors and styles. With good installation they last 20 to 30 years.</p><ul class="inline"><li>3-tab</li><li>Architectural</li><li>Impact-resistant</li><li>Energy-efficient cool roof</li></ul></div>
 <div><h3>Cedar shake</h3><p>A natural, rustic look and a long life, when it is installed with the right techniques. We source high-quality shakes.</p></div>
 <div><h3>Metal</h3><p>Durable and energy-efficient, with a modern look. Standing seam and metal shingle systems, installed watertight.</p></div>
 <div id="commercial"><h3>TPO flat roofs, for homes and businesses</h3><p>For flat and low-slope roofs: a reflective, energy-efficient membrane that resists UV, chemicals and punctures. We install, repair and service commercial roofs.</p></div>
@@ -318,7 +336,25 @@ html{scroll-behavior:auto}
 </div>
 <div class="prose"><h2>Also on the roof</h2>
 <p>Inspections and maintenance, ventilation, skylights, gable vents, soffits, roof decks, waterproofing and vapor barriers. We also do custom work: green roofs, solar panel integration and designer shingles.</p>
-<ul class="chips"><li>Roof inspections</li><li>Maintenance</li><li>Ventilation</li><li>Skylights</li><li>Gable vents</li><li>Soffits</li><li>Roof decks</li><li>Waterproofing</li></ul>
+<ul class="inline"><li>Roof inspections</li><li>Maintenance</li><li>Ventilation</li><li>Skylights</li><li>Gable vents</li><li>Soffits</li><li>Roof decks</li><li>Waterproofing</li></ul>
+</div>
+</div>
+</section>
+<section class="body-sec stone">
+<div class="wrap cols2">
+<div class="prose"><h2>Metal roofs</h2>
+<p>Metal can last 50 years or more with proper maintenance. It reflects sunlight to cut cooling costs, resists wind, rain and fire, and needs little upkeep.</p>
+<ul class="ticks"><li>Standing seam metal roofs</li><li>Metal shingle roofs</li><li>Corrugated metal roofing</li><li>Metal roof repairs and maintenance</li><li>Energy-efficient metal options</li></ul>
+</div>
+<figure class="fig"><img src="img/metal-roof-800.webp" srcset="img/metal-roof-800.webp 800w, img/metal-roof-1400.webp 1400w" sizes="(max-width:860px) 100vw, 560px" width="1400" height="1050" alt="Standing seam metal roof running down to open fields" loading="lazy" decoding="async"></figure>
+</div>
+</section>
+<section class="body-sec">
+<div class="wrap cols2">
+<figure class="fig"><img src="img/storm-tree-800.webp" srcset="img/storm-tree-800.webp 800w, img/storm-tree-1400.webp 1400w" sizes="(max-width:860px) 100vw, 560px" width="1400" height="933" alt="A tree fallen onto the roof of a house after a storm" loading="lazy" decoding="async"></figure>
+<div class="prose"><h2>After a storm</h2>
+<p>When severe weather hits the Miami Valley, we restore roofs, gutters, fences, gates and siding to their pre-storm condition, and help you through the insurance claim. Acting fast keeps water out, stops mold and mildew, and protects what your home is worth.</p>
+<ul class="ticks"><li>Roof repair and replacement</li><li>Gutter system restoration</li><li>Fence and gate repair</li><li>Siding repair and replacement</li><li>Emergency service, 24/7</li><li>A full assessment of the property</li></ul>
 </div>
 </div>
 </section>

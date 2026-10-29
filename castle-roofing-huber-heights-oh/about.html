@@ -10,7 +10,6 @@
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/rokkitt.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/team-castle-640.webp" imagesrcset="img/team-castle-640.webp 640w, img/team-castle-940.webp 940w" imagesizes="(max-width:860px) 100vw, 560px" fetchpriority="high">
 <style>@font-face{font-family:"Rokkitt";src:url(fonts/rokkitt.woff2) format("woff2");font-weight:100 900;font-display:swap}
 @font-face{font-family:"Public Sans";src:url(fonts/public-sans.woff2) format("woff2");font-weight:100 900;font-display:swap}
 :root{
@@ -58,7 +57,7 @@ p{margin:0}
 .hero{background:var(--slate);color:var(--white);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.4fr);grid-template-areas:"h h" "c f";column-gap:56px;align-items:end}
 .hero-copy{grid-area:c;padding:30px 0 60px;align-self:start}
-.hero-fig{grid-area:f}
+.hero-fig{grid-area:f;max-width:940px;justify-self:end;width:100%}
 .hero h1{grid-area:h;font-size:clamp(2.45rem,4.9vw,4.3rem);padding-top:58px;text-wrap:nowrap}
 .hero .hero-lede{margin-top:0}
 .hero-lede{margin-top:22px;font-size:1.15rem;color:#dfe3e7;max-width:34em}
@@ -192,6 +191,22 @@ details.fold > summary{display:none}
 .contact-list a:hover{color:var(--red)}
 .contact-list .lbl{font-size:.95rem;color:var(--muted);margin-top:14px}
 .contact-list .mail{font-size:clamp(1.15rem,2.2vw,1.6rem);word-break:break-all}
+.hero-rate{margin-top:20px;font-size:.98rem;color:#dfe3e7}
+.hero-rate .stars{color:#f2b705;letter-spacing:2px;margin-right:4px}
+.hero-rate strong{color:var(--white)}
+.hero-creds{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:8px;max-width:30em}
+.hero-creds li{padding:2px 0 2px 14px;border-left:3px solid var(--red);font-size:.95rem;color:#e8ebee;line-height:1.35}
+.inline{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;color:var(--ink);font-weight:600}
+.inline li:not(:last-child)::after{content:"\00B7";margin:0 .55em;color:var(--red);font-weight:700}
+.fig{margin:0}
+.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig.team img{aspect-ratio:auto;max-width:860px}
+.fig figcaption,.gal figcaption{margin-top:8px;font-size:.92rem;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.gal figure{margin:0}
+.gal img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.cols2 > .fig{align-self:center}
+.card.third img{aspect-ratio:16/7}
 /* sticky mobile cta */
 .mbar{display:none}
 @media (max-width:1060px){
@@ -208,7 +223,7 @@ details.fold > summary{display:none}
 .hero .wrap{grid-template-columns:1fr;grid-template-areas:"h" "c" "f";gap:0}
 .hero h1{padding-top:30px;text-wrap:balance}
 .hero-copy{padding:14px 0 26px}
-.hero-fig{margin:0 calc(-1 * var(--gut))}
+.hero-fig{margin:0 calc(-1 * var(--gut));justify-self:stretch;width:auto;max-width:none}
 .sec-head{flex-direction:column;align-items:start}
 .wall{grid-template-columns:1fr 1fr}
 .block,.block.b3{grid-column:span 1}
@@ -246,7 +261,9 @@ body{font-size:1rem}
 .hero-lede{font-size:1.02rem;margin-top:14px}
 .hero-cta{margin-top:20px;flex-direction:column}
 .hero-cta .btn{width:100%}
-.hero-note{display:none}
+.hero-creds{display:none}
+.hero-rate{margin-top:14px;font-size:.92rem}
+.gal{grid-template-columns:1fr}
 .wall{grid-template-columns:1fr}
 .block.b4{grid-column:auto}
 .block{padding:18px}
@@ -276,15 +293,20 @@ html{scroll-behavior:auto}
 </header>
 <main id="main">
 
-<section class="phero" data-bar style="padding-bottom:0">
-<div class="wrap" style="align-items:end">
-<div style="padding-bottom:64px">
+<section class="phero" data-bar>
+<div class="wrap">
+<div>
 <p class="crumb"><a href="index.html">Home</a> / About us</p>
 <h1>One family, one castle, since 1979.</h1>
 <p class="lede">Castle Roofing has served the Miami Valley for over 45 years. We’re local and family-owned, and we’ve built our name on quality work, good service and taking care of your home.</p>
+<div class="hero-cta"><a class="btn btn-red" href="tel:+19372300091"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (937) 230-0091</a><a class="btn btn-line" href="mailto:castleroofingdayton@yahoo.com?subject=Free%20estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email for a free estimate</a></div>
 </div>
-<img src="img/team-castle-640.webp" srcset="img/team-castle-640.webp 640w, img/team-castle-940.webp 940w" sizes="(max-width:860px) 100vw, 560px" width="940" height="548" alt="The Castle Roofing team in front of our castle-front building" fetchpriority="high">
+<img src="img/brick-home-800.webp" srcset="img/brick-home-800.webp 800w, img/brick-home-1400.webp 1400w" sizes="(max-width:860px) 100vw, 520px" width="1400" height="900" alt="Brick two-story home with a new dark shingle roof" fetchpriority="high">
 </div>
+<div class="crenel" style="--next:var(--stone)" aria-hidden="true"></div>
+</section>
+<section class="body-sec stone" style="padding-bottom:0">
+<div class="wrap"><figure class="fig team"><img src="img/team-faces-860.webp" srcset="img/team-faces-860.webp 860w" sizes="(max-width:860px) 100vw, 860px" width="860" height="458" alt="The Castle Roofing team, in red and black company shirts, smiling outside our building" loading="lazy" decoding="async"><figcaption>Our team.</figcaption></figure></div>
 </section>
 <section class="body-sec stone">
 <div class="wrap cols2">
@@ -301,7 +323,7 @@ html{scroll-behavior:auto}
 <div class="wrap cols2">
 <div class="prose"><h2>Materials we trust</h2>
 <p>We’re certified installers for leading manufacturers, which means their products go on the way they were designed to.</p>
-<ul class="chips"><li>CertainTeed</li><li>GAF</li><li>Owens Corning</li><li>IKO</li><li>Tamko</li><li>Mastic</li><li>Norandex</li><li>Mule-Hide</li><li>Vinylmax</li><li>Versico</li><li>Custom Seal</li></ul>
+<ul class="inline"><li>CertainTeed</li><li>GAF</li><li>Owens Corning</li><li>IKO</li><li>Tamko</li><li>Mastic</li><li>Norandex</li><li>Mule-Hide</li><li>Vinylmax</li><li>Versico</li><li>Custom Seal</li></ul>
 </div>
 <div class="prose"><h2>Paying for it</h2>
 <p>We take cash, checks, American Express, Discover, MasterCard and Visa, with no fees on cards. Financing is available through Synchrony.</p>

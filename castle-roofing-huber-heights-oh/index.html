@@ -10,7 +10,7 @@
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/rokkitt.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/team-castle-640.webp" imagesrcset="img/team-castle-640.webp 640w, img/team-castle-940.webp 940w" imagesizes="(max-width:860px) 100vw, 700px" fetchpriority="high">
+<link rel="preload" as="image" href="img/team-castle-640.webp" imagesrcset="img/team-castle-640.webp 640w, img/team-castle-940.webp 940w" imagesizes="(max-width:860px) 100vw, 720px" fetchpriority="high">
 <style>@font-face{font-family:"Rokkitt";src:url(fonts/rokkitt.woff2) format("woff2");font-weight:100 900;font-display:swap}
 @font-face{font-family:"Public Sans";src:url(fonts/public-sans.woff2) format("woff2");font-weight:100 900;font-display:swap}
 :root{
@@ -58,7 +58,7 @@ p{margin:0}
 .hero{background:var(--slate);color:var(--white);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.4fr);grid-template-areas:"h h" "c f";column-gap:56px;align-items:end}
 .hero-copy{grid-area:c;padding:30px 0 60px;align-self:start}
-.hero-fig{grid-area:f}
+.hero-fig{grid-area:f;max-width:940px;justify-self:end;width:100%}
 .hero h1{grid-area:h;font-size:clamp(2.45rem,4.9vw,4.3rem);padding-top:58px;text-wrap:nowrap}
 .hero .hero-lede{margin-top:0}
 .hero-lede{margin-top:22px;font-size:1.15rem;color:#dfe3e7;max-width:34em}
@@ -192,6 +192,22 @@ details.fold > summary{display:none}
 .contact-list a:hover{color:var(--red)}
 .contact-list .lbl{font-size:.95rem;color:var(--muted);margin-top:14px}
 .contact-list .mail{font-size:clamp(1.15rem,2.2vw,1.6rem);word-break:break-all}
+.hero-rate{margin-top:20px;font-size:.98rem;color:#dfe3e7}
+.hero-rate .stars{color:#f2b705;letter-spacing:2px;margin-right:4px}
+.hero-rate strong{color:var(--white)}
+.hero-creds{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:8px;max-width:30em}
+.hero-creds li{padding:2px 0 2px 14px;border-left:3px solid var(--red);font-size:.95rem;color:#e8ebee;line-height:1.35}
+.inline{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;color:var(--ink);font-weight:600}
+.inline li:not(:last-child)::after{content:"\00B7";margin:0 .55em;color:var(--red);font-weight:700}
+.fig{margin:0}
+.fig img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fig.team img{aspect-ratio:auto;max-width:860px}
+.fig figcaption,.gal figcaption{margin-top:8px;font-size:.92rem;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.gal figure{margin:0}
+.gal img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.cols2 > .fig{align-self:center}
+.card.third img{aspect-ratio:16/7}
 /* sticky mobile cta */
 .mbar{display:none}
 @media (max-width:1060px){
@@ -208,7 +224,7 @@ details.fold > summary{display:none}
 .hero .wrap{grid-template-columns:1fr;grid-template-areas:"h" "c" "f";gap:0}
 .hero h1{padding-top:30px;text-wrap:balance}
 .hero-copy{padding:14px 0 26px}
-.hero-fig{margin:0 calc(-1 * var(--gut))}
+.hero-fig{margin:0 calc(-1 * var(--gut));justify-self:stretch;width:auto;max-width:none}
 .sec-head{flex-direction:column;align-items:start}
 .wall{grid-template-columns:1fr 1fr}
 .block,.block.b3{grid-column:span 1}
@@ -246,7 +262,9 @@ body{font-size:1rem}
 .hero-lede{font-size:1.02rem;margin-top:14px}
 .hero-cta{margin-top:20px;flex-direction:column}
 .hero-cta .btn{width:100%}
-.hero-note{display:none}
+.hero-creds{display:none}
+.hero-rate{margin-top:14px;font-size:.92rem}
+.gal{grid-template-columns:1fr}
 .wall{grid-template-columns:1fr}
 .block.b4{grid-column:auto}
 .block{padding:18px}
@@ -280,12 +298,13 @@ html{scroll-behavior:auto}
 <div class="wrap">
 <h1>A fortress for your family, since 1979.</h1>
 <div class="hero-copy">
-<p class="hero-lede">We’re the family-owned roofers of the Miami Valley. Roofs, siding, gutters, fencing and gates, with free same-day estimates and 5-year and 10-year labor warranties.</p>
+<p class="hero-lede">We’re the family-owned roofers of the Miami Valley. Roofs, siding, gutters, fencing and gates, with free same-day estimates and 5&#8209;year and 10&#8209;year labor warranties.</p>
 <div class="hero-cta"><a class="btn btn-red" href="tel:+19372300091"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (937) 230-0091</a><a class="btn btn-line" href="mailto:castleroofingdayton@yahoo.com?subject=Free%20estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email for a free estimate</a></div>
-<p class="hero-note">Storm damage? We take emergency calls 24/7.</p>
+<p class="hero-rate"><span class="stars" aria-hidden="true">★★★★☆</span> <strong>4.4</strong> from 195 ratings &amp; reviews</p>
+<ul class="hero-creds"><li>Official roofing company of the University of Dayton Flyers</li><li>Best of Dayton 2022 &amp; 2023</li><li>CertainTeed 5-Star Installer</li></ul>
 </div>
 <figure class="hero-fig">
-<img src="img/team-castle-640.webp" srcset="img/team-castle-640.webp 640w, img/team-castle-940.webp 940w" sizes="(max-width:860px) 100vw, 700px" width="940" height="548" alt="The Castle Roofing team in front of our castle-front building, with the Castle Roofing sign above them" fetchpriority="high">
+<img src="img/team-castle-640.webp" srcset="img/team-castle-640.webp 640w, img/team-castle-940.webp 940w" sizes="(max-width:860px) 100vw, 720px" width="940" height="548" alt="The Castle Roofing team in front of our castle-front building, with the Castle Roofing sign above them" fetchpriority="high">
 <figcaption>Our team, at our castle</figcaption>
 </figure>
 </div>
@@ -311,10 +330,10 @@ html{scroll-behavior:auto}
 <div class="sec-head"><h2 id="svc-h">Everything on the outside of your home</h2><p>Roofs first, and then the rest of the shell that keeps the weather out.</p></div>
 <div class="svc">
 <a class="card big" href="roofing.html"><img src="img/roof-ridge-800.webp" srcset="img/roof-ridge-800.webp 800w, img/roof-ridge-1400.webp 1400w" sizes="(max-width:860px) 100vw, 700px" width="1400" height="845" alt="Gray architectural shingles meeting at a ridge, with a dormer window" loading="lazy" decoding="async"><div class="txt"><h3>Roofing</h3><p>New roofs, repairs and storm damage. Asphalt shingle, cedar shake, metal and TPO flat roofs, for homes and businesses.</p><span class="go">Roofing services</span></div></a>
-<a class="card mid" href="siding.html"><img src="img/sided-home-800.webp" srcset="img/sided-home-800.webp 800w, img/sided-home-1400.webp 1400w" sizes="(max-width:860px) 100vw, 500px" width="1400" height="963" alt="Two-story home with gray lap siding and a stone front" loading="lazy" decoding="async"><div class="txt"><h3>Siding</h3><p>Installation and repair in vinyl, fiber cement, cedar, metal and more.</p><span class="go">Siding services</span></div></a>
-<a class="card mid" href="gutters.html"><img src="img/roof-gutter-800.webp" srcset="img/roof-gutter-800.webp 800w, img/roof-gutter-1400.webp 1400w" sizes="(max-width:860px) 100vw, 500px" width="1400" height="974" alt="A dark gutter running along the edge of a shingled roof" loading="lazy" decoding="async"><div class="txt"><h3>Gutters</h3><p>Seamless gutters, gutter guards, cleaning and repair.</p><span class="go">Gutter services</span></div></a>
-<a class="card third slate" href="fencing.html"><div class="txt"><h3>Fencing &amp; gates</h3><p>Wood, vinyl, aluminum and chain-link fences. Manual or automated gates, plus painting, staining and repair.</p><span class="go">Fencing and gates</span></div></a>
-<a class="card third" href="roofing.html#commercial"><div class="txt"><h3>Commercial &amp; flat roofs</h3><p>Commercial roofing installation, repair and service, including TPO for flat and low-slope roofs.</p><span class="go">Commercial roofing</span></div></a>
+<a class="card mid" href="siding.html"><img src="img/siding-sky-800.webp" srcset="img/siding-sky-800.webp 800w, img/siding-sky-1400.webp 1400w" sizes="(max-width:860px) 100vw, 500px" width="1400" height="933" alt="Two-tone lap siding on a two-story home against a blue sky" loading="lazy" decoding="async"><div class="txt"><h3>Siding</h3><p>Installation and repair in vinyl, fiber cement, cedar, metal and more.</p><span class="go">Siding services</span></div></a>
+<a class="card mid" href="gutters.html"><img src="img/seamless-gutter-800.webp" srcset="img/seamless-gutter-800.webp 800w, img/seamless-gutter-1400.webp 1400w" sizes="(max-width:860px) 100vw, 500px" width="1400" height="933" alt="Seamless gutter and downspout on a brick home" loading="lazy" decoding="async"><div class="txt"><h3>Gutters</h3><p>Seamless gutters, gutter guards, cleaning and repair.</p><span class="go">Gutter services</span></div></a>
+<a class="card third slate" href="fencing.html"><img src="img/wood-fence-800.webp" srcset="img/wood-fence-800.webp 800w, img/wood-fence-1400.webp 1400w" sizes="(max-width:860px) 100vw, 600px" width="1400" height="927" alt="A long new wooden privacy fence along a green lawn" loading="lazy" decoding="async"><div class="txt"><h3>Fencing &amp; gates</h3><p>Wood, vinyl, aluminum and chain-link fences. Manual or automated gates, plus painting, staining and repair.</p><span class="go">Fencing and gates</span></div></a>
+<a class="card third" href="roofing.html#commercial"><img src="img/metal-roof-800.webp" srcset="img/metal-roof-800.webp 800w, img/metal-roof-1400.webp 1400w" sizes="(max-width:860px) 100vw, 600px" width="1400" height="1050" alt="Standing seam metal roof running down to open fields" loading="lazy" decoding="async"><div class="txt"><h3>Commercial &amp; flat roofs</h3><p>Commercial roofing installation, repair and service, including TPO for flat and low-slope roofs.</p><span class="go">Commercial roofing</span></div></a>
 </div>
 </div>
 </section>
