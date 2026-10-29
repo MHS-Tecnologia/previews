@@ -177,7 +177,6 @@
   .gal img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
   .gal li:only-child { grid-column: 1 / -1; max-width: 680px; justify-self: center; width: 100%; }
   .gal li:last-child:nth-child(3) { grid-column: 1 / -1; justify-self: center; width: min(100%, 50% - 1.25rem); }
-  .gal figcaption { font-size: .85rem; color: var(--zinc); margin-top: .5rem; }
   .points { border-top: 1px solid var(--line); }
   .points-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 2rem clamp(2rem, 5vw, 5rem); }
   .points ul { display: grid; gap: 1.75rem; }
@@ -187,7 +186,12 @@
   .others { padding-top: 0; }
   .others h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
   .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
-  .chips li { font-size: .9rem; padding: .45rem .9rem; border-radius: .35rem; background: #121416; color: #c9cdd0; }
+  .chips a { display: block; font-size: .9rem; padding: .45rem .9rem; border-radius: 999px; box-shadow: inset 0 0 0 1px #3a3f44; color: #d6d8da; text-decoration: none; }
+  .chips a:hover { box-shadow: inset 0 0 0 1px var(--blue); color: #fff; }
+  .lines .padded img { object-fit: contain; padding: 7% 9%; background: #000; }
+  .phero + .gallery:not(.sweep) { padding-top: 0; }
+  .gal figcaption { font-size: .9rem; color: #b9bdc1; margin-top: .6rem; }
+  .sweep .gal figcaption { color: #3c4246; }
 
   /* Home teasers into the inner pages. */
   .teaser-grid, .since-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
@@ -219,6 +223,8 @@
     .subnav { flex-wrap: nowrap; overflow-x: auto; margin: 0 calc(-1 * var(--pad)) 1rem; padding: 0 var(--pad) .25rem; scrollbar-width: none; }
     .subnav::-webkit-scrollbar { display: none; }
     .gal { grid-template-columns: 1fr; }
+    .gallery { padding-bottom: 6rem; }
+    .phero .wrap { padding-bottom: 2rem; }
     .gal li:last-child:nth-child(3) { width: 100%; }
     .since-grid figure { order: -1; }
     .family-list { grid-template-columns: 1fr 1fr; }
@@ -336,7 +342,7 @@
 
   <section class="gallery sweep">
     <div class="wrap">
-      <ul class="gal"><li><figure><img src="img/fan-a-800.webp" srcset="img/fan-a-800.webp 800w, img/fan-a-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 600px" width="1400" height="933" loading="lazy" alt="Black spiral wire fan guard, half section"></figure></li><li><figure><img src="img/fan-b-800.webp" srcset="img/fan-b-800.webp 800w, img/fan-b-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 600px" width="1400" height="933" loading="lazy" alt="Black wire HVAC guard, half section with radial ribs"></figure></li><li><figure><img src="img/fan-c-800.webp" srcset="img/fan-c-800.webp 800w, img/fan-c-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 600px" width="1400" height="933" loading="lazy" alt="Black wire fan guard segment with mounting tabs"></figure></li></ul>
+      <ul class="gal"><li><figure><img src="img/fan-a-800.webp" srcset="img/fan-a-800.webp 800w, img/fan-a-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 600px" width="1400" height="933" loading="lazy" alt="Black spiral wire fan guard, half section"><figcaption>Spiral fan guard, half section, black finish.</figcaption></figure></li><li><figure><img src="img/fan-b-800.webp" srcset="img/fan-b-800.webp 800w, img/fan-b-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 600px" width="1400" height="933" loading="lazy" alt="Black wire HVAC guard, half section with radial ribs"><figcaption>HVAC guard with radial ribs.</figcaption></figure></li><li><figure><img src="img/fan-c-800.webp" srcset="img/fan-c-800.webp 800w, img/fan-c-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 600px" width="1400" height="933" loading="lazy" alt="Black wire fan guard segment with mounting tabs"><figcaption>Fan guard segment with mounting tabs.</figcaption></figure></li></ul>
     </div>
   </section>
 
@@ -351,7 +357,7 @@
     <div class="wrap">
       <h2>Other wire products</h2>
       <ul class="chips" aria-label="Other wire products Progress Wire makes">
-        <li>Wire grids and welded wire assemblies</li><li>Wire fan guards, grilles and motor mounts</li><li>Steel and stainless steel wire forms</li><li>Wire light guards</li><li>Industrial wire baskets</li><li>Wire basket cable trays</li><li>Wire point of purchase display fixtures and racks</li><li>Other steel wire products to meet your needs</li>
+        <li><a href="mesh-grids.html">Wire grids and welded wire assemblies</a></li><li><a href="fan-guards.html">Wire fan guards, grilles and motor mounts</a></li><li><a href="wire-forms.html">Steel and stainless steel wire forms</a></li><li><a href="light-guards.html">Wire light guards</a></li><li><a href="baskets-displays.html">Industrial wire baskets</a></li><li><a href="mesh-grids.html">Wire basket cable trays</a></li><li><a href="baskets-displays.html">Wire point of purchase display fixtures and racks</a></li><li><a href="contact.html">Other steel wire products to meet your needs</a></li>
       </ul>
     </div>
   </section>
