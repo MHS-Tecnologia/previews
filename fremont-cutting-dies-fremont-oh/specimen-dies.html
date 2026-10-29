@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#e7e5e0">
+<title>Specimen dies catalog | Fremont Cutting Dies</title>
+<meta name="description" content="ASTM and ISO specimen dies, squares, rounds, slab molds, presses and accessories from Fremont Cutting Dies.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/bigshoulders.woff2" crossorigin>
+<style>
+  @font-face { font-family: "Big Shoulders"; font-weight: 100 900; font-display: swap; src: url(fonts/bigshoulders.woff2) format("woff2"); }
+  @font-face { font-family: "Public Sans"; font-weight: 100 900; font-display: swap; src: url(fonts/publicsans.woff2) format("woff2"); }
+
+  /* The shop floor every photo sits on, the steel, and the safety yellow FCD paints its die sets and logo. */
+  :root {
+    --floor: #e7e5e0;
+    --floor-2: #d9d6cf;
+    --ink: #1d1c1a;
+    --steel: #575b5f;
+    --yellow: #f4b400;
+    --yellow-deep: #d99e00;
+    --pad: clamp(1rem, 4vw, 3rem);
+    --max: 76rem;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--floor); color: var(--ink); font: 400 1.0625rem/1.6 "Public Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  h1, h2, h3, .display { font-family: "Big Shoulders", "Arial Narrow", sans-serif; font-weight: 800; line-height: .95; letter-spacing: -0.005em; }
+  h2 { font-size: clamp(2.4rem, 5vw, 4rem); text-wrap: balance; }
+  h3 { font-size: 1.5rem; line-height: 1.05; }
+  [id] { scroll-margin-top: 1rem; }
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 10; }
+  .skip:focus { left: .5rem; }
+  .wrap { max-width: var(--max); margin: 0 auto; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  .demo { background: var(--ink); color: #cfccc5; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .5rem 1rem; }
+
+  /* Header: their own logo, the pages, and the phone. */
+  .top { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .85rem var(--pad); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
+  .brand { display: block; flex: none; }
+  .brand img { height: 2.35rem; width: auto; }
+  .nav { display: flex; align-items: center; gap: 1.5rem; font-weight: 500; font-size: .95rem; }
+  .nav a { text-decoration: none; }
+  .nav a:not(.btn):hover, .nav a[aria-current] { text-decoration: underline; text-decoration-thickness: 3px; text-decoration-color: var(--yellow); text-underline-offset: 6px; }
+  .menu { display: none; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; background: var(--yellow); color: var(--ink); text-decoration: none; font-weight: 700; padding: .9rem 1.4rem; border-radius: .35rem; box-shadow: inset 0 -3px 0 var(--yellow-deep); transition: background-color .15s ease; }
+  .btn:hover { background: #ffc414; }
+  .btn.dark { background: var(--ink); color: #fff; box-shadow: none; }
+  .btn.dark:hover { background: #3a3835; }
+  .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: #fff; }
+  .nav .btn { padding: .55rem .95rem; font-size: .9rem; }
+  .textlink { font-weight: 700; text-decoration-thickness: 2px; text-decoration-color: var(--yellow-deep); text-underline-offset: 4px; }
+  .textlink:hover { text-decoration-color: currentColor; }
+
+  section { padding: clamp(4rem, 8vw, 6.5rem) var(--pad); }
+  .intro { max-width: 40rem; margin-top: 1rem; color: #33312e; }
+
+  /* Inner page heads: a title, one paragraph, the way back in the site. */
+  .page-head { padding: clamp(1.5rem, 4vw, 3.5rem) var(--pad) clamp(2rem, 4vw, 3rem); max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
+  .page-head h1 { font-size: clamp(2.6rem, 6vw, 5.2rem); line-height: .97; max-width: 16ch; text-wrap: balance; }
+  .page-head .lede { margin-top: 1.1rem; max-width: 40rem; font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: #33312e; }
+  .crumb { font-size: .875rem; color: var(--steel); margin-bottom: .9rem; }
+  .crumb a { color: var(--ink); }
+  .jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; padding: 0; list-style: none; }
+  .jump a { display: inline-block; text-decoration: none; font-weight: 600; font-size: .9375rem; padding: .45rem .8rem; border: 2px solid var(--ink); border-radius: .3rem; }
+  .jump a:hover { background: var(--ink); color: #fff; }
+
+  footer { background: var(--ink); color: #b4b0a8; font-size: .9375rem; padding: 3rem var(--pad) 6rem; }
+  footer .cols { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; }
+  footer h2 { font-size: 1.6rem; color: #f2f0eb; }
+  footer address { font-style: normal; margin-top: .6rem; line-height: 1.55; }
+  footer ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+  footer a { color: #f2f0eb; text-decoration-color: #6d6a64; text-underline-offset: 3px; }
+  footer a:hover { text-decoration-color: var(--yellow); }
+  footer .legal { max-width: var(--max); margin: 2.5rem auto 0; padding-top: 1.25rem; border-top: 1px solid #3a3835; font-size: .875rem; }
+
+  .dock { display: none; }
+  @media (max-width: 900px) {
+    .nav { display: none; }
+    .menu { display: block; }
+    .menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; font-size: .95rem; padding: .5rem .85rem; border: 2px solid var(--ink); border-radius: .35rem; }
+    .menu summary::-webkit-details-marker { display: none; }
+    .menu summary::after { content: ""; width: .9rem; height: 2px; background: currentColor; box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor; }
+    .menu[open] summary { background: var(--ink); color: #fff; }
+    .menu ul { position: absolute; z-index: 8; top: 100%; left: var(--pad); right: var(--pad); list-style: none; padding: .5rem; background: var(--ink); border-radius: .5rem; box-shadow: 0 12px 30px rgba(0,0,0,.3); }
+    .menu li a { display: block; padding: .8rem .9rem; color: #f2f0eb; text-decoration: none; font-weight: 600; font-size: 1.05rem; border-radius: .3rem; }
+    .menu li a[aria-current] { color: var(--yellow); }
+    .menu li + li a { border-top: 1px solid #34322f; }
+    .brand img { height: 1.9rem; }
+    .top { padding-top: .6rem; padding-bottom: .6rem; }
+    .demo { font-size: .75rem; padding: .4rem .75rem; }
+    footer .cols { grid-template-columns: 1fr; }
+    .dock { display: flex; justify-content: center; position: fixed; left: .75rem; right: .75rem; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 5;
+      box-shadow: inset 0 -3px 0 var(--yellow-deep), 0 8px 24px rgba(0,0,0,.28);
+      opacity: 0; transform: translateY(1rem); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+    .dock.on { opacity: 1; transform: none; pointer-events: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .dock { transition: none; }
+  }
+
+  .order { margin-top: 1.75rem; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .4rem 1.25rem; align-items: center; max-width: 46rem; padding: 1.1rem 1.25rem; border: 2px dashed var(--ink); border-radius: .5rem; }
+  .stamp { font-family: "Big Shoulders", sans-serif; font-weight: 800; font-size: 1.25rem; line-height: 1; padding: .5rem .75rem; background: var(--ink); color: var(--yellow); border-radius: .3rem; grid-row: span 2; }
+  .order p { font-size: .9375rem; color: #33312e; line-height: 1.45; }
+  .group { padding-top: clamp(2.5rem, 5vw, 4rem); padding-bottom: clamp(2.5rem, 5vw, 4rem); border-top: 2px solid var(--ink); }
+  .group:nth-of-type(even) { background: var(--floor-2); }
+  .group .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(1.5rem, 5vw, 4.5rem); align-items: center; }
+  .group .pic img { width: auto; max-width: min(100%, 24rem); max-height: 14rem; margin: 0 auto; }
+  .group .pic img.draw { max-width: min(100%, 15rem); max-height: 13rem; opacity: .9; }
+  .group .pic img.photo { max-height: none; }
+  .group .pic img.photo { border-radius: .5rem; }
+  .group h2 { font-size: clamp(2.1rem, 4vw, 3.2rem); }
+  .group .desc { margin-top: .8rem; max-width: 40rem; color: #33312e; }
+  .variants { margin-top: 1.4rem; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr)); gap: 0 1.5rem; }
+  .variants li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .75rem; padding: .55rem 0; border-bottom: 1px solid #bdb9b1; }
+  .variants b { font-weight: 700; }
+  .variants span { font-size: .8125rem; color: var(--steel); white-space: nowrap; }
+  .buy { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: center; font-size: .9375rem; }
+  .buy .via { color: var(--steel); font-weight: 600; }
+  .service { background: var(--yellow); }
+  .service .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .service img { width: 100%; border-radius: .5rem; }
+  .service .price { margin-top: 1.25rem; font-family: "Big Shoulders", sans-serif; font-weight: 800; font-size: 2.6rem; line-height: 1; }
+  .service .price small { display: block; font-family: "Public Sans", sans-serif; font-weight: 500; font-size: .9375rem; margin-top: .4rem; color: #2b2925; }
+  .service p { margin-top: 1rem; color: #2b2925; max-width: 34rem; }
+  .service .btn { margin-top: 1.5rem; }
+  @media (max-width: 860px) {
+    .group .wrap, .service .wrap { grid-template-columns: 1fr; }
+    .group .pic img { max-width: min(100%, 17rem); max-height: 9rem; margin: 0; }
+    .group .pic img.draw { max-width: 11rem; max-height: 8rem; }
+    .order { grid-template-columns: 1fr; }
+    .stamp { justify-self: start; grid-row: auto; }
+    .variants { grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+    .variants li { display: block; padding: .5rem 0; }
+    .variants span { display: block; white-space: normal; }
+  }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="demo">Unofficial demo built by MHS Tecnologia for Fremont Cutting Dies. Not affiliated with or endorsed by Fremont Cutting Dies.</div>
+  <header class="top">
+    <a class="brand" href="index.html"><img src="img/logo.webp" width="480" height="80" alt="Fremont Cutting Dies, Inc. home"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="dies.html">Die types</a><a href="specimen-dies.html" aria-current="page">Specimen dies</a><a href="machining.html">Machining & fabrication</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+      <a class="btn dark" href="tel:+14193345153">Call<span class="num"> 419.334.5153</span></a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="dies.html">Die types</a></li><li><a href="specimen-dies.html" aria-current="page">Specimen dies</a></li><li><a href="machining.html">Machining & fabrication</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="tel:+14193345153">Call 419.334.5153</a></li></ul></nav>
+    </details>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <p class="crumb"><a href="index.html">Home</a> / Specimen dies</p>
+      <h1>Specimen dies, in stock and certified.</h1>
+      <p class="lede">Made in-house from premium hardened tool steel and sharpened by hand. Every die is 1.25″ tall and ships in a hard plastic case with foam inserts and a paper certification of its measured dimensions. A custom shank or mallet handle can be added.</p>
+      <div class="order">
+        <span class="stamp">FCD online store</span>
+        <p>These are the dies Fremont lists in its online store, where they are ordered. This page doesn’t take orders.</p>
+        <p>Free ground shipping to the contiguous USA on specimen dies with code FCDFREE at checkout. Questions: <a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=Specimen%20die%20question">requests@fremontcuttingdies.com</a></p>
+      </div>
+      <ul class="jump" aria-label="Sections of the catalog"><li><a href="#astm">ASTM</a></li><li><a href="#iso34">ISO</a></li><li><a href="#squares">Squares & rectangles</a></li><li><a href="#rounds">Rounds</a></li><li><a href="#molds">Slab molds</a></li><li><a href="#presses">Presses</a></li><li><a href="#accessories">Accessories</a></li><li><a href="#sharpening">Sharpening</a></li></ul>
+    </div>
+
+    <section class="group" aria-labelledby="d412-t" id="astm">
+      <div class="wrap">
+        <div class="pic"><img src="img/c-d412.webp" width="560" height="286" alt="ASTM D412-C specimen die on a yellow base" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="d412-t"><span id="d412"></span>ASTM D412</h2>
+          <p class="desc">Dies A through F, plus a half-scale C.</p>
+          <ul class="variants"><li><b>D412-A</b><span>Imperial / Metric</span></li><li><b>D412-B</b><span>Imperial / Metric</span></li><li><b>D412-C</b><span>Imperial / Metric</span></li><li><b>D412-C 1/2 Scale</b><span>Imperial</span></li><li><b>D412-D</b><span>Imperial / Metric</span></li><li><b>D412-E</b><span>Imperial / Metric</span></li><li><b>D412-F</b><span>Imperial / Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ASTM%20D412%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="d624-t">
+      <div class="wrap">
+        <div class="pic"><img src="img/c-d624.webp" width="560" height="263" alt="ASTM D624 specimen die on a yellow base" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="d624-t"><span id="d624"></span>ASTM D624</h2>
+          <p class="desc">Dies A, B, C and T, and B with a nick.</p>
+          <ul class="variants"><li><b>D624-A</b><span>Imperial / Metric</span></li><li><b>D624-B</b><span>Imperial / Metric</span></li><li><b>D624-B with nick</b><span>Imperial / Metric</span></li><li><b>D624-C</b><span>Imperial / Metric</span></li><li><b>D624-T</b><span>Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ASTM%20D624%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="d638-t">
+      <div class="wrap">
+        <div class="pic"><img src="img/c-d638.webp" width="560" height="144" alt="Long ASTM D638 specimen die with a made-in-USA label" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="d638-t"><span id="d638"></span>ASTM D638</h2>
+          <p class="desc">Types 1 to 5.</p>
+          <ul class="variants"><li><b>D638-Type 1</b><span>Imperial / Metric</span></li><li><b>D638-Type 2</b><span>Imperial / Metric</span></li><li><b>D638-Type 3</b><span>Imperial / Metric</span></li><li><b>D638-Type 4</b><span>Imperial / Metric</span></li><li><b>D638-Type 5</b><span>Imperial / Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ASTM%20D638%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="d395-t">
+      <div class="wrap">
+        <div class="pic"><img src="img/c-d395.webp" width="560" height="636" alt="Round ASTM D395 specimen die on a yellow base" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="d395-t"><span id="d395"></span>ASTM D395</h2>
+          <p class="desc">Types 1 and 2.</p>
+          <ul class="variants"><li><b>D395-Type 1</b><span>Imperial / Metric</span></li><li><b>D395-Type 2</b><span>Imperial / Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ASTM%20D395%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="d471-t">
+      <div class="wrap">
+        <div class="pic"><img class="draw" src="img/d-d471.webp" width="560" height="872" alt="Dimension drawing of a square ASTM D471 die, 1 inch by 1 inch" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="d471-t"><span id="d471"></span>ASTM D471</h2>
+          <p class="desc">Sections 9 and 10.</p>
+          <ul class="variants"><li><b>D471 Section 9</b><span>Imperial / Metric</span></li><li><b>D471 Section 10</b><span>Imperial / Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ASTM%20D471%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="d1708-t">
+      <div class="wrap">
+        <div class="pic"><img class="draw" src="img/d-d1708.webp" width="560" height="506" alt="Dimension drawing of the ASTM D1708 die: 38mm long, 15mm wide, 5mm neck" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="d1708-t"><span id="d1708"></span>ASTM D1708</h2>
+          <p class="desc">Metric.</p>
+          <ul class="variants"><li><b>D1708</b><span>Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ASTM%20D1708%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="d5963-t">
+      <div class="wrap">
+        <div class="pic"><img class="draw" src="img/d-d5963.webp" width="560" height="291" alt="Dimension drawing of a 16.3mm diameter hollow drill" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="d5963-t"><span id="d5963"></span>ASTM D5963</h2>
+          <p class="desc">Hollow drill and hollow drill spinner, metric.</p>
+          <ul class="variants"><li><b>D5963 Hollow Drill</b><span>Metric</span></li><li><b>D5963 Hollow Drill Spinner</b><span>Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ASTM%20D5963%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="iso34-t">
+      <div class="wrap">
+        <div class="pic"><img src="img/c-iso34.webp" width="560" height="229" alt="ISO 34 specimen die on a yellow base" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="iso34-t"><span id="iso34"></span>ISO 34</h2>
+          <p class="desc">ISO 34-1 figures 1 to 3, with or without a nick, and ISO 34-2. Metric.</p>
+          <ul class="variants"><li><b>34-1 Fig. 1</b><span>Metric</span></li><li><b>34-1 Fig. 2</b><span>Metric</span></li><li><b>34-1 Fig. 2 with nick</b><span>Metric</span></li><li><b>34-1 Fig. 3</b><span>Metric</span></li><li><b>34-1 Fig. 3 with nick</b><span>Metric</span></li><li><b>34-2</b><span>Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ISO%2034%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="iso37-t">
+      <div class="wrap">
+        <div class="pic"><img src="img/c-iso37.webp" width="560" height="213" alt="ISO 37 specimen die with a made-in-USA label" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="iso37-t"><span id="iso37"></span>ISO 37</h2>
+          <p class="desc">Types 1, 1A, 2, 3 and 4. Metric.</p>
+          <ul class="variants"><li><b>37-Type 1</b><span>Metric</span></li><li><b>37-Type 1A</b><span>Metric</span></li><li><b>37-Type 2</b><span>Metric</span></li><li><b>37-Type 3</b><span>Metric</span></li><li><b>37-Type 4</b><span>Metric</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=ISO%2037%20specimen%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="squares-t">
+      <div class="wrap">
+        <div class="pic"><img src="img/c-square.webp" width="560" height="348" alt="Square specimen die on a yellow base" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="squares-t"><span id="squares"></span>Squares & rectangles</h2>
+          <p class="desc">Imperial sizes from 1″ × 6″ to 4″ × 6″, held to ±0.005″, or ±0.015″ in the forged versions.</p>
+          <ul class="variants"><li><b>1.25″ x 2″</b><span>Forged, ±.015″</span></li><li><b>1″ x 6″</b><span>±.005″</span></li><li><b>1″ x 6″</b><span>Forged, ±.015″</span></li><li><b>2″ x 2″</b><span>±.005″</span></li><li><b>2″ x 2″</b><span>Forged, ±.015″</span></li><li><b>2″ x 10″</b><span>Forged, ±.015″</span></li><li><b>3″ x 3″</b><span>Forged, ±.015″</span></li><li><b>4″ x 4″</b><span>Forged, ±.015″</span></li><li><b>4″ x 6″</b><span>Forged, ±.015″</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=Square%20or%20rectangle%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="rounds-t">
+      <div class="wrap">
+        <div class="pic"><img class="draw" src="img/d-round.webp" width="560" height="351" alt="Drawings of an open-back and a flat-back round die" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="rounds-t"><span id="rounds"></span>Round dies</h2>
+          <p class="desc">Open back or flat back, cut to the diameter you specify. Tolerance depends on the size.</p>
+          <ul class="variants"><li><b>Open back rounds</b><span>Custom diameter</span></li><li><b>Flat back rounds</b><span>Custom diameter</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=Round%20die">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="molds-t">
+      <div class="wrap">
+        <div class="pic"><img class="draw" src="img/d-slab.webp" width="560" height="428" alt="Dimension drawing of an ASTM D3182 slab mold, 6 by 6 inch cavity" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="molds-t"><span id="molds"></span>Slab molds and custom molds</h2>
+          <p class="desc">ASTM D3182 slab molds in premium tool steel, chrome plated, with a dimensional certification. Custom slab and compression molds are quoted from your data (.dxf, .dwg, .stp).</p>
+          <ul class="variants"><li><b>D3182, 1 cavity</b><span>Imperial</span></li><li><b>D3182, 2 cavity</b><span>Imperial</span></li><li><b>D3182, 4 cavity</b><span>Imperial</span></li><li><b>Custom mold</b><span>Quoted</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=Slab%20mold%20or%20custom%20mold">Ask about a mold</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="presses-t">
+      <div class="wrap">
+        <div class="pic"><img class="draw" src="img/d-press.webp" width="560" height="510" alt="Drawing of the FCD 2-ton manual specimen press" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="presses-t"><span id="presses"></span>Manual specimen presses</h2>
+          <p class="desc">Designed and built in Fremont to make cutting specimens by hand easier and more consistent. Each comes with a poly cutting pad and a return spring for safety, and ships LTL in a wooden crate. Dies and arbor adaptors are sold separately.</p>
+          <ul class="variants"><li><b>FCD 2-ton press</b><span>Dies up to about 16 linear in., 2″ × 7″</span></li><li><b>FCD 3-ton press</b><span>Dies up to about 24 linear in., 3″ × 10″</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=Manual%20specimen%20press">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="group" aria-labelledby="accessories-t">
+      <div class="wrap">
+        <div class="pic"><img class="photo" src="img/p-maul.webp" width="800" height="600" alt="Two rawhide mauls with wooden handles on a shop floor" loading="lazy" decoding="async"></div>
+        <div>
+          <h2 id="accessories-t"><span id="accessories"></span>Accessories</h2>
+          <p class="desc">Rawhide mauls have water buffalo hide heads and a solid steel rod in the wooden handle; they are ordered by quote. Mallet handles can be bolted to a die, and custom arbor adaptors fit dies to other arbor-style presses.</p>
+          <ul class="variants"><li><b>Cutting pad 8″ × 10″ × .50″</b><span>1 or 3-pack</span></li><li><b>Cutting pad 12″ × 14″ × .50″</b><span>1 or 3-pack</span></li><li><b>Custom arbor adaptor</b><span>From $155</span></li><li><b>Rawhide mauls</b><span>By quote</span></li></ul>
+          <p class="buy"><span class="via">Ordered through the FCD online store</span><a class="textlink" href="mailto:requests@fremontcuttingdies.com?subject=Specimen%20die%20accessories">Ask about stock or a custom size</a></p>
+        </div>
+      </div>
+    </section>
+    <section id="sharpening" class="service" aria-labelledby="sh-t">
+      <div class="wrap">
+        <div>
+          <h2 id="sh-t">Relevel, sharpen and certify.</h2>
+          <p>Any ASTM, ISO, JIS, DIN or EN cutting die, made by Fremont or not. Grinding and sharpening are done in-house, and the die comes back with a paper certification of its recorded dimensions.</p>
+          <p class="price num">From $185<small>per die. Ships 3–5 business days after the die is received and the order confirmed.</small></p>
+          <a class="btn dark" href="mailto:requests@fremontcuttingdies.com?subject=Relevel%2C%20sharpen%20and%20certify">Ask for a sharpening quote</a>
+        </div>
+        <figure><img src="img/p-relevel.webp" width="569" height="438" alt="A specimen die next to its paper dimensional certification and a caliper" loading="lazy" decoding="async"></figure>
+      </div>
+    </section>
+  </main>
+
+  <a class="btn dock" href="mailto:requests@fremontcuttingdies.com?subject=Specimen%20die%20question">Ask about specimen dies</a>
+
+  <footer>
+    <div class="cols">
+      <div>
+        <h2>Fremont Cutting Dies, Inc.</h2>
+        <address translate="no">3179 E State Street<br>Fremont, Ohio 43420</address>
+      </div>
+      <ul>
+        <li><a href="mailto:requests@fremontcuttingdies.com?subject=Quote%20request">requests@fremontcuttingdies.com</a></li>
+        <li><a class="num" href="tel:+14193345153">419.334.5153</a> local</li>
+        <li><a class="num" href="tel:+18885668051">888.566.8051</a> toll-free</li>
+        <li class="num">Fax 419.332.6615</li>
+      </ul>
+      <nav aria-label="Footer"><ul><li><a href="index.html">Home</a></li><li><a href="dies.html">Die types</a></li><li><a href="specimen-dies.html">Specimen dies</a></li><li><a href="machining.html">Machining & fabrication</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Fremont Cutting Dies. Content and photos come from Fremont Cutting Dies’ public website; their online store is shown here but not linked. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </footer>
+
+  <script>
+    const dock = document.querySelector('.dock'), head = document.querySelector('.hero, .page-head')
+    if (dock && head) new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting)).observe(head)
+    const menu = document.querySelector('.menu')
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus() } })
+  </script>
+</body>
+</html>
