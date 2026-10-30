@@ -18,7 +18,7 @@
     copo: 'M38 32h164l-25 276q-1 12-13 12H76q-12 0-13-12Z',
     pote: 'M14 120h212l-22 188q-1 12-13 12H49q-12 0-13-12Z'
   };
-  var t = D[1], sel = [], ultimo = null, aviso = '';
+  var t = D[1], sel = [], ultimo = null, aviso = '', mexeu = false;
   function item(n) { return t.itens.filter(function (i) { return i.n === n; })[0]; }
   function desenha() {
     svg.style.transform = 'scale(' + t.escala + ')';
@@ -42,14 +42,15 @@
     sel.forEach(function (n) { var i = item(n); total += i.p; linhas += '<li><span>' + i.n + '</span><span>' + reais(i.p) + '</span></li>'; });
     q('#resumo').innerHTML = linhas;
     q('#total').textContent = reais(total);
-    var copo = { n: nomeCopo(), p: total };
-    var href = window.Sacola.mensagem(copo);
+    var soma = window.Sacola.conta();
+    // With items in the bag, a cup nobody touched stays out of the message and the total.
+    var conta = mexeu || soma === 0;
+    var href = window.Sacola.mensagem(conta ? { n: nomeCopo(), p: total } : null);
     q('#enviar').href = href;
     var fx = q('#fixa-enviar');
-    if (fx) { fx.href = href; q('#fixa-total').textContent = reais(total + window.Sacola.total()); }
-    var soma = window.Sacola.conta();
+    if (fx) { fx.href = href; q('#fixa-total').textContent = reais((conta ? total : 0) + window.Sacola.total()); }
     q('#na-sacola').hidden = soma === 0;
-    q('#na-sacola').textContent = 'Mais ' + (soma === 1 ? '1 item' : soma + ' itens') + ' da sacola: ' + reais(window.Sacola.total());
+    q('#na-sacola').textContent = 'Sacola: ' + (soma === 1 ? '1 item' : soma + ' itens') + ', ' + reais(window.Sacola.total());
     var cheio = sel.length >= t.lim;
     document.querySelectorAll('input[name=adi]').forEach(function (c) { c.disabled = cheio && !c.checked; });
     q('#dica').textContent = cheio ? 'Você chegou ao limite de ' + t.lim + ' adicionais neste tamanho.' : 'Até ' + t.lim + ' adicionais neste tamanho.' + (sel.length ? (t.lim - sel.length === 1 ? ' Falta 1.' : ' Faltam ' + (t.lim - sel.length) + '.') : '');
@@ -58,6 +59,7 @@
   document.querySelectorAll('input[name=tam]').forEach(function (r) {
     r.addEventListener('change', function () {
       t = D.filter(function (x) { return x.id === r.value; })[0];
+      mexeu = true;
       var fora = sel.filter(function (n) { return !item(n); });
       var cabem = sel.filter(item);
       fora = fora.concat(cabem.slice(t.lim));
@@ -71,6 +73,7 @@
   q('#lista').addEventListener('change', function (e) {
     if (e.target.name !== 'adi') return;
     var n = e.target.value;
+    mexeu = true;
     if (e.target.checked) { sel.push(n); ultimo = n; } else { sel = sel.filter(function (x) { return x !== n; }); ultimo = null; }
     desenha(); resumo();
   });
@@ -78,7 +81,7 @@
     var soma = sel.reduce(function (s, n) { return s + item(n).p; }, t.preco);
     window.Sacola.poe(nomeCopo(), soma);
     q('#status').textContent = nomeCopo() + ' foi para a sacola.';
-    sel = []; ultimo = null;
+    sel = []; ultimo = null; mexeu = false;
     q('#lista').innerHTML = listaHtml(t, ORDEM, sel, reais);
     desenha(); resumo();
   });

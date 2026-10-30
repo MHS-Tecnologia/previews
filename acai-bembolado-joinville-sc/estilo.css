@@ -50,7 +50,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .menu-btn { display: none; min-height: 44px; min-width: 44px; padding: 0 16px; background: transparent; color: inherit; border: 2px solid rgba(255, 255, 255, .5); border-radius: 8px; font: 600 1rem var(--corpo); cursor: pointer; }
 
 /* buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 999px; font-weight: 800; font-size: 1.0625rem; text-decoration: none; border: 0; cursor: pointer; transition: transform .15s ease; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 28px; border-radius: 999px; font-family: inherit; font-weight: 800; font-size: 1.0625rem; text-decoration: none; border: 0; cursor: pointer; transition: transform .15s ease; }
 .btn svg { width: 22px; height: 22px; flex: none; }
 .btn:hover { transform: translateY(-2px); }
 .btn-amarelo { background: var(--amarelo); color: var(--acai-fundo); }
@@ -374,10 +374,12 @@ details.adicionais summary { display: flex; align-items: center; min-height: 52p
   .foto-faixa figure:nth-child(3) { display: none; }
   .montador { grid-template-columns: 1fr; }
   .painel { top: 0; z-index: 9; display: grid; grid-template-columns: 76px 1fr; gap: 0 14px; align-items: center; padding: 10px 16px; border-radius: 0 0 20px 20px; margin-inline: calc(var(--gutter) * -1); }
-  .painel .copo-svg { width: 76px; height: 96px; margin: 0; }
+  .painel .copo-svg { grid-row: span 2; width: 76px; height: 96px; margin: 0; }
+  .painel .na-sacola { grid-column: 2; margin-top: 2px; font-size: .875rem; line-height: 1.3; white-space: nowrap; }
+  .montador .acoes .btn { width: 100%; }
   .painel .resumo, .painel .nota, .painel .btn { display: none; }
   .painel .total { margin: 0; padding: 0; border: 0; }
-  .nota-m { display: block; margin-top: -12px; }
+  .nota-m { display: block; margin-top: 12px; }
   .tamanhos { grid-template-columns: repeat(2, 1fr); }
   .adi-lista { grid-template-columns: 1fr; }
   .rodape .grade { grid-template-columns: 1fr; }
