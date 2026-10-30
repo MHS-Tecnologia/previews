@@ -9,6 +9,10 @@
     var inicial = cta.getAttribute("href");
     var atual = null;
     var num = inicial.split("?")[0];
+    var fixo = document.querySelector(".fixo");
+    var fixoT = fixo && fixo.querySelector(".fixo-t");
+    var fixoHref = fixo && fixo.getAttribute("href");
+    var fixoTxt = fixoT && fixoT.textContent;
     document.querySelectorAll(".vidro").forEach(function (v) {
       v.addEventListener("click", function () {
         if (atual) atual.setAttribute("aria-pressed", "false");
@@ -19,6 +23,10 @@
           txt.textContent = txt.dataset.original;
           cta.href = inicial;
           ctaT.textContent = "Pedir a tabela no WhatsApp";
+          if (fixo) {
+            fixo.href = fixoHref;
+            fixoT.textContent = fixoTxt;
+          }
           return;
         }
         atual = v;
@@ -33,6 +41,10 @@
         txt.appendChild(document.createTextNode(v.dataset.peso + ", com o rótulo Amo."));
         cta.href = num + "?text=" + encodeURIComponent("Olá! Quero o preço de " + v.dataset.nome + " (" + v.dataset.peso + ").");
         ctaT.textContent = "Pedir o preço deste vidro";
+        if (fixo) {
+          fixo.href = cta.href;
+          fixoT.textContent = "Pedir preço: " + v.dataset.nome;
+        }
       });
     });
     txt.dataset.original = txt.textContent;
