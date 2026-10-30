@@ -40,7 +40,7 @@ figure { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--azul-fundo); outline-offset: 3px; border-radius: 2px; }
-.toalha :focus-visible, .ev-home :focus-visible, .pag-vermelha :focus-visible, .pag-azul :focus-visible, .rodape :focus-visible, .aviso :focus-visible, .faixa :focus-visible {
+.fecho :focus-visible, .toalha :focus-visible, .ev-home :focus-visible, .pag-vermelha :focus-visible, .pag-azul :focus-visible, .rodape :focus-visible, .aviso :focus-visible, .faixa :focus-visible {
   outline-color: var(--branco);
 }
 
@@ -185,7 +185,7 @@ p { margin: 0; }
 .balcao {
   margin-top: clamp(32px, 5vw, 56px);
   display: grid;
-  grid-template-columns: 2.1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.45fr 1fr 1fr;
   gap: 8px;
   padding-inline: 8px;
   height: clamp(360px, 40vw, 600px);
@@ -197,9 +197,15 @@ p { margin: 0; }
 .jeitos { padding-block: clamp(56px, 8vw, 96px); }
 .jeitos-in { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px clamp(32px, 6vw, 80px); }
 .jeitos h2 { grid-column: 1 / -1; color: var(--azul-fundo); }
-.jeito { border-top: 6px solid var(--amarelo); padding-top: 16px; }
-.jeito h3 { font-family: 'Shrikhand', Georgia, serif; font-weight: 400; font-synthesis: none; color: var(--vermelho); font-size: clamp(1.7rem, 3.2vw, 2.75rem); line-height: 1.1; }
+.jeito { border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+.jeito img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.jeito-txt { padding: clamp(20px, 3vw, 32px); flex: 1; }
+.jeito h3 { font-family: 'Shrikhand', Georgia, serif; font-weight: 400; font-synthesis: none; font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: 1.1; }
 .jeito p { font-size: clamp(1.1rem, 1.5vw, 1.3rem); margin-top: 8px; }
+.jeito-livre { background: var(--amarelo); color: var(--azul-fundo); }
+.jeito-livre img { object-position: center 62%; }
+.jeito-quilo { background: var(--azul-fundo); color: var(--branco); }
+.jeito-quilo h3 { color: var(--amarelo); }
 .jeitos-pag { grid-column: 1 / -1; }
 
 /* Toalha vermelha: a foto das marmitas sangra no fundo */
@@ -281,12 +287,16 @@ p { margin: 0; }
 .compromisso h2 { grid-column: 1 / -1; }
 .compromisso p { margin-top: 6px; }
 
-.contato-cab { max-width: var(--largura); }
-.contato-cab p { margin-bottom: 0; }
-.contato-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 22px; }
+.contato-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
 .contato-grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px clamp(32px, 6vw, 88px); padding-block: clamp(44px, 6vw, 80px); }
 .contato-grade h2 { font-size: clamp(1.75rem, 2.8vw, 2.3rem); }
 .contato-grade p { margin-top: 8px; }
+
+/* Fechamento das páginas internas */
+.fecho { background: var(--vermelho); color: var(--branco); }
+.fecho-in { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px 48px; padding-block: clamp(36px, 5vw, 60px); }
+.fecho h2 { color: var(--branco); }
+.fecho p { margin-top: 8px; font-size: 1.15rem; max-width: 36em; }
 
 /* Rodapé */
 .rodape { background: var(--azul-fundo); color: var(--branco); }
@@ -330,7 +340,6 @@ p { margin: 0; }
   .faixa ul { display: grid; gap: 4px; }
 
   .tamanhos, .buffet-cab, .jeitos-in, .toalha, .salao, .ev-home-in, .pag-cab-in, .duas, .contato-grade, .tipos, .perguntas { grid-template-columns: minmax(0, 1fr); }
-  .jeitos-in { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px; }
   .como ol, .linha ol { grid-template-columns: minmax(0, 1fr); }
   .compromisso { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .balcao {
@@ -348,7 +357,7 @@ p { margin: 0; }
   .salao figure img { aspect-ratio: 4 / 3; }
   .duas-inv figure { order: 0; }
   .pag-cab figure.retrato { max-width: none; justify-self: stretch; }
-  .pag-cab figure.retrato img { aspect-ratio: 4 / 3; }
+  .pag-cab figure.retrato img { aspect-ratio: 4 / 3; object-position: center 60%; }
   .duas figure.retrato { max-width: none; }
   .duas figure.retrato img { aspect-ratio: 4 / 3; object-fit: cover; }
   .rodape-in ul { margin-left: 0; }
