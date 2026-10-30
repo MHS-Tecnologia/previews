@@ -66,10 +66,10 @@
   var chkLetras = raiz.querySelector('#com-letras')
   var boxLetras = raiz.querySelector('.letras')
   var txtLetras = raiz.querySelector('#frase')
-  var total = raiz.querySelector('.total b')
-  var resumo = raiz.querySelector('.total span')
+  var totais = raiz.querySelectorAll('.total b')
+  var resumos = raiz.querySelectorAll('.total span')
   var aviso = raiz.querySelector('.aviso-sabor')
-  var pedir = raiz.querySelector('.pedir')
+  var pedidos = raiz.querySelectorAll('.pedir')
   var mini = raiz.querySelector('.mini')
   var receber = raiz.querySelectorAll('input[name=receber]')
 
@@ -117,8 +117,8 @@
     mini.style.setProperty('--col', c.col)
     mini.style.setProperty('--lado', (58 / c.col) + 'px')
     var preco = chkLetras.checked ? c.letras : c.preco
-    total.textContent = 'R$ ' + preco
-    resumo.textContent = 'Caixa com ' + n + (chkLetras.checked ? ' e letras' : '')
+    ;[].forEach.call(totais, function (t) { t.textContent = 'R$ ' + preco })
+    ;[].forEach.call(resumos, function (r) { r.textContent = 'Caixa com ' + n + (chkLetras.checked ? ' e letras' : '') })
     aviso.textContent = lista.length >= c.max ? 'Pronto: a caixa de ' + n + ' leva até ' + c.max + ' sabores.' : ''
     var msg = 'Oi! Quero uma caixa com ' + n + ' brigadeiros gourmets'
     if (lista.length) msg += ', sabores: ' + lista.join(', ')
@@ -127,7 +127,7 @@
     var retirada = receber[1].checked
     msg += '. Total R$ ' + preco + (retirada ? '. Vou retirar no Costa e Silva.' : ', mais a taxa de entrega. Quero receber por entrega.')
     msg = msg.replace(/['"]/g, ' ') + ' Pode me confirmar?'
-    pedir.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(msg)
+    ;[].forEach.call(pedidos, function (p) { p.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(msg) })
   }
   raiz.addEventListener('change', desenha)
   txtLetras.addEventListener('input', desenha)
