@@ -23,6 +23,7 @@
         }
         atual = v;
         v.setAttribute("aria-pressed", "true");
+        v.style.setProperty("--c", v.dataset.cor);
         placa.style.setProperty("--cor", v.dataset.cor);
         placa.style.setProperty("--letra", v.dataset.tinta);
         txt.textContent = "";
