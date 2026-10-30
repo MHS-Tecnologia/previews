@@ -67,7 +67,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .entrega .medida { width: 100%; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); padding-block: 40px; }
 .cartao-abertura { grid-column: 7 / 13; }
 .mao { position: absolute; left: 0; bottom: 0; height: 104%; animation: entregar .9s cubic-bezier(.2, .8, .25, 1) both; }
-.mao img { height: 100%; width: auto; max-width: none; }
+.mao img { height: 100%; width: auto; max-width: none; filter: drop-shadow(0 1px 5px rgb(15 61 42 / .28)); }
 @keyframes entregar { from { transform: translateX(-12%); } to { transform: none; } }
 .fita { height: 14px; background: repeating-linear-gradient(90deg, var(--papel) 0 18px, #fff 18px 32px); }
 
@@ -84,6 +84,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cartao .continua { margin-top: 8px; }
 .cartao .acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin-top: 22px; }
 .cartao-abertura::before { content: ""; position: absolute; z-index: -1; right: calc(100% - 26px); top: 50%; width: 190px; height: 90px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 90' fill='none'%3E%3Cpath d='M190 8C140 8 120 78 70 78 42 78 20 66 2 52' stroke='%23c2146b' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat; }
+
+
+.entrega-interna .cartao-abertura::before { width: 250px; height: 118px; }
+.entrega-interna .mao { height: max(110%, 61vw); }
 
 /* ---------- prova: a história da loja ---------- */
 .prova { background: var(--floresta); color: #fff; padding-block: 18px; }
@@ -197,7 +201,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .entrega .medida { order: 1; display: block; padding-block: 14px 0; position: relative; z-index: 2; }
   .cartao-abertura::before { display: none; }
   .cartao .acoes .botao { width: 100%; padding-inline: 12px; font-size: 1rem; white-space: nowrap; }
-  .mao { order: 2; position: relative; height: auto; width: 100%; margin-top: -44px; }
+  .mao, .entrega-interna .mao { order: 2; position: relative; height: auto; width: 100%; margin-top: -44px; }
   .mao img { width: 100%; height: auto; max-width: 100%; }
   .prova .medida { align-items: flex-start; }
   .prova-logo img { height: 58px; }
