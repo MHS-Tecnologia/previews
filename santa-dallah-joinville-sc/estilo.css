@@ -28,6 +28,8 @@ img { height: auto; }
 figure { margin: 0; }
 figcaption { margin-top: 10px; font-size: 1rem; color: var(--tinta-2); }
 h1, h2, h3 { font-family: var(--serif); font-weight: 900; margin: 0; line-height: 1.08; text-wrap: balance; }
+/* As ligaduras "sp" e "st" da Elsie têm laçadas que parecem defeito. */
+h1, h2, h3, blockquote, .rod-nome, .atelie-num { font-variant-ligatures: none; font-feature-settings: "liga" 0, "clig" 0, "dlig" 0, "hlig" 0, "calt" 0; }
 h2 { font-size: clamp(2.1rem, 3.7vw, 3.2rem); }
 h3 { font-size: 1.4rem; font-weight: 400; }
 p { margin: 0; max-width: 34em; }
@@ -166,7 +168,9 @@ a { color: inherit; }
 .g-cam { grid-column: 9 / span 4; align-self: center; justify-self: center; }
 .g-cam .camafeu { width: clamp(180px, 22vw, 280px); }
 
-.escuro { background: var(--anil-3); color: var(--glace); padding-block: clamp(56px, 7vw, 88px); margin-top: 8px; margin-bottom: clamp(40px, 6vw, 72px); }
+.escuro { background: var(--anil-3); color: var(--glace); padding-block: clamp(32px, 4vw, 56px) clamp(56px, 7vw, 88px); }
+/* Sem faixa clara em volta do bloco escuro: as guirlandas vizinhas usam o mesmo tom. */
+.topo-int:has(+ .escuro) .g-fundo, .escuro + .fecho .g-fundo { fill: var(--anil-3); }
 .escuro-grade { display: grid; grid-template-columns: minmax(0, 56fr) minmax(0, 44fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
 .escuro img { width: 100%; }
 .escuro p { margin: 14px 0 24px; }
@@ -178,7 +182,9 @@ a { color: inherit; }
 .passos li::before { content: counter(p); display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 14px; border-radius: 50%; background: var(--rosa); color: var(--anil-3); font: 900 1.5rem/1 var(--serif); }
 .passos h3 { font-weight: 900; }
 .passos p { margin-top: 8px; }
-.atelie { background: #eceaf5; padding-block: clamp(48px, 7vw, 80px); margin-bottom: clamp(32px, 5vw, 56px); }
+.atelie { background: #eceaf5; padding-block: clamp(48px, 7vw, 80px) clamp(32px, 4vw, 56px); }
+.atelie + .fecho .g-fundo { fill: #eceaf5; }
+.atelie .atelie-num { font: 900 clamp(2rem, 4vw, 3.2rem)/1.1 var(--serif); color: var(--framboesa); margin-top: 10px; }
 .atelie .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
 .atelie img { width: 100%; }
 .atelie p { margin-top: 14px; }
@@ -188,8 +194,9 @@ a { color: inherit; }
 .rodape .wrap { display: grid; grid-template-columns: 1.2fr .7fr 1.4fr; gap: 32px; }
 .rod-nome { font: 900 1.375rem/1.2 var(--serif); color: var(--glace); margin-bottom: 8px; }
 .rod-legal { margin-top: 14px; font-size: .875rem; }
-.rodape nav { display: grid; gap: 4px; align-content: start; }
-.rodape nav a { text-decoration: none; }
+.rodape nav { display: grid; align-content: start; }
+.rodape nav a { display: flex; align-items: center; min-height: 44px; text-decoration: none; }
+.rod-demo a { display: inline-flex; align-items: center; min-height: 44px; }
 .rodape nav a:hover { text-decoration: underline; }
 .rod-demo p + p { margin-top: 10px; }
 .rod-demo strong { color: var(--glace); font-weight: 500; }
