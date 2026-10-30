@@ -1,0 +1,186 @@
+/* Floricultura Floresta: demonstração. A ideia: a mão da florista entra pela
+   borda da tela com o buquê, e a etiqueta real da loja faz as legendas. */
+@font-face { font-family: "Gloock"; src: url("fonts/gloock.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Schibsted"; src: url("fonts/schibsted.woff2") format("woff2"); font-weight: 400 900; font-display: swap; }
+
+:root {
+  --floresta: #0f3d2a;
+  --musgo: #1c5a3e;
+  --papel: #c2146b;
+  --papel-escuro: #9c0f55;
+  --petala: #fce4ee;
+  --branco: #fffdfc;
+  --tinta: #13261c;
+  --girassol: #f7b51c;
+  --medida: 1200px;
+  --lateral: clamp(16px, 4vw, 40px);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--branco); color: var(--tinta); font: 400 1.0625rem/1.6 "Schibsted", system-ui, sans-serif; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: "Gloock", Georgia, serif; font-weight: 400; line-height: 1.08; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.75rem); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.25rem); }
+h3 { font-size: 1.5rem; }
+p { margin: 0; }
+a { color: inherit; }
+ul { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid var(--girassol); outline-offset: 2px; border-radius: 2px; }
+.pular { position: absolute; left: -999px; top: 0; background: var(--branco); padding: 12px 16px; z-index: 30; }
+.pular:focus { left: 8px; top: 8px; }
+.medida { max-width: var(--medida); margin-inline: auto; padding-inline: var(--lateral); }
+
+/* ---------- aviso + cabeçalho ---------- */
+.aviso { background: var(--floresta); color: #fff; font-size: .8125rem; line-height: 1.4; padding: 8px var(--lateral); text-align: center; }
+.aviso a { color: #fff; text-decoration: underline; text-underline-offset: 2px; display: inline-block; }
+.topo { background: var(--branco); position: relative; z-index: 20; }
+.topo .medida { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 76px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; min-height: 44px; }
+.marca img { height: 60px; width: auto; }
+.nav-larga { display: flex; align-items: center; gap: 4px; }
+.nav-larga a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; text-decoration: none; font-weight: 500; }
+.nav-larga a:hover { color: var(--papel); }
+.nav-larga a[aria-current="page"] { color: var(--papel); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.nav-larga a.botao { color: #fff; text-decoration: none; margin-left: 10px; padding: 0 20px; }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; display: flex; align-items: center; min-height: 44px; min-width: 44px; padding: 0 16px; border: 2px solid var(--floresta); border-radius: 22px; font-weight: 600; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { background: var(--floresta); color: #fff; }
+.menu nav { position: absolute; right: 0; top: calc(100% + 8px); width: min(280px, calc(100vw - 32px)); background: var(--branco); border: 2px solid var(--floresta); padding: 6px; }
+.menu nav a { display: flex; align-items: center; min-height: 48px; padding: 0 14px; text-decoration: none; font-weight: 500; }
+.menu nav a[aria-current="page"] { color: var(--papel); }
+
+/* ---------- botões ---------- */
+.botao { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 26px; background: var(--papel); color: #fff; font-weight: 700; text-decoration: none; transition: background-color .15s; }
+.botao:hover { background: var(--papel-escuro); }
+.nav-larga .botao, .topo .botao { min-height: 44px; }
+.botao svg { width: 20px; height: 20px; flex: none; fill: currentColor; }
+.botao-claro { background: var(--branco); color: var(--papel-escuro); }
+.botao-claro:hover { background: var(--petala); }
+.ligar { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; text-underline-offset: 3px; }
+.continua { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--papel-escuro); text-underline-offset: 4px; }
+
+/* ---------- abertura: a mão entrega o buquê ---------- */
+.entrega { position: relative; overflow: hidden; background: var(--floresta); color: #fff; min-height: min(calc(100svh - 118px), 780px); display: grid; align-items: center; }
+.entrega .medida { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; padding-block: 56px; }
+.entrega-texto { grid-column: 2; position: relative; z-index: 2; }
+.entrega h1 { margin-bottom: 20px; }
+.entrega p { font-size: 1.1875rem; max-width: 30em; }
+.entrega .acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 28px; }
+.entrega .endereco { margin-top: 20px; font-size: 1rem; color: #d7e6dc; }
+.mao { position: absolute; left: 0; top: 0; bottom: 0; width: 50%; overflow: hidden; background: #e9e2d6; }
+.mao img { width: 100%; height: 100%; object-fit: cover; object-position: 0 100%; transform-origin: 0 100%; animation: entregar .9s cubic-bezier(.2, .8, .25, 1) both; }
+
+.mao-flores img { object-position: 0 38%; }
+.foto-estreita { max-width: 420px; justify-self: center; width: 100%; }
+@keyframes entregar { from { transform: scale(1.07); } to { transform: none; } }
+.fita { height: 14px; background: repeating-linear-gradient(90deg, var(--papel) 0 18px, #fff 18px 32px); }
+
+/* ---------- etiqueta: a legenda é a etiqueta da loja ---------- */
+.etiqueta { position: absolute; left: 14px; bottom: 14px; max-width: calc(100% - 28px); background: var(--branco); color: var(--tinta); font-size: .9375rem; line-height: 1.35; padding: 10px 14px 10px 32px; border: 1px solid #e6b6cc; box-shadow: inset 0 0 0 3px var(--branco), inset 0 0 0 4px #e6b6cc; }
+.etiqueta::before { content: ""; position: absolute; left: 13px; top: 50%; width: 9px; height: 9px; margin-top: -5px; border-radius: 50%; background: var(--papel); }
+.foto { position: relative; margin: 0; }
+.foto img { width: 100%; }
+
+/* ---------- blocos ---------- */
+.bloco { padding-block: clamp(56px, 8vw, 104px); }
+.bloco-petala { background: var(--petala); }
+.bloco h2 { margin-bottom: 16px; }
+.dupla { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.dupla-inversa { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.texto p { max-width: 34em; }
+.texto p + p, .texto p + ul, .texto ul + p { margin-top: 14px; }
+.lista { margin-top: 18px; }
+.lista li { padding: 9px 0; border-bottom: 1px solid #0f3d2a33; font-weight: 500; }
+.lista li:last-child { border-bottom: 0; }
+
+/* ---------- cestas: sem foto real, as etiquetas seguram o bloco ---------- */
+.cestas { background: var(--papel); color: #fff; padding-block: clamp(56px, 8vw, 96px); overflow: hidden; }
+.cestas .dupla { align-items: start; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.cestas h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 16px; }
+.cestas .botao { margin-top: 24px; }
+.varal { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 34px; }
+.varal::before { content: ""; position: absolute; left: calc(-1 * var(--lateral)); right: calc(-1 * var(--lateral)); top: 12px; height: 4px; background: var(--branco); }
+.pendurada { position: relative; background: var(--branco); color: var(--tinta); padding: 34px 14px 20px; min-height: 180px; display: flex; align-items: flex-end; clip-path: polygon(22% 0, 78% 0, 100% 14%, 100% 100%, 0 100%, 0 14%); }
+.pendurada:nth-child(1) { transform: rotate(-2deg); transform-origin: 50% 0; }
+.pendurada:nth-child(3) { transform: rotate(2deg); transform-origin: 50% 0; }
+.pendurada::before { content: ""; position: absolute; left: 50%; top: 12px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--papel-escuro); }
+.pendurada h3 { font-size: clamp(1.0625rem, 1.9vw, 1.5rem); }
+
+/* ---------- novidade ---------- */
+.novidade { background: var(--floresta); color: #fff; padding-block: clamp(48px, 7vw, 88px); }
+.novidade h2 { font-size: clamp(2.25rem, 6vw, 4.5rem); max-width: 16em; }
+.novidade p { margin-top: 16px; max-width: 36em; font-size: 1.125rem; }
+
+/* ---------- fecho ---------- */
+.fecho { background: var(--petala); padding-block: clamp(56px, 8vw, 96px); text-align: center; }
+.montar + .fecho { background: var(--branco); }
+.fecho h2 { margin-bottom: 14px; }
+.fecho p { max-width: 32em; margin-inline: auto; }
+.fecho .acoes { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 22px; margin-top: 24px; }
+
+/* ---------- páginas internas ---------- */
+.entrega-interna { min-height: min(calc(100svh - 118px), 640px); }
+.grupos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); }
+.grupos .continua { margin-top: 6px; }
+.abertura-foto { background: var(--floresta); color: #fff; padding-block: 48px clamp(40px, 6vw, 72px); }
+.abertura-foto h1 { max-width: 13em; margin-bottom: 14px; }
+.abertura-foto p { max-width: 34em; font-size: 1.1875rem; }
+.abertura-foto .foto { margin-top: 32px; }
+.abertura-foto .acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 24px; }
+.passos { counter-reset: passo; display: grid; gap: 22px; margin-top: 8px; }
+.passos li { counter-increment: passo; display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 14px; align-items: start; }
+.passos li::before { content: counter(passo); font: 400 2.5rem/1 "Gloock", Georgia, serif; color: var(--papel); }
+.passos h2 { font-size: 1.5rem; margin-bottom: 4px; }
+.montar { background: var(--petala); padding-block: clamp(48px, 7vw, 88px); }
+.montar h2 { margin-bottom: 8px; }
+.escolha { margin-top: 24px; }
+.escolha h3 { font: 700 1rem/1.4 "Schibsted", system-ui, sans-serif; margin-bottom: 8px; }
+.opcoes { display: flex; flex-wrap: wrap; gap: 8px; }
+.opcoes button { min-height: 44px; padding: 0 18px; border-radius: 22px; border: 2px solid var(--floresta); background: transparent; color: var(--floresta); font: 600 1rem "Schibsted", system-ui, sans-serif; cursor: pointer; }
+.opcoes button[aria-pressed="true"] { background: var(--floresta); color: #fff; }
+.recado { background: var(--branco); padding: 16px 18px; border-left: 6px solid var(--papel); max-width: 34em; }
+.montar .botao { margin-top: 18px; }
+.montar .dupla { align-items: end; }
+.onde h2 { font-size: 2rem; margin-bottom: 10px; }
+.endereco-bloco { font-style: normal; }
+
+/* ---------- rodapé e barra fixa ---------- */
+.rodape { background: var(--tinta); color: #e9efeb; padding-block: 44px; font-size: .9375rem; }
+.rodape .medida { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+.rodape a { color: #fff; display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 3px; }
+.rodape h2 { font-size: 1.5rem; margin-bottom: 8px; color: #fff; }
+.rodape address { font-style: normal; }
+.barra { display: none; }
+
+@media (max-width: 880px) {
+  .nav-larga { display: none; }
+  .menu { display: block; }
+  .marca img { height: 52px; }
+  .topo .medida { min-height: 66px; }
+  .entrega { min-height: 0; display: block; }
+  .entrega .medida { display: block; padding-block: 28px 0; }
+  .entrega p { font-size: 1.0625rem; }
+  .entrega .acoes { margin-top: 20px; }
+  .entrega .acoes .botao { width: 100%; }
+  .mao { position: relative; width: 100%; aspect-ratio: 1 / 1.02; margin-top: 26px; }
+  .dupla, .dupla-inversa, .cestas .dupla { grid-template-columns: minmax(0, 1fr); }
+  .dupla-inversa .foto { order: 2; }
+  .grupos { grid-template-columns: minmax(0, 1fr); }
+  .rodape .medida { grid-template-columns: minmax(0, 1fr); }
+  .varal { gap: 8px; }
+  .pendurada { min-height: 150px; padding-inline: 8px; }
+  .pendurada h3 { font-size: .9375rem; }
+  .barra { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: var(--branco); box-shadow: 0 -1px 0 #0f3d2a33; transform: translateY(110%); transition: transform .2s; }
+  .barra.visivel { transform: none; }
+  .barra .botao { width: 100%; }
+  body { padding-bottom: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .mao img { animation: none; }
+  .barra, .botao { transition: none; }
+}
