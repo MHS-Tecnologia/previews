@@ -89,9 +89,9 @@ html:not(.js) .topo { flex-wrap: wrap; }
 .prateleira li { position: relative; }
 .prateleira li:has(.frente) { z-index: 2; }
 .vaga.atras { justify-content: flex-end; padding-right: 0; }
-.vaga.atras img { margin-right: -5%; max-width: 105%; }
+.vaga.atras img { max-width: 100%; }
 .vaga.frente { justify-content: flex-start; padding-left: 0; }
-.vaga.frente img { max-width: 88%; }
+.vaga.frente img { max-width: 92%; margin-left: -18%; }
 .vaga img { max-height: 100%; width: auto; object-fit: contain; object-position: bottom; filter: drop-shadow(0 8px 6px rgba(0, 0, 0, .45)); }
 .etiqueta { background: var(--maracuja); color: var(--cacau); font-weight: 700; font-size: 1rem; line-height: 1.15; min-height: 46px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px 8px; box-shadow: inset 0 3px 0 rgba(255, 255, 255, .35); }
 .prateleira li:nth-child(odd) .etiqueta { border-right: 1px solid rgba(59, 36, 23, .35); }
@@ -171,6 +171,9 @@ figcaption { font-size: .9375rem; font-weight: 600; padding-top: 6px; line-heigh
 .r2 { left: 15.5%; top: 43%; }
 .r3 { left: 86.5%; top: 68%; }
 .r4 { left: 87%; top: 90%; }
+@media (max-width: 860px) {
+  .r3, .r4 { left: auto; right: 12px; transform: translateY(-50%); }
+}
 .camadas-txt { padding: 30px var(--gut) 38px; }
 .camadas-txt h2 { font-size: clamp(1.875rem, 1.4rem + 2vw, 2.875rem); color: var(--maracuja); margin-bottom: 22px; }
 
