@@ -7,13 +7,40 @@
 // Barra fixa no celular, depois do primeiro botão de pedido.
 (function () {
   var barra = document.querySelector('.barra')
-  var alvo = document.querySelector('[data-cta-topo]')
+  var alvo = document.querySelector('[data-cta-topo], .cab-int .btn-wa, .cab-int')
+  var monte = document.getElementById('monte')
   if (!barra || !alvo || !('IntersectionObserver' in window)) return
+  var passou = false
+  var noMontador = false
+  function atualiza() {
+    // Dentro do montador quem pede é o resumo da caixa, não o pedido genérico.
+    var ver = passou && !noMontador
+    barra.classList.toggle('ver', ver)
+    barra.querySelector('a').tabIndex = ver ? 0 : -1
+  }
   new IntersectionObserver(function (e) {
-    var saiu = !e[0].isIntersecting && e[0].boundingClientRect.top < 0
-    barra.classList.toggle('ver', saiu)
-    barra.querySelector('a').tabIndex = saiu ? 0 : -1
+    passou = !e[0].isIntersecting && e[0].boundingClientRect.top < 0
+    atualiza()
   }).observe(alvo)
+  if (monte) {
+    new IntersectionObserver(function (e) {
+      noMontador = e[0].isIntersecting
+      atualiza()
+    }).observe(monte)
+  }
+})();
+
+// Cardápio: quem chega por um link de seção encontra a seção aberta.
+(function () {
+  function abre() {
+    var d = document.getElementById(location.hash.slice(1))
+    if (d && d.tagName === 'DETAILS') {
+      d.open = true
+      d.scrollIntoView()
+    }
+  }
+  abre()
+  addEventListener('hashchange', abre)
 })();
 
 // Monte sua caixa: as regras são as do cardápio publicado por eles.
@@ -43,6 +70,8 @@
   var resumo = raiz.querySelector('.total span')
   var aviso = raiz.querySelector('.aviso-sabor')
   var pedir = raiz.querySelector('.pedir')
+  var mini = raiz.querySelector('.mini')
+  var receber = raiz.querySelectorAll('input[name=receber]')
 
   function tamanho() {
     for (var i = 0; i < tamanhos.length; i++) if (tamanhos[i].checked) return +tamanhos[i].value
@@ -84,6 +113,9 @@
     }
     cel.innerHTML = html
     cel.style.setProperty('--lado', (cel.clientWidth / c.col) + 'px')
+    mini.innerHTML = html
+    mini.style.setProperty('--col', c.col)
+    mini.style.setProperty('--lado', (58 / c.col) + 'px')
     var preco = chkLetras.checked ? c.letras : c.preco
     total.textContent = 'R$ ' + preco
     resumo.textContent = 'Caixa com ' + n + (chkLetras.checked ? ' e letras' : '')
@@ -92,7 +124,9 @@
     if (lista.length) msg += ', sabores: ' + lista.join(', ')
     if (frase.trim()) msg += ', com as letras de chocolate: ' + frase.trim()
     else if (chkLetras.checked) msg += ', com letras de chocolate'
-    msg = msg.replace(/['"]/g, ' ') + '. Pode me confirmar?'
+    var retirada = receber[1].checked
+    msg += '. Total R$ ' + preco + (retirada ? '. Vou retirar no Costa e Silva.' : ', mais a taxa de entrega. Quero receber por entrega.')
+    msg = msg.replace(/['"]/g, ' ') + ' Pode me confirmar?'
     pedir.href = 'https://wa.me/' + NUM + '?text=' + encodeURIComponent(msg)
   }
   raiz.addEventListener('change', desenha)
