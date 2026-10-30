@@ -101,14 +101,14 @@ a { color: inherit; }
 .perto-seq figcaption { margin-top: 12px; font-size: .9375rem; color: #cdc9c5; }
 .perto-seq strong { display: block; font: italic 400 clamp(1.75rem, 3vw, 2.5rem)/1.15 var(--serif); font-variation-settings: "opsz" 18; color: #fff; }
 
-.prova .wrap { padding-block: clamp(56px, 8vw, 104px); }
-.prova p { font: 400 clamp(2.4rem, 6.4vw, 5.25rem)/1.06 var(--serif); letter-spacing: -.01em; max-width: 15em; text-wrap: balance; }
-.prova .link-fino { margin-top: 12px; }
+.perto .link-fino { margin-top: 28px; color: #fff; }
+.perto .link-fino:hover { color: var(--amarelo); }
 
 .fecho { background: var(--amarelo); }
 .fecho .wrap { padding-block: clamp(64px, 9vw, 120px); }
 .fecho h2 { font: 400 clamp(2.6rem, 8vw, 6.75rem)/1.02 var(--serif); letter-spacing: -.01em; max-width: 13em; text-wrap: balance; }
 .fecho p { margin-top: 20px; font-size: 1.1875rem; max-width: 32em; }
+.fecho .fecho-prova { margin: 0 0 14px; font-size: 1.0625rem; font-weight: 500; }
 .fecho .btn { margin-top: 30px; }
 
 /* Bodoni fica frágil em tamanho pequeno: o eixo óptico engrossa os fios. */
@@ -144,7 +144,7 @@ a { color: inherit; }
 .atalhos a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border: 1px solid var(--nanquim); text-decoration: none; font-weight: 500; }
 .atalhos a:hover { background: var(--nanquim); color: #fff; }
 .atalhos p { margin-top: 20px; color: var(--grafite); }
-.atalhos p a { display: inline; padding: 0; border: 0; text-decoration: underline; text-underline-offset: 3px; color: var(--nanquim); }
+.atalhos p a { padding: 0; border: 0; text-decoration: underline; text-underline-offset: 3px; color: var(--nanquim); }
 .atalhos p a:hover { background: none; color: var(--malagueta); }
 
 /* ---- rodapé ---- */
@@ -163,7 +163,7 @@ a { color: inherit; }
   body { padding-bottom: 72px; }
   .barra { display: block; }
   .tira .wrap { padding-inline: 0; }
-  .hero h1, .topo h1, .fecho h2, .perto h2, .prova p { font-variation-settings: "opsz" 20; }
+  .hero h1, .topo h1, .fecho h2, .perto h2 { font-variation-settings: "opsz" 20; }
   .cab .wrap { min-height: 72px; gap: 14px; }
   .marca img { width: 68px; }
   .cab .btn { display: none; }
