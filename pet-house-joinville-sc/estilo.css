@@ -1,0 +1,211 @@
+/* Pet House: cada seção é um cômodo, com a cor real do que aparece nas fotos:
+   parede pêssego, toalha branca, tapete rosa, banho azul, placa laranja. */
+@font-face { font-family: "Lilita One"; src: url(fonts/lilita.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Onest"; src: url(fonts/onest.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --parede: #f8c8a0;
+  --toalha: #fffdfb;
+  --tapete: #f6c4d4;
+  --banho: #bfe2f6;
+  --placa: #c2401a;
+  --placa-texto: #b83b16;
+  --tinta: #16315c;
+  --gutter: 16px;
+  --titulo: "Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+}
+@media (min-width: 720px) { :root { --gutter: 32px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--parede);
+  color: var(--tinta);
+  font: 400 1.0625rem/1.55 "Onest", system-ui, sans-serif;
+  overflow-x: clip;
+}
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: var(--titulo); font-weight: 400; line-height: 1.04; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(2.25rem, 5.2vw, 4rem); }
+h3 { font-size: 1.625rem; line-height: 1.15; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; border-radius: 6px; }
+.fim :focus-visible, .aviso :focus-visible { outline-color: #fff; }
+.wrap { width: 100%; max-width: 1240px; margin-inline: auto; padding-inline: var(--gutter); }
+.pular { position: absolute; left: -999px; top: 0; background: var(--tinta); color: #fff; padding: 12px 16px; z-index: 40; }
+.pular:focus { left: 8px; top: 8px; }
+
+/* Aviso */
+.aviso { background: var(--tinta); color: #fff; font-size: .8125rem; line-height: 1.4; text-align: center; padding: 7px var(--gutter); }
+.aviso a { color: #fff; text-decoration: underline; text-underline-offset: 2px; display: inline-block; padding-block: 13px; margin-block: -13px; }
+
+/* Cabeçalho */
+.cab .wrap { display: flex; align-items: center; gap: 8px; min-height: 68px; }
+.marca { display: inline-flex; align-items: center; gap: 8px; margin-right: auto; min-height: 44px; text-decoration: none; color: var(--placa-texto); font: 400 1.5625rem/1 var(--titulo); letter-spacing: .01em; white-space: nowrap; }
+.marca svg { width: 24px; height: 24px; flex: none; fill: currentColor; }
+.nav { display: flex; align-items: center; gap: 2px; }
+.nav a { white-space: nowrap; display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; font-weight: 600; font-size: 1rem; text-decoration: none; border-radius: 22px; }
+.nav a[aria-current="page"] { background: rgba(22, 49, 92, .1); }
+.nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.nav .so-largo { display: none; }
+.cab .cab-fone { display: none; }
+@media (min-width: 860px) {
+  .nav { gap: 6px; }
+  .nav a { padding: 0 14px; }
+  .nav .so-largo { display: inline-flex; }
+  .marca { font-size: 1.875rem; }
+  .marca svg { width: 30px; height: 30px; }
+  .cab .cab-fone { display: inline-flex; margin-left: 10px; }
+}
+
+/* Botões */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 12px 26px; border-radius: 28px; background: var(--tinta); color: #fff; font-weight: 700; font-size: 1.0625rem; line-height: 1.2; text-decoration: none; transition: transform .15s ease, background .15s ease; }
+.btn svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
+.btn:hover { background: #0f2547; transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn-curto { min-height: 44px; padding: 8px 18px; font-size: 1rem; }
+.btn-branco { background: #fff; color: var(--tinta); }
+.btn-branco:hover { background: var(--banho); }
+.fone { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-underline-offset: 4px; }
+.seta { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-top: 24px; }
+
+/* Herói: a parede, a toalha e o yorkie sentado nela */
+.heroi { position: relative; display: flex; flex-direction: column; }
+.heroi .wrap { position: relative; flex: 1; display: grid; }
+.heroi-texto { position: relative; z-index: 2; padding-top: 6px; }
+.heroi h1 { font-size: clamp(2.875rem, 12.4vw, 3.25rem); line-height: 1; color: var(--tinta); }
+.heroi-texto > p { margin-top: 12px; font-size: 1.0625rem; max-width: 34em; }
+.heroi .acoes { margin-top: 16px; }
+.cao { position: relative; z-index: 3; justify-self: center; width: min(70vw, 276px); margin-top: 4px; margin-bottom: -30px; cursor: pointer; }
+.cao::before { content: ""; position: absolute; left: -3%; right: -3%; bottom: -3%; height: 12%; background: radial-gradient(closest-side, rgba(22, 49, 92, .22), transparent); }
+.cao > img:first-child { position: relative; width: 100%; }
+.laco { position: absolute; }
+.laco-e { left: var(--e-x); top: var(--e-y); width: var(--e-l); transform-origin: 85% 90%; }
+.laco-d { left: var(--d-x); top: var(--d-y); width: var(--d-l); transform-origin: 15% 90%; }
+.cao { --e-x: 32.76%; --e-y: 2.1%; --e-l: 18.44%; --d-x: 55.7%; --d-y: 2.68%; --d-l: 13.8%; }
+.toalha { position: relative; z-index: 2; background: var(--toalha); text-align: center; padding: 42px var(--gutter) 6px; font-weight: 600; font-size: .9375rem; }
+
+/* O festão de toalha: a borda que passa de um cômodo para o outro */
+.festao { position: relative; }
+.festao::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -15px; height: 16px;
+  background: radial-gradient(circle at 16px 16px, var(--cor) 15.5px, transparent 16px) 0 0 / 32px 16px repeat-x;
+}
+.toalha.festao { --cor: var(--toalha); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .cao > img:first-child { animation: senta .55s cubic-bezier(.2, .9, .3, 1.15) both; }
+  .laco { animation: abana .7s ease-in-out .5s 1 both; }
+  .laco-d { animation-delay: .6s; }
+  .cao.abana .laco { animation: abana2 .7s ease-in-out 1 both; }
+  @keyframes senta { from { transform: translateY(26px); } to { transform: none; } }
+  @keyframes abana { 0%, 100% { rotate: 0deg; } 25% { rotate: -9deg; } 55% { rotate: 7deg; } 80% { rotate: -3deg; } }
+  @keyframes abana2 { 0%, 100% { rotate: 0deg; } 25% { rotate: 9deg; } 55% { rotate: -7deg; } 80% { rotate: 3deg; } }
+}
+
+@media (min-width: 900px) {
+  .heroi { min-height: calc(100svh - 104px); }
+  .heroi .wrap { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: center; column-gap: 32px; }
+  .heroi-texto { padding: 12px 0 96px; }
+  .heroi h1 { font-size: clamp(4.25rem, 7.4vw, 6.75rem); line-height: .98; }
+  .heroi-texto > p { font-size: 1.25rem; margin-top: 22px; }
+  .heroi .acoes { margin-top: 28px; }
+  .cao { align-self: end; width: min(100%, 540px, 64svh); margin: 0 0 -44px; }
+  .toalha { font-size: 1.125rem; text-align: left; padding: 18px max(var(--gutter), calc((100% - 1240px) / 2 + var(--gutter))) 10px; }
+}
+
+/* Toalha: tosa dos pequenos */
+.quarto { background: var(--toalha); padding: 56px 0 72px; }
+.tosa { display: grid; gap: 40px; align-items: end; }
+.tapete { position: relative; background: var(--tapete); border-radius: 36px; margin-top: 86px; padding: 0 24px; height: 340px; display: flex; justify-content: center; align-items: flex-end; }
+.tapete img { width: 296px; max-width: 100%; margin-bottom: 18px; }
+.tosa p { margin-top: 16px; max-width: 34em; }
+.legenda { margin-top: 12px; font-size: .9375rem; }
+@media (min-width: 900px) {
+  .quarto { padding: 96px 0 112px; }
+  .tosa { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 72px; align-items: center; }
+  .tapete { height: 460px; margin-top: 110px; }
+  .tapete img { width: 380px; margin-bottom: 24px; }
+  .tosa p { font-size: 1.1875rem; }
+}
+
+/* Banho: gatos */
+.banho { --cor: var(--banho); background: var(--banho); padding: 48px 0 64px; }
+.gato { display: grid; gap: 32px; align-items: center; }
+.banheira { margin: 0; }
+.banheira img { width: 100%; max-width: 640px; border-radius: 40px; border: 8px solid #fff; }
+.gato p { margin-top: 16px; max-width: 34em; }
+@media (min-width: 900px) {
+  .banho { padding: 84px 0 104px; }
+  .gato { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; }
+  .gato p { font-size: 1.1875rem; }
+}
+
+/* Parede: o resto da casa */
+.mais { --cor: var(--parede); background: var(--parede); padding: 48px 0 60px; }
+.mais h2 { margin-bottom: 20px; }
+.linhas { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--tinta); }
+.linhas li { display: grid; gap: 4px 32px; padding: 20px 0; border-bottom: 2px solid var(--tinta); }
+.linhas .seta { justify-self: start; }
+@media (min-width: 760px) {
+  .mais { padding: 80px 0 96px; }
+  .mais h2 { margin-bottom: 32px; }
+  .linhas li { grid-template-columns: 15rem minmax(0, 1fr) auto; align-items: center; padding: 24px 0; }
+}
+
+/* Páginas internas */
+.topo { padding: 22px 0 46px; }
+.topo h1 { font-size: clamp(2.75rem, 7.4vw, 5.5rem); line-height: 1; }
+.topo p { margin-top: 16px; max-width: 38em; font-size: 1.125rem; }
+.dupla { display: grid; gap: 28px; align-items: center; }
+.dupla + .dupla { margin-top: 56px; }
+.dupla figure { margin: 0; }
+.dupla img { border-radius: 28px; width: 100%; }
+.dupla p { margin-top: 14px; max-width: 34em; }
+.rosa { background: var(--tapete); --cor: var(--tapete); }
+.rosa.quarto, .azul.quarto { padding: 48px 0 64px; }
+.azul { background: var(--banho); --cor: var(--banho); }
+.mapa-texto { font-style: normal; font-size: 1.1875rem; font-weight: 600; }
+.copiar { font: inherit; font-weight: 700; color: var(--tinta); background: none; border: 2px solid var(--tinta); border-radius: 24px; min-height: 44px; padding: 6px 18px; cursor: pointer; margin-top: 12px; }
+.copiar:hover { background: rgba(22, 49, 92, .08); }
+.semana { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; max-width: 420px; }
+.semana li { text-align: center; padding: 10px 0; border-radius: 10px; font-weight: 700; font-size: .9375rem; color: var(--tinta); background: rgba(22, 49, 92, .08); }
+.semana .aberto { background: var(--tinta); color: #fff; }
+@media (min-width: 900px) {
+  .topo { padding: 40px 0 72px; }
+  .dupla { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; }
+  .dupla.inverte figure { order: 2; }
+  .dupla + .dupla { margin-top: 88px; }
+  .rosa.quarto, .azul.quarto { padding: 88px 0 104px; }
+  .fig-estreita { max-width: 480px; justify-self: end; }
+  .fig-media { max-width: 560px; }
+  .fig-fachada { max-width: 480px; }
+}
+
+/* Fim de página: a placa */
+.fim { --cor: var(--placa); background: var(--placa); color: #fff; padding: 52px 0 60px; }
+.fim h2 { color: #fff; font-size: clamp(2.5rem, 7vw, 5rem); }
+.fim p { margin-top: 14px; font-size: 1.125rem; max-width: 34em; }
+@media (min-width: 900px) { .fim { padding: 84px 0 96px; } }
+
+/* Rodapé */
+.rodape { background: var(--tinta); color: #fff; padding: 32px 0 36px; font-size: .9375rem; }
+.rodape .wrap { display: grid; gap: 18px; }
+.rodape p + p { margin-top: 4px; }
+.rodape a { color: #fff; display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 3px; }
+.rodape strong { font-family: var(--titulo); font-weight: 400; font-size: 1.25rem; }
+@media (min-width: 760px) { .rodape .wrap { grid-template-columns: 1fr 1fr; gap: 40px; } }
+
+/* Barra fixa no celular, depois do herói */
+.fixa { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: 8px var(--gutter) calc(8px + env(safe-area-inset-bottom)); background: var(--toalha); box-shadow: 0 -2px 0 var(--tinta); transform: translateY(110%); transition: transform .2s ease; visibility: hidden; }
+.fixa.ligada { transform: none; visibility: visible; }
+.fixa .btn { width: 100%; }
+@media (min-width: 860px) { .fixa { display: none; } }
+@media (max-width: 859.98px) { .rodape { padding-bottom: 96px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
