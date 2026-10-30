@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#15233d">
+<title>Meer Electric, electricians in Alpharetta, GA since 1984</title>
+<meta name="description" content="Family-owned electricians serving Alpharetta, Roswell and North Atlanta since 1984.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/caprasimo.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
+<link rel="preload" as="image" href="img/crew-1400.webp" imagesrcset="img/crew-640.webp 640w, img/crew-1000.webp 1000w, img/crew-1400.webp 1400w" imagesizes="(max-width: 860px) 100vw, 1280px" fetchpriority="high">
+<style>
+@font-face{font-family:Caprasimo;font-weight:400;font-display:swap;src:url(fonts/caprasimo.woff2) format("woff2")}
+@font-face{font-family:Hanken;font-weight:100 900;font-display:swap;src:url(fonts/hanken.woff2) format("woff2")}
+@font-face{font-family:"Patrick Hand";font-weight:400;font-display:swap;src:url(fonts/patrickhand.woff2) format("woff2")}
+/* Truck white, Meer lettering red, the crew's navy polos, panel enamel, breaker black, the Electric Man's yellow shoes. */
+:root{--white:#fff;--red:#b3263a;--red-d:#8f1b2d;--navy:#15233d;--navy-2:#22345a;--enamel:#d9dcdb;--enamel-2:#c4c9c8;--enamel-3:#eef0ef;--black:#202226;--yellow:#ffd21e;--ink:#1c2433;--mute:#505a6b;--pad:clamp(1rem,4vw,2.5rem);--max:80rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--white);color:var(--ink);font:400 1.0625rem/1.6 Hanken,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;box-shadow:0 0 0 3px var(--yellow)}
+h1,h2,h3{font-family:Caprasimo,Georgia,serif;font-weight:400;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(2rem,4.2vw,3.25rem);color:var(--navy)}
+h3{font-size:1.45rem;color:var(--navy)}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.demo{background:var(--navy);color:#fff;font-size:.8125rem;line-height:1.35;padding:.35rem var(--pad);text-align:center}
+.top{background:#fff;border-bottom:1px solid var(--enamel)}
+.top-in{display:flex;align-items:center;gap:1.5rem;min-height:5rem}
+.logo img{height:4.25rem;width:auto}
+.nav{display:flex;gap:1.75rem;margin-left:auto;font-weight:600}
+.nav a{text-decoration:none;padding:.5rem 0;border-bottom:3px solid transparent}
+.nav a:hover,.nav a[aria-current]{border-color:var(--red)}
+.top-call{background:var(--red);color:#fff;font-weight:800;text-decoration:none;padding:.6rem 1rem;border-radius:4px;white-space:nowrap}
+.top-call:hover{background:var(--red-d)}
+.menu{display:none}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.5rem;padding:.75rem 1.5rem;border-radius:4px;font-weight:800;font-size:1.125rem;text-decoration:none;transition:background-color .15s}
+.btn svg{width:1.3em;height:1.3em;fill:currentColor;flex:none}
+.call{background:var(--red);color:#fff}
+.call:hover{background:var(--red-d)}
+.ghost{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+.ghost:hover{background:var(--navy);color:#fff}
+.acts{display:flex;flex-wrap:wrap;gap:.75rem}
+/* Home hero: fills the first screen, so the crew photo meets the fold. */
+.hero{display:flex;flex-direction:column;min-height:calc(100svh - 6.9rem);max-height:62rem}
+.hero-in{width:100%;display:grid;grid-template-columns:minmax(0,1fr) 8.5rem 25rem;gap:0 1rem;align-items:end;padding-block:clamp(1.25rem,3vw,2.25rem) 0}
+.hero h1{color:var(--red);font-size:clamp(2.6rem,6.1vw,5.6rem);line-height:1.02;padding-bottom:1.5rem}
+.hero-man{align-self:end;margin-bottom:-1.1rem;position:relative;z-index:1}
+.hero-call{padding-bottom:1.5rem}
+.hero-call p{font-size:1.125rem;line-height:1.45;margin-bottom:.9rem}
+.hero-call .call{width:100%;min-height:4rem;font-size:1.5rem}
+.hero-photo{flex:1 1 0;width:100%;min-height:15rem;display:flex}
+.hero-photo .wrap{width:100%;position:relative}
+.hero-photo img{position:absolute;inset:0 var(--pad);width:calc(100% - 2*var(--pad));height:100%;object-fit:cover;object-position:50% 45%}
+.facts{background:var(--navy);color:#fff}
+.facts ul{list-style:none;padding:1.1rem var(--pad);margin:0 auto;max-width:var(--max);display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem 2rem;font-weight:700}
+.sec{padding-block:clamp(3rem,7vw,5.5rem)}
+.shade{background:var(--enamel-3)}
+.dark{background:var(--navy);color:#fff}
+.dark h2{color:#fff}
+.prose>*+*{margin-top:1rem}
+.prose{max-width:38rem}
+.prose h3{margin-top:1.75rem}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.split.flip figure{order:2}
+.split img,.head img{width:100%;border-radius:4px}
+.split img{max-height:34rem;object-fit:cover}
+/* The breaker panel: the one thing on the site that moves. */
+.pan-sec{background:var(--enamel-3)}
+.pan-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.25rem clamp(2rem,5vw,4.5rem);align-items:center}
+.pan-grid .panel{grid-row:span 2}
+.pan-grid figure img{width:100%;border-radius:4px}
+.panel{position:relative;background:linear-gradient(180deg,#dfe2e1,var(--enamel));border:1px solid #aeb4b3;border-radius:6px;padding:2rem clamp(.75rem,2.5vw,2rem);box-shadow:0 1px 0 #fff inset,0 18px 30px -22px rgba(21,35,61,.7)}
+.screw{position:absolute;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#8d9493 75%);box-shadow:0 0 0 1px #7f8685}
+.screw::after{content:"";position:absolute;left:2px;right:2px;top:5px;height:2px;background:#5d6463;transform:rotate(35deg)}
+.screw.a{left:10px;top:10px}.screw.b{right:10px;top:10px}.screw.c{left:10px;bottom:10px}.screw.d{right:10px;bottom:10px}
+.brk{position:relative;display:block;flex:none;width:3.9rem;height:2.1rem;background:var(--black);border-radius:3px;box-shadow:inset 0 0 0 2px #3b3e44}
+.brk i{position:absolute;left:5px;top:5px;bottom:5px;width:1.7rem;background:#50545b;border-radius:2px;box-shadow:inset 0 1px 0 #7a7f88;transition:transform .16s cubic-bezier(.3,1.7,.5,1),background-color .16s}
+.on .brk i,.brk.on i{transform:translateX(1.45rem);background:var(--red);box-shadow:inset 0 1px 0 #e4596e}
+.main{display:flex;align-items:center;justify-content:center;gap:1rem;min-height:4.25rem;padding:.6rem 1rem;margin-bottom:1rem;background:#fff;border-radius:3px;text-decoration:none;font:400 1.4rem/1.2 "Patrick Hand",cursive;box-shadow:0 0 0 1px var(--enamel-2)}
+.main b{font-weight:400;color:var(--red);margin-right:.35rem}
+.brk.big{width:5rem;height:2.6rem}
+.brk.big i{width:2.3rem}
+.on .brk.big i{transform:translateX(1.75rem)}
+.ckts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem 0;position:relative}
+.ckts::before{content:"";position:absolute;left:50%;top:-.25rem;bottom:-.25rem;width:.6rem;margin-left:-.3rem;background:linear-gradient(90deg,#b98a52,#e6c08f 50%,#b98a52);border-radius:2px}
+.ckt{display:flex;align-items:center;justify-content:space-between;gap:.5rem;min-height:3.5rem;text-decoration:none;font:400 1.3125rem/1.1 "Patrick Hand",cursive;color:var(--ink)}
+.ckt.odd{padding-right:1.1rem}
+.ckt.even{flex-direction:row-reverse;padding-left:1.1rem}
+.ckt-t{flex:1;min-width:0;display:flex;align-items:center;gap:.5rem;background:#fff;border-radius:2px;padding:.45rem .6rem;min-height:2.9rem;box-shadow:0 0 0 1px var(--enamel-2);transition:background-color .12s}
+.ckt-t b{font-weight:400;color:var(--red);min-width:.8em}
+.ckt:hover .ckt-t,.main:hover{background:var(--yellow)}
+.ckt:active .brk i{transform:none;background:#50545b}
+.ckt.even .brk{transform:scaleX(-1)}
+/* Commission */
+.comm{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.comm p{margin-top:1rem;max-width:36rem}
+.comm img{width:100%;border-radius:4px}
+.tale{background:#fff;color:var(--ink);border-radius:4px;padding:clamp(1.25rem,3vw,2rem)}
+.tale h3{font-size:1.25rem;margin-bottom:.75rem}
+.tale dl{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:0 0 1rem}
+.tale dt{font-size:.9375rem;font-weight:700;color:var(--mute)}
+.tale dd{margin:0;font:400 clamp(2rem,3.6vw,2.75rem)/1.1 Caprasimo,serif;color:var(--navy)}
+.tale dd.good{color:var(--red)}
+.tale footer{font-weight:700;margin-top:.75rem}
+/* Work */
+.work-h{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:2rem}
+.work{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+.work a{text-decoration:none;font-weight:700;display:block}
+.work img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.work span{display:block;margin-top:.5rem}
+.work a:hover span{color:var(--red);text-decoration:underline}
+.work figure{height:clamp(14rem,24vw,20rem)}
+.w1{grid-column:span 7}.w2{grid-column:span 5}.w3,.w4,.w5{grid-column:span 4}
+/* Then and now */
+.then{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;align-items:start}
+.then figcaption,.shots figcaption{font-size:.9375rem;color:var(--mute);margin-top:.5rem}
+.then img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.hist-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem);margin-top:2rem}
+.q p{font-size:1.1875rem;line-height:1.5}
+.q footer{margin-top:.6rem;font-weight:700;color:var(--mute);font-size:.9375rem}
+.link{font-weight:700;color:var(--red-d)}
+.close{background:var(--enamel);border-top:1px solid var(--enamel-2);overflow:hidden}
+.close-in{display:grid;grid-template-columns:13rem minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:end;padding-top:2.5rem}
+.close .man{width:100%;margin-bottom:-.6rem}
+.close-in>div{padding-bottom:2.75rem}
+.close p{margin-block:.6rem 1.1rem;max-width:40rem}
+.foot{background:var(--navy);color:#fff;font-size:1rem}
+.foot-in{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2rem;padding-block:3rem 2rem}
+.foot h2{font:700 1rem/1.3 Hanken,sans-serif;color:#fff;margin-bottom:.5rem}
+.foot p+p{margin-top:.6rem}
+.plate{display:inline-block;background:#fff;padding:.5rem .75rem;border-radius:4px;margin-bottom:.75rem}
+.plate img{height:3.5rem;width:auto}
+.foot-links a{display:block;padding:.1rem 0}
+.foot a{text-decoration-color:rgba(255,255,255,.45)}
+.foot-note{border-top:1px solid rgba(255,255,255,.25);padding-block:1rem 1.25rem;font-size:.875rem}
+.sticky{display:none}
+/* Inner pages */
+.head{padding-block:clamp(1.5rem,4vw,3.5rem)}
+.head-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(1.5rem,5vw,4rem);align-items:center}
+.head h1{color:var(--red);font-size:clamp(2.4rem,4.8vw,4.25rem)}
+.lead{font-size:1.1875rem;margin-block:1rem 1.4rem;max-width:36rem}
+.head img{aspect-ratio:3/2;object-fit:cover}
+.ticks{list-style:none;padding:0}
+.ticks li{position:relative;padding-left:1.5rem;margin-top:.45rem}
+.ticks li::before{content:"";position:absolute;left:0;top:.45em;width:.8rem;height:.55rem;background:var(--red);clip-path:polygon(0 0,62% 0,38% 42%,100% 42%,30% 100%,44% 56%,0 56%)}
+.cols2{columns:2;column-gap:2.5rem}
+.cols2 li{break-inside:avoid}
+.shots{display:grid;gap:1.25rem;margin-top:2rem}
+.shots.c2{grid-template-columns:repeat(2,1fr)}.shots.c3{grid-template-columns:repeat(3,1fr)}.shots.c4{grid-template-columns:repeat(4,1fr)}
+.shots img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem;margin-top:2rem}
+.cards img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;margin-bottom:.75rem}
+.cards p{margin-top:.35rem}
+.steps{list-style:none;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem;margin-top:2rem}
+.steps li{counter-increment:s;border-top:3px solid var(--red);padding-top:.75rem}
+.steps li::before{content:counter(s);font:400 2rem/1 Caprasimo,serif;color:var(--red);display:block;margin-bottom:.4rem}
+.line{list-style:none;padding:0;margin-top:2rem;display:grid;gap:0}
+.line li{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:1.5rem;padding:1rem 0;border-top:1px solid var(--enamel-2)}
+.line b{font:400 1.5rem/1.2 Caprasimo,serif;color:var(--red)}
+.area{max-width:46rem;font-size:1.125rem}
+.rev-all{columns:3;column-gap:2.5rem;margin-top:2rem}
+.rev-all .q{break-inside:avoid;padding-bottom:2rem}
+.big-tel{font:400 clamp(2.2rem,6vw,4rem)/1.1 Caprasimo,serif;color:var(--red);text-decoration:none}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.contact-grid h2{font-size:1.45rem;margin-bottom:.4rem}
+@media (max-width:1100px){.hero-in{grid-template-columns:minmax(0,1fr) 21rem}.hero-man{display:none}.nav{gap:1.1rem}}
+@media (max-width:860px){
+body{padding-bottom:4.25rem}
+.top-in{min-height:4rem;gap:.6rem}
+.logo img{height:3.1rem}
+.nav{display:none}
+.top-call{margin-left:auto;padding:.5rem .7rem}
+.menu{display:block;position:relative}
+.menu summary{list-style:none;cursor:pointer;width:2.75rem;height:2.75rem;display:grid;place-content:center;gap:5px}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary span{display:block;width:1.5rem;height:3px;background:var(--navy)}
+.menu nav{position:absolute;right:0;top:100%;z-index:5;background:#fff;box-shadow:0 8px 24px rgba(21,35,61,.3);min-width:12rem;padding:.5rem 0;border-radius:4px}
+.menu nav a{display:block;padding:.7rem 1.1rem;font-weight:600;text-decoration:none}
+.hero{min-height:0;max-height:none}
+.hero-in{display:block;padding-top:1.1rem}
+.hero h1{font-size:2.65rem;padding-bottom:.7rem}
+.hero-call{padding-bottom:1rem}
+.hero-call p{margin-bottom:.75rem;font-size:1.0625rem}
+.hero-call .call{min-height:3.6rem;font-size:1.3125rem}
+.hero-photo{flex:none;min-height:0}
+.hero-photo .wrap{padding:0}
+.hero-photo img{position:static;width:100%;aspect-ratio:1.72;height:auto;object-position:50% 55%}
+.facts ul{grid-template-columns:1fr 1fr;font-size:.9375rem}
+.pan-grid,.comm,.hist-grid,.split,.head-in{grid-template-columns:minmax(0,1fr)}
+.split.flip figure{order:0}
+.pan-grid .panel{grid-row:auto}
+.pan-grid .prose{order:-1}
+.head figure{margin-inline:calc(-1 * var(--pad))}
+.head img{border-radius:0}
+.ckt{font-size:1.0625rem;line-height:1.05}
+.panel{padding-inline:.5rem}
+.ckt-t{padding:.35rem .3rem;gap:.25rem}
+.ckt-t b{min-width:.6em}
+.ckt .brk{width:2.6rem;height:1.6rem}
+.ckt .brk i{width:1.1rem;left:3px;top:3px;bottom:3px}
+.ckt.on .brk i{transform:translateX(.95rem)}
+.ckt{gap:.3rem}
+.ckt.odd{padding-right:.6rem}.ckt.even{padding-left:.6rem}
+.main{font-size:1.25rem}
+.w1,.w2,.w3,.w4,.w5{grid-column:span 12}
+.work figure{height:auto;aspect-ratio:4/3}
+.quotes,.cards,.steps,.shots.c3,.shots.c4,.contact-grid{grid-template-columns:minmax(0,1fr)}
+.steps{gap:1.25rem}
+.rev-all{columns:1}
+.cols2{columns:1}
+.close-in{display:block;padding-top:2rem}
+.close .man{float:right;width:6.5rem;margin:0 0 .5rem .75rem}
+.close .acts{clear:both}
+.close-in>div{padding-bottom:2rem}
+.acts .btn{flex:1 1 100%}
+.foot-in{grid-template-columns:1fr 1fr}
+.foot-in>div:first-child{grid-column:1/-1}
+.sticky{display:flex;position:fixed;inset:auto 0 0 0;z-index:10;align-items:center;justify-content:center;height:3.75rem;background:var(--red);color:#fff;font-weight:800;font-size:1.25rem;text-decoration:none;transform:translateY(100%);transition:transform .2s;padding-bottom:env(safe-area-inset-bottom)}
+.sticky.show{transform:none}
+}
+@media (max-width:520px){.shots.c2{grid-template-columns:minmax(0,1fr)}.line li{grid-template-columns:4.5rem minmax(0,1fr);gap:.75rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meer Electric, electricians in Alpharetta, GA since 1984">
+<meta property="og:description" content="Family-owned electricians serving Alpharetta, Roswell and North Atlanta since 1984.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/meer-electric-alpharetta-ga/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/meer-electric-alpharetta-ga/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Meer Electric. Not affiliated with or endorsed by Meer Electric.</div>
+<header class="top"><div class="wrap top-in">
+  <a class="logo" href="index.html"><img src="img/logo.webp" width="480" height="205" alt="Meer Electric, celebrating 40 years since 1984"></a>
+  <nav class="nav" aria-label="Main"><a href="services.html">Services</a><a href="about.html">About</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></nav>
+  <a class="top-call" href="tel:+17709938028">770-993-8028</a>
+  <details class="menu"><summary aria-label="Open menu"><span></span><span></span><span></span></summary><nav aria-label="Mobile"><a href="services.html">Services</a><a href="about.html">About</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a href="index.html">Home</a></nav></details>
+</div></header>
+<main>
+<section class="hero">
+  <div class="wrap hero-in">
+    <h1>We do the job right the first time.</h1>
+    <img class="hero-man" src="img/man.webp" width="360" height="515" alt="" fetchpriority="low">
+    <div class="hero-call"><p>Family-owned electricians for homes, businesses and municipalities in Alpharetta, Roswell and North Atlanta since 1984.</p><a class="btn call " href="tel:+17709938028"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call 770-993-8028</a></div>
+  </div>
+  <div class="hero-photo"><div class="wrap"><img src="img/crew-1400.webp" srcset="img/crew-640.webp 640w, img/crew-1000.webp 1000w, img/crew-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 1280px" width="1400" height="709" alt="The whole Meer Electric crew lined up in navy polos between two Meer Electric box trucks" fetchpriority="high" decoding="async"></div></div>
+</section>
+<section class="facts" aria-label="Why call us"><ul><li>Family owned, second generation</li><li>Fully licensed, bonded and insured</li><li>24/7 emergency service</li><li>Free estimates</li></ul></section>
+<section class="sec pan-sec"><div class="wrap pan-grid">
+  <div class="panel" data-panel>
+  <i class="screw a"></i><i class="screw b"></i><i class="screw c"></i><i class="screw d"></i>
+  <a class="main" href="tel:+17709938028"><span class="brk big" aria-hidden="true"><i></i></span><span><b>Main</b> Emergency? Call 24/7</span></a>
+  <div class="ckts"><a class="ckt odd" href="homes.html" style="--i:1"><span class="ckt-t"><b>1</b>Homes</span><span class="brk" aria-hidden="true"><i></i></span></a><a class="ckt even" href="business.html" style="--i:2"><span class="ckt-t"><b>2</b>Businesses</span><span class="brk" aria-hidden="true"><i></i></span></a><a class="ckt odd" href="generators.html" style="--i:3"><span class="ckt-t"><b>3</b>Generators</span><span class="brk" aria-hidden="true"><i></i></span></a><a class="ckt even" href="ev-chargers.html" style="--i:4"><span class="ckt-t"><b>4</b>EV chargers</span><span class="brk" aria-hidden="true"><i></i></span></a><a class="ckt odd" href="sirens.html" style="--i:5"><span class="ckt-t"><b>5</b>Weather sirens</span><span class="brk" aria-hidden="true"><i></i></span></a><a class="ckt even" href="boring.html" style="--i:6"><span class="ckt-t"><b>6</b>Underground boring</span><span class="brk" aria-hidden="true"><i></i></span></a><a class="ckt odd" href="events.html" style="--i:7"><span class="ckt-t"><b>7</b>Special events</span><span class="brk" aria-hidden="true"><i></i></span></a><a class="ckt even" href="contact.html" style="--i:8"><span class="ckt-t"><b>8</b>Free estimates</span><span class="brk" aria-hidden="true"><i></i></span></a></div>
+</div>
+  <div class="prose"><h2>What do you need powered?</h2>
+  <p>Meer Electric is a full-service electric company: from new outlets and rewiring to generators, tornado sirens and lights on 100-foot poles. Pick a circuit.</p></div>
+  <figure><img src="img/panel-tech-768.webp" srcset="img/panel-tech-480.webp 480w, img/panel-tech-768.webp 768w" sizes="(max-width: 860px) 100vw, 520px" width="768" height="576" alt="A Meer Electric electrician working at an open breaker panel in a Georgia home" loading="lazy" decoding="async"></figure>
+</div></section>
+<section class="sec dark"><div class="wrap comm">
+  <div><h2>Our electricians aren&rsquo;t paid on commission.</h2>
+  <p>While the &ldquo;other guys&rdquo; train electricians as commissioned salespeople, we train ours to do the right job, at the right time, at the right price for you. They won&rsquo;t pressure you into services you don&rsquo;t need.</p></div>
+  <blockquote class="tale"><h3>One circuit, two companies</h3>
+  <dl><div><dt>Another company&rsquo;s quote</dt><dd>$14,454</dd></div><div><dt>Meer&rsquo;s final cost</dt><dd class="good">Under $500</dd></div></dl>
+  <p>&ldquo;Why did they try to up-sell me and not fix the problem? Commission?&hellip; I will always call Meer first when there is electrical project or problem. They are honest.&rdquo;</p>
+  <footer>FlapJack L., Roswell, GA</footer></blockquote>
+</div></section>
+<section class="sec"><div class="wrap">
+  <div class="work-h"><h2>Work you may have already seen</h2></div>
+  <div class="work">
+    <a class="w1" href="sirens.html"><figure><img src="img/sirens-crane-1400.webp" srcset="img/sirens-crane-640.webp 640w, img/sirens-crane-1000.webp 1000w, img/sirens-crane-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 740px" width="1400" height="788" alt="A Meer Electric crane truck raising a weather siren pole beside a school" loading="lazy" decoding="async"></figure><span>Weather sirens, installed and maintained</span></a>
+    <a class="w2" href="events.html"><figure><img src="img/events-crew-1400.webp" srcset="img/events-crew-640.webp 640w, img/events-crew-1000.webp 1000w, img/events-crew-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 520px" width="1400" height="933" alt="The Meer Electric crew on the street at the Taste of Alpharetta" loading="lazy" decoding="async"></figure><span>Powering the Taste of Alpharetta since 2009</span></a>
+    <a class="w3" href="generators.html"><figure><img src="img/gen-two-768.webp" srcset="img/gen-two-480.webp 480w, img/gen-two-768.webp 768w" sizes="(max-width: 860px) 100vw, 420px" width="768" height="576" alt="Two electricians connecting a new standby generator beside a home" loading="lazy" decoding="async"></figure><span>Generators, installed and serviced</span></a>
+    <a class="w4" href="ev-chargers.html"><figure><img src="img/ev-tech-768.webp" srcset="img/ev-tech-480.webp 480w, img/ev-tech-768.webp 768w" sizes="(max-width: 860px) 100vw, 420px" width="768" height="576" alt="An electrician mounting a wall charger in front of an electric car" loading="lazy" decoding="async"></figure><span>EV chargers, all three levels</span></a>
+    <a class="w5" href="boring.html"><figure><img src="img/boring-rig-1000.webp" srcset="img/boring-rig-640.webp 640w, img/boring-rig-1000.webp 1000w" sizes="(max-width: 860px) 100vw, 420px" width="1000" height="667" alt="A Meer Electric technician driving a directional drilling rig" loading="lazy" decoding="async"></figure><span>Underground boring, no trench</span></a>
+  </div>
+</div></section>
+<section class="sec shade"><div class="wrap hist-grid">
+  <div class="then">
+    <figure><img src="img/hist-van-850.webp" srcset="img/hist-van-480.webp 480w, img/hist-van-850.webp 850w" sizes="(max-width: 860px) 50vw, 360px" width="850" height="600" alt="The early Meer Electric crew posed in front of a cream-colored Meer Electric van" loading="lazy" decoding="async"><figcaption>The early crew and the van</figcaption></figure>
+    <figure><img src="img/family-40-1400.webp" srcset="img/family-40-640.webp 640w, img/family-40-1000.webp 1000w, img/family-40-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 360px" width="1400" height="933" alt="The Meer family and office staff holding silver 4 and 0 balloons for the company&rsquo;s 40th anniversary" loading="lazy" decoding="async"><figcaption>Forty years on</figcaption></figure>
+  </div>
+  <div class="prose"><h2>&ldquo;We consider our customers our friends.&rdquo;</h2>
+  <p>Rick and Judy Meer started the business from their home in 1984. Their son Peter learned the trade on summer jobs, and today Peter and Kelly Meer own the company as its second generation.</p>
+  <p>We have grown far beyond a family-sized business, and we still treat every client like family.</p>
+  <p><a class="link" href="about.html">Read the Meer Electric story</a></p></div>
+</div></section>
+<section class="sec"><div class="wrap">
+  <h2>What customers tell us</h2>
+  <div class="quotes">
+    <blockquote class="q"><p>Meer is quick to answer calls and schedule appointments&hellip; Their techs are very friendly and neat. They dispose of boxes and old fixtures.</p><footer>Kristin J., Cumming, GA</footer></blockquote>
+    <blockquote class="q"><p>&hellip;Over the years I&rsquo;ve had a hard time finding electricians that could figure out difficult wiring issues. Meer has always been able to get a smart electrician who can work through difficult situations.</p><footer>A longtime customer</footer></blockquote>
+    <blockquote class="q"><p>They found the problem, fixed it and charged a very reasonable amount.</p><footer>Debra S., Roswell, GA</footer></blockquote>
+  </div>
+  <p style="margin-top:1.5rem"><a class="link" href="reviews.html">Read more reviews</a></p>
+</div></section>
+<section class="close"><div class="wrap close-in">
+  <img class="man" src="img/man.webp" width="360" height="515" alt="The Meer Electric Man, pointing at the phone number" loading="lazy">
+  <div><h2>Call the crew with the Electric Man on the truck.</h2><p>New customers get $35 off your electrical project, and estimates are free. Our electricians serve Alpharetta, Roswell, Marietta, Johns Creek, Milton, Cumming, Sandy Springs, Buckhead and the rest of North Atlanta.</p><div class="acts"><a class="btn call " href="tel:+17709938028"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call 770-993-8028</a><a class="btn ghost" href="mailto:info@meerelectric.com?subject=Free%20estimate%20request">Email for a free estimate</a></div></div>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap foot-in">
+  <div><span class="plate"><img src="img/logo.webp" width="480" height="205" alt="Meer Electric" loading="lazy"></span>
+  <p>Your electrical connection, family owned since 1984.</p></div>
+  <div><h2>Reach us</h2><p><a href="tel:+17709938028">770-993-8028</a><br><a href="mailto:info@meerelectric.com">info@meerelectric.com</a></p>
+  <p>405 Tidwell Dr<br>Alpharetta, GA 30004</p></div>
+  <div><h2>Office hours</h2><p>Mon-Fri 7:30am-5:30pm<br>24/7 emergency service</p></div>
+  <div><h2>Services</h2><p class="foot-links"><a href="homes.html">Homes</a><a href="business.html">Businesses</a><a href="generators.html">Generators</a><a href="ev-chargers.html">EV chargers</a><a href="sirens.html">Weather sirens</a><a href="boring.html">Underground boring</a><a href="events.html">Special events</a></p></div>
+</div><div class="wrap foot-note">Unofficial demo built by MHS Tecnologia for Meer Electric. Not affiliated with or endorsed by Meer Electric. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></div></footer>
+<a class="sticky" href="tel:+17709938028">Call 770-993-8028</a>
+<script>
+(function(){
+var p=document.querySelector('[data-panel]');
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(p){
+  var list=[].slice.call(p.querySelectorAll('.main,.ckt'));
+  if(rm||!('IntersectionObserver'in window)){list.forEach(function(e){e.classList.add('on')})}
+  else{
+    var io=new IntersectionObserver(function(en){if(!en[0].isIntersecting)return;io.disconnect();
+      list.forEach(function(e,i){setTimeout(function(){e.classList.add('on')},150+i*110)})},{threshold:.35});
+    io.observe(p);
+  }
+}
+var s=document.querySelector('.sticky'),h=document.querySelector('.hero-photo,.head figure');
+if(s&&h&&'IntersectionObserver'in window){
+  new IntersectionObserver(function(en){s.classList.toggle('show',!en[0].isIntersecting&&en[0].boundingClientRect.top<0)}).observe(h);
+}else if(s){s.classList.add('show')}
+})();
+</script>
+</body>
+</html>
