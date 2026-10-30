@@ -64,7 +64,7 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
 .dark .more { text-decoration-color: var(--board); }
 .more:hover { text-decoration-thickness: 3px; }
 
-/* Hero: the logo's boards laid across the photograph. */
+/* Hero: the photograph stays clear. Their logo is the one tile laid into its corner. */
 .hero { background: var(--dusk); color: #fff; padding: .25rem var(--pad) 1.5rem; min-height: calc(100vh - 6.05rem); display: grid; align-content: center; }
 .hero-in { width: 100%; max-width: var(--max); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr) min(calc(100vh - 8.75rem), 52vw); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
 .hero h1 { font-size: clamp(2.3rem, 4.8vw, 4.25rem); }
@@ -72,9 +72,10 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
 .creds { display: flex; flex-wrap: wrap; gap: .3rem 1.5rem; margin-top: 1.75rem; color: var(--mist); font-size: 1rem; }
 .plan { position: relative; aspect-ratio: 1; width: 100%; }
 .plan img { width: 100%; height: 100%; object-fit: cover; }
-.boards { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.boards line { stroke: var(--dusk); stroke-width: .6; stroke-dasharray: 1; stroke-dashoffset: 0; }
-.boards circle { fill: var(--board); stroke: var(--dusk); stroke-width: .28; }
+.boards { position: absolute; left: 0; bottom: 0; width: clamp(5.25rem, 21%, 10rem); height: auto; aspect-ratio: 1; box-shadow: 0 0 0 .4rem var(--dusk); }
+.boards rect { fill: var(--board); stroke: var(--ink); stroke-width: 2.5; }
+.boards line { stroke: var(--ink); stroke-width: 2.4; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.boards circle { fill: var(--ink); }
 @media (prefers-reduced-motion: no-preference) {
   .boards line { animation: lay .55s cubic-bezier(.3, .7, .2, 1) both; animation-delay: calc(.2s + var(--i) * .13s); }
   .boards circle { transform-box: fill-box; transform-origin: center; animation: set .22s ease-out both; animation-delay: calc(1.25s + var(--i) * .07s); }
@@ -140,6 +141,43 @@ figcaption { font-size: .9375rem; color: var(--slate); margin-top: .5rem; }
 .close .phone { display: inline-flex; align-items: center; margin-top: 1.4rem; min-height: 3.75rem; padding: .55rem 1.5rem; background: var(--ink); color: #fff; font: 600 clamp(1.45rem, 3vw, 2.1rem)/1.1 "Hepta Slab", Georgia, serif; text-decoration: none; border-radius: 2px; }
 .close .phone:hover { background: #2d3c48; }
 .close .sub { margin-top: .9rem; }
+.close .sub a { font-weight: 700; }
+
+/* Signature blocks, one per service page */
+.sig-head { max-width: 46rem; }
+.sig-head p { margin-top: .8rem; }
+.dry { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.section { width: 100%; height: auto; }
+.d-water { fill: #7cc3e6; }
+.d-board { fill: #b5764a; }
+.d-run { fill: none; stroke: #7cc3e6; stroke-width: 3; stroke-dasharray: 5 5; }
+.d-drain { fill: none; stroke: var(--board); stroke-width: 9; stroke-linecap: round; }
+.d-off { fill: none; stroke: #7cc3e6; stroke-width: 3; stroke-dasharray: 5 5; }
+.d-frame { fill: var(--mist); }
+.key { display: grid; gap: .55rem; margin-top: 1.25rem; font-weight: 600; }
+.key li { display: flex; align-items: center; gap: .7rem; }
+.key i { flex: none; width: 1.5rem; height: .75rem; }
+.key .k1 { background: #b5764a; } .key .k2 { background: var(--board); } .key .k3 { background: var(--mist); }
+.roofs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(1.75rem, 4vw, 3rem); }
+.roof { width: 100%; max-width: 15rem; height: auto; fill: none; stroke: var(--board); stroke-width: 3.5; stroke-linecap: square; }
+.roof .fine { stroke: var(--mist); stroke-width: 1.25; }
+.roofs h3 { margin-top: .9rem; }
+.roofs p { margin-top: .3rem; }
+.types { columns: 2; column-gap: 2rem; margin-top: 1.1rem; font: 600 clamp(1.2rem, 2.1vw, 1.8rem)/1.25 "Hepta Slab", Georgia, serif; letter-spacing: -.015em; }
+.types li { break-inside: avoid; padding-block: .2rem; }
+.sig-photo img { width: 100%; max-height: 36rem; object-fit: cover; }
+
+/* Reviews */
+.pulls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.75rem, 4vw, 3.5rem); }
+.pulls blockquote { border-top: 6px solid var(--board); padding-top: 1rem; }
+.pulls p { max-width: none; color: #fff; font: 600 clamp(1.45rem, 2.2vw, 1.85rem)/1.25 "Hepta Slab", Georgia, serif; letter-spacing: -.012em; }
+.pulls cite { display: block; margin-top: .8rem; font-style: normal; font-weight: 600; color: var(--mist); }
+.rv { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.75rem, 1.5vw, 1.25rem); }
+.rv li { display: flex; flex-direction: column; background: #f8f9f6; padding: 1.25rem 1.35rem; border-top: 3px solid var(--ink); }
+.rv blockquote { display: flex; flex-direction: column; flex: 1; }
+.rv p { max-width: none; font-size: 1.0625rem; line-height: 1.5; }
+.rv cite { margin-top: auto; padding-top: .8rem; font-style: normal; font-weight: 700; }
+#more-rev { display: none; margin-top: 1rem; }
 .close .big { position: absolute; top: 50%; right: max(-6rem, calc((100vw - var(--max)) / 2 - 6rem)); width: 40rem; height: 40rem; transform: translateY(-50%) rotate(0deg); }
 .big line { stroke: var(--ink); stroke-width: 1.5; }
 .big circle { fill: var(--ink); stroke: none; }
@@ -187,10 +225,6 @@ figcaption { font-size: .9375rem; color: var(--slate); margin-top: .5rem; }
 .team span { color: var(--slate); font-size: 1rem; }
 
 /* Reviews */
-.wall { columns: 2; column-gap: clamp(1.5rem, 3vw, 3rem); }
-.wall blockquote { break-inside: avoid; padding: 0 0 1.75rem; }
-.wall p { max-width: none; font-size: 1.0625rem; line-height: 1.55; }
-.wall cite { display: block; margin-top: .4rem; font-style: normal; font-weight: 700; }
 .showall { margin-top: 1rem; }
 .fold[open] .showall { display: none; }
 
@@ -247,7 +281,13 @@ footer a:hover { text-decoration-color: var(--board); }
   .top .btn { display: none; }
   .hero-in { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
   .plan { order: -1; max-width: none; min-width: 0; justify-self: stretch; }
-  .creds { display: none; }
+  .creds { flex-wrap: nowrap; justify-content: space-between; gap: .5rem; margin-top: .7rem; font-size: .9375rem; line-height: 1.25; color: #dbe4ea; }
+  .dry, .roofs, .pulls, .rv { grid-template-columns: minmax(0, 1fr); }
+  .roofs li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); column-gap: 1rem; align-items: center; }
+  .roofs .roof { grid-row: 1 / span 2; }
+  .roofs h3 { margin-top: 0; }
+  .rv.collapsed .extra { display: none; }
+  .rv.collapsed + #more-rev { display: inline-flex; }
   .hero .lede { margin-top: .7rem; font-size: 1.125rem; line-height: 1.35; }
   .actions { margin-top: 1rem; gap: .5rem; }
   .hero .btn { flex: 1 1 auto; padding-inline: .9rem; }
@@ -275,7 +315,6 @@ footer a:hover { text-decoration-color: var(--board); }
   .run > li:nth-child(even) .t { order: 1; }
   .values, .team, .cards, .foot { grid-template-columns: minmax(0, 1fr); }
   .values { gap: 1.25rem; }
-  .wall { columns: 1; }
   .grid { columns: 2; column-gap: .5rem; }
   .grid figure { margin-bottom: .5rem; }
   .leadimg img { aspect-ratio: 3 / 2; max-height: none; }

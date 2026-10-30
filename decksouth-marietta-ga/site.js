@@ -6,6 +6,8 @@
   var wide = window.matchMedia('(min-width: 861px)');
   function folds() { document.querySelectorAll('details.fold').forEach(function (d) { if (wide.matches) d.open = true; }); }
   folds(); wide.addEventListener('change', folds);
+  var rv = document.querySelector('.rv'), mr = document.getElementById('more-rev');
+  if (rv && mr) { rv.classList.add('collapsed'); mr.addEventListener('click', function () { rv.classList.remove('collapsed'); }); }
   var chips = document.querySelectorAll('.chips button'), items = document.querySelectorAll('.grid figure'), more = document.getElementById('more-work');
   if (chips.length) {
     var cap = window.matchMedia('(max-width: 860px)').matches ? 10 : 999, cat = 'all';
