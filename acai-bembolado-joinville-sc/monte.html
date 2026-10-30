@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Monte seu açaí</title>
-<meta name="description" content="Escolha o tamanho e os adicionais, veja a conta e mande o pedido no WhatsApp.">
+<meta name="description" content="Escolha o tamanho e os adicionais, veja a conta e chame no WhatsApp com a lista pronta.">
 <meta name="theme-color" content="#4a1569">
 <link rel="icon" href="img/logo.webp" type="image/webp">
 <link rel="preload" href="fonts/shrikhand.woff2" as="font" type="font/woff2" crossorigin>
@@ -19,15 +19,16 @@
 <header class="cab sobre-escuro">
   <div class="wrap">
     <a class="marca" href="index.html" aria-label="Açaí BemBolado, início"><img src="img/logo.webp" width="240" height="240" alt="Logo do Açaí BemBolado"></a>
+    <button class="cab-sac" type="button" data-abre-sacola hidden>Sacola (<span data-qtd>0</span>)</button>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Principal"><ul><li><a href="index.html">Início</a></li><li><a href="cardapio.html">Cardápio</a></li><li><a href="monte.html" aria-current="page">Monte seu açaí</a></li><li><a href="entrega.html">Entrega e loja</a></li></ul></nav>
-    <a class="btn btn-amarelo" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Pedir no WhatsApp</span></a>
+    <a class="btn btn-amarelo" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Chamar no WhatsApp</span></a>
   </div>
 </header>
 <main id="conteudo">
 
-<section class="topo sobre-escuro" data-topo><div class="wrap">
-  <div><h1>Monte seu açaí</h1><p>Escolha o tamanho e os adicionais. O copo enche, a conta fecha e o pedido vai pronto para o WhatsApp.</p></div>
+<section class="topo topo-monte sobre-escuro" data-topo><div class="wrap">
+  <div><h1>Monte seu açaí</h1><p>Escolha o tamanho e os adicionais. O copo enche e a conta fecha.</p></div>
   <div class="arco"><img src="img/copo-luva.webp" width="600" height="600" alt="Copo de açaí com morangos seguro por mão de luva preta" fetchpriority="high" decoding="async"></div>
 </div></section>
 <svg class="onda" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="background:#4a1569"><path fill="#fff6e3" d="M0 30C180 78 330 -6 530 24S860 84 1040 30s280-30 400 8v52H0Z"/><path fill="#f0e5fa" d="M0 48C190 90 320 12 530 42S870 96 1040 50s290-26 400 6v34H0Z"/></svg>
@@ -40,9 +41,10 @@
 <rect class="borda" x="28" y="22" width="184" height="14" rx="7" fill="#fff6e3"/>
 <image href="img/logo.webp" x="84" y="218" width="72" height="72" clip-path="circle(50%)"/></svg>
     <ul class="resumo" id="resumo"><li><span>Copo 400ml</span><span>R$ 17,00</span></li></ul>
-    <p class="total" aria-live="polite"><span>Total</span><span id="total">R$ 17,00</span></p>
-    <a class="btn btn-amarelo" id="enviar" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20montar%20um%20a%C3%A7a%C3%AD%3A%20Copo%20400ml.%20Total%20R%24%2017%2C00."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Enviar no WhatsApp</span></a>
-    <p class="nota">Taxa de entrega e pagamento você combina no WhatsApp. Nada é enviado até você apertar enviar lá.</p>
+    <p class="total" aria-live="polite"><span>Este copo</span><span id="total">R$ 17,00</span></p>
+    <p class="na-sacola" id="na-sacola" hidden></p>
+    <a class="btn btn-amarelo" id="enviar" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Chamar no WhatsApp</span></a>
+    <p class="nota">A taxa de entrega não está no cardápio publicado: pergunte no WhatsApp. Nada é enviado até você apertar enviar lá.</p>
   </aside>
   <div>
     <fieldset class="passo"><legend>1. Escolha o tamanho</legend>
@@ -52,16 +54,22 @@
     <fieldset class="passo"><legend>2. Escolha os adicionais</legend>
       <p class="dica" id="dica" aria-live="polite">Até 4 adicionais neste tamanho.</p>
       <div id="lista"><div class="adi-grupo"><h2>Frutas</h2><div class="adi-lista"><label class="opcao"><input type="checkbox" name="adi" value="Banana"><span><span>Banana</span><b>+ R$ 3,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Kiwi"><span><span>Kiwi</span><b>+ R$ 7,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Morango"><span><span>Morango</span><b>+ R$ 7,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Uva verde"><span><span>Uva verde</span><b>+ R$ 5,00</b></span></label></div></div><div class="adi-grupo"><h2>Cremes e mousses</h2><div class="adi-lista"><label class="opcao"><input type="checkbox" name="adi" value="Mousse de maracujá"><span><span>Mousse de maracujá</span><b>+ R$ 7,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Mousse de morango"><span><span>Mousse de morango</span><b>+ R$ 7,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Creme leitinho"><span><span>Creme leitinho</span><b>+ R$ 9,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Creme de Kinder Bueno"><span><span>Creme de Kinder Bueno</span><b>+ R$ 8,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Nutella"><span><span>Nutella</span><b>+ R$ 9,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Beijinho"><span><span>Beijinho</span><b>+ R$ 5,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Doce de leite"><span><span>Doce de leite</span><b>+ R$ 5,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Leite condensado"><span><span>Leite condensado</span><b>+ R$ 4,00</b></span></label></div></div><div class="adi-grupo"><h2>Farofas e crocantes</h2><div class="adi-lista"><label class="opcao"><input type="checkbox" name="adi" value="Leite ninho"><span><span>Leite ninho</span><b>+ R$ 4,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Ovomaltine"><span><span>Ovomaltine</span><b>+ R$ 4,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Paçoca"><span><span>Paçoca</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Farinha láctea"><span><span>Farinha láctea</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Granola"><span><span>Granola</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Amendoim"><span><span>Amendoim</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Sucrilhos"><span><span>Sucrilhos</span><b>+ R$ 3,50</b></span></label></div></div><div class="adi-grupo"><h2>Chocolates e bombons</h2><div class="adi-lista"><label class="opcao"><input type="checkbox" name="adi" value="Bolacha Oreo"><span><span>Bolacha Oreo</span><b>+ R$ 3,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Bis preto"><span><span>Bis preto</span><b>+ R$ 3,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Bis branco"><span><span>Bis branco</span><b>+ R$ 3,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Chocolate ao leite"><span><span>Chocolate ao leite</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Chocolate meio amargo"><span><span>Chocolate meio amargo</span><b>+ R$ 6,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Laka Oreo"><span><span>Laka Oreo</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Shot"><span><span>Shot</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Kit Kat"><span><span>Kit Kat</span><b>+ R$ 5,50</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Ouro Branco"><span><span>Ouro Branco</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Trento"><span><span>Trento</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Prestígio"><span><span>Prestígio</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Tortuguita"><span><span>Tortuguita</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Confete"><span><span>Confete</span><b>+ R$ 4,00</b></span></label><label class="opcao"><input type="checkbox" name="adi" value="Mini chocoball"><span><span>Mini chocoball</span><b>+ R$ 4,00</b></span></label></div></div></div>
-      <p class="nota-m" style="margin-top:20px">Taxa de entrega e pagamento você combina no WhatsApp. Nada é enviado até você apertar enviar lá.</p>
       <noscript><p>Para montar aqui, ative o JavaScript. Ou chame direto: <a href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido.">WhatsApp (47) 98902-9791</a>.</p></noscript>
     </fieldset>
+    <fieldset class="passo"><legend>3. Entregar ou retirar?</legend>
+      <p class="dica">Vai junto na mensagem.</p>
+      <div class="modos"><label class="opcao"><input type="radio" name="modo" value="entregar" data-modo checked><span class="tam"><span>Entregar</span><b>35 a 45 min</b></span></label><label class="opcao"><input type="radio" name="modo" value="retirar" data-modo><span class="tam"><span>Retirar na loja</span><b>50 min</b></span></label></div>
+    </fieldset>
+    <div class="acoes"><button class="btn btn-acai" type="button" id="colocar">Pôr na sacola e montar outro</button></div>
+    <p class="status" id="status" role="status"></p>
+    <p class="nota-m">A taxa de entrega não está no cardápio publicado: pergunte no WhatsApp. Nada é enviado até você apertar enviar lá.</p>
   </div>
 </div></section>
 <svg class="onda" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="background:#f0e5fa"><path fill="#fff6e3" d="M0 30C180 78 330 -6 530 24S860 84 1040 30s280-30 400 8v52H0Z"/><path fill="#4a1569" d="M0 48C190 90 320 12 530 42S870 96 1040 50s290-26 400 6v34H0Z"/></svg>
 <section class="fim sobre-escuro"><div class="wrap">
 <h2>Prefere um copo pronto?</h2>
 <p>As sugestões da casa estão no cardápio, ou fale direto no WhatsApp.</p>
-<div class="acoes"><a class="btn btn-amarelo" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Pedir no WhatsApp</span></a><a class="btn btn-linha" href="tel:+5547989029791">Ligar (47) 98902-9791</a></div>
+<div class="acoes"><a class="btn btn-amarelo" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Chamar no WhatsApp</span></a><a class="btn btn-linha" href="tel:+5547989029791">Ligar (47) 98902-9791</a></div>
 </div></section>
 </main>
 <footer class="rodape sobre-escuro">
@@ -91,7 +99,19 @@
     </div>
   </div>
 </footer>
-<div class="fixa sobre-escuro"><a class="btn btn-amarelo" id="fixa-enviar" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20montar%20um%20a%C3%A7a%C3%AD%3A%20Copo%20400ml.%20Total%20R%24%2017%2C00."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Enviar pedido, <span id="fixa-total">R$ 17,00</span></span></a></div>
+<div class="fixa sobre-escuro"><a class="btn btn-amarelo" id="fixa-enviar" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Chamar no WhatsApp, <span id="fixa-total">R$ 17,00</span></span></a></div>
+<dialog id="sacola" class="sacola" aria-labelledby="sac-t"><div class="sac">
+  <div class="sac-cab"><h2 id="sac-t">Sua sacola</h2><button class="sac-x" type="button">Fechar</button></div>
+  <div class="sac-vazia"><p>A sacola está vazia.</p><p><a class="pedir" href="cardapio.html">Ver o cardápio</a></p></div>
+  <div class="sac-cheia" hidden>
+    <ul id="sac-lista"></ul>
+    <fieldset class="modo"><legend>Entregar ou retirar?</legend><div class="modos"><label class="opcao"><input type="radio" name="modo-sac" value="entregar" data-modo checked><span class="tam"><span>Entregar</span><b>35 a 45 min</b></span></label><label class="opcao"><input type="radio" name="modo-sac" value="retirar" data-modo><span class="tam"><span>Retirar na loja</span><b>50 min</b></span></label></div></fieldset>
+    <p class="total"><span>Total</span><span id="sac-total"></span></p>
+    <a class="btn btn-amarelo" id="sac-enviar" href="https://wa.me/5547989029791?text=Oi%2C%20BemBolado!%20Quero%20fazer%20um%20pedido."><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2Zm0 1.9a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-2.9.8.8-2.8-.2-.3A8.1 8.1 0 0 1 12 3.9Zm-3.1 4.2c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3s1 2.7 1.1 2.9c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5Z"/></svg><span>Chamar no WhatsApp</span></a>
+    <p class="nota">A taxa de entrega não está no cardápio publicado: pergunte no WhatsApp. Nada é enviado até você apertar enviar lá.</p>
+    <button class="sac-limpar" type="button">Esvaziar a sacola</button>
+  </div>
+</div></dialog>
 <script src="site.js" defer></script>
 <script src="monte.js" defer></script>
 </body>

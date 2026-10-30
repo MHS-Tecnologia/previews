@@ -80,9 +80,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .hero-foto { position: relative; justify-self: center; width: min(100%, 500px); padding-top: 4%; }
 .arco-fundo { position: absolute; inset: 15% 2% 0; border-radius: 999px 999px 26px 26px; background: #6a2c96; box-shadow: 0 0 0 8px var(--creme); }
-.copo-foto { position: relative; width: 84%; margin-inline: auto; padding-bottom: 3%; }
-.selo { position: absolute; left: -44px; bottom: 34px; width: 132px; height: 132px; border-radius: 50%; box-shadow: 0 0 0 6px var(--creme); animation: colar .7s cubic-bezier(.2, 1.5, .4, 1) .25s both; }
-@keyframes colar { from { transform: scale(.4) rotate(-40deg); } to { transform: rotate(-9deg); } }
+/* the photo ends flat at its own bottom edge: the cup is clipped exactly at the arch's foot */
+.copo-clip { position: relative; clip-path: inset(-60px -60px 0 -60px); }
+.copo-foto { width: 88%; margin-inline: auto; animation: subir .7s cubic-bezier(.2, 1.1, .4, 1) both; }
+@keyframes subir { from { transform: translateY(22px); } }
 
 .fatos { background: var(--acai); color: var(--creme); }
 .fatos dl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 32px; margin: 0; padding-block: 10px 28px; }
@@ -145,10 +146,11 @@ figcaption { margin-top: 10px; font-size: .9375rem; color: var(--texto-suave); t
 .linha .pedir { margin-top: 10px; }
 
 /* photo wall */
-.mural { columns: 4 220px; column-gap: 16px; }
-.mural figure { margin: 0 0 16px; break-inside: avoid; }
-.mural img { width: 100%; border-radius: 18px; }
-.mural figcaption { text-align: left; margin-top: 6px; }
+.mural { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(190px, 21vw, 290px); grid-auto-flow: dense; gap: 14px; }
+.mural figure { margin: 0; min-height: 0; }
+.mural img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; }
+.mural figure:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.mural figure:nth-child(5) { grid-column: span 2; }
 
 /* shop strip */
 .loja { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
@@ -250,8 +252,39 @@ details.adicionais summary { display: flex; align-items: center; min-height: 52p
 .legal { margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .2); font-size: .875rem; }
 .legal a { display: inline-block; padding-block: 12px; }
 
-/* sticky mobile CTA */
+/* bag */
+.cab-sac { min-height: 44px; padding: 0 14px; border: 0; border-radius: 8px; background: var(--amarelo); color: var(--acai-fundo); font: 800 1rem var(--corpo); cursor: pointer; }
+.cab-sac[hidden], .ver-sac[hidden] { display: none; }
+.sacola { width: min(100%, 460px); max-width: 100%; max-height: 100dvh; height: 100dvh; margin: 0 0 0 auto; padding: 0; border: 0; background: var(--creme); color: var(--acai-fundo); overscroll-behavior: contain; }
+.sacola::backdrop { background: rgba(47, 11, 71, .6); }
+.sac { padding: 18px 20px 28px; }
+.sac-cab { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.sac-cab h2 { font-size: 1.875rem; }
+.sac-x, .sac-limpar { min-height: 44px; padding: 0 12px; background: transparent; border: 0; color: inherit; font: 700 1rem var(--corpo); text-decoration: underline; cursor: pointer; }
+.sac-limpar { display: block; margin: 8px auto 0; }
+#sac-lista li { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding-block: 10px; border-bottom: 1px solid var(--lilas-forte); }
+#sac-lista strong { display: block; line-height: 1.25; }
+#sac-lista small { display: block; font-size: .9375rem; color: var(--texto-suave); }
+.qtd { display: flex; align-items: center; gap: 6px; font-weight: 800; }
+.qtd span { min-width: 20px; text-align: center; }
+.qtd button { width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--acai); color: var(--creme); font: 800 1.25rem var(--corpo); cursor: pointer; }
+.modo { border: 0; margin: 16px 0 0; padding: 0; }
+.modo legend { padding: 0; margin-bottom: 8px; font-weight: 800; }
+.modos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.sacola .total { border-top-color: var(--lilas-forte); }
+.sacola .btn { width: 100%; margin-top: 12px; }
+.sacola .nota { margin-top: 10px; font-size: .875rem; color: var(--texto-suave); }
+.status { margin-top: 10px; font-weight: 700; min-height: 1.55em; }
+.na-sacola { margin-top: 6px; font-size: .9375rem; color: var(--lilas-forte); }
+.na-sacola[hidden] { display: none; }
+
+/* sticky mobile CTA; on desktop it shows only for a bag with items */
 .fixa { display: none; }
+.fixa.tem > a, .fixa.tem > .btn-linha { display: none; }
+@media (min-width: 821px) {
+  .fixa.tem { display: flex; position: fixed; right: 24px; bottom: 24px; z-index: 30; }
+  .fixa.tem .btn { box-shadow: 0 6px 20px rgba(47, 11, 71, .35); }
+}
 
 @media (max-width: 1040px) {
   .js .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--acai-fundo); padding: 8px var(--gutter) 16px; }
@@ -281,8 +314,7 @@ details.adicionais summary { display: flex; align-items: center; min-height: 52p
   .hero-resto { order: 3; }
   .hero-foto { padding-top: 0; }
   .arco-fundo { inset: 24% 8% 0; box-shadow: 0 0 0 5px var(--creme); }
-  .copo-foto { width: 186px; }
-  .selo { width: 84px; height: 84px; left: 6px; bottom: 8px; box-shadow: 0 0 0 4px var(--creme); }
+  .copo-foto { width: 188px; }
   .hero .sub { margin-top: 2px; font-size: 1rem; }
   .hero .acoes { margin-top: 12px; }
   .hero .acoes .btn { width: 100%; }
@@ -298,8 +330,42 @@ details.adicionais summary { display: flex; align-items: center; min-height: 52p
   .tigelas figure:first-child { grid-column: 1 / -1; }
   .tigelas figure:first-child .circulo { max-width: 320px; margin-inline: auto; }
   .linha { grid-template-columns: 112px 1fr; gap: 16px; }
-  .mural { columns: 2; column-gap: 12px; }
-  .mural figure { margin-bottom: 12px; }
+  .mural { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 44vw; gap: 10px; }
+  .mural figure:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+  .mural figure:nth-child(5) { grid-column: span 1; }
+  .mural figure:nth-child(n+6) { display: none; }
+  .secao { padding-block: 36px; }
+  .cabeca { margin-bottom: 20px; }
+  .inicio .prateleira { grid-template-columns: 1fr 1fr; gap: 16px 12px; }
+  .inicio .item-copo { display: block; }
+  .inicio .item-copo .arco { aspect-ratio: 1; }
+  .inicio .item-copo h3 { margin-top: 8px; font-size: 1.125rem; }
+  .inicio .item-copo p { display: none; }
+  .inicio .item-copo .pe { margin-top: 4px; flex-wrap: wrap; gap: 4px; }
+  .inicio .item-copo .pedir { width: 100%; justify-content: center; }
+  .promo { grid-template-columns: 110px 1fr; gap: 14px; }
+  .promos { gap: 16px; }
+  .etiqueta { width: 76px; height: 76px; right: -10px; top: -6px; }
+  .etiqueta b { font-size: .875rem; }
+  .etiqueta small { font-size: .625rem; }
+  .promo p { margin-top: 4px; font-size: .9375rem; }
+  .promo .pedir { margin-top: 6px; }
+  .monte-faixa .wrap { grid-template-columns: 1fr 104px; gap: 14px; }
+  .monte-faixa p { font-size: 1rem; }
+  .monte-faixa .acoes { margin-top: 14px; }
+  .monte-faixa h2 { font-size: 1.75rem; }
+  .monte-faixa .copo-svg { width: 104px; }
+  .tigelas { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tigelas figure:first-child { grid-column: auto; }
+  .loja img { aspect-ratio: 16 / 8; object-fit: cover; }
+  .linhas { gap: 20px; }
+  .linha { grid-template-columns: 88px 1fr; }
+  .topo-monte .wrap { padding-block: 12px 0; }
+  .topo-monte .arco { display: none; }
+  .topo-monte h1 { font-size: 2.1rem; }
+  .topo-monte p { margin-top: 4px; font-size: 1rem; }
+  .passo { margin-bottom: 26px; }
+  .passo .dica { margin: 2px 0 8px; }
   .topo .arco { max-width: 220px; }
   .lista, .tabela, .tempos, .passos { grid-template-columns: 1fr; }
   .tempos { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -320,5 +386,4 @@ details.adicionais summary { display: flex; align-items: center; min-height: 52p
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .selo { transform: rotate(-9deg); }
 }
