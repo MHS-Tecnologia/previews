@@ -22,7 +22,7 @@
   --gutter:clamp(16px,4vw,48px);--wide:1240px;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:88px}
 body{margin:0;background:var(--pvc);color:var(--ink);font:400 1.0625rem/1.6 var(--sans);-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%;height:auto}
 a{color:inherit}
@@ -44,7 +44,7 @@ figcaption{font-size:.9rem;line-height:1.4;color:var(--soft);padding-top:.5rem}
 .notice{background:var(--ink);color:#fff;font-size:.8125rem;line-height:1.35;padding:.45rem var(--gutter);text-align:center}
 
 /* header: the white side panel of the van */
-.top{background:#fff;position:relative;z-index:20}
+.top{background:#fff;position:relative;z-index:20;box-shadow:0 1px 0 rgba(10,15,71,.14)}
 .top-in{display:flex;align-items:center;gap:1.5rem;min-height:72px}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--red);margin-right:auto}
 .brand svg{width:64px;color:var(--navy);flex:none}
@@ -66,7 +66,10 @@ figcaption{font-size:.9rem;line-height:1.4;color:var(--soft);padding-top:.5rem}
 .sky-text{padding-bottom:clamp(1.5rem,3vw,2.75rem)}
 .home h1{grid-column:1/-1;font-size:clamp(2.75rem,6vw,5.5rem)}
 .home h1 span{display:block}
-.sky-sub{font-size:clamp(1.0625rem,1.45vw,1.25rem);line-height:1.5;margin:0;padding-bottom:clamp(1.5rem,3vw,2.75rem);max-width:30em;color:#E7E9F6;align-self:end}
+.sky-sub{font-size:clamp(1.0625rem,1.45vw,1.25rem);line-height:1.5;margin:0;max-width:30em;color:#E7E9F6}
+.sky-left{padding-bottom:clamp(1.25rem,2.4vw,2rem)}
+.sky-facts{display:none;margin-top:1rem;font-weight:600;color:#fff}
+.sky-facts li{padding:.2rem 0 .2rem 1rem;border-left:4px solid var(--yellow);margin-top:.35rem;line-height:1.3}
 .sky-text p{font-size:clamp(1.0625rem,1.45vw,1.25rem);line-height:1.5;margin:1.1rem 0 0;max-width:34em;color:#E7E9F6}
 .van{position:relative;margin-bottom:-14px;z-index:2}
 .van img{width:100%;max-width:850px;margin-left:auto;position:relative}
@@ -87,10 +90,8 @@ figcaption{font-size:.9rem;line-height:1.4;color:var(--soft);padding-top:.5rem}
 .pipe svg{width:clamp(26px,3vw,36px);flex:none}
 .pipe b{font:800 clamp(1.6rem,3.3vw,2.75rem)/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
 .pipe em{font:600 1rem/1.25 var(--sans);font-style:normal;color:var(--ink);margin-left:auto;text-align:right}
-.joint.b::after{left:auto;right:100%;background:linear-gradient(270deg,var(--primer),rgba(106,63,158,.1))}
 .joint{position:absolute;top:-8px;bottom:-8px;width:clamp(26px,3.4vw,44px);border-radius:5px;z-index:1;
   background:linear-gradient(180deg,#9A9E99 0,#E4E6E1 15%,#fff 40%,#E9EBE6 68%,#AEB2AC 90%,#868A84 100%);box-shadow:-1px 0 0 rgba(0,0,0,.18),1px 0 0 rgba(0,0,0,.18)}
-.joint::after{content:"";position:absolute;top:8px;bottom:8px;left:100%;width:clamp(16px,2.2vw,30px);background:linear-gradient(90deg,var(--primer),rgba(106,63,158,.1));opacity:.62}
 .joint.a{left:.25rem}.joint.b{right:.5rem}
 .pipe::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,transparent,rgba(63,143,208,.34) 45%,rgba(63,143,208,.34) 55%,transparent);transform:translateX(-100%);opacity:0;pointer-events:none}
 .pipe{overflow-x:clip;overflow-y:visible}
@@ -117,7 +118,9 @@ figcaption{font-size:.9rem;line-height:1.4;color:var(--soft);padding-top:.5rem}
 @media (min-width:980px){
   .hero.first{min-height:calc(100svh - 104px);display:flex;flex-direction:column;justify-content:flex-end}
   .hero.first .sky{flex:1;align-content:end}
-  .home .van{margin-top:-4rem}
+  .home{row-gap:1rem}
+  .sky-facts{display:block}
+  .home .van{margin-top:-2.5rem}
   .home .van img{max-width:660px}
   .run{padding-left:calc(var(--gutter) + 92px);position:relative}
   .lines-head{position:relative}
@@ -219,7 +222,9 @@ details.all summary{cursor:pointer;font-weight:700;margin-top:.9rem;min-height:4
   .pipe em{display:none}
   .nav{display:none}
   .menu{display:block}
-  .top-tel{display:none}
+}
+@media (min-width:701px){
+  .top{position:sticky;top:0}
 }
 @media (max-width:979px){
   .sky{grid-template-columns:minmax(0,1fr);gap:.5rem}
@@ -234,6 +239,7 @@ details.all summary{cursor:pointer;font-weight:700;margin-top:.9rem;min-height:4
 }
 @media (max-width:700px){
   body{font-size:1rem}
+  .top-tel{display:none}
   .top-in{min-height:62px;gap:.75rem}
   .brand svg{width:52px}
   .brand b{font-size:1.1rem}
@@ -290,7 +296,8 @@ details.all summary{cursor:pointer;font-weight:700;margin-top:.9rem;min-height:4
 <section class="hero first">
 <div class="wrap sky home">
 <h1>From sinks to sewers, <span>day or night.</span></h1>
-<p class="sky-sub">Drain cleaning, sewer repair and water heaters across Chapel Hill, Durham, Raleigh and Carrboro.</p>
+<div class="sky-left"><p class="sky-sub">Drain cleaning, sewer repair and water heaters across Chapel Hill, Durham, Raleigh and Carrboro.</p>
+<ul class="sky-facts"><li>On call 24 hours every day</li><li>More than 20 years in business</li><li>Free quotes by phone or email</li></ul></div>
 <div class="van"><img src="img/van-850.webp" srcset="img/van-420.webp 420w, img/van-850.webp 850w" sizes="(max-width:979px) 92vw, 720px" width="850" height="385" alt="White Drain Express utility van, lettered with the rider logo and 24 hour emergency service." fetchpriority="high"></div>
 </div>
 <div class="ground"><a class="pipe" href="tel:+19199680070"><i class="joint a"></i><i class="joint b"></i><span class="wrap pipe-in"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><b>Call (919) 968-0070</b><em>24 hour emergency service</em></span></a><div class="wrap ground-foot"><a href="mailto:servicecalls.drainexp@gmail.com?subject=Free%20quote%20request">Email us for a free quote</a><span>Chapel Hill, Durham, Raleigh, Carrboro and beyond</span></div></div>
@@ -301,31 +308,28 @@ details.all summary{cursor:pointer;font-weight:700;margin-top:.9rem;min-height:4
 <p class="lede">Blockages in any size drain, and the lines behind them. Our drain cleaning techs are on call 24 hours every day.</p></div>
 <ul class="main">
 <li class="branch"><i class="seg" aria-hidden="true"><i></i></i><a href="drains.html"><div class="pic r3x2"><img src="img/hands-800.webp" srcset="img/hands-480.webp 480w, img/hands-800.webp 800w, img/hands-1000.webp 1000w" sizes="(max-width:979px) 100vw, 50vw" width="1000" height="1781" alt="A Drain Express tech fitting white pipe on a job inside a house." loading="lazy" decoding="async"></div><div><h3>Drain cleaning</h3><p>Kitchen sinks, tubs, showers and main lines. Every vehicle carries machines, cables and cutting blades in various sizes.</p><span class="go">See drain cleaning</span></div></a></li>
-<li class="branch"><i class="seg" aria-hidden="true"><i></i></i><a href="drains.html#hydro-jetting"><div class="pic "><div class="draw"><svg viewBox="0 0 520 340" font-size="17" role="img" aria-label="Drawing of a hydro jet nozzle moving along a pipe, with water jets scouring the pipe walls clean behind it and roots and grease still ahead of it.">
-<rect width="520" height="340" fill="#A8451F"/>
-<rect y="124" width="520" height="120" fill="#0A0F47"/>
-<text x="24" y="44">Scoured back to the</text><text x="24" y="66">original diameter</text>
-<text x="496" y="44" text-anchor="end">Roots, grease</text><text x="496" y="66" text-anchor="end">and debris</text>
-<rect x="0" y="108" width="520" height="16" fill="#F6F7F4"/><rect x="0" y="244" width="520" height="16" fill="#F6F7F4"/>
-<path fill="#D9863F" d="M300 124c14 18 34 10 50 14 22 6 34-6 52-2 18 3 34-10 48-4 24 8 44 2 70-6v0H300zM312 244c18-12 30-2 48-10 20-10 36 2 56-4 26-8 40 4 104-10v24z"/>
-<path fill="none" stroke="#F0B47A" stroke-width="5" stroke-linecap="round" d="M370 124c8 26 26 30 22 56M446 124c-6 18 6 34-4 54M404 244c6-18-8-26 2-42"/>
-<rect x="0" y="178" width="196" height="12" fill="#F4C20D"/>
-<path fill="#D5D8D3" d="M192 166h44l34 18-34 18h-44z"/>
-<g fill="none" stroke="#7CC2F2" stroke-width="4" stroke-linecap="round"><path d="M200 168 128 126M222 168 158 126M200 200 128 242M222 200 158 242"/><path d="M178 172 86 126M178 196 86 242" stroke-dasharray="3 10"/></g>
-<text x="24" y="304">Water under very high pressure</text>
+<li class="branch"><i class="seg" aria-hidden="true"><i></i></i><a href="drains.html#hydro-jetting"><div class="pic "><div class="draw"><svg viewBox="0 0 520 347" font-size="17" role="img" aria-label="Drawing of a hydro jet nozzle moving along a pipe, with water jets scouring the pipe walls clean behind it and roots and grease still ahead of it.">
+<rect width="520" height="347" fill="#A8451F"/>
+<rect y="72" width="520" height="212" fill="#0A0F47"/>
+<text x="20" y="36">Scoured to original diameter</text><text x="500" y="36" text-anchor="end">Roots, grease, debris</text>
+<rect y="56" width="520" height="16" fill="#D5D8D3"/><rect y="284" width="520" height="16" fill="#D5D8D3"/>
+<path fill="#D9863F" d="M290 72c16 34 40 18 60 26 24 8 38-10 58-4 22 6 38-16 112-2V72zM300 284c20-24 36-4 56-20 22-16 40 4 60-8 28-14 44 6 104-16v44z"/>
+<path fill="none" stroke="#F0B47A" stroke-width="5" stroke-linecap="round" d="M372 72c10 44 30 52 26 96M450 72c-8 30 8 58-6 92M408 284c8-30-10-46 2-72"/>
+<rect y="171" width="196" height="14" fill="#F4C20D"/>
+<path fill="#D5D8D3" d="M192 156h48l40 22-40 22h-48z"/>
+<g fill="none" stroke="#7CC2F2" stroke-width="4" stroke-linecap="round"><path d="M200 158 120 76M224 158 150 76M200 198 120 280M224 198 150 280"/><path d="M178 164 78 76M178 192 78 280" stroke-dasharray="3 10"/></g>
 </svg></div></div><div><h3>Hydro jetting</h3><p>Rodding just cuts a hole in the blockage. Hydro jetting cuts the roots, grease and debris off the whole inner wall of the pipe.</p><span class="go">See hydro jetting</span></div></a></li>
-<li class="branch"><i class="seg" aria-hidden="true"><i></i></i><a href="sewer.html#camera"><div class="pic "><div class="draw"><svg viewBox="0 0 520 340" font-size="17" role="img" aria-label="Drawing of a sewer camera on a cable inside a buried pipe, stopped at a crack, with a locator on the ground above marking the exact spot.">
-<rect width="520" height="340" fill="#A8451F"/>
-<rect width="520" height="96" fill="#0E1560"/><rect y="84" width="520" height="22" fill="#46291A"/>
-<text x="24" y="42">Pinpoint the spot from above,</text><text x="24" y="66">so nobody digs more than needed</text>
-<path d="M356 84V52" stroke="#F4C20D" stroke-width="6"/><circle cx="356" cy="42" r="11" fill="#F4C20D"/>
-<path d="M356 106v96" stroke="#F4C20D" stroke-width="3" stroke-dasharray="7 7"/>
-<rect x="0" y="202" width="520" height="14" fill="#F6F7F4"/><rect x="0" y="282" width="520" height="14" fill="#F6F7F4"/>
-<rect x="0" y="216" width="520" height="66" fill="#0A0F47"/>
-<path d="M356 202l-8 10 12 8-10 12" fill="none" stroke="#F4C20D" stroke-width="4"/><path d="M336 202h40v6h-40z" fill="#A8451F"/>
-<rect x="0" y="245" width="210" height="8" fill="#D5D8D3"/><path fill="#F6F7F4" d="M206 234h48l10 8v14l-10 8h-48z"/>
-<path d="M264 236l76-16v58l-76-16z" fill="#7CC2F2" opacity=".55"/>
-<text x="24" y="326" style="fill:#fff">You also get a video recording of the pipe</text>
+<li class="branch"><i class="seg" aria-hidden="true"><i></i></i><a href="sewer.html#camera"><div class="pic "><div class="draw"><svg viewBox="0 0 520 347" font-size="17" role="img" aria-label="Drawing of a sewer camera on a cable inside a buried pipe, stopped at a crack, with a locator on the ground above marking the exact spot.">
+<rect width="520" height="347" fill="#A8451F"/>
+<rect width="520" height="56" fill="#0E1560"/><rect y="44" width="520" height="16" fill="#46291A"/>
+<text x="20" y="30">Pinpoint the spot from above</text>
+<path d="M400 44V24" stroke="#F4C20D" stroke-width="6"/><circle cx="400" cy="18" r="10" fill="#F4C20D"/>
+<path d="M400 60v76" stroke="#F4C20D" stroke-width="3" stroke-dasharray="7 7"/>
+<rect y="130" width="520" height="14" fill="#D5D8D3"/><rect y="286" width="520" height="14" fill="#D5D8D3"/>
+<rect y="144" width="520" height="142" fill="#0A0F47"/>
+<path d="M380 130h40v14h-40z" fill="#A8451F"/><path d="M400 130l-8 14 12 10-10 14" fill="none" stroke="#F4C20D" stroke-width="4"/>
+<path d="M300 203l96-34v92l-96-34z" fill="#7CC2F2" opacity=".55"/>
+<rect y="209" width="230" height="12" fill="#D5D8D3"/><path fill="#F6F7F4" d="M226 194h60l14 12v18l-14 12h-60z"/>
 </svg></div></div><div><h3>Sewer camera inspection</h3><p>See your drain and sewer lines from the inside, commonly before buying or selling a home, and keep the video recording.</p><span class="go">See camera inspection</span></div></a></li>
 <li class="branch"><i class="seg" aria-hidden="true"><i></i></i><a href="sewer.html"><div class="pic r3x2"><img src="img/lines-van-800.webp" srcset="img/lines-van-480.webp 480w, img/lines-van-800.webp 800w, img/lines-van-1000.webp 1000w" sizes="(max-width:979px) 100vw, 50vw" width="1000" height="563" alt="Drain Express utility van parked beside an open yard trench with new white pipes laid in it." loading="lazy" decoding="async"></div><div><h3>Sewer and water lines</h3><p>Repairs and replacements, all the way down to digging the trench.</p><span class="go">See sewer lines</span></div></a></li>
 <li class="branch"><i class="seg" aria-hidden="true"><i></i></i><a href="water-heaters.html"><div class="pic r3x2"><img src="img/heaters-750.webp" srcset="img/heaters-480.webp 480w, img/heaters-750.webp 750w" sizes="(max-width:979px) 100vw, 50vw" width="750" height="1000" alt="Two new tank water heaters installed side by side in a utility room." loading="lazy" decoding="async"></div><div><h3>Water heaters</h3><p>Repair and replacement of gas, electric and indirect water heaters, for the past 25 years.</p><span class="go">See water heaters</span></div></a></li>
