@@ -1,5 +1,7 @@
 // Menu do celular, CTA fixo e a troca de caixinha na capa.
 (function () {
+  setTimeout(function () { document.documentElement.classList.remove('anima'); }, 1500);
+
   var menu = document.querySelector('.menu');
   if (menu) {
     document.addEventListener('click', function (e) {
@@ -37,10 +39,28 @@
       if (el.closest('.capa-foto')) el.setAttribute('aria-hidden', ativa ? 'false' : 'true');
     });
     botoes.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.para === nome ? 'true' : 'false'); });
-    capa.dataset.fita = capa.querySelector('button[data-para="' + nome + '"]').dataset.cor;
+    var escolhido = capa.querySelector('button[data-para="' + nome + '"]');
+    // A cor vale para a página inteira, e a caixinha escolhida vai na mensagem.
+    document.querySelectorAll('[data-fita]').forEach(function (el) { el.dataset.fita = escolhido.dataset.cor; });
+    document.querySelectorAll('[data-rotulo]').forEach(function (el) { el.textContent = escolhido.dataset.cta; });
+    mensagens(escolhido.dataset.msg);
   };
+  var mensagens = function (frase) {
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (a) {
+      var url = new URL(a.href);
+      if (!a.dataset.base) a.dataset.base = url.searchParams.get('text') || '';
+      a.href = url.origin + url.pathname + '?text=' + encodeURIComponent(a.dataset.base + ' ' + frase);
+    });
+  };
+  mensagens(capa.querySelector('button[aria-pressed="true"]').dataset.msg);
   botoes.forEach(function (b) {
-    b.addEventListener('click', function () { mostrar(b.dataset.para); });
+    b.addEventListener('click', function () {
+      mostrar(b.dataset.para);
+      capa.classList.remove('trocando');
+      void capa.offsetWidth;
+      capa.classList.add('trocando');
+      setTimeout(function () { capa.classList.remove('trocando'); }, 700);
+    });
     var antecipa = function () {
       capa.querySelectorAll('[data-opcao="' + b.dataset.para + '"]').forEach(carregar);
     };
