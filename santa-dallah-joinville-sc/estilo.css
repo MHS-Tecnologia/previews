@@ -51,6 +51,7 @@ a { color: inherit; }
 .btn-anil:hover { background: var(--anil-3); }
 .btn-peq { min-height: 44px; padding: 8px 18px; font-size: 1rem; }
 .link { color: var(--framboesa); font-weight: 500; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.link { display: inline-flex; align-items: center; min-height: 44px; }
 .link:hover { color: var(--anil); }
 
 /* aviso e cabeçalho */
