@@ -28,7 +28,11 @@ body {
   font-family: 'Mona Sans', system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.55;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
+main { flex: 1; }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
@@ -109,9 +113,9 @@ ul, ol { list-style: none; }
   position: absolute;
   inset: 0;
   background: repeating-linear-gradient(90deg, #1b2a55 0 14px, #2a3b6e 14px 16px, #101a36 16px 20px);
-  animation: correr 1.25s cubic-bezier(.62, .02, .24, 1) .3s both;
+  animation: correr 1s cubic-bezier(.6, 0, .4, 1) .2s both;
 }
-@keyframes correr { to { transform: translateX(101%); visibility: hidden; } }
+@keyframes correr { to { transform: translateX(104%); visibility: hidden; } }
 
 /* a cota */
 .cota-h {
@@ -143,15 +147,29 @@ ul, ol { list-style: none; }
 .forte { display: grid; gap: 18px; padding-block: 26px; border-top: 2px solid var(--perfil); }
 .forte h3 { font-size: 1.5rem; line-height: 1.15; font-weight: 750; font-stretch: 112%; margin-bottom: 10px; color: var(--azul); }
 .forte p { max-width: 50ch; }
-.forte-fotos { display: grid; gap: 14px; }
 figcaption { font-size: .875rem; color: var(--aco); padding-top: 6px; }
-.forte-fotos img { width: 100%; object-fit: cover; }
-.forte-fotos figure:first-child img { aspect-ratio: 4 / 3; }
-.forte-fotos figure:last-child { width: 62%; margin-left: auto; }
-.forte-fotos figure:last-child img { aspect-ratio: 1 / 1; border: 6px solid var(--zinco); }
-.forte-fotos figure:last-child figcaption { text-align: right; }
-.forte-inv .forte-fotos figure:last-child { margin-left: 0; }
-.forte-inv .forte-fotos figure:last-child figcaption { text-align: left; }
+.janela-2 { grid-template-columns: 1fr; }
+.janela-2 .pano { aspect-ratio: 4 / 3; }
+.janela-2 .pano + .pano { aspect-ratio: 3 / 2; }
+.vao-inv .janela-2 .pano:first-child { aspect-ratio: 3 / 2; }
+.forte .legendas { display: flex; flex-wrap: wrap; gap: 2px 18px; font-size: .875rem; color: var(--aco); padding-top: 6px; max-width: none; }
+
+/* a faixa logo depois da abertura: a fachada de verdade */
+.desde { background: var(--tinta); color: #fff; padding-block: 28px 30px; }
+.desde-g { display: grid; gap: 18px; }
+.desde-g > img { width: 100%; }
+.desde-txt { position: relative; padding-right: 96px; }
+.selo { position: absolute; right: 0; top: 0; width: 84px; height: auto; }
+.desde h2 { font-size: clamp(1.625rem, 1.2rem + 2vw, 2.75rem); line-height: 1.08; font-weight: 800; font-stretch: 118%; letter-spacing: -.015em; margin-bottom: 10px; }
+.desde p { color: #d7ddea; max-width: 44ch; }
+.cota-tempo { display: flex; align-items: center; gap: 10px; margin-top: 20px; }
+.cota-tempo b { font-weight: 780; font-stretch: 112%; }
+.cota-tempo .cota-h { flex: 1; margin: 0; }
+.desde .cota-h, .mural .cota-h { color: #d7ddea; border-color: currentColor; }
+.desde .cota-h::before, .desde .cota-h::after, .mural .cota-h::before, .mural .cota-h::after { background: currentColor; }
+.mural .cota-h { margin-bottom: 14px; }
+.chamada .cota-h { color: var(--tinta); border-color: var(--tinta); margin: 0; }
+.chamada .cota-h::before, .chamada .cota-h::after { background: var(--tinta); }
 
 /* mural azul */
 .mural { background: var(--azul-fundo); color: #fff; padding-block: 44px 48px; margin-top: 24px; }
@@ -179,11 +197,8 @@ figcaption { font-size: .875rem; color: var(--aco); padding-top: 6px; }
 .fachadas { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .fachadas li { position: relative; display: flex; flex-direction: column; }
 .fachadas img { width: 100%; object-fit: cover; aspect-ratio: 19 / 10; }
-.fachadas .fa-23 { grid-column: 1 / -1; }
-.fachadas .fa-23 img { aspect-ratio: 4 / 3; }
 .fachadas span { font-size: 1.125rem; font-weight: 780; font-stretch: 118%; color: var(--azul); padding-top: 6px; }
 .historia .titulo { margin-bottom: 8px; }
-.historia .dois { margin-top: 16px; max-width: 860px; }
 
 /* chamada laranja: a cor do painel da fachada */
 .chamada { background: var(--laranja); color: var(--tinta); padding-block: 44px; }
@@ -233,6 +248,7 @@ figcaption { font-size: .875rem; color: var(--aco); padding-top: 6px; }
 .tres img, .dois img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
 /* obras */
+.obras-cta { margin-top: 16px; }
 .filtros { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 18px; }
 .filtros button { font: inherit; font-weight: 640; min-height: 44px; padding: 8px 14px; background: var(--aluminio); color: var(--tinta); border: 2px solid var(--perfil-esc); cursor: pointer; }
 .filtros button[aria-pressed="true"] { background: var(--azul); border-color: var(--azul); color: #fff; }
@@ -298,13 +314,21 @@ figcaption { font-size: .875rem; color: var(--aco); padding-top: 6px; }
   .forte-inv { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); }
   .forte-inv .forte-txt { order: 2; }
   .forte h3 { font-size: 2rem; }
-  .forte-fotos { grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); gap: 16px; align-items: end; }
-  .forte-fotos figure:first-child img { aspect-ratio: 3 / 2; }
-  .forte-fotos figure:last-child { width: auto; margin: 0; }
-  .forte-fotos figure:last-child img { aspect-ratio: 3 / 4; border: 0; }
-  .forte-fotos figure:last-child figcaption { text-align: left; }
-  .forte-inv .forte-fotos { grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); }
-  .forte-inv .forte-fotos figure:first-child { order: 2; }
+  .forte-largo { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .forte-largo .forte-txt { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: start; }
+  .forte-largo .forte-txt h3 { margin: 0; }
+  .janela-2 { grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); height: 430px; }
+  .janela-2 .pano, .janela-2 .pano + .pano, .vao-inv .janela-2 .pano:first-child { aspect-ratio: auto; }
+  .vao-inv .janela-2 { grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); height: 500px; }
+  .forte .legendas { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); gap: 8px; padding-inline: 8px; }
+  .forte .vao-inv .legendas { grid-template-columns: minmax(0, 1fr) minmax(0, 2.3fr); }
+
+  .desde { padding-block: 40px 36px; }
+  .desde-g { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: center; }
+  .desde-txt { padding-right: 0; }
+  .selo { position: static; width: 118px; margin-bottom: 16px; }
+  .cota-tempo { margin-top: 26px; font-size: 1.125rem; gap: 14px; }
+  .chamada-g > .cota-h { grid-column: 1 / -1; }
 
   .mural { padding-block: 72px 76px; margin-top: 40px; }
   .mural-topo { margin-bottom: 30px; }
@@ -318,9 +342,7 @@ figcaption { font-size: .875rem; color: var(--aco); padding-top: 6px; }
 
   .historia { padding-block: 72px; }
   .historia-g { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; }
-  .fachadas { grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); grid-template-rows: auto auto; }
-  .fachadas .fa-23 { grid-column: 1; grid-row: 1 / 3; }
-  .fachadas .fa-23 img { aspect-ratio: auto; flex: 1; min-height: 0; height: 0; }
+  .fachadas { gap: 16px; }
 
   .chamada { padding-block: 64px; }
   .chamada-g { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px 56px; }

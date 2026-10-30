@@ -8,6 +8,9 @@ if (barra && cta && 'IntersectionObserver' in window) {
   }).observe(cta)
 }
 
+// A folha do portão sai da página depois de correr.
+document.querySelector('.folha')?.addEventListener('animationend', (e) => e.target.remove())
+
 // Filtro da página de obras. Sem JS, todas as fotos aparecem.
 const botoes = document.querySelectorAll('[data-filtro]')
 botoes.forEach((b) => {
