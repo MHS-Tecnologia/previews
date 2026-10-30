@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Amo Conservas · Joinville</title>
+<meta name="description" content="Loja de conservas de família no Petrópolis, em Joinville: pepino, palmito macio, beterraba, ovos de codorna, azeitonas, picles e geleias. Tabela pelo WhatsApp.">
+<meta name="theme-color" content="#f7f2ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%239c1f33' d='M16 29s-12-7.4-12-16a6.5 6.5 0 0 1 12-3.5A6.5 6.5 0 0 1 28 13c0 8.6-12 16-12 16z'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" href="img/capa-1240.webp" imagesrcset="img/capa-820.webp 820w, img/capa-1240.webp 1240w, img/capa-1680.webp 1680w" imagesizes="(min-width: 860px) 50vw, 100vw" fetchpriority="high">
+<style>
+@font-face{font-family:Newsreader;src:url(fonts/newsreader.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:Newsreader;src:url(fonts/newsreader-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:Hanken;src:url(fonts/hanken.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+
+:root{
+  --papel:#f7f2ea;
+  --tinta:#2a211b;
+  --suave:#6b5e53;
+  --linha:#ddd2c3;
+  --acento:#9c1f33;
+  --acento-escuro:#7f1727;
+  --noite:#231a15;
+  --m:clamp(20px,5vw,72px);
+  --gap:24px;
+  --serifa:Newsreader,Georgia,"Times New Roman",serif;
+  --sans:Hanken,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:88px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--serifa);font-size:1.1875rem;line-height:1.55;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;width:100%;height:auto}
+figure{margin:0}
+h1,h2,p,dl,dd,ul,blockquote{margin:0;padding:0}
+ul{list-style:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+.servico :focus-visible,.rodape :focus-visible{outline-color:#fff}
+
+/* Aviso */
+.aviso{background:var(--noite);color:#efe6da;font:400 .8125rem/1.45 var(--sans);text-align:center;padding:8px var(--m)}
+.aviso a{color:#fff;text-underline-offset:2px}
+
+/* Cabeçalho */
+.cab{position:sticky;top:0;z-index:10;background:var(--papel);border-bottom:1px solid var(--linha)}
+.cab-in{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px;padding-inline:var(--m)}
+.marca{display:block;width:92px;flex:none}
+.nav{display:flex;gap:32px;font:500 .9375rem/1 var(--sans)}
+.nav a{text-decoration:none;padding:14px 0;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.nav a:hover{color:var(--acento);border-bottom-color:var(--acento)}
+.cab-pedir{font:600 .9375rem/1 var(--sans);color:var(--acento);text-underline-offset:4px;padding:14px 0;white-space:nowrap}
+.cab-pedir:hover{color:var(--acento-escuro)}
+.cab-acoes{display:flex;align-items:center;gap:32px}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font:500 .9375rem/1 var(--sans);padding:14px 0 14px 8px}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{color:var(--acento)}
+.menu ul{position:absolute;right:calc(var(--m)*-1);top:100%;width:100vw;background:var(--papel);border-bottom:1px solid var(--linha);padding:8px var(--m) 16px;font:400 1.5rem/1.2 var(--serifa)}
+.menu li+li{border-top:1px solid var(--linha)}
+.menu li a{display:block;padding:14px 0;text-decoration:none}
+
+/* Tipografia */
+.k{font:600 .75rem/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--acento)}
+h1,h2{font-weight:300;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(3.5rem,7.3vw,8rem);line-height:.98}
+h2{font-size:clamp(2.5rem,5vw,4.75rem);line-height:1.03;margin-top:16px}
+h1 em,h2 em{color:var(--acento);font-weight:300}
+p+p{margin-top:1em}
+.corpo{max-width:32em;margin-top:24px}
+figcaption{font:italic 400 1rem/1.35 var(--serifa);color:var(--suave);margin-top:10px}
+.ler{display:inline-block;margin-top:20px;padding:10px 0;font:600 .9375rem/1.3 var(--sans);color:var(--acento);text-underline-offset:4px}
+.ler:hover{color:var(--acento-escuro)}
+.bt{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 28px;background:var(--acento);color:#fff;font:600 1rem/1.2 var(--sans);text-decoration:none;border-radius:2px;transition:background .15s}
+.bt:hover{background:var(--acento-escuro)}
+
+/* Grade */
+.sec{padding-block:clamp(72px,11vw,168px)}
+.g{max-width:1440px;margin-inline:auto;padding-inline:var(--m)}
+
+/* Capa */
+.capa-topo{display:flex;justify-content:space-between;gap:16px;padding:20px var(--m) 0;font:500 .8125rem/1.3 var(--sans);color:var(--suave)}
+.capa-titulo{padding:20px var(--m) 28px}
+.capa-texto{padding:28px var(--m) 0}
+.capa-deck{font-size:1.3125rem;line-height:1.42;max-width:27em}
+.capa-texto .bt{margin-top:24px;width:100%}
+.capa-dados{margin-top:20px;font:400 .9375rem/1.5 var(--sans);color:var(--suave)}
+.capa-dados b{color:var(--tinta);font-weight:600}
+.capa-foto figcaption{padding:0 var(--m)}
+
+/* Parede */
+.parede-in{margin-top:0}
+.parede-foto{width:62%;margin-top:40px}
+.milho{margin-top:48px}
+.trio{margin-top:48px}
+
+/* Palmito */
+.palmito-foto{width:84%;margin-bottom:36px}
+.palmito h2{font-style:italic}
+
+/* Geleias */
+.geleias{padding-bottom:clamp(72px,11vw,168px)}
+.geleias img{aspect-ratio:4/3;object-fit:cover;object-position:50% 40%}
+.geleias .g{padding-top:40px}
+
+/* Novidade */
+.novidade{padding-top:0}
+.novidade figure{margin-top:32px}
+
+/* História */
+.historia{border-top:1px solid var(--linha)}
+.historia-casal{margin-top:32px}
+.historia-artigo{margin-top:32px}
+.historia-artigo p:first-child::first-letter{float:left;font-size:4.9em;line-height:.8;padding:.06em .08em 0 0;color:var(--acento);font-weight:300}
+.citacao{text-wrap:balance;font-size:clamp(2rem,3.4vw,3.25rem);line-height:1.1;font-style:italic;font-weight:300;letter-spacing:-.015em;margin-block:36px;color:var(--acento)}
+.citacao-fonte{font:400 .875rem/1.4 var(--sans);color:var(--suave);margin-top:-20px;margin-bottom:32px}
+.dia{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.dia .cinco{grid-column:1/-1}
+
+/* Vidros grandes */
+.vidros{background:#efe7da}
+.vidros figure{margin-bottom:36px}
+
+/* À mesa */
+.mesa-fotos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.mesa-fotos>.tabua,.mesa-tres>.prato{grid-column:1/-1}
+.mesa-tres{display:contents}
+.mesa-tres figcaption{font-size:.9375rem}
+
+/* Resto da loja */
+.mural{columns:2;column-gap:12px;margin-top:40px}
+.mural-col{display:contents}
+.mural figure{break-inside:avoid;margin-bottom:24px}
+.mural figcaption{font-size:.9375rem}
+.mural-nota{break-inside:avoid;padding-top:12px;border-top:1px solid var(--tinta);font-size:1.3125rem;line-height:1.3}
+
+/* Sumário */
+.linha{border-top:1px solid var(--linha)}
+.lista{margin-top:32px;border-top:1px solid var(--tinta)}
+.lista li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--linha);font-size:1.3125rem;line-height:1.25}
+.lista span{font:500 .9375rem/1 var(--sans);font-variant-numeric:tabular-nums;color:var(--suave)}
+
+/* Serviço */
+.servico{background:var(--acento);color:#fbf4ec}
+.servico .k{color:#f3d9c9}
+.servico h2 em{color:inherit}
+.dados{display:grid;gap:24px;margin-top:40px}
+.dados dt{font:600 .75rem/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#f3d9c9;margin-bottom:6px}
+.dados dd{font-size:1.25rem;line-height:1.4}
+.dados a{display:inline-block;padding-block:10px;margin-block:-10px;text-underline-offset:3px}
+.bt-claro{background:#fbf4ec;color:var(--acento-escuro);margin-top:40px;width:100%}
+.bt-claro:hover{background:#fff}
+.vidros-nota{margin-top:28px;font-style:italic;max-width:30em}
+
+/* Rodapé */
+.rodape{background:var(--noite);color:#d9cdbf;font:400 .875rem/1.55 var(--sans);padding-block:40px}
+.rodape-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.rodape img{width:88px}
+.rodape a{color:#fff;text-underline-offset:2px}
+
+@media (max-width:859px){
+  .nav-largo{display:none}
+  .menu{display:block}
+  .cab-in{min-height:60px;gap:12px}
+  .cab-acoes{gap:16px}
+  .marca{width:80px}
+}
+
+@media (min-width:860px){
+  .g-12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+
+  /* Capa: duas colunas, foto sangrando à direita */
+  .capa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;min-height:max(640px,calc(100svh - 112px))}
+  .capa-topo{grid-column:1;padding:32px 40px 0 var(--m)}
+  .capa-titulo{grid-column:1;padding:clamp(32px,6vh,72px) 40px 0 var(--m)}
+  .capa-texto{grid-column:1;align-self:end;padding:32px 40px 48px var(--m)}
+  .capa-foto{grid-column:2;grid-row:1/4;position:relative;min-height:100%}
+  .capa-foto img{position:absolute;inset:0;height:100%;object-fit:cover;object-position:50% 18%}
+  .capa-foto figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:48px 24px 16px;color:#fff;background:linear-gradient(to top,rgba(35,26,21,.72),rgba(35,26,21,0))}
+  .capa-texto .bt{width:auto}
+
+  /* Parede */
+  .parede-titulo{grid-column:1/6;grid-row:1}
+  .milho{grid-column:7/13;grid-row:1/3;margin-top:72px}
+  .parede-foto{grid-column:1/4;grid-row:2;width:auto;margin-top:64px;align-self:end}
+  .parede-nota{grid-column:4/6;grid-row:2;align-self:end}
+  .parede-nota figcaption{margin:0}
+  .trio{grid-column:3/10;grid-row:3;margin-top:72px}
+
+  /* Palmito */
+  .palmito-foto{grid-column:2/6;width:auto;margin:0;align-self:center}
+  .palmito-texto{grid-column:7/13;align-self:center}
+
+  /* Geleias */
+  .geleias img{aspect-ratio:16/9}
+  .geleias .g{padding-top:56px}
+  .geleias-titulo{grid-column:1/7}
+  .geleias-texto{grid-column:8/13}
+  .geleias-texto .corpo{margin-top:30px}
+
+  /* Novidade */
+  .novidade-texto{grid-column:1/5;align-self:end;padding-bottom:32px}
+  .novidade figure{grid-column:5/13;margin:0}
+
+  /* História */
+  .historia-titulo{grid-column:1/10}
+  .historia-casal{grid-column:1/7;margin-top:64px}
+  .historia-artigo{grid-column:8/13;margin-top:64px;align-self:end}
+  .dia{grid-column:1/13;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);margin-top:96px;align-items:start}
+  .dia .cinco{grid-column:2/7}
+  .dia .sab{grid-column:8/10;margin-top:96px}
+  .dia .ent{grid-column:10/13}
+
+  /* Vidros */
+  .vidros figure{grid-column:1/6;margin:0}
+  .vidros-texto{grid-column:7/12;align-self:center}
+
+  /* Mesa */
+  .mesa-titulo{grid-column:7/13;grid-row:1;align-self:end;padding-bottom:64px}
+  .mesa-fotos{display:contents}
+  .mesa-fotos>.tabua{grid-column:1/6;grid-row:1/3}
+  .mesa-tres{grid-column:7/13;grid-row:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);align-items:start}
+  .mesa-tres>.prato{grid-column:auto}
+
+  /* Mural */
+  .mural-titulo{grid-column:1/8}
+  .mural-intro{grid-column:9/13;align-self:end}
+  .mural-intro p{margin:0}
+  .mural{grid-column:1/13;columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap);margin-top:56px;align-items:start}
+  .mural-col{display:block}
+  .mural-col:nth-child(2){margin-top:96px}
+  .mural figure{margin-bottom:40px}
+
+  /* Sumário */
+  .linha-titulo{grid-column:1/6}
+  .lista{grid-column:7/13;margin-top:0}
+
+  /* Serviço */
+  .servico-titulo{grid-column:1/7}
+  .servico-dados{grid-column:8/13}
+  .dados{margin-top:0}
+  .bt-claro{width:auto}
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amo Conservas · Joinville">
+<meta property="og:description" content="Loja de conservas de família no Petrópolis, em Joinville: pepino, palmito macio, beterraba, ovos de codorna, azeitonas, picles e geleias. Tabela pelo WhatsApp.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/amo-conservas-a-joinville-sc/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/amo-conservas-a-joinville-sc/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<div class="aviso" role="note">Demonstração não oficial feita pela MHS Tecnologia para a AMO Conservas, sem vínculo com a AMO. Quem fez: <a href="https://mhstecnologia.com.br/pt">mhstecnologia.com.br</a> · CNPJ 49.394.230/0001-71</div>
+
+<header class="cab" id="topo">
+  <div class="cab-in">
+    <a class="marca" href="#topo" aria-label="Amo Conservas, início da página"><img src="img/logo-200.webp" srcset="img/logo-200.webp 1x, img/logo-400.webp 2x" width="200" height="104" alt="Amo Conservas"></a>
+    <nav class="nav nav-largo" aria-label="Principal">
+      <a href="#linha">Produtos Amo</a>
+      <a href="#loja">A loja</a>
+      <a href="#historia">Nossa história</a>
+      <a href="#pedir">Como pedir</a>
+    </nav>
+    <div class="cab-acoes">
+      <a class="cab-pedir" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20Amo%20Conservas.">Pedir a tabela</a>
+      <details class="menu">
+        <summary>Menu</summary>
+        <nav aria-label="Principal (celular)">
+          <ul>
+            <li><a href="#linha">Produtos Amo</a></li>
+            <li><a href="#loja">A loja</a></li>
+            <li><a href="#historia">Nossa história</a></li>
+            <li><a href="#pedir">Como pedir</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="capa" aria-labelledby="t-capa">
+  <div class="capa-topo"><span>Ano 6 · Outubro de 2026</span><span>Joinville, SC</span></div>
+  <div class="capa-titulo">
+    <h1 id="t-capa">Tudo o que<br>cabe num<br><em>vidro.</em></h1>
+  </div>
+  <figure class="capa-foto">
+    <img src="img/capa-1240.webp" srcset="img/capa-820.webp 820w, img/capa-1240.webp 1240w, img/capa-1680.webp 1680w" sizes="(min-width: 860px) 50vw, 100vw" width="1680" height="2016" alt="Mulher sorrindo na loja da Amo, segurando dois vidros de conserva com prateleiras ao fundo" fetchpriority="high">
+    <figcaption>Cebola em filetes sabor defumado, com o rótulo Amo.</figcaption>
+  </figure>
+  <div class="capa-texto">
+    <p class="capa-deck">Pepino, palmito macio, beterraba, ovos de codorna, azeitonas, picles e geleias. Há seis anos, uma família enche as prateleiras de uma loja no Petrópolis.</p>
+    <a class="bt" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20Amo%20Conservas.">Pedir a tabela no WhatsApp</a>
+    <p class="capa-dados"><b>4,9</b> no Google, em 186 avaliações<br><b>224</b> itens na tabela, <b>77</b> com o rótulo Amo</p>
+  </div>
+</section>
+
+<section class="sec" id="loja" aria-labelledby="t-parede">
+  <div class="g g-12">
+    <div class="parede-titulo">
+      <p class="k">A loja</p>
+      <h2 id="t-parede">Uma parede inteira de vidros.</h2>
+      <div class="corpo">
+        <p>Na Rua dos Aimorés, a conserva vai do chão ao teto. São 224 itens na tabela de outubro, e 77 deles levam o rótulo da casa.</p>
+        <p>Os campeões de vendas são o pepino, o pepino em rodelas para hambúrguer, a beterraba docinha, o palmito pupunha extra macio e os ovos de codorna quebradinhos.</p>
+      </div>
+    </div>
+    <figure class="milho">
+      <img src="img/milho-1200.webp" srcset="img/milho-720.webp 720w, img/milho-1200.webp 1200w" sizes="(min-width: 860px) 44vw, 100vw" width="1200" height="1536" alt="Dois vidros de mini milho em conserva com o rótulo Amo" loading="lazy" decoding="async">
+      <figcaption>Mini milho em conserva. Peso líquido de 530 g.</figcaption>
+    </figure>
+    <div class="parede-foto">
+      <img src="img/parede-415.webp" width="415" height="739" alt="Corredor da loja com prateleiras cheias de vidros de conserva até o teto" loading="lazy" decoding="async">
+    </div>
+    <figure class="parede-nota"><figcaption>O corredor da loja, com as prateleiras até o teto.</figcaption></figure>
+    <figure class="trio">
+      <img src="img/trio-1200.webp" srcset="img/trio-720.webp 720w, img/trio-1200.webp 1200w" sizes="(min-width: 860px) 52vw, 100vw" width="1200" height="810" alt="Três vidros Amo sobre uma tábua: pepino, couve-flor e cenoura" loading="lazy" decoding="async">
+      <figcaption>Pepino, couve-flor e cenoura.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="t-palmito" style="padding-top:0">
+  <div class="g g-12 palmito">
+    <figure class="palmito-foto">
+      <img src="img/palmito-554.webp" width="554" height="554" alt="Vidros Amo empilhados em pirâmide sobre uma mesa, com o palmito palmeira no topo" loading="lazy" decoding="async">
+      <figcaption>Na loja, o palmito palmeira no topo da pilha.</figcaption>
+    </figure>
+    <div class="palmito-texto">
+      <p class="k">Palmito macio</p>
+      <h2 id="t-palmito">Você sabe identificar um palmito macio?</h2>
+      <div class="corpo">
+        <p>A pergunta é da própria Amo, num post do Instagram. O coração de pupunha extra macio é campeão de vendas da casa.</p>
+        <p>A pupunha vem em tolete, coração, rodela, picado e bandas. A palmeira real vem em tolete e em coração extra macio. São sete palmitos com o rótulo Amo, em vidros de 300 g.</p>
+      </div>
+      <a class="ler" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20o%20pre%C3%A7o%20do%20palmito%20Amo.">Perguntar o preço do palmito</a>
+    </div>
+  </div>
+</section>
+
+<section class="geleias" aria-labelledby="t-geleias">
+  <img src="img/geleias-1440.webp" srcset="img/geleias-820.webp 820w, img/geleias-1440.webp 1440w, img/geleias-2400.webp 2400w" sizes="100vw" width="2400" height="1472" alt="Cinco vidros de geleia colonial Amo enfileirados sobre uma mesa de madeira: uva, tangerina, frutas vermelhas, laranja e amora" loading="lazy" decoding="async">
+  <div class="g g-12">
+    <div class="geleias-titulo">
+      <p class="k">Doce também tem</p>
+      <h2 id="t-geleias">Quinze geleias com o rótulo Amo.</h2>
+    </div>
+    <div class="geleias-texto">
+      <div class="corpo">
+        <p>Morango, amora, uva, jabuticaba, maracujá, kiwi, abacaxi, laranja, tangerina, frutas vermelhas e abóbora com coco.</p>
+        <p>E as que ardem um pouco: xinxim, pimenta, abacaxi com pimenta e maracujá com pimenta.</p>
+      </div>
+      <a class="ler" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20saber%20das%20geleias%20Amo.">Perguntar pelas geleias</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec novidade" aria-labelledby="t-novidade">
+  <div class="g g-12">
+    <div class="novidade-texto">
+      <p class="k">Novidade na loja</p>
+      <h2 id="t-novidade">Fondant e cocada cremosa.</h2>
+      <div class="corpo">
+        <p>Da Recanto da Serra. O fondant de leite vem com chocolate, geleia de morango ou de maracujá, em 680&nbsp;g. A cocada vem com nozes, goiabada, geleia de morango ou de maracujá, em 660&nbsp;g.</p>
+        <p>E outra que acabou de sair no Instagram: salame com queijo.</p>
+      </div>
+      <a class="ler" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20saber%20das%20novidades%20da%20Amo.">Perguntar pelas novidades</a>
+    </div>
+    <figure>
+      <img src="img/novidade-1400.webp" srcset="img/novidade-820.webp 820w, img/novidade-1400.webp 1400w" sizes="(min-width: 860px) 60vw, 100vw" width="1400" height="1307" alt="Sete vidros de fondant e cocada cremosa Recanto da Serra empilhados sobre uma tábua de madeira" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<section class="sec historia" id="historia" aria-labelledby="t-historia">
+  <div class="g g-12">
+    <div class="historia-titulo">
+      <p class="k">Nossa história</p>
+      <h2 id="t-historia">Seis anos embaixo do mesmo <em>neon.</em></h2>
+    </div>
+    <figure class="historia-casal">
+      <img src="img/casal-1400.webp" srcset="img/casal-820.webp 820w, img/casal-1400.webp 1400w" sizes="(min-width: 860px) 44vw, 100vw" width="1400" height="1866" alt="Casal sorrindo na frente da parede de folhas com o letreiro em neon da Amo, ao lado de um balão dourado com o número seis" loading="lazy" decoding="async">
+      <figcaption>O sexto aniversário da loja, em 2026.</figcaption>
+    </figure>
+    <div class="historia-artigo">
+      <p>A Amo é uma loja de família. Fica na Rua dos Aimorés, no Petrópolis, e tem uma parede de folhas com o nome da casa em neon vermelho. É ali que as fotos importantes acontecem.</p>
+      <p>Em 2025, os cinco anos viraram mesa farta: beterraba, queijos, azeitonas e conservas. Em 2026 veio o sexto, com o casal embaixo do letreiro e um balão dourado no meio.</p>
+      <p>No rótulo, a frase é “Qualidade que apaixona”. Na bio do Instagram, onde cerca de 13 mil pessoas acompanham a loja, ela é outra:</p>
+      <blockquote class="citacao">Nós amamos levar a Amo até você.</blockquote>
+      <p class="citacao-fonte">@amo.conservas</p>
+      <p>E levar é levar mesmo. Tem dia de sair com o engradado para as entregas, e tem manhã de sábado atrás do balcão.</p>
+    </div>
+    <div class="dia">
+      <figure class="cinco">
+        <img src="img/cinco-anos-1040.webp" srcset="img/cinco-anos-640.webp 640w, img/cinco-anos-1040.webp 1040w" sizes="(min-width: 860px) 36vw, 100vw" width="1040" height="1170" alt="Mesa de festa da Amo com beterraba, queijos, azeitonas e conservas, e um balão dourado com o número cinco" loading="lazy" decoding="async">
+        <figcaption>A mesa dos cinco anos, em 2025.</figcaption>
+      </figure>
+      <figure class="sab">
+        <img src="img/sabado-480.webp" srcset="img/sabado-480.webp 480w, img/sabado-720.webp 720w" sizes="(min-width: 860px) 14vw, 50vw" width="720" height="1024" alt="Homem atrás do balcão da loja, com a janela aberta para a rua" loading="lazy" decoding="async">
+        <figcaption>Manhã de sábado.</figcaption>
+      </figure>
+      <figure class="ent">
+        <img src="img/entregas-480.webp" srcset="img/entregas-480.webp 480w, img/entregas-720.webp 720w" sizes="(min-width: 860px) 21vw, 50vw" width="720" height="973" alt="Pessoa carregando um engradado branco em frente a uma casa, sob céu com nuvens" loading="lazy" decoding="async">
+        <figcaption>Dia de entregas.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec vidros" aria-labelledby="t-vidros">
+  <div class="g g-12">
+    <figure>
+      <img src="img/beterraba-1400.webp" srcset="img/beterraba-820.webp 820w, img/beterraba-1400.webp 1400w" sizes="(min-width: 860px) 37vw, 100vw" width="1400" height="1792" alt="Mulher sorrindo segurando um vidro grande de beterraba agridoce Amo" loading="lazy" decoding="async">
+      <figcaption>Beterraba agridoce: 3,1 kg de peso líquido, 1,8 kg drenado.</figcaption>
+    </figure>
+    <div class="vidros-texto">
+      <p class="k">Para mercado e restaurante</p>
+      <h2 id="t-vidros">Vidro grande, para cozinha grande.</h2>
+      <div class="corpo">
+        <p>A Amo atende quem compra para a casa, para o mercado e para o restaurante.</p>
+        <p>Palmito, pepino, beterraba agridoce, picles, cenoura, couve-flor, cebola e vagem também vêm em vidros de 1,8 kg.</p>
+      </div>
+      <a class="ler" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20dos%20vidros%20grandes%20Amo%20%281%2C8%20kg%29.">Pedir a tabela dos vidros grandes</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="t-mesa">
+  <div class="g g-12">
+    <div class="mesa-titulo">
+      <p class="k">À mesa</p>
+      <h2 id="t-mesa">Conserva também é tábua.</h2>
+      <div class="corpo">
+        <p>Palmito, pepino, azeitona e ovos de codorna fazem a tábua. A loja tem embutidos, frios e vinhos para completar. As receitas saem no Instagram, com ingredientes e quantidades na descrição do vídeo.</p>
+      </div>
+    </div>
+    <div class="mesa-fotos">
+      <figure class="tabua">
+        <img src="img/tabua-1040.webp" srcset="img/tabua-640.webp 640w, img/tabua-1040.webp 1040w" sizes="(min-width: 860px) 36vw, 100vw" width="1040" height="1196" alt="Tábua de madeira com queijos, salame, azeitonas e conservas" loading="lazy" decoding="async">
+        <figcaption>Queijos, salame, azeitonas e conservas.</figcaption>
+      </figure>
+      <div class="mesa-tres">
+        <figure class="prato">
+          <img src="img/prato-480.webp" srcset="img/prato-480.webp 480w, img/prato-800.webp 800w" sizes="(min-width: 860px) 14vw, 100vw" width="800" height="1036" alt="Mulher estendendo um prato com palmito, pepino, queijo e salame" loading="lazy" decoding="async">
+          <figcaption>Palmito, pepino, queijo e salame.</figcaption>
+        </figure>
+        <figure class="receita">
+          <img src="img/receita-480.webp" srcset="img/receita-480.webp 480w, img/receita-800.webp 800w" sizes="(min-width: 860px) 16vw, 50vw" width="800" height="1049" alt="Fatia de torta salgada em um prato branco" loading="lazy" decoding="async">
+          <figcaption>Da loja para o prato.</figcaption>
+        </figure>
+        <figure class="parrilla">
+          <img src="img/parrilla-480.webp" srcset="img/parrilla-480.webp 480w, img/parrilla-800.webp 800w" sizes="(min-width: 860px) 16vw, 50vw" width="800" height="1079" alt="Disco de ferro com carne e legumes ao ar livre" loading="lazy" decoding="async">
+          <figcaption>E para o disco, ao ar livre.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="t-mural" style="padding-top:0">
+  <div class="g g-12">
+    <div class="mural-titulo">
+      <p class="k">Além do rótulo</p>
+      <h2 id="t-mural">E o resto da loja.</h2>
+    </div>
+    <div class="mural-intro corpo"><p>Além da linha Amo, a loja revende outras marcas.</p></div>
+    <div class="mural">
+      <div class="mural-col">
+      <figure>
+        <img src="img/vinhos-1040.webp" srcset="img/vinhos-640.webp 640w, img/vinhos-1040.webp 1040w" sizes="(min-width: 860px) 30vw, 50vw" width="1040" height="930" alt="Prateleira com garrafas de vinho na loja" loading="lazy" decoding="async">
+        <figcaption>Vinhos.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/danimar-880.webp" srcset="img/danimar-520.webp 520w, img/danimar-880.webp 880w" sizes="(min-width: 860px) 30vw, 50vw" width="880" height="975" alt="Dois vidros de pepino em salmoura Danimar" loading="lazy" decoding="async">
+        <figcaption>Pepino em salmoura Danimar.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/sal-880.webp" srcset="img/sal-520.webp 520w, img/sal-880.webp 880w" sizes="(min-width: 860px) 30vw, 50vw" width="880" height="939" alt="Mãos segurando três potes de sal de parrilla Brehm" loading="lazy" decoding="async">
+        <figcaption>Sal de parrilla Brehm.</figcaption>
+      </figure>
+      </div>
+      <div class="mural-col">
+      <figure>
+        <img src="img/embutidos-1040.webp" srcset="img/embutidos-640.webp 640w, img/embutidos-1040.webp 1040w" sizes="(min-width: 860px) 30vw, 50vw" width="1040" height="1040" alt="Suporte de madeira com linguiças penduradas e embutidos embalados" loading="lazy" decoding="async">
+        <figcaption>Embutidos.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/farinha-880.webp" srcset="img/farinha-520.webp 520w, img/farinha-880.webp 880w" sizes="(min-width: 860px) 30vw, 50vw" width="880" height="986" alt="Mulher segurando um pacote de farinha de mandioca Morretes" loading="lazy" decoding="async">
+        <figcaption>Farinha de mandioca Morretes.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/olho-880.webp" srcset="img/olho-520.webp 520w, img/olho-880.webp 880w" sizes="(min-width: 860px) 30vw, 50vw" width="880" height="1125" alt="Embalagens de linguiça e embutidos da marca Olho" loading="lazy" decoding="async">
+        <figcaption>Os produtos Olho, agora também na Amo.</figcaption>
+      </figure>
+      </div>
+      <div class="mural-col">
+      <figure>
+        <img src="img/ambrosia-880.webp" srcset="img/ambrosia-520.webp 520w, img/ambrosia-880.webp 880w" sizes="(min-width: 860px) 30vw, 50vw" width="880" height="995" alt="Mão segurando um vidro de doce de ambrosia Brehm" loading="lazy" decoding="async">
+        <figcaption>Doce de ambrosia Brehm.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/salsichas-800.webp" srcset="img/salsichas-480.webp 480w, img/salsichas-800.webp 800w" sizes="(min-width: 860px) 30vw, 50vw" width="800" height="939" alt="Mão tirando de uma caixa um pote de salsichas em vinagrete Estrela" loading="lazy" decoding="async">
+        <figcaption>Salsichas em vinagrete Estrela.</figcaption>
+      </figure>
+      <p class="mural-nota">São 224 itens na tabela, entre doces, mel, biscoitos e orgânicos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec linha" id="linha" aria-labelledby="t-linha">
+  <div class="g g-12">
+    <div class="linha-titulo">
+      <p class="k">Sumário</p>
+      <h2 id="t-linha">A linha Amo, em 77 rótulos.</h2>
+      <a class="ler" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20Amo%20Conservas.">Pedir a tabela completa</a>
+    </div>
+    <ul class="lista">
+      <li>Variedades <span>15</span></li>
+      <li>Geleias <span>15</span></li>
+      <li>Vidros grandes <span>13</span></li>
+      <li>Biscoitos artesanais <span>8</span></li>
+      <li>Palmitos <span>7</span></li>
+      <li>Pepinos <span>6</span></li>
+      <li>Azeitonas <span>3</span></li>
+      <li>Frutas em calda <span>3</span></li>
+      <li>Picles <span>2</span></li>
+      <li>Ovos de codorna <span>2</span></li>
+      <li>Pimentas <span>2</span></li>
+      <li>Beterraba <span>1</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec servico" id="pedir" aria-labelledby="t-servico">
+  <div class="g g-12">
+    <div class="servico-titulo">
+      <p class="k">Como pedir</p>
+      <h2 id="t-servico">Passe na loja, ou peça <em>pelo WhatsApp.</em></h2>
+      <p class="vidros-nota">Traga seus vidros vazios, ganhe desconto e ajude o meio ambiente.</p>
+      <a class="bt bt-claro" href="https://wa.me/5547996331583?text=Ol%C3%A1%21%20Quero%20a%20tabela%20da%20Amo%20Conservas.">Pedir a tabela no WhatsApp</a>
+    </div>
+    <div class="servico-dados">
+      <dl class="dados">
+        <div><dt>Endereço</dt><dd>Rua dos Aimorés, 4897<br>Petrópolis, Joinville – SC<br>CEP 89208-720</dd></div>
+        <div><dt>Horário</dt><dd>Segunda a sexta: 9h às 12h e 14h às 18h<br>Sábado: 9h às 12h</dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5547996331583">(47) 99633-1583</a></dd></div>
+        <div><dt>Telefone</dt><dd><a href="tel:+554734292273">(47) 3429-2273</a></dd></div>
+        <div><dt>Instagram</dt><dd>@amo.conservas</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="g rodape-in">
+    <img src="img/logo-claro-200.webp" srcset="img/logo-claro-200.webp 1x, img/logo-claro-400.webp 2x" width="200" height="104" alt="Amo Conservas" loading="lazy" decoding="async">
+    <div>
+      <p>Demonstração não oficial feita pela MHS Tecnologia para a AMO Conservas. Sem vínculo com a AMO Conservas.</p>
+      <p>Removido a pedido: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.menu a').forEach(function (a) {
+  a.addEventListener('click', function () { a.closest('details').removeAttribute('open') })
+})
+</script>
+</body>
+</html>
