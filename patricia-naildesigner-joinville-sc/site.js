@@ -115,16 +115,32 @@
     // Foto ampliada
     var zoom = $('[data-zoom]')
     var zImg = $('img', zoom)
+    var atual = null
+    var abrir = function (b) {
+      atual = b
+      zImg.width = +b.dataset.w
+      zImg.height = +b.dataset.h
+      zImg.src = b.dataset.grande
+      zImg.alt = b.dataset.t
+      $('[data-zoom-t]', zoom).textContent = b.dataset.t
+      $('[data-zoom-wa]', zoom).href = b.dataset.wa
+    }
+    // Anterior e próxima respeitam o filtro ligado
+    var andar = function (passo) {
+      var vis = tiles.filter(function (t) { return !t.hidden }).map(function (t) { return $('.tile-foto', t) })
+      abrir(vis[(vis.indexOf(atual) + passo + vis.length) % vis.length])
+    }
     $$('.tile-foto').forEach(function (b) {
       b.addEventListener('click', function () {
-        zImg.width = +b.dataset.w
-        zImg.height = +b.dataset.h
-        zImg.src = b.dataset.grande
-        zImg.alt = b.dataset.t
-        $('[data-zoom-t]', zoom).textContent = b.dataset.t
-        $('[data-zoom-wa]', zoom).href = b.dataset.wa
+        abrir(b)
         zoom.showModal()
       })
+    })
+    $('[data-zoom-ant]', zoom).addEventListener('click', function () { andar(-1) })
+    $('[data-zoom-prox]', zoom).addEventListener('click', function () { andar(1) })
+    zoom.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') andar(-1)
+      if (e.key === 'ArrowRight') andar(1)
     })
     $('[data-zoom-fechar]', zoom).addEventListener('click', function () { zoom.close() })
     zoom.addEventListener('click', function (e) {

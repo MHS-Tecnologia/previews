@@ -31,7 +31,7 @@
 <section class="galeria">
   <div class="largura">
     <h1 data-hero>Os trabalhos, por cor e por estilo</h1>
-    <p class="intro">Vinte fotos, todas sobre pano branco. Escolha uma cor, um estilo ou os dois. Gostou de uma? Toque em &ldquo;Quero esta&rdquo; e ela vai junto na mensagem.</p>
+    <p class="intro">Escolha por cor, estilo ou os dois. Em &ldquo;Quero esta&rdquo;, a foto vai junto na mensagem.</p>
     <div class="filtros">
       <div class="amostras" role="group" aria-label="Filtrar por cor">
         <button class="amostra" type="button" data-filtro-cor="vinho" aria-pressed="false"><span class="unha" style="background:#7A1226"></span>Vinho</button>
@@ -140,7 +140,14 @@
 <dialog class="zoom" data-zoom aria-label="Foto ampliada">
   <button class="zoom-x" type="button" data-zoom-fechar aria-label="Fechar">Fechar</button>
   <img src="img/ig-02-800.webp" alt="" width="1200" height="1200">
-  <div class="zoom-pe"><p data-zoom-t></p><a class="btn" data-zoom-wa href="https://wa.me/5547996430264?text=Oi%2C%20Patricia!%20Queria%20saber%20mais%20sobre%20as%20unhas.">Quero esta</a></div>
+  <div class="zoom-pe">
+    <p data-zoom-t></p>
+    <div class="zoom-acoes">
+      <button class="zoom-nav" type="button" data-zoom-ant>Anterior</button>
+      <button class="zoom-nav" type="button" data-zoom-prox>Próxima</button>
+      <a class="btn" data-zoom-wa href="https://wa.me/5547996430264?text=Oi%2C%20Patricia!%20Queria%20saber%20mais%20sobre%20as%20unhas.">Quero esta</a>
+    </div>
+  </div>
 </dialog>
 
 <section class="fecho">
