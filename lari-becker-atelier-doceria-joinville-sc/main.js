@@ -26,6 +26,7 @@
   btn.addEventListener('click', function () {
     var aberto = nav.classList.toggle('aberta');
     btn.setAttribute('aria-expanded', String(aberto));
+    btn.textContent = aberto ? 'Fechar' : 'Menu';
   });
   // Listas longas: abertas no computador, fechadas no celular.
   if (window.matchMedia('(min-width:861px)').matches) {
