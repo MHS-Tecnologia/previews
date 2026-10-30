@@ -142,6 +142,18 @@
       if (e.key === 'ArrowLeft') andar(-1)
       if (e.key === 'ArrowRight') andar(1)
     })
+    // Deslizar o dedo na foto troca de foto
+    var iniX = 0
+    var iniY = 0
+    zImg.addEventListener('touchstart', function (e) {
+      iniX = e.changedTouches[0].clientX
+      iniY = e.changedTouches[0].clientY
+    }, { passive: true })
+    zImg.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - iniX
+      var dy = e.changedTouches[0].clientY - iniY
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) andar(dx < 0 ? 1 : -1)
+    }, { passive: true })
     $('[data-zoom-fechar]', zoom).addEventListener('click', function () { zoom.close() })
     zoom.addEventListener('click', function (e) {
       if (e.target === zoom) zoom.close()
