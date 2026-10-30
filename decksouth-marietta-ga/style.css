@@ -1,0 +1,291 @@
+@font-face { font-family: "Hepta Slab"; font-weight: 1 900; font-display: swap; src: url(fonts/hepta.woff2) format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 200 900; font-display: swap; src: url(fonts/sourcesans.woff2) format("woff2"); }
+
+/* Dusk: the slate siding and metal roofs in their best photos. Board: the yellow of their logo.
+   Paver: the cool stone of their patios, not cream. Cedar: the warm decking under the lights. */
+:root {
+  --dusk: #1b2a35;
+  --dusk-2: #263a48;
+  --board: #fcd900;
+  --board-deep: #d9b900;
+  --paver: #eceee9;
+  --paver-2: #dde1dc;
+  --ink: #17222b;
+  --slate: #47545e;
+  --mist: #bccad3;
+  --cedar: #8a4c28;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 78rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paver); color: var(--ink); font: 400 1.125rem/1.6 "Source Sans 3", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+ul, ol { padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid var(--board); outline-offset: 3px; box-shadow: 0 0 0 3px var(--ink); }
+h1, h2, h3 { font-family: "Hepta Slab", Georgia, serif; font-weight: 600; line-height: 1.08; letter-spacing: -.015em; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 5.1vw, 4.5rem); }
+h2 { font-size: clamp(1.95rem, 3.6vw, 3.1rem); }
+h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); line-height: 1.15; }
+p { max-width: 38rem; text-wrap: pretty; }
+[id] { scroll-margin-top: 1rem; }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; color: var(--ink); padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.wrap { max-width: var(--max); margin-inline: auto; }
+section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
+.tight { padding-top: 0; }
+.dark { background: var(--dusk); color: #fff; }
+.dark p { color: var(--mist); }
+.alt { background: var(--paver-2); }
+
+[hidden] { display: none !important; }
+.demo { max-width: none; background: #0f181f; color: #c9d3da; font-size: .8125rem; line-height: 1.35; text-align: center; padding: .4rem 1rem; }
+
+/* Header */
+.top { background: var(--dusk); color: #fff; padding: .7rem var(--pad); }
+.top-in { position: relative; max-width: var(--max); margin-inline: auto; display: flex; align-items: center; gap: 1.5rem; }
+.brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; font: 700 1.3rem/1 "Hepta Slab", Georgia, serif; letter-spacing: -.02em; margin-right: auto; }
+.brand img { width: 2.5rem; height: 2.5rem; }
+.nav ul { display: flex; gap: 1.3rem; font-size: 1rem; font-weight: 500; }
+.nav a { text-decoration: none; padding: .35rem 0; }
+.nav a:hover, .nav a[aria-current] { text-decoration: underline; text-decoration-color: var(--board); text-decoration-thickness: 3px; text-underline-offset: 7px; }
+.menu { display: none; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: .7rem 1.35rem; background: var(--board); color: var(--ink); font-family: inherit; font-weight: 700; font-size: 1.125rem; line-height: 1.15; text-decoration: none; border: 0; cursor: pointer; border-radius: 2px; box-shadow: inset 0 -3px 0 var(--board-deep); transition: background-color .15s ease; }
+.btn:hover { background: #ffe733; }
+.btn.line { background: transparent; color: inherit; box-shadow: inset 0 0 0 2px currentColor; }
+.btn.line:hover { background: rgba(255, 255, 255, .12); }
+.btn.ink { background: var(--ink); color: #fff; box-shadow: none; }
+.btn.ink:hover { background: #2d3c48; }
+.top .btn { min-height: 2.75rem; font-size: 1.0625rem; padding: .45rem 1rem; white-space: nowrap; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.more { font-weight: 700; text-decoration-thickness: 2px; text-decoration-color: var(--cedar); text-underline-offset: 4px; }
+.dark .more { text-decoration-color: var(--board); }
+.more:hover { text-decoration-thickness: 3px; }
+
+/* Hero: the logo's boards laid across the photograph. */
+.hero { background: var(--dusk); color: #fff; padding: .25rem var(--pad) 1.5rem; min-height: calc(100vh - 6.05rem); display: grid; align-content: center; }
+.hero-in { width: 100%; max-width: var(--max); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr) min(calc(100vh - 8.75rem), 52vw); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.hero h1 { font-size: clamp(2.3rem, 4.8vw, 4.25rem); }
+.hero .lede { margin-top: 1.1rem; font-size: clamp(1.15rem, 1.6vw, 1.35rem); line-height: 1.45; color: #dbe4ea; }
+.creds { display: flex; flex-wrap: wrap; gap: .3rem 1.5rem; margin-top: 1.75rem; color: var(--mist); font-size: 1rem; }
+.plan { position: relative; aspect-ratio: 1; width: 100%; }
+.plan img { width: 100%; height: 100%; object-fit: cover; }
+.boards { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.boards line { stroke: var(--dusk); stroke-width: .6; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.boards circle { fill: var(--board); stroke: var(--dusk); stroke-width: .28; }
+@media (prefers-reduced-motion: no-preference) {
+  .boards line { animation: lay .55s cubic-bezier(.3, .7, .2, 1) both; animation-delay: calc(.2s + var(--i) * .13s); }
+  .boards circle { transform-box: fill-box; transform-origin: center; animation: set .22s ease-out both; animation-delay: calc(1.25s + var(--i) * .07s); }
+  @keyframes lay { from { stroke-dashoffset: 1; } }
+  @keyframes set { from { transform: scale(0); opacity: 0; } }
+}
+
+/* What we build */
+.lead-in { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1.25rem clamp(2rem, 5vw, 4rem); align-items: end; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.tiles { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(2rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.5rem); }
+.tile { grid-column: span 4; text-decoration: none; display: block; }
+.tile.w7 { grid-column: span 7; }
+.tile.w5 { grid-column: span 5; }
+.tile.w8 { grid-column: span 8; }
+.tile .ph { overflow: hidden; background: var(--paver-2); }
+.tile img { width: 100%; height: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.tiles .tall img { aspect-ratio: auto; }
+.tile.w7 .ph, .tile.w5 .ph { height: clamp(16rem, 30vw, 28rem); }
+.tile.w8 .ph, .tile.w4 .ph { height: clamp(16rem, 26vw, 24rem); }
+.tile.wide { grid-column: span 12; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.25rem, 3vw, 3rem); align-items: center; }
+.tile.wide .ph { height: clamp(16rem, 30vw, 28rem); }
+.tile.wide h3 { margin-top: 0; }
+.tile h3 { margin-top: .9rem; }
+.tile:hover h3 { text-decoration: underline; text-decoration-color: var(--cedar); text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.tile p { margin-top: .3rem; color: var(--slate); }
+
+/* Design House */
+.split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.split.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.split p { margin-top: 1rem; }
+.split figure img { width: 100%; }
+figcaption { font-size: .9375rem; color: var(--slate); margin-top: .5rem; }
+.dark figcaption { color: var(--mist); }
+.ticks { margin-top: 1.25rem; display: grid; gap: .5rem; font-weight: 600; }
+.ticks li { padding-left: 1.4rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .55em; width: .6rem; height: .6rem; background: var(--board); box-shadow: 0 0 0 2px var(--ink); transform: rotate(45deg); }
+.dark .ticks li::before { box-shadow: none; }
+
+/* From above */
+.above { position: relative; background: #0d1216; }
+.above img { width: 100%; max-height: 54rem; object-fit: cover; object-position: 50% 62%; }
+.above blockquote { position: absolute; left: max(var(--pad), calc(50% - var(--max) / 2)); bottom: 0; background: var(--dusk); color: #fff; max-width: 30rem; padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1.25rem, 2.5vw, 2.25rem); border-top: 6px solid var(--board); }
+.above blockquote p { font: 600 clamp(1.9rem, 3.4vw, 2.75rem)/1.1 "Hepta Slab", Georgia, serif; letter-spacing: -.015em; color: #fff; }
+.above cite { display: block; margin-top: .6rem; font-style: normal; font-weight: 600; color: var(--mist); }
+
+/* Steps: these really are a sequence. */
+.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem; margin-top: clamp(1.75rem, 4vw, 3rem); counter-reset: s; }
+.steps li { counter-increment: s; border-top: 3px solid var(--ink); padding-top: .7rem; }
+.steps li::before { content: counter(s); font: 600 1.5rem/1 "Hepta Slab", Georgia, serif; color: var(--cedar); display: block; margin-bottom: .4rem; }
+.steps h3 { font-size: 1.25rem; }
+.steps p { margin-top: .35rem; font-size: 1.0625rem; line-height: 1.45; color: var(--slate); }
+
+.strip { padding-block: clamp(1.75rem, 3vw, 2.5rem); }
+.strip h2 { font-size: 1.3rem; }
+.marks { display: flex; flex-wrap: wrap; gap: .3rem 2rem; margin-top: .5rem; font-weight: 600; }
+
+/* Closing band: the logo at full size, in its own colors. */
+.close { position: relative; overflow: hidden; background: var(--board); color: var(--ink); padding: clamp(3rem, 6vw, 5rem) var(--pad); }
+.close-in { position: relative; max-width: var(--max); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.close-txt { max-width: 40rem; }
+.close h2 { font-size: clamp(2rem, 4vw, 3.4rem); }
+.close p { margin-top: .9rem; }
+.close .phone { display: inline-flex; align-items: center; margin-top: 1.4rem; min-height: 3.75rem; padding: .55rem 1.5rem; background: var(--ink); color: #fff; font: 600 clamp(1.45rem, 3vw, 2.1rem)/1.1 "Hepta Slab", Georgia, serif; text-decoration: none; border-radius: 2px; }
+.close .phone:hover { background: #2d3c48; }
+.close .sub { margin-top: .9rem; }
+.close .big { position: absolute; top: 50%; right: max(-6rem, calc((100vw - var(--max)) / 2 - 6rem)); width: 40rem; height: 40rem; transform: translateY(-50%) rotate(0deg); }
+.big line { stroke: var(--ink); stroke-width: 1.5; }
+.big circle { fill: var(--ink); stroke: none; }
+
+/* Inner pages */
+.head { background: var(--dusk); color: #fff; padding: clamp(1.5rem, 4vw, 3.5rem) var(--pad) clamp(8rem, 18vw, 16rem); }
+.head .lede { margin-top: .9rem; color: #dbe4ea; font-size: clamp(1.125rem, 1.5vw, 1.3rem); line-height: 1.45; max-width: 44rem; }
+.head.flat { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.leadimg { padding: 0 var(--pad); margin-top: clamp(-14.5rem, -16vw, -6.5rem); }
+.leadimg figure { max-width: var(--max); margin-inline: auto; position: relative; }
+.leadimg img { width: 100%; max-height: 42rem; object-fit: cover; }
+.leadimg figcaption { position: absolute; left: 0; bottom: 0; margin: 0; background: var(--dusk); color: #fff; font-size: .9375rem; padding: .3rem .75rem; }
+
+.gal { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(.5rem, 1vw, .75rem); margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.gal figure { grid-column: span 4; overflow: hidden; background: var(--paver-2); }
+.gal figure.a { grid-column: span 7; }
+.gal figure.b { grid-column: span 5; }
+.gal img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 2; }
+.gal figure.a img, .gal figure.b img { aspect-ratio: auto; height: clamp(15rem, 27vw, 25rem); }
+
+.quote { max-width: 52rem; margin-inline: auto; }
+.quote p { max-width: none; font: 500 clamp(1.3rem, 2.3vw, 1.8rem)/1.35 "Hepta Slab", Georgia, serif; letter-spacing: -.01em; }
+.quote cite { display: block; margin-top: .8rem; font-style: normal; font-weight: 700; color: var(--slate); }
+.dark .quote cite { color: var(--mist); }
+
+.fold-more > summary { display: none; }
+
+/* Process page */
+.run { display: grid; gap: clamp(3rem, 6vw, 5rem); counter-reset: s; }
+.run > li { counter-increment: s; display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.run > li:nth-child(even) img { order: 2; }
+.run > li:nth-child(even) .t { order: 1; }
+.run .t::before { content: counter(s); font: 600 2.6rem/1 "Hepta Slab", Georgia, serif; color: var(--cedar); display: block; margin-bottom: .5rem; }
+.run .kick { font-weight: 700; color: var(--slate); }
+.run p { margin-top: .6rem; }
+.run img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.run .sk { background: var(--dusk); object-fit: contain; }
+
+/* About */
+.values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem clamp(1.5rem, 3vw, 3rem); margin-top: clamp(1.75rem, 4vw, 3rem); }
+.values li { border-top: 2px solid var(--mist); padding-top: .7rem; }
+.values p { margin-top: .3rem; font-size: 1.0625rem; line-height: 1.5; }
+.team { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem 2rem; margin-top: 1.5rem; }
+.team b { display: block; font: 600 1.125rem/1.25 "Hepta Slab", Georgia, serif; }
+.team span { color: var(--slate); font-size: 1rem; }
+
+/* Reviews */
+.wall { columns: 2; column-gap: clamp(1.5rem, 3vw, 3rem); }
+.wall blockquote { break-inside: avoid; padding: 0 0 1.75rem; }
+.wall p { max-width: none; font-size: 1.0625rem; line-height: 1.55; }
+.wall cite { display: block; margin-top: .4rem; font-style: normal; font-weight: 700; }
+.showall { margin-top: 1rem; }
+.fold[open] .showall { display: none; }
+
+/* Portfolio */
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+.chips button { min-height: 2.75rem; padding: .35rem .95rem; font: 600 1.0625rem/1 "Source Sans 3", system-ui, sans-serif; color: var(--ink); background: transparent; border: 2px solid var(--ink); border-radius: 2px; cursor: pointer; transition: background-color .15s ease; }
+.chips button:hover { background: var(--paver-2); }
+.chips button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.grid { columns: 3; column-gap: .75rem; }
+.grid figure { break-inside: avoid; margin-bottom: .75rem; }
+.grid figure[hidden] { display: none; }
+.grid img { width: 100%; }
+.grid figcaption { margin-top: .25rem; }
+#more-work { margin-top: 1rem; }
+
+/* Contact */
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); }
+.cards h2 { font-size: 1.35rem; }
+.cards p, .cards address { margin-top: .4rem; font-style: normal; }
+.cards a { font: 600 clamp(1.25rem, 2vw, 1.5rem)/1.3 "Hepta Slab", Georgia, serif; overflow-wrap: anywhere; }
+.cards address { font-size: 1.25rem; line-height: 1.4; }
+
+/* Footer */
+footer { background: var(--dusk); color: var(--mist); font-size: 1rem; padding: 3rem var(--pad) 2rem; }
+.foot { max-width: var(--max); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 3fr); gap: 2rem; }
+.foot .brand { color: #fff; }
+.foot address { font-style: normal; margin-top: .9rem; line-height: 1.5; }
+.foot li + li { margin-top: .25rem; }
+footer a { color: #fff; text-decoration-color: #66798a; text-underline-offset: 3px; }
+footer a:hover { text-decoration-color: var(--board); }
+.legal { max-width: var(--max); margin: 2.25rem auto 0; padding-top: 1.1rem; border-top: 1px solid #39505f; font-size: .9375rem; }
+
+/* Call bar: phones only, after the hero has scrolled away. */
+.callbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; display: none; padding: .55rem var(--pad) calc(.55rem + env(safe-area-inset-bottom)); background: var(--dusk); box-shadow: 0 -1px 0 #39505f; transform: translateY(110%); visibility: hidden; transition: transform .2s ease, visibility .2s; }
+.callbar.on { transform: none; visibility: visible; }
+.callbar .btn { width: 100%; }
+
+@media (max-width: 1080px) {
+  .nav { display: none; }
+  .menu { display: block; }
+  .menu > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 2.75rem; padding: .4rem .9rem; border: 2px solid #fff; border-radius: 2px; font-weight: 600; }
+  .menu > summary::-webkit-details-marker { display: none; }
+  .menu[open] > summary { background: #fff; color: var(--ink); }
+  .menu ul { position: absolute; right: 0; left: 0; top: calc(100% + .7rem); z-index: 12; background: var(--dusk-2); padding: .5rem 1rem 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; box-shadow: 0 16px 28px rgba(0, 0, 0, .35); }
+  .menu a { display: block; padding: .6rem 0; text-decoration: none; font-weight: 500; }
+  .menu a[aria-current] { color: var(--board); }
+}
+@media (max-width: 1180px) {
+  .close .big { width: 28rem; height: 28rem; right: -7rem; }
+}
+@media (max-width: 860px) {
+  .hero { min-height: 0; }
+  body { font-size: 1.0625rem; }
+  .top .btn { display: none; }
+  .hero-in { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
+  .plan { order: -1; max-width: none; min-width: 0; justify-self: stretch; }
+  .creds { display: none; }
+  .hero .lede { margin-top: .7rem; font-size: 1.125rem; line-height: 1.35; }
+  .actions { margin-top: 1rem; gap: .5rem; }
+  .hero .btn { flex: 1 1 auto; padding-inline: .9rem; }
+  .lead-in, .split, .split.flip { grid-template-columns: minmax(0, 1fr); }
+  .split.flip figure { order: -1; }
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+  .tile, .tile.w7, .tile.w5, .tile.w8, .tile.wide { grid-column: auto; }
+  .tile.wide { display: block; }
+  .tile.wide h3 { margin-top: .9rem; }
+  .tile .ph, .tile.w7 .ph, .tile.w5 .ph, .tile.w8 .ph, .tile.w4 .ph, .tile.wide .ph { height: auto; }
+  .above img { min-height: 22rem; object-position: 42% 50%; }
+  .above blockquote { position: static; max-width: none; }
+  .steps { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .steps li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); column-gap: .6rem; border-top-width: 2px; }
+  .steps li::before { grid-row: 1 / span 2; margin: 0; }
+  .close-in { display: block; }
+  .close { padding-top: 9rem; }
+  .close .big { top: calc(6.75rem - 100vw); right: 0; left: 0; width: 100vw; height: 100vw; transform: none; }
+  .close .phone { width: 100%; justify-content: center; }
+  .gal figure, .gal figure.a, .gal figure.b { grid-column: span 12; }
+  .gal figure:nth-child(3), .gal figure:nth-child(4) { grid-column: span 6; }
+  .gal figure.a img, .gal figure.b img { height: auto; aspect-ratio: 3 / 2; }
+  .run > li { grid-template-columns: minmax(0, 1fr); }
+  .run > li:nth-child(even) img, .run img { order: -1; }
+  .run > li:nth-child(even) .t { order: 1; }
+  .values, .team, .cards, .foot { grid-template-columns: minmax(0, 1fr); }
+  .values { gap: 1.25rem; }
+  .wall { columns: 1; }
+  .grid { columns: 2; column-gap: .5rem; }
+  .grid figure { margin-bottom: .5rem; }
+  .leadimg img { aspect-ratio: 3 / 2; max-height: none; }
+  .callbar { display: block; }
+  footer { padding-bottom: 5.5rem; }
+  .btn.line.hide-m { display: none; }
+}
+@media (min-width: 861px) {
+  .fold > summary { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
