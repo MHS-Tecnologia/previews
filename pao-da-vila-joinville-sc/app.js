@@ -25,17 +25,17 @@ if (heroi && fixo && 'IntersectionObserver' in window) {
 }
 
 // A luz da vitrine acende quando ela entra na tela
-const vitrine = document.querySelector('[data-vitrine]')
-if (vitrine) {
-  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) {
-        vitrine.classList.add('acesa')
-        obs.disconnect()
-      }
-    }, { threshold: 0.25 })
-    obs.observe(vitrine)
-  } else {
+const animar = 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches
+document.querySelectorAll('[data-vitrine]').forEach((vitrine) => {
+  if (!animar) {
     vitrine.classList.add('acesa')
+    return
   }
-}
+  const obs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      vitrine.classList.add('acesa')
+      obs.disconnect()
+    }
+  }, { threshold: 0.12 })
+  obs.observe(vitrine)
+})

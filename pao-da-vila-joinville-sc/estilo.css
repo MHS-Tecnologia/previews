@@ -85,17 +85,37 @@ html:not(.js) .topo { flex-wrap: wrap; }
 .vidro { max-width: 1180px; margin: 0 auto; position: relative; overflow: hidden; }
 .prateleira { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .vaga { height: clamp(150px, 42vw, 210px); display: flex; align-items: flex-end; justify-content: center; padding: 12px 8px 0; }
-.vaga.ponta-e { justify-content: flex-start; padding-left: 0; }
-.vaga.ponta-d { justify-content: flex-end; padding-right: 0; }
+/* o lado cortado pela foto original fica atrás do doce vizinho */
+.prateleira li { position: relative; }
+.prateleira li:has(.frente) { z-index: 2; }
+.vaga.atras { justify-content: flex-end; padding-right: 0; }
+.vaga.atras img { margin-right: -5%; max-width: 105%; }
+.vaga.frente { justify-content: flex-start; padding-left: 0; }
+.vaga.frente img { max-width: 88%; }
 .vaga img { max-height: 100%; width: auto; object-fit: contain; object-position: bottom; filter: drop-shadow(0 8px 6px rgba(0, 0, 0, .45)); }
 .etiqueta { background: var(--maracuja); color: var(--cacau); font-weight: 700; font-size: 1rem; line-height: 1.15; min-height: 46px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4px 8px; box-shadow: inset 0 3px 0 rgba(255, 255, 255, .35); }
 .prateleira li:nth-child(odd) .etiqueta { border-right: 1px solid rgba(59, 36, 23, .35); }
 .vitrine-pe { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 24px; margin-top: 30px; }
 
+/* vitrine nas páginas internas: fotos na prateleira, etiqueta colada embaixo */
+.vitrine-pag { padding-block: 32px; }
+.vitrine-pag::before { background: radial-gradient(80% 30% at 50% 0, rgba(255, 196, 92, .34), transparent 72%), radial-gradient(80% 30% at 50% 60%, rgba(255, 196, 92, .2), transparent 72%); }
+.vitrine-pag .prateleira { row-gap: 22px; }
+.foto img { width: 100%; }
+.prateleira li { display: flex; flex-direction: column; }
+.prateleira .foto { flex: none; margin-top: auto; }
+.p-almoco .vaga { flex: 1 1 auto; height: auto; min-height: 150px; padding: 10px; }
+.p-almoco .vaga img { width: 100%; height: auto; }
+.prateleira .largo { grid-column: 1 / -1; }
+.nota { background: var(--macaron); color: #fff; padding: 24px 22px; justify-content: center; align-items: flex-start; gap: 10px; }
+.nota h2 { font-size: clamp(2rem, 1.5rem + 2vw, 3rem); }
+
 html.js .vitrine::before { opacity: 0; transition: opacity 1.2s ease-out; }
 html.js .vitrine .vaga img { filter: brightness(.5) drop-shadow(0 8px 6px rgba(0, 0, 0, .45)); transition: filter 1.2s ease-out; }
+html.js .vitrine .foto img { filter: brightness(.5); transition: filter 1.2s ease-out; }
 html.js .vitrine.acesa::before { opacity: 1; }
 html.js .vitrine.acesa .vaga img { filter: brightness(1) drop-shadow(0 8px 6px rgba(0, 0, 0, .45)); }
+html.js .vitrine.acesa .foto img { filter: brightness(1); }
 .vidro::after { content: ""; position: absolute; top: 0; bottom: 0; left: -40%; width: 26%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .13), transparent); transform: skewX(-14deg); pointer-events: none; }
 .acesa .vidro::after { animation: pano 1.5s .5s ease-in-out both; }
 @keyframes pano { to { left: 120%; } }
@@ -140,24 +160,19 @@ figcaption { font-size: .9375rem; font-weight: 600; padding-top: 6px; line-heigh
 .cab-cacau h1 { color: var(--maracuja); }
 .cab-maracuja { background: var(--maracuja); }
 .cab-macaron { background: var(--macaron); color: #fff; }
+.cab-macaron .btn { margin-top: 18px; }
 
 .camadas { background: var(--cacau-fundo); color: var(--creme); display: grid; }
+.camadas-foto { position: relative; container-type: inline-size; }
 .camadas-foto img { width: 100%; }
+/* legendas do post refeitas em texto real, por cima das que vinham na foto */
+.rotulo { position: absolute; transform: translate(-50%, -50%); background: var(--cacau-fundo); color: #fff; font-size: clamp(.8125rem, 2.6cqw, .9375rem); font-weight: 600; line-height: 1.15; min-width: 26cqw; padding: 5px 8px; border-radius: 4px; text-align: center; }
+.r1 { left: 21%; top: 21.5%; }
+.r2 { left: 15.5%; top: 43%; }
+.r3 { left: 86.5%; top: 68%; }
+.r4 { left: 87%; top: 90%; }
 .camadas-txt { padding: 30px var(--gut) 38px; }
-.camadas-txt h2 { font-size: clamp(1.875rem, 1.4rem + 2vw, 2.875rem); color: var(--maracuja); margin-bottom: 18px; }
-.camadas ol { counter-reset: c; }
-.camadas li { counter-increment: c; display: flex; align-items: baseline; gap: 14px; padding: 10px 0; border-top: 1px solid rgba(255, 240, 196, .25); font-size: 1.1875rem; }
-.camadas li::before { content: counter(c); font: 400 1.5rem/1 var(--disp); color: var(--maracuja); min-width: 1.1em; }
-
-.mural { padding: 32px var(--gut); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 22px 12px; max-width: 1240px; margin: 0 auto; }
-.m-a { grid-column: 1 / -1; }
-.m-b { grid-column: 1 / 7; }
-.m-c { grid-column: 1 / 7; }
-.m-d { grid-column: 7 / -1; }
-.m-e { grid-column: 7 / -1; }
-.m-nota { grid-column: 1 / -1; background: var(--macaron); color: #fff; padding: 26px 22px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; }
-.m-nota h2 { font-size: clamp(2rem, 1.5rem + 2vw, 3rem); }
-.link-branco { display: inline-flex; align-items: center; min-height: 44px; color: #fff; font-weight: 700; text-underline-offset: 4px; }
+.camadas-txt h2 { font-size: clamp(1.875rem, 1.4rem + 2vw, 2.875rem); color: var(--maracuja); margin-bottom: 22px; }
 
 .prato-do-dia { display: grid; background: var(--cacau); color: var(--creme); }
 .pd-foto img { width: 100%; }
@@ -166,11 +181,6 @@ figcaption { font-size: .9375rem; font-weight: 600; padding-top: 6px; line-heigh
 .lista-mesa { margin-bottom: 16px; }
 .lista-mesa li { padding: 8px 0; border-top: 1px solid rgba(255, 240, 196, .25); font-size: 1.1875rem; }
 .pd-txt p { margin-bottom: 18px; }
-
-.tres { padding: 32px var(--gut); display: grid; gap: 24px; max-width: 1240px; margin: 0 auto; }
-.tres figure { max-width: 520px; margin: 0 auto; width: 100%; }
-
-.fileira { padding: 28px var(--gut); display: grid; gap: 22px; max-width: 1240px; margin: 0 auto; }
 
 .enc-pag { display: grid; background: var(--cacau); color: var(--creme); }
 .enc-pag-txt { padding: 34px var(--gut) 34px; }
@@ -229,6 +239,10 @@ figcaption { font-size: .9375rem; font-weight: 600; padding-top: 6px; line-heigh
   .h-fatia { margin: 0; }
   .prato { margin: 0 0 32px; padding: 9px; }
   .faixa { font-size: 1.125rem; }
+  @media (min-width: 1181px) {
+    /* o prato sangra para fora do painel, como a fatia */
+    .prato { position: absolute; right: -84px; bottom: -56px; width: clamp(340px, 31vw, 440px); margin: 0; }
+  }
 
   .vitrine { padding: 64px var(--gut) 60px; }
   .prateleira { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -236,6 +250,12 @@ figcaption { font-size: .9375rem; font-weight: 600; padding-top: 6px; line-heigh
   .etiqueta { font-size: 1.0625rem; }
   .prateleira li:nth-child(odd) .etiqueta { border-right: 0; }
   .prateleira li:not(:nth-child(3n)) .etiqueta { border-right: 1px solid rgba(59, 36, 23, .35); }
+  .vitrine-pag { padding-block: 56px; }
+  .prateleira .largo { grid-column: auto; }
+  .p-doces { row-gap: 32px; }
+  .p-padaria { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .p-padaria li:nth-child(n) .etiqueta { border-right: 1px solid rgba(59, 36, 23, .35); }
+  .p-almoco { grid-template-columns: 1.28fr 1.1fr .8fr; }
 
   .servido { grid-template-columns: 1fr 1fr; align-items: stretch; }
   .servido-foto { max-height: 760px; overflow: hidden; }
@@ -258,22 +278,9 @@ figcaption { font-size: .9375rem; font-weight: 600; padding-top: 6px; line-heigh
   .pag-cab { padding: 56px var(--gut) 52px; }
   .camadas { grid-template-columns: minmax(0, 560px) minmax(0, 1fr); justify-content: center; align-items: center; }
   .camadas-txt { padding: 40px var(--gut); max-width: 640px; }
-  .mural { padding: 56px var(--gut); gap: 28px 24px; }
-  .m-a { grid-column: 1 / 6; align-self: end; }
-  .m-b { grid-column: 6 / 10; align-self: end; }
-  .m-e { grid-column: 10 / -1; align-self: end; }
-  .m-c { grid-column: 1 / 4; }
-  .m-d { grid-column: 4 / 8; }
-  .m-nota { grid-column: 8 / -1; align-self: stretch; }
 
   .prato-do-dia { grid-template-columns: minmax(0, 620px) minmax(0, 1fr); align-items: center; }
   .pd-txt { padding: 40px var(--gut); max-width: 640px; }
-
-  .tres { padding: 56px var(--gut); grid-template-columns: 5fr 3.4fr 3.2fr; align-items: end; gap: 28px; }
-  .tres figure { max-width: none; }
-
-  .fileira { padding: 56px var(--gut) 72px; max-width: 1136px; grid-template-columns: 1fr 1fr; gap: 28px 32px; }
-  .fileira figure:nth-child(even) { transform: translateY(44px); }
 
   .enc-pag { grid-template-columns: minmax(0, 1fr) minmax(0, 560px); align-items: center; justify-content: center; }
   .enc-pag-txt { padding: 48px var(--gut); max-width: 700px; justify-self: end; }
