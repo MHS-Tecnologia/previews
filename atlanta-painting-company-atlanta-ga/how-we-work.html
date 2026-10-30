@@ -12,7 +12,7 @@
 <link rel="preload" as="image" type="image/webp" imagesrcset="img/white-porch-820.webp 820w, img/white-porch-1300.webp 1300w" imagesizes="(min-width: 900px) 58vw, 100vw">
 <style>@font-face{font-family:Besley;src:url(fonts/besley.woff2) format("woff2-variations"),url(fonts/besley.woff2) format("woff2");font-weight:400 900;font-display:swap}
 @font-face{font-family:Albert;src:url(fonts/albert.woff2) format("woff2-variations"),url(fonts/albert.woff2) format("woff2");font-weight:100 900;font-display:swap}
-:root{--primer:#f2f5f3;--blue:#183852;--red:#bb2026;--greige:#6e675c;--green:#4a5f5a;--oxblood:#6e2a28;--clay:#8f2a24;--ink:#14202a;--soft:#46525c;--rule:#ccd4d1;--g:clamp(20px,4vw,48px)}
+:root{--primer:#f2f5f3;--blue:#183852;--red:#bb2026;--green:#4a5f5a;--oxblood:#6e2a28;--clay:#8f2a24;--ink:#14202a;--soft:#46525c;--rule:#ccd4d1;--g:clamp(20px,4vw,48px)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px}
 body{margin:0;background:var(--primer);color:var(--ink);font:400 1.0625rem/1.6 Albert,system-ui,sans-serif}
@@ -49,24 +49,26 @@ a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid
 .wall-green{background:var(--green);color:#f2f5f3}
 .wall-oxblood{background:var(--oxblood);color:#f2f5f3}
 .wall-red-soft{background:var(--clay);color:#fff}
-.wall-greige{background:var(--greige);color:#fff}
 .wall-primer{background:var(--primer)}
 .wall-red{background:var(--red);color:#fff}
 
 .btn{display:inline-block;font-weight:700;font-size:1.125rem;text-decoration:none;padding:15px 22px;border-radius:3px;background:var(--red);color:#fff}
 .btn-light{background:#fff;color:var(--ink)}
 .btn-light:hover{background:#dfe6e3}
+.btn-ghost{background:none;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.btn-ghost:hover{background:rgb(255 255 255/.14)}
 .lede{font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.5}
 .rating{margin:12px 0 0;font-size:.97rem;font-weight:500}
 .more{display:inline-block;font-weight:700;margin-top:6px;text-underline-offset:4px;text-decoration-color:var(--red);text-decoration-thickness:2px}
 .more-light{text-decoration-color:#fff}
 
 /* Home hero: the cut line between the blue wall and the next wall runs behind the photo */
-.hero-grid{display:grid;grid-template-columns:4.6fr 7.4fr;gap:clamp(32px,4vw,60px);align-items:end;padding-top:clamp(36px,4.4vw,56px)}
-.hero h1{font-size:clamp(2.35rem,4.15vw,3.75rem);margin-bottom:.45em}
-.hero-copy{padding-bottom:44px}
+.hero-grid{display:grid;grid-template-columns:4.2fr 7.8fr;column-gap:clamp(32px,4vw,60px);align-items:start;padding-top:clamp(32px,3.6vw,48px)}
+.hero h1{grid-column:1/-1;font-size:clamp(2.2rem,3.95vw,3.6rem);margin-bottom:24px}
+.hero h1 span{display:block}
+.hero-copy{align-self:center;padding-bottom:24px}
 .hero-photo{position:relative;margin-bottom:-64px;z-index:2;overflow:hidden}
-.hero-photo>img{width:100%;aspect-ratio:1.18;object-fit:cover;object-position:6% 50%}
+.hero-photo>img{width:100%;aspect-ratio:1.5;object-fit:cover;object-position:0 100%}
 .tag{position:absolute;right:0;bottom:0;background:#fff;color:var(--ink);font-size:.9rem;font-weight:600;padding:6px 12px}
 .wet,.wet-edge{display:none}
 @media (prefers-reduced-motion:no-preference){
@@ -123,7 +125,8 @@ blockquote{margin:0}
 .closer-grid{display:grid;grid-template-columns:1fr 460px;gap:clamp(28px,4vw,64px);align-items:center}
 .closer h2{margin-bottom:10px}
 .closer-tel{display:inline-block;font:800 clamp(2.4rem,6.3vw,5rem)/1.05 Besley,Georgia,serif;color:#fff;text-decoration-thickness:3px;text-underline-offset:7px;margin:6px 0 14px;white-space:nowrap}
-.fine{font-size:.97rem;margin:0}
+.closer-acts{display:flex;flex-wrap:wrap;gap:12px}
+.closer-acts .btn{font-size:1.05rem;padding:13px 20px}
 .closer-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
 
 .foot{background:#fff;padding:48px 0 28px;font-size:.97rem}
@@ -153,7 +156,6 @@ blockquote{margin:0}
 .swatch{display:block;width:64px;height:20px;margin-bottom:12px}
 .ticks{margin:0 0 1em;padding:0;list-style:none}
 .ticks li{padding:7px 0;border-top:1px solid var(--rule)}
-.wall-greige .ticks li{border-color:rgb(255 255 255/.3)}
 .gallery-band{padding:clamp(48px,6vw,80px) 0}
 .gallery-band h2{margin-bottom:24px}
 .grid-photos{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(170px,21vw,300px);gap:14px}
@@ -192,13 +194,14 @@ blockquote{margin:0}
   .top-tel{display:none}
   .hero-grid,.phero-grid{display:block;width:100%;padding-top:22px}
   .hero-copy,.phero-copy{padding:0 var(--g) 20px}
-  .hero h1{font-size:2.2rem;margin-bottom:.4em}
+  .hero h1{font-size:2.2rem;margin:0 var(--g) .4em}
   .phero h1{font-size:2.15rem}
   .lede{font-size:1.03rem;margin-bottom:14px}
   .btn{display:block;text-align:center;font-size:1.1rem;padding:14px 12px}
   .rating{margin-top:9px;font-size:.92rem}
   .hero-photo,.phero-photo{margin-bottom:0}
-  .hero-photo>img{aspect-ratio:auto}
+  .hero-photo>img{aspect-ratio:auto;object-position:50% 50%}
+  .closer-acts .btn{flex:1 1 100%}
   .phero-photo img{aspect-ratio:4/3}
   .hoods{padding-top:48px}
   .head-split{display:block}
@@ -223,8 +226,8 @@ blockquote{margin:0}
   .foot{padding-bottom:84px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-.p-woodmont{object-position:80% 30%}.p-river-green{object-position:50% 40%}
-.nw{white-space:nowrap}
+.p-woodmont{object-position:100% 30%}.p-river-green{object-position:50% 40%}
+#woodmont img{object-position:50% 100%}
 </style>
 </head>
 <body>
@@ -304,7 +307,7 @@ blockquote{margin:0}
       <h2 id="closer-h">Start with a free quote.</h2>
       <p>Same-day free quotes, in your home.</p>
       <a class="closer-tel" href="tel:+17708726938">(770) 872-6938</a>
-      <p class="fine">Call or text that number. Text only: <span class="nw">770-551-0101</span>.</p>
+      <div class="closer-acts"><a class="btn btn-light" href="sms:+17705510101">Text us at 770-551-0101</a></div>
     </div>
     <figure class="closer-photo"><img src="img/brick-bay-820.webp" srcset="img/brick-bay-820.webp 820w, img/brick-bay-1241.webp 1241w" sizes="(min-width: 900px) 460px, calc(100vw - 40px)" width="1241" height="849" alt="Brick home with white painted bay windows" loading="lazy" decoding="async"></figure>
   </div>
