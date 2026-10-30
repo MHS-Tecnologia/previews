@@ -12,7 +12,7 @@
 @font-face{font-family:"Hanken Grotesk";font-weight:100 900;font-style:normal;font-display:swap;src:url(fonts/hanken.woff2) format("woff2")}
 :root{
 --spruce:#163F2B;--ink:#14211A;--soft:#4A5850;--primer:#F1F3F0;--white:#fff;--line:#D5DAD4;
---tape:#00ADEF;--tape-deep:#0090CA;--bark:#69392D;--wood:#C8A37A;--patch:#D9DBD3;
+--tape:#00ADEF;--tape-deep:#0090CA;--sky:#3F97D3;--bark:#69392D;--wood:#C8A37A;--patch:#D9DBD3;
 --wall:var(--spruce);
 --serif:"Besley",Georgia,"Times New Roman",serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
 --side:clamp(16px,4.2vw,60px);--space:clamp(64px,8.5vw,124px);
@@ -65,8 +65,8 @@ a{color:inherit}
 .proof{font-size:16px;margin-top:0}
 @media(min-width:620px){.actions .btn{flex:0 0 auto}}
 @media(min-width:1000px){
-.hero-grid{grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:clamp(30px,4vw,64px);align-items:end}
-.hero-grid h1{font-size:clamp(50px,5.75vw,92px)}
+.hero-grid{gap:10px}
+.hero-grid h1{font-size:clamp(46px,5.05vw,86px)}
 }
 .tape-line{position:relative;height:0;overflow:visible;z-index:4}
 .tape-clip{position:absolute;left:0;right:0;top:-18px;height:50px;overflow:hidden;pointer-events:none}
@@ -80,10 +80,52 @@ box-shadow:0 2px 3px rgba(10,30,20,.28);transform:translateX(30%);color:var(--in
 .tape.pull{animation:peel 1.5s cubic-bezier(.45,.05,.3,1) .35s backwards}
 @keyframes peel{from{transform:translateX(0)}}
 .hero-photo{display:block}
-.hero-photo img{width:100%;height:auto;aspect-ratio:1900/1450;object-fit:cover}
-@media(min-width:760px){.hero-photo img{aspect-ratio:2500/1136}}
 .hero-photo-wrap{padding-inline:0}
 @media(min-width:760px){.hero-photo-wrap{padding-inline:var(--side)}}
+/* home: the page wall is the blue wall the painter is working on */
+.sky{--hh:clamp(430px,34vw,540px);background:var(--sky);color:var(--ink)}
+.sky .cite{color:var(--ink);font-weight:600}
+.sky .btn{background:var(--ink);color:#fff}
+.sky .btn:hover{background:#2C3F35}
+.sky .tape-note{font-weight:800}
+.strip{display:grid;grid-template-columns:62fr 38fr;position:relative}
+.strip img{width:100%;height:clamp(250px,74vw,340px);object-fit:cover}
+.strip .house img{object-position:38% 60%}
+.strip .pa{object-position:32% 30%}
+@media(min-width:1000px){
+.sky .wrap{max-width:none;padding-left:calc(42vw + 28px);min-height:var(--hh);display:grid;align-content:center}
+.strip{display:block;padding-inline:var(--side)}
+.strip .house img{height:auto;aspect-ratio:2500/1136}
+.strip .pa-wrap{position:absolute;left:0;bottom:100%;width:42vw;height:var(--hh2)}
+.strip .pa{height:100%;object-position:30% 72%;-webkit-mask-image:linear-gradient(90deg,#000 76%,transparent);mask-image:linear-gradient(90deg,#000 76%,transparent)}
+.cut{--hh2:calc(clamp(430px,34vw,540px) + 130px);overflow:hidden}
+}
+.tape.pull{background:repeating-linear-gradient(90deg,rgba(120,90,30,.05) 0 2px,transparent 2px 7px),linear-gradient(180deg,#F4E8C8,#EBDAB0 50%,#E0CD9E)}
+.tape.pull::before{background:linear-gradient(90deg,#B9A573,#F2E6C6 40%,#FFF8E4 62%,#E5D4A8)}
+/* one painted band per inner page, tape scrap on its top edge */
+.band{position:relative;background:var(--wall);color:#fff;padding-block:clamp(44px,6vw,84px)}
+.band::before{content:"";position:absolute;left:clamp(16px,9vw,150px);top:-13px;width:clamp(120px,16vw,230px);height:26px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 2px,transparent 2px 6px),linear-gradient(180deg,#27BDF5,#00ADEF 45%,#009FDC);box-shadow:0 2px 3px rgba(10,30,20,.28)}
+.band blockquote{margin:0;font:600 clamp(23px,2.5vw,36px)/1.3 var(--serif);max-width:32em;text-wrap:pretty}
+.band .who{display:block;margin-top:14px;font-size:17px;color:#fff}
+.band h2{margin-bottom:14px}
+.band .ticks li::before{background:var(--tape)}
+/* a drawdown: the same page color laid on in heavier coats */
+.draw{padding-top:var(--space)}
+.draw .intro{margin-bottom:22px}
+.ribbons{display:grid}
+.ribbons li{background:color-mix(in srgb,var(--wall) var(--m),var(--primer));color:var(--t,var(--ink));padding:15px var(--side)}
+.ribbons h3{font-size:clamp(20px,1.5vw,23px)}
+.ribbons p{font-size:16.5px;line-height:1.45;margin-top:4px}
+@media(min-width:900px){
+.ribbons{grid-template-columns:repeat(var(--n),1fr)}
+.ribbons li{padding:clamp(24px,2.6vw,40px) clamp(16px,1.6vw,26px);min-height:clamp(170px,14vw,230px)}
+.ribbons li:first-child{padding-left:var(--side)}
+}
+.panel.paint{background:var(--wall);color:#fff}
+.panel.paint .ticks li::before{background:var(--tape)}
+.panel.deep{background:color-mix(in srgb,var(--wall) 74%,#000);color:#fff}
+.panel.deep .ticks li::before{background:var(--tape)}
+.set h2 span{display:inline-block;background:var(--c);color:#fff;padding:6px 16px 8px}
 /* inner page heads share the wall and the tape, without the movement */
 .page-head{padding-block:clamp(12px,3vw,40px) clamp(28px,4vw,56px)}
 .page-head h1{font-size:clamp(36px,5vw,72px);line-height:1.05;max-width:17em}
@@ -109,6 +151,15 @@ section.tight{padding-top:0}
 .chip small{display:block;font-size:16px;line-height:1.4;color:var(--soft);margin-top:4px;transition:color .15s}
 .chip:hover .tag{background:var(--c);color:#fff}
 .chip:hover small{color:#fff}
+@media(max-width:759px){
+.chip{grid-template-columns:118px 1fr;grid-template-rows:auto}
+.chip .ph{position:relative;min-height:104px}
+.chip img{position:absolute;inset:0;aspect-ratio:auto}
+.chip .tag{border-left-width:8px;padding:12px 12px 13px}
+.warranty .ph{display:none}
+.warranty{margin-top:0}
+.warranty .grid{padding-top:var(--space)}
+}
 @media(min-width:760px){
 .chips{grid-template-columns:repeat(6,1fr)}
 .chip{grid-column:span 2}
@@ -184,11 +235,14 @@ figcaption{font-size:15px;color:var(--soft);margin-top:7px}
 /* photo rows and gallery */
 .row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .row img{width:100%;height:100%;aspect-ratio:1;object-fit:cover}
-@media(min-width:800px){.row{grid-template-columns:repeat(4,1fr);gap:12px}}
+@media(min-width:800px){.row{grid-template-columns:repeat(4,1fr);gap:12px}.row.three{grid-template-columns:repeat(3,1fr)}.row.two{grid-template-columns:repeat(2,1fr)}.row.two img{aspect-ratio:3/2}}
+.row.three>:nth-child(3){grid-column:1/-1}
+.row.three>:nth-child(3) img{aspect-ratio:3/2}
+@media(min-width:800px){.row.three>:nth-child(3){grid-column:auto}.row.three>:nth-child(3) img{aspect-ratio:1}}
 .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .shot{padding:0;border:0;background:none;cursor:zoom-in;display:block;width:100%}
 .shot img{width:100%;aspect-ratio:1;object-fit:cover}
-@media(min-width:800px){.shots{grid-template-columns:repeat(4,1fr);gap:12px}}
+@media(min-width:800px){.shots{grid-template-columns:repeat(4,1fr);gap:12px}.shots.six{grid-template-columns:repeat(6,1fr)}}
 .jump{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:6px;font-weight:700}
 .set{padding-top:clamp(36px,4vw,60px)}
 .set h2{margin-bottom:16px;scroll-margin-top:20px}
@@ -259,17 +313,17 @@ html{scroll-behavior:auto}
 <main id="main"><div class="cut" data-first>
 <div class="wall"><div class="wrap page-head"><h1>Cabinet painting, with no need for new cabinets</h1><p class="lede">We refinish kitchen cabinets, bathroom vanities and built-ins, and you keep your current layout.</p><div class="actions"><a class="btn" href="tel:+16784552887">Call (678) 455-2887</a><a class="line" href="mailto:info@bearmountainpainting.com">Email us for a quote</a></div></div></div>
 <div class="tape-line" aria-hidden="true"><div class="tape-clip"><div class="tape"><span>Off-site spray finishing options</span></div></div></div>
-<div class="hero-photo-wrap head-photo "><img src="img/masking-800.webp" srcset="img/masking-800.webp 800w, img/masking-1400.webp 1400w" sizes="100vw" width="1400" height="583" alt="Bear Mountain painter at kitchen cabinets with everything around them masked in plastic and paper" fetchpriority="high" decoding="async"></div>
+<div class="hero-photo-wrap head-photo "><div class="tri"><div><img src="img/doors-480.webp" srcset="img/doors-480.webp 480w, img/doors-800.webp 800w" sizes="(min-width:760px) 33vw, 100vw" width="800" height="962" alt="Blue cabinet doors and drawers racked for finishing on a job" fetchpriority="high" decoding="async"></div><div><img src="img/kitchen-teal-480.webp" srcset="img/kitchen-teal-480.webp 480w, img/kitchen-teal-800.webp 800w" sizes="(min-width:760px) 33vw, 100vw" width="800" height="534" alt="Teal lower cabinets under a white tile backsplash" loading="lazy" decoding="async"></div><div><img src="img/p-c1-420.webp" srcset="img/p-c1-420.webp 420w, img/p-c1-720.webp 720w" sizes="(min-width:760px) 33vw, 100vw" width="720" height="480" alt="White shaker cabinets with black hardware" loading="lazy" decoding="async"></div></div></div>
 </div><section class="block"><div class="wrap">
-<div class="split"><figure class="ph"><img src="img/doors-480.webp" srcset="img/doors-480.webp 480w, img/doors-800.webp 800w" sizes="(min-width:900px) 50vw, 100vw" width="800" height="962" alt="Blue cabinet doors and drawers hanging on racks to dry" loading="lazy" decoding="async"><figcaption>Cabinet doors and drawers racked for finishing</figcaption></figure><div class="tx"><h2>A cleaner look, with less disruption</h2><p>Our cabinet process includes off-site spray finishing options that help create a cleaner look with less disruption inside your home.</p><p>Cabinet projects use durable enamel-style coatings designed for cabinetry, typically waterborne alkyd or similar professional products that cure to a hard, washable finish.</p></div></div>
-<div class="split flip"><figure class="ph"><img src="img/kitchen-teal-480.webp" srcset="img/kitchen-teal-480.webp 480w, img/kitchen-teal-800.webp 800w" sizes="(min-width:900px) 50vw, 100vw" width="800" height="534" alt="Teal lower cabinets under a white tile backsplash" loading="lazy" decoding="async"></figure><div class="tx"><h2>Color, planned with you</h2><p>We plan every part of the process with you, especially color selection. Clients have chosen different shades of blue, red, yellow and brown, and we help narrow down the list to the best fit for your kitchen.</p><ul class="ticks"><li>Worry-free quotes</li><li>A thorough painting process using primers and finishers</li><li>A last walk through your space, with any touch-ups made</li></ul></div></div>
+<div class="split"><figure class="ph"><img src="img/sprayer-480.webp" srcset="img/sprayer-480.webp 480w, img/sprayer-800.webp 800w" sizes="(min-width:900px) 50vw, 100vw" width="800" height="1067" alt="Bear Mountain painter spraying a white door with the floor masked" loading="lazy" decoding="async"></figure><div class="tx"><h2>A cleaner look, with less disruption</h2><p>Our cabinet process includes off-site spray finishing options that help create a cleaner look with less disruption inside your home.</p><p>Cabinet projects use durable enamel-style coatings designed for cabinetry, typically waterborne alkyd or similar professional products that cure to a hard, washable finish.</p></div></div>
 </div></section>
-<section class="block tight"><div class="wrap"><div class="panel said" style="grid-template-columns:1fr"><div><blockquote>“Our kitchen cabinets used to be a dark espresso brown and they are now a bright white and our new porch is now white as well. William and his crew did an exceptional job. We had some difficult areas in the kitchen (a built in wine rack) but his team was able to paint every nook and cranny.”</blockquote><span class="who">Jacqueline Valentine, Google review</span></div></div></div></section>
-<section class="block tight"><div class="wrap"><div class="intro"><h2>Not just the kitchen</h2><p>You may have cabinets in the hallway, foyer or office. Wherever you’ve installed them, we can paint those as well.</p></div><div class="row"><div><img src="img/p-c1-420.webp" srcset="img/p-c1-420.webp 420w, img/p-c1-720.webp 720w" sizes="(min-width:800px) 24vw, 50vw" width="720" height="480" alt="White shaker cabinets with black hardware" loading="lazy" decoding="async"></div><div><img src="img/p-c4-420.webp" srcset="img/p-c4-420.webp 420w, img/p-c4-720.webp 720w" sizes="(min-width:800px) 24vw, 50vw" width="720" height="480" alt="Gray built-in cabinets with lit shelves" loading="lazy" decoding="async"></div><div><img src="img/p-c6-420.webp" srcset="img/p-c6-420.webp 420w, img/p-c6-720.webp 720w" sizes="(min-width:800px) 24vw, 50vw" width="720" height="480" alt="Cream kitchen with an island and tall stools" loading="lazy" decoding="async"></div><div><img src="img/gall1-1100.webp" srcset="img/gall1-420.webp 420w, img/gall1-800.webp 800w, img/gall1-1100.webp 1100w, img/gall1-1400.webp 1400w" sizes="(min-width:800px) 24vw, 50vw" width="1400" height="788" alt="Painted bathroom vanity with stone counters" loading="lazy" decoding="async"></div></div></div></section>
+<section class="draw"><div class="wrap"><div class="intro"><h2>Color, planned with you</h2></div></div><ul class="ribbons" style="--n:4"><li style="--m:14%;"><h3>Worry-free quotes</h3><p>By phone or email, to start</p></li><li style="--m:43%;"><h3>Color selection</h3><p>Clients have chosen shades of blue, red, yellow and brown</p></li><li style="--m:77%;--t:#fff;"><h3>Primers and finishers</h3><p>A thorough painting process</p></li><li style="--m:100%;--t:#fff;"><h3>A last walk-through</h3><p>With any touch-ups made</p></li></ul></section>
+<section class="block"><div class="wrap"><div class="intro"><h2>Built-ins and vanities too</h2><p>You may have cabinets in the hallway, foyer or office. Wherever you’ve installed them, we can paint those as well.</p></div><div class="row two"><div><img src="img/p-c4-420.webp" srcset="img/p-c4-420.webp 420w, img/p-c4-720.webp 720w" sizes="(min-width:800px) 24vw, 50vw" width="720" height="480" alt="Gray built-in cabinets with lit shelves" loading="lazy" decoding="async"></div><div><img src="img/gall1-1100.webp" srcset="img/gall1-420.webp 420w, img/gall1-800.webp 800w, img/gall1-1100.webp 1100w, img/gall1-1400.webp 1400w" sizes="(min-width:800px) 24vw, 50vw" width="1400" height="788" alt="Painted bathroom vanity with stone counters" loading="lazy" decoding="async"></div></div></div></section>
+<section class="band"><div class="wrap"><blockquote>“Our kitchen cabinets used to be a dark espresso brown and they are now a bright white and our new porch is now white as well. William and his crew did an exceptional job. We had some difficult areas in the kitchen (a built in wine rack) but his team was able to paint every nook and cranny.”</blockquote><span class="who">Jacqueline Valentine, Google review</span></div></section>
 <section class="closing"><div class="wrap grid"><div class="tx"><h2>Ready for new-looking cabinets?</h2><p>Start with a chat by phone or email. After that we plan the project with you and find colors that bring out the best in the house.</p>
 <a class="big-tel" href="tel:+16784552887">(678) 455-2887</a>
 <p class="small">Monday to Friday, 8:30 AM to 5:00 PM. Saturday and Sunday by appointment only. Or email <a href="mailto:info@bearmountainpainting.com">info@bearmountainpainting.com</a>.</p></div>
-<div class="ph"><img src="img/kitchen-teal-480.webp" srcset="img/kitchen-teal-480.webp 480w, img/kitchen-teal-800.webp 800w" sizes="(min-width:900px) 42vw, 100vw" width="800" height="534" alt="Teal painted kitchen cabinets" loading="lazy" decoding="async"></div></div></section></main>
+<div class="ph"><img src="img/painter-800.webp" srcset="img/painter-480.webp 480w, img/painter-800.webp 800w, img/painter-1100.webp 1100w" sizes="(min-width:900px) 42vw, 100vw" width="1100" height="1334" alt="Bear Mountain painter in a company shirt at work" loading="lazy" decoding="async"></div></div></section></main>
 <footer><div class="wrap"><div class="cols4">
 <div><a href="index.html" aria-label="Bear Mountain Custom Painting home"><img src="img/logo.svg" width="176" height="50" alt="" loading="lazy"></a>
 <p style="margin-top:12px">Interior and exterior painting, carpentry and home improvement in North Georgia since 2005.</p></div>
