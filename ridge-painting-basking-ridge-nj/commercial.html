@@ -89,8 +89,8 @@ h3 { font-size: 1.28rem; line-height: 1.2; letter-spacing: -.012em; font-weight:
 figure { margin: 0; }
 figcaption { font-size: .93rem; line-height: 1.4; color: var(--soft); padding-top: .55rem; }
 /* home hero: the field and the photo share one paint line */
-.hero { position: relative; background: var(--old-paint); color: var(--white); overflow: hidden; --f: 100%; }
-.hero .coat { position: absolute; inset: 0; background: var(--cobalt); clip-path: inset(0 calc(100% - var(--f)) 0 0); }
+.hero { position: relative; background: var(--cobalt); color: var(--white); overflow: hidden; --f: 100%; --o: 0; }
+.hero .coat { position: absolute; inset: 0 0 0 var(--f); background: var(--old-paint); opacity: var(--o); }
 .hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; padding-block: clamp(2.2rem, 4vw, 3.4rem) clamp(2.2rem, 4vw, 3.4rem); }
 .hero h1 { font-size: clamp(2.8rem, 4.3vw, 4.2rem); }
 .hero p { color: #e6eafb; font-size: 1.14rem; margin: 1.15rem 0 1.5rem; max-width: 34ch; }
@@ -157,14 +157,16 @@ figcaption { font-size: .93rem; line-height: 1.4; color: var(--soft); padding-to
 .closing p { color: #e6eafb; }
 .bigtel { display: block; margin: .3rem 0 .9rem; color: var(--white); font-stretch: 125%; font-weight: 800; letter-spacing: -.03em; font-size: clamp(2.05rem, 5vw, 4.3rem); line-height: 1.1; text-decoration: none; white-space: nowrap; min-height: 44px; }
 .bigtel:hover { color: var(--lime); }
+.bigmail { display: block; margin: .3rem 0 .7rem; color: var(--white); font-stretch: 118%; font-weight: 800; letter-spacing: -.02em; font-size: clamp(1.45rem, 3vw, 2.6rem); line-height: 1.15; text-decoration: none; overflow-wrap: anywhere; min-height: 44px; }
+.bigmail:hover { color: var(--lime); }
 .closing .mail { color: var(--white); display: inline-flex; align-items: center; min-height: 44px; font-weight: 620; overflow-wrap: anywhere; }
 /* towns */
 .towns summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; color: var(--cobalt); }
 .towns ul { columns: 5 150px; column-gap: 1.5rem; padding-top: .8rem; }
 .towns li { padding-block: .12rem; break-inside: avoid; }
 /* lists on inner pages */
-.pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.1rem; }
-.pills li { display: flex; align-items: center; min-height: 44px; background: var(--white); box-shadow: inset 0 0 0 1px var(--line); padding: 0 .85rem; border-radius: 3px; font-weight: 560; font-size: .97rem; }
+.pills { display: flex; flex-wrap: wrap; gap: 0 1.6rem; margin-top: 1.1rem; }
+.pills li { display: flex; align-items: center; min-height: 44px; font-weight: 560; font-size: .97rem; }
 .pills a { display: flex; align-items: center; min-height: 44px; }
 .tri { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.2rem, 2.2vw, 2rem); }
 .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.2rem, 2.2vw, 2rem); }
@@ -408,7 +410,7 @@ for (const box of document.querySelectorAll('.ba')) {
   input.addEventListener('input', () => box.style.setProperty('--p', input.value + '%'))
 }
 
-// Home hero: the field behind the headline and the photo share one paint line.
+// Home hero: the old-paint field to the right of the line starts inside the photo.
 const hero = document.querySelector('.hero')
 if (hero) {
   const box = hero.querySelector('.ba')
@@ -417,21 +419,18 @@ if (hero) {
   const rest = () => innerWidth <= 1120 // stacked: the copy sits on the field, so the field ends fully painted
   const place = (p) => {
     box.style.setProperty('--p', (p * 100).toFixed(2) + '%')
-    if (rest()) return hero.style.setProperty('--f', '100%')
+    if (rest()) { hero.style.setProperty('--o', '0'); return }
     const h = hero.getBoundingClientRect(), b = box.getBoundingClientRect()
     hero.style.setProperty('--f', (b.left - h.left + p * b.width).toFixed(1) + 'px')
+    hero.style.setProperty('--o', '1')
   }
   const sweep = () => {
-    const h = hero.getBoundingClientRect(), b = box.getBoundingClientRect()
-    const fim = rest() ? h.width : b.left - h.left + stop * b.width
     const t0 = performance.now()
     const frame = (t) => {
       const k = Math.min((t - t0) / 1500, 1)
       const e = k < .5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2
-      const x = e * fim
-      hero.style.setProperty('--f', x.toFixed(1) + 'px')
-      const dentro = rest() ? e * stop : Math.min((x - (b.left - h.left)) / b.width, stop)
-      box.style.setProperty('--p', (Math.max(dentro, 0) * 100).toFixed(2) + '%')
+      place(e * stop) // the line only ever travels inside the photo, never across the headline
+      if (!rest()) hero.style.setProperty('--o', Math.min(k * 1.8, 1).toFixed(2))
       if (k < 1) requestAnimationFrame(frame)
       else { document.documentElement.classList.remove('sweep'); place(stop) }
     }
