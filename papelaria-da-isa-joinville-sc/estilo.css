@@ -228,8 +228,7 @@ a { color: inherit; }
 .fitas li:nth-child(4) { background: var(--menta); }
 @media (min-width: 900px) {
   .novidade { padding: 0; }
-  .nov-in { grid-template-columns: minmax(0, 680px) minmax(0, 1fr); gap: 56px; align-items: center; padding-inline: var(--gutter); }
-  .nov-foto { padding-block: 40px; }
+  .nov-in { grid-template-columns: minmax(0, 680px) minmax(0, 1fr); gap: 56px; align-items: center; padding: 56px var(--gutter); }
   .nov-foto img { border-radius: 16px; }
   .nov-txt { padding-inline: 0; }
 }
