@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#2a4550">
+<title>Our work | Voyager Exteriors</title>
+<meta name="description" content="Recent decks, siding and roofing projects around the Twin Cities, with before and after photos.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/aleo.woff2" crossorigin>
+<link rel="preload" as="image" imagesrcset="img/deck-cable-640.webp 640w, img/deck-cable-1100.webp 1100w" imagesizes="(max-width: 900px) calc(100vw - 3.5rem), 760px" fetchpriority="high">
+<style>@font-face{font-family:Aleo;font-weight:400 900;font-display:swap;src:url(fonts/aleo.woff2) format("woff2")}
+@font-face{font-family:Cabin;font-weight:400 700;font-display:swap;src:url(fonts/cabin.woff2) format("woff2")}
+/* The side of a house: James Hardie Evening Blue, white trim, prairie gold from their Lino Lakes photo, tigerwood from the decks. */
+:root{--wall:#2a4550;--deep:#1a2d35;--trim:#fff;--paper:#eef1f1;--ink:#17262c;--soft:#46565c;--gold:#efab1c;--wood:#8a4a22;--on-wall:#fff;--course:46px}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--trim);color:var(--ink);font:400 1.0625rem/1.6 Cabin,system-ui,sans-serif;touch-action:manipulation}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--wood);text-underline-offset:.18em}
+h1,h2,h3{font-family:Aleo,Georgia,serif;line-height:1.12;text-wrap:balance}
+h2{font-size:clamp(1.8rem,1.4rem + 1.8vw,2.75rem);font-weight:800;margin-bottom:.6em;letter-spacing:-.01em}
+h3{font-size:1.3rem;font-weight:700}
+p+p{margin-top:.8em}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{width:min(100% - 2.5rem,84rem);margin-inline:auto}
+.narrow{max-width:52rem}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:1rem;top:1rem;z-index:30;background:#fff;padding:.6rem 1rem}
+.demo{background:var(--deep);color:#dfe7e9;font-size:.8125rem;line-height:1.35;text-align:center;padding:.4rem 1rem}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:1.25rem;background:var(--trim);padding:.5rem max(1.25rem,calc((100vw - 84rem)/2));box-shadow:0 1px 0 #d8dfe0}
+.logo{display:block;flex:none}
+.logo img{width:168px;height:auto}
+.links{display:flex;gap:.1rem;margin-left:auto}
+.links a{color:var(--ink);text-decoration:none;font-weight:600;padding:.7rem .6rem;white-space:nowrap}
+.links a:hover,.links a[aria-current]{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--gold)}
+.menu{display:none;position:static}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;min-height:44px;min-width:64px;display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);padding:0 .9rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--ink);color:#fff}
+.menu nav{position:absolute;left:0;right:0;top:100%;background:var(--trim);padding:.5rem 1.25rem 1.25rem;box-shadow:0 18px 30px rgba(10,20,25,.3);max-height:calc(100dvh - 90px);overflow:auto}
+.menu nav>a:not(.btn){display:flex;align-items:center;min-height:46px;color:var(--ink);font-weight:600;font-size:1.125rem;text-decoration:none;border-bottom:1px solid #e3e8e9}
+.menu nav>a[aria-current]{color:var(--wood)}
+.menu nav .btn{margin-top:1rem;width:100%}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.55rem 1.2rem;font-weight:700;text-decoration:none;text-align:center;line-height:1.15;border:2px solid transparent}
+.gold{background:var(--gold);color:var(--ink)}
+.gold:hover{background:#ffc445}
+.dark{background:var(--trim);color:var(--ink);border-color:var(--ink)}
+.dark:hover{background:var(--ink);color:#fff}
+.line{color:#fff;border-color:rgba(255,255,255,.75);overflow-wrap:anywhere}
+.line:hover{background:#fff;color:var(--ink)}
+.plain{background:#fff;color:var(--ink)}
+.call{flex:none;white-space:nowrap}
+.more{font-weight:700;display:inline-flex;align-items:center;min-height:44px}
+
+/* lap siding: one course per tile, the drip edge at the bottom of each */
+.wall{background-color:var(--wall);background-image:linear-gradient(180deg,rgba(255,255,255,.07) 0,rgba(255,255,255,.015) 30%,rgba(0,0,0,.1) 90%,rgba(0,0,0,.34) 95.5%,rgba(0,0,0,.34) 100%);background-size:100% var(--course);color:var(--on-wall);transition:background-color .35s}
+.mounted{font-family:Aleo,Georgia,serif;font-weight:800;color:var(--on-wall);text-shadow:1px 2px 0 rgba(0,0,0,.4),3px 6px 7px rgba(0,0,0,.38);letter-spacing:-.01em}
+.plate{background:var(--trim);color:var(--ink);padding:1.25rem 1.35rem;box-shadow:0 2px 0 #c9d1d3,0 14px 22px -10px rgba(0,0,0,.55)}
+.acts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+
+/* window casing */
+.window{background:var(--trim);padding:.7rem .7rem 0;box-shadow:0 16px 28px -10px rgba(0,0,0,.6)}
+.glass{position:relative;overflow:hidden;background:var(--deep)}
+.glass img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%)}
+.window figcaption{margin:0 -.7rem;padding:.55rem .9rem;font-size:.9375rem;font-weight:600;color:var(--soft);line-height:1.25;background:var(--trim);border-top:3px solid #dfe5e6}
+.courses{position:absolute;inset:0;display:grid;grid-template-rows:repeat(9,1fr)}
+.courses i{background:var(--wall);transform-origin:0 50%;animation:course .55s cubic-bezier(.6,0,.2,1) both;animation-delay:calc((8 - var(--i))*70ms + 120ms)}
+@keyframes course{to{transform:scaleX(0)}}
+
+/* heroes */
+.hero{padding-block:clamp(1.25rem,4vw,3.75rem)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.hero h1{font-size:clamp(3.2rem,1.6rem + 5.2vw,6.4rem);line-height:1;margin-bottom:.32em}
+.hero.sub h1{font-size:clamp(2.5rem,1.6rem + 3.2vw,4.4rem);line-height:1.04}
+.facts{background:var(--trim);border-bottom:1px solid #dfe5e6}
+.facts ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.3rem 2.75rem;justify-content:space-between;padding-block:1rem;font-weight:700}
+
+/* sections */
+.band{padding-block:clamp(2.75rem,6vw,5.5rem)}
+.pale{background:var(--paper)}
+.lead{max-width:44rem;margin-bottom:1.5rem}
+.small{font-size:.9375rem;color:var(--soft);margin-top:1rem}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.ticks{list-style:none;padding:0;margin-top:1rem}
+.ticks li{padding:.28rem 0 .28rem 1.5rem;position:relative}
+.ticks li::before{content:"";position:absolute;left:0;top:.82em;width:.8rem;height:.35rem;background:var(--wood)}
+.ticks+p{margin-top:.9rem}
+.names{margin-top:1rem;border-top:1px solid #d3dbdd;border-bottom:1px solid #d3dbdd}
+.names summary{cursor:pointer;font-weight:700;min-height:48px;display:flex;align-items:center}
+.names ul{list-style:none;padding:0 0 1rem;columns:2;font-size:.9875rem}
+
+.shot figcaption,.pair figcaption{margin-top:.5rem;font-weight:600;color:var(--soft);font-size:.9375rem;line-height:1.3}
+.frame{overflow:hidden;background:var(--paper)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%)}
+
+.svc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2.25rem 1.5rem}
+.svc a{grid-column:span 2;color:var(--ink);text-decoration:none}
+.svc a.svc-big{grid-column:span 3}
+.svc img{width:100%;aspect-ratio:3/2;object-fit:cover;margin-bottom:.8rem}
+.svc a.svc-big img{aspect-ratio:16/10}
+.svc h3{font-size:1.5rem;margin-bottom:.25rem;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:3px;text-underline-offset:.2em}
+.svc a:hover h3{text-decoration-color:var(--gold)}
+.svc p{color:var(--soft)}
+
+.ba-home{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.pair{position:relative}
+.pair .window{padding-bottom:.7rem;background:var(--trim)}
+.pale .pair .window{box-shadow:0 14px 26px -12px rgba(15,35,42,.55)}
+.snap{position:absolute;left:-.6rem;bottom:2.2rem;width:clamp(120px,36%,240px);border:6px solid #fff;box-shadow:0 8px 18px -6px rgba(0,0,0,.6);background:#fff}
+.snap img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tag{position:absolute;top:0;background:var(--deep);color:#fff;font-weight:700;font-size:.875rem;line-height:1;padding:.4rem .6rem}
+.glass .tag{right:0}
+.snap .tag{left:0}
+.pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 3rem}
+
+.steps{list-style:none;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.75rem}
+.steps li{counter-increment:s;border-top:4px solid var(--wall);padding-top:.8rem}
+.steps li::before{content:counter(s);display:block;font:800 2rem/1 Aleo,serif;color:var(--wood);margin-bottom:.45rem}
+.steps h3{margin-bottom:.4rem}
+.steps p{color:var(--soft);font-size:1rem}
+
+.mosaic{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.75rem 1.5rem;margin-bottom:1rem}
+.w7{grid-column:span 7}
+.w5{grid-column:span 5}
+.w7 .frame,.w5 .frame{aspect-ratio:auto!important;height:clamp(240px,27vw,370px)}
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.75rem 1.5rem}
+
+.owners{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+blockquote{font-family:Aleo,Georgia,serif}
+.owners blockquote{font-size:clamp(1.25rem,1.1rem + .6vw,1.6rem);font-weight:500;line-height:1.35;margin-bottom:1rem}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.75rem}
+.quotes blockquote{background:var(--paper);padding:1.35rem;font-size:1.0625rem;line-height:1.5;border-top:4px solid var(--gold)}
+.quotes cite{display:block;margin-top:.7rem;font:700 1rem Cabin,sans-serif;color:var(--soft)}
+.band .quotes+p{margin-top:1rem}
+
+.money{background:var(--gold)}
+.money .wrap{display:flex;gap:1rem 2.5rem;align-items:center;justify-content:space-between;padding-block:1.4rem}
+.money p{max-width:48rem}
+.money .btn{flex:none}
+.money .dark{background:var(--ink);color:#fff}
+.money .dark:hover{background:#fff;color:var(--ink)}
+
+.faq details{border-bottom:1px solid #cdd6d8}
+.faq summary{cursor:pointer;font-weight:700;font-size:1.125rem;min-height:52px;padding:.7rem 0;display:flex;align-items:center}
+.faq details p{padding-bottom:1rem;max-width:44rem}
+
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.plans article{background:var(--paper);padding:1.5rem;border-top:4px solid var(--wall)}
+.plans .note{color:var(--soft);margin-top:.35rem}
+.people{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem 1.5rem}
+.people strong{display:block;font:700 1.2rem Aleo,serif}
+.people span{color:var(--soft)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.reach{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.25rem;margin-bottom:2rem;font-size:1.125rem}
+.reach dt{font-weight:700}
+.reach dd{margin:0;overflow-wrap:anywhere}
+.reach a{display:inline-flex;align-items:center;min-height:44px}
+.cities{list-style:none;padding:0;columns:3;margin-top:.7rem}
+
+/* color picker on the wall */
+.pick{padding-block:clamp(2.5rem,6vw,5rem)}
+.pick-name{font-size:clamp(2.6rem,1.6rem + 5vw,6rem);line-height:1.05;margin-bottom:.4em}
+.pick-name.dark-text{text-shadow:0 1px 0 rgba(255,255,255,.45)}
+.pick-plate h2{margin-bottom:.3em}
+.sws{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.6rem;margin-top:1.1rem}
+.sw{display:flex;flex-direction:column;justify-content:flex-start;background:none;border:0;padding:.25rem;font:600 .875rem/1.2 Cabin,sans-serif;color:var(--ink);cursor:pointer;text-align:left;min-height:44px}
+.sw img{width:100%;aspect-ratio:1;object-fit:cover;margin-bottom:.3rem}
+.sw[aria-pressed=true]{outline:3px solid var(--wood);outline-offset:0}
+
+/* closing wall with house numbers */
+.close{padding-block:clamp(3rem,7vw,5.5rem);text-align:center}
+.close h2{font-size:clamp(1.7rem,1.3rem + 1.8vw,2.7rem);margin-bottom:.7em}
+.numbers{display:inline-flex;gap:.35em;font:800 clamp(2.5rem,12.2vw,8.5rem)/1 Aleo,Georgia,serif;text-decoration:none;color:#f0c668;filter:drop-shadow(1px 2px 0 rgba(0,0,0,.5)) drop-shadow(3px 7px 6px rgba(0,0,0,.45))}
+.numbers:hover{color:#ffdc8d}
+.close-more{margin-top:1.75rem}
+
+.foot{background:var(--deep);color:#d5dfe2;padding-block:2.75rem 1.5rem}
+.foot a{color:#fff}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:2rem}
+.foot-logo{filter:brightness(0) invert(1);width:170px;margin-bottom:.75rem}
+.foot nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1.5rem}
+.foot nav a{display:flex;align-items:center;min-height:44px;text-decoration:none;font-weight:600}
+.foot p a{display:inline-flex;align-items:center;min-height:44px}
+.legal{margin-top:1.75rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.2);font-size:.875rem}
+
+.bar{display:none}
+
+@media (max-width:1240px){.links{display:none}.menu{display:block;order:3}.call{margin-left:auto}}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:1rem}
+  .hero .window{order:-1}
+  .hero h1{font-size:clamp(2.9rem,14vw,4.2rem);margin-bottom:.22em}
+  .hero.sub h1{font-size:clamp(2.2rem,10.4vw,3.4rem)}
+  .plate{padding:1rem 1.1rem}
+  .ba-home,.owners,.contact-grid,.two{grid-template-columns:minmax(0,1fr)}
+  .steps,.quotes,.plans,.people{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sws{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  body{padding-bottom:0}
+  .call{display:none}
+  .menu{margin-left:auto}
+  .top{padding-block:.35rem}
+  .logo img{width:142px}
+  .window{padding:.5rem .5rem 0}
+  .window figcaption{margin:0 -.5rem;padding:.4rem .7rem;font-size:.875rem}
+  .pair .window{padding-bottom:.5rem}
+  .hero{padding-block:1rem 1.25rem}
+  .svc,.gal,.pairs,.steps,.quotes,.plans,.people{grid-template-columns:minmax(0,1fr)}
+  .svc a,.svc a.svc-big,.w7,.w5{grid-column:1/-1}
+  .w7 .frame,.w5 .frame{height:auto;aspect-ratio:3/2!important}
+  .facts ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem 1rem;font-size:.9875rem;line-height:1.25}
+  .money .wrap{flex-direction:column;align-items:flex-start}
+  .cities{columns:2}
+  .sws{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+  .snap{left:-.4rem;bottom:2rem;width:38%;border-width:4px}
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:15;display:grid;grid-template-columns:1fr auto;gap:.5rem;padding:.5rem .75rem calc(.5rem + env(safe-area-inset-bottom));background:var(--deep);transform:translateY(110%);transition:transform .2s}
+  .bar.on{transform:none}
+  .foot{padding-bottom:5.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .courses{display:none}
+  .wall,.bar{transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Voyager Exteriors. Not affiliated with or endorsed by Voyager Exteriors.</p>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="logo" href="index.html" aria-label="Voyager Exteriors home"><img src="img/logo.svg" width="150" height="57" alt="Voyager Exteriors"></a>
+  <nav class="links" aria-label="Main"><a href="decks.html">Decks</a><a href="siding.html">Siding</a><a href="roofing.html">Roofing</a><a href="windows-doors.html">Windows &amp; doors</a><a href="storm.html">Storm</a><a href="work.html" aria-current=page>Our work</a><a href="financing.html">Financing</a><a href="about.html">About</a></nav>
+  <a class="btn gold call" href="tel:+16129989500">(612) 998-9500</a>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Mobile"><a href="index.html">Home</a><a href="decks.html">Decks</a><a href="siding.html">Siding</a><a href="roofing.html">Roofing</a><a href="windows-doors.html">Windows &amp; doors</a><a href="storm.html">Storm</a><a href="work.html" aria-current=page>Our work</a><a href="financing.html">Financing</a><a href="about.html">About</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a><a class="btn gold" href="tel:+16129989500">Call (612) 998-9500</a></nav>
+  </details>
+</header>
+<main id="main">
+<section class="wall hero sub">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 class="mounted">Our recent work.</h1>
+      <div class="plate"><p>We get just as excited as our customers to see their visions come to life. Here are some of our recent projects around the Twin Cities.</p>
+        <p class="acts"><a class="btn gold" href="tel:+16129989500">Call (612) 998-9500</a><a class="btn dark" href="mailto:office@voyagerexteriors.com?subject=Free%20estimate%20request">Email us</a></p></div>
+    </div>
+    <figure class="window"><div class="glass" style="aspect-ratio:16/10"><img src="img/deck-cable-640.webp" srcset="img/deck-cable-640.webp 640w, img/deck-cable-1100.webp 1100w" sizes="(max-width: 900px) calc(100vw - 3.5rem), 760px" width="1920" height="1080" alt="Drone view of a raised TimberTech deck with white posts and an umbrella over the table" fetchpriority="high"></div><figcaption>TimberTech deck with cable railing, Centerville, MN</figcaption></figure>
+  </div>
+</section><section class="band" id="before-after"><div class="wrap">
+  <h2>Before and after</h2>
+  <p class="lead">It’s amazing how a new deck can change a home into something you can be proud of.</p>
+  <div class="pairs">
+    <figure class="pair">
+  <div class="window"><div class="glass" style="aspect-ratio:16/10"><img src="img/ba2a-640.webp" srcset="img/ba2a-640.webp 640w, img/ba2a-1100.webp 1100w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 800px" width="1920" height="1080" alt="New Trex deck with wide steps and a dining set on a green lawn" loading="lazy" decoding="async"><span class="tag">After</span></div></div>
+  <div class="snap"><img src="img/ba2b-480.webp" srcset="img/ba2b-480.webp 480w" sizes="(max-width: 900px) 42vw, 240px" width="1440" height="1111" alt="The same back door before: an old grey deck in the snow" loading="lazy" decoding="async"><span class="tag">Before</span></div>
+  <figcaption>Toasted Sand Trex deck</figcaption>
+</figure>
+    <figure class="pair">
+  <div class="window"><div class="glass" style="aspect-ratio:16/10"><img src="img/ba3a-640.webp" srcset="img/ba3a-640.webp 640w, img/ba3a-1100.webp 1100w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 800px" width="1715" height="1080" alt="Two-level dark deck with a covered upper platform and stairs" loading="lazy" decoding="async"><span class="tag">After</span></div></div>
+  <div class="snap"><img src="img/ba3b-480.webp" srcset="img/ba3b-480.webp 480w" sizes="(max-width: 900px) 42vw, 240px" width="1024" height="768" alt="The old brown wood deck and stairs on the same home" loading="lazy" decoding="async"><span class="tag">Before</span></div>
+  <figcaption>Rocky Harbor Trex deck</figcaption>
+</figure>
+    <figure class="pair">
+  <div class="window"><div class="glass" style="aspect-ratio:16/10"><img src="img/ba5a-640.webp" srcset="img/ba5a-640.webp 640w, img/ba5a-1100.webp 1100w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 800px" width="1920" height="1080" alt="Raised deck with white railing and pergola on a brown-sided home" loading="lazy" decoding="async"><span class="tag">After</span></div></div>
+  <div class="snap"><img src="img/ba5b-480.webp" srcset="img/ba5b-480.webp 480w" sizes="(max-width: 900px) 42vw, 240px" width="576" height="768" alt="The same bare wall before the deck, with a dry yard below" loading="lazy" decoding="async"><span class="tag">Before</span></div>
+  <figcaption>Clam Shell Trex deck</figcaption>
+</figure>
+    <figure class="pair">
+  <div class="window"><div class="glass" style="aspect-ratio:16/10"><img src="img/ba6a-640.webp" srcset="img/ba6a-640.webp 640w, img/ba6a-1100.webp 1100w" sizes="(max-width: 900px) calc(100vw - 2.5rem), 800px" width="1920" height="1080" alt="Drone view of a deck across the back of a grey three-storey home" loading="lazy" decoding="async"><span class="tag">After</span></div></div>
+  <div class="snap"><img src="img/ba6b-480.webp" srcset="img/ba6b-480.webp 480w" sizes="(max-width: 900px) 42vw, 240px" width="768" height="576" alt="The back of the same home before the deck" loading="lazy" decoding="async"><span class="tag">Before</span></div>
+  <figcaption>Rocky Harbor Trex deck</figcaption>
+</figure>
+  </div></div></section>
+<section class="band pale" id="decks"><div class="wrap">
+  <h2>Decks</h2>
+  <div class="gal">
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/deck-coconut-800.webp" srcset="img/deck-coconut-800.webp 800w, img/deck-coconut-1400.webp 1400w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1920" height="1080" alt="Drone view of a deck with navy sofas and black railing" loading="lazy" decoding="async"></div><figcaption>TimberTech Coconut Husk + Dark Cocoa, Golden Valley</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/deck-wall2-640.webp" srcset="img/deck-wall2-640.webp 640w, img/deck-wall2-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1920" height="1080" alt="Slatted privacy wall on a deck, with autumn trees behind" loading="lazy" decoding="async"></div><figcaption>TimberTech deck with privacy wall, Blaine</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/deck-leather-640.webp" srcset="img/deck-leather-640.webp 640w, img/deck-leather-1100.webp 1100w, img/deck-leather-1400.webp 1400w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1920" height="1080" alt="Upper deck with a cedar ceiling below and golden grasses in the foreground" loading="lazy" decoding="async"></div><figcaption>TimberTech Antique Leather and cedar ceiling, Lino Lakes</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/deck-pergola-640.webp" srcset="img/deck-pergola-640.webp 640w, img/deck-pergola-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1200" height="630" alt="Raised deck with a lumber pergola" loading="lazy" decoding="async"></div><figcaption>TimberTech Cypress and lumber pergola, Excelsior</figcaption></figure>
+  </div></div></section>
+<section class="band" id="siding"><div class="wrap">
+  <h2>Siding</h2>
+  <div class="gal">
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/sid-blue-640.webp" srcset="img/sid-blue-640.webp 640w, img/sid-blue-1100.webp 1100w, img/sid-blue-1400.webp 1400w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1920" height="1080" alt="Two-storey home in Evening Blue siding" loading="lazy" decoding="async"></div><figcaption>James Hardie HZ5 Evening Blue, Stillwater</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/sid-white-640.webp" srcset="img/sid-white-640.webp 640w, img/sid-white-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1920" height="1080" alt="Large white-sided home with a covered porch" loading="lazy" decoding="async"></div><figcaption>James Hardie HDZ Cedarmill White, Stillwater</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/sid-sage-640.webp" srcset="img/sid-sage-640.webp 640w, img/sid-sage-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1200" height="630" alt="Home in Mountain Sage siding" loading="lazy" decoding="async"></div><figcaption>James Hardie Mountain Sage, Coon Rapids</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/sid-marik-640.webp" srcset="img/sid-marik-640.webp 640w, img/sid-marik-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1920" height="1280" alt="Back of a dark grey two-storey home with a brick chimney and a patio" loading="lazy" decoding="async"></div><figcaption>Dark grey two-storey home with brick chimney</figcaption></figure>
+  </div></div></section>
+<section class="band pale" id="roofing"><div class="wrap">
+  <h2>Roofing</h2>
+  <div class="gal">
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/roof-repl-640.webp" srcset="img/roof-repl-640.webp 640w, img/roof-repl-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1200" height="675" alt="Aerial view of a home with a replaced grey shingle roof, surrounded by mature trees" loading="lazy" decoding="async"></div><figcaption>Grey architectural shingle roof replacement</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/roof-pool-640.webp" srcset="img/roof-pool-640.webp 640w, img/roof-pool-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1536" height="864" alt="Aerial view of a large home with a grey roof, patio and pool" loading="lazy" decoding="async"></div><figcaption>Roof replacement seen from the air</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/roof-sauer-640.webp" srcset="img/roof-sauer-640.webp 640w, img/roof-sauer-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="2160" height="1440" alt="Two-storey home with a dark grey shingle roof and grey siding on a wide lawn" loading="lazy" decoding="async"></div><figcaption>Dark grey shingle roof and new fiber cement siding</figcaption></figure>
+    <figure class="shot"><div class="frame" style="aspect-ratio:3/2"><img src="img/roof-quade-640.webp" srcset="img/roof-quade-640.webp 640w, img/roof-quade-1100.webp 1100w" sizes="(max-width: 760px) calc(100vw - 2.5rem), 700px" width="1920" height="1080" alt="Aerial view of a home with a grey shingle roof among trees" loading="lazy" decoding="async"></div><figcaption>Grey architectural shingle roof with covered front porch</figcaption></figure>
+  </div></div></section><section class="wall close" aria-labelledby="close-t">
+  <div class="wrap">
+    <h2 id="close-t" class="mounted">Want yours on this page?</h2>
+    <a class="numbers" href="tel:+16129989500" aria-label="Call (612) 998-9500"><span>612</span><span>998</span><span>9500</span></a>
+    <p class="close-more"><a class="btn line" href="mailto:office@voyagerexteriors.com?subject=Free%20estimate%20request">Email office@voyagerexteriors.com</a></p>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div><img class="foot-logo" src="img/logo.svg" width="170" height="64" alt="Voyager Exteriors" loading="lazy">
+      <p>2016 Gateway Cir # C, Centerville, MN 55038<br><a href="tel:+16129989500">(612) 998-9500</a><br><a href="mailto:office@voyagerexteriors.com">office@voyagerexteriors.com</a></p></div>
+    <nav aria-label="Footer"><a href="decks.html">Decks</a><a href="siding.html">Siding</a><a href="roofing.html">Roofing</a><a href="windows-doors.html">Windows &amp; doors</a><a href="storm.html">Storm</a><a href="work.html">Our work</a><a href="financing.html">Financing</a><a href="about.html">About</a><a href="reviews.html">Reviews</a><a href="contact.html">Contact</a></nav>
+  </div>
+  <p class="wrap legal">Unofficial demo built by MHS Tecnologia for Voyager Exteriors. Not affiliated with or endorsed by Voyager Exteriors. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</footer>
+<div class="bar" aria-label="Contact"><a class="btn gold" href="tel:+16129989500">Call (612) 998-9500</a><a class="btn plain" href="mailto:office@voyagerexteriors.com?subject=Free%20estimate%20request">Email</a></div>
+<script>(function () {
+  // The mobile call bar appears once the hero has scrolled away.
+  var bar = document.querySelector('.bar'), hero = document.querySelector('.hero');
+  if (bar && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { bar.classList.toggle('on', !e[0].isIntersecting); }).observe(hero);
+  }
+  // Close the menu on Escape.
+  var menu = document.querySelector('.menu');
+  if (menu) document.addEventListener('keydown', function (e) { if (e.key === 'Escape') menu.open = false; });
+  // Siding page: try a color on the wall.
+  var pick = document.getElementById('pick');
+  if (pick) {
+    var name = document.getElementById('pick-name'), btns = pick.querySelectorAll('.sw');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+        pick.style.setProperty('--wall', b.dataset.color);
+        pick.style.setProperty('--on-wall', b.dataset.light === '1' ? '#17262c' : '#fff');
+        name.classList.toggle('dark-text', b.dataset.light === '1');
+        name.textContent = b.dataset.name;
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
