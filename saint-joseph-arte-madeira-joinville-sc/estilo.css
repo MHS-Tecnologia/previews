@@ -100,6 +100,8 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
 .lugar img,.modelo img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% var(--y,50%);clip-path:polygon(50% 0,100% 15%,100% 100%,0 100%,0 15%);transition:scale .18s ease}
 .lugar:hover img,.modelo:hover img{scale:1.02}
 .lugar .plaquinha,.modelo .plaquinha{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px)}
+.modelo .plaquinha{display:inline-flex;align-items:center;gap:6px;padding-inline:9px 12px}
+.modelo .plaquinha svg{width:17px;height:17px;flex:none}
 
 /* de perto */
 .perto{background:var(--funda);color:#fff}
@@ -151,6 +153,8 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
   .grupo{grid-column:1/-1;padding:16px;margin-top:10px}
   .modelo.larga{grid-column:1/-1}
   .modelo.larga img{aspect-ratio:3/2}
+  .modelo:not(.larga) .plaquinha{left:6px;bottom:6px;max-width:calc(100% - 12px);padding:5px 9px 5px 7px;gap:5px;font-size:.8125rem}
+  .modelo:not(.larga) .plaquinha svg{width:15px;height:15px}
 }
 
 .enc{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:clamp(28px,5vw,72px);align-items:start}
