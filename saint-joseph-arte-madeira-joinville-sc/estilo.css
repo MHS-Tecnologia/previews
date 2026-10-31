@@ -92,12 +92,16 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
 .secao{padding-block:clamp(56px,8vw,112px)}
 .secao-cab{max-width:760px}
 .secao-cab p{margin-top:14px;max-width:36em}
-.casinhas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4vw,32px);margin-top:44px;align-items:start}
+.casinhas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4vw,32px)}
 .casinha{position:relative}
-.casinha:nth-child(2){margin-top:64px}
 .casinha img{width:100%;clip-path:polygon(50% 0,100% 13%,100% 100%,0 100%,0 13%)}
 .casinha .plaquinha{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px)}
-.mais{margin-top:36px}
+.casinhas-a{display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.casinhas-a h2{font-size:clamp(2rem,3vw,2.6rem)}
+.casinhas-b{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding-top:min(10.4vw,150px)}
+.casinhas-c img{height:100%;object-fit:cover}
+.mais p{font-size:clamp(1.125rem,1.7vw,1.3rem);margin-bottom:16px}
+.mais .btn{width:100%}
 
 /* de perto */
 .perto{background:var(--funda);color:#fff}
@@ -138,15 +142,24 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
 .faixa{background:var(--piscina);padding-block:clamp(32px,5vw,64px) clamp(92px,11vw,150px)}
 .faixa .lead{margin-top:16px}
 .faixa-curta{padding-bottom:clamp(40px,6vw,72px)}
-.vitrine{columns:3;column-gap:clamp(14px,2.4vw,32px);margin-top:clamp(-120px,-8vw,-60px);position:relative}
+.vitrine{columns:2;column-gap:clamp(14px,2.4vw,32px);margin-top:clamp(-120px,-8vw,-60px);position:relative}
+.coluna{display:contents}
 .modelo{break-inside:avoid;margin-bottom:clamp(14px,2.4vw,32px);background:var(--placa);box-shadow:0 2px 0 rgb(16 41 63 / .18)}
 .modelo img{width:100%}
+@media (min-width:1100px){
+  /* altura fixa pela largura: a foto de cada cartão ocupa o que sobra, e as colunas terminam juntas */
+  .vitrine{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;aspect-ratio:1184/1540}
+  .coluna{display:flex;flex-direction:column;gap:32px;min-height:0}
+  .modelo{display:flex;flex-direction:column;flex:var(--peso) 1 0;min-height:0;margin:0}
+  .modelo img{flex:1 1 0;min-height:0;height:0;object-fit:cover}
+}
 .modelo figcaption{padding:14px 16px 16px}
 .modelo h2{font-size:1.2rem;line-height:1.2;letter-spacing:-.005em;font-weight:700}
 .modelo p{margin-top:4px;font-size:1rem}
 .modelo .btn{margin-top:12px;width:100%}
 
-.enc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.enc{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:clamp(28px,5vw,72px);align-items:start}
+.enc-tronco img{aspect-ratio:4/5;object-fit:cover;object-position:50% 44%}
 .enc-fotos{display:grid;gap:14px}
 .enc-fotos figure{position:relative}
 .enc-fotos img{width:100%}
@@ -154,7 +167,6 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
 .enc-faixa{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end}
 .numero{font-family:var(--serif);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.1;text-decoration:none;display:inline-flex;align-items:center;min-height:48px}
 .enc h2{margin-bottom:12px}
-.enc-deck{margin-top:44px}
 .enc-faixa h1{font-size:clamp(2.5rem,5vw,4.4rem)}
 .enc .poste{margin-top:40px}
 
@@ -181,12 +193,13 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
   .heroi .btn-linha{display:none}
   .heroi-peca{width:min(82vw,420px);margin-top:46px;margin-bottom:-90px}
   .heroi-peca .plaquinha{right:-4px;bottom:125px;font-size:.875rem}
-  .casinhas{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:32px}
-  .casinha:first-child{grid-column:1/-1}
-  .casinha:nth-child(2){margin-top:0}
+  .casinhas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .casinhas-a{grid-column:1/-1}
+  .casinhas-b{padding-top:0;gap:14px}
+  .mais p{font-size:1rem;margin-bottom:10px}
+  .mais .btn{padding-inline:10px;font-size:1rem}
   .perto .miolo,.placas-sec .miolo,.enc,.enc-faixa,.fundo .miolo{grid-template-columns:1fr}
   .fundo-lado{margin-top:34px}
-  .vitrine{columns:2}
   .modelo figcaption{padding:10px 10px 12px}
   .modelo h2{font-size:1.0625rem}
   .modelo p{font-size:.9375rem}
