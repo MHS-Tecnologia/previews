@@ -197,7 +197,7 @@ a { color: inherit; }
 .pent-grade { display: grid; gap: 28px; }
 .pent-a { max-width: 372px; }
 .pent-a img { width: 100%; aspect-ratio: 372/470; object-fit: cover; object-position: 50% 0; }
-.bancada-grade { display: grid; gap: 24px; width: min(1280px, 100% - 32px); }
+.bancada-grade { display: grid; gap: 24px; }
 .bancada-foto { width: 100%; }
 
 /* Cor */
@@ -292,8 +292,7 @@ a { color: inherit; }
   .par { width: 286px; }
   .par-fotos { grid-template-columns: 140px 140px; }
   .par-fotos img { width: 140px; }
-  .bancada-grade > div { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; }
-  .bancada-grade > div p { max-width: 30em; margin: 0; }
+  .bancada-grade { grid-template-columns: minmax(0, 1fr) 930px; gap: 48px; align-items: center; }
   .caminho img { height: 420px; }
   .salao-grade { grid-template-columns: minmax(0, 680px) minmax(0, 1fr); gap: 64px; align-items: center; }
   .serv-grade { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 48px; }
