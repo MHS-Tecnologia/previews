@@ -13,6 +13,7 @@
 <link rel="preload" as="image" imagesrcset="img/crew-van-480.webp 480w, img/crew-van-640.webp 640w, img/crew-van-800.webp 800w, img/crew-van-1200.webp 1200w" imagesizes="(min-width:900px) 580px, (min-width:480px) 90vw, 340px" fetchpriority="high">
 <style>@font-face{font-family:Anybody;src:url(fonts/anybody-italic.woff2) format("woff2");font-style:italic;font-weight:100 900;font-stretch:50% 150%;font-display:swap}
 @font-face{font-family:Atkinson;src:url(fonts/atkinson.woff2) format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:Atkinson;src:url(fonts/digits.woff2) format("woff2");font-weight:200 800;font-display:swap;unicode-range:U+30-39}
 :root{--blue:#1450D0;--blue-deep:#0E3CA6;--red:#E01E06;--red-dark:#B01604;--ink:#0D1B3D;--soft:#3D4A68;--mist:#E9F0FC;--white:#fff}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -71,7 +72,7 @@ p{margin:0 0 1rem}
 .pipe{position:relative;display:flex;align-items:flex-start;margin:10px -16px 0 -16px;height:78px;margin-bottom:-34px}
 .run{flex:1;height:16px;margin-top:8px;margin-right:-1px;background:var(--red);transform-origin:left}
 .trap{flex:none;margin-right:12px;width:104px;height:78px}
-.drop{position:absolute;right:34px;top:-64px;opacity:0}
+.drop{position:absolute;right:16px;top:-36px;opacity:0;--fall:44px}
 .hero-row{display:grid;gap:8px;margin-top:0}
 .hero-copy{padding-right:96px}
 .hero-copy .lead{margin:0}
@@ -91,25 +92,26 @@ figcaption{font-size:.9375rem;line-height:1.35;color:var(--soft);padding-top:8px
 .drop{animation:drop 1s 1s cubic-bezier(.55,0,.85,.5) both}
 @keyframes run{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-@keyframes drop{0%{opacity:0;transform:translateY(-30px)}15%{opacity:1}90%{opacity:1;transform:translateY(112px) scaleY(1.1)}100%{opacity:0;transform:translateY(124px) scale(.6)}}
+@keyframes drop{0%{opacity:0;transform:translateY(-22px)}15%{opacity:1}90%{opacity:1;transform:translateY(var(--fall)) scaleY(1.1)}100%{opacity:0;transform:translateY(calc(var(--fall) + 12px)) scale(.6)}}
 }
 @media(min-width:900px){
-.hero{padding-top:18px}
+.hero{padding-top:40px}
 .hero h1{font-size:min(8.7vw,124px);letter-spacing:-.025em;white-space:nowrap}
 .hero h1 span{display:inline}
 .pipe{margin:6px 0 0;height:78px;margin-bottom:-52px}
 .trap{margin-right:0}
-.drop{right:10px;top:-74px}
-.hero-row{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start}
-.hero-copy{padding:10px 0 20px}
-.hero-van{display:block;margin-top:18px}
-.hero-van img{width:100%;height:204px;object-fit:cover;object-position:50% 12%}
+.drop{right:4px;top:-74px;--fall:78px}
+.hero-row{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:stretch;padding-bottom:16px}
+.hero-copy{padding:10px 0 0;display:flex;flex-direction:column}
+.hero-van{display:flex;flex-direction:column;flex:1;margin-top:18px}
+.hero-van img{width:100%;flex:1 1 0;height:0;min-height:150px;object-fit:cover;object-position:50% 12%}
 .hero-copy .do{margin:20px 0 14px}
 .hero-copy .btn{width:auto;flex:1 1 100%}
 .hero-copy .btn-line{display:inline-flex;flex:1 1 100%}
 .rate{margin:0 0 0}
-.hero-pic{margin-top:66px}
-.hero-pic img{height:auto;aspect-ratio:730/524;object-position:50% 18%}
+.hero-pic{margin-top:66px;display:flex;flex-direction:column}
+.hero-pic figcaption{padding-bottom:0}
+.hero-pic img{flex:1 1 auto;height:auto;min-height:0;aspect-ratio:730/484;object-position:50% 18%}
 }
 
 /* the door lettering band */
