@@ -59,7 +59,8 @@ p{max-width:58ch}
 /* Topo */
 .topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad);width:100%;max-width:var(--largura);margin-inline:auto;position:relative;z-index:5}
 .marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--titulo);font-size:clamp(23px,2vw,28px);line-height:1;min-height:56px}
-.marca img{width:64px;height:64px;padding:11px;border-radius:50%;background:#fff;object-fit:contain}
+.bola{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#fff}
+.bola img{width:44px;height:auto}
 .menu{display:flex;align-items:center;gap:clamp(8px,2vw,28px);list-style:none;padding:0}
 .menu a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-weight:600}
 .menu a:hover,.menu a[aria-current=page]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
@@ -177,7 +178,8 @@ figcaption{margin-top:10px;font-size:.92em;font-weight:500}
 @media (max-width:860px){
   .abre-menu{display:inline-flex;align-items:center;justify-content:center}
   .topo{padding-block:8px}
-  .marca img{width:54px;height:54px;padding:9px}
+  .bola{width:54px;height:54px}
+  .bola img{width:37px}
   .marca{min-height:54px}
   .menu-caixa{display:none;position:fixed;inset:0;z-index:50;background:var(--campo);color:var(--txt);padding:88px var(--pad) 32px;overflow:auto}
   .menu-caixa.aberto{display:block}
