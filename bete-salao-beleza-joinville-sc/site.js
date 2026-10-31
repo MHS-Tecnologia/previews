@@ -1,4 +1,4 @@
-// Menu, comparador de antes e depois e botão fixo no celular.
+// Menu e botão fixo no celular.
 (function () {
   var botao = document.querySelector('.menu-bt');
   var nav = document.getElementById('nav');
@@ -18,27 +18,6 @@
       if (e.target.closest('a')) { alternar(false); }
     });
   }
-
-  document.querySelectorAll('[data-compara]').forEach(function (cena) {
-    var campo = cena.querySelector('input');
-    var aplicar = function (valor) {
-      cena.style.setProperty('--pos', valor + '%');
-    };
-    var moverPara = function (x) {
-      var r = cena.getBoundingClientRect();
-      var valor = Math.max(0, Math.min(100, ((x - r.left) / r.width) * 100));
-      campo.value = Math.round(valor);
-      aplicar(valor);
-    };
-    campo.addEventListener('input', function () { aplicar(campo.value); });
-    cena.addEventListener('pointerdown', function (e) {
-      cena.setPointerCapture(e.pointerId);
-      moverPara(e.clientX);
-    });
-    cena.addEventListener('pointermove', function (e) {
-      if (cena.hasPointerCapture(e.pointerId)) { moverPara(e.clientX); }
-    });
-  });
 
   var fixo = document.querySelector('[data-fixo]');
   var heroi = document.querySelector('[data-hero-cta]');
