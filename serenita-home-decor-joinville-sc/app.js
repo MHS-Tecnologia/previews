@@ -43,33 +43,42 @@
   var botoes = Array.prototype.slice.call(document.querySelectorAll('.escolha button'))
   var pedido = document.getElementById('pedir-pecas')
   var aviso = document.getElementById('compor-status')
+  var rotulo = document.getElementById('pedir-rotulo')
+  var vazio = document.getElementById('compor-vazio')
   var base = pedido.href.split('?')[0]
   var MAX = 5
   var ordem = botoes.filter(function (b) { return b.getAttribute('aria-pressed') === 'true' })
 
   function ajusta() {
-    // Pieces share the shelf: if they don't fit, all of them shrink together.
-    palco.style.setProperty('--esc', '1')
+    // The shelf is as tall as its pieces need: when they shrink to fit, it shrinks too.
     var est = getComputedStyle(palco)
     var livre = palco.clientWidth - parseFloat(est.paddingLeft) - parseFloat(est.paddingRight)
     var vao = parseFloat(est.columnGap) || 0
-    var imgs = Array.prototype.slice.call(palco.children)
-    var total = imgs.reduce(function (s, i) { return s + i.getBoundingClientRect().width }, 0)
-    var cabe = livre - vao * (imgs.length - 1)
-    palco.style.setProperty('--esc', String(Math.min(1, cabe / (total || 1))))
+    var soma = 0
+    var alta = 0
+    ordem.forEach(function (b) {
+      soma += b.dataset.alt * b.dataset.w / b.dataset.h
+      alta = Math.max(alta, +b.dataset.alt)
+    })
+    var teto = Math.min(4, Math.max(2.5, innerWidth * 0.003))
+    var u = soma ? Math.min(teto, (livre - vao * (ordem.length - 1)) / soma) : teto
+    palco.style.setProperty('--u', u + 'px')
+    palco.style.height = (soma ? u * alta + 36 : 170) + 'px'
   }
 
-  function desenha(novo) {
+  function desenha(novo, saiu) {
     palco.textContent = ''
     ordem.forEach(function (b) {
+      var p = document.createElement('span')
+      p.className = b === novo ? 'p entra' : 'p'
+      p.style.setProperty('--a', b.dataset.alt)
       var i = new Image()
       i.src = b.dataset.src
       i.alt = b.dataset.nome
       i.width = +b.dataset.w
       i.height = +b.dataset.h
-      i.style.height = 'calc(' + b.dataset.alt + '% * var(--esc, 1))'
-      if (b === novo) i.className = 'entra'
-      palco.appendChild(i)
+      p.appendChild(i)
+      palco.appendChild(p)
     })
     ajusta()
     var nomes = ordem.map(function (b) { return b.dataset.nome.toLowerCase() })
@@ -79,23 +88,32 @@
     pedido.href = nomes.length
       ? base + '?text=' + encodeURIComponent('Olá! Quero saber destas peças: ' + lista + '.')
       : base + '?text=' + encodeURIComponent('Olá! Quero ajuda para montar uma prateleira.')
-    aviso.textContent = nomes.length + (nomes.length === 1 ? ' peça' : ' peças') + ' na prateleira.'
+    rotulo.textContent = nomes.length ? 'Perguntar por estas peças' : 'Pedir ajuda para montar'
+    vazio.hidden = nomes.length > 0
+    aviso.classList.toggle('avisa', !!saiu)
+    aviso.textContent = saiu
+      ? 'Cabem até cinco peças. Saiu: ' + saiu.dataset.nome.toLowerCase() + '. Entrou: ' + novo.dataset.nome.toLowerCase() + '.'
+      : nomes.length + ' de ' + MAX + ' peças na prateleira.'
   }
 
   botoes.forEach(function (b) {
     b.addEventListener('click', function () {
       var i = ordem.indexOf(b)
       var novo = null
+      var saiu = null
       if (i >= 0) {
         ordem.splice(i, 1)
         b.setAttribute('aria-pressed', 'false')
       } else {
-        if (ordem.length >= MAX) ordem.shift().setAttribute('aria-pressed', 'false')
+        if (ordem.length >= MAX) {
+          saiu = ordem.shift()
+          saiu.setAttribute('aria-pressed', 'false')
+        }
         ordem.push(b)
         b.setAttribute('aria-pressed', 'true')
         novo = b
       }
-      desenha(novo)
+      desenha(novo, saiu)
     })
   })
   // The first pieces are already in the HTML, lazy: nothing to draw until a tap.
