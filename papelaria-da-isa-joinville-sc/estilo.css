@@ -265,7 +265,6 @@ a { color: inherit; }
 .topo-int { padding: 20px 0 8px; }
 .topo-duas { display: grid; gap: 24px; }
 .topo-fig { display: none; }
-.topo-foto { rotate: 1.2deg; max-width: 540px; }
 @media (min-width: 980px) {
   .topo-duas { grid-template-columns: minmax(0, 1fr) 540px; gap: 48px; align-items: center; }
   .topo-fig { display: flex; }
