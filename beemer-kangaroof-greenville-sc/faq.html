@@ -49,6 +49,7 @@
 <a class="fl" href="tel:+18644122573">(864) 412-2573</a><br><a class="fl" href="mailto:hello@beemerkangaroof.com">hello@beemerkangaroof.com</a></div>
 <div><h2>Services</h2><ul><li><a href="residential.html">Homes</a></li><li><a href="insurance.html">Insurance claims</a></li><li><a href="process.html">What to expect</a></li><li><a href="commercial.html">Businesses</a></li><li><a href="emergency.html">Emergency</a></li></ul></div>
 <div><h2>Company</h2><ul><li><a href="club.html">Overhead Care Club</a></li><li><a href="financing.html">Financing</a></li><li><a href="team.html">Our team</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><h2>Areas</h2><ul><li><a href="greenville.html">Greenville</a></li><li><a href="spartanburg.html">Spartanburg</a></li><li><a href="anderson.html">Anderson</a></li><li><a href="greer.html">Greer</a></li></ul></div>
 </div>
 <div class="foot-note">
 <p>Unofficial demo built by MHS Tecnologia for Beemer KangaRoof. Not affiliated with or endorsed by Beemer KangaRoof.</p>
@@ -64,6 +65,10 @@ if(bar&&cta&&'IntersectionObserver'in window){new IntersectionObserver(function(
 var w=matchMedia('(min-width:761px)');
 function more(){document.querySelectorAll('details.more').forEach(function(d){d.open=w.matches})}
 more();w.addEventListener('change',more);
+var t=document.querySelector('.trail');
+if(t&&'IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+t.classList.add('wait');t.querySelectorAll('li').forEach(function(l,i){l.style.setProperty('--i',i)});
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){t.classList.add('go');io.disconnect()}},{threshold:.35});io.observe(t)}
 var m=document.querySelector('.menu');
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.open){m.open=false;m.querySelector('summary').focus()}});
 document.addEventListener('click',function(e){if(m.open&&!m.contains(e.target))m.open=false});
