@@ -92,22 +92,20 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
 .secao{padding-block:clamp(56px,8vw,112px)}
 .secao-cab{max-width:760px}
 .secao-cab p{margin-top:14px;max-width:36em}
-.casinhas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4vw,32px)}
-.casinha{position:relative}
-.casinha img{width:100%;clip-path:polygon(50% 0,100% 13%,100% 100%,0 100%,0 13%)}
-.casinha .plaquinha{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px)}
-.casinhas-a{display:flex;flex-direction:column;justify-content:space-between;gap:24px}
-.casinhas-a h2{font-size:clamp(2rem,3vw,2.6rem)}
-.casinhas-b{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding-top:min(10.4vw,150px)}
-.casinhas-c img{height:100%;object-fit:cover}
-.mais p{font-size:clamp(1.125rem,1.7vw,1.3rem);margin-bottom:16px}
-.mais .btn{width:100%}
+.lugares{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px);align-items:end}
+.lugares-cab h2{font-size:clamp(2rem,3.4vw,2.9rem)}
+.lugares-cab .lead{margin-top:14px}
+.mais{margin-top:22px}
+.lugar,.modelo{position:relative;display:block;text-decoration:none;color:var(--tinta)}
+.lugar img,.modelo img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% var(--y,50%);clip-path:polygon(50% 0,100% 15%,100% 100%,0 100%,0 15%);transition:scale .18s ease}
+.lugar:hover img,.modelo:hover img{scale:1.02}
+.lugar .plaquinha,.modelo .plaquinha{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px)}
 
 /* de perto */
 .perto{background:var(--funda);color:#fff}
-.perto .miolo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.perto .miolo{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:center}
 .perto figure{position:relative}
-.perto img{width:100%}
+.perto img{width:100%;clip-path:polygon(50% 0,100% 15%,100% 100%,0 100%,0 15%)}
 .perto .plaquinha{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px)}
 .partes{margin-top:28px}
 .partes div{padding-block:13px;border-top:1px solid rgb(255 255 255 / .35)}
@@ -142,24 +140,21 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
 .faixa{background:var(--piscina);padding-block:clamp(32px,5vw,64px) clamp(92px,11vw,150px)}
 .faixa .lead{margin-top:16px}
 .faixa-curta{padding-bottom:clamp(40px,6vw,72px)}
-.vitrine{columns:2;column-gap:clamp(14px,2.4vw,32px);margin-top:clamp(-120px,-8vw,-60px);position:relative}
-.coluna{display:contents}
-.modelo{break-inside:avoid;margin-bottom:clamp(14px,2.4vw,32px);background:var(--placa);box-shadow:0 2px 0 rgb(16 41 63 / .18)}
-.modelo img{width:100%}
-@media (min-width:1100px){
-  /* altura fixa pela largura: a foto de cada cartão ocupa o que sobra, e as colunas terminam juntas */
-  .vitrine{columns:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;aspect-ratio:1184/1540}
-  .coluna{display:flex;flex-direction:column;gap:32px;min-height:0}
-  .modelo{display:flex;flex-direction:column;flex:var(--peso) 1 0;min-height:0;margin:0}
-  .modelo img{flex:1 1 0;min-height:0;height:0;object-fit:cover}
+.vitrine{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,28px);align-items:stretch}
+.grupo{padding:20px;color:#fff;background:var(--funda);display:flex;flex-direction:column;justify-content:flex-end;scroll-margin-top:16px}
+.grupo h2{font-size:clamp(1.75rem,2.8vw,2.4rem)}
+.grupo p{margin-top:6px}
+#tronco{background:var(--madeira)}
+#parede{background:var(--folha)}
+@media (max-width:999px){
+  .vitrine{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
+  .grupo{grid-column:1/-1;padding:16px;margin-top:10px}
+  .modelo.larga{grid-column:1/-1}
+  .modelo.larga img{aspect-ratio:3/2}
 }
-.modelo figcaption{padding:14px 16px 16px}
-.modelo h2{font-size:1.2rem;line-height:1.2;letter-spacing:-.005em;font-weight:700}
-.modelo p{margin-top:4px;font-size:1rem}
-.modelo .btn{margin-top:12px;width:100%}
 
 .enc{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:clamp(28px,5vw,72px);align-items:start}
-.enc-tronco img{aspect-ratio:4/5;object-fit:cover;object-position:50% 44%}
+.enc-tronco img{aspect-ratio:4/5;object-fit:cover;object-position:50% 44%;clip-path:polygon(50% 0,100% 15%,100% 100%,0 100%,0 15%)}
 .enc-fotos{display:grid;gap:14px}
 .enc-fotos figure{position:relative}
 .enc-fotos img{width:100%}
@@ -193,20 +188,15 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
   .heroi .btn-linha{display:none}
   .heroi-peca{width:min(82vw,420px);margin-top:46px;margin-bottom:-90px}
   .heroi-peca .plaquinha{right:-4px;bottom:125px;font-size:.875rem}
-  .casinhas{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .casinhas-a{grid-column:1/-1}
-  .casinhas-b{padding-top:0;gap:14px}
-  .mais p{font-size:1rem;margin-bottom:10px}
-  .mais .btn{padding-inline:10px;font-size:1rem}
+  .lugares{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lugares-cab{grid-column:1/-1;margin-bottom:10px}
+  .lugar-largo{grid-column:1/-1}
+  .lugar-largo img{aspect-ratio:3/2}
   .perto .miolo,.placas-sec .miolo,.enc,.enc-faixa,.fundo .miolo{grid-template-columns:1fr}
   .fundo-lado{margin-top:34px}
-  .modelo figcaption{padding:10px 10px 12px}
-  .modelo h2{font-size:1.0625rem}
-  .modelo p{font-size:.9375rem}
-  .modelo .btn{padding:6px 8px;gap:6px;font-size:.9375rem}
   .rodape .miolo{grid-template-columns:.7fr 1.3fr}
   .rodape .col-marca{grid-column:1/-1}
-  .tem-fixo{padding-bottom:72px}
+  .rodape{padding-bottom:92px}
   .fixo{display:block;position:fixed;inset:auto 0 0;z-index:25;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--placa);box-shadow:0 -2px 12px rgb(16 41 63 / .22);transform:translateY(110%);transition:transform .2s ease;visibility:hidden}
   .fixo.ver{transform:none;visibility:visible}
   .fixo .btn{width:100%}
@@ -214,6 +204,7 @@ h2{font-size:clamp(2rem,4vw,3.4rem)}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
+  .lugar:hover img,.modelo:hover img{scale:none}
   .voo-x,.voo-y,.asa{animation:none}
-  .btn,.seta,.fixo{transition:none}
+  .btn,.seta,.fixo,.lugar img,.modelo img{transition:none}
 }
