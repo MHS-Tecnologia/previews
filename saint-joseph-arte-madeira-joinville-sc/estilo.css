@@ -1,0 +1,206 @@
+/* Saint Joseph Arte em Madeira. Azul da piscina, branco da plaquinha, cor da madeira. */
+@font-face{font-family:"Besley";src:url(fonts/besley.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Karla";src:url(fonts/karla.woff2) format("woff2");font-weight:200 800;font-display:swap}
+
+:root{
+  --piscina:#1f9fe8;
+  --funda:#0a5a91;
+  --tinta:#10293f;
+  --placa:#f8fbfd;
+  --parede:#eef4f8;
+  --madeira:#a9531a;
+  --laranja:#f58220;
+  --folha:#0d7562;
+  --serif:"Besley",Georgia,serif;
+  --sans:"Karla",system-ui,sans-serif;
+  --borda:clamp(16px,4vw,48px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--parede);color:var(--tinta);font:400 1.0625rem/1.55 var(--sans)}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3,p,ul,dl,dd,figure{margin:0;padding:0}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;border-radius:2px}
+.sobre-azul :focus-visible,.fundo :focus-visible,.rodape :focus-visible,.aviso :focus-visible{outline-color:#fff}
+
+.miolo{max-width:1280px;margin-inline:auto;padding-inline:var(--borda)}
+
+h1,h2{font-family:var(--serif);font-weight:800;line-height:1.1;letter-spacing:-.018em;text-wrap:balance}
+h1{font-size:clamp(2.5rem,5.5vw,4.9rem)}
+h2{font-size:clamp(2rem,4vw,3.4rem)}
+.lead{font-size:clamp(1.125rem,1.7vw,1.3rem);max-width:34em}
+
+/* aviso */
+.aviso{background:var(--tinta);color:#fff;font-size:.8125rem;line-height:1.35;padding:7px var(--borda);text-align:center;position:relative;z-index:30}
+.aviso a{padding-block:15px;color:#fff}
+
+/* cabeçalho */
+.topo{background:var(--piscina);position:relative;z-index:20}
+.topo .miolo{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.placa-marca{display:inline-flex;align-items:center;min-height:48px;padding:5px 12px;background:var(--placa);color:#16395a;text-decoration:none;box-shadow:0 2px 0 rgb(16 41 63 / .35);position:relative}
+.marca{width:102px;height:auto}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font-weight:700;text-decoration:none;text-underline-offset:5px;text-decoration-thickness:2px}
+.nav a:hover,.nav a[aria-current]{text-decoration-line:underline}
+.nav .btn{margin-left:10px;text-decoration:none}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;display:flex;align-items:center;gap:8px;min-height:48px;min-width:48px;padding:0 14px;background:var(--tinta);color:#fff;font-weight:700;cursor:pointer}
+.menu summary::-webkit-details-marker{display:none}
+.menu ul{position:absolute;right:0;top:calc(100% + 8px);width:min(300px,calc(100vw - 32px));background:var(--placa);box-shadow:0 10px 26px rgb(16 41 63 / .3);padding:6px}
+.menu li a{display:flex;align-items:center;min-height:52px;padding:0 14px;font-weight:700;text-decoration:none}
+.menu li a[aria-current]{background:var(--parede)}
+.menu li + li{border-top:1px solid #d6e2ea}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:10px 22px;font:700 1.0625rem/1.15 var(--sans);text-decoration:none;transition:transform .12s ease,box-shadow .12s ease}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-pede{background:var(--laranja);color:var(--tinta);box-shadow:0 3px 0 var(--tinta)}
+.btn-pede:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--tinta)}
+.btn-pede:active{transform:translateY(2px);box-shadow:0 1px 0 var(--tinta)}
+.btn-linha{box-shadow:inset 0 0 0 2px currentColor}
+.btn-linha:hover{background:rgb(255 255 255 / .18)}
+.btn-peq{min-height:46px;padding:6px 16px;font-size:1rem}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* plaquinha: o rótulo do site é a placa branca que vai nas peças */
+.plaquinha{display:inline-block;background:var(--placa);color:var(--tinta);padding:6px 12px;font-size:.9375rem;font-weight:700;line-height:1.25;box-shadow:0 2px 0 rgb(16 41 63 / .3)}
+
+/* herói */
+.heroi{background:var(--piscina);overflow:hidden;position:relative}
+.heroi .miolo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(16px,3vw,56px);align-items:center;min-height:clamp(600px,calc(100svh - 112px),860px)}
+.heroi-texto{padding-block:32px 72px}
+.heroi-texto .lead{margin-top:22px}
+.heroi-peca{align-self:end;position:relative;width:min(100%,560px);justify-self:center;margin-top:64px;margin-bottom:-120px}
+.heroi-peca img{width:100%}
+.heroi-peca .plaquinha{position:absolute;right:-8px;bottom:190px}
+
+/* o pássaro: pousa uma vez, no chapéu da coluna */
+.passaro{color:var(--tinta);display:block}
+.pouso{position:absolute;left:30.5%;top:2.6%;width:12.5%;transform:translateY(-100%)}
+.voo-x{display:block;animation:voo-x 2.1s cubic-bezier(.25,.6,.3,1) .35s both}
+.voo-y{display:block;animation:voo-y 2.1s cubic-bezier(.3,0,.25,1) .35s both}
+.asa{transform-box:fill-box;transform-origin:70% 90%;animation:bate .17s ease-in-out .35s 11 alternate}
+@keyframes voo-x{from{transform:translateX(70vw)}to{transform:none}}
+@keyframes voo-y{0%{transform:translateY(-34vh)}62%{transform:translateY(-38px)}84%{transform:translateY(5px)}100%{transform:none}}
+@keyframes bate{from{transform:rotate(0)}to{transform:rotate(-48deg)}}
+
+/* três casinhas */
+.secao{padding-block:clamp(56px,8vw,112px)}
+.secao-cab{max-width:760px}
+.secao-cab p{margin-top:14px;max-width:36em}
+.casinhas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2.4vw,32px);margin-top:44px;align-items:start}
+.casinha{position:relative}
+.casinha:nth-child(2){margin-top:64px}
+.casinha img{width:100%;clip-path:polygon(50% 0,100% 13%,100% 100%,0 100%,0 13%)}
+.casinha .plaquinha{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px)}
+.mais{margin-top:36px}
+
+/* de perto */
+.perto{background:var(--funda);color:#fff}
+.perto .miolo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:center}
+.perto figure{position:relative}
+.perto img{width:100%}
+.perto .plaquinha{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px)}
+.partes{margin-top:28px}
+.partes div{padding-block:13px;border-top:1px solid rgb(255 255 255 / .35)}
+.partes dt{font-family:var(--serif);font-weight:700;font-size:1.25rem}
+.partes dd{margin-top:2px}
+
+/* poste de placas */
+.placas-sec .miolo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.poste{position:relative;padding-left:26px}
+.poste::before{content:"";position:absolute;left:0;top:-14px;bottom:-14px;width:16px;background:var(--tinta)}
+.poste li{margin-bottom:12px}
+.poste li:last-child{margin-bottom:0}
+.seta{display:flex;align-items:center;min-height:64px;padding:10px 46px 10px 20px;font-family:var(--serif);font-weight:700;font-size:clamp(1.15rem,2vw,1.5rem);line-height:1.15;text-decoration:none;color:#fff;background:var(--madeira);clip-path:polygon(0 0,calc(100% - 24px) 0,100% 50%,calc(100% - 24px) 100%,0 100%);transition:translate .15s ease}
+.seta:hover{translate:8px 0}
+.seta:focus-visible{outline-offset:-5px;outline-color:#fff}
+.poste li:nth-child(5n+1) .seta{width:100%}
+.poste li:nth-child(5n+2) .seta{width:86%;background:var(--folha)}
+.poste li:nth-child(5n+3) .seta{width:72%;background:var(--laranja);color:var(--tinta)}
+.poste li:nth-child(5n+3) .seta:focus-visible{outline-color:var(--tinta)}
+.poste li:nth-child(5n+4) .seta{width:80%}
+.poste li:nth-child(5n) .seta{width:93%;background:var(--folha)}
+
+/* fecho */
+.fundo{background:var(--piscina)}
+.fundo .miolo{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:32px;align-items:end;padding-block:clamp(56px,7vw,96px)}
+.fundo .lead{margin-top:14px}
+.fundo-lado{position:relative;background:var(--placa);padding:18px 20px;box-shadow:0 3px 0 rgb(16 41 63 / .35)}
+.fundo-lado strong{display:block;font-family:var(--serif);font-weight:800;font-size:1.75rem;line-height:1.1}
+.fundo-lado .passaro{position:absolute;right:26px;top:0;width:58px;transform:translateY(-100%)}
+
+/* páginas internas */
+.faixa{background:var(--piscina);padding-block:clamp(32px,5vw,64px) clamp(92px,11vw,150px)}
+.faixa .lead{margin-top:16px}
+.faixa-curta{padding-bottom:clamp(40px,6vw,72px)}
+.vitrine{columns:3;column-gap:clamp(14px,2.4vw,32px);margin-top:clamp(-120px,-8vw,-60px);position:relative}
+.modelo{break-inside:avoid;margin-bottom:clamp(14px,2.4vw,32px);background:var(--placa);box-shadow:0 2px 0 rgb(16 41 63 / .18)}
+.modelo img{width:100%}
+.modelo figcaption{padding:14px 16px 16px}
+.modelo h2{font-size:1.2rem;line-height:1.2;letter-spacing:-.005em;font-weight:700}
+.modelo p{margin-top:4px;font-size:1rem}
+.modelo .btn{margin-top:12px;width:100%}
+
+.enc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.enc-fotos{display:grid;gap:14px}
+.enc-fotos figure{position:relative}
+.enc-fotos img{width:100%}
+.enc-fotos .plaquinha{position:absolute;left:12px;bottom:12px;max-width:calc(100% - 24px)}
+.enc-faixa{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end}
+.numero{font-family:var(--serif);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.1;text-decoration:none;display:inline-flex;align-items:center;min-height:48px}
+.enc h2{margin-bottom:12px}
+.enc-deck{margin-top:44px}
+.enc-faixa h1{font-size:clamp(2.5rem,5vw,4.4rem)}
+.enc .poste{margin-top:40px}
+
+/* rodapé */
+.rodape{background:var(--tinta);color:#fff;padding-block:44px 32px;font-size:.9375rem}
+.rodape .miolo{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+.rodape .placa-marca{box-shadow:none}
+.rodape li a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+.rodape .legal{grid-column:1/-1;border-top:1px solid rgb(255 255 255 / .28);padding-top:18px;color:#d9e6ef}
+.rodape .legal a{padding-block:15px;color:#fff}
+.rodape p + p{margin-top:6px}
+
+/* CTA fixo no celular */
+.fixo{display:none}
+
+@media (max-width:860px){
+  .nav{display:none}
+  .menu{display:block}
+  .heroi .miolo{grid-template-columns:1fr;min-height:0;gap:0}
+  .heroi-texto{padding-block:6px 0}
+  h1{font-size:clamp(2.45rem,11.2vw,3.6rem)}
+  .heroi-texto .lead{margin-top:12px;font-size:1.0625rem}
+  .heroi .acoes{margin-top:16px;flex-direction:column;align-items:stretch;gap:10px}
+  .heroi .btn-linha{display:none}
+  .heroi-peca{width:min(82vw,420px);margin-top:46px;margin-bottom:-90px}
+  .heroi-peca .plaquinha{right:-4px;bottom:125px;font-size:.875rem}
+  .casinhas{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:32px}
+  .casinha:first-child{grid-column:1/-1}
+  .casinha:nth-child(2){margin-top:0}
+  .perto .miolo,.placas-sec .miolo,.enc,.enc-faixa,.fundo .miolo{grid-template-columns:1fr}
+  .fundo-lado{margin-top:34px}
+  .vitrine{columns:2}
+  .modelo figcaption{padding:10px 10px 12px}
+  .modelo h2{font-size:1.0625rem}
+  .modelo p{font-size:.9375rem}
+  .modelo .btn{padding:6px 8px;gap:6px;font-size:.9375rem}
+  .rodape .miolo{grid-template-columns:.7fr 1.3fr}
+  .rodape .col-marca{grid-column:1/-1}
+  .tem-fixo{padding-bottom:72px}
+  .fixo{display:block;position:fixed;inset:auto 0 0;z-index:25;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--placa);box-shadow:0 -2px 12px rgb(16 41 63 / .22);transform:translateY(110%);transition:transform .2s ease;visibility:hidden}
+  .fixo.ver{transform:none;visibility:visible}
+  .fixo .btn{width:100%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .voo-x,.voo-y,.asa{animation:none}
+  .btn,.seta,.fixo{transition:none}
+}
