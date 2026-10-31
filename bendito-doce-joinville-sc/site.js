@@ -121,11 +121,18 @@
     var saidas = document.querySelectorAll('[data-enviar]')
     var palcoMonte = monte.querySelector('.palco')
     var pedido = { ocasiao: '', cor: '' }
+    var hoje = new Date(); hoje.setHours(0, 0, 0, 0)
+    var diasAte = function (valor) {
+      var p = valor.split('-')
+      return Math.round((new Date(+p[0], +p[1] - 1, +p[2]) - hoje) / 864e5)
+    }
+    var minimo = new Date(hoje); minimo.setDate(minimo.getDate() + 5)
+    data.min = minimo.getFullYear() + '-' + String(minimo.getMonth() + 1).padStart(2, '0') + '-' + String(minimo.getDate()).padStart(2, '0')
     var montar = function () {
       var t = 'Oi! Quero encomendar um bolo personalizado'
       if (pedido.ocasiao) t += ' para ' + pedido.ocasiao
-      if (pedido.cor) t += ', em tons de ' + pedido.cor
-      if (data.value) {
+      if (pedido.cor) t += ', ' + pedido.cor
+      if (data.value && diasAte(data.value) >= 0) {
         var p = data.value.split('-')
         t += ', para o dia ' + p[2] + '/' + p[1] + '/' + p[0]
       }
@@ -150,12 +157,12 @@
     })
     data.addEventListener('change', function () {
       if (!data.value) { conta.textContent = ''; return montar() }
-      var p = data.value.split('-')
-      var festa = new Date(+p[0], +p[1] - 1, +p[2])
-      var hoje = new Date(); hoje.setHours(0, 0, 0, 0)
-      var dias = Math.round((festa - hoje) / 864e5)
+      var dias = diasAte(data.value)
+      var prazo = ' A encomenda pede 5 dias de antecedência.'
       if (dias < 0) conta.textContent = 'Essa data já passou. Escolha outra.'
-      else if (dias < 5) conta.textContent = 'Faltam ' + dias + (dias === 1 ? ' dia' : ' dias') + '. A encomenda pede 5 dias de antecedência.'
+      else if (dias === 0) conta.textContent = 'A festa é hoje.' + prazo
+      else if (dias === 1) conta.textContent = 'A festa é amanhã.' + prazo
+      else if (dias < 5) conta.textContent = 'Faltam ' + dias + ' dias.' + prazo
       else conta.textContent = 'Faltam ' + dias + ' dias. Dá para encomendar.'
       montar()
     })

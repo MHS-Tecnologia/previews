@@ -28,6 +28,8 @@
 .c-verde{--campo:var(--verde);--txt:#fff;--btn:#fff;--btn-txt:var(--verde)}
 .c-sol{--campo:var(--sol);--txt:var(--berinjela);--btn:var(--berinjela);--btn-txt:#fff}
 .c-roxo{--campo:var(--roxo);--txt:#fff;--btn:var(--sol);--btn-txt:var(--berinjela)}
+.c-lilas{--campo:#cdb9f0;--txt:var(--berinjela);--btn:var(--berinjela);--btn-txt:#fff}
+.c-gelo{--campo:#c6d5d9;--txt:var(--berinjela);--btn:var(--berinjela);--btn-txt:#fff}
 
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:16px}
@@ -57,7 +59,7 @@ p{max-width:58ch}
 /* Topo */
 .topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad);width:100%;max-width:var(--largura);margin-inline:auto;position:relative;z-index:5}
 .marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--titulo);font-size:clamp(23px,2vw,28px);line-height:1;min-height:56px}
-.marca img{width:56px;height:56px;padding:7px;border-radius:50%;background:#fff;object-fit:contain}
+.marca img{width:64px;height:64px;padding:11px;border-radius:50%;background:#fff;object-fit:contain}
 .menu{display:flex;align-items:center;gap:clamp(8px,2vw,28px);list-style:none;padding:0}
 .menu a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-weight:600}
 .menu a:hover,.menu a[aria-current=page]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
@@ -107,8 +109,10 @@ figcaption{margin-top:10px;font-size:.92em;font-weight:500}
 .cinco h2{margin-bottom:16px}
 .cinco .ligacao{margin-top:8px}
 
-.festa-foto{position:relative}
-.festa-foto img{width:100%;aspect-ratio:3072/1400;object-fit:cover;object-position:50% 40%}
+.festivos{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,2.4vw,32px);align-items:end}
+.festivos h2{margin-bottom:14px}
+.festivos p+p{margin-top:18px}
+.festivos figure{min-width:0}
 
 .fecho{text-align:center;padding-block:clamp(64px,10vw,136px)}
 .fecho h2{font-size:clamp(54px,9vw,132px);margin-bottom:14px}
@@ -131,6 +135,7 @@ figcaption{margin-top:10px;font-size:.92em;font-weight:500}
 .g-grande{grid-column:span 7}.g-media{grid-column:span 5}.g-meia{grid-column:span 6}.g-toda{grid-column:span 12}
 .grade figure{min-width:0}
 .grade .foto{height:clamp(320px,44vw,640px)}
+.grade.inteira .foto{height:auto;aspect-ratio:auto}
 .pedir{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-underline-offset:5px;text-decoration-thickness:2px}
 .cor figcaption{font-size:1em}
 
@@ -172,18 +177,19 @@ figcaption{margin-top:10px;font-size:.92em;font-weight:500}
 @media (max-width:860px){
   .abre-menu{display:inline-flex;align-items:center;justify-content:center}
   .topo{padding-block:8px}
-  .marca img{width:50px;height:50px;padding:6px}
-  .marca{min-height:50px}
+  .marca img{width:54px;height:54px;padding:9px}
+  .marca{min-height:54px}
   .menu-caixa{display:none;position:fixed;inset:0;z-index:50;background:var(--campo);color:var(--txt);padding:88px var(--pad) 32px;overflow:auto}
   .menu-caixa.aberto{display:block}
   .menu{flex-direction:column;align-items:flex-start;gap:6px}
   .menu a{font-family:var(--titulo);font-weight:400;font-size:44px;line-height:1.15;min-height:60px}
   .topo .fecha-area{position:relative;z-index:51}
   .abre-menu{position:relative;z-index:51}
-  .topo-cta{display:none}
+  .topo-cta{width:100%;margin-top:18px}
+  .menu a.botao{font-family:"Instrument Sans",system-ui,sans-serif;font-weight:700;font-size:18px;min-height:56px;width:100%;text-decoration:none}
 
   .hero{min-height:0;display:block}
-  .hero-corpo{display:block;padding:4px var(--pad) 0}
+  .hero-corpo{display:block;padding:20px var(--pad) 0}
   h1{font-size:clamp(62px,19.4vw,120px)}
   .hero h1{margin-bottom:.12em}
   .hero-sub{font-size:18px;margin-bottom:14px}
@@ -202,10 +208,11 @@ figcaption{margin-top:10px;font-size:.92em;font-weight:500}
   .m-b,.m-c{grid-column:span 6}
   .cinco{grid-template-columns:1fr}
   .cinco b{font-size:150px}
-  .festa-foto img{aspect-ratio:4/3}
+  .festivos{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}
+  .festivos>div{grid-column:1/-1}
   .grade{gap:20px 12px}
   .g-grande,.g-media,.g-toda{grid-column:span 12}
-  .abertura{min-height:0;padding-block:8px 0}
+  .abertura{min-height:0;padding-block:20px 0}
   .abertura-texto{max-width:none}
   .bolo-canto{position:relative;right:auto;bottom:auto;display:block;height:250px;max-width:100%;margin:8px auto -28px}
   .g-meia{grid-column:span 6}
