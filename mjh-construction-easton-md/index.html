@@ -167,6 +167,8 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
 .phead-t h1{margin-bottom:.4em}
 .phead-t .lead{margin-bottom:1.3em}
 .phead-img{aspect-ratio:3/2;object-fit:cover;background:#d9dedf}
+.phead-portrait .phead-in{grid-template-columns:291px minmax(0,1fr)}
+.phead-portrait .mike-img{max-width:291px}
 .phead-solo{padding-bottom:28px}
 .phead-solo h1{margin-bottom:.3em}
 .phead-solo .lead{margin-bottom:1em}
@@ -226,6 +228,9 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
   .sec-h,.two,.duo,.close-in,.qs,.brands,.phead-in{grid-template-columns:1fr}
   .sec-h{gap:8px}
   .phead{padding-top:0}
+  .phead.phead-portrait{padding-top:24px}
+  .phead-portrait .phead-in{grid-template-columns:1fr}
+  .phead-portrait .mike-img{max-width:200px}
   .phead-p{order:-1;margin-inline:calc(var(--gut)*-1)}
   .phead-solo{padding-top:24px}
   .phead-t .btn,.close .btn{width:100%}
@@ -305,7 +310,7 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
   </div>
   <ul class="wrap facts">
     <li><b>B.S. in Architecture</b> New York Institute of Technology</li>
-    <li><b>Licensed since 1989</b> Over 30 years in construction</li>
+    <li><b>Licensed contractor since 1989</b> Over 30 years in construction</li>
     <li><b>Fully licensed and insured</b> MHIC# 51251 | MHBR# 7833</li>
   </ul>
 </section>
@@ -330,7 +335,7 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
 <section class="sec sec-tight">
   <div class="wrap">
     <div class="sec-h"><h2>What we build</h2><p>You have a building job? We can help. Connect with us, tell us your vision, and our team will make it happen.</p></div>
-    <ul class="trades"><li class="t-a"><a href="custom-homes.html"><span class="t-img"><img src="img/homes-farmhouse-900.webp" srcset="img/homes-farmhouse-480.webp 480w, img/homes-farmhouse-900.webp 900w, img/homes-farmhouse-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="933" alt="White farmhouse with black roof and a timber-framed entry porch" loading="lazy" decoding="async"></span><span class="t-name">Custom homes</span><span class="t-line">Homes of all shapes and sizes, designed and built by one team.</span></a></li><li class="t-b"><a href="additions.html"><span class="t-img"><img src="img/add-done-900.webp" srcset="img/add-done-480.webp 480w, img/add-done-900.webp 900w, img/add-done-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="1058" alt="Two-story sage green home with a new addition and white entry stairs" loading="lazy" decoding="async"></span><span class="t-name">Additions and renovations</span><span class="t-line">People outgrow their space. Let your home grow with you.</span></a></li><li class="t-b"><a href="kitchens-baths.html"><span class="t-img"><img src="img/kit-gray-900.webp" srcset="img/kit-gray-480.webp 480w, img/kit-gray-900.webp 900w, img/kit-gray-1215.webp 1215w" sizes="(min-width: 800px) 50vw, 100vw" width="1215" height="911" alt="Dark cabinet kitchen with a long pale island and three pendant lights" loading="lazy" decoding="async"></span><span class="t-name">Kitchens and baths</span><span class="t-line">Update the best rooms in the house to meet your every need.</span></a></li><li class="t-a"><a href="built-ins.html"><span class="t-img"><img src="img/built-hearth-900.webp" srcset="img/built-hearth-480.webp 480w, img/built-hearth-900.webp 900w, img/built-hearth-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="1050" alt="White built-in shelves and cabinets on both sides of a fireplace" loading="lazy" decoding="async"></span><span class="t-name">Built-ins and millwork</span><span class="t-line">Custom work that adds to your home’s appeal and its value.</span></a></li><li class="t-a"><a href="decks-porches.html"><span class="t-img"><img src="img/deck-pergola-900.webp" srcset="img/deck-pergola-480.webp 480w, img/deck-pergola-900.webp 900w, img/deck-pergola-1080.webp 1080w" sizes="(min-width: 800px) 50vw, 100vw" width="1080" height="817" alt="White pergola over a stone patio beside a slate blue home" loading="lazy" decoding="async"></span><span class="t-name">Decks and porches</span><span class="t-line">The deck or porch you’ve always wanted, permits included.</span></a></li><li class="t-b"><a href="exteriors.html"><span class="t-img"><img src="img/ext-garage-900.webp" srcset="img/ext-garage-480.webp 480w, img/ext-garage-900.webp 900w, img/ext-garage-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="1867" alt="Gray shingle garage with black carriage doors and a gable window" loading="lazy" decoding="async"></span><span class="t-name">Siding, windows and doors</span><span class="t-line">Certified installers for CertainTeed, James Hardie and Andersen.</span></a></li></ul>
+    <ul class="trades"><li class="t-a"><a href="custom-homes.html"><span class="t-img"><img src="img/homes-farmhouse-900.webp" srcset="img/homes-farmhouse-480.webp 480w, img/homes-farmhouse-900.webp 900w, img/homes-farmhouse-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="933" alt="White farmhouse with black roof and a timber-framed entry porch" loading="lazy" decoding="async"></span><span class="t-name">Custom homes</span><span class="t-line">Homes of all shapes and sizes, with sound design and superior craftsmanship.</span></a></li><li class="t-b"><a href="additions.html"><span class="t-img"><img src="img/add-done-900.webp" srcset="img/add-done-480.webp 480w, img/add-done-900.webp 900w, img/add-done-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="1058" alt="Two-story sage green home with a new addition and white entry stairs" loading="lazy" decoding="async"></span><span class="t-name">Additions and renovations</span><span class="t-line">People outgrow their space. Let your home grow with you.</span></a></li><li class="t-b"><a href="kitchens-baths.html"><span class="t-img"><img src="img/kit-gray-900.webp" srcset="img/kit-gray-480.webp 480w, img/kit-gray-900.webp 900w, img/kit-gray-1215.webp 1215w" sizes="(min-width: 800px) 50vw, 100vw" width="1215" height="911" alt="Dark cabinet kitchen with a long pale island and three pendant lights" loading="lazy" decoding="async"></span><span class="t-name">Kitchens and baths</span><span class="t-line">Update the best rooms in the house to meet your every need.</span></a></li><li class="t-a"><a href="built-ins.html"><span class="t-img"><img src="img/built-hearth-900.webp" srcset="img/built-hearth-480.webp 480w, img/built-hearth-900.webp 900w, img/built-hearth-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="1050" alt="White built-in shelves and cabinets on both sides of a fireplace" loading="lazy" decoding="async"></span><span class="t-name">Built-ins and millwork</span><span class="t-line">Custom work that adds to your home’s appeal and its value.</span></a></li><li class="t-a"><a href="decks-porches.html"><span class="t-img"><img src="img/deck-pergola-900.webp" srcset="img/deck-pergola-480.webp 480w, img/deck-pergola-900.webp 900w, img/deck-pergola-1080.webp 1080w" sizes="(min-width: 800px) 50vw, 100vw" width="1080" height="817" alt="White pergola over a stone patio beside a slate blue home" loading="lazy" decoding="async"></span><span class="t-name">Decks and porches</span><span class="t-line">The deck or porch you’ve always wanted, permits included.</span></a></li><li class="t-b"><a href="exteriors.html"><span class="t-img"><img src="img/ext-garage-900.webp" srcset="img/ext-garage-480.webp 480w, img/ext-garage-900.webp 900w, img/ext-garage-1400.webp 1400w" sizes="(min-width: 800px) 50vw, 100vw" width="1400" height="1867" alt="Gray shingle garage with black carriage doors and a gable window" loading="lazy" decoding="async"></span><span class="t-name">Siding, windows and doors</span><span class="t-line">Certified installers for CertainTeed, James Hardie and Andersen.</span></a></li></ul>
   </div>
 </section>
 
@@ -338,7 +343,7 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
   <div class="wrap mike-in">
     <img class="mike-img" src="img/mike-291.webp" srcset="img/mike-291.webp 291w" sizes="240px" width="291" height="291" alt="Mike Harkowa, owner of MJH Construction" loading="lazy" decoding="async">
     <div>
-      <blockquote class="q q-big"><p>He’s a better custom builder than I ever was.</p><footer>Lonnie King, after decades in the homebuilding business. MJH built his house in Easton while he and Harriette were still in Naples, Florida.</footer></blockquote>
+      <blockquote class="q q-big"><p>He’s a better custom builder than I ever was.</p><footer>Lonnie King, after decades in the homebuilding business. MJH built the house for their move to Easton while they were still in Naples.</footer></blockquote>
       <p class="mike-b">Mike Harkowa holds a Bachelor of Science in Architecture. He takes your project from design through construction, and one client says he was on site almost the entire time.</p>
       <p class="more on-dark"><a href="about.html">Meet Mike</a></p>
     </div>
@@ -349,7 +354,7 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
   <div class="wrap qs">
     <blockquote class="q"><p>Mike’s initial consultation was a comfortable experience — no hard sell which had been our experience with all other bidders.</p><footer>Wendy V.</footer></blockquote>
     <blockquote class="q"><p>Mike presented a very detailed proposal to us before we signed a contract that eliminated any concerns there would be surprise or hidden costs.</p><footer>Nancy G.</footer></blockquote>
-    <blockquote class="q"><p>He is professional, prompt, honest, trustworthy, and thorough. We have never had to have any work redone.</p><footer>Steve K.</footer></blockquote>
+    <blockquote class="q"><p>He is professional, prompt, honest, trustworthy, and thorough. … We have never had to have any work redone.</p><footer>Steve K.</footer></blockquote>
   </div>
 </section>
 <section class="close" aria-label="Contact MJH Construction">

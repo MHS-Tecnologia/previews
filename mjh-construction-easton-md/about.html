@@ -8,7 +8,6 @@
 <meta name="description" content="Mike Harkowa, architect-trained owner of MJH Construction in Easton, Maryland.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/bodoni.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/instrument.woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="img/add-brick-before-480.webp 480w, img/add-brick-before-900.webp 900w, img/add-brick-before-1400.webp 1400w" imagesizes="(min-width: 1000px) 60vw, 100vw" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 1l15 15-15 15L1 16z' fill='%238f1112'/%3E%3C/svg%3E">
 <style>@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-display:swap}
 @font-face{font-family:"Instrument Sans";src:url(fonts/instrument.woff2) format("woff2");font-weight:400 700;font-display:swap}
@@ -167,6 +166,8 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
 .phead-t h1{margin-bottom:.4em}
 .phead-t .lead{margin-bottom:1.3em}
 .phead-img{aspect-ratio:3/2;object-fit:cover;background:#d9dedf}
+.phead-portrait .phead-in{grid-template-columns:291px minmax(0,1fr)}
+.phead-portrait .mike-img{max-width:291px}
 .phead-solo{padding-bottom:28px}
 .phead-solo h1{margin-bottom:.3em}
 .phead-solo .lead{margin-bottom:1em}
@@ -226,6 +227,9 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
   .sec-h,.two,.duo,.close-in,.qs,.brands,.phead-in{grid-template-columns:1fr}
   .sec-h{gap:8px}
   .phead{padding-top:0}
+  .phead.phead-portrait{padding-top:24px}
+  .phead-portrait .phead-in{grid-template-columns:1fr}
+  .phead-portrait .mike-img{max-width:200px}
   .phead-p{order:-1;margin-inline:calc(var(--gut)*-1)}
   .phead-solo{padding-top:24px}
   .phead-t .btn,.close .btn{width:100%}
@@ -272,15 +276,14 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
   </div>
 </header>
 <main id="main">
-<section class="phead" data-hero>
+<section class="phead phead-portrait" data-hero>
   <div class="wrap phead-in">
+    <img class="mike-img" src="img/mike-291.webp" srcset="img/mike-291.webp 291w" sizes="291px" width="291" height="291" alt="Mike Harkowa, owner of MJH Construction" fetchpriority="high" decoding="async">
     <div class="phead-t">
       <h1>Meet Mike</h1>
       <p class="lead">Mike Harkowa is the owner and founder of MJH Construction. He holds a Bachelor of Science in Architecture from New York Institute of Technology and has over 30 years in the construction industry.</p>
-      
       <div class="actions"><a class="btn" href="tel:+14106908955">Call 410-690-8955</a></div>
     </div>
-    <div class="phead-p"><img class="phead-img" src="img/add-brick-before-900.webp" srcset="img/add-brick-before-480.webp 480w, img/add-brick-before-900.webp 900w, img/add-brick-before-1400.webp 1400w" sizes="(min-width: 1000px) 60vw, 100vw" width="1400" height="940" alt="Crew on the balcony of a waterfront home wrapped in house wrap" fetchpriority="high" decoding="async"></div>
   </div>
 </section>
 <section class="sec">
@@ -303,14 +306,13 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
       <p>MJH is always on the lookout for additions to the team. Call or email if you’d like to join.</p>
     </div>
     <div class="mike-card">
-      <img class="mike-img" src="img/mike-291.webp" srcset="img/mike-291.webp 291w" sizes="240px" width="291" height="291" alt="Mike Harkowa, owner of MJH Construction" loading="lazy" decoding="async">
       <blockquote class="q"><p>Not insignificantly, Mike is a trained Architect, which gives him an excellent feel for what is achievable both stylistically and structurally.</p><footer>Colin E.</footer></blockquote>
     </div>
   </div>
 </section>
 <section class="band">
   <div class="wrap band-in">
-    <blockquote class="q q-big"><p>Careful with detail, sensitive to this 100 year old house, and considerate of budget, he did as he said and more.</p><footer>Roger T.</footer></blockquote>
+    <blockquote class="q q-big"><p>Careful with detail, sensitive to this 100 year old house, and considerate of budget, he did as he said and more …</p><footer>Roger T.</footer></blockquote>
   </div>
 </section>
 <section class="sec">

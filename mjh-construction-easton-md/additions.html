@@ -167,6 +167,8 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
 .phead-t h1{margin-bottom:.4em}
 .phead-t .lead{margin-bottom:1.3em}
 .phead-img{aspect-ratio:3/2;object-fit:cover;background:#d9dedf}
+.phead-portrait .phead-in{grid-template-columns:291px minmax(0,1fr)}
+.phead-portrait .mike-img{max-width:291px}
 .phead-solo{padding-bottom:28px}
 .phead-solo h1{margin-bottom:.3em}
 .phead-solo .lead{margin-bottom:1em}
@@ -226,6 +228,9 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
   .sec-h,.two,.duo,.close-in,.qs,.brands,.phead-in{grid-template-columns:1fr}
   .sec-h{gap:8px}
   .phead{padding-top:0}
+  .phead.phead-portrait{padding-top:24px}
+  .phead-portrait .phead-in{grid-template-columns:1fr}
+  .phead-portrait .mike-img{max-width:200px}
   .phead-p{order:-1;margin-inline:calc(var(--gut)*-1)}
   .phead-solo{padding-top:24px}
   .phead-t .btn,.close .btn{width:100%}
@@ -280,12 +285,12 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
       
       <div class="actions"><a class="btn" href="tel:+14106908955">Call 410-690-8955</a></div>
     </div>
-    <div class="phead-p"><img class="phead-img" src="img/add-brick-900.webp" srcset="img/add-brick-480.webp 480w, img/add-brick-900.webp 900w, img/add-brick-1400.webp 1400w" sizes="(min-width: 1000px) 60vw, 100vw" width="1400" height="940" alt="Waterfront home with brick lower walls and rows of large windows" fetchpriority="high" decoding="async"></div>
+    <div class="phead-p"><img class="phead-img" src="img/add-brick-900.webp" srcset="img/add-brick-480.webp 480w, img/add-brick-900.webp 900w, img/add-brick-1400.webp 1400w" sizes="(min-width: 1000px) 60vw, 100vw" width="1400" height="940" alt="Home with stone-faced walls and rows of large windows" fetchpriority="high" decoding="async"></div>
   </div>
 </section>
 <section class="sec">
   <div class="wrap">
-    <div class="sec-h"><h2>Stone-faced siding, start to finish</h2><p>Drag the red line to see this waterfront wall go from house wrap to its finished face.</p></div>
+    <div class="sec-h"><h2>Stone-faced siding, start to finish</h2><p>Drag the red line to see this wall go from house wrap to its finished face.</p></div>
     <figure class="slide-fig">
   <div class="slide" data-slide style="--p:50%">
     <img class="slide-after" src="img/s-brick-a-900.webp" srcset="img/s-brick-a-480.webp 480w, img/s-brick-a-900.webp 900w, img/s-brick-a-1400.webp 1400w" sizes="(min-width: 1120px) 1040px, 100vw" width="1400" height="933" alt="The same wall finished in stone facing with white-framed windows" loading="lazy" decoding="async">
@@ -313,7 +318,7 @@ figcaption{font-size:14px;line-height:1.4;color:var(--mute);margin-top:8px}
     <figure class="pair">
   <div class="pair-row">
     <div><img class="pair-img" src="img/add-cedar-before-900.webp" srcset="img/add-cedar-before-480.webp 480w, img/add-cedar-before-900.webp 900w, img/add-cedar-before-1080.webp 1080w" sizes="50vw" width="1080" height="818" alt="Dark shingled home with framing started beside it" loading="lazy" decoding="async"><span class="note">before</span></div>
-    <div><img class="pair-img" src="img/add-cedar-900.webp" srcset="img/add-cedar-480.webp 480w, img/add-cedar-900.webp 900w, img/add-cedar-1080.webp 1080w" sizes="50vw" width="1080" height="818" alt="The same home with new gables, finished in natural cedar shingles" loading="lazy" decoding="async"><span class="note">after</span></div>
+    <div><img class="pair-img" src="img/add-cedar-900.webp" srcset="img/add-cedar-480.webp 480w, img/add-cedar-900.webp 900w, img/add-cedar-1080.webp 1080w" sizes="50vw" width="1080" height="818" alt="The same home with new gables, finished in wood-toned shingles" loading="lazy" decoding="async"><span class="note">after</span></div>
   </div>
   <figcaption>Addition, from the MJH before and after gallery.</figcaption>
 </figure>
