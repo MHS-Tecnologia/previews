@@ -10,6 +10,8 @@
 <link rel="icon" href="data:,">
 <link rel="preload" href="fonts/mona-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/atkinson.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/racks-m-640.webp" imagesrcset="img/racks-m-480.webp 480w, img/racks-m-640.webp 640w" imagesizes="100vw" media="(max-width: 900px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/racks-1280.webp" imagesrcset="img/racks-800.webp 800w, img/racks-1280.webp 1280w" imagesizes="720px" media="(min-width: 901px)" fetchpriority="high">
 <style>
 @font-face { font-family: "Mona Sans"; src: url(fonts/mona-sans.woff2) format("woff2"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
 @font-face { font-family: "Atkinson"; src: url(fonts/atkinson.woff2) format("woff2"); font-weight: 200 800; font-display: swap; }
@@ -100,7 +102,7 @@ p { max-width: 64ch; }
 /* home hero */
 .hero { padding-top: clamp(0rem, 3vw, 2.5rem); }
 .hero .wrap { display: grid; grid-template-columns: repeat(12, 1fr); align-items: center; }
-.hero-photo { grid-column: 6 / -1; grid-row: 1; border-radius: 4px; overflow: hidden; }
+.hero-photo { display: block; grid-column: 6 / -1; grid-row: 1; border-radius: 4px; overflow: hidden; }
 .hero-photo img { width: 100%; aspect-ratio: 1280 / 800; object-fit: cover; }
 .hero .pane { grid-column: 1 / 7; grid-row: 1; padding: clamp(1.4rem, 3vw, 2.6rem) clamp(1.4rem, 3vw, 2.6rem) clamp(1.4rem, 3vw, 2.6rem) calc(10px + clamp(1.4rem, 3vw, 2.6rem)); background: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: inset var(--ew) 0 0 var(--edge), 0 8px 24px rgba(26, 38, 43, .08); }
 .hero .lede { margin-top: 1rem; font-size: 1.12rem; color: var(--muted); }
@@ -112,7 +114,7 @@ p { max-width: 64ch; }
   .hero { padding-top: 0; }
   .hero .wrap { display: block; width: 100%; }
   .hero-photo { border-radius: 0; }
-  .hero-photo img { aspect-ratio: 390 / 190; object-position: 50% 70%; }
+  .hero-photo img { aspect-ratio: 390 / 280; }
   .hero .pane { margin: -2.2rem var(--pad) 0; padding: 1.25rem 1.2rem 1.35rem 1.6rem; }
   .hero .lede { font-size: 1rem; margin-top: .7rem; }
   .hero .btns { margin-top: 1rem; gap: .55rem; }
@@ -322,7 +324,10 @@ footer .legal a { color: #cfd8ff; }
 <main id="main">
 <section class="hero">
   <div class="wrap">
-    <div class="hero-photo"><img src="img/racks-480.webp" srcset="img/racks-480.webp 480w, img/racks-800.webp 800w, img/racks-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 720px" width="1280" height="800" alt="Windshields stacked on racks inside the Roscoe Glass shop" fetchpriority="high"></div>
+    <picture class="hero-photo">
+      <source media="(max-width: 900px)" srcset="img/racks-m-480.webp 480w, img/racks-m-640.webp 640w" sizes="100vw" width="640" height="460">
+      <img src="img/racks-800.webp" srcset="img/racks-800.webp 800w, img/racks-1280.webp 1280w" sizes="720px" width="1280" height="800" alt="Windshields stacked on racks inside the Roscoe Glass shop" fetchpriority="high">
+    </picture>
     <div class="pane" data-stick-after>
       <h1>Auto, home and storefront glass from one family shop in Roscoe</h1>
       <p class="lede">Windshields, shower doors, windows and storefronts for the Illinois and Wisconsin state line, since <span class="n">2003</span>.</p>
