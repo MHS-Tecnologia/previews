@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gallery | Spitzack Builders, Walker MN</title>
+<meta name="description" content="Photos of homes built by Spitzack Builders.">
+<meta name="theme-color" content="#13321f">
+<link rel="icon" href="img/logo.webp">
+<link rel="preload" href="fonts/bitter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Bitter"; font-weight: 300 900; font-display: swap; src: url(fonts/bitter.woff2) format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 200 900; font-display: swap; src: url(fonts/sourcesans.woff2) format("woff2"); }
+
+/* Lake mist and snow from their photos, the pine green of their logo, the cedar of their siding. */
+:root {
+  --mist: #edf0ec;
+  --mist-2: #dfe5df;
+  --pine: #13321f;
+  --pine-2: #1c4a2e;
+  --needle: #1d6b35;
+  --cedar: #a3501f;
+  --cedar-deep: #87411a;
+  --ink: #18221c;
+  --bark: #4f5d55;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--mist); color: var(--ink); font: 400 1.0625rem/1.6 "Source Sans 3", system-ui, sans-serif; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--needle); text-underline-offset: .18em; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--cedar); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: "Bitter", Georgia, serif; line-height: 1.1; letter-spacing: -.01em; text-wrap: balance; }
+h1 { font-weight: 800; font-size: clamp(2.15rem, 1.4rem + 3.4vw, 4rem); }
+h2 { font-weight: 700; font-size: clamp(1.7rem, 1.25rem + 1.9vw, 2.6rem); }
+h3 { font-weight: 700; font-size: 1.3rem; }
+p { max-width: 64ch; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.skip, .sr { position: absolute; left: -999px; }
+.sr { width: 1px; height: 1px; overflow: hidden; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 50; background: #fff; padding: .5rem 1rem; }
+
+.demo { max-width: none; background: #fff; color: var(--bark); font-size: .8rem; line-height: 1.35; text-align: center; padding: .45rem var(--pad); }
+
+/* Header */
+.top { background: var(--pine); color: #fff; position: relative; z-index: 20; }
+.top .wrap { display: flex; align-items: center; gap: 1rem; min-height: 4.25rem; }
+.brand { display: flex; align-items: center; gap: .7rem; color: #fff; text-decoration: none; margin-right: auto; }
+.brand img { width: 54px; height: auto; }
+.brand span { font-family: "Bitter", serif; font-weight: 700; font-size: 1.2rem; letter-spacing: .01em; }
+.nav { display: flex; gap: 1.4rem; list-style: none; padding: 0; }
+.nav a { color: #e3ebe5; text-decoration: none; font-weight: 600; font-size: .98rem; }
+.nav a:hover, .nav a[aria-current] { color: #fff; text-decoration: underline; text-decoration-color: var(--cedar); text-decoration-thickness: 3px; }
+.call { background: var(--cedar); color: #fff; text-decoration: none; font-weight: 700; padding: .55rem 1rem; border-radius: 4px; white-space: nowrap; }
+.call:hover { background: var(--cedar-deep); }
+.menu { display: none; }
+@media (max-width: 960px) {
+  .top .nav, .top .call { display: none; }
+  .menu { display: block; }
+  .menu summary { list-style: none; cursor: pointer; font-weight: 700; padding: .55rem .9rem; border: 2px solid #5c7d68; border-radius: 4px; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { background: var(--pine-2); }
+  .menu .nav { display: grid; gap: 0; position: absolute; left: 0; right: 0; top: 100%; background: var(--pine); padding: .5rem var(--pad) 1.25rem; border-top: 1px solid var(--pine-2); }
+  .menu .nav a { display: block; padding: .8rem 0; font-size: 1.1rem; border-bottom: 1px solid var(--pine-2); }
+  .brand span { font-size: 1.05rem; }
+  .brand img { width: 46px; }
+}
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: .7rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .7rem 1.3rem; border-radius: 4px; font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+.btn-main { background: var(--cedar); color: #fff; }
+.btn-main:hover { background: var(--cedar-deep); }
+.btn-line { border: 2px solid var(--pine); color: var(--pine); }
+.btn-line:hover { background: var(--pine); color: #fff; }
+.on-dark .btn-line { border-color: #b9cbbf; color: #fff; }
+.on-dark .btn-line:hover { background: #fff; color: var(--pine); }
+
+/* Home hero: words left, their dusk photo right, both inside the content width. */
+.hero { padding: clamp(1.25rem, 4vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4.5rem); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.hero .lede { font-size: clamp(1.08rem, 1rem + .35vw, 1.25rem); color: #2e3a33; margin: 1.1rem 0 1.5rem; }
+.hero .fine { margin-top: 1.1rem; font-size: .95rem; color: var(--bark); }
+.hero figure { position: relative; }
+.hero figure img { border-radius: 6px; width: 100%; }
+.hero figcaption { position: absolute; left: .75rem; bottom: .75rem; background: rgba(19, 50, 31, .86); color: #fff; font-size: .85rem; padding: .3rem .6rem; border-radius: 3px; }
+@media (max-width: 860px) {
+  .hero { padding-top: 0; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 1rem; padding: 0; }
+  .hero figure { order: -1; }
+  .hero figure img { border-radius: 0; aspect-ratio: 16 / 9; object-fit: cover; }
+  .hero .words { padding: 0 var(--pad); }
+  .hero .lede { margin: .7rem 0 1.1rem; }
+  .hero .btns .btn { flex: 1 1 10rem; }
+}
+
+/* Sections */
+.band { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.band-white { background: #fff; }
+.on-dark { background: var(--pine); color: #e8efe9; }
+.on-dark h2, .on-dark h3 { color: #fff; }
+.on-dark a { color: #fff; }
+.head { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.head p { margin-top: .7rem; color: var(--bark); font-size: 1.1rem; }
+.on-dark .head p { color: #c6d4ca; }
+
+/* What we build: one large, two stacked */
+.build { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: auto auto; gap: clamp(1rem, 2.5vw, 1.75rem); }
+.build a { text-decoration: none; color: inherit; display: block; }
+.build .big { grid-row: span 2; }
+.build img { border-radius: 6px; width: 100%; }
+.build h3 { margin: .8rem 0 .25rem; color: var(--pine); }
+.build a:hover h3 { text-decoration: underline; text-decoration-color: var(--cedar); text-decoration-thickness: 3px; }
+.build p { color: var(--bark); }
+.build .big img { aspect-ratio: 4 / 3.15; object-fit: cover; }
+.build .small img { aspect-ratio: 16 / 8; object-fit: cover; }
+@media (max-width: 760px) { .build { grid-template-columns: 1fr; } .build .big { grid-row: auto; } .build .big img, .build .small img { aspect-ratio: 3 / 2; } }
+
+/* The Garbin equation: the one thing to remember. */
+.garbin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 20rem); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+.eq { font-family: "Bitter", serif; font-weight: 800; line-height: 1; font-size: clamp(2.3rem, 1rem + 5.6vw, 5.4rem); letter-spacing: -.02em; color: var(--pine); display: flex; flex-wrap: wrap; align-items: baseline; gap: .1em .28em; }
+.eq .op { color: var(--cedar); font-weight: 400; }
+.eq .gone::before { content: attr(data-t); }
+.eq .gone { opacity: .2; transition: opacity .9s ease .2s; }
+.eq .res { white-space: nowrap; }
+.eq .res b { font-weight: 800; transition: color .6s ease 1.1s; }
+.eq-wait .gone { opacity: 1; }
+.eq-wait .res b { color: var(--mist); }
+.garbin .say { margin-top: 1.4rem; font-size: 1.12rem; }
+.garbin .say + .btns { margin-top: 1.4rem; }
+.garbin img { border-radius: 6px; }
+@media (max-width: 760px) { .garbin { grid-template-columns: 1fr; } .garbin figure { max-width: 22rem; } }
+@media (prefers-reduced-motion: reduce) { .eq .gone, .eq .res b { transition: none; } }
+
+/* Timber frame: a photo with words beside it */
+.timber { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.timber img { border-radius: 6px; }
+.timber p + p { margin-top: 1rem; }
+@media (max-width: 860px) { .timber { grid-template-columns: 1fr; } }
+
+/* Before / after pairs, on the dark band so both photos sit on one surface */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.pair figure { position: relative; }
+.pair img { width: 100%; border-radius: 4px; }
+.pair figcaption { position: absolute; top: .6rem; left: .6rem; background: #fff; color: var(--pine); font-weight: 700; font-size: .9rem; padding: .2rem .55rem; border-radius: 3px; }
+.pair .after figcaption { background: var(--cedar); color: #fff; }
+.pair + .pair { margin-top: 1.5rem; }
+@media (max-width: 600px) { .pair { grid-template-columns: 1fr; } }
+
+/* Family / about strip */
+.family { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.family p + p { margin-top: 1rem; }
+.family img { border-radius: 6px; }
+@media (max-width: 860px) { .family { grid-template-columns: 1fr; } }
+
+/* Photo strip */
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; }
+.strip img { aspect-ratio: 1; object-fit: cover; border-radius: 4px; width: 100%; }
+.strip + .btns { margin-top: 1.5rem; }
+@media (max-width: 700px) { .strip { grid-template-columns: 1fr 1fr; } }
+
+/* Contact band */
+.reach { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.reach .big-tel { font-family: "Bitter", serif; font-weight: 800; font-size: clamp(2rem, 1.3rem + 3vw, 3.3rem); text-decoration: none; display: inline-block; margin: .7rem 0 .3rem; }
+.reach dl { display: grid; grid-template-columns: auto 1fr; gap: .55rem 1.2rem; }
+.reach dt { font-weight: 700; color: #fff; }
+.reach dd { margin: 0; color: #d3dfd6; overflow-wrap: anywhere; }
+.reach .btns { margin-top: 1.25rem; }
+@media (max-width: 760px) { .reach { grid-template-columns: 1fr; } }
+
+/* Inner pages */
+.page-head { padding: clamp(1.75rem, 5vw, 3.5rem) 0 clamp(1.25rem, 3vw, 2rem); }
+.page-head p { margin-top: .8rem; font-size: 1.15rem; color: #2e3a33; }
+.page-head .btns { margin-top: 1.25rem; }
+.wide img { border-radius: 6px; width: 100%; }
+.prose p + p, .prose p + h2, .prose p + h3 { margin-top: 1rem; }
+.prose h2 + p, .prose h3 + p { margin-top: .7rem; }
+.prose h2:not(:first-child) { margin-top: 2.25rem; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+@media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.duo img { border-radius: 6px; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+@media (max-width: 600px) { .duo { grid-template-columns: 1fr; } }
+.lakes { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.lakes li { background: #fff; border: 1px solid var(--mist-2); padding: .3rem .75rem; border-radius: 999px; font-weight: 600; color: var(--pine); }
+.defs { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 2rem); }
+.defs div { background: #fff; padding: 1.4rem; border-radius: 6px; border-top: 4px solid var(--needle); }
+.defs div:last-child { border-top-color: var(--cedar); }
+.defs dt { font-family: "Bitter", serif; font-weight: 700; font-size: 1.3rem; color: var(--pine); }
+.defs dd { margin: .5rem 0 0; }
+@media (max-width: 700px) { .defs { grid-template-columns: 1fr; } }
+.uses { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 2rem); }
+.uses div { border-left: 4px solid var(--cedar); padding-left: 1.1rem; }
+.uses h3 { color: var(--pine); margin-bottom: .4rem; }
+@media (max-width: 700px) { .uses { grid-template-columns: 1fr; } }
+
+/* Gallery */
+.grid { columns: 3 18rem; column-gap: .75rem; }
+.grid img { width: 100%; border-radius: 4px; margin-bottom: .75rem; break-inside: avoid; }
+@media (max-width: 700px) { .grid.short img:nth-child(n+9) { display: none; } }
+.more { display: none; }
+@media (max-width: 700px) { .more { display: flex; width: 100%; } }
+
+/* Contact page */
+.card-list { display: grid; gap: 1rem; }
+.card-list a.btn { width: 100%; }
+.addr { font-style: normal; }
+
+/* Footer */
+.foot { background: var(--pine); color: #c6d4ca; padding: 3rem 0 2rem; font-size: .97rem; }
+.foot .wrap { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2rem; }
+.foot h2 { font-size: 1.05rem; color: #fff; margin-bottom: .6rem; }
+.foot a { color: #fff; }
+.foot ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+.foot .brand { margin-bottom: .8rem; }
+.foot .small { grid-column: 1 / -1; border-top: 1px solid var(--pine-2); padding-top: 1.25rem; font-size: .88rem; color: #a9bcae; }
+.foot .small p + p { margin-top: .3rem; }
+@media (max-width: 760px) { .foot .wrap { grid-template-columns: 1fr; } }
+
+/* Sticky mobile call bar, shown after the hero */
+.dock { display: none; }
+@media (max-width: 760px) {
+  .dock { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: rgba(19, 50, 31, .97); transform: translateY(110%); transition: transform .25s ease; }
+  .dock.show { transform: none; }
+  .dock .btn { min-height: 2.9rem; font-size: 1rem; }
+  .dock .btn-line { border-color: #b9cbbf; color: #fff; }
+  body { padding-bottom: 4.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Spitzack Builders. Not affiliated with or endorsed by Spitzack Builders.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.webp" width="193" height="141" alt=""><span>Spitzack Builders</span></a>
+    <nav aria-label="Main"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="lake-homes.html">Lake homes</a></li><li><a href="garbin.html">The Garbin</a></li><li><a href="renovations.html">Renovations</a></li><li><a href="gallery.html" aria-current="page">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    <a class="call" href="tel:+12185473565">Call 218-547-3565</a>
+    <details class="menu"><summary>Menu</summary><nav aria-label="Main, mobile"><ul class="nav"><li><a href="index.html">Home</a></li><li><a href="lake-homes.html">Lake homes</a></li><li><a href="garbin.html">The Garbin</a></li><li><a href="renovations.html">Renovations</a></li><li><a href="gallery.html" aria-current="page">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></nav></details>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Gallery</h1>
+    <p>A look at our work, from our own gallery.</p>
+  </div>
+</section>
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <div class="grid short">
+      <img src="img/gal-g11-900.webp" srcset="img/gal-g11-480.webp 480w, img/gal-g11-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Slate-grey lake home at dusk" fetchpriority="high"><img src="img/gal-g06-900.webp" srcset="img/gal-g06-480.webp 480w, img/gal-g06-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Timber-frame great room with a loft" fetchpriority="high"><img src="img/gal-g03-900.webp" srcset="img/gal-g03-480.webp 480w, img/gal-g03-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Blue kitchen with a white island" fetchpriority="high"><img src="img/gal-g30-900.webp" srcset="img/gal-g30-480.webp 480w, img/gal-g30-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Sunroom with a fieldstone fireplace" loading="lazy" decoding="async"><img src="img/gal-g01-900.webp" srcset="img/gal-g01-480.webp 480w, img/gal-g01-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="1350" alt="Screened porch looking into the pines" loading="lazy" decoding="async"><img src="img/gal-g07-900.webp" srcset="img/gal-g07-480.webp 480w, img/gal-g07-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="1350" alt="Dining room with arched windows and stone chimney" loading="lazy" decoding="async"><img src="img/gal-g08-900.webp" srcset="img/gal-g08-480.webp 480w, img/gal-g08-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Bedroom behind black-framed glass doors" loading="lazy" decoding="async"><img src="img/gal-g17-900.webp" srcset="img/gal-g17-480.webp 480w, img/gal-g17-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Knotty alder kitchen with a stainless range" loading="lazy" decoding="async"><img src="img/gal-g33-900.webp" srcset="img/gal-g33-480.webp 480w, img/gal-g33-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Sunroom with timber beams and slate floor" loading="lazy" decoding="async"><img src="img/gal-g02-900.webp" srcset="img/gal-g02-480.webp 480w, img/gal-g02-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="1350" alt="Den seen through glass doors" loading="lazy" decoding="async"><img src="img/gal-g21-900.webp" srcset="img/gal-g21-480.webp 480w, img/gal-g21-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Kitchen with blue base cabinets and alder uppers" loading="lazy" decoding="async"><img src="img/gal-g31-900.webp" srcset="img/gal-g31-480.webp 480w, img/gal-g31-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Carved stone over a fireplace mantel" loading="lazy" decoding="async"><img src="img/gal-g35-900.webp" srcset="img/gal-g35-480.webp 480w, img/gal-g35-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Copper pendant lights over a kitchen island" loading="lazy" decoding="async"><img src="img/gal-g13-900.webp" srcset="img/gal-g13-480.webp 480w, img/gal-g13-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="1350" alt="Dining area with wood floors" loading="lazy" decoding="async"><img src="img/gal-g20-900.webp" srcset="img/gal-g20-480.webp 480w, img/gal-g20-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="1350" alt="Dining table under a modern light" loading="lazy" decoding="async"><img src="img/gal-g04-900.webp" srcset="img/gal-g04-480.webp 480w, img/gal-g04-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="600" alt="Kitchen under a cedar ceiling" loading="lazy" decoding="async"><img src="img/gal-g36-900.webp" srcset="img/gal-g36-480.webp 480w, img/gal-g36-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="1350" alt="Tiled walk-in shower" loading="lazy" decoding="async"><img src="img/gal-g09-900.webp" srcset="img/gal-g09-480.webp 480w, img/gal-g09-900.webp 900w" sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 24rem" width="900" height="1350" alt="Bathroom with a lake mural" loading="lazy" decoding="async">
+    </div>
+    <button class="btn btn-line more" type="button">Show all 18 photos</button>
+  </div>
+</section>
+<div data-dock-after></div>
+
+<section class="band on-dark" aria-labelledby="reach">
+  <div class="wrap reach">
+    <div>
+      <h2 id="reach">Start with a phone call</h2>
+      <a class="big-tel" href="tel:+12185473565">218-547-3565</a>
+      <p>&ldquo;We&rsquo;ll sit down and listen to the hopes and dreams you have for your property, for your family and for your future.&rdquo;</p>
+      <div class="btns"><a class="btn btn-main" href="tel:+12185473565">Call Spitzack Builders</a><a class="btn btn-line" href="mailto:spitzack@spitzackbuilders.com?subject=Project%20inquiry">Email us</a></div>
+    </div>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:spitzack@spitzackbuilders.com?subject=Project%20inquiry">spitzack@spitzackbuilders.com</a></dd>
+      <dt>Office</dt><dd>8332 State Highway 371 NW<br>PO Box 1500<br>Walker, MN 56484</dd>
+      <dt>Serving</dt><dd>Walker, Longville, Hackensack and the surrounding lakes area</dd>
+      <dt>License</dt><dd>Minnesota #379982</dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html"><img src="img/logo.webp" width="193" height="141" alt=""><span>Spitzack Builders</span></a>
+      <p>Custom homes, Garbins and renovations around Walker, Longville and Hackensack, Minnesota.</p>
+    </div>
+    <div>
+      <h2>Reach us</h2>
+      <ul>
+        <li><a href="tel:+12185473565">218-547-3565</a></li>
+        <li><a href="mailto:spitzack@spitzackbuilders.com?subject=Project%20inquiry">spitzack@spitzackbuilders.com</a></li>
+        <li>8332 State Highway 371 NW<br>PO Box 1500, Walker, MN 56484</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Pages</h2>
+      <ul class="nav"><li><a href="index.html">Home</a></li><li><a href="lake-homes.html">Lake homes</a></li><li><a href="garbin.html">The Garbin</a></li><li><a href="renovations.html">Renovations</a></li><li><a href="gallery.html" aria-current="page">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div class="small">
+      <p>&copy; Spitzack Builders, Inc. Minnesota license #379982.</p>
+      <p>Unofficial demo by MHS Tecnologia, not affiliated with Spitzack Builders. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+    </div>
+  </div>
+</footer>
+<div class="dock"><a class="btn btn-main" href="tel:+12185473565">Call</a><a class="btn btn-line" href="mailto:spitzack@spitzackbuilders.com?subject=Project%20inquiry">Email</a></div>
+<script>
+(function () {
+  var dock = document.querySelector('.dock'), mark = document.querySelector('[data-dock-after]');
+  if (dock && mark && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { dock.classList.toggle('show', !e[0].isIntersecting && e[0].boundingClientRect.top < 0); }).observe(mark);
+  } else if (dock) { dock.classList.add('show'); }
+  var eq = document.querySelector('.eq');
+  if (eq && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    eq.classList.add('eq-wait');
+    var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { eq.classList.remove('eq-wait'); io.disconnect(); } }, { threshold: .6 });
+    io.observe(eq);
+  }
+  var more = document.querySelector('.more');
+  if (more) more.addEventListener('click', function () { document.querySelector('.grid').classList.remove('short'); more.remove(); });
+})();
+</script>
+</body>
+</html>
