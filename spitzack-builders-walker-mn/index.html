@@ -43,6 +43,8 @@ p { max-width: 64ch; }
 .sr { width: 1px; height: 1px; overflow: hidden; }
 .skip:focus { left: 1rem; top: 1rem; z-index: 50; background: #fff; padding: .5rem 1rem; }
 
+.demo-short { display: none; }
+@media (max-width: 600px) { .demo-long { position: absolute; left: -999px; width: 1px; height: 1px; overflow: hidden; } .demo-short { display: inline; } .demo { font-size: .78rem; padding: .35rem 1rem; white-space: nowrap; } }
 .demo { max-width: none; background: #fff; color: var(--bark); font-size: .8rem; line-height: 1.35; text-align: center; padding: .45rem var(--pad); }
 
 /* Header */
@@ -119,6 +121,22 @@ p { max-width: 64ch; }
 .build .small img { aspect-ratio: 16 / 8; object-fit: cover; }
 @media (max-width: 760px) { .build { grid-template-columns: 1fr; } .build .big { grid-row: auto; } .build .big img, .build .small img { aspect-ratio: 3 / 2; } }
 
+/* Where we've built + the two generations */
+.where { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.where img { border-radius: 6px; }
+.lakelist { list-style: none; padding: 0; margin-top: 1rem; font-family: "Bitter", serif; font-weight: 800; font-size: clamp(2.6rem, 1.3rem + 5vw, 5rem); line-height: 1.02; letter-spacing: -.02em; color: var(--pine); }
+.lakelist li:nth-child(2) { color: var(--needle); }
+.towns { font-size: 1.15rem; margin: 1rem 0 1.4rem; color: #2e3a33; }
+.gen { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: clamp(2rem, 5vw, 3.5rem); }
+.gen li { padding: 1.1rem 1.25rem 0 0; border-top: 4px solid var(--needle); position: relative; }
+.gen li + li { border-top-color: var(--cedar); padding-left: 1.25rem; }
+.gen li + li::before { content: ""; position: absolute; left: -7px; top: -10px; width: 12px; height: 12px; border: 4px solid var(--cedar); background: #fff; border-radius: 50%; }
+.gen small { display: block; color: var(--bark); font-size: .92rem; font-weight: 600; }
+.gen b { display: block; font-family: "Bitter", serif; font-size: 1.6rem; color: var(--pine); margin: .15rem 0 .3rem; }
+.gen-more { margin-top: 1.25rem; font-weight: 700; }
+@media (max-width: 860px) { .where { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .gen { grid-template-columns: 1fr; } .gen li + li { padding-left: 0; margin-top: 1.5rem; } .gen li + li::before { left: 0; } }
+
 /* The Garbin equation: the one thing to remember. */
 .garbin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 20rem); gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
 .eq { font-family: "Bitter", serif; font-weight: 800; line-height: 1; font-size: clamp(2.3rem, 1rem + 5.6vw, 5.4rem); letter-spacing: -.02em; color: var(--pine); display: flex; flex-wrap: wrap; align-items: baseline; gap: .1em .28em; }
@@ -160,7 +178,7 @@ p { max-width: 64ch; }
 .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; }
 .strip img { aspect-ratio: 1; object-fit: cover; border-radius: 4px; width: 100%; }
 .strip + .btns { margin-top: 1.5rem; }
-@media (max-width: 700px) { .strip { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .strip { grid-template-columns: 1fr; gap: .75rem; } .strip img { aspect-ratio: 3 / 2; } .strip img:nth-child(n+3) { display: none; } }
 
 /* Contact band */
 .reach { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
@@ -241,7 +259,7 @@ p { max-width: 64ch; }
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<p class="demo">Unofficial demo built by MHS Tecnologia for Spitzack Builders. Not affiliated with or endorsed by Spitzack Builders.</p>
+<p class="demo"><span class="demo-long">Unofficial demo built by MHS Tecnologia for Spitzack Builders. Not affiliated with or endorsed by Spitzack Builders.</span><span class="demo-short" aria-hidden="true">Unofficial demo by MHS Tecnologia. Not affiliated.</span></p>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="img/logo.webp" width="193" height="141" alt=""><span>Spitzack Builders</span></a>
@@ -266,14 +284,22 @@ p { max-width: 64ch; }
   </div>
 </section>
 
-<section class="band band-white" aria-labelledby="what">
+<section class="band band-white" aria-labelledby="where">
   <div class="wrap">
-    <div class="head"><h2 id="what">What we build</h2><p>New homes from the ground up, the Garbin, and renovations that keep the up-north feel.</p></div>
-    <div class="build">
-      <a class="big" href="lake-homes.html"><img src="img/lake-cedar-1029.webp" srcset="img/lake-cedar-640.webp 640w, img/lake-cedar-1029.webp 1029w" sizes="(max-width: 760px) 100vw, 40rem" width="1029" height="686" alt="Cedar lake home with a wraparound deck in winter" loading="lazy" decoding="async"><h3>Lake homes</h3><p>Designed to show off the best views, inside and out, and built to state and local codes.</p></a>
-      <a class="small" href="garbin.html"><img src="img/garbin-stairs-1029.webp" srcset="img/garbin-stairs-640.webp 640w, img/garbin-stairs-1029.webp 1029w" sizes="(max-width: 760px) 100vw, 28rem" width="1029" height="686" alt="Cedar-shake Garbin with an outside stair to the cabin above the garage" loading="lazy" decoding="async"><h3>The Garbin</h3><p>A garage with a cabin: a getaway now, guest quarters later.</p></a>
-      <a class="small" href="renovations.html"><img src="img/after-1-1029.webp" srcset="img/after-1-640.webp 640w, img/after-1-1029.webp 1029w" sizes="(max-width: 760px) 100vw, 28rem" width="1029" height="686" alt="Renovated cabin with dark green siding and red window trim" loading="lazy" decoding="async"><h3>Renovations &amp; remodeling</h3><p>Kitchens, baths, additions and whole cabins brought up to date.</p></a>
+    <div class="where">
+      <div>
+        <h2 id="where">Where we&rsquo;ve built</h2>
+        <ul class="lakelist"><li>Leech Lake</li><li>Woman Lake</li></ul>
+        <p class="towns">and many more lakes around Walker, Longville and Hackensack. Every home we build is a custom home.</p>
+        <div class="btns"><a class="btn btn-line" href="lake-homes.html">Our lake homes</a></div>
+      </div>
+      <img src="img/lake-cedar-1029.webp" srcset="img/lake-cedar-640.webp 640w, img/lake-cedar-1029.webp 1029w" sizes="(max-width: 860px) 100vw, 32rem" width="1029" height="686" alt="Cedar lake home with a wraparound deck in winter" loading="lazy" decoding="async">
     </div>
+    <ol class="gen" aria-label="Two generations of Spitzack builders">
+      <li><small>First generation</small><b>Les Spitzack</b><span>Northern Minnesota builder.</span></li>
+      <li><small>Second generation, today</small><b>Mark Spitzack</b><span>Current owner, following in his father&rsquo;s footsteps. 40 years of experience in the industry.</span></li>
+    </ol>
+    <p class="gen-more"><a href="about.html">Meet the crew</a></p>
   </div>
 </section>
 
@@ -317,24 +343,12 @@ p { max-width: 64ch; }
   </div>
 </section>
 
-<section class="band" aria-labelledby="fam">
-  <div class="wrap family">
-    <div>
-      <h2 id="fam">Two generations of Northern Minnesota builders</h2>
-      <p>Owner Mark Spitzack follows in the footsteps of his father, Les Spitzack. The crew is made of skilled carpenters and craftsmen who take pride in what they build, working with the area&rsquo;s top suppliers and sub-contractors.</p>
-      <p>Every project gets the same attention to detail, from the first nail to the last coat of paint.</p>
-      <div class="btns" style="margin-top:1.4rem"><a class="btn btn-line" href="about.html">About us</a></div>
-    </div>
-    <img src="img/lake-round-1268.webp" srcset="img/lake-round-800.webp 800w, img/lake-round-1268.webp 1268w" sizes="(max-width: 860px) 100vw, 36rem" width="1268" height="634" alt="Long cedar-sided home with curved walls in the snow" loading="lazy" decoding="async">
-  </div>
-</section>
-
 <section class="band band-white" aria-labelledby="gal">
   <div class="wrap">
     <div class="head"><h2 id="gal">Inside our homes</h2></div>
     <div class="strip">
-      <img src="img/gal-g06-900.webp" srcset="img/gal-g06-480.webp 480w, img/gal-g06-900.webp 900w" sizes="(max-width: 700px) 50vw, 18rem" width="900" height="600" alt="Open kitchen and dining room under a timber-frame loft" loading="lazy" decoding="async">
-      <img src="img/gal-g01-900.webp" srcset="img/gal-g01-480.webp 480w, img/gal-g01-900.webp 900w" sizes="(max-width: 700px) 50vw, 18rem" width="900" height="1350" alt="Screened porch with wood floors looking into the pines" loading="lazy" decoding="async">
+      <img src="img/gal-g06-900.webp" srcset="img/gal-g06-480.webp 480w, img/gal-g06-900.webp 900w" sizes="(max-width: 700px) 100vw, 18rem" width="900" height="600" alt="Open kitchen and dining room under a timber-frame loft" loading="lazy" decoding="async">
+      <img src="img/gal-g01-900.webp" srcset="img/gal-g01-480.webp 480w, img/gal-g01-900.webp 900w" sizes="(max-width: 700px) 100vw, 18rem" width="900" height="1350" alt="Screened porch with wood floors looking into the pines" loading="lazy" decoding="async">
       <img src="img/gal-g17-900.webp" srcset="img/gal-g17-480.webp 480w, img/gal-g17-900.webp 900w" sizes="(max-width: 700px) 50vw, 18rem" width="900" height="600" alt="Knotty alder kitchen cabinets with a stainless range" loading="lazy" decoding="async">
       <img src="img/gal-g33-900.webp" srcset="img/gal-g33-480.webp 480w, img/gal-g33-900.webp 900w" sizes="(max-width: 700px) 50vw, 18rem" width="900" height="600" alt="Sunroom with a stone fireplace and timber beams" loading="lazy" decoding="async">
     </div>
