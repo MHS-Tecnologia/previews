@@ -8,6 +8,8 @@
 <meta name="description" content="Excavating and grading contractor in Glenarm, Illinois, since 2002.">
 <meta name="theme-color" content="#2b2119">
 <link rel="preload" href="fonts/overpass.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-720.webp" imagesrcset="img/hero-560.webp 560w, img/hero-720.webp 720w, img/hero-1200.webp 1200w" imagesizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1260px) 52vw, 640px" fetchpriority="high">
+<script>document.documentElement.classList.add("js")</script>
 <style>
 @font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
 /* Overpass descends from Highway Gothic, the lettering on US highway signs:
@@ -59,23 +61,28 @@ p{max-width:64ch}
   repeating-linear-gradient(90deg,var(--yellow) 0 2px,transparent 2px 16px) left bottom/100% 8px no-repeat}
 
 /* hero */
-.hero{background:var(--sky);overflow:hidden}
-.hero>.wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2rem;align-items:end;padding-top:clamp(2rem,5vw,4.5rem)}
+.hero{background:var(--earth-2);color:var(--on-earth)}
+.hero>.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,4vw,3.5rem);align-items:center;padding-top:clamp(2rem,4.5vw,4rem);padding-bottom:clamp(2rem,4.5vw,4rem)}
+.shot{margin:0}
+.shot img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.shot figcaption{margin-top:.55rem;font-size:.85rem;color:var(--on-earth-mute)}
 .hero h1{font-size:clamp(2.35rem,5.6vw,4.6rem);letter-spacing:-.025em;max-width:13ch}
-.hero .lede{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--mute);margin-top:1.1rem;max-width:44ch}
-.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem;padding-bottom:clamp(2rem,4vw,3.5rem)}
-.hero .actions .btn.line{color:var(--blue)}
-.machine{position:relative;align-self:end}
-.machine img{width:100%;max-width:640px;margin-left:auto;margin-bottom:-2px;position:relative}
-.machine figcaption{position:absolute;left:0;top:8%;font-size:.85rem;color:var(--mute);max-width:15ch;line-height:1.3}
-.hero .grade{position:relative}
+.hero .lede{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--on-earth-mute);margin-top:1.1rem;max-width:44ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+.hero .actions .btn.line{color:var(--on-earth)}
+.machine{position:relative;margin:2.2rem 0 0;max-width:34rem}
+.machine img{width:100%}
+.machine svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.machine figcaption{position:absolute;left:13%;top:calc(2.8% - .68em);width:31%;font-size:.88rem;line-height:1.3;color:var(--ink);font-weight:650}
 .ground{background:var(--earth);color:var(--on-earth)}
 .ground .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding-top:1.6rem;padding-bottom:1.8rem}
 .ground b{display:block;font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:850;color:var(--yellow);line-height:1.1}
 .ground span{font-size:.95rem;color:var(--on-earth-mute);line-height:1.4;display:block;margin-top:.25rem}
 @media (prefers-reduced-motion:no-preference){
-  .machine img{animation:drive 1.1s cubic-bezier(.2,.7,.2,1) .15s both}
-  @keyframes drive{from{transform:translateX(-14%);opacity:0}to{transform:none;opacity:1}}
+  .js .machine.wait img{transform:translateX(-12%);opacity:0}
+  .js .machine.wait figcaption,.js .machine.wait svg{opacity:0}
+  .machine img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1),opacity .6s}
+  .machine figcaption,.machine svg{transition:opacity .4s .9s}
 }
 
 /* sections */
@@ -146,9 +153,9 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 .svc:first-child{border-top:0}
 .svc ul{margin-top:1rem;padding-left:1.1rem;display:grid;gap:.35rem}
 .svc li::marker{color:var(--soil)}
-.svc .pics{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.75rem}
+.svc .pics{display:grid;gap:.6rem}
 .svc .pics img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
-.svc .pics.solo{grid-template-columns:1fr}
+.svc .row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:.6rem}
 .svc .who{margin-top:1rem;font-size:.95rem;color:var(--mute)}
 .prose p+p{margin-top:1rem}
 .prose h2{margin-bottom:1.2rem}
@@ -205,13 +212,13 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
   body{font-size:1rem}
   .brand img{width:118px}
   .top .wrap{min-height:3.6rem}
-  .hero>.wrap{grid-template-columns:1fr;gap:0;padding-top:1.4rem}
+  .hero>.wrap{grid-template-columns:1fr;gap:1rem;padding-top:1.3rem;padding-bottom:1.3rem}
+  .shot figcaption{display:none}
   .hero h1{font-size:2.15rem;max-width:none}
   .hero .lede{margin-top:.7rem;font-size:1rem}
-  .hero .actions{margin-top:1.1rem;padding-bottom:.6rem;display:grid;grid-template-columns:1.45fr 1fr;gap:.6rem}
+  .hero .actions{margin-top:1.1rem;display:grid;grid-template-columns:1.45fr 1fr;gap:.6rem}
   .hero .actions .btn{padding:.7rem .5rem;font-size:.98rem;white-space:nowrap}
-  .machine img{width:74%;margin:0 0 -2px auto}
-  .machine figcaption{top:auto;bottom:22%;font-size:.78rem;max-width:11ch}
+  .machine figcaption{font-size:.74rem;width:34%}
   .ground .wrap{gap:1.1rem 1rem}
   .ground b{font-size:1.3rem}
   .tiles{gap:1rem .75rem}
@@ -221,8 +228,6 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
   .family figcaption{font-size:.92rem}
   .timeline li,.timeline .noimg{grid-template-columns:1fr;gap:.8rem;padding:1.5rem 0}
   .timeline li img{grid-column:1}
-  .svc .pics img+img{display:none}
-  .svc .pics{grid-template-columns:1fr}
   .stick{display:grid;grid-template-columns:1.4fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:.55rem .75rem calc(.55rem + env(safe-area-inset-bottom));background:var(--earth);transform:translateY(110%);transition:transform .25s}
   .stick.show{transform:none}
   .stick .btn{min-height:2.9rem;font-size:.98rem}
@@ -244,7 +249,7 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 <div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Sallenger Inc. Not affiliated with or endorsed by Sallenger Inc.</div>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="img/logo.webp" width="398" height="139" alt="Sallenger Incorporated, Moving The Earth! (home)"></a>
+    <a class="brand" href="index.html"><img src="img/logo.webp" width="300" height="105" alt="Sallenger Incorporated, Moving The Earth! (home)"></a>
     <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="safety.html">Safety &amp; performance</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="call" href="tel:+12177269500">Call 217-726-9500</a></nav>
   </div>
@@ -261,15 +266,15 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
         <a class="btn line" href="mailto:info@sallengerinc.com?subject=Project%20inquiry"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg>Email</a>
       </div>
     </div>
-    <figure class="machine">
-      <img src="img/dozer-520.webp" srcset="img/dozer-520.webp 520w, img/dozer-1000.webp 1000w" sizes="(max-width: 700px) 74vw, 600px" width="1000" height="864" alt="Sallenger's Caterpillar dozer with twin GPS masts on the blade" fetchpriority="high">
-      <figcaption>Trimble GPS on the blade, grading to ½ inch</figcaption>
+    <figure class="shot">
+      <img src="img/hero-720.webp" srcset="img/hero-560.webp 560w, img/hero-720.webp 720w, img/hero-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1260px) 52vw, 640px" width="1200" height="900" alt="Sallenger excavator loading a Caterpillar articulated truck on a landfill job" fetchpriority="high">
+      <figcaption>Landfill work, from the Sallenger gallery</figcaption>
     </figure>
   </div>
   <div class="grade" aria-hidden="true"></div>
   <div class="ground">
     <div class="wrap">
-      <p><b>Since 2002</b><span>Founded in Glenarm, Illinois</span></p>
+      <p><b>Since 2002</b><span>Headquartered in Glenarm, Illinois</span></p>
       <p><b>3 to 40+</b><span>Pieces of heavy equipment, then and now</span></p>
       <p><b>½ inch</b><span>GPS grading tolerance on dozers and graders</span></p>
       <p><b>Zero</b><span>Lost-time accidents since going into business</span></p>
@@ -283,7 +288,7 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
       <h2 id="work">What we build</h2>
       <p>For landfill owners, power plants, coal mines, commercial development groups, and farm and grain companies.</p>
     </div>
-    <div class="tiles"><a class="tile" href="services.html#landfills"><img src="img/landfill-560.webp" srcset="img/landfill-560.webp 560w, img/landfill-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="Sallenger excavator loading an articulated truck on a landfill job" loading="lazy" decoding="async"><h3>Landfills</h3><p>Cell construction, liners and final cover</p></a><a class="tile" href="services.html#site-development"><img src="img/sitedev-560.webp" srcset="img/sitedev-560.webp 560w, img/sitedev-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="Excavator, dozer and John Deere tractor working a site development job" loading="lazy" decoding="async"><h3>Site development</h3><p>Land improvement and facility sitework</p></a><a class="tile" href="services.html#mining"><img src="img/mining-560.webp" srcset="img/mining-560.webp 560w, img/mining-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="John Deere tractor pulling a scraper while an excavator loads it at a mine site" loading="lazy" decoding="async"><h3>Mining</h3><p>Box cuts, impoundments, overburden</p></a><a class="tile" href="services.html#power-plants"><img src="img/power-560.webp" srcset="img/power-560.webp 560w, img/power-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="Excavator loading a truck beside a power plant" loading="lazy" decoding="async"><h3>Power plant services</h3><p>Substations, fly ash landfills and ponds</p></a><a class="tile" href="services.html#railway"><img src="img/railway-560.webp" srcset="img/railway-560.webp 560w, img/railway-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="John Deere tractor pulling a scraper on a railway job" loading="lazy" decoding="async"><h3>Railway construction</h3><p>Earthwork for rail projects</p></a><a class="tile" href="services.html#water"><img src="img/levee-560.webp" srcset="img/levee-560.webp 560w, img/levee-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="Finished levee alongside a river and rail line" loading="lazy" decoding="async"><h3>Water resources</h3><p>Levees, ponds, reservoirs, wetlands</p></a><a class="tile" href="services.html#specialty"><img src="img/clearing-560.webp" srcset="img/clearing-560.webp 560w, img/clearing-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="Excavator feeding a land-clearing burn pile" loading="lazy" decoding="async"><h3>Specialty services</h3><p>Slurry walls, land and right-of-way clearing</p></a><a class="tile" href="services.html#agriculture"><img src="img/ag-560.webp" srcset="img/ag-560.webp 560w, img/ag-1100.webp 1100w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="1100" height="733" alt="John Deere tractor and scraper on farm ground" loading="lazy" decoding="async"><h3>Agricultural services</h3><p>Grain, fertilizer and ethanol plant sitework</p></a></div>
+    <div class="tiles"><a class="tile" href="services.html#landfills"><img src="img/landfill0-360.webp" srcset="img/landfill0-360.webp 360w, img/landfill0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="Graded landfill cell with its liner exposed along the slope" loading="lazy" decoding="async"><h3>Landfills</h3><p>Cell construction, liners and final cover</p></a><a class="tile" href="services.html#site-development"><img src="img/sitedev0-360.webp" srcset="img/sitedev0-360.webp 360w, img/sitedev0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="Excavator, dozer and John Deere tractor on a site development job" loading="lazy" decoding="async"><h3>Site development</h3><p>Land improvement and facility sitework</p></a><a class="tile" href="services.html#mining"><img src="img/mining0-360.webp" srcset="img/mining0-360.webp 360w, img/mining0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="John Deere tractor and scraper beside an excavator at a mine site" loading="lazy" decoding="async"><h3>Mining</h3><p>Box cuts, impoundments, overburden</p></a><a class="tile" href="services.html#power-plants"><img src="img/power0-360.webp" srcset="img/power0-360.webp 360w, img/power0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="Excavator loading a truck near a power plant stack" loading="lazy" decoding="async"><h3>Power plant services</h3><p>Substations, fly ash landfills and ponds</p></a><a class="tile" href="services.html#railway"><img src="img/railway0-360.webp" srcset="img/railway0-360.webp 360w, img/railway0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="John Deere tractor pulling a scraper on a railway job" loading="lazy" decoding="async"><h3>Railway construction</h3></a><a class="tile" href="services.html#water"><img src="img/water0-360.webp" srcset="img/water0-360.webp 360w, img/water0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="Finished levee alongside a river and rail line" loading="lazy" decoding="async"><h3>Water resources</h3><p>Levees, ponds, reservoirs, wetlands</p></a><a class="tile" href="services.html#specialty"><img src="img/specialty0-360.webp" srcset="img/specialty0-360.webp 360w, img/specialty0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="Excavator feeding a land-clearing burn pile" loading="lazy" decoding="async"><h3>Specialty services</h3><p>Slurry walls, land and right-of-way clearing</p></a><a class="tile" href="services.html#agriculture"><img src="img/ag0-360.webp" srcset="img/ag0-360.webp 360w, img/ag0-560.webp 560w" sizes="(max-width: 980px) calc(50vw - 1.5rem), 290px" width="560" height="373" alt="John Deere tractor and scraper on farm ground" loading="lazy" decoding="async"><h3>Agricultural services</h3><p>Grain, fertilizer and ethanol plant sitework</p></a></div>
     <p style="margin-top:2rem"><a class="more" href="services.html">Every service, with photos from the job</a></p>
   </div>
 </section>
@@ -295,6 +300,11 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
         <h2 id="fleet">Three machines in 2002. Over 40 today.</h2>
         <div class="count" role="img" aria-label="3 pieces of equipment in 2002, over 40 today"><i class="start"></i><i class="start"></i><i class="start"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <p class="count-key"><em>In 2002</em><em>Over 40 today</em></p>
+        <figure class="machine">
+          <img src="img/dozer-720.webp" srcset="img/dozer-720.webp 720w, img/dozer-1000.webp 1000w" sizes="(max-width: 820px) calc(100vw - 2rem), 544px" width="1000" height="785" alt="Sallenger's Caterpillar dozer with a GPS mast on each end of the blade" loading="lazy" decoding="async">
+          <svg viewBox="0 0 1000 785" preserveAspectRatio="none" aria-hidden="true"><polyline points="36,100 36,22 118,22" fill="none" stroke="#1c1a17" stroke-width="1.6" vector-effect="non-scaling-stroke"/><circle cx="36" cy="104" r="9" fill="#ffc72c" stroke="#1c1a17" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg>
+          <figcaption>Trimble GPS on the blade, grading to ½ inch</figcaption>
+        </figure>
       </div>
       <div>
         <p>One of the most current-model heavy equipment fleets in Central Illinois, with Tier 3 and Tier 4 Final designations. The work runs on Caterpillar and John Deere equipment.</p>
@@ -306,13 +316,13 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
         <p style="margin-top:1.5rem"><a class="more" href="safety.html#performance">How performance works here</a></p>
       </div>
     </div>
-    <figure class="fleet-photo"><img src="img/fleet-cat-560.webp" srcset="img/fleet-cat-560.webp 560w, img/fleet-cat-1100.webp 1100w, img/fleet-cat-1400.webp 1400w" sizes="(max-width: 1260px) calc(100vw - 2rem), 1216px" width="1400" height="636" alt="A row of Sallenger&#x27;s tracked tractors and scrapers lined up on a job site" loading="lazy" decoding="async"></figure>
+    <figure class="fleet-photo"><img src="img/fleet-cat-560.webp" srcset="img/fleet-cat-560.webp 560w, img/fleet-cat-720.webp 720w, img/fleet-cat-1100.webp 1100w, img/fleet-cat-1400.webp 1400w" sizes="(max-width: 1260px) calc(100vw - 2rem), 1216px" width="1400" height="636" alt="A row of Sallenger&#x27;s tracked tractors and scrapers lined up on a job site" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
 <section class="sec earth" aria-labelledby="safety">
   <div class="wrap safe">
-    <img src="img/safety-560.webp" srcset="img/safety-560.webp 560w, img/safety-1100.webp 1100w" sizes="(max-width: 820px) calc(100vw - 2rem), 470px" width="1100" height="1375" alt="Two Sallenger crew members in hard hats and high-visibility vests checking a GPS rover" loading="lazy" decoding="async">
+    <img src="img/safety-360.webp" srcset="img/safety-360.webp 360w, img/safety-560.webp 560w, img/safety-940.webp 940w" sizes="(max-width: 820px) calc(100vw - 2rem), 470px" width="940" height="1175" alt="Two Sallenger crew members in hard hats and high-visibility vests checking a GPS rover" loading="lazy" decoding="async">
     <div>
       <p class="big" id="safety">Zero lost-time accidents since 2002.</p>
       <ul class="facts">
@@ -329,8 +339,8 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
   <div class="wrap">
     <blockquote id="family">“Since our company bears our family name, our work is very personal to us.”<cite>From the Sallenger home page</cite></blockquote>
     <div class="family">
-      <figure><img src="img/bill-1977-560.webp" srcset="img/bill-1977-560.webp 560w, img/bill-1977-900.webp 900w" sizes="(max-width: 700px) calc(50vw - 1.5rem), 600px" width="900" height="633" alt="Bill Sallenger at seven years old in the seat of a bulldozer, 1977" loading="lazy" decoding="async"><figcaption>Bill Sallenger, 1977<span>Seven years old</span></figcaption></figure>
-      <figure><img src="img/billy-2008-560.webp" srcset="img/billy-2008-560.webp 560w, img/billy-2008-900.webp 900w" sizes="(max-width: 700px) calc(50vw - 1.5rem), 600px" width="900" height="675" alt="Billy Sallenger at seven years old on a Caterpillar D6R dozer, 2008" loading="lazy" decoding="async"><figcaption>Billy Sallenger, 2008<span>Seven years old</span></figcaption></figure>
+      <figure><img src="img/bill-1977-560.webp" srcset="img/bill-1977-560.webp 560w, img/bill-1977-900.webp 900w" sizes="(max-width: 700px) calc(50vw - 1.5rem), 600px" width="900" height="633" alt="A small boy in the seat of an orange bulldozer" loading="lazy" decoding="async"><figcaption>Bill Sallenger in 1977, 7 years old</figcaption></figure>
+      <figure><img src="img/billy-2008-560.webp" srcset="img/billy-2008-560.webp 560w, img/billy-2008-900.webp 900w" sizes="(max-width: 700px) calc(50vw - 1.5rem), 600px" width="900" height="675" alt="A child sitting on the track of a Caterpillar D6R dozer, with a man seated on the machine above" loading="lazy" decoding="async"><figcaption>Billy Sallenger in 2008, 7 years old</figcaption></figure>
     </div>
     <p style="margin-top:1.6rem"><a class="more" href="about.html">How the company started</a></p>
   </div>
@@ -349,7 +359,7 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 <footer class="foot">
   <div class="wrap">
     <div>
-      <img src="img/logo.webp" width="398" height="139" alt="Sallenger Incorporated" loading="lazy" decoding="async">
+      <img src="img/logo.webp" width="300" height="105" alt="Sallenger Incorporated" loading="lazy" decoding="async">
       <p style="margin-top:1rem">Excavating and grading contractor. Headquarters in Glenarm, Illinois.</p>
     </div>
     <div>
@@ -375,7 +385,8 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 (()=>{const b=document.querySelector('.menu'),n=document.getElementById('nav');
 b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
 const s=document.querySelector('.stick'),h=document.querySelector('[data-hero]');
-if(s&&h&&'IntersectionObserver'in window){new IntersectionObserver(([x])=>s.classList.toggle('show',!x.isIntersecting)).observe(h)}else if(s){s.classList.add('show')}})();
+if(s&&h&&'IntersectionObserver'in window){new IntersectionObserver(([x])=>s.classList.toggle('show',!x.isIntersecting)).observe(h)}else if(s){s.classList.add('show')}
+const m=document.querySelector('.machine');if(m&&'IntersectionObserver'in window){m.classList.add('wait');const o=new IntersectionObserver(([x])=>{if(x.isIntersecting){m.classList.remove('wait');o.disconnect()}},{threshold:.35});o.observe(m)}})();
 </script>
 </body>
 </html>

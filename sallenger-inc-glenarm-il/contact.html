@@ -8,6 +8,7 @@
 <meta name="description" content="Sallenger Inc., 10950 Palm Road, Glenarm, IL. 217-726-9500.">
 <meta name="theme-color" content="#2b2119">
 <link rel="preload" href="fonts/overpass.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
 <style>
 @font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
 /* Overpass descends from Highway Gothic, the lettering on US highway signs:
@@ -59,23 +60,28 @@ p{max-width:64ch}
   repeating-linear-gradient(90deg,var(--yellow) 0 2px,transparent 2px 16px) left bottom/100% 8px no-repeat}
 
 /* hero */
-.hero{background:var(--sky);overflow:hidden}
-.hero>.wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2rem;align-items:end;padding-top:clamp(2rem,5vw,4.5rem)}
+.hero{background:var(--earth-2);color:var(--on-earth)}
+.hero>.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,4vw,3.5rem);align-items:center;padding-top:clamp(2rem,4.5vw,4rem);padding-bottom:clamp(2rem,4.5vw,4rem)}
+.shot{margin:0}
+.shot img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.shot figcaption{margin-top:.55rem;font-size:.85rem;color:var(--on-earth-mute)}
 .hero h1{font-size:clamp(2.35rem,5.6vw,4.6rem);letter-spacing:-.025em;max-width:13ch}
-.hero .lede{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--mute);margin-top:1.1rem;max-width:44ch}
-.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem;padding-bottom:clamp(2rem,4vw,3.5rem)}
-.hero .actions .btn.line{color:var(--blue)}
-.machine{position:relative;align-self:end}
-.machine img{width:100%;max-width:640px;margin-left:auto;margin-bottom:-2px;position:relative}
-.machine figcaption{position:absolute;left:0;top:8%;font-size:.85rem;color:var(--mute);max-width:15ch;line-height:1.3}
-.hero .grade{position:relative}
+.hero .lede{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--on-earth-mute);margin-top:1.1rem;max-width:44ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+.hero .actions .btn.line{color:var(--on-earth)}
+.machine{position:relative;margin:2.2rem 0 0;max-width:34rem}
+.machine img{width:100%}
+.machine svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.machine figcaption{position:absolute;left:13%;top:calc(2.8% - .68em);width:31%;font-size:.88rem;line-height:1.3;color:var(--ink);font-weight:650}
 .ground{background:var(--earth);color:var(--on-earth)}
 .ground .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding-top:1.6rem;padding-bottom:1.8rem}
 .ground b{display:block;font-size:clamp(1.4rem,2.4vw,1.9rem);font-weight:850;color:var(--yellow);line-height:1.1}
 .ground span{font-size:.95rem;color:var(--on-earth-mute);line-height:1.4;display:block;margin-top:.25rem}
 @media (prefers-reduced-motion:no-preference){
-  .machine img{animation:drive 1.1s cubic-bezier(.2,.7,.2,1) .15s both}
-  @keyframes drive{from{transform:translateX(-14%);opacity:0}to{transform:none;opacity:1}}
+  .js .machine.wait img{transform:translateX(-12%);opacity:0}
+  .js .machine.wait figcaption,.js .machine.wait svg{opacity:0}
+  .machine img{transition:transform 1.1s cubic-bezier(.2,.7,.2,1),opacity .6s}
+  .machine figcaption,.machine svg{transition:opacity .4s .9s}
 }
 
 /* sections */
@@ -146,9 +152,9 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 .svc:first-child{border-top:0}
 .svc ul{margin-top:1rem;padding-left:1.1rem;display:grid;gap:.35rem}
 .svc li::marker{color:var(--soil)}
-.svc .pics{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.75rem}
+.svc .pics{display:grid;gap:.6rem}
 .svc .pics img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
-.svc .pics.solo{grid-template-columns:1fr}
+.svc .row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:.6rem}
 .svc .who{margin-top:1rem;font-size:.95rem;color:var(--mute)}
 .prose p+p{margin-top:1rem}
 .prose h2{margin-bottom:1.2rem}
@@ -205,13 +211,13 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
   body{font-size:1rem}
   .brand img{width:118px}
   .top .wrap{min-height:3.6rem}
-  .hero>.wrap{grid-template-columns:1fr;gap:0;padding-top:1.4rem}
+  .hero>.wrap{grid-template-columns:1fr;gap:1rem;padding-top:1.3rem;padding-bottom:1.3rem}
+  .shot figcaption{display:none}
   .hero h1{font-size:2.15rem;max-width:none}
   .hero .lede{margin-top:.7rem;font-size:1rem}
-  .hero .actions{margin-top:1.1rem;padding-bottom:.6rem;display:grid;grid-template-columns:1.45fr 1fr;gap:.6rem}
+  .hero .actions{margin-top:1.1rem;display:grid;grid-template-columns:1.45fr 1fr;gap:.6rem}
   .hero .actions .btn{padding:.7rem .5rem;font-size:.98rem;white-space:nowrap}
-  .machine img{width:74%;margin:0 0 -2px auto}
-  .machine figcaption{top:auto;bottom:22%;font-size:.78rem;max-width:11ch}
+  .machine figcaption{font-size:.74rem;width:34%}
   .ground .wrap{gap:1.1rem 1rem}
   .ground b{font-size:1.3rem}
   .tiles{gap:1rem .75rem}
@@ -221,8 +227,6 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
   .family figcaption{font-size:.92rem}
   .timeline li,.timeline .noimg{grid-template-columns:1fr;gap:.8rem;padding:1.5rem 0}
   .timeline li img{grid-column:1}
-  .svc .pics img+img{display:none}
-  .svc .pics{grid-template-columns:1fr}
   .stick{display:grid;grid-template-columns:1.4fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:.55rem .75rem calc(.55rem + env(safe-area-inset-bottom));background:var(--earth);transform:translateY(110%);transition:transform .25s}
   .stick.show{transform:none}
   .stick .btn{min-height:2.9rem;font-size:.98rem}
@@ -237,7 +241,7 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 <div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Sallenger Inc. Not affiliated with or endorsed by Sallenger Inc.</div>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="img/logo.webp" width="398" height="139" alt="Sallenger Incorporated, Moving The Earth! (home)"></a>
+    <a class="brand" href="index.html"><img src="img/logo.webp" width="300" height="105" alt="Sallenger Incorporated, Moving The Earth! (home)"></a>
     <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main"><a href="services.html">Services</a><a href="safety.html">Safety &amp; performance</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a><a class="call" href="tel:+12177269500">Call 217-726-9500</a></nav>
   </div>
@@ -261,7 +265,7 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 <footer class="foot">
   <div class="wrap">
     <div>
-      <img src="img/logo.webp" width="398" height="139" alt="Sallenger Incorporated" loading="lazy" decoding="async">
+      <img src="img/logo.webp" width="300" height="105" alt="Sallenger Incorporated" loading="lazy" decoding="async">
       <p style="margin-top:1rem">Excavating and grading contractor. Headquarters in Glenarm, Illinois.</p>
     </div>
     <div>
@@ -287,7 +291,8 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
 (()=>{const b=document.querySelector('.menu'),n=document.getElementById('nav');
 b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
 const s=document.querySelector('.stick'),h=document.querySelector('[data-hero]');
-if(s&&h&&'IntersectionObserver'in window){new IntersectionObserver(([x])=>s.classList.toggle('show',!x.isIntersecting)).observe(h)}else if(s){s.classList.add('show')}})();
+if(s&&h&&'IntersectionObserver'in window){new IntersectionObserver(([x])=>s.classList.toggle('show',!x.isIntersecting)).observe(h)}else if(s){s.classList.add('show')}
+const m=document.querySelector('.machine');if(m&&'IntersectionObserver'in window){m.classList.add('wait');const o=new IntersectionObserver(([x])=>{if(x.isIntersecting){m.classList.remove('wait');o.disconnect()}},{threshold:.35});o.observe(m)}})();
 </script>
 </body>
 </html>
