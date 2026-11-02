@@ -79,6 +79,7 @@ p { margin: 0; }
 .frase { background: var(--rosa); color: var(--tinta); padding: 44px 0; }
 .frase blockquote { margin: 0; }
 .frase p { font-family: var(--gotica); font-weight: 700; font-size: clamp(2rem, 7.4vw, 3.8rem); line-height: 1.02; max-width: 16em; text-wrap: balance; }
+.cereja-grande { display: none; }
 .frase footer { margin-top: 14px; font-size: .95rem; color: #5a2430; }
 
 /* trabalhos */
@@ -98,7 +99,7 @@ h2 { font-size: clamp(2.6rem, 9vw, 4.2rem); color: #fff; }
 .servicos-grade { display: grid; gap: 26px; }
 .nota { margin-top: 10px; }
 .lista { margin: 0; display: grid; }
-.lista div { padding: 16px 0; border-top: 1px solid var(--linha); display: grid; gap: 4px; }
+.lista div { padding: 16px 0; border-top: 1px solid var(--linha); display: grid; gap: 4px; align-content: start; }
 .lista div:last-child { border-bottom: 1px solid var(--linha); }
 .lista dt { font-family: var(--gotica); font-weight: 700; font-size: 1.85rem; line-height: 1.05; color: var(--rosa); }
 .lista dd { margin: 0; color: var(--suave); }
@@ -118,6 +119,9 @@ h2 { font-size: clamp(2.6rem, 9vw, 4.2rem); color: #fff; }
 .dados { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .dados li { display: grid; gap: 2px; padding: 14px 0; border-top: 1px solid #d3c7bb; font-size: 1.15rem; font-weight: 600; }
 .dados span { font-size: .85rem; font-weight: 500; color: #6b5a62; }
+.dados .ligar { font-size: .95rem; font-weight: 500; padding: 10px 0; align-self: center; }
+.dados li:has(.ligar) { grid-template-columns: auto auto; justify-content: start; column-gap: 18px; }
+.dados li:has(.ligar) span { grid-column: 1 / -1; }
 .dados a { color: #8a1916; text-underline-offset: 4px; padding: 10px 0; display: inline-block; }
 
 /* rodapé */
@@ -155,13 +159,20 @@ h2 { font-size: clamp(2.6rem, 9vw, 4.2rem); color: #fff; }
   .cabeca p { justify-self: end; text-align: right; }
   .mural { columns: 4; column-gap: 16px; }
   .mural li { margin-bottom: 16px; }
-  .servicos-grade { grid-template-columns: 1fr 1.5fr; gap: 60px; }
-  .lista { grid-template-columns: 1fr 1fr; column-gap: 40px; }
-  .lista div:nth-last-child(2) { border-bottom: 1px solid var(--linha); }
-  .presson-grade { grid-template-columns: 420px 1fr; grid-template-areas: "a t" "a b"; column-gap: 56px; row-gap: 32px; align-items: start; }
+  .servicos-grade { gap: 40px; }
+  .servicos-grade > div:first-child { display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 40px; }
+  .servicos-grade .nota { justify-self: end; text-align: right; max-width: 26em; margin: 0; }
+  .lista { grid-template-columns: repeat(3, 1fr); column-gap: 40px; }
+  .lista div:nth-last-child(-n+3) { border-bottom: 1px solid var(--linha); }
+  .presson-grade { grid-template-columns: 1fr 1.775fr; grid-template-areas: "t t" "a b"; gap: 36px 24px; }
   .ps-a { grid-area: a; }
-  .ps-texto { grid-area: t; align-self: end; }
-  .ps-b { grid-area: b; max-width: 520px; }
+  .ps-texto { grid-area: t; display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 40px; }
+  .ps-texto p { margin: 0; }
+  .ps-b { grid-area: b; }
+  .ps-b img { height: 100%; object-fit: cover; }
+  .frase-grade { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
+  .frase p { font-size: 5.8rem; max-width: none; text-wrap: pretty; }
+  .cereja-grande { display: block; width: 190px; height: 190px; transform: rotate(10deg); }
   .contato-grade { grid-template-columns: 1.2fr 1fr; align-items: center; gap: 80px; }
   .fixo { display: none; }
   .rodape { padding-bottom: 44px; }
