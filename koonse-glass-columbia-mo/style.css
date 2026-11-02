@@ -10,8 +10,13 @@
   --paper: #f6f8f8;
   --ink: #17212b;
   --muted: #4b5661;
-  --frame: #3a4148;      /* anodized storefront aluminum */
-  --frame-hi: #6b747c;   /* the lit edge of the extrusion */
+  --frame: #3a4148;
+  --alu: #bfc6cb;        /* clear-anodized mullion, from their storefront photos */
+  --alu-hi: #f1f4f5;     /* lit face of the extrusion */
+  --alu-lo: #7d868d;     /* shadow side of the extrusion */
+  --gasket: #22272b;     /* black glazing gasket between aluminum and glass */
+  --edge: #4e8f83;       /* the green you see on the edge of a glass sheet */
+  --alu-bg: linear-gradient(180deg, #dfe4e7 0%, #c3cace 45%, #aeb6bc 100%);
   --glass: #1d5f7c;      /* window reflection blue, from their storefront */
   --glass-dk: #154a61;
   --tint: #dde9ed;       /* the pale green-blue of a glass edge */
@@ -78,25 +83,39 @@ p { margin: 0 0 1em; }
 .btn-line:hover { border-color: var(--glass); color: var(--glass); }
 .textlink { font-weight: 700; color: var(--glass); }
 
-/* The frame: a photo set in an anodized storefront extrusion */
-.frame, .glass { margin: 0; background: var(--frame); padding: 8px; box-shadow: inset 0 0 0 1px var(--frame-hi); }
-.frame img, .glass img { width: 100%; }
+/* Framing system: every photo is glazed into a clear-anodized aluminum frame,
+   with the black gasket line between metal and glass, like their storefronts. */
+.frame, .cw, .grid, .way { background: var(--alu-bg); box-shadow: inset 0 0 0 1px var(--alu-lo), inset 0 2px 0 var(--alu-hi), 0 1px 2px rgba(23,33,43,.18); }
+.frame { margin: 0; padding: 9px; }
+.frame img, .vision img, .pane img, .way img { width: 100%; box-shadow: 0 0 0 2px var(--gasket); }
 
 /* Hero */
 .hero { padding: 0 0 36px; background: linear-gradient(var(--tint), var(--paper)); }
 .hero-in { display: grid; gap: 22px; }
 .hero-pic { margin: 0 calc(var(--gut) * -1); }
-.glass { position: relative; overflow: hidden; padding: 0 0 8px; }
-.glass img { aspect-ratio: 5 / 3; object-fit: cover; }
-.glass::after {
+.nw { white-space: nowrap; }
+/* A curtain-wall bay: a transom row of tinted lites over one big vision lite */
+.cw { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 9px; padding: 9px; }
+.lite { height: 22px; box-shadow: 0 0 0 2px var(--gasket); background:
+  linear-gradient(118deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.55) 31%, rgba(255,255,255,.12) 44%, rgba(255,255,255,0) 45%),
+  linear-gradient(180deg, #8fb6c6 0%, #3f7891 55%, #2b5f77 100%); }
+.lite:nth-child(2) { background-position: -60px 0, 0 0; }
+.lite:nth-child(3) { background-position: -130px 0, 0 0; }
+.vision { grid-column: 1 / -1; position: relative; overflow: hidden; }
+.vision img { aspect-ratio: 5 / 3; object-fit: cover; }
+/* the glass itself: a standing reflection from the sky, and one sweep of light on load */
+.vision::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(112deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,.06) 22%, rgba(255,255,255,0) 23%, rgba(255,255,255,0) 64%, rgba(255,255,255,.10) 65%, rgba(255,255,255,0) 72%),
+              linear-gradient(180deg, rgba(150,200,220,.10), rgba(0,0,0,0) 40%); }
+.vision::after {
   content: ""; position: absolute; top: -20%; bottom: -20%; left: 0; width: 38%;
   background: linear-gradient(100deg, transparent 0, rgba(255,255,255,.34) 45%, rgba(255,255,255,.08) 60%, transparent 100%);
   transform: translateX(-140%) skewX(-14deg);
-  animation: sheen 1.5s cubic-bezier(.3,.6,.3,1) .5s 1 both;
+  animation: sheen 1.6s cubic-bezier(.3,.6,.3,1) .5s 1 both;
   pointer-events: none;
 }
 @keyframes sheen { to { transform: translateX(330%) skewX(-14deg); } }
-.hero-pic figcaption { font-size: .82rem; color: var(--muted); padding: 6px var(--gut) 0; }
+.hero-pic figcaption { display: none; }
 .hero-copy h1 { margin-bottom: 14px; }
 .hero-copy .lead { margin-bottom: 20px; }
 .hours { margin: 14px 0 0; font-size: .95rem; color: var(--muted); }
@@ -105,19 +124,20 @@ p { margin: 0 0 1em; }
   .hero-in { grid-template-columns: 1fr 1.25fr; align-items: center; gap: 48px; }
   .hero-copy { order: -1; }
   .hero-pic { margin: 0; }
-  .glass { padding: 10px; }
-  .hero-pic figcaption { padding: 8px 0 0; }
+  .cw { gap: 11px; padding: 11px; }
+  .lite { height: 64px; }
+  .hero-pic figcaption { display: block; font-size: .82rem; color: var(--muted); padding: 8px 0 0; }
 }
 
 /* Two doors */
 .ways { padding: 36px 0; }
 .ways-in { display: grid; gap: 16px; }
-.way { display: grid; background: var(--frame); padding: 8px; color: #fff; text-decoration: none; box-shadow: inset 0 0 0 1px var(--frame-hi); }
+.way { display: grid; padding: 9px; color: var(--ink); text-decoration: none; }
 .way img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
-.way-copy { display: grid; gap: 6px; padding: 18px 12px 12px; color: #dfe6ea; }
-.way-h { font-size: 1.6rem; font-weight: 780; font-stretch: 116%; color: #fff; line-height: 1.1; }
-.way .more { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; margin-top: 4px; }
-.way:hover .more { color: var(--tint); }
+.way-copy { display: grid; gap: 6px; padding: 18px 16px 16px; margin-top: 9px; background: #fff; box-shadow: 0 0 0 2px var(--gasket); color: var(--muted); }
+.way-h { font-size: 1.6rem; font-weight: 780; font-stretch: 116%; color: var(--ink); line-height: 1.1; }
+.way .more { color: var(--glass); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; margin-top: 4px; }
+.way:hover .more { color: var(--glass-dk); }
 @media (min-width: 800px) { .ways { padding: 28px 0 64px; } .ways-in { grid-template-columns: 1fr 1fr; gap: 24px; } }
 
 /* Rate card: the sign at the counter */
@@ -125,7 +145,7 @@ p { margin: 0 0 1em; }
 .rates-in { display: grid; gap: 26px; }
 .rates h2 { color: #fff; margin-bottom: 12px; }
 .rates-copy p { color: #c4ced4; max-width: 34em; }
-.card { margin: 0; background: #fff; color: var(--ink); padding: 8px 22px; border: 8px solid var(--frame); }
+.card { margin: 0; background: #fff; color: var(--ink); padding: 8px 22px; border: 9px solid var(--alu); box-shadow: inset 0 0 0 2px var(--gasket), 0 0 0 1px var(--alu-lo); }
 .card div { display: flex; align-items: baseline; gap: 10px; padding: 14px 0; border-bottom: 1px dashed var(--siding); }
 .card div:last-child { border-bottom: 0; }
 .card dt { font-weight: 600; flex: 1; }
@@ -136,8 +156,8 @@ p { margin: 0 0 1em; }
 /* Gallery: panes split by mullions */
 .work { padding: 44px 0; }
 .sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: var(--frame); padding: 8px; box-shadow: inset 0 0 0 1px var(--frame-hi); }
-.pane { margin: 0; position: relative; background: #2b3137; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding: 9px; }
+.pane { margin: 0; position: relative; background: #2b3137; box-shadow: 0 0 0 2px var(--gasket); }
 .pane img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .pane figcaption { position: absolute; left: 0; bottom: 0; right: 0; padding: 22px 10px 8px; color: #fff; font-size: .86rem; font-weight: 640; line-height: 1.25; background: linear-gradient(transparent, rgba(16,22,28,.82)); }
 .pane.wide { grid-column: 1 / -1; }
@@ -160,7 +180,7 @@ p { margin: 0 0 1em; }
 .quotes { padding: 44px 0; background: var(--tint); }
 .quotes h2 { margin-bottom: 22px; }
 .quotes-in { display: grid; gap: 14px; }
-.quote { margin: 0; background: #fff; padding: 22px; border-left: 6px solid var(--frame); }
+.quote { margin: 0; background: #fff; padding: 22px; border-left: 5px solid var(--edge); }
 .quote blockquote { margin: 0 0 12px; font-size: 1.06rem; }
 .quote blockquote p { margin: 0; }
 .quote figcaption { font-weight: 700; }
@@ -202,7 +222,7 @@ p { margin: 0 0 1em; }
 }
 .two { padding: 36px 0 8px; }
 .two-in { display: grid; gap: 14px; }
-.opt { border: 8px solid var(--frame); background: #fff; padding: 20px 22px; }
+.opt { border: 9px solid var(--alu); box-shadow: inset 0 0 0 2px var(--gasket), 0 0 0 1px var(--alu-lo); background: #fff; padding: 20px 22px; }
 .opt h2 { font-size: 1.5rem; margin-bottom: 8px; }
 .opt p { color: var(--muted); }
 .price { margin: 0; font-size: 1.9rem; font-weight: 800; font-stretch: 112%; color: var(--ink) !important; }
@@ -210,7 +230,7 @@ p { margin: 0 0 1em; }
 @media (min-width: 800px) { .two { padding: 64px 0 16px; } .two-in { grid-template-columns: 1fr 1fr; gap: 24px; } }
 .list { padding: 40px 0; }
 .list-in > h2 { margin-bottom: 18px; }
-.svc { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 2px solid var(--frame); }
+.svc { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 3px solid var(--edge); }
 .svc li { padding: 16px 0; border-bottom: 1px solid var(--siding); }
 .svc h3 { margin-bottom: 4px; }
 .svc p { margin: 0; color: var(--muted); max-width: 40em; }
@@ -218,7 +238,7 @@ p { margin: 0 0 1em; }
   .list { padding: 64px 0; }
   .svc { grid-template-columns: 1fr 1fr; column-gap: 48px; }
 }
-.note { margin: 20px 0 0; padding: 14px 16px; background: var(--tint); border-left: 6px solid var(--frame); }
+.note { margin: 20px 0 0; padding: 14px 16px; background: var(--tint); border-left: 5px solid var(--edge); }
 .cols { display: grid; gap: 4px 48px; }
 @media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
 .cta-band { background: var(--ink); color: #fff; padding: 44px 0; }
@@ -233,7 +253,8 @@ p { margin: 0 0 1em; }
 .foot h2 + p { margin-top: 0; }
 .foot a { color: #fff; }
 .foot nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }
-.legal { margin-top: 32px !important; padding-top: 18px !important; border-top: 1px solid #34404b; font-size: .82rem; color: #a9b5bc; }
+.legal-band { margin-top: 32px; padding-top: 18px; border-top: 1px solid #34404b; }
+.foot .legal { margin: 0 auto; font-size: .82rem; color: #a9b5bc; }
 @media (min-width: 900px) { .foot { padding-bottom: 44px; } .foot-in { grid-template-columns: 1.4fr 1fr 1fr; } .foot nav { grid-column: 1 / -1; } }
 
 /* Mobile call dock, after the hero */
@@ -243,6 +264,6 @@ p { margin: 0 0 1em; }
 @media (min-width: 900px) { .dock { display: none; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .glass::after { animation: none; display: none; }
+  .vision::after { animation: none; display: none; }
   .dock { transition: none; }
 }
