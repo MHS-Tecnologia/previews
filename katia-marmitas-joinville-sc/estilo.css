@@ -84,7 +84,17 @@ a { color: inherit; }
 @media (min-width: 900px) { .mesa-topo { grid-template-columns: 1fr 1fr; align-items: end; } }
 .pratos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 14px; }
 @media (min-width: 700px) { .pratos { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1100px) { .pratos-seis { grid-template-columns: repeat(6, 1fr); } .pratos-todos { grid-template-columns: repeat(4, 1fr); gap: 32px 24px; } }
+@media (min-width: 1100px) { .pratos-seis { grid-template-columns: repeat(7, 1fr); } .pratos-todos { grid-template-columns: repeat(4, 1fr); gap: 32px 24px; } }
+/* A fila da semana: um trilho liga os pratos, o último lugar é o de hoje */
+.pratos-seis { position: relative; }
+@media (max-width: 1099px) { .pratos-seis > .prato:first-child { display: none; } }
+@media (min-width: 1100px) { .pratos-seis::before { content: ""; position: absolute; left: 4%; right: 4%; top: calc((100% - 30px) / 2); border-top: 3px dotted rgba(242, 179, 61, .55); } }
+.prato { position: relative; }
+.hoje { text-decoration: none; color: inherit; display: block; }
+.hoje-prato { display: grid; place-items: center; aspect-ratio: 1; border-radius: 50%; border: 3px dashed var(--mostarda); background: var(--ardosia); font: 400 clamp(1.1rem, .8rem + 1vw, 1.35rem)/1.15 var(--disp); color: var(--mostarda); text-align: center; transition: background-color .2s ease, color .2s ease; }
+.hoje:hover .hoje-prato, .hoje:focus-visible .hoje-prato { background: var(--mostarda); color: var(--tinta); border-style: solid; }
+.hoje-leg { display: block; margin-top: 2px; font-size: .95rem; color: var(--cinza); text-decoration: underline; text-underline-offset: 3px; }
+.hoje-leg b { font: 400 1.2rem/1 var(--disp); color: var(--mostarda); margin-right: .25em; }
 .prato { margin: 0; text-align: center; }
 .prato img { width: 100%; aspect-ratio: 1; border-radius: 50%; }
 .prato:nth-child(odd) img { transform: rotate(-4deg); }
@@ -117,8 +127,8 @@ a { color: inherit; }
 .sexta { background: var(--tomate); padding: 56px 0; }
 .sexta-in { display: grid; gap: 28px; }
 .sexta p { max-width: 32em; font-size: 1.125rem; }
-.opcoes { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-.opcoes li { border: 2px solid rgba(244, 241, 234, .5); border-radius: 18px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.opcoes { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(244, 241, 234, .4); }
+.opcoes li { border-bottom: 1px solid rgba(244, 241, 234, .4); padding: 14px 0; display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 12px; }
 .opcoes b { font: 400 1.4rem/1.1 var(--disp); }
 .opcoes span { font-size: 1rem; }
 @media (min-width: 900px) { .sexta-in { grid-template-columns: 1.2fr 1fr; align-items: center; gap: 64px; } }
@@ -146,12 +156,15 @@ a { color: inherit; }
 .balcao img { border-radius: 20px; width: 100%; }
 .balcao figcaption { color: var(--cinza); font-size: .95rem; margin-top: 8px; }
 @media (min-width: 900px) { .balcao { grid-template-columns: 1fr 1fr; align-items: start; } }
-.contato { padding: 56px 0 72px; }
-.contato dl { margin: 0; display: grid; gap: 18px; }
-.contato dt { color: var(--cinza); font-size: .95rem; }
-.contato dd { margin: 0; font-size: 1.2rem; font-weight: 600; }
-.contato dd a { color: var(--mostarda); display: inline-block; padding: 6px 0; }
-@media (min-width: 900px) { .contato dl { grid-template-columns: repeat(3, 1fr); } }
+.salao { padding: 56px 0 72px; }
+.salao-txt { color: var(--cinza); max-width: 32em; margin-bottom: 28px; }
+.salao-in { display: grid; gap: 8px; }
+.balcao-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.balcao-fotos figure { margin: 0; }
+.balcao-fotos img { border-radius: 20px; width: 100%; }
+.balcao-fotos figcaption { margin-top: 6px; font-size: .95rem; color: var(--cinza); }
+.balcao-fotos figcaption b { font: 400 1.2rem/1 var(--disp); color: var(--mostarda); margin-right: .25em; }
+@media (min-width: 900px) { .salao-in { grid-template-columns: 1fr 1.3fr; align-items: center; gap: 56px; } }
 
 /* Rodapé */
 .rodape { background: #1e2328; color: var(--cinza); padding: 48px 0 96px; font-size: .95rem; }
@@ -171,5 +184,6 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-foto img { animation: none; }
+  .hoje-prato { transition: none; }
   .fixo, .btn { transition: none; }
 }
