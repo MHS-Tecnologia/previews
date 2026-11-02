@@ -95,12 +95,10 @@ p { margin: 0 0 1em; }
 .hero-pic { margin: 0 calc(var(--gut) * -1); }
 .nw { white-space: nowrap; }
 /* A curtain-wall bay: a transom row of tinted lites over one big vision lite */
-.cw { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 9px; padding: 9px; }
+.cw { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; padding: 9px; }
 .lite { height: 22px; box-shadow: 0 0 0 2px var(--gasket); background:
   linear-gradient(118deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.55) 31%, rgba(255,255,255,.12) 44%, rgba(255,255,255,0) 45%),
   linear-gradient(180deg, #8fb6c6 0%, #3f7891 55%, #2b5f77 100%); }
-.lite:nth-child(2) { background-position: -60px 0, 0 0; }
-.lite:nth-child(3) { background-position: -130px 0, 0 0; }
 .vision { grid-column: 1 / -1; position: relative; overflow: hidden; }
 .vision img { aspect-ratio: 5 / 3; object-fit: cover; }
 /* the glass itself: a standing reflection from the sky, and one sweep of light on load */
@@ -145,9 +143,9 @@ p { margin: 0 0 1em; }
 .rates-in { display: grid; gap: 26px; }
 .rates h2 { color: #fff; margin-bottom: 12px; }
 .rates-copy p { color: #c4ced4; max-width: 34em; }
-.card { margin: 0; background: #fff; color: var(--ink); padding: 8px 22px; border: 9px solid var(--alu); box-shadow: inset 0 0 0 2px var(--gasket), 0 0 0 1px var(--alu-lo); }
-.card div { display: flex; align-items: baseline; gap: 10px; padding: 14px 0; border-bottom: 1px dashed var(--siding); }
-.card div:last-child { border-bottom: 0; }
+/* the rate card is a glazed unit: one lite per rate, split by mullions */
+.card { margin: 0; display: grid; gap: 9px; padding: 9px; background: var(--alu-bg); box-shadow: inset 0 0 0 1px var(--alu-lo), inset 0 2px 0 var(--alu-hi); color: var(--ink); }
+.card div { display: flex; align-items: baseline; gap: 10px; padding: 16px 18px; background: #fff; box-shadow: 0 0 0 2px var(--gasket); }
 .card dt { font-weight: 600; flex: 1; }
 .card dd { margin: 0; font-size: 1.75rem; font-weight: 800; font-stretch: 112%; white-space: nowrap; text-align: right; }
 .card small { display: block; font-size: .78rem; font-weight: 500; font-stretch: 100%; color: var(--muted); }
@@ -230,13 +228,15 @@ p { margin: 0 0 1em; }
 @media (min-width: 800px) { .two { padding: 64px 0 16px; } .two-in { grid-template-columns: 1fr 1fr; gap: 24px; } }
 .list { padding: 40px 0; }
 .list-in > h2 { margin-bottom: 18px; }
-.svc { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 3px solid var(--edge); }
-.svc li { padding: 16px 0; border-bottom: 1px solid var(--siding); }
+/* the service list is a curtain wall: each service a lite, mullions between */
+.svc { list-style: none; margin: 0; padding: 9px; display: grid; gap: 9px; background: var(--alu-bg); box-shadow: inset 0 0 0 1px var(--alu-lo), inset 0 2px 0 var(--alu-hi); }
+.svc li { padding: 16px 18px; background: #fff; box-shadow: 0 0 0 2px var(--gasket); }
 .svc h3 { margin-bottom: 4px; }
 .svc p { margin: 0; color: var(--muted); max-width: 40em; }
 @media (min-width: 900px) {
   .list { padding: 64px 0; }
-  .svc { grid-template-columns: 1fr 1fr; column-gap: 48px; }
+  .svc { grid-template-columns: 1fr 1fr; gap: 11px; padding: 11px; }
+  .svc li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 .note { margin: 20px 0 0; padding: 14px 16px; background: var(--tint); border-left: 5px solid var(--edge); }
 .cols { display: grid; gap: 4px 48px; }
