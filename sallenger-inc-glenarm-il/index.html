@@ -8,7 +8,8 @@
 <meta name="description" content="Excavating and grading contractor in Glenarm, Illinois, since 2002.">
 <meta name="theme-color" content="#2b2119">
 <link rel="preload" href="fonts/overpass.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-720.webp" imagesrcset="img/hero-560.webp 560w, img/hero-720.webp 720w, img/hero-1200.webp 1200w" imagesizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1260px) 52vw, 640px" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 700px)" imagesrcset="img/hero-m-560.webp 560w, img/hero-m-800.webp 800w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 701px)" imagesrcset="img/hero-720.webp 720w, img/hero-1200.webp 1200w" imagesizes="(max-width: 1260px) 52vw, 640px" fetchpriority="high">
 <script>document.documentElement.classList.add("js")</script>
 <style>
 @font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
@@ -267,7 +268,7 @@ blockquote cite{display:block;font-style:normal;font-size:1rem;font-weight:400;c
       </div>
     </div>
     <figure class="shot">
-      <img src="img/hero-720.webp" srcset="img/hero-560.webp 560w, img/hero-720.webp 720w, img/hero-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1260px) 52vw, 640px" width="1200" height="900" alt="Sallenger excavator loading a Caterpillar articulated truck on a landfill job" fetchpriority="high">
+      <picture><source media="(max-width: 700px)" srcset="img/hero-m-560.webp 560w, img/hero-m-800.webp 800w" sizes="calc(100vw - 2rem)"><img src="img/hero-720.webp" srcset="img/hero-720.webp 720w, img/hero-1200.webp 1200w" sizes="(max-width: 1260px) 52vw, 640px" width="1200" height="900" alt="Sallenger excavator loading a Caterpillar articulated truck on a landfill job" fetchpriority="high"></picture>
       <figcaption>Landfill work, from the Sallenger gallery</figcaption>
     </figure>
   </div>
