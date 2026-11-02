@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Roscoe Glass Co | Auto, home and commercial glass in Roscoe, IL</title>
+<meta name="description" content="Family-owned glass shop in Roscoe, IL since 2003. Windshields, ADAS calibration, shower doors, windows and storefronts on the Illinois and Wisconsin state line.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/mona-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/atkinson.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Mona Sans"; src: url(fonts/mona-sans.woff2) format("woff2"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
+@font-face { font-family: "Atkinson"; src: url(fonts/atkinson.woff2) format("woff2"); font-weight: 200 800; font-display: swap; }
+
+/* Pale glass, the green you see on the cut edge of a pane, the royal blue of their logo, slate. */
+:root {
+  --frost: #eef4f2;
+  --frost-2: #dfeae6;
+  --pane: #ffffff;
+  --edge: #2f7a6a;
+  --edge-deep: #1d5649;
+  --royal: #1f2fa0;
+  --royal-deep: #17227a;
+  --ink: #1a262b;
+  --muted: #4a5a60;
+  --line: #c6d6d1;
+  --pad: clamp(1rem, 4vw, 2.5rem);
+  --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--frost); color: var(--ink); font: 400 1.0625rem/1.6 "Atkinson", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--royal); text-underline-offset: .18em; }
+:focus-visible { outline: 3px solid var(--royal); outline-offset: 3px; }
+ul { list-style: none; }
+h1, h2, h3 { font-family: "Mona Sans", system-ui, sans-serif; font-stretch: 112%; font-weight: 780; line-height: 1.04; letter-spacing: -0.015em; color: var(--ink); text-wrap: balance; }
+h1 { font-size: clamp(2rem, 4.4vw, 3.6rem); }
+h2 { font-size: clamp(1.65rem, 3.2vw, 2.6rem); }
+h3 { font-size: 1.2rem; font-stretch: 105%; font-weight: 720; line-height: 1.2; }
+p { max-width: 64ch; }
+/* Atkinson's slashed zero reads as a typo in dates and hours; numbers with a zero use Mona Sans. */
+.n { font-family: "Mona Sans", system-ui, sans-serif; font-stretch: 100%; font-weight: inherit; }
+.wrap { width: min(100% - 2 * var(--pad), var(--max)); margin-inline: auto; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 99; background: var(--pane); padding: .5rem 1rem; }
+
+/* demo banner */
+.demo { max-width: none; background: var(--ink); color: #e6eeec; font-size: .8125rem; line-height: 1.35; padding: .45rem var(--pad); text-align: center; }
+
+/* header */
+.top { background: var(--pane); border-bottom: 1px solid var(--line); position: relative; z-index: 20; }
+.top .wrap { display: flex; align-items: center; gap: 1rem; min-height: 4.5rem; }
+.brand img { width: 118px; height: auto; }
+.nav { margin-left: auto; display: flex; align-items: center; gap: 1.6rem; font-weight: 600; font-size: .975rem; }
+.nav a { color: var(--ink); text-decoration: none; padding: .4rem 0; border-bottom: 2px solid transparent; }
+.nav a:hover, .nav a[aria-current] { border-color: var(--edge); }
+.call { display: inline-flex; align-items: center; gap: .5rem; background: var(--royal); color: #fff !important; text-decoration: none; font-weight: 700; border-radius: 6px; padding: .7rem 1.05rem; white-space: nowrap; border: 0 !important; }
+.call:hover { background: var(--royal-deep); }
+.call svg { width: 1.05em; height: 1.05em; flex: none; }
+.menu { display: none; }
+
+@media (max-width: 900px) {
+  .top .wrap { min-height: 4rem; gap: .6rem; }
+  .brand img { width: 92px; }
+  .nav { display: none; }
+  .top .call { margin-left: auto; padding: .6rem .8rem; font-size: .95rem; }
+  .menu { display: block; position: static; }
+  .menu summary { list-style: none; cursor: pointer; width: 2.75rem; height: 2.75rem; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 6px; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu summary span { display: block; width: 18px; height: 2px; background: var(--ink); box-shadow: 0 -6px 0 var(--ink), 0 6px 0 var(--ink); }
+  .menu[open] summary span { background: transparent; box-shadow: none; position: relative; }
+  .menu[open] summary span::before, .menu[open] summary span::after { content: ""; position: absolute; inset: 0; background: var(--ink); transform: rotate(45deg); }
+  .menu[open] summary span::after { transform: rotate(-45deg); }
+  .menu nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--pane); border-bottom: 1px solid var(--line); padding: .5rem var(--pad) 1rem; box-shadow: 0 12px 24px rgba(26, 38, 43, .12); }
+  .menu nav a { display: block; padding: .8rem 0; border-bottom: 1px solid var(--frost-2); color: var(--ink); text-decoration: none; font-weight: 600; }
+}
+@media (max-width: 359px) { .top .call .num { display: none; } }
+
+/* buttons */
+.btns { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.4rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.1rem; padding: .8rem 1.3rem; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1.02rem; }
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+.btn-main { background: var(--royal); color: #fff; }
+.btn-main:hover { background: var(--royal-deep); }
+.btn-alt { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.btn-alt:hover { background: var(--ink); color: #fff; }
+
+/* the pane: a sheet of glass with its green edge, the one recurring device */
+.pane { position: relative; background: rgba(255, 255, 255, .8); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); border-left: 10px solid var(--edge); box-shadow: 0 1px 0 rgba(255,255,255,.9) inset, 0 18px 40px rgba(26, 38, 43, .16); overflow: hidden; }
+.pane::after { content: ""; position: absolute; inset: -20% auto -20% -40%; width: 30%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .85), transparent); transform: translateX(-120%) skewX(-12deg); pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero .pane::after { animation: glint 1.6s .5s cubic-bezier(.4, 0, .2, 1) 1 forwards; }
+}
+@keyframes glint { to { transform: translateX(560%) skewX(-12deg); } }
+
+/* home hero */
+.hero { padding-top: clamp(0rem, 3vw, 2.5rem); }
+.hero .wrap { display: grid; grid-template-columns: repeat(12, 1fr); align-items: center; }
+.hero-photo { grid-column: 4 / -1; grid-row: 1; border-radius: 4px; overflow: hidden; }
+.hero-photo img { width: 100%; aspect-ratio: 1400 / 720; object-fit: cover; object-position: 50% 45%; }
+.hero .pane { grid-column: 1 / 8; grid-row: 1; padding: clamp(1.4rem, 3vw, 2.6rem); }
+.hero .lede { margin-top: 1rem; font-size: 1.12rem; color: var(--muted); }
+.facts-line { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin-top: 1.1rem; font-size: .95rem; font-weight: 600; color: var(--edge-deep); }
+.facts-line li { display: flex; align-items: center; gap: .4rem; }
+.facts-line li::before { content: ""; width: .55rem; height: .55rem; background: var(--edge); transform: rotate(45deg); }
+
+@media (max-width: 900px) {
+  .hero { padding-top: 0; }
+  .hero .wrap { display: block; width: 100%; }
+  .hero-photo { border-radius: 0; }
+  .hero-photo img { aspect-ratio: 390 / 190; }
+  .hero .pane { margin: -2.2rem var(--pad) 0; padding: 1.25rem 1.2rem 1.35rem; border-left-width: 8px; }
+  .hero .lede { font-size: 1rem; margin-top: .7rem; }
+  .hero .btns { margin-top: 1rem; gap: .55rem; }
+  .hero .btn { flex: 1 1 100%; min-height: 3rem; padding: .7rem 1rem; }
+  .facts-line { margin-top: .85rem; font-size: .9rem; gap: .25rem .9rem; }
+}
+
+/* inner page heads */
+.head { padding: clamp(2rem, 5vw, 3.5rem) 0 0; }
+.head .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.head .pane { padding: clamp(1.3rem, 3vw, 2.4rem); }
+.head .lede { margin-top: .9rem; color: var(--muted); font-size: 1.1rem; }
+.head-photo { border-radius: 4px; overflow: hidden; }
+.head-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 900px) {
+  .head { padding-top: 1.25rem; }
+  .head .wrap { grid-template-columns: 1fr; gap: 1rem; }
+  .head .pane { padding: 1.2rem 1.15rem 1.3rem; border-left-width: 8px; }
+  .head-photo { order: -1; }
+  .head-photo img { aspect-ratio: 16 / 9; }
+  .head .btn { flex: 1 1 100%; }
+}
+
+/* sections */
+section.block { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.hero + section.block { padding-top: clamp(2.5rem, 6vw, 5rem); }
+.block.white { background: var(--pane); }
+.block.slate { background: var(--ink); color: #e3ecea; }
+.block.slate h2, .block.slate h3 { color: #fff; }
+.block.slate a { color: #b9c6ff; }
+.intro { max-width: 46rem; margin-bottom: clamp(1.6rem, 4vw, 2.6rem); }
+.intro p { margin-top: .8rem; color: var(--muted); }
+.block.slate .intro p { color: #c4d2cf; }
+
+/* three ways in */
+.ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.5vw, 2rem); }
+.way { display: grid; grid-template-rows: auto 1fr; text-decoration: none; color: inherit; border-top: 4px solid var(--edge); background: var(--pane); }
+.way img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.way div { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: .5rem; }
+.way ul { color: var(--muted); font-size: .98rem; }
+.way li + li { margin-top: .15rem; }
+.way .go { margin-top: auto; padding-top: .5rem; font-weight: 700; color: var(--royal); text-decoration: underline; text-underline-offset: .2em; }
+.way:hover h3 { color: var(--royal); }
+@media (max-width: 900px) {
+  .ways { grid-template-columns: 1fr; }
+  .way { grid-template-columns: 38% 1fr; grid-template-rows: none; }
+  .way img { height: 100%; aspect-ratio: auto; }
+  .way div { padding: .9rem 1rem; }
+  .way ul { font-size: .92rem; }
+}
+
+/* the quarter test */
+.quarter { display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+.coin { width: clamp(8rem, 18vw, 12rem); aspect-ratio: 1; border-radius: 50%; border: 3px dashed var(--edge); display: grid; place-items: center; position: relative; background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.9) 0 5%, transparent 6%), conic-gradient(from 10deg, transparent 0 8%, rgba(47,122,106,.25) 8% 9%, transparent 9% 33%, rgba(47,122,106,.25) 33% 34%, transparent 34% 61%, rgba(47,122,106,.25) 61% 62%, transparent 62% 84%, rgba(47,122,106,.25) 84% 85%, transparent 85%), var(--frost); }
+.coin span { position: absolute; bottom: -2rem; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: .85rem; color: var(--muted); }
+.rule { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 1.6rem; }
+.rule > div { background: var(--pane); padding: 1.1rem 1.2rem; }
+.rule b { display: block; font-family: "Mona Sans", sans-serif; font-stretch: 108%; font-size: 1.08rem; margin-bottom: .3rem; }
+.rule p { font-size: .97rem; color: var(--muted); }
+@media (max-width: 900px) {
+  .quarter { grid-template-columns: 1fr; }
+  .coin { margin-bottom: 1.6rem; }
+  .rule { grid-template-columns: 1fr; }
+}
+
+/* the shop */
+.shop { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: clamp(9rem, 15vw, 13rem); gap: .6rem; }
+.shop figure { position: relative; overflow: hidden; border-radius: 3px; background: var(--ink); }
+.shop img { width: 100%; height: 100%; object-fit: cover; }
+.shop figcaption { position: absolute; left: 0; bottom: 0; background: rgba(26, 38, 43, .82); color: #fff; font-size: .85rem; padding: .3rem .6rem; border-top-right-radius: 3px; }
+.shop .a { grid-column: span 3; grid-row: span 2; }
+.shop .b, .shop .c, .shop .d, .shop .e { grid-column: span 3; }
+@media (max-width: 900px) {
+  .shop { grid-template-columns: 1fr 1fr; grid-auto-rows: 8.5rem; }
+  .shop .a { grid-column: span 2; grid-row: span 2; }
+  .shop .b, .shop .e { grid-column: span 2; }
+  .shop .c, .shop .d { grid-column: span 1; }
+}
+
+/* reasons: a plain two-column list, not cards */
+.reasons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(1.5rem, 5vw, 4rem); }
+.reasons li { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.18); }
+.reasons b { display: block; font-family: "Mona Sans", sans-serif; font-stretch: 108%; font-size: 1.12rem; color: #fff; }
+.reasons span { color: #c4d2cf; font-size: .98rem; }
+@media (max-width: 700px) { .reasons { grid-template-columns: 1fr; } }
+
+/* split rows on inner pages */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+.split + .split { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
+.split .photo { border-radius: 4px; overflow: hidden; border-left: 6px solid var(--edge); }
+.split .photo img { width: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+.split h2 + p, .split h3 + p { margin-top: .8rem; }
+.split p + p { margin-top: .8rem; }
+.ticks { margin-top: 1.1rem; display: grid; gap: .45rem; }
+.ticks li { position: relative; padding-left: 1.5rem; }
+.ticks li::before { content: ""; position: absolute; left: .1rem; top: .5em; width: .55rem; height: .55rem; background: var(--edge); transform: rotate(45deg); }
+.ticks.two { grid-template-columns: 1fr 1fr; gap: .45rem 1.5rem; }
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; }
+  .split.flip .photo { order: -1; }
+  .ticks.two { grid-template-columns: 1fr; }
+}
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.trio figure { border-radius: 3px; overflow: hidden; }
+.trio img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.trio figcaption { font-size: .88rem; color: var(--muted); padding-top: .4rem; }
+@media (max-width: 600px) { .trio { grid-template-columns: 1fr 1fr; } .trio figure:first-child { grid-column: span 2; } .trio figure:first-child img { aspect-ratio: 4 / 3; } }
+
+/* FAQ */
+.faq { max-width: 50rem; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; padding: 1.05rem 2.2rem 1.05rem 0; position: relative; font-weight: 700; font-size: 1.05rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: .4rem; top: 1.35rem; width: .6rem; height: .6rem; border-right: 2px solid var(--edge); border-bottom: 2px solid var(--edge); transform: rotate(45deg); transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(-135deg); top: 1.6rem; }
+.faq details p { padding: 0 0 1.15rem; color: var(--muted); }
+
+/* towns */
+.towns { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem clamp(1.5rem, 5vw, 4rem); }
+.towns h3 { margin-bottom: .6rem; }
+.towns ul { columns: 2; column-gap: 1.5rem; color: var(--muted); }
+.towns li { break-inside: avoid; padding: .15rem 0; }
+.more { margin-top: 1.4rem; }
+.more summary { cursor: pointer; font-weight: 700; color: var(--royal); text-decoration: underline; text-underline-offset: .2em; }
+.more[open] summary { margin-bottom: 1.2rem; }
+@media (max-width: 700px) { .towns { grid-template-columns: 1fr; } }
+
+/* visit / hours */
+.visit { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+.visit .pane { padding: clamp(1.3rem, 3vw, 2.2rem); }
+.hours { width: 100%; border-collapse: collapse; margin-top: .4rem; }
+.hours th, .hours td { text-align: left; padding: .65rem 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+.hours th { font-weight: 700; padding-right: 1rem; }
+.note { margin-top: .9rem; font-size: .95rem; color: var(--muted); }
+.pay { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.pay li { border: 1px solid var(--line); border-radius: 999px; padding: .2rem .75rem; font-size: .92rem; background: var(--pane); }
+.contact-lines { display: grid; gap: .9rem; margin-top: 1rem; font-size: 1.1rem; }
+.contact-lines a { font-weight: 700; }
+.contact-lines span { display: block; font-size: .9rem; color: var(--muted); }
+@media (max-width: 900px) { .visit { grid-template-columns: 1fr; } }
+
+/* closing call */
+.close { background: var(--royal); color: #fff; padding: clamp(2.6rem, 6vw, 4rem) 0; }
+.close .wrap { display: flex; flex-wrap: wrap; gap: 1.2rem 2rem; align-items: center; justify-content: space-between; }
+.close h2 { color: #fff; max-width: 22ch; }
+.close p { color: #d6dcff; margin-top: .5rem; }
+.close .btn-main { background: #fff; color: var(--royal); }
+.close .btn-main:hover { background: var(--frost); }
+.close .btn-alt { color: #fff; border-color: #fff; }
+.close .btn-alt:hover { background: #fff; color: var(--royal); }
+
+/* footer */
+footer { background: var(--ink); color: #c4d2cf; padding: 3rem 0 6rem; font-size: .95rem; }
+footer .wrap { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2rem; }
+footer .logo-chip { background: #fff; display: inline-block; padding: .4rem .6rem; border-radius: 4px; }
+footer .logo-chip img { width: 104px; }
+footer h3 { color: #fff; font-size: 1rem; margin-bottom: .6rem; }
+footer a { color: #fff; }
+footer li + li { margin-top: .3rem; }
+footer .legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.15); padding-top: 1.2rem; font-size: .85rem; color: #9fb0ad; }
+footer .legal a { color: #cfd8ff; }
+@media (max-width: 800px) { footer .wrap { grid-template-columns: 1fr; } }
+@media (min-width: 901px) { footer { padding-bottom: 3rem; } }
+
+/* sticky mobile call bar, shown after the hero */
+.stick { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: none; gap: .5rem; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .25s; }
+.stick .btn { flex: 1; min-height: 2.9rem; }
+.stick.on { transform: none; }
+@media (max-width: 900px) { .stick { display: flex; } }
+@media (prefers-reduced-motion: reduce) { .stick { transition: none; } html { scroll-behavior: auto; } }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roscoe Glass Co | Auto, home and commercial glass in Roscoe, IL">
+<meta property="og:description" content="Family-owned glass shop in Roscoe, IL since 2003. Windshields, ADAS calibration, shower doors, windows and storefronts on the Illinois and Wisconsin state line.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/roscoe-glass-company-roscoe-il/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/roscoe-glass-company-roscoe-il/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Roscoe Glass Co. Not affiliated with or endorsed by Roscoe Glass Co.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Roscoe Glass Co, home"><img src="img/logo.webp" width="360" height="208" alt="Roscoe Glass Co"></a>
+    <nav class="nav" aria-label="Main"><a href="auto-glass.html">Auto glass</a><a href="home-glass.html">Home &amp; showers</a><a href="commercial.html">Commercial</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+    <a class="call" href="tel:+18156236268"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="num">(815) 623-6268</span></a>
+    <details class="menu"><summary aria-label="Menu"><span></span></summary><nav aria-label="Main, mobile"><a href="index.html">Home</a><a href="auto-glass.html">Auto glass</a><a href="home-glass.html">Home &amp; showers</a><a href="commercial.html">Commercial</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></details>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-photo"><img src="img/hero-800.webp" srcset="img/hero-800.webp 800w, img/hero-1400.webp 1400w" sizes="(max-width: 900px) 100vw, 860px" width="1400" height="656" alt="A Roscoe Glass technician setting a windshield with suction cups" fetchpriority="high"></div>
+    <div class="pane" data-stick-after>
+      <h1>Auto, home and storefront glass from one family shop in Roscoe</h1>
+      <p class="lede">Windshields, shower doors, windows and storefronts for the Illinois and Wisconsin state line, since <span class="n">2003</span>.</p>
+      <div class="btns"><a class="btn btn-main" href="tel:+18156236268"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (815) 623-6268</a><a class="btn btn-alt" href="mailto:tina@roscoeglass.com?subject=Free%20quote%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 7.2L4 7.3V17h16V7.3l-8 4.9zM5.2 7l6.8 4.2L18.8 7H5.2z"/></svg>Email for a free quote</a></div>
+      <ul class="facts-line"><li>Free quotes</li><li>Works with your insurance</li><li>Next-day auto glass</li></ul>
+    </div>
+  </div>
+</section>
+<section class="block">
+  <div class="wrap">
+    <div class="intro">
+      <h2>What needs glass?</h2>
+      <p>Residential, commercial and auto glass, all under one roof.</p>
+    </div>
+    <div class="ways">
+      <a class="way" href="auto-glass.html"><img src="img/adas-480.webp" srcset="img/adas-480.webp 480w, img/adas-832.webp 832w" sizes="(max-width: 900px) 38vw, 380px" width="832" height="1040" alt="A technician calibrating a car&#x27;s camera system" loading="lazy" decoding="async"><div><h3>Your car</h3><ul><li>Chip and crack repair</li><li>Windshield replacement</li><li>ADAS camera calibration</li></ul><span class="go">Auto glass</span></div></a>
+      <a class="way" href="home-glass.html"><img src="img/shower-a-640.webp" width="640" height="853" alt="A glass shower door in a finished bathroom" loading="lazy" decoding="async"><div><h3>Your home</h3><ul><li>Shower and tub enclosures</li><li>Window and door glass</li><li>Custom mirrors and table tops</li></ul><span class="go">Home &amp; showers</span></div></a>
+      <a class="way" href="commercial.html"><img src="img/doors-400.webp" width="400" height="400" alt="Glass entry doors on a storefront" loading="lazy" decoding="async"><div><h3>Your business</h3><ul><li>Storefront glass</li><li>Custom glass entry doors</li><li>Replacement windows</li></ul><span class="go">Commercial</span></div></a>
+    </div>
+  </div>
+</section>
+<section class="block white">
+  <div class="wrap quarter">
+    <div class="coin" role="img" aria-label="A circle the size of a quarter"><span>about the size of a quarter</span></div>
+    <div>
+      <h2>Chip or crack? Hold a quarter up to it.</h2>
+      <p style="margin-top:.8rem;color:var(--muted)">Windshield damage smaller than a quarter can often be repaired. Replacement is usually the answer when the damage sits in the driver's line of sight, has spread, or weakens the windshield. Not sure? Call, and we will look at it for free.</p>
+      <div class="rule">
+        <div><b>Smaller than a quarter</b><p>Often repairable, so the windshield stays.</p></div>
+        <div><b>Longer than six inches</b><p>Usually means a new windshield. We assess it first.</p></div>
+        <div><b>About one hour</b><p>For a typical replacement, then one more hour before you drive while the adhesive cures.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="block">
+  <div class="wrap">
+    <div class="intro">
+      <h2>A real shop, with glass on the racks</h2>
+      <p>Roscoe Glass Co has been part of the Roscoe community since <span class="n">2003</span>. This is where the work starts.</p>
+    </div>
+    <div class="shop">
+      <figure class="a"><img src="img/shopfront-640.webp" width="640" height="435" alt="The Roscoe Glass Company building with its sign over the door" loading="lazy" decoding="async"><figcaption>The shop in Roscoe, IL</figcaption></figure>
+      <figure class="b"><img src="img/racks-640.webp" width="640" height="480" alt="Windshields stacked on racks inside the shop" loading="lazy" decoding="async"><figcaption>Windshields in stock</figcaption></figure>
+      <figure class="c"><img src="img/floor-640.webp" width="640" height="480" alt="Glass sheets and tools along the shop floor" loading="lazy" decoding="async"><figcaption>The shop floor</figcaption></figure>
+      <figure class="d"><img src="img/showroom-640.webp" width="640" height="480" alt="Inside the shop, with glass and mirrors on display" loading="lazy" decoding="async"><figcaption>Inside the shop</figcaption></figure>
+      <figure class="e"><img src="img/sign-640.webp" width="640" height="480" alt="The Roscoe Glass Company sign with the shop phone number" loading="lazy" decoding="async"><figcaption>(815) 623-6268</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="block slate">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Why the state line keeps calling</h2>
+      <p>The short version of what Roscoe Glass Co offers on every job.</p>
+    </div>
+    <ul class="reasons">
+      <li><b>In business since <span class="n">2003</span></b><span>Over <span class="n">20</span> years of glass work on the Stateline.</span></li>
+      <li><b>Locally and family-owned</b><span>Involved in the community, and customers are treated like family.</span></li>
+      <li><b>ADOT-certified specialists</b><span>Experienced technicians, from minor chips to full windshield replacements.</span></li>
+      <li><b>Manufacturer warranties available</b><span>Peace of mind on the glass we install.</span></li>
+      <li><b>Works with your insurance company</b><span>We help you through the claim.</span></li>
+      <li><b>Next-day auto glass service</b><span>And mobile service at your home or workplace.</span></li>
+    </ul>
+  </div>
+</section>
+<section class="block white">
+  <div class="wrap">
+    <div class="intro">
+      <h2>Both sides of the state line</h2>
+      <p>From the shop in Roscoe we cover Winnebago and Boone counties in Illinois and Rock County in Wisconsin, and the towns around them.</p>
+    </div>
+    <details class="more" open id="towns">
+      <summary>Towns we serve</summary>
+      <div class="towns">
+        <div><h3>Illinois</h3><ul><li>Roscoe</li><li>Rockton</li><li>Rockford</li><li>South Beloit</li><li>Machesney Park</li><li>Loves Park</li><li>Belvidere</li><li>Byron</li><li>Winnebago</li><li>Pecatonica</li><li>Durand</li><li>Marengo</li><li>Crystal Lake</li><li>Harvard</li><li>DeKalb</li><li>Sycamore</li><li>Genoa</li><li>Rochelle</li></ul></div>
+        <div><h3>Wisconsin</h3><ul><li>Beloit</li><li>Janesville</li><li>Delavan</li><li>Lake Geneva</li><li>Fontana</li><li>Walworth</li><li>Williams Bay</li><li>Elkhorn</li></ul></div>
+      </div>
+    </details>
+  </div>
+</section>
+<section class="block">
+  <div class="wrap visit">
+    <div>
+      <h2>Hours</h2>
+      <table class="hours">
+        <tr><th scope="row">Monday to Friday</th><td>8:<span class="n">00</span> am to 5:<span class="n">00</span> pm</td></tr>
+        <tr><th scope="row">Saturday</th><td>8:<span class="n">00</span> am to noon, by appointment only</td></tr>
+        <tr><th scope="row">Sunday</th><td>Closed</td></tr>
+      </table>
+      <p class="note">Cash, check, Visa, MasterCard, Discover, American Express and insurance.</p>
+    </div>
+    <div class="pane">
+      <h3>Get a free quote</h3>
+      <div class="contact-lines">
+        <a href="tel:+18156236268">(815) 623-6268<span>Call the shop</span></a>
+        <a href="mailto:tina@roscoeglass.com?subject=Free%20quote%20request">tina@roscoeglass.com<span>Tell us what needs glass</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<section class="close">
+  <div class="wrap">
+    <div>
+      <h2>Tell us what broke. We will tell you what it takes.</h2>
+      <p>Free quotes on every glass service. We work with your insurance company.</p>
+    </div>
+    <div class="btns"><a class="btn btn-main" href="tel:+18156236268"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (815) 623-6268</a><a class="btn btn-alt" href="mailto:tina@roscoeglass.com?subject=Free%20quote%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 7.2L4 7.3V17h16V7.3l-8 4.9zM5.2 7l6.8 4.2L18.8 7H5.2z"/></svg>Email for a free quote</a></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div>
+      <span class="logo-chip"><img src="img/logo.webp" width="360" height="208" alt="Roscoe Glass Co" loading="lazy"></span>
+      <p style="margin-top:1rem">Residential, commercial and auto glass for the Northern Illinois and Southern Wisconsin state line area. Locally and family-owned in Roscoe, IL, since <span class="n">2003</span>.</p>
+    </div>
+    <div>
+      <h3>Pages</h3>
+      <ul><li><a href="auto-glass.html">Auto glass</a></li><li><a href="home-glass.html">Home &amp; showers</a></li><li><a href="commercial.html">Commercial</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div>
+      <h3>Reach us</h3>
+      <ul>
+        <li><a href="tel:+18156236268">(815) 623-6268</a></li>
+        <li><a href="mailto:tina@roscoeglass.com?subject=Question%20about%20glass%20work">tina@roscoeglass.com</a></li>
+        <li>Mon to Fri, 8 am to 5 pm</li>
+        <li>Saturday, 8 am to noon, by appointment</li>
+      </ul>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Roscoe Glass Co, using text and photos from their public website. Not affiliated with or endorsed by Roscoe Glass Co. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="stick" id="stick" aria-hidden="true"><a class="btn btn-main" href="tel:+18156236268"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call</a><a class="btn btn-alt" href="mailto:tina@roscoeglass.com?subject=Free%20quote%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1zm9 7.2L4 7.3V17h16V7.3l-8 4.9zM5.2 7l6.8 4.2L18.8 7H5.2z"/></svg>Free quote</a></div>
+<script>
+(function () {
+  var t = document.getElementById('towns');
+  if (t && matchMedia('(max-width: 700px)').matches) t.removeAttribute('open');
+})();
+(function () {
+  var bar = document.getElementById('stick'), mark = document.querySelector('[data-stick-after]');
+  if (!bar || !mark || !('IntersectionObserver' in window)) return;
+  var links = bar.querySelectorAll('a');
+  function set(on) { bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', on ? 'false' : 'true'); links.forEach(function (a) { a.tabIndex = on ? 0 : -1; }); }
+  set(false);
+  new IntersectionObserver(function (en) { set(!en[0].isIntersecting && en[0].boundingClientRect.top < 0); }).observe(mark);
+})();
+</script>
+</body>
+</html>
