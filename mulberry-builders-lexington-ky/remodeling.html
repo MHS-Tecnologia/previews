@@ -54,6 +54,7 @@ p { max-width: 64ch; }
 .nav a { color: var(--ink); text-decoration: none; padding: .35rem 0; }
 .nav a:not(.btn):hover, .nav a[aria-current] { color: var(--blue-ink); box-shadow: inset 0 -3px 0 var(--blue); }
 .menu { display: none; }
+.s { display: none; }
 .top-right { display: none; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.1rem; padding: .8rem 1.35rem; border-radius: .3rem; font: 700 1.15rem/1 var(--display); letter-spacing: .01em; text-decoration: none; background: var(--blue); color: #fff; transition: background-color .15s ease, color .15s ease; }
@@ -67,7 +68,7 @@ p { max-width: 64ch; }
 
 /* Hero: their house, cut to the gable of their logo; the blue roofline draws once. */
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 4rem); align-items: end; padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(2rem, 3vw, 2.5rem); }
-.hero + div + .band { padding-top: clamp(2.5rem, 4vw, 3rem); }
+.hero + div + .band.white { padding-top: clamp(2.5rem, 4vw, 3rem); }
 .hero-text { padding-bottom: .5rem; }
 .hero h1 { margin-bottom: 1.1rem; }
 .lede { font-size: 1.2rem; color: var(--ink-2); margin-bottom: 1.6rem; }
@@ -101,9 +102,9 @@ p { max-width: 64ch; }
 .night .head p { color: var(--night-text); }
 
 /* What we do: four doors, photo first. */
-.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+.doors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem 2rem; }
 .door { display: flex; flex-direction: column; gap: .8rem; color: inherit; text-decoration: none; }
-.door img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; }
+.door img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: .25rem; }
 .door h3 { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
 .door h3 span { color: var(--blue); font-size: 1.3rem; transition: transform .2s ease; }
 .door:hover h3 span { transform: translateX(4px); }
@@ -142,6 +143,7 @@ p { max-width: 64ch; }
 
 /* Words of clients */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.qpic { aspect-ratio: 3 / 2; object-fit: cover; border-radius: .2rem; margin-bottom: 1.3rem; }
 .quote blockquote { font-style: italic; font-size: 1.1rem; line-height: 1.6; }
 .quote blockquote::before { content: "\201C"; display: block; font: 800 3.4rem/.6 var(--display); color: var(--blue); margin-bottom: .6rem; font-style: normal; }
 .quote figcaption { margin-top: .9rem; font: 600 1.05rem/1.3 var(--display); color: var(--ink-2); }
@@ -206,6 +208,13 @@ p { max-width: 64ch; }
 .groups ul { list-style: none; padding: 0; font-size: 1rem; color: var(--ink-2); }
 .groups li { padding: .15rem 0; }
 .allquotes { columns: 3 18rem; column-gap: 2.5rem; }
+.ledger { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 3rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+.ledger h3 { font-size: 3rem; color: var(--blue); margin-bottom: .8rem; }
+.ledger ul { list-style: none; padding: 0; display: grid; gap: .9rem; }
+.ledger b { display: block; font: 700 1.2rem/1.2 var(--display); }
+.ledger span { font-size: .95rem; color: var(--ink-2); }
+a.plan { color: inherit; text-decoration: none; display: block; }
+a.plan:hover h3 { color: var(--blue-ink); }
 .allquotes .quote { break-inside: avoid; margin-bottom: 2.2rem; }
 
 /* Footer */
@@ -223,7 +232,6 @@ p { max-width: 64ch; }
 .more { display: none; }
 
 @media (max-width: 1080px) {
-  .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
@@ -242,16 +250,22 @@ p { max-width: 64ch; }
   .hero { grid-template-columns: 1fr; gap: 1.1rem; padding-top: .9rem; padding-bottom: 2.5rem; }
   .gable { order: -1; }
   .roof-d { display: none; }
+  .gable picture img { clip-path: polygon(0 100%, 0 26%, 50% 0, 100% 26%, 100% 100%); }
+  .hero .actions { flex-direction: row; }
+  .hero .actions .btn { flex: 1 1 0; padding-left: .6rem; padding-right: .6rem; }
+  .hero .l { display: none; }
+  .hero .s { display: inline; }
   .roof-m { display: block; }
   .gable figcaption { display: none; }
   .hero h1 { font-size: clamp(2.2rem, 9.6vw, 2.9rem); margin-bottom: .7rem; }
   .lede { font-size: 1.05rem; margin-bottom: 1.1rem; }
-  .hero .actions { flex-direction: column; gap: .6rem; }
   .actions .btn { flex: 1 1 auto; }
   .honor { margin-top: 1.4rem; }
   .head, .feature, .people, .reach, .cause, .page-head, .split { grid-template-columns: 1fr; }
   .split.flip > :first-child { order: 0; }
   .quotes { grid-template-columns: 1fr; gap: 2rem; }
+  .ledger { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ledger h3 { font-size: 2.4rem; margin-bottom: .5rem; }
   .stories { grid-template-columns: 1fr; }
   .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .more-plans { grid-template-columns: 1fr; }
@@ -302,7 +316,7 @@ p { max-width: 64ch; }
   <article class="split" aria-labelledby="k">
     <img src="img/r-kitchen-640.webp" srcset="img/r-kitchen-640.webp 640w, img/r-kitchen-800.webp 800w, img/r-kitchen-1100.webp 1100w" sizes="(max-width: 860px) 100vw, 600px" width="1100" height="733" alt="A remodeled kitchen with a white island, pendant lights and a staircase beyond" fetchpriority="high">
     <div>
-      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>2023 Best Kitchen Remodel under $75,000, Builders Industry Association of Central Kentucky</p>
+      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>Best Kitchen Remodel under $75,000 (Builders Industry Association of Central Kentucky, 2023)</p>
       <h2 id="k">Kitchens</h2>
       <p>The kitchen has a way of bringing people together. Whether you cook every night or simply want a custom design, we build a kitchen that is practical, beautiful and tailored to how you live.</p>
       <div class="pair" style="margin-top:1.4rem"><img src="img/r-kitchen2-560.webp" srcset="img/r-kitchen2-560.webp 560w, img/r-kitchen2-800.webp 800w, img/r-kitchen2-900.webp 900w" sizes="(max-width: 860px) 46vw, 290px" width="900" height="675" alt="A kitchen with dark cabinets and a gray stone island" loading="lazy" decoding="async"><img src="img/r-kitchen3-560.webp" srcset="img/r-kitchen3-560.webp 560w, img/r-kitchen3-800.webp 800w, img/r-kitchen3-900.webp 900w" sizes="(max-width: 860px) 46vw, 290px" width="900" height="675" alt="A kitchen with blue-gray cabinets and open shelves" loading="lazy" decoding="async"></div>
@@ -312,7 +326,7 @@ p { max-width: 64ch; }
   <article class="split flip" aria-labelledby="b">
     <img src="img/r-bath-560.webp" srcset="img/r-bath-560.webp 560w, img/r-bath-800.webp 800w, img/r-bath-900.webp 900w" sizes="(max-width: 860px) 100vw, 600px" width="900" height="675" alt="A primary bathroom with two wood vanities and a walk-in closet between them" loading="lazy" decoding="async">
     <div>
-      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>2022 Best Bathroom Remodel, $40,000 to $75,000</p>
+      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>Best Bathroom Remodel $40,000-$75,000 (Builders Industry Association of Central Kentucky, 2022)</p>
       <h2 id="b">Bathrooms</h2>
       <p>Your bathroom should be your own little haven. Whether it is a walk-in shower with an overhead rain shower or a handcrafted vanity, we help you create the bathroom you want.</p>
       <div class="pair" style="margin-top:1.4rem"><img src="img/r-bath2-560.webp" srcset="img/r-bath2-560.webp 560w, img/r-bath2-800.webp 800w, img/r-bath2-900.webp 900w" sizes="(max-width: 860px) 46vw, 290px" width="900" height="675" alt="A clawfoot tub beside a glass tiled shower" loading="lazy" decoding="async"><img src="img/r-bath3-420.webp" srcset="img/r-bath3-420.webp 420w, img/r-bath3-640.webp 640w" sizes="(max-width: 860px) 46vw, 290px" width="640" height="853" alt="A bathroom with dark green walls, a wood vanity and hexagon tile" loading="lazy" decoding="async"></div>
@@ -322,17 +336,17 @@ p { max-width: 64ch; }
   <article class="split" aria-labelledby="w">
     <img src="img/r-living-640.webp" srcset="img/r-living-640.webp 640w, img/r-living-800.webp 800w, img/r-living-1100.webp 1100w" sizes="(max-width: 860px) 100vw, 600px" width="1100" height="733" alt="An open living room with a fireplace, built-in shelves and wood floors" loading="lazy" decoding="async">
     <div>
-      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>2022 Best Whole Home Renovation under $250,000</p>
+      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>Best Whole Home Renovation Under $250,000 (Builders Industry Association of Central Kentucky, 2022)</p>
       <h2 id="w">Whole-home remodels and additions</h2>
       <p>If you have been in the same home for many years, the layout may not fit how you live now. You do not need to move to get what you want. And when you have outgrown a home you love, an addition may be the answer; we have built many over the years.</p>
-      <p class="award" style="margin-top:1rem"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>2023 Best Home Addition under $125,000</p>
+      <p class="award" style="margin-top:1rem"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>Best Home Addition Under $125,000 (Builders Industry Association of Central Kentucky, 2023)</p>
     </div>
   </article>
 
   <article class="split flip" aria-labelledby="bs">
     <img src="img/r-basement-560.webp" srcset="img/r-basement-560.webp 560w, img/r-basement-800.webp 800w, img/r-basement-900.webp 900w" sizes="(max-width: 860px) 100vw, 600px" width="900" height="675" alt="A finished basement family room with carpet and a TV wall" loading="lazy" decoding="async">
     <div>
-      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>2024 Judges Award, Finished Basement</p>
+      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>Judges Award - Finished Basement (2024 Kentucky Design &amp; Remodeling Awards)</p>
       <h2 id="bs">Basements</h2>
       <p>We remodel basements at every stage, from an unfinished, damp space that needs waterproofing before anything else, to a basement ready to become a family room, home office or guest suite.</p>
       <div class="pair" style="margin-top:1.4rem"><img src="img/r-basement2-560.webp" srcset="img/r-basement2-560.webp 560w, img/r-basement2-800.webp 711w" sizes="(max-width: 860px) 46vw, 290px" width="711" height="533" alt="A bright basement lounge with a fireplace and a sectional sofa" loading="lazy" decoding="async"><img src="img/r-fireplace-560.webp" srcset="img/r-fireplace-560.webp 560w, img/r-fireplace-800.webp 800w, img/r-fireplace-900.webp 900w" sizes="(max-width: 860px) 46vw, 290px" width="900" height="675" alt="A blue shiplap fireplace wall with built-in shelves" loading="lazy" decoding="async"></div>
@@ -342,7 +356,7 @@ p { max-width: 64ch; }
   <article class="split" aria-labelledby="d">
     <img src="img/r-deck-560.webp" srcset="img/r-deck-560.webp 560w, img/r-deck-800.webp 711w" sizes="(max-width: 860px) 100vw, 600px" width="711" height="533" alt="A two-level covered deck on the back of a home" loading="lazy" decoding="async">
     <div>
-      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>2023 Best Outdoor Living, two price classes</p>
+      <p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>Best Outdoor Living $126,000-$250,000 and Best Outdoor Living Under $125,000 (Builders Industry Association of Central Kentucky, 2023)</p>
       <h2 id="d">Decks and patios</h2>
       <p>Whether you are replacing a rotting, outdated deck or building a new one from the ground up, every deck we build is designed around your yard, your home's style and how your household will use the space.</p>
     </div>
@@ -362,8 +376,8 @@ p { max-width: 64ch; }
       <h2 id="reach">Start with a conversation</h2>
       <p>Tell us what you want to change. Together we will explore your options to find a solution that meets your needs and budget.</p>
       <div class="actions">
-      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (859) 396-2523</a>
-      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email for an estimate</a>
+      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="l">Call (859) 396-2523</span><span class="s">Call us</span></a>
+      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg><span class="l">Email for an estimate</span><span class="s">Email us</span></a>
     </div>
     </div>
     <ul class="facts">

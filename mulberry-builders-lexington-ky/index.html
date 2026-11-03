@@ -10,7 +10,7 @@
 <meta name="description" content="Custom and semi-custom homes, kitchen, bath and basement remodels, roofing and restoration across Central Kentucky, from Chris and Chellie Mulberry in Lexington.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/sofiacond.woff2" crossorigin>
 <link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width: 860px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-1360.webp" imagesrcset="img/hero-1360.webp 1360w" imagesizes="(max-width: 1400px) 54vw, 720px" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1360.webp" imagesrcset="img/hero-700.webp 700w, img/hero-1360.webp 1360w" imagesizes="(max-width: 1400px) 54vw, 720px" media="(min-width: 861px)" fetchpriority="high">
 <style>
 @font-face { font-family: "Sofia Sans Condensed"; font-weight: 400 900; font-display: swap; src: url(fonts/sofiacond.woff2) format("woff2"); }
 @font-face { font-family: "Source Serif 4"; font-weight: 400 600; font-display: swap; src: url(fonts/sourceserif.woff2) format("woff2"); }
@@ -56,6 +56,7 @@ p { max-width: 64ch; }
 .nav a { color: var(--ink); text-decoration: none; padding: .35rem 0; }
 .nav a:not(.btn):hover, .nav a[aria-current] { color: var(--blue-ink); box-shadow: inset 0 -3px 0 var(--blue); }
 .menu { display: none; }
+.s { display: none; }
 .top-right { display: none; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.1rem; padding: .8rem 1.35rem; border-radius: .3rem; font: 700 1.15rem/1 var(--display); letter-spacing: .01em; text-decoration: none; background: var(--blue); color: #fff; transition: background-color .15s ease, color .15s ease; }
@@ -69,7 +70,7 @@ p { max-width: 64ch; }
 
 /* Hero: their house, cut to the gable of their logo; the blue roofline draws once. */
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 4rem); align-items: end; padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(2rem, 3vw, 2.5rem); }
-.hero + div + .band { padding-top: clamp(2.5rem, 4vw, 3rem); }
+.hero + div + .band.white { padding-top: clamp(2.5rem, 4vw, 3rem); }
 .hero-text { padding-bottom: .5rem; }
 .hero h1 { margin-bottom: 1.1rem; }
 .lede { font-size: 1.2rem; color: var(--ink-2); margin-bottom: 1.6rem; }
@@ -103,9 +104,9 @@ p { max-width: 64ch; }
 .night .head p { color: var(--night-text); }
 
 /* What we do: four doors, photo first. */
-.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+.doors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem 2rem; }
 .door { display: flex; flex-direction: column; gap: .8rem; color: inherit; text-decoration: none; }
-.door img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; }
+.door img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: .25rem; }
 .door h3 { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
 .door h3 span { color: var(--blue); font-size: 1.3rem; transition: transform .2s ease; }
 .door:hover h3 span { transform: translateX(4px); }
@@ -144,6 +145,7 @@ p { max-width: 64ch; }
 
 /* Words of clients */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.qpic { aspect-ratio: 3 / 2; object-fit: cover; border-radius: .2rem; margin-bottom: 1.3rem; }
 .quote blockquote { font-style: italic; font-size: 1.1rem; line-height: 1.6; }
 .quote blockquote::before { content: "\201C"; display: block; font: 800 3.4rem/.6 var(--display); color: var(--blue); margin-bottom: .6rem; font-style: normal; }
 .quote figcaption { margin-top: .9rem; font: 600 1.05rem/1.3 var(--display); color: var(--ink-2); }
@@ -208,6 +210,13 @@ p { max-width: 64ch; }
 .groups ul { list-style: none; padding: 0; font-size: 1rem; color: var(--ink-2); }
 .groups li { padding: .15rem 0; }
 .allquotes { columns: 3 18rem; column-gap: 2.5rem; }
+.ledger { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 3rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+.ledger h3 { font-size: 3rem; color: var(--blue); margin-bottom: .8rem; }
+.ledger ul { list-style: none; padding: 0; display: grid; gap: .9rem; }
+.ledger b { display: block; font: 700 1.2rem/1.2 var(--display); }
+.ledger span { font-size: .95rem; color: var(--ink-2); }
+a.plan { color: inherit; text-decoration: none; display: block; }
+a.plan:hover h3 { color: var(--blue-ink); }
 .allquotes .quote { break-inside: avoid; margin-bottom: 2.2rem; }
 
 /* Footer */
@@ -225,7 +234,6 @@ p { max-width: 64ch; }
 .more { display: none; }
 
 @media (max-width: 1080px) {
-  .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
@@ -244,16 +252,22 @@ p { max-width: 64ch; }
   .hero { grid-template-columns: 1fr; gap: 1.1rem; padding-top: .9rem; padding-bottom: 2.5rem; }
   .gable { order: -1; }
   .roof-d { display: none; }
+  .gable picture img { clip-path: polygon(0 100%, 0 26%, 50% 0, 100% 26%, 100% 100%); }
+  .hero .actions { flex-direction: row; }
+  .hero .actions .btn { flex: 1 1 0; padding-left: .6rem; padding-right: .6rem; }
+  .hero .l { display: none; }
+  .hero .s { display: inline; }
   .roof-m { display: block; }
   .gable figcaption { display: none; }
   .hero h1 { font-size: clamp(2.2rem, 9.6vw, 2.9rem); margin-bottom: .7rem; }
   .lede { font-size: 1.05rem; margin-bottom: 1.1rem; }
-  .hero .actions { flex-direction: column; gap: .6rem; }
   .actions .btn { flex: 1 1 auto; }
   .honor { margin-top: 1.4rem; }
   .head, .feature, .people, .reach, .cause, .page-head, .split { grid-template-columns: 1fr; }
   .split.flip > :first-child { order: 0; }
   .quotes { grid-template-columns: 1fr; gap: 2rem; }
+  .ledger { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ledger h3 { font-size: 2.4rem; margin-bottom: .5rem; }
   .stories { grid-template-columns: 1fr; }
   .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .more-plans { grid-template-columns: 1fr; }
@@ -307,42 +321,50 @@ p { max-width: 64ch; }
     <h1 id="h1">New homes, remodels and roofs, built by the Mulberrys in Lexington</h1>
     <p class="lede">A design-build team led by Chris and Chellie Mulberry, building and remodeling homes across Central Kentucky.</p>
     <div class="actions">
-      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (859) 396-2523</a>
-      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email for an estimate</a>
+      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="l">Call (859) 396-2523</span><span class="s">Call us</span></a>
+      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg><span class="l">Email for an estimate</span><span class="s">Email us</span></a>
     </div>
-    <p class="honor"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg><span><b>2023 Builder of the Year</b>Chris Mulberry, named by the Builders Industry Association of Central Kentucky</span></p>
+    <p class="honor"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg><span><b>Builder of the Year – Chris Mulberry</b>Builders Industry Association of Central Kentucky, 2023 awards</span></p>
   </div>
   <figure class="gable"><div class="frame">
     <picture>
-      <source media="(max-width: 860px)" srcset="img/hero-m-800.webp 800w" sizes="100vw" width="800" height="552">
-      <img src="img/hero-1360.webp" srcset="img/hero-1360.webp 1360w" sizes="(max-width: 1400px) 54vw, 720px" width="1360" height="1114" alt="A two-story home with blue siding, a brick front and a two-car garage, built by Mulberry Builders" fetchpriority="high">
+      <source media="(max-width: 860px)" srcset="img/hero-m-800.webp 800w" sizes="100vw" width="800" height="762">
+      <img src="img/hero-1360.webp" srcset="img/hero-700.webp 700w, img/hero-1360.webp 1360w" sizes="(max-width: 1400px) 54vw, 720px" width="1360" height="1114" alt="A two-story home with blue siding, a brick front and a two-car garage, built by Mulberry Builders" fetchpriority="high">
     </picture>
-    <svg class="roof-d" viewBox="0 0 1360 1114" aria-hidden="true"><path pathLength="1" d="M-40.8,445.6 L0.0,445.6 L272.0,267.4 L272.0,66.8 L394.4,66.8 L394.4,187.2 L680.0,0.0 L1360.0,445.6 L1360.0,557.0"/></svg>
-    <svg class="roof-m" viewBox="0 0 800 552" aria-hidden="true"><path pathLength="1" d="M-24.0,220.8 L0.0,220.8 L160.0,132.5 L160.0,33.1 L232.0,33.1 L232.0,92.7 L400.0,0.0 L800.0,220.8 L800.0,276.0"/></svg></div>
+    <svg class="roof-d" viewBox="0 0 1360 1114" aria-hidden="true"><path pathLength="1" d="M0.0,445.6 L272.0,267.4 L272.0,44.6 L394.4,44.6 L394.4,187.2 L680.0,0.0 L1360.0,445.6"/></svg>
+    <svg class="roof-m" viewBox="0 0 800 762" aria-hidden="true"><path pathLength="1" d="M0.0,198.1 L160.0,118.9 L160.0,30.5 L232.0,30.5 L232.0,83.2 L400.0,0.0 L800.0,198.1"/></svg></div>
   </figure>
 </section>
 <div data-bar-after></div>
 
-<section class="band white" aria-labelledby="what">
+<section class="band white" aria-labelledby="awh">
+  <div class="wrap">
+    <div class="head"><h2 id="awh">Recent awards</h2><p>As listed on our awards page, from the Builders Industry Association of Central Kentucky, Best of Lexington, the Kentucky Design &amp; Remodeling Awards and St. Jude.</p></div>
+    <div class="ledger"><div class="yr"><h3 class="num">2024</h3><ul><li><b>Judges Award - New Construction under 2,000 square feet</b><span>Kentucky Design &amp; Remodeling Awards</span></li><li><b>Judges Award - Finished Basement</b><span>Kentucky Design &amp; Remodeling Awards</span></li><li><b>Best of Lexington - Bronze - Restoration Services</b><span>Kentucky Design &amp; Remodeling Awards</span></li></ul></div><div class="yr"><h3 class="num">2023</h3><ul><li><b>Builder of the Year – Chris Mulberry</b><span>Builders Industry Association of Central Kentucky</span></li><li><b>GOLD – Restoration Services</b><span>Best of Lexington</span></li><li><b>Best Kitchen Remodel under $75,000</b><span>Builders Industry Association of Central Kentucky</span></li><li><b>St. Jude Golden Hammer Award</b><span>St. Jude</span></li></ul></div><div class="yr"><h3 class="num">2022</h3><ul><li><b>Best New Home Design $626,000-$750,000</b><span>Builders Industry Association of Central Kentucky</span></li><li><b>Best Whole Home Renovation Under $250,000</b><span>Builders Industry Association of Central Kentucky</span></li><li><b>Best Bathroom Remodel $40,000-$75,000</b><span>Builders Industry Association of Central Kentucky</span></li></ul></div></div>
+    <p style="margin-top:2rem"><a href="about.html#awards">See every award, 2022 to 2024</a></p>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="what">
   <div class="wrap">
     <div class="head">
       <h2 id="what">One team, from the foundation to the roof</h2>
       <p>Our licensed team designs, remodels and builds anything from kitchens and bathrooms to basements, and everything in between. We build custom and semi-custom homes, and we handle roofing and restoration.</p>
     </div>
     <div class="doors">
-      <a class="door" href="homes.html"><img src="img/s-homes-560.webp" srcset="img/s-homes-560.webp 560w, img/s-homes-800.webp 800w, img/s-homes-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="A white farmhouse built by Mulberry Builders, seen across a field of tall grass" loading="lazy" decoding="async">
+      <a class="door" href="homes.html"><img src="img/s-homes-560.webp" srcset="img/s-homes-560.webp 560w, img/s-homes-800.webp 800w, img/s-homes-900.webp 900w" sizes="(max-width: 600px) 100vw, 46vw" width="900" height="675" alt="A white farmhouse built by Mulberry Builders, seen across a field of tall grass" loading="lazy" decoding="async">
         <h3>New homes <span aria-hidden="true">&#8250;</span></h3>
         <p>Custom homes and a book of floor plans that can be tailored to your family.</p>
         <ul><li>Floor plans</li><li>Custom homes</li></ul></a>
-      <a class="door" href="remodeling.html"><img src="img/s-remodel-560.webp" srcset="img/s-remodel-560.webp 560w, img/s-remodel-800.webp 800w, img/s-remodel-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="A remodeled kitchen with a gray island, white quartz top and wood floors" loading="lazy" decoding="async">
+      <a class="door" href="remodeling.html"><img src="img/s-remodel-560.webp" srcset="img/s-remodel-560.webp 560w, img/s-remodel-800.webp 800w, img/s-remodel-900.webp 900w" sizes="(max-width: 600px) 100vw, 46vw" width="900" height="675" alt="A remodeled kitchen with a gray island, white quartz top and wood floors" loading="lazy" decoding="async">
         <h3>Remodeling <span aria-hidden="true">&#8250;</span></h3>
         <p>From refreshing a single room to whole-home renovations and additions.</p>
         <ul><li>Kitchens</li><li>Baths</li><li>Basements</li><li>Decks</li></ul></a>
-      <a class="door" href="roofing.html"><img src="img/s-roof-560.webp" srcset="img/s-roof-560.webp 560w, img/s-roof-800.webp 800w, img/s-roof-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="Aerial view of a new shingle roof on a two-story home" loading="lazy" decoding="async">
+      <a class="door" href="roofing.html"><img src="img/s-roof-560.webp" srcset="img/s-roof-560.webp 560w, img/s-roof-800.webp 800w, img/s-roof-900.webp 900w" sizes="(max-width: 600px) 100vw, 46vw" width="900" height="675" alt="Aerial view of a new shingle roof on a two-story home" loading="lazy" decoding="async">
         <h3>Roofing <span aria-hidden="true">&#8250;</span></h3>
         <p>A roofing division for replacements, repairs, gutters and siding.</p>
         <ul><li>Roofs</li><li>Gutters</li><li>Siding</li></ul></a>
-      <a class="door" href="roofing.html#restoration"><img src="img/s-restore-560.webp" srcset="img/s-restore-560.webp 560w, img/s-restore-800.webp 800w, img/s-restore-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="A storm-damaged roof covered with blue tarps for emergency protection" loading="lazy" decoding="async">
+      <a class="door" href="roofing.html#restoration"><img src="img/s-restore-560.webp" srcset="img/s-restore-560.webp 560w, img/s-restore-800.webp 800w, img/s-restore-900.webp 900w" sizes="(max-width: 600px) 100vw, 46vw" width="900" height="675" alt="A storm-damaged roof covered with blue tarps for emergency protection" loading="lazy" decoding="async">
         <h3>Restoration <span aria-hidden="true">&#8250;</span></h3>
         <p>Storm, fire and water damage repaired, with help through the insurance process.</p>
         <ul><li>Storm</li><li>Fire</li><li>Water</li></ul></a>
@@ -359,13 +381,42 @@ p { max-width: 64ch; }
     <div>
       <p class="kicker">From our floor plans</p>
       <h2 id="eliz">The Elizabeth</h2>
-      <p>At the 2023 Grand Tour of Homes, The Elizabeth won Best Overall in the $426,000 to $550,000 class, along with seven other awards in that class.</p>
+      <p>Among our 2023 awards, the Grand Tour of Homes named The Elizabeth Best Overall – $426,000-$550,000, along with seven more awards in that range.</p>
       <ul class="prizes">
         <li class="top">Best Overall</li><li>Curb Appeal</li><li>Landscaping</li><li>Kitchen</li><li>Primary Bedroom Suite</li><li>Floor Plan</li><li>Interior Fixtures</li><li>Interior Lighting</li>
       </ul>
       <dl class="tblock" style="--cols:3"><div><dt>Bedrooms</dt><dd class="num">3 or 4</dd></div><div><dt>4-bed size</dt><dd class="num">2,200 sq ft</dd></div><div><dt>4-bed baths</dt><dd class="num">2.5</dd></div></dl>
       <p style="margin-top:1.6rem"><a class="btn" href="homes.html#plans">See the floor plans</a></p>
     </div>
+  </div>
+</section>
+
+<section class="band white" aria-labelledby="pt">
+  <div class="wrap">
+    <div class="head"><h2 id="pt">Start from a floor plan</h2><p>Some of our pre-designed plans, which can be tailored to suit your family's needs.</p></div>
+    <div class="plans"><a class="plan" href="homes.html#plans">
+      <img src="img/p-charleston-560.webp" srcset="img/p-charleston-560.webp 560w, img/p-charleston-800.webp 800w, img/p-charleston-1000.webp 1000w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 380px" width="1000" height="455" alt="The Charleston, a Mulberry Builders home" loading="lazy" decoding="async">
+      <dl class="tblock" style="--cols:3"><div><dt>Bedrooms</dt><dd class="num">3</dd></div><div><dt>Baths</dt><dd class="num">2</dd></div><div><dt>Size</dt><dd class="num">2,000 sq ft</dd></div></dl>
+      <h3>The Charleston</h3>
+      <p class="tag">Our most popular plan</p>
+      <p>Single-level living with an open concept made for entertaining. Also offered with an additional primary suite on the second floor.</p>
+    </a>
+    <a class="plan" href="homes.html#plans">
+      <img src="img/p-leah-560.webp" srcset="img/p-leah-560.webp 560w, img/p-leah-800.webp 800w, img/p-leah-1000.webp 1000w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 380px" width="1000" height="455" alt="The Leah, a Mulberry Builders home" loading="lazy" decoding="async">
+      <dl class="tblock" style="--cols:3"><div><dt>Bedrooms</dt><dd class="num">3</dd></div><div><dt>Baths</dt><dd class="num">2.5</dd></div><div><dt>Fireplace</dt><dd class="num">Gas</dd></div></dl>
+      <h3>The Leah</h3>
+      <p class="tag">One of our newest plans</p>
+      <p>A large primary suite and closet, and a family room with a gas fireplace and custom built-ins just inside the front door.</p>
+    </a>
+    <a class="plan" href="homes.html#plans">
+      <img src="img/p-caroline-560.webp" srcset="img/p-caroline-560.webp 560w, img/p-caroline-800.webp 800w, img/p-caroline-1000.webp 1000w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 380px" width="1000" height="455" alt="The Caroline, a Mulberry Builders home" loading="lazy" decoding="async">
+      <dl class="tblock" style="--cols:3"><div><dt>Bedrooms</dt><dd class="num">3</dd></div><div><dt>Baths</dt><dd class="num">2</dd></div><div><dt>Size</dt><dd class="num">1,600 sq ft</dd></div></dl>
+      <h3>The Caroline</h3>
+      <p class="tag">Classic Collection</p>
+      <p>An updated version of one of our earliest plans: single-floor living with an open kitchen, dining and living space.</p>
+    </a>
+    </div>
+    <p style="margin-top:2.2rem"><a class="btn line" href="homes.html#plans">See all floor plans</a></p>
   </div>
 </section>
 
@@ -387,7 +438,7 @@ p { max-width: 64ch; }
 <section class="band white" aria-labelledby="words">
   <div class="wrap">
     <div class="head"><h2 id="words">What clients say</h2><p>Homeowners across Lexington, Georgetown, Nicholasville, Versailles, Richmond and the rest of Central Kentucky.</p></div>
-    <div class="quotes"><figure class="quote"><blockquote><p>We started our kitchen renovation with another local company years ago only to be completely disappointed with no progress made. We hired Mulberry and ended up with our dream kitchen, quality work, and nothing but positive feelings about Mulberry and the work they do.</p></blockquote><figcaption>Erika S., kitchen renovation</figcaption></figure><figure class="quote"><blockquote><p>Mulberry built our custom home. We worked with them from showing a picture of what we wanted till the last detail was installed and we loved the process.</p></blockquote><figcaption>Amy M., custom home</figcaption></figure><figure class="quote"><blockquote><p>We could not be happier with the service and work the team at Mulberry Builders provided. They helped fix the water damage inside and outside… Work and cleanup was fantastic.</p></blockquote><figcaption>Allison T., Nicholasville, KY</figcaption></figure></div>
+    <div class="quotes"><figure class="quote"><img src="img/r-kitchen3-560.webp" srcset="img/r-kitchen3-560.webp 560w, img/r-kitchen3-800.webp 800w, img/r-kitchen3-900.webp 900w" sizes="(max-width: 860px) 100vw, 380px" width="900" height="675" alt="A kitchen remodel by Mulberry Builders, with blue-gray cabinets and wood floors" loading="lazy" decoding="async" class="qpic"><blockquote><p>We started our kitchen renovation with another local company years ago only to be completely disappointed with no progress made. We hired Mulberry and ended up with our dream kitchen, quality work, and nothing but positive feelings about Mulberry and the work they do.</p></blockquote><figcaption>Erika S., kitchen renovation</figcaption></figure><figure class="quote"><img src="img/c-farmhouse-640.webp" srcset="img/c-farmhouse-640.webp 640w, img/c-farmhouse-800.webp 800w, img/c-farmhouse-1100.webp 1100w" sizes="(max-width: 860px) 100vw, 380px" width="1100" height="733" alt="A custom farmhouse built by Mulberry Builders" loading="lazy" decoding="async" class="qpic"><blockquote><p>Mulberry built our custom home. We worked with them from showing a picture of what we wanted till the last detail was installed and we loved the process.</p></blockquote><figcaption>Amy M., custom home</figcaption></figure><figure class="quote"><img src="img/f-framing-560.webp" srcset="img/f-framing-560.webp 560w, img/f-framing-800.webp 800w, img/f-framing-900.webp 900w" sizes="(max-width: 860px) 100vw, 380px" width="900" height="675" alt="A home opened to the framing during a Mulberry Builders restoration" loading="lazy" decoding="async" class="qpic"><blockquote><p>We could not be happier with the service and work the team at Mulberry Builders provided. They helped fix the water damage inside and outside… Work and cleanup was fantastic.</p></blockquote><figcaption>Allison T., Nicholasville, KY, water damage</figcaption></figure></div>
     <p style="margin-top:2.2rem"><a href="about.html#clients">Read more client stories</a></p>
   </div>
 </section>
@@ -409,8 +460,8 @@ p { max-width: 64ch; }
       <h2 id="reach">Tell us what you want to build</h2>
       <p>If you have questions, we want to make sure we answer them. If you are ready to talk through your project, we can help you come up with a realistic plan that makes sense for your family and budget.</p>
       <div class="actions">
-      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (859) 396-2523</a>
-      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email for an estimate</a>
+      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="l">Call (859) 396-2523</span><span class="s">Call us</span></a>
+      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg><span class="l">Email for an estimate</span><span class="s">Email us</span></a>
     </div>
     </div>
     <ul class="facts">

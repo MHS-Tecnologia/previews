@@ -54,6 +54,7 @@ p { max-width: 64ch; }
 .nav a { color: var(--ink); text-decoration: none; padding: .35rem 0; }
 .nav a:not(.btn):hover, .nav a[aria-current] { color: var(--blue-ink); box-shadow: inset 0 -3px 0 var(--blue); }
 .menu { display: none; }
+.s { display: none; }
 .top-right { display: none; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.1rem; padding: .8rem 1.35rem; border-radius: .3rem; font: 700 1.15rem/1 var(--display); letter-spacing: .01em; text-decoration: none; background: var(--blue); color: #fff; transition: background-color .15s ease, color .15s ease; }
@@ -67,7 +68,7 @@ p { max-width: 64ch; }
 
 /* Hero: their house, cut to the gable of their logo; the blue roofline draws once. */
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 4rem); align-items: end; padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(2rem, 3vw, 2.5rem); }
-.hero + div + .band { padding-top: clamp(2.5rem, 4vw, 3rem); }
+.hero + div + .band.white { padding-top: clamp(2.5rem, 4vw, 3rem); }
 .hero-text { padding-bottom: .5rem; }
 .hero h1 { margin-bottom: 1.1rem; }
 .lede { font-size: 1.2rem; color: var(--ink-2); margin-bottom: 1.6rem; }
@@ -101,9 +102,9 @@ p { max-width: 64ch; }
 .night .head p { color: var(--night-text); }
 
 /* What we do: four doors, photo first. */
-.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+.doors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem 2rem; }
 .door { display: flex; flex-direction: column; gap: .8rem; color: inherit; text-decoration: none; }
-.door img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; }
+.door img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: .25rem; }
 .door h3 { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
 .door h3 span { color: var(--blue); font-size: 1.3rem; transition: transform .2s ease; }
 .door:hover h3 span { transform: translateX(4px); }
@@ -142,6 +143,7 @@ p { max-width: 64ch; }
 
 /* Words of clients */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.qpic { aspect-ratio: 3 / 2; object-fit: cover; border-radius: .2rem; margin-bottom: 1.3rem; }
 .quote blockquote { font-style: italic; font-size: 1.1rem; line-height: 1.6; }
 .quote blockquote::before { content: "\201C"; display: block; font: 800 3.4rem/.6 var(--display); color: var(--blue); margin-bottom: .6rem; font-style: normal; }
 .quote figcaption { margin-top: .9rem; font: 600 1.05rem/1.3 var(--display); color: var(--ink-2); }
@@ -206,6 +208,13 @@ p { max-width: 64ch; }
 .groups ul { list-style: none; padding: 0; font-size: 1rem; color: var(--ink-2); }
 .groups li { padding: .15rem 0; }
 .allquotes { columns: 3 18rem; column-gap: 2.5rem; }
+.ledger { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 3rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+.ledger h3 { font-size: 3rem; color: var(--blue); margin-bottom: .8rem; }
+.ledger ul { list-style: none; padding: 0; display: grid; gap: .9rem; }
+.ledger b { display: block; font: 700 1.2rem/1.2 var(--display); }
+.ledger span { font-size: .95rem; color: var(--ink-2); }
+a.plan { color: inherit; text-decoration: none; display: block; }
+a.plan:hover h3 { color: var(--blue-ink); }
 .allquotes .quote { break-inside: avoid; margin-bottom: 2.2rem; }
 
 /* Footer */
@@ -223,7 +232,6 @@ p { max-width: 64ch; }
 .more { display: none; }
 
 @media (max-width: 1080px) {
-  .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
@@ -242,16 +250,22 @@ p { max-width: 64ch; }
   .hero { grid-template-columns: 1fr; gap: 1.1rem; padding-top: .9rem; padding-bottom: 2.5rem; }
   .gable { order: -1; }
   .roof-d { display: none; }
+  .gable picture img { clip-path: polygon(0 100%, 0 26%, 50% 0, 100% 26%, 100% 100%); }
+  .hero .actions { flex-direction: row; }
+  .hero .actions .btn { flex: 1 1 0; padding-left: .6rem; padding-right: .6rem; }
+  .hero .l { display: none; }
+  .hero .s { display: inline; }
   .roof-m { display: block; }
   .gable figcaption { display: none; }
   .hero h1 { font-size: clamp(2.2rem, 9.6vw, 2.9rem); margin-bottom: .7rem; }
   .lede { font-size: 1.05rem; margin-bottom: 1.1rem; }
-  .hero .actions { flex-direction: column; gap: .6rem; }
   .actions .btn { flex: 1 1 auto; }
   .honor { margin-top: 1.4rem; }
   .head, .feature, .people, .reach, .cause, .page-head, .split { grid-template-columns: 1fr; }
   .split.flip > :first-child { order: 0; }
   .quotes { grid-template-columns: 1fr; gap: 2rem; }
+  .ledger { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ledger h3 { font-size: 2.4rem; margin-bottom: .5rem; }
   .stories { grid-template-columns: 1fr; }
   .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .more-plans { grid-template-columns: 1fr; }
@@ -310,7 +324,7 @@ p { max-width: 64ch; }
 
 <section class="band night" id="restoration" aria-labelledby="rest">
   <div class="wrap">
-    <div class="head"><div><p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>Best of Lexington, Gold, Restoration Services (2023)</p><h2 id="rest">Restoration after storm, fire or water</h2></div>
+    <div class="head"><div><p class="award"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg>GOLD – Restoration Services (Best of Lexington, 2023)</p><h2 id="rest">Restoration after storm, fire or water</h2></div>
     <p>Your home is your safe place. When a storm, a fire or a leak damages it, our craftsmen and women help you through each step and get you back home as soon as possible.</p></div>
     <div class="stories">
       <article><img src="img/f-tarp-560.webp" srcset="img/f-tarp-560.webp 560w, img/f-tarp-800.webp 800w, img/f-tarp-900.webp 900w" sizes="(max-width: 860px) 100vw, 380px" width="900" height="675" alt="A damaged roof covered with blue tarps" loading="lazy" decoding="async"><h3 style="margin-top:1rem">Wind and storm damage</h3><p>We get our fair share of storms in Central Kentucky. New siding or roof repairs after a major storm, we are ready to help.</p></article>
@@ -326,7 +340,7 @@ p { max-width: 64ch; }
     <p>Our licensed team assesses the damage to your home or business accurately and quickly, creates a plan of action and a list of materials, and works with your insurance carrier so every repair is done correctly and on time. Our experience with multiple carriers lets us guide you through the process.</p>
     <p>Severe weather hits businesses too. Whether your building needs a new roof or new siding, we understand that time matters during a commercial restoration.</p>
   </div>
-  <div><figure class="quote"><blockquote><p>We could not be happier with the service and work the team at Mulberry Builders provided. They helped fix the water damage inside and outside… Work and cleanup was fantastic.</p></blockquote><figcaption>Allison T., Nicholasville, KY</figcaption></figure></div>
+  <div><figure class="quote"><blockquote><p>We could not be happier with the service and work the team at Mulberry Builders provided. They helped fix the water damage inside and outside… Work and cleanup was fantastic.</p></blockquote><figcaption>Allison T., Nicholasville, KY, water damage</figcaption></figure></div>
 </div></section>
 </main>
 <section class="band night" aria-labelledby="reach">
@@ -335,8 +349,8 @@ p { max-width: 64ch; }
       <h2 id="reach">Damage to your home or roof?</h2>
       <p>Call us and tell us what happened. We will help you understand what needs to be done and how the insurance process works.</p>
       <div class="actions">
-      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (859) 396-2523</a>
-      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email for an estimate</a>
+      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="l">Call (859) 396-2523</span><span class="s">Call us</span></a>
+      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg><span class="l">Email for an estimate</span><span class="s">Email us</span></a>
     </div>
     </div>
     <ul class="facts">

@@ -54,6 +54,7 @@ p { max-width: 64ch; }
 .nav a { color: var(--ink); text-decoration: none; padding: .35rem 0; }
 .nav a:not(.btn):hover, .nav a[aria-current] { color: var(--blue-ink); box-shadow: inset 0 -3px 0 var(--blue); }
 .menu { display: none; }
+.s { display: none; }
 .top-right { display: none; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.1rem; padding: .8rem 1.35rem; border-radius: .3rem; font: 700 1.15rem/1 var(--display); letter-spacing: .01em; text-decoration: none; background: var(--blue); color: #fff; transition: background-color .15s ease, color .15s ease; }
@@ -67,7 +68,7 @@ p { max-width: 64ch; }
 
 /* Hero: their house, cut to the gable of their logo; the blue roofline draws once. */
 .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 4rem); align-items: end; padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(2rem, 3vw, 2.5rem); }
-.hero + div + .band { padding-top: clamp(2.5rem, 4vw, 3rem); }
+.hero + div + .band.white { padding-top: clamp(2.5rem, 4vw, 3rem); }
 .hero-text { padding-bottom: .5rem; }
 .hero h1 { margin-bottom: 1.1rem; }
 .lede { font-size: 1.2rem; color: var(--ink-2); margin-bottom: 1.6rem; }
@@ -101,9 +102,9 @@ p { max-width: 64ch; }
 .night .head p { color: var(--night-text); }
 
 /* What we do: four doors, photo first. */
-.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+.doors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem 2rem; }
 .door { display: flex; flex-direction: column; gap: .8rem; color: inherit; text-decoration: none; }
-.door img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; }
+.door img { aspect-ratio: 16 / 9; object-fit: cover; border-radius: .25rem; }
 .door h3 { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
 .door h3 span { color: var(--blue); font-size: 1.3rem; transition: transform .2s ease; }
 .door:hover h3 span { transform: translateX(4px); }
@@ -142,6 +143,7 @@ p { max-width: 64ch; }
 
 /* Words of clients */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.qpic { aspect-ratio: 3 / 2; object-fit: cover; border-radius: .2rem; margin-bottom: 1.3rem; }
 .quote blockquote { font-style: italic; font-size: 1.1rem; line-height: 1.6; }
 .quote blockquote::before { content: "\201C"; display: block; font: 800 3.4rem/.6 var(--display); color: var(--blue); margin-bottom: .6rem; font-style: normal; }
 .quote figcaption { margin-top: .9rem; font: 600 1.05rem/1.3 var(--display); color: var(--ink-2); }
@@ -206,6 +208,13 @@ p { max-width: 64ch; }
 .groups ul { list-style: none; padding: 0; font-size: 1rem; color: var(--ink-2); }
 .groups li { padding: .15rem 0; }
 .allquotes { columns: 3 18rem; column-gap: 2.5rem; }
+.ledger { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 3rem; border-top: 2px solid var(--ink); padding-top: 1.5rem; }
+.ledger h3 { font-size: 3rem; color: var(--blue); margin-bottom: .8rem; }
+.ledger ul { list-style: none; padding: 0; display: grid; gap: .9rem; }
+.ledger b { display: block; font: 700 1.2rem/1.2 var(--display); }
+.ledger span { font-size: .95rem; color: var(--ink-2); }
+a.plan { color: inherit; text-decoration: none; display: block; }
+a.plan:hover h3 { color: var(--blue-ink); }
 .allquotes .quote { break-inside: avoid; margin-bottom: 2.2rem; }
 
 /* Footer */
@@ -223,7 +232,6 @@ p { max-width: 64ch; }
 .more { display: none; }
 
 @media (max-width: 1080px) {
-  .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
@@ -242,16 +250,22 @@ p { max-width: 64ch; }
   .hero { grid-template-columns: 1fr; gap: 1.1rem; padding-top: .9rem; padding-bottom: 2.5rem; }
   .gable { order: -1; }
   .roof-d { display: none; }
+  .gable picture img { clip-path: polygon(0 100%, 0 26%, 50% 0, 100% 26%, 100% 100%); }
+  .hero .actions { flex-direction: row; }
+  .hero .actions .btn { flex: 1 1 0; padding-left: .6rem; padding-right: .6rem; }
+  .hero .l { display: none; }
+  .hero .s { display: inline; }
   .roof-m { display: block; }
   .gable figcaption { display: none; }
   .hero h1 { font-size: clamp(2.2rem, 9.6vw, 2.9rem); margin-bottom: .7rem; }
   .lede { font-size: 1.05rem; margin-bottom: 1.1rem; }
-  .hero .actions { flex-direction: column; gap: .6rem; }
   .actions .btn { flex: 1 1 auto; }
   .honor { margin-top: 1.4rem; }
   .head, .feature, .people, .reach, .cause, .page-head, .split { grid-template-columns: 1fr; }
   .split.flip > :first-child { order: 0; }
   .quotes { grid-template-columns: 1fr; gap: 2rem; }
+  .ledger { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ledger h3 { font-size: 2.4rem; margin-bottom: .5rem; }
   .stories { grid-template-columns: 1fr; }
   .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .more-plans { grid-template-columns: 1fr; }
@@ -323,7 +337,7 @@ p { max-width: 64ch; }
 <section class="band" id="awards" aria-labelledby="aw">
   <div class="wrap">
     <div class="head"><h2 id="aw">Awards and recognition</h2><p>From the Builders Industry Association of Central Kentucky, Best of Lexington, the Grand Tour of Homes and St. Jude. We know none of it would be possible without our team, our families and our community.</p></div>
-    <div class="years" data-more="2" data-label="Show 2022 awards"><div class="year"><h3 class="num">2024</h3><div class="groups"><div><h4>Kentucky Design &amp; Remodeling Awards</h4><ul><li>Best of Lexington, Bronze, Restoration Services</li><li>Judges Award, New Construction under 2,000 square feet</li><li>Judges Award, Finished Basement</li></ul></div></div></div><div class="year"><h3 class="num">2023</h3><div class="groups"><div><h4>Builders Industry Association of Central Kentucky</h4><ul><li>Builder of the Year, Chris Mulberry</li><li>Best Outdoor Living, $126,000 to $250,000</li><li>Best Outdoor Living, under $125,000</li><li>Best Home Addition, under $125,000</li><li>Best Kitchen Remodel, under $75,000</li><li>Best New Home Design, $476,000 to $550,000</li></ul></div><div><h4>Best of Lexington</h4><ul><li>Gold, Restoration Services</li><li>Silver, Home Builder</li><li>Silver, Remodeler/Contract</li></ul></div><div><h4>St. Jude</h4><ul><li>St. Jude Dream Home Builder</li><li>St. Jude Golden Hammer Award</li></ul></div><div><h4>Grand Tour of Homes: The Elizabeth, $426,000 to $550,000</h4><ul><li>Best Overall</li><li>Best Curb Appeal</li><li>Best Landscaping</li><li>Best Kitchen</li><li>Best Primary Bedroom Suite</li><li>Best Floor Plan</li><li>Best Interior Fixtures</li><li>Best Interior Lighting</li></ul></div><div><h4>Also</h4><ul><li>Tour of Remodeled Homes chairman</li></ul></div></div></div><div class="year"><h3 class="num">2022</h3><div class="groups"><div><h4>Builders Industry Association of Central Kentucky</h4><ul><li>Best New Home Design, $626,000 to $750,000</li><li>Best New Home Design, $401,000 to $475,000</li><li>Best Home Addition, $125,000 to $250,000</li><li>Best Garage, $75,000</li><li>Best Bathroom Remodel, $40,000 to $75,000</li><li>Best Whole Home Renovation, under $250,000</li></ul></div><div><h4>Best of Lexington</h4><ul><li>Bronze, Home Builder</li></ul></div></div></div></div>
+    <div class="years" data-more="2" data-label="Show 2022 awards"><div class="year"><h3 class="num">2024</h3><div class="groups"><div><h4>Kentucky Design &amp; Remodeling Awards</h4><ul><li>Best of Lexington - Bronze - Restoration Services</li><li>Judges Award - New Construction under 2,000 square feet</li><li>Judges Award - Finished Basement</li></ul></div></div></div><div class="year"><h3 class="num">2023</h3><div class="groups"><div><h4>Builders Industry Association of Central Kentucky</h4><ul><li>Builder of the Year – Chris Mulberry</li><li>Best Outdoor Living $126,000-$250,000</li><li>Best Outdoor Living Under $125,000</li><li>Best Home Addition Under $125,000</li><li>Best Kitchen Remodel under $75,000</li><li>Best New Home Design $476,000-$550,000</li></ul></div><div><h4>Best of Lexington</h4><ul><li>GOLD – Restoration Services</li><li>SILVER – Home Builder</li><li>SILVER – Remolder/Contract</li></ul></div><div><h4>St. Jude</h4><ul><li>St. Jude Dream Home Builder</li><li>St. Jude Golden Hammer Award</li></ul></div><div><h4>Grand Tour of Homes: The Elizabeth</h4><ul><li>Best Curb Appeal – $426,000-$550,000</li><li>Best Landscaping – $426,000-$550,000</li><li>Best Kitchen – $426,000-$550,000</li><li>Best Primary Bedroom Suite – $426,000-$550,000</li><li>Best Floor Plan – $426,000-$550,000</li><li>Best Interior Fixtures – $426,000-$550,000</li><li>Best Interior Lighting – $426,000-$550,000</li><li>Best Overall – $426,000-$550,000</li></ul></div><div><h4>Also</h4><ul><li>Tour of remodled homes chairman</li></ul></div></div></div><div class="year"><h3 class="num">2022</h3><div class="groups"><div><h4>Builders Industry Association of Central Kentucky</h4><ul><li>Best New Home Design $626,000-$750,000</li><li>Best New Home Design $401,000-$475,000</li><li>Best Home Addition $125,000-$250,000</li><li>Best Garage $75,000</li><li>Best Bathroom Remodel $40,000-$75,000</li><li>Best Whole Home Renovation Under $250,000</li></ul></div><div><h4>Best of Lexington</h4><ul><li>Bronze – Home Builder</li></ul></div></div></div></div>
   </div>
 </section>
 
@@ -339,7 +353,7 @@ p { max-width: 64ch; }
 <section class="band white" id="clients" aria-labelledby="cl">
   <div class="wrap">
     <div class="head"><h2 id="cl">Client stories</h2><p>Every one of these is a real client, on a real Mulberry Builders project.</p></div>
-    <div class="allquotes" data-more="4" data-label="Show 6 more client stories"><figure class="quote"><blockquote><p>We started our kitchen renovation with another local company years ago only to be completely disappointed with no progress made. We hired Mulberry and ended up with our dream kitchen, quality work, and nothing but positive feelings about Mulberry and the work they do.</p></blockquote><figcaption>Erika S., kitchen renovation</figcaption></figure><figure class="quote"><blockquote><p>Mulberry built our custom home. We worked with them from showing a picture of what we wanted till the last detail was installed and we loved the process.</p></blockquote><figcaption>Amy M., custom home</figcaption></figure><figure class="quote"><blockquote><p>We could not be happier with the service and work the team at Mulberry Builders provided. They helped fix the water damage inside and outside… Work and cleanup was fantastic.</p></blockquote><figcaption>Allison T., Nicholasville, KY</figcaption></figure><figure class="quote"><blockquote><p>Chris, Chellie and the rest of the Mulberry Builders team are on top of it. Not only are they organized and professional, but they care about the details of your job as much as you do.</p></blockquote><figcaption>Wiley A., Wilmore, KY</figcaption></figure><figure class="quote"><blockquote><p>We had a total master bath remodel, partial 2nd bath remodel and new exterior doors replaced. Earl was at our house making sure everything went well and answered any questions we had. We are so happy with the results!</p></blockquote><figcaption>Christine T.</figcaption></figure><figure class="quote"><blockquote><p>Mulberry Builders is the best in the business; their professionalism and quality was exemplary… Absolutely top notch.</p></blockquote><figcaption>Tim B., Georgetown, KY</figcaption></figure><figure class="quote"><blockquote><p>The utmost professionals, timely, effective, and efficient. … I would highly recommend this company and its services to anyone wanting anything from an upgrade, remodel or even a new house!</p></blockquote><figcaption>Bo W.</figcaption></figure><figure class="quote"><blockquote><p>Chris and the rest of the team get 5 star rating in every category. Timely, Trustworthy, Dependable and Honest, Polite, Mannerly and Respectful, Conscientious Quality work, Attention to Detail and Very Thorough, Neat.</p></blockquote><figcaption>Lynda W., Lexington, KY</figcaption></figure><figure class="quote"><blockquote><p>There is no one we&#x27;d trust more with our home! We&#x27;ve worked with them multiple times and cannot recommend them enough.</p></blockquote><figcaption>Amanda M.</figcaption></figure><figure class="quote"><blockquote><p>Mulberry Builders contacted me, sent out an employee who saw the problem and immediately corrected the issue. Problem solved. Thank you Mulberry Builders!</p></blockquote><figcaption>Margaret G., roof</figcaption></figure></div>
+    <div class="allquotes" data-more="4" data-label="Show 6 more client stories"><figure class="quote"><blockquote><p>We started our kitchen renovation with another local company years ago only to be completely disappointed with no progress made. We hired Mulberry and ended up with our dream kitchen, quality work, and nothing but positive feelings about Mulberry and the work they do.</p></blockquote><figcaption>Erika S., kitchen renovation</figcaption></figure><figure class="quote"><blockquote><p>Mulberry built our custom home. We worked with them from showing a picture of what we wanted till the last detail was installed and we loved the process.</p></blockquote><figcaption>Amy M., custom home</figcaption></figure><figure class="quote"><blockquote><p>We could not be happier with the service and work the team at Mulberry Builders provided. They helped fix the water damage inside and outside… Work and cleanup was fantastic.</p></blockquote><figcaption>Allison T., Nicholasville, KY, water damage</figcaption></figure><figure class="quote"><blockquote><p>Chris, Chellie and the rest of the Mulberry Builders team are on top of it. Not only are they organized and professional, but they care about the details of your job as much as you do.</p></blockquote><figcaption>Wiley A., Wilmore, KY</figcaption></figure><figure class="quote"><blockquote><p>We had a total master bath remodel, partial 2nd bath remodel and new exterior doors replaced. Earl was at our house making sure everything went well and answered any questions we had. We are so happy with the results!</p></blockquote><figcaption>Christine T.</figcaption></figure><figure class="quote"><blockquote><p>Mulberry Builders is the best in the business; their professionalism and quality was exemplary… Absolutely top notch.</p></blockquote><figcaption>Tim B., Georgetown, KY</figcaption></figure><figure class="quote"><blockquote><p>The utmost professionals, timely, effective, and efficient. … I would highly recommend this company and its services to anyone wanting anything from an upgrade, remodel or even a new house!</p></blockquote><figcaption>Bo W.</figcaption></figure><figure class="quote"><blockquote><p>Chris and the rest of the team get 5 star rating in every category. Timely, Trustworthy, Dependable and Honest, Polite, Mannerly and Respectful, Conscientious Quality work, Attention to Detail and Very Thorough, Neat.</p></blockquote><figcaption>Lynda W., Lexington, KY</figcaption></figure><figure class="quote"><blockquote><p>There is no one we&#x27;d trust more with our home! We&#x27;ve worked with them multiple times and cannot recommend them enough.</p></blockquote><figcaption>Amanda M.</figcaption></figure><figure class="quote"><blockquote><p>Mulberry Builders contacted me, sent out an employee who saw the problem and immediately corrected the issue. Problem solved. Thank you Mulberry Builders!</p></blockquote><figcaption>Margaret G., roof</figcaption></figure></div>
   </div>
 </section>
 </main>
@@ -349,8 +363,8 @@ p { max-width: 64ch; }
       <h2 id="reach">Tell us what you want to build</h2>
       <p>If you have questions, we want to make sure we answer them. If you are ready to talk through your project, we can help you come up with a realistic plan that makes sense for your family and budget.</p>
       <div class="actions">
-      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (859) 396-2523</a>
-      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email for an estimate</a>
+      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="l">Call (859) 396-2523</span><span class="s">Call us</span></a>
+      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg><span class="l">Email for an estimate</span><span class="s">Email us</span></a>
     </div>
     </div>
     <ul class="facts">
