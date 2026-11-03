@@ -67,7 +67,7 @@ p{max-width:38rem}
 .textlink{font-weight:600;color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
 
 /* hero */
-.hero{background:var(--navy-2);color:#fff;padding:clamp(1.5rem,3.4vw,2.75rem) 0 0}
+.hero{background:var(--navy-2);color:#fff;padding:clamp(1.5rem,3.4vw,2.75rem) 0 clamp(2rem,4vw,3.5rem)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,3.5vw,3.25rem);align-items:center}
 .hero h1{font-size:clamp(2.5rem,4.4vw,4rem);margin-bottom:1.1rem}
 .hero .lede{color:#dfe4f1;font-size:1.125rem;margin-bottom:1.6rem}
@@ -118,6 +118,44 @@ p{max-width:38rem}
 .pair h3{margin-bottom:.6rem}
 .pair .textlink{display:inline-block;margin-top:.9rem}
 
+/* then and now: one truck in 1963, a 75-ton rotator today, joined by a road's centre line */
+.tn{background:var(--navy-3);color:#fff;padding:clamp(3rem,7vw,5.5rem) 0}
+.tn-grid{display:grid;grid-template-columns:minmax(0,1fr) 9rem minmax(0,1fr);align-items:center;gap:1.5rem}
+.tn figure{margin:0}
+.tn img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.tn figcaption{margin-top:1rem;color:#dfe4f1;font-size:1.05rem;max-width:30rem}
+.tn figcaption .lettered{display:block;font-size:clamp(3.5rem,7vw,6rem);margin-bottom:.35rem}
+.tn figcaption small{display:block;margin-top:.6rem;font-size:.85rem;color:#aeb8d3}
+.tn-road{align-self:stretch;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.9rem;padding-bottom:7rem}
+.tn-road::before{content:"";display:block;width:100%;height:6px;background:repeating-linear-gradient(90deg,var(--gold) 0 26px,transparent 26px 44px)}
+.tn-road span{font-weight:600;color:var(--gold);font-size:1rem;white-space:nowrap}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.25rem,3vw,2.5rem)}
+.three article{border-top:2px solid var(--asphalt);padding-top:1.25rem}
+.three img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;margin-bottom:1.1rem}
+.three h3{margin-bottom:.55rem}
+.three .textlink{display:inline-block;margin-top:.8rem}
+.band{position:relative;overflow:hidden;background:var(--navy-3);color:#fff;padding:clamp(4rem,9vw,7rem) 0 clamp(2rem,4vw,3rem)}
+.band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:.28}
+.band .wrap{position:relative}
+.band h2{max-width:40rem}
+.band p{color:#e4e8f3;margin-top:1rem;font-size:1.125rem}
+.band .crew{border-top-color:var(--gold)}
+.band .crew dt{color:var(--gold);font-size:clamp(3rem,6vw,5rem)}
+.band .crew dd{color:#e4e8f3}
+.band .crew div+div{border-left-color:rgba(255,255,255,.25)}
+.band-cap{font-size:.85rem!important;color:#aeb8d3!important;margin-top:2.5rem!important}
+.jump{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;list-style:none;padding:clamp(2rem,4vw,3rem) 0 0}
+.jump a{display:block;text-decoration:none;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.5rem;line-height:1.1}
+.jump img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;margin-bottom:.5rem}
+.jump a:hover span{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--gold)}
+.svc-dark{background:var(--navy-3);color:#fff}
+.svc-dark .svc{border-bottom:0}
+.svc-dark p{color:#dfe4f1}
+.svc-dark .svc figcaption{color:#aeb8d3}
+.svc-dark .quote{color:#fff}
+.grid li:first-child{grid-column:span 2;grid-row:span 2}
+.grid li:first-child img{aspect-ratio:5/4}
+
 /* contact band */
 .callband{background:var(--navy);color:#fff;padding:clamp(3rem,7vw,5rem) 0;border-top:4px solid var(--gold)}
 .callband .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:2rem 3rem;align-items:end}
@@ -132,8 +170,6 @@ p{max-width:38rem}
 .page-head p{color:#dfe4f1;font-size:1.125rem}
 .page-head .ctas{margin-top:1.5rem}
 .svc{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,4rem);padding:clamp(2.5rem,5vw,3.5rem) 0;border-bottom:1px solid var(--line);align-items:start}
-.svc:nth-of-type(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-.svc:nth-of-type(even) figure{order:-1}
 .svc h2{margin-bottom:1rem}
 .svc p+p{margin-top:.8rem}
 .svc figure{margin:0}
@@ -189,8 +225,11 @@ dialog.lb button{position:absolute;top:-3rem;right:0;background:var(--gold);colo
 @media (max-width:899px){
   .nav>a{display:none}
   .menu{display:block}
-  .hero-grid,.fleet,.split,.svc,.svc:nth-of-type(even),.callband .wrap{grid-template-columns:1fr}
-  .svc:nth-of-type(even) figure{order:0}
+  .hero-grid,.fleet,.split,.svc,.callband .wrap{grid-template-columns:1fr}
+  .tn-grid{grid-template-columns:1fr;gap:0}
+  .tn-road{flex-direction:row;padding:1.75rem 0;justify-content:flex-start;gap:1rem}
+  .tn-road::before{width:6px;height:4.5rem;background:repeating-linear-gradient(180deg,var(--gold) 0 18px,transparent 18px 30px);margin-left:1.5rem}
+  .jump{grid-template-columns:repeat(2,minmax(0,1fr))}
   .callbar{display:block}
   .site-foot .cols{grid-template-columns:1fr 1fr}
   .site-foot .cols>div:first-child{grid-column:1/-1}
@@ -203,7 +242,7 @@ dialog.lb button{position:absolute;top:-3rem;right:0;background:var(--gold);colo
   .crew{grid-template-columns:1fr 1fr}
   .crew div:nth-child(3){padding-left:0;border-left:0}
   .crew div:nth-child(n+3){margin-top:1rem}
-  .pair,.rules{grid-template-columns:1fr}
+  .pair,.rules,.three{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   .demo{font-size:.75rem;padding:.4rem .75rem}
@@ -219,6 +258,9 @@ dialog.lb button{position:absolute;top:-3rem;right:0;background:var(--gold);colo
   .facts p+p{border-top:1px solid rgba(255,255,255,.18)}
   .ticks{columns:1}
   .grid{grid-template-columns:1fr}
+  .grid li:first-child{grid-column:auto;grid-row:auto}
+  .grid li:first-child img{aspect-ratio:4/3}
+  .jump a{font-size:1.25rem}
   .site-foot .cols{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
@@ -264,10 +306,22 @@ dialog.lb button{position:absolute;top:-3rem;right:0;background:var(--gold);colo
         <figcaption>A Brewer’s heavy rescue unit at work on a truck on its side. Photo from Brewer’s own site.</figcaption>
       </figure>
     </div>
-    <div class="facts">
-      <p><strong>Since 1963</strong>Started by Dennis Brewer with one truck and a modest loan.</p>
-      <p><strong>75-ton rotator</strong>Plus air cushion recovery units and heavy duty hydraulic wreckers.</p>
-      <p><strong>25 road service units</strong>And 18 more from sister company Sakstrup’s Towing.</p>
+  </div>
+</section>
+
+<section class="tn" aria-labelledby="tn-h">
+  <div class="wrap">
+    <h2 id="tn-h" class="vh">From one truck to a 75-ton rotator</h2>
+    <div class="tn-grid">
+      <figure class="tn-then">
+        <img src="img/history-585.webp" srcset="img/history-585.webp 585w" sizes="(max-width: 899px) calc(100vw - 2rem), 470px" width="585" height="415" alt="A vintage Brewer’s tow truck parked in front of a service station signed Brewer’s North Campus Gulf" loading="lazy" decoding="async">
+        <figcaption><span class="lettered">1963</span>Dennis Brewer, 20, an Ann Arbor native, starts out with a vision, a modest loan and one truck.<small>Photo: Brewer’s North Campus Gulf, from Brewer’s history page.</small></figcaption>
+      </figure>
+      <div class="tn-road" aria-hidden="true"><span>over 60 years</span></div>
+      <figure class="tn-now">
+        <img src="img/rotator-600.webp" srcset="img/rotator-600.webp 600w" sizes="(max-width: 899px) calc(100vw - 2rem), 470px" width="600" height="450" alt="Brewer’s navy 75-ton rotator with its boom raised straight up against a blue sky" loading="lazy" decoding="async">
+        <figcaption><span class="lettered">75 tons</span>Today: 25 road service units, 18 more from sister company Sakstrup’s, and a 75-ton rotator.<small>Photo: the rotator, boom up, from Brewer’s site.</small></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -278,70 +332,62 @@ dialog.lb button{position:absolute;top:-3rem;right:0;background:var(--gold);colo
       <h2 id="lanes-h">One call covers a dead battery or a semi on its side</h2>
       <p>Cars, trucks, buses, recreational vehicles and motorcycles, in Ann Arbor, the surrounding areas in Michigan and the greater Midwest region.</p>
     </div>
-    <div class="lanes">
-      <article class="lane">
-        <div class="lane-img"><img src="img/driver-600.webp" srcset="img/driver-600.webp 600w, img/driver-1000.webp 1000w, img/driver-1400.webp 1400w" sizes="(max-width: 759px) calc(100vw - 2rem), (max-width: 1248px) 44vw, 547px" width="1400" height="1050" alt="A Brewer’s driver in a hi-vis vest beside a navy Brewer’s wrecker towing a silver SUV" loading="lazy" decoding="async"></div>
-        <div>
-          <h3>24-hour road service</h3>
-          <p>Lockouts, jump starts, flat tires, stuck calls and towing. Road service is mostly handled by Brewer’s light and medium duty tow trucks and flatbeds.</p>
-          <a class="textlink" href="services.html#road-service">Road service and towing</a>
-        </div>
+    <div class="three">
+      <article>
+        <img src="img/driver-600.webp" srcset="img/driver-600.webp 600w, img/driver-1000.webp 1000w" sizes="(max-width: 759px) calc(100vw - 2rem), (max-width: 1248px) 30vw, 362px" width="1400" height="1050" alt="A Brewer’s driver in a hi-vis vest beside a navy Brewer’s wrecker towing a silver SUV" loading="lazy" decoding="async">
+        <h3>24-hour road service</h3>
+        <p>Lockouts, jump starts, flat tires, stuck calls and towing, mostly handled by light and medium duty tow trucks and flatbeds.</p>
+        <a class="textlink" href="services.html#road-service">Road service and towing</a>
       </article>
-      <article class="lane">
-        <div class="lane-img"><img src="img/g-rec-1-400.webp" srcset="img/g-rec-1-400.webp 400w, img/g-rec-1-800.webp 800w" sizes="(max-width: 759px) calc(100vw - 2rem), (max-width: 1248px) 44vw, 547px" width="800" height="600" alt="A Brewer’s wrecker boom lifting an overturned trailer while a crew member in a safety vest watches" loading="lazy" decoding="async"></div>
-        <div>
-          <h3>24-hour recovery</h3>
-          <p>Air cushion recovery units, a 75-ton rotator and the experience of Brewer’s heavy duty and recovery specialists. In their words: “We accept any challenge.”</p>
-          <a class="textlink" href="services.html#recovery">Recovery</a>
-        </div>
+      <article>
+        <img src="img/g-rec-1-400.webp" srcset="img/g-rec-1-400.webp 400w, img/g-rec-1-800.webp 800w" sizes="(max-width: 759px) calc(100vw - 2rem), (max-width: 1248px) 30vw, 362px" width="800" height="600" alt="A Brewer’s wrecker boom lifting an overturned trailer while a crew member in a safety vest watches" loading="lazy" decoding="async">
+        <h3>24-hour recovery</h3>
+        <p>Air cushion recovery units, a 75-ton rotator and Brewer’s heavy duty and recovery specialists. In their words: “We accept any challenge.”</p>
+        <a class="textlink" href="services.html#recovery">Recovery</a>
       </article>
-      <article class="lane">
-        <div class="lane-img"><img src="img/g-propane-400.webp" srcset="img/g-propane-400.webp 400w, img/g-propane-800.webp 800w" sizes="(max-width: 759px) calc(100vw - 2rem), (max-width: 1248px) 44vw, 547px" width="800" height="600" alt="Brewer’s 75-ton rotator lifting a large white propane tank onto a trailer" loading="lazy" decoding="async"></div>
-        <div>
-          <h3>Specialized services</h3>
-          <p>A Landoll lowboy and Trail King detach trailers can safely transport nearly anything. Mis-loads, load shifts, steel coils of any size, and equipment moving of all sizes, shapes and weights.</p>
-          <a class="textlink" href="services.html#specialized">Specialized services</a>
-        </div>
+      <article>
+        <img src="img/g-propane-400.webp" srcset="img/g-propane-400.webp 400w, img/g-propane-800.webp 800w" sizes="(max-width: 759px) calc(100vw - 2rem), (max-width: 1248px) 30vw, 362px" width="800" height="600" alt="Brewer’s 75-ton rotator lifting a large white propane tank onto a trailer" loading="lazy" decoding="async">
+        <h3>Specialized services</h3>
+        <p>A Landoll lowboy and Trail King detach trailers for nearly anything. Mis-loads, load shifts, steel coils of any size and equipment moving.</p>
+        <a class="textlink" href="services.html#specialized">Specialized services</a>
       </article>
     </div>
   </div>
 </section>
 
-<section class="sec navy" aria-labelledby="fleet-h">
-  <div class="wrap fleet">
-    <figure>
-      <img src="img/rotator-600.webp" srcset="img/rotator-600.webp 600w" sizes="(max-width: 899px) calc(100vw - 2rem), 456px" width="600" height="450" alt="Brewer’s navy 75-ton rotator with its boom raised straight up against a blue sky" loading="lazy" decoding="async">
-      <figcaption>The 75-ton rotator, boom up.</figcaption>
-    </figure>
-    <div>
-      <h2 id="fleet-h">From a lockout kit to a 75-ton rotator</h2>
-      <p style="margin:1rem 0 1.5rem">The fleet ranges from light duty tow trucks to specialized moving and hauling equipment. This is Brewer’s own list of services and equipment.</p>
-      <ul class="ticks">
-        <li>Light, medium and heavy duty tow trucks</li>
-        <li>Light and heavy duty flatbeds</li>
-        <li>Air cushion recovery units</li>
-        <li>Heavy duty hydraulic wreckers</li>
-        <li>Lowboy and detached trailers</li>
-        <li>Semi tractor and trailers</li>
-        <li>Front end loader, forklift, hi-lo</li>
-        <li>Lockouts, jump starts, flat tires, stuck calls</li>
-        <li>Uprighting, lifting, hauling and moving any vehicle or object</li>
-        <li>Vehicle and equipment storage</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="sec on-light" aria-labelledby="crew-h">
+<section class="band" aria-labelledby="crew-h">
+  <img src="img/g-silos-800.webp" srcset="img/g-silos-400.webp 400w, img/g-silos-800.webp 800w" sizes="100vw" width="800" height="600" alt="" loading="lazy" decoding="async">
   <div class="wrap">
     <h2 id="crew-h">The people who pick up at 3 a.m.</h2>
-    <p style="margin-top:1rem;font-size:1.125rem;color:var(--muted)">Drivers are professionally trained and backed by phone operators and dispatchers in a central dispatch office, trained to do everything possible in a safe and honest manner.</p>
+    <p>Professionally trained drivers, backed by phone operators and dispatchers in a central dispatch office who do everything possible in a safe and honest manner.</p>
     <dl class="crew">
-      <div><dt>14</dt><dd>professional drivers</dd></div>
-      <div><dt>9</dt><dd>dispatchers</dd></div>
-      <div><dt>16 yrs</dt><dd>average driver experience with the company</dd></div>
-      <div><dt>36 yrs</dt><dd>average with Brewer’s for the five most senior drivers</dd></div>
+      <div><dt class="lettered">14</dt><dd>professional drivers</dd></div>
+      <div><dt class="lettered">9</dt><dd>dispatchers</dd></div>
+      <div><dt class="lettered">16 yrs</dt><dd>average driver experience with the company</dd></div>
+      <div><dt class="lettered">36 yrs</dt><dd>average with Brewer’s for the five most senior drivers</dd></div>
     </dl>
+    <p class="band-cap">Behind: the 75-ton rotator moving silos, from Brewer’s gallery.</p>
+  </div>
+</section>
+
+<section class="sec on-light" aria-labelledby="fleet-h">
+  <div class="wrap fleet">
+    <div>
+      <h2 id="fleet-h">From a lockout kit to a 75-ton rotator</h2>
+      <p style="margin-top:1rem;color:var(--muted)">The fleet ranges from light duty tow trucks to specialized moving and hauling equipment. This is Brewer’s own list of services and equipment.</p>
+    </div>
+    <ul class="ticks">
+      <li>Light, medium and heavy duty tow trucks</li>
+      <li>Light and heavy duty flatbeds</li>
+      <li>Air cushion recovery units</li>
+      <li>Heavy duty hydraulic wreckers</li>
+      <li>Lowboy and detached trailers</li>
+      <li>Semi tractor and trailers</li>
+      <li>Front end loader, forklift, hi-lo</li>
+      <li>Lockouts, jump starts, flat tires, stuck calls</li>
+      <li>Uprighting, lifting, hauling and moving any vehicle or object</li>
+      <li>Vehicle and equipment storage</li>
+    </ul>
   </div>
 </section>
 
