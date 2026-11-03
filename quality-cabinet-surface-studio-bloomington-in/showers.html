@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Showers | Quality Cabinet & Surface Studio</title>
+<meta name="description" content="Shower walls and pans in cultured marble, quartz, natural stone, porcelain and solid surface.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="img/q-96.webp" type="image/webp">
+<link rel="preload" href="fonts/marcellus.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Marcellus"; font-weight: 400; font-display: swap; src: url(fonts/marcellus.woff2) format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 300 700; font-display: swap; src: url(fonts/librefranklin.woff2) format("woff2"); }
+/* Their logo's navy and charcoal, on the cool white of a quartz slab; maple from the cabinet doors. */
+:root {
+  --navy: #003e7d; --navy-deep: #022a55; --ink: #1c2224; --steel: #535d66;
+  --paper: #f3f4f2; --slab: #e2e5e1; --line: #c9cec9; --maple: #8a4b22; --white: #fff;
+  --wrap: 1240px; --gut: clamp(16px, 4vw, 40px);
+  --display: "Marcellus", "Palatino Linotype", Georgia, serif;
+  --text: "Libre Franklin", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--text); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--navy); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--maple); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.12; margin: 0; letter-spacing: .005em; }
+h2 { font-size: clamp(30px, 4.2vw, 46px); }
+h3 { font-size: 24px; }
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 8px; top: 8px; z-index: 50; background: var(--white); padding: 8px 12px; }
+
+.demo { background: var(--ink); color: #dfe3e6; font-size: 12.5px; line-height: 1.4; padding: 7px var(--gut); text-align: center; }
+
+.top { background: var(--white); border-bottom: 1px solid var(--line); position: relative; z-index: 20; }
+.top .wrap { display: flex; align-items: center; gap: 20px; min-height: 66px; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); margin-right: auto; }
+.brand img { width: 42px; height: 42px; }
+.brand b { display: block; font: 400 25px/1 var(--display); letter-spacing: .14em; color: var(--navy); }
+.brand small { display: block; font-size: 10.5px; letter-spacing: .09em; color: var(--steel); margin-top: 4px; }
+.nav { display: flex; gap: 2px; }
+.nav a { color: var(--ink); text-decoration: none; font-size: 15px; padding: 10px 11px; border-radius: 3px; }
+.nav a:hover { background: var(--paper); }
+.nav a[aria-current] { color: var(--navy); box-shadow: inset 0 -2px 0 var(--navy); border-radius: 0; }
+.top .call { white-space: nowrap; font-weight: 600; font-size: 15px; text-decoration: none; }
+.menu-btn { display: none; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 18px;
+  border-radius: 3px; font: 600 16px/1.2 var(--text); text-decoration: none; border: 2px solid var(--navy); transition: background .2s, color .2s; }
+.btn.solid { background: var(--navy); color: var(--white); }
+.btn.solid:hover { background: var(--navy-deep); border-color: var(--navy-deep); }
+.btn.line { color: var(--navy); background: transparent; }
+.btn.line:hover { background: var(--white); }
+.btn.light { color: var(--white); border-color: rgba(255,255,255,.7); }
+.btn.light:hover { background: rgba(255,255,255,.1); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn .short { display: none; }
+@media (min-width: 961px) { .hero .actions { flex-wrap: nowrap; } .hero .actions .btn { padding: 0 16px; font-size: 15.5px; } }
+
+/* Home hero: their kitchen with the sample chips you would hold up in the showroom */
+.hero { padding: 40px 0 56px; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; }
+.hero .copy { order: 1; }
+.hero .show { order: 2; }
+.renamed { font-size: 14px; color: var(--steel); margin-bottom: 18px; }
+.renamed b { color: var(--ink); font-weight: 600; }
+.hero h1 { font-size: clamp(32px, 3.9vw, 50px); color: var(--ink); }
+.hero .lede { margin-top: 18px; max-width: 34em; color: #333b40; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.hours { margin-top: 20px; font-size: 14.5px; color: var(--steel); }
+.frame { position: relative; aspect-ratio: 4 / 3; background: var(--slab); border-radius: 4px; overflow: hidden; }
+.frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .45s ease; }
+.frame img.off { opacity: 0; }
+.chips { display: flex; gap: 10px; margin-top: 14px; }
+.chip { flex: 1 1 0; min-width: 0; background: none; border: 0; padding: 0; cursor: pointer; font: 500 13px/1.25 var(--text); color: var(--steel); text-align: left; }
+.chip span.sw { display: block; aspect-ratio: 1; border-radius: 3px; background-size: cover; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); transition: box-shadow .2s, transform .2s; }
+.chip span.nm { display: block; margin-top: 6px; }
+.chip[aria-pressed="true"] { color: var(--ink); font-weight: 600; }
+.chip[aria-pressed="true"] span.sw { box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--navy); }
+.chip:hover span.sw { transform: translateY(-2px); }
+.caption { margin-top: 14px; font-size: 15px; color: #333b40; min-height: 3.2em; }
+.caption b { font-weight: 600; color: var(--ink); }
+.caption a { white-space: nowrap; }
+
+section { padding: 84px 0; }
+.alt { background: var(--white); }
+.head { max-width: 40rem; margin-bottom: 36px; }
+.head p { margin-top: 14px; color: #333b40; }
+
+/* Made in America */
+.usa .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.usa figure { margin: 0; }
+.usa img { border-radius: 4px; }
+.facts { list-style: none; padding: 0; margin: 26px 0 0; border-top: 1px solid var(--line); }
+.facts li { padding: 13px 0; border-bottom: 1px solid var(--line); }
+.lines { margin-top: 22px; font-size: 15px; color: var(--steel); }
+.lines b { color: var(--ink); font-weight: 600; }
+.more { display: inline-block; margin-top: 24px; font-weight: 600; }
+
+/* Inside the cabinet */
+.inside { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.inside figure { margin: 0; }
+.inside img { aspect-ratio: 2 / 3; object-fit: cover; border-radius: 4px; width: 100%; }
+.inside figcaption { font-size: 14.5px; margin-top: 8px; color: #333b40; }
+
+/* Sample board of surfaces */
+.board { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; border-top: 1px solid var(--line); }
+.board a { display: grid; grid-template-columns: 76px 1fr; gap: 18px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); }
+.board a:hover h3 { color: var(--navy); }
+.board .sw { width: 76px; height: 76px; border-radius: 3px; background-size: cover; }
+.board h3 { font-size: 23px; }
+.board p { font-size: 15px; color: #3c454b; margin-top: 3px; }
+.board .sw.spec { background: repeating-linear-gradient(135deg, #d9dcd8 0 6px, #cfd3cf 6px 12px); }
+
+/* Showers */
+.showers .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
+.showers img { border-radius: 4px; }
+.counts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
+.counts div { border-top: 3px solid var(--navy); padding-top: 12px; }
+.counts b { display: block; font: 400 34px/1 var(--display); color: var(--navy); }
+.counts span { display: block; font-size: 14.5px; margin-top: 8px; color: #333b40; }
+
+/* Commercial */
+.trade { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 14px; }
+.trade img { border-radius: 4px; width: 100%; height: 100%; object-fit: cover; }
+.trade figure { margin: 0; }
+.uses { columns: 2; margin: 20px 0 0; padding-left: 18px; font-size: 15.5px; }
+
+/* Visit band */
+.visit { background: var(--navy); color: #e8eef5; }
+.visit h2 { color: var(--white); }
+.visit .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: start; }
+.visit dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 12px 22px; font-size: 16px; }
+.visit dt { color: #a9bfd8; }
+.visit dd { margin: 0; color: var(--white); }
+.visit a { color: var(--white); }
+.visit .actions { margin-top: 30px; }
+.visit .btn.solid { background: var(--white); color: var(--navy); border-color: var(--white); }
+.visit .btn.solid:hover { background: var(--paper); }
+.visit p.note { margin-top: 16px; color: #c6d4e4; }
+
+/* Inner pages */
+.page-head { padding: 52px 0 36px; }
+.page-head h1 { font-size: clamp(36px, 5vw, 60px); }
+.page-head p { margin-top: 14px; max-width: 40rem; font-size: 18px; color: #333b40; }
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.jump a { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; background: var(--white); border: 1px solid var(--line); border-radius: 3px; font-size: 14.5px; text-decoration: none; color: var(--ink); min-height: 44px; }
+.jump a i { width: 30px; height: 30px; border-radius: 2px; background-size: cover; }
+.mat { padding: 56px 0; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
+.mat .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+.mat:nth-of-type(even) figure { order: 2; }
+.mat figure { margin: 0; }
+.mat img { border-radius: 4px; width: 100%; }
+.mat img.tall { aspect-ratio: 4 / 3; object-fit: cover; }
+.mat h2 { display: flex; align-items: center; gap: 14px; }
+.mat h2 i { width: 44px; height: 44px; border-radius: 3px; background-size: cover; flex: none; }
+.mat p { margin-top: 14px; max-width: 34em; }
+.ticks { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 22px; }
+.ticks li { padding-left: 20px; position: relative; font-size: 15.5px; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .62em; width: 9px; height: 9px; border-radius: 1px; background: var(--navy); transform: rotate(45deg); }
+.brands { margin-top: 20px; font-size: 15px; color: var(--steel); }
+.brands b { color: var(--ink); font-weight: 600; }
+.sub { margin-top: 22px; }
+.sub h3 { font-size: 20px; }
+.partner { background: var(--white); border-left: 3px solid var(--maple); padding: 18px 20px; margin-top: 22px; font-size: 15.5px; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.grid2 img, .grid3 img { border-radius: 4px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.grid3 figure, .grid2 figure { margin: 0; }
+figcaption.lbl { font-size: 14px; color: var(--steel); margin-top: 6px; }
+
+.opts { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.opts li { display: grid; grid-template-columns: 200px 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.opts b { font-family: var(--display); font-weight: 400; font-size: 21px; }
+
+/* Gallery */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.filters button { font: 500 15px/1 var(--text); padding: 0 14px; min-height: 44px; border: 1px solid var(--line); background: var(--white); color: var(--ink); border-radius: 3px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.filters button span { opacity: .7; margin-left: 4px; }
+.wall { columns: 3 280px; column-gap: 14px; }
+.wall button { display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 0; background: none; cursor: zoom-in; break-inside: avoid; text-align: left; }
+.wall img { border-radius: 4px; width: 100%; }
+.wall span { display: block; font-size: 13.5px; color: var(--steel); margin-top: 5px; }
+.wall button[hidden] { display: none; }
+dialog { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); }
+dialog::backdrop { background: rgba(20,24,27,.88); }
+dialog img { max-height: 84vh; width: auto; border-radius: 3px; }
+dialog p { color: #fff; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+dialog button { font: 600 15px var(--text); background: #fff; border: 0; border-radius: 3px; min-height: 44px; padding: 0 16px; cursor: pointer; }
+
+/* About / visit page */
+.offer { columns: 2; padding-left: 18px; margin: 18px 0 0; }
+.deals { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.deals li { background: var(--white); border: 1px solid var(--line); border-radius: 4px; padding: 20px; }
+.deals b { display: block; font: 400 23px/1.2 var(--display); color: var(--navy); }
+.deals span { display: block; margin-top: 6px; font-size: 15px; color: #333b40; }
+.cta-band { background: var(--white); border-top: 1px solid var(--line); }
+.cta-band .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
+
+footer { background: var(--ink); color: #c9cfd3; padding: 52px 0 40px; font-size: 15px; }
+footer .wrap { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 36px; }
+footer a { color: #fff; }
+footer .fq { display: flex; gap: 12px; align-items: center; }
+footer .fq img { width: 44px; height: 44px; background: #fff; border-radius: 3px; padding: 4px; }
+footer .fq b { font: 400 21px/1.1 var(--display); color: #fff; letter-spacing: .08em; }
+footer ul { list-style: none; padding: 0; margin: 0; }
+footer li { padding: 3px 0; }
+footer .legal { grid-column: 1 / -1; border-top: 1px solid #39424a; padding-top: 22px; font-size: 13px; color: #a6afb5; }
+
+.dock { display: none; }
+
+@media (max-width: 960px) {
+  .nav { display: none; }
+  .menu-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid var(--line); background: var(--white); border-radius: 3px; font: 600 15px var(--text); color: var(--ink); }
+  .nav.open { display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 100%; background: var(--white); border-bottom: 1px solid var(--line); padding: 8px var(--gut) 16px; }
+  .nav.open a { padding: 12px 4px; font-size: 17px; border-bottom: 1px solid var(--paper); }
+  .nav a[aria-current] { box-shadow: none; font-weight: 600; }
+  .top .call { display: none; }
+  .hero .wrap, .usa .wrap, .showers .wrap, .visit .wrap, .mat .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .mat:nth-of-type(even) figure { order: 0; }
+  .inside { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .board { grid-template-columns: 1fr; }
+  .trade { grid-template-columns: 1fr 1fr; }
+  .trade figure:first-child { grid-column: 1 / -1; }
+  footer .wrap { grid-template-columns: 1fr 1fr; }
+  footer .wrap > div:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16.5px; }
+  .demo { font-size: 11.5px; padding: 6px 12px; }
+  .top .wrap { min-height: 58px; }
+  .brand img { width: 36px; height: 36px; }
+  .brand b { font-size: 21px; }
+  .brand small { font-size: 9.5px; }
+  .hero { padding: 0 0 44px; }
+  .hero .wrap { padding: 0; gap: 0; }
+  .hero .show { order: 0; }
+  .hero .copy { order: 1; padding: 18px var(--gut) 0; }
+  .frame { border-radius: 0; aspect-ratio: 16 / 10; }
+  .chips { gap: 7px; padding: 0 var(--gut); margin-top: 10px; }
+  .chip { font-size: 11px; }
+  .chip span.nm { margin-top: 4px; }
+  .hero .long { display: none; }
+  .hero .short { display: inline; }
+  .caption { display: none; }
+  .renamed { font-size: 13px; margin-bottom: 8px; }
+  .hero h1 { font-size: 29px; }
+  .hero .lede { display: none; }
+  .actions { margin-top: 16px; gap: 10px; }
+  .hero .actions .btn { flex: 1 1 0; padding: 0 12px; min-height: 50px; font-size: 15.5px; }
+  .hours { margin-top: 12px; font-size: 13.5px; }
+  section { padding: 60px 0; }
+  .inside { grid-template-columns: 1fr 1fr; }
+  .inside figure:first-child { grid-column: 1 / -1; }
+  .inside figure:first-child img { aspect-ratio: 4 / 3; }
+  .counts { grid-template-columns: 1fr; gap: 14px; }
+  .counts div { display: grid; grid-template-columns: 110px 1fr; align-items: baseline; }
+  .counts span { margin: 0; }
+  .uses, .offer { columns: 1; }
+  .ticks { grid-template-columns: 1fr; }
+  .opts li { grid-template-columns: 1fr; gap: 4px; }
+  .grid3 { grid-template-columns: 1fr 1fr; }
+  .grid3 figure:first-child { grid-column: 1 / -1; }
+  .deals { grid-template-columns: 1fr; }
+  .visit dl { grid-template-columns: 1fr; gap: 2px; }
+  .visit dd { margin-bottom: 10px; }
+  .wall { columns: 2; column-gap: 10px; }
+  .wall button { margin-bottom: 10px; }
+  footer .wrap { grid-template-columns: 1fr; }
+  .dock { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.97); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .25s; }
+  .dock.on { transform: none; }
+  .dock .btn { flex: 1 1 0; min-height: 48px; font-size: 15px; padding: 0 10px; }
+  footer { padding-bottom: 110px; }
+  .board { grid-template-columns: 1fr 1fr; gap: 0 16px; }
+  .board a { grid-template-columns: 1fr; gap: 8px; align-items: start; }
+  .board .sw { width: 100%; height: auto; aspect-ratio: 3 / 2; }
+  .board h3 { font-size: 19px; }
+  .board p { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, .frame img, .dock { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Quality Cabinet and Surface Studio. Not affiliated with or endorsed by Quality Cabinet and Surface Studio.</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/q-96.webp" width="96" height="97" alt=""><span><b>QUALITY</b><small>CABINET &amp; SURFACE STUDIO</small></span></a>
+    <nav class="nav" id="nav" aria-label="Main"><a href="index.html">Home</a><a href="cabinets.html">Cabinets</a><a href="countertops.html">Countertops</a><a href="showers.html" aria-current="page">Showers</a><a href="gallery.html">Gallery</a><a href="visit.html">About &amp; visit</a></nav>
+    <a class="call" href="tel:+18128248338">812-824-8338</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+<main id="main">
+
+<div class="page-head" data-dock-after><div class="wrap">
+  <h1>Complete shower solutions</h1>
+  <p>The possibilities for showers are endless. Walls and inserts in quartz, granite, marble, porcelain or cultured marble, and a pan in cultured marble, solid surface or tile. We pride ourselves on crafting unique showers for our most discerning clients.</p>
+  <div class="actions"><a class="btn solid" href="mailto:sales@rakesolutions.com?subject=Free%20quote%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.7l8 5.5 8-5.5V7h-.4z"/></svg><span class="long">Request a free quote</span><span class="short">Free quote</span></a><a class="btn line" href="tel:+18128248338"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="long">Call 812-824-8338</span><span class="short">Call</span></a></div>
+</div></div>
+<section class="alt" style="padding-top:64px">
+  <div class="wrap">
+    <div class="head"><h2>Wall options</h2></div>
+    <ul class="opts">
+      <li><b>Cultured marble</b><span>36 colors. Can match the pan, insert, seat and threshold.</span></li>
+      <li><b>Quartz</b><span>Over 600 colors, from 1cm to 3cm.</span></li>
+      <li><b>Natural stone</b><span>Quartzite, granite and marble.</span></li>
+      <li><b>Porcelain</b><span>Full slabs, not tile.</span></li>
+      <li><b>Solid surface</b><span>Corian and more.</span></li>
+    </ul>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="head"><h2>Pan options</h2><p>Cultured marble pans in custom sizes and shapes. A pan can be the base for tile, or match the walls when they are cultured marble.</p></div>
+    <div class="grid3">
+      <figure><img src="img/sh-vanity-800.webp" srcset="img/sh-vanity-480.webp 480w, img/sh-vanity-800.webp 800w, img/sh-vanity-1200.webp 1200w" sizes="(max-width: 640px) 92vw, 400px" width="1600" height="1066" alt="Cultured marble vanity top on a navy vanity" loading="lazy" decoding="async"><figcaption class="lbl">Cultured marble vanity top</figcaption></figure>
+      <figure><img style="object-position:50% 60%" src="img/sh-bath-800.webp" srcset="img/sh-bath-480.webp 480w, img/sh-bath-800.webp 800w" sizes="(max-width: 640px) 46vw, 400px" width="1033" height="1600" alt="Bathroom with a floating vanity and patterned wall" loading="lazy" decoding="async"><figcaption class="lbl">Quartz, bath</figcaption></figure>
+      <figure><img style="object-position:50% 55%" src="img/sh-vanity2-800.webp" srcset="img/sh-vanity2-480.webp 480w, img/sh-vanity2-800.webp 800w" sizes="(max-width: 640px) 46vw, 400px" width="1067" height="1600" alt="Bathroom vanity with a quartz top and wood cabinets" loading="lazy" decoding="async"><figcaption class="lbl">Quartz, vanity</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="cta-band"><div class="wrap"><h2>Plan a shower with us.</h2><div class="actions"><a class="btn solid" href="mailto:sales@rakesolutions.com?subject=Free%20quote%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.7l8 5.5 8-5.5V7h-.4z"/></svg><span class="long">Request a free quote</span><span class="short">Free quote</span></a><a class="btn line" href="tel:+18128248338"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="long">Call 812-824-8338</span><span class="short">Call</span></a></div></div></section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fq"><img src="img/q-96.webp" width="96" height="97" alt=""><b>QUALITY</b></div>
+      <p style="margin-top:14px">Cabinet &amp; Surface Studio, formerly Rake Solutions. Showroom at 705 E Dillman Rd, Bloomington, IN 47401.</p>
+    </div>
+    <div>
+      <ul><li><a href="cabinets.html">Cabinets</a></li><li><a href="countertops.html">Countertops</a></li><li><a href="showers.html">Showers</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="visit.html">About &amp; visit</a></li></ul>
+    </div>
+    <div>
+      <ul>
+        <li><a href="tel:+18128248338">812-824-8338</a></li>
+        <li><a href="mailto:sales@rakesolutions.com">sales@rakesolutions.com</a></li>
+        <li>Mon to Fri, 9am to 4:30pm</li>
+        <li>Every 3rd Saturday, 10am to 1pm</li>
+      </ul>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Quality Cabinet and Surface Studio. Text and photos come from Quality Cabinet and Surface Studio’s public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </div>
+</footer>
+<div class="dock" aria-label="Quick contact"><a class="btn solid" href="mailto:sales@rakesolutions.com?subject=Free%20quote%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H4v.7l8 5.5 8-5.5V7h-.4z"/></svg>Free quote</a><a class="btn line" href="tel:+18128248338"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call</a></div>
+<script>
+(function(){
+  var b=document.querySelector('.menu-btn'), n=document.getElementById('nav');
+  if(b) b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  var d=document.querySelector('.dock'), s=document.querySelector('[data-dock-after]');
+  if(d&&s&&'IntersectionObserver' in window){new IntersectionObserver(function(e){d.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(s)}
+})();
+</script>
+</body>
+</html>
