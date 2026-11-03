@@ -83,22 +83,25 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
   .brand img { height: 2.25rem; }
 }
 
-/* Home hero: the words on the night, their stair run beside it. */
-.hero { background: var(--night); color: #fff; padding: clamp(1.5rem, 4vw, 3.5rem) var(--pad) clamp(2.5rem, 5vw, 4rem); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
-.hero h1 { font-size: clamp(2.3rem, 4.7vw, 4rem); font-stretch: 124%; font-weight: 800; line-height: 1.04; }
-.hero .lede { color: #d5cde2; max-width: 34rem; }
+/* Home hero: their tiered walls and paver steps across the whole width, the words on a night scrim. */
+.hero { position: relative; background: var(--night); color: #fff; padding: 0 var(--pad); overflow: hidden; }
+.hero figure { position: absolute; inset: 0; margin: 0; }
+.hero figure img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%; }
+.hero figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,20,38,.94) 0%, rgba(28,20,38,.82) 34%, rgba(28,20,38,.25) 62%, rgba(28,20,38,0) 78%); }
+.hero .wrap { position: relative; z-index: 1; min-height: clamp(34rem, calc(100vh - 7.5rem), 44rem); display: flex; align-items: center; padding-block: 3rem; }
+.hero .wrap > div { max-width: 36rem; }
+.hero h1 { font-size: clamp(2.3rem, 4.1vw, 3.6rem); font-stretch: 122%; font-weight: 800; line-height: 1.04; }
+.hero .lede { color: #e2dbec; max-width: 34rem; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
-.proof { list-style: none; padding: 0; margin-top: 1.8rem; display: grid; gap: .5rem; font-size: .98rem; color: #e6dff0; }
+.proof { list-style: none; padding: 0; margin-top: 1.8rem; display: grid; gap: .5rem; font-size: .98rem; color: #eee8f5; }
 .proof li { display: flex; gap: .6rem; align-items: flex-start; }
 .proof svg { color: var(--lilac); flex: none; margin-top: .15rem; }
-.hero figure { position: relative; }
-.hero figure img { border-radius: .6rem; width: 100%; aspect-ratio: 1080 / 1000; object-fit: cover; object-position: 50% 30%; }
 @media (max-width: 860px) {
-  .hero { padding-top: 0; }
-  .hero .wrap { grid-template-columns: 1fr; gap: 0; }
-  .hero figure { order: -1; margin: 0 calc(-1 * var(--pad)) 1.25rem; }
-  .hero figure img { border-radius: 0; aspect-ratio: 2 / 1; object-position: 50% 50%; }
+  .hero { padding-bottom: 2.5rem; }
+  .hero figure { position: static; margin: 0 calc(-1 * var(--pad)) 1.25rem; }
+  .hero figure::after { display: none; }
+  .hero figure img { aspect-ratio: 2 / 1; height: auto; object-position: 50% 50%; }
+  .hero .wrap { min-height: 0; display: block; padding: 0; }
   .hero h1 { font-size: clamp(1.9rem, 8.2vw, 2.5rem); font-stretch: 116%; line-height: 1.05; }
   .hero .lede { font-size: 1.02rem; margin-top: .75rem; }
   .actions { margin-top: 1.15rem; flex-direction: column; }
@@ -161,6 +164,7 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
 @media (max-width: 860px) { .cover .wrap { grid-template-columns: 1fr; } .axis span.mid { display: none; } }
 
 /* The Royal Code checklist */
+.teaser { padding-block: clamp(2.5rem, 5vw, 4rem); border-bottom: 1px solid var(--line); }
 .code .wrap { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 5rem); }
 .code .wrap > div:first-child { position: sticky; top: 1.5rem; align-self: start; }
 .yes { list-style: none; padding: 0; border-top: 1px solid var(--line); }
@@ -296,7 +300,7 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
     <ul class="team"><li><b>Billy Gibbons</b><span>Operations Manager</span><p style='margin-top:.4rem;font-size:.97rem'>30+ years in construction. Oversees operations on every project.</p></li><li><b>Patrick Mulcahy</b><span>Renovation Specialist</span><p style='margin-top:.4rem;font-size:.97rem'>Project evaluations, scopes and designs for exterior renovations.</p></li><li><b>Chris Pontier</b><span>Renovation Specialist</span><p style='margin-top:.4rem;font-size:.97rem'>Deck and porch specialist, 20+ years in outdoor living.</p></li><li><b>Jesse Bevington</b><span>Project Coordinator</span><p style='margin-top:.4rem;font-size:.97rem'>20+ years managing residential and commercial projects.</p></li><li><b>Jacob Wepking</b><span>Marketing Director</span><p style='margin-top:.4rem;font-size:.97rem'>15+ years in deck, porch, siding and window products.</p></li></ul>
     <div class="split" style="margin-top:3rem">
       <div class="prose">
-        <h3>Bill, in his own page's words</h3>
+        <h3>Meet Bill</h3>
         <p>Originally from Texas, Bill moved to North Carolina almost ten years ago. As General Manager he oversees operations, making sure every project is completed with precision and efficiency. Outside work: his wife and children, and music and concerts.</p>
       </div>
       <div class="prose">
@@ -306,17 +310,12 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
     </div>
   </div>
 </section>
-<section class="dark cover" id="warranty">
-  <div class="wrap">
-    <div>
-      <h2>5-year warranty, free 1-year inspection</h2>
-      <p class="lede">For five full years from completion, Royal repairs any workmanship issue from its installation, free of charge. After the first year they reach out to schedule a full builder inspection and walk the project with you.</p>
-      <ul class="key"><li>Royal's own promise</li><li>Manufacturer warranty</li></ul>
-    </div>
-    <div>
-      <div class="axis" aria-hidden="true"><span style="left:0">Day the job is done</span><span class="mid" style="left:30%">5 yrs</span><span style="left:100%">Lifetime</span></div>
-      <ol class="boards"><li><div class="t"><strong>Free builder inspection</strong><small>1 year. We reach out to schedule it, then walk the project side by side with you.</small></div><div class="plank royal" style="--to:12%" aria-hidden="true"></div></li><li><div class="t"><strong>Craftsmanship warranty</strong><small>5 years. Any workmanship issue from our installation is repaired free of charge.</small></div><div class="plank royal" style="--to:30%" aria-hidden="true"></div></li><li><div class="t"><strong>Trex decking and railing</strong><small>25 to 50 years. Limited warranties from Trex.</small></div><div class="plank " style="--to:90%" aria-hidden="true"><i style="--solid:68.9%"></i></div></li><li><div class="t"><strong>Deckorators decking and railing</strong><small>Up to 50 years. Structural coverage, plus 25 years on stain and fade.</small></div><div class="plank " style="--to:90%" aria-hidden="true"></div></li><li><div class="t"><strong>DuxxBak composite decking</strong><small>Lifetime. Lifetime limited warranty.</small></div><div class="plank " style="--to:100%" aria-hidden="true"></div></li></ol>
-      <p class="scale">Board lengths are not to scale.</p>
+<section class="dark" id="warranty">
+  <div class="wrap split">
+    <h2>5-year warranty, free 1-year inspection</h2>
+    <div class="prose">
+      <p class="lede" style="margin-top:0">For five full years from completion, Royal repairs any workmanship issue from its installation, free of charge. After the first year they reach out to schedule a full builder inspection and walk the project with you.</p>
+      <p><a class="more" href="index.html#warranty">See how it stacks up with the material warranties</a></p>
     </div>
   </div>
 </section>
