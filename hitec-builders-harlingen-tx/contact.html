@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact | Hi Tec Builders</title>
+<meta name="description" content="Hi Tec Builders, 302 East Jackson Ave, Suite #104, Harlingen, TX. Office (956) 428-2127.">
+<meta name="theme-color" content="#f2f3f0">
+<link rel="icon" href="img/logo-mark.png" type="image/png">
+<link rel="preload" href="fonts/familjen.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Familjen";font-weight:400 700;font-display:swap;src:url(fonts/familjen.woff2) format("woff2")}
+@font-face{font-family:"Architects";font-weight:400;font-display:swap;src:url(fonts/architects.woff2) format("woff2")}
+/* Drafting vellum, their logo's navy, Valley brick, caliche sand, pencil graphite. */
+:root{
+  --paper:#f2f3f0;--paper-2:#e6eaeb;--ink:#1d2733;--navy:#23305e;--navy-2:#1a2449;
+  --brick:#9a4630;--brick-2:#7f3826;--sand:#d8c7a2;--graphite:#5a6370;--rule:#c5cdd3;
+  --pad:clamp(1rem,4vw,3rem);--max:74rem;
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+body{font:400 1.0625rem/1.6 "Familjen",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--navy)}
+:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;z-index:20;background:#fff;padding:.5rem 1rem}
+h1,h2,h3{line-height:1.08;letter-spacing:-.015em;font-weight:700;text-wrap:balance}
+h1{font-size:clamp(2.15rem,4.6vw,3.6rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.6rem)}
+h3{font-size:1.25rem;letter-spacing:0}
+p{max-width:64ch}
+.hand{font-family:"Architects",cursive;font-weight:400;letter-spacing:.02em}
+
+/* demo notice */
+.demo{background:var(--ink);color:#e9edf0;font-size:.8125rem;line-height:1.4;padding:.45rem var(--pad);text-align:center}
+
+/* header */
+.top{position:sticky;top:0;z-index:10;background:rgba(242,243,240,.96);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:1rem;min-height:4rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand img{width:46px;height:auto;border:1px solid var(--rule)}
+.brand b{display:block;font-size:1.06rem;letter-spacing:.01em;line-height:1.1}
+.brand small{display:block;font-size:.8rem;color:var(--graphite)}
+.nav{display:flex;align-items:center;gap:1.15rem}
+.nav > a{color:var(--ink);text-decoration:none;font-size:.95rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-color:var(--brick)}
+.call{display:inline-flex;align-items:center;gap:.5rem;background:var(--brick);color:#fff;text-decoration:none;font-weight:600;padding:.6rem 1rem;border-radius:3px;white-space:nowrap}
+.call:hover{background:var(--brick-2)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;border:1px solid var(--ink);padding:.5rem .8rem;border-radius:3px;font-weight:600}
+.menu summary::-webkit-details-marker{display:none}
+.menu .panel{position:absolute;right:0;top:calc(100% + .5rem);background:#fff;border:1px solid var(--rule);box-shadow:0 12px 30px rgba(29,39,51,.18);padding:.5rem;min-width:15rem;display:grid}
+.menu .panel a{padding:.7rem .8rem;color:var(--ink);text-decoration:none;border-radius:2px}
+.menu .panel a:hover{background:var(--paper-2)}
+@media (max-width:1100px){.nav > a{display:none}.menu{display:block}}
+@media (max-width:560px){.top .call{display:none}.brand small{display:none}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1.3rem;border-radius:3px;font-weight:600;text-decoration:none;font-size:1.02rem}
+.btn-main{background:var(--brick);color:#fff}.btn-main:hover{background:var(--brick-2)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}.btn-line:hover{background:var(--ink);color:#fff}
+
+/* hero: the elevation traced over a finished house */
+.hero{padding:clamp(1.2rem,4vw,3.5rem) 0 clamp(2rem,5vw,4rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,4.6fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{margin-bottom:1rem}
+.hero .lede{font-size:1.15rem;color:#33404e;margin-bottom:1.5rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem;margin-top:2rem;padding-top:1.1rem;border-top:1px solid var(--rule);font-size:.9rem;color:var(--graphite);list-style:none;padding-left:0}
+.facts b{display:block;color:var(--ink);font-size:1.4rem;line-height:1.1}
+.sheet{position:relative;background:#fff;border:1px solid var(--rule);padding:10px 10px 0}
+.sheet .frame{position:relative}
+.sheet svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sheet .tb{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--graphite);padding:.55rem .1rem .6rem;border-top:0}
+.trace path,.trace rect{fill:none;stroke:var(--navy);stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.trace .dim{stroke:var(--brick);stroke-width:1.3}
+.trace text{font-family:"Architects",cursive;font-size:15px;fill:var(--brick)}
+@media (prefers-reduced-motion:no-preference){
+  .trace path,.trace rect{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.8s .25s cubic-bezier(.5,0,.2,1) forwards}
+  .trace .dim{animation-delay:1.6s;animation-duration:.7s}
+  .trace text{opacity:0;animation:fade .5s 2.1s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes fade{to{opacity:1}}
+}
+@media (max-width:860px){
+  .hero{padding-top:.9rem}
+  .hero .wrap{grid-template-columns:1fr;gap:1.1rem}
+  .hero .sheet{order:-1;padding:6px 6px 0}
+  .hero .sheet .tb{display:none}
+  .hero .lede{font-size:1.05rem;margin-bottom:1.1rem}
+  .facts{grid-template-columns:1fr 1fr 1fr;gap:.8rem}
+  .facts b{font-size:1.15rem}
+}
+
+/* sections */
+.band{padding:clamp(3rem,7vw,5.5rem) 0}
+.band-alt{background:var(--paper-2)}
+.band-dark{background:var(--navy);color:#eef1f6}
+.band-dark a{color:#fff}
+.head{display:grid;gap:.7rem;margin-bottom:2rem;max-width:44rem}
+.head p{color:#3a4654}
+.band-dark .head p{color:#cfd6e6}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,3vw,2rem)}
+.lane{display:grid;grid-template-rows:auto 1fr;background:#fff;border:1px solid var(--rule);text-decoration:none;color:var(--ink)}
+.lane img{width:100%;aspect-ratio:66/40;object-fit:cover}
+.lane div{padding:1.2rem 1.3rem 1.4rem;display:grid;gap:.5rem;align-content:start}
+.lane ul{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin-top:.4rem}
+.lane li{font-size:.85rem;border:1px solid var(--rule);padding:.15rem .55rem;border-radius:2px}
+.lane .go{margin-top:.6rem;font-weight:600;color:var(--brick)}
+a.lane:hover{border-color:var(--ink)}
+
+/* the budget equation: their own way of explaining cost */
+.eq{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0}
+.eq .term{padding:1.4rem 1.3rem;border-top:3px solid currentColor}
+.eq .term h3{font-size:clamp(1.3rem,2.4vw,1.8rem);margin-bottom:.5rem}
+.eq .who{font-family:"Architects",cursive;font-size:1.05rem;color:var(--sand);margin-bottom:.35rem}
+.eq .op{font-size:clamp(2.4rem,5vw,4rem);font-weight:400;align-self:center;padding:0 .8rem;color:var(--sand);line-height:1}
+.eq .term p{color:#d6dcea}
+/* on a light band */
+.eq.light .who,.eq.light .op{color:var(--brick)}
+.eq.light .term p{color:#33404e}
+@media (max-width:860px){.eq{grid-template-columns:1fr}.eq .op{padding:.2rem 0;text-align:left}}
+
+/* design-track matrix */
+.matrix{width:100%;border-collapse:collapse;background:#fff;font-size:.95rem}
+.matrix th,.matrix td{border:1px solid var(--rule);padding:.7rem .8rem;text-align:left;vertical-align:top}
+.matrix thead th{background:var(--ink);color:#fff;font-size:1.02rem}
+.matrix thead th small{display:block;font-weight:400;color:#c9d0d8;font-size:.82rem}
+.matrix tbody th{background:var(--paper-2);width:9rem;font-weight:600}
+.matrix .pick{background:#fbf6ee}
+.matrix thead .pick{background:var(--brick)}
+.matrix thead .pick small{color:#f3dcd2}
+.matrix .them{color:var(--graphite)}
+.matrix thead .them{background:#5a6370;color:#fff}
+.matrix thead .them small{color:#dfe4e9}
+.scroller{overflow-x:auto;border:1px solid var(--rule)}
+.scroller:focus-visible{outline-offset:2px}
+.deposit{font-size:1.5rem;font-weight:700;display:block;line-height:1.1}
+/* mobile: one card per track */
+.tracks{display:none;gap:1rem}
+.track{background:#fff;border:1px solid var(--rule);border-top:4px solid var(--ink)}
+.track.pick{border-top-color:var(--brick)}
+.track.them{border-top-color:var(--graphite)}
+.track h3{padding:1rem 1rem .2rem}
+.track .deposit{padding:0 1rem .6rem}
+.track dl{display:grid;grid-template-columns:7.2rem 1fr;border-top:1px solid var(--rule)}
+.track dt,.track dd{padding:.5rem 1rem;border-bottom:1px solid var(--rule);font-size:.93rem}
+.track dt{color:var(--graphite);padding-right:.2rem}
+.track dd{padding-left:.2rem}
+@media (max-width:860px){.scroller{display:none}.tracks{display:grid}}
+
+/* steps: a real sequence */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,3vw,2rem);list-style:none;padding:0;counter-reset:s}
+.steps li{border-top:2px solid var(--ink);padding-top:1rem;display:grid;gap:.55rem;align-content:start}
+.steps li::before{counter-increment:s;content:"Step " counter(s);font-family:"Architects",cursive;color:var(--brick);font-size:1.1rem}
+.steps .keys{font-size:.92rem;color:var(--graphite);border-left:2px solid var(--sand);padding-left:.7rem}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+
+/* photo strip / gallery */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.strip img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--paper-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.7rem}
+.grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.grid figure{margin:0}
+@media (max-width:700px){.strip{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr;gap:.45rem}}
+
+.split{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.split.rev{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+@media (max-width:860px){.split,.split.rev{grid-template-columns:1fr}}
+.framed{background:#fff;border:1px solid var(--rule);padding:8px}
+.framed figcaption{font-size:.85rem;color:var(--graphite);padding:.5rem .1rem 0}
+.prose{display:grid;gap:1rem}
+.prose p{color:#2e3a47}
+.ticks{list-style:none;padding:0;display:grid;gap:.5rem}
+.ticks li{padding-left:1.4rem;position:relative}
+.ticks li::before{content:"";position:absolute;left:0;top:.62em;width:.75rem;height:2px;background:var(--brick)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
+.chips li{background:#fff;border:1px solid var(--rule);padding:.45rem .8rem;border-radius:2px}
+.quote{font-family:"Architects",cursive;font-size:clamp(1.4rem,3vw,2rem);line-height:1.35;color:var(--navy)}
+
+/* page head for inner pages */
+.phead{padding:clamp(2rem,5vw,3.5rem) 0 clamp(1.5rem,3vw,2.5rem);border-bottom:1px solid var(--rule)}
+.phead p{font-size:1.12rem;color:#33404e;margin-top:.8rem}
+.crumb{font-size:.9rem;color:var(--graphite);margin-bottom:.6rem}
+.crumb a{color:var(--graphite)}
+
+/* faq */
+.faq{display:grid;gap:.6rem;max-width:52rem}
+.faq details{background:#fff;border:1px solid var(--rule)}
+.faq summary{cursor:pointer;padding:1rem 1.2rem;font-weight:600;font-size:1.06rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--brick)}
+.faq details[open] summary::after{content:"\2212"}
+.faq .a{padding:0 1.2rem 1.2rem;display:grid;gap:.7rem}
+.faq .a p:first-child{font-family:"Architects",cursive;color:var(--brick);font-size:1.1rem}
+
+/* contact */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:#fff;border:1px solid var(--rule);padding:1.3rem;display:grid;gap:.3rem;align-content:start}
+.card .big{font-size:1.35rem;font-weight:700;color:var(--ink);text-decoration:none;word-break:break-word}
+.card .big:hover{color:var(--brick)}
+.card small{color:var(--graphite)}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.route{list-style:none;padding:0;display:grid;gap:0;counter-reset:r;max-width:40rem}
+.route li{display:grid;grid-template-columns:2.4rem 1fr;gap:.4rem;padding:.7rem 0;border-bottom:1px dashed var(--rule)}
+.route li::before{counter-increment:r;content:counter(r);font-family:"Architects",cursive;color:var(--brick);font-size:1.3rem;line-height:1.2}
+
+.cta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem}
+.cta h2{max-width:30rem}
+.cta .actions .btn-line{border-color:#fff;color:#fff}
+.cta .actions .btn-line:hover{background:#fff;color:var(--navy)}
+
+/* footer */
+footer{background:var(--ink);color:#cdd5dd;padding:3rem 0 6rem;font-size:.95rem}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+footer a{color:#fff}
+footer nav{display:grid;gap:.35rem}
+footer .fine{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid #3a4756;font-size:.85rem;color:#aab4bf;display:grid;gap:.3rem}
+footer .fbrand{display:flex;gap:.8rem;align-items:center;margin-bottom:.8rem}
+footer .fbrand img{width:52px}
+@media (max-width:860px){footer .cols{grid-template-columns:1fr 1fr}footer .cols > div:first-child{grid-column:1/-1}}
+
+/* sticky mobile call bar after the hero */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:12;display:none;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(29,39,51,.97);transform:translateY(110%);transition:transform .25s}
+.bar.on{transform:none}
+.bar a{flex:1;min-height:2.9rem}
+.bar .btn-line{border-color:#fff;color:#fff}
+@media (max-width:860px){.bar{display:flex}}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Hi Tec Builders. Not affiliated with or endorsed by Hi Tec Builders.</div>
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="img/logo-mark.png" width="125" height="102" alt="HTB logo"><span><b>Hi Tec Builders</b><small>&amp; Designers · Rio Grande Valley</small></span></a>
+  <nav class="nav" aria-label="Main"><a href="custom-homes.html">Custom homes</a><a href="design-tracks.html">Design-tracks</a><a href="metal-buildings.html">Metal buildings</a><a href="floor-plans.html">Floor plans</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="contact.html" aria-current="page">Contact</a></nav>
+  <details class="menu"><summary>Menu</summary><nav class="panel" aria-label="All pages"><a href="index.html">Home</a><a href="custom-homes.html">Custom homes</a><a href="design-tracks.html">Design-tracks</a><a href="process.html">3-step process</a><a href="metal-buildings.html">Metal buildings</a><a href="floor-plans.html">Floor plans</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a><a href="tel:+19564282127">Call (956) 428-2127</a></nav></details>
+  <a class="call" href="tel:+19564282127">Call (956) 428-2127</a>
+ </div>
+</header>
+<main id="main">
+<section class="phead" data-hero><div class="wrap">
+ <p class="crumb"><a href="index.html">Home</a> / Contact</p>
+ <h1>Contact the office</h1>
+ <p>Call, email, or come by the office in Harlingen. Appointments are free, with no obligation.</p>
+</div></section>
+<section class="band"><div class="wrap">
+ <div class="cards">
+  <div class="card"><small>Office</small><a class="big" href="tel:+19564282127">(956) 428-2127</a><small>Secondary <a href="tel:+19563760293">(956) 376-0293</a></small><small>Fax (956) 425-1230</small></div>
+  <div class="card"><small>Email</small><a class="big" href="mailto:ContactHTB@hitecbuilders.com?subject=New%20project">ContactHTB@hitecbuilders.com</a></div>
+  <div class="card"><small>Address</small><span class="big">302 East Jackson Ave, Suite #104</span><span>Harlingen, TX 78550</span></div>
+ </div>
+</div></section>
+<section class="band band-alt"><div class="wrap split">
+ <div>
+  <div class="head"><h2>Directions from US Highway 83/77</h2></div>
+  <ol class="route">
+   <li><span>Take the exit for Tyler Ave.</span></li>
+   <li><span>Continue east on Tyler Ave for 1.5 miles.</span></li>
+   <li><span>Turn left on 3rd St and continue north 3 blocks.</span></li>
+   <li><span>Park at the corner of 3rd St and Jackson Ave. Building #302 is tan, with no windows.</span></li>
+   <li><span>Enter using the door on Jackson Ave. Office #104 is 2 doors down, on the right.</span></li>
+  </ol>
+ </div>
+ <div class="framed" style="padding:1.6rem">
+  <p class="hand" style="color:var(--brick);font-size:1.05rem">Before you call</p>
+  <p class="quote" style="font-size:1.35rem">What is your construction budget?</p>
+  <p style="margin-top:.6rem">That's all you need to get started. No lot yet? HTB can help you find one.</p>
+ </div>
+</div></section>
+</main>
+<footer>
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <div class="fbrand"><img src="img/logo-mark.png" width="125" height="102" alt="" loading="lazy"><div><b style="color:#fff">Hi Tec Builders &amp; Designers</b><br>Custom homes, floor plans and metal buildings across the Rio Grande Valley.</div></div>
+    <p>Office <a href="tel:+19564282127">(956) 428-2127</a> · Secondary <a href="tel:+19563760293">(956) 376-0293</a> · Fax (956) 425-1230<br>
+    <a href="mailto:ContactHTB@hitecbuilders.com?subject=Question%20for%20Hi%20Tec%20Builders">ContactHTB@hitecbuilders.com</a><br>302 East Jackson Ave, Suite #104, Harlingen, TX 78550</p>
+   </div>
+   <nav aria-label="Footer"><a href="index.html">Home</a><a href="custom-homes.html">Custom homes</a><a href="design-tracks.html">Design-tracks</a><a href="process.html">3-step process</a><a href="metal-buildings.html">Metal buildings</a></nav>
+   <nav aria-label="Footer, more"><a href="floor-plans.html">Floor plans</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  </div>
+  <div class="fine">
+   <p>Unofficial demo built by MHS Tecnologia for Hi Tec Builders. Not affiliated with or endorsed by Hi Tec Builders. Text and photos come from hitecbuilders.com.</p>
+   <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+ </div>
+</footer>
+<div class="bar" aria-label="Quick contact"><a class="btn btn-main" href="tel:+19564282127">Call the office</a><a class="btn btn-line" href="mailto:ContactHTB@hitecbuilders.com?subject=New%20project">Email us</a></div>
+<script>
+(()=>{const b=document.querySelector('.bar'),h=document.querySelector('[data-hero]');if(!b||!h||!('IntersectionObserver'in window))return;
+new IntersectionObserver(([e])=>b.classList.toggle('on',!e.isIntersecting),{rootMargin:'0px 0px -40% 0px'}).observe(h);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){const d=document.querySelector('.menu[open]');if(d){d.open=false;d.querySelector('summary').focus()}}})})();
+</script>
+</body>
+</html>
