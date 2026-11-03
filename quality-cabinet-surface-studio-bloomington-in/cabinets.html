@@ -62,7 +62,7 @@ p { margin: 0; }
 @media (min-width: 961px) { .hero .actions { flex-wrap: nowrap; } .hero .actions .btn { padding: 0 16px; font-size: 15.5px; } }
 
 /* Home hero: their kitchen with the sample chips you would hold up in the showroom */
-.hero { padding: 40px 0 56px; }
+.hero { padding: 36px 0 36px; }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; }
 .hero .copy { order: 1; }
 .hero .show { order: 2; }
@@ -75,18 +75,18 @@ p { margin: 0; }
 .frame { position: relative; aspect-ratio: 4 / 3; background: var(--slab); border-radius: 4px; overflow: hidden; }
 .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .45s ease; }
 .frame img.off { opacity: 0; }
-.chips { display: flex; gap: 10px; margin-top: 14px; }
+.chips { display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; }
 .chip { flex: 1 1 0; min-width: 0; background: none; border: 0; padding: 0; cursor: pointer; font: 500 13px/1.25 var(--text); color: var(--steel); text-align: left; }
 .chip span.sw { display: block; aspect-ratio: 1; border-radius: 3px; background-size: cover; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); transition: box-shadow .2s, transform .2s; }
 .chip span.nm { display: block; margin-top: 6px; }
 .chip[aria-pressed="true"] { color: var(--ink); font-weight: 600; }
 .chip[aria-pressed="true"] span.sw { box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--navy); }
 .chip:hover span.sw { transform: translateY(-2px); }
-.caption { margin-top: 14px; font-size: 15px; color: #333b40; min-height: 3.2em; }
+.caption { margin-top: 12px; font-size: 15px; color: #333b40; min-height: 3.2em; }
 .caption b { font-weight: 600; color: var(--ink); }
 .caption a { white-space: nowrap; }
 
-section { padding: 84px 0; }
+section { padding: 64px 0; }
 .alt { background: var(--white); }
 .head { max-width: 40rem; margin-bottom: 36px; }
 .head p { margin-top: 14px; color: #333b40; }
@@ -107,15 +107,17 @@ section { padding: 84px 0; }
 .inside img { aspect-ratio: 2 / 3; object-fit: cover; border-radius: 4px; width: 100%; }
 .inside figcaption { font-size: 14.5px; margin-top: 8px; color: #333b40; }
 
-/* Sample board of surfaces */
-.board { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; border-top: 1px solid var(--line); }
-.board a { display: grid; grid-template-columns: 76px 1fr; gap: 18px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink); }
-.board a:hover h3 { color: var(--navy); }
-.board .sw { width: 76px; height: 76px; border-radius: 3px; background-size: cover; }
-.board h3 { font-size: 23px; }
-.board p { font-size: 15px; color: #3c454b; margin-top: 3px; }
-.board .sw.spec { background: repeating-linear-gradient(135deg, #d9dcd8 0 6px, #cfd3cf 6px 12px); }
-
+/* The sample wall: chips hung on a charcoal board, as in the showroom */
+.samplewall { list-style: none; margin: 0; background: var(--ink); border-radius: 4px; padding: 34px 30px 30px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 34px 24px; }
+.smp { display: block; text-decoration: none; color: #fff; }
+.smp .t { display: block; position: relative; transition: transform .25s; }
+.smp .t::after { content: ""; position: absolute; top: 9px; left: 50%; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%; background: var(--ink); box-shadow: inset 0 1px 2px rgba(0,0,0,.6); }
+.smp img, .smp i { display: block; width: 100%; aspect-ratio: 1; border-radius: 2px; box-shadow: 0 12px 20px rgba(0,0,0,.4); }
+.smp i { background: var(--navy); font: 400 23px/1.2 var(--display); font-style: normal; color: #fff; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; }
+.smp:hover .t { transform: translateY(-4px); }
+.smp b { display: block; margin-top: 13px; font: 400 21px/1.15 var(--display); }
+.smp .d { display: block; margin-top: 5px; font-size: 14px; line-height: 1.45; color: #b9c1c7; }
+.page-head .samplewall { margin-top: 30px; }
 /* Showers */
 .showers .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
 .showers img { border-radius: 4px; }
@@ -147,9 +149,6 @@ section { padding: 84px 0; }
 .page-head { padding: 52px 0 36px; }
 .page-head h1 { font-size: clamp(36px, 5vw, 60px); }
 .page-head p { margin-top: 14px; max-width: 40rem; font-size: 18px; color: #333b40; }
-.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
-.jump a { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; background: var(--white); border: 1px solid var(--line); border-radius: 3px; font-size: 14.5px; text-decoration: none; color: var(--ink); min-height: 44px; }
-.jump a i { width: 30px; height: 30px; border-radius: 2px; background-size: cover; }
 .mat { padding: 56px 0; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
 .mat .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
 .mat:nth-of-type(even) figure { order: 2; }
@@ -196,10 +195,6 @@ dialog button { font: 600 15px var(--text); background: #fff; border: 0; border-
 
 /* About / visit page */
 .offer { columns: 2; padding-left: 18px; margin: 18px 0 0; }
-.deals { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.deals li { background: var(--white); border: 1px solid var(--line); border-radius: 4px; padding: 20px; }
-.deals b { display: block; font: 400 23px/1.2 var(--display); color: var(--navy); }
-.deals span { display: block; margin-top: 6px; font-size: 15px; color: #333b40; }
 .cta-band { background: var(--white); border-top: 1px solid var(--line); }
 .cta-band .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; justify-content: space-between; }
 
@@ -225,7 +220,7 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #39424a; padding-top:
   .hero .wrap, .usa .wrap, .showers .wrap, .visit .wrap, .mat .wrap { grid-template-columns: 1fr; gap: 28px; }
   .mat:nth-of-type(even) figure { order: 0; }
   .inside { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .board { grid-template-columns: 1fr; }
+  .samplewall { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px 16px; padding: 26px 18px 22px; }
   .trade { grid-template-columns: 1fr 1fr; }
   .trade figure:first-child { grid-column: 1 / -1; }
   footer .wrap { grid-template-columns: 1fr 1fr; }
@@ -245,10 +240,12 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #39424a; padding-top:
   .frame { border-radius: 0; aspect-ratio: 16 / 10; }
   .chips { gap: 7px; padding: 0 var(--gut); margin-top: 10px; }
   .chip { font-size: 11px; }
-  .chip span.nm { margin-top: 4px; }
+  .chip span.nm { display: none; }
+  .chip span.sw { width: 100%; }
   .hero .long { display: none; }
   .hero .short { display: inline; }
-  .caption { display: none; }
+  .caption { min-height: 0; margin-top: 8px; padding: 0 var(--gut); font-size: 14px; }
+  .caption .cl { display: none; }
   .renamed { font-size: 13px; margin-bottom: 8px; }
   .hero h1 { font-size: 29px; }
   .hero .lede { display: none; }
@@ -267,7 +264,6 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #39424a; padding-top:
   .opts li { grid-template-columns: 1fr; gap: 4px; }
   .grid3 { grid-template-columns: 1fr 1fr; }
   .grid3 figure:first-child { grid-column: 1 / -1; }
-  .deals { grid-template-columns: 1fr; }
   .visit dl { grid-template-columns: 1fr; gap: 2px; }
   .visit dd { margin-bottom: 10px; }
   .wall { columns: 2; column-gap: 10px; }
@@ -277,11 +273,11 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #39424a; padding-top:
   .dock.on { transform: none; }
   .dock .btn { flex: 1 1 0; min-height: 48px; font-size: 15px; padding: 0 10px; }
   footer { padding-bottom: 110px; }
-  .board { grid-template-columns: 1fr 1fr; gap: 0 16px; }
-  .board a { grid-template-columns: 1fr; gap: 8px; align-items: start; }
-  .board .sw { width: 100%; height: auto; aspect-ratio: 3 / 2; }
-  .board h3 { font-size: 19px; }
-  .board p { display: none; }
+  .samplewall { gap: 22px 10px; padding: 22px 12px 18px; }
+  .smp .t::after { top: 5px; width: 6px; height: 6px; margin-left: -3px; }
+  .smp b { font-size: 13.5px; margin-top: 8px; }
+  .smp .d { display: none; }
+  .smp i { font-size: 12.5px; padding: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -338,7 +334,7 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #39424a; padding-top:
 
 <section class="alt">
   <div class="wrap">
-    <div class="head"><h2>Open the doors.</h2></div>
+    <div class="head"><h2>Open the doors.</h2><p>Storage options we install inside the cabinets.</p></div>
     <div class="inside">
       <figure><img src="img/cab-mixer-800.webp" srcset="img/cab-mixer-480.webp 480w, img/cab-mixer-800.webp 800w" sizes="(max-width: 640px) 92vw, (max-width: 960px) 30vw, 230px" width="1067" height="1600" alt="Mixer lift shelf inside a base cabinet" loading="lazy" decoding="async"><figcaption>Mixer lift shelf</figcaption></figure>
       <figure><img src="img/cab-trays-800.webp" srcset="img/cab-trays-480.webp 480w, img/cab-trays-800.webp 800w" sizes="(max-width: 640px) 46vw, (max-width: 960px) 30vw, 230px" width="1067" height="1600" alt="Vertical tray dividers above the oven" loading="lazy" decoding="async"><figcaption>Tray dividers</figcaption></figure>
