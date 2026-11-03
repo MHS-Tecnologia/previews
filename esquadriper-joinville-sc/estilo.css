@@ -35,6 +35,7 @@ p{margin:0}
 .aviso{background:var(--ferro);color:#d9dfdc;font-size:.8rem;line-height:1.4;padding:7px var(--g);text-align:center}
 .aviso a{color:#fff}
 .nq{white-space:nowrap}
+.md{display:none}
 
 /* topo */
 .topo{background:var(--zinco);border-bottom:1px solid var(--linha);position:relative;z-index:20}
@@ -97,7 +98,9 @@ p{margin:0}
 .tipo:hover img{filter:brightness(1.06)}
 .tipo h3{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .tipo h3::after{content:"";flex:1;border-bottom:1px solid var(--linha);transform:translateY(-6px)}
-.tipo span{display:block;color:var(--texto-2);font-size:.95rem;margin-top:4px;font-stretch:85%}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags i{font-style:normal;font-size:.8rem;font-weight:600;font-stretch:85%;line-height:1;padding:6px 9px 6px 17px;border:1.5px solid var(--ferro);border-radius:2px;background:var(--zinco);position:relative}
+.tags i::before{content:"";position:absolute;left:6px;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:var(--bronze)}
 
 /* ferro forjado (home) */
 .forja-g{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center}
@@ -112,12 +115,16 @@ p{margin:0}
 .numeros div{border-top:2px solid var(--ferro);padding-top:12px}
 .numeros dt{font-family:Besley,Georgia,serif;font-weight:800;font-size:2.4rem;line-height:1}
 .numeros dd{margin:6px 0 0;color:var(--texto-2)}
-.obras{list-style:none;margin:0;padding:0;border-top:1px solid var(--linha)}
-.obras li{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:4px 20px;padding:14px 0;border-bottom:1px solid var(--linha)}
-.obras b{font-family:Besley,Georgia,serif;font-weight:600;font-size:1.1rem}
-.obras span{color:var(--texto-2);font-size:.95rem;font-stretch:85%}
-.obras small{grid-column:1/-1;color:var(--texto-2);font-size:.85rem;font-stretch:85%}
-.fixa{margin:0;align-self:start;position:sticky;top:24px}
+.obras-topo{display:flex;justify-content:space-between;align-items:end;gap:24px 48px;flex-wrap:wrap;margin-bottom:36px}
+.obras-topo p{color:var(--texto-2);margin-top:12px;max-width:44ch}
+.obras-topo .numeros{grid-template-columns:repeat(3,auto);gap:32px}
+.obras{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 22px}
+.obras-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.obras figure{margin:0}
+.obras img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--zinco-2)}
+.obras figcaption{margin-top:10px;border-top:3px solid var(--ferro);padding-top:8px}
+.obras b{display:block;font-family:Besley,Georgia,serif;font-weight:700;font-size:1.1rem;line-height:1.25}
+.obras span{display:block;color:var(--texto-2);font-size:.92rem;font-stretch:85%;margin-top:2px}
 .mais{margin-top:18px;background:none;border:2px solid var(--ferro);color:var(--ferro);font:600 1rem Archivo,sans-serif;min-height:48px;padding:0 20px;border-radius:4px;cursor:pointer;display:none}
 
 /* diferenciais */
@@ -140,17 +147,20 @@ p{margin:0}
 .chama .btn:hover{background:var(--zinco-2)}
 .chama .btn-2{background:transparent;color:#fff;border-color:#fff}
 .chama .btn-2:hover{background:#fff;color:var(--verde-esc)}
-.fones{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.fones a{color:#fff;font-weight:600;text-underline-offset:4px}
-.fones li{color:#d6e2d8}
+.etapas{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:e;position:relative}
+.etapas::before{content:"";position:absolute;left:0;right:0;top:9px;height:6px;background:var(--ferro);border-radius:3px}
+.etapas li{counter-increment:e;position:relative;padding:44px 28px 0 0}
+.etapas li::before{content:"";position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--zinco-2);border:6px solid var(--ferro);box-sizing:border-box}
+.etapas li::after{content:"";position:absolute;left:7px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--bronze)}
+.etapas h3::before{content:counter(e) ". ";color:var(--verde)}
+.etapas p{color:var(--texto-2);margin-top:8px;font-size:1rem;max-width:30ch}
 
 /* páginas internas */
 .topo-pag{padding:clamp(36px,6vw,72px) 0 clamp(28px,4vw,48px);border-bottom:1px solid var(--linha)}
 .topo-pag p{margin-top:14px;font-size:1.12rem;color:var(--texto-2);max-width:60ch}
 .topo-pag .acoes{margin-top:22px}
-.galeria{list-style:none;margin:0;padding:0;columns:3 300px;column-gap:20px}
-.galeria li{break-inside:avoid;margin-bottom:24px}
-.galeria img{width:100%}
+.itens.itens-2{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 24px}
+.itens.itens-2 img{aspect-ratio:4/3}
 .texto-2col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px)}
 .texto-2col p+p,.texto p+p{margin-top:14px}
 .texto-2col p,.texto p{max-width:62ch}
@@ -187,7 +197,8 @@ p{margin:0}
 .rodape-g{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
 .rodape b{color:#fff;display:block;margin-bottom:8px;font-family:Besley,Georgia,serif;font-size:1.05rem}
 .rodape a{color:#fff;text-underline-offset:3px}
-.rodape ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.rodape ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.rodape ul a,.bloco a{display:inline-flex;align-items:center;min-height:44px}
 .demo{border-top:1px solid #3a4440;margin-top:30px;padding-top:18px;font-size:.85rem;color:#a7b2ad}
 
 /* barra fixa no celular */
@@ -220,11 +231,20 @@ p{margin:0}
   .numeros{grid-template-columns:repeat(3,1fr);gap:12px}
   .numeros dt{font-size:1.7rem}
   .numeros dd{font-size:.88rem}
-  .obras li{grid-template-columns:1fr}
-  .fixa{position:static}
-  .obras.curta li:nth-child(n+9){display:none}
-  .fixa{margin:0;align-self:start;position:sticky;top:24px}
-.mais{display:inline-block}
+  .obras{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+  .obras.curta li:nth-child(n+7){display:none}
+  .obras b{font-size:1rem}
+  .obras-topo .numeros{grid-template-columns:repeat(3,1fr);gap:12px;width:100%}
+  .etapas{grid-template-columns:1fr;padding-left:34px}
+  .etapas::before{left:9px;right:auto;top:0;bottom:0;width:6px;height:auto}
+  .etapas li{padding:0 0 28px}
+  .etapas li::before{left:-34px}
+  .etapas li::after{left:-27px}
+  .itens.itens-2{gap:20px 12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aviso{font-size:.72rem;line-height:1.35;padding:5px 12px}
+  .ld{display:none}
+  .md{display:inline}
+  .mais{display:inline-block}
   .itens{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}
   .galeria{columns:2 150px;column-gap:12px}
   .galeria li{margin-bottom:16px}
