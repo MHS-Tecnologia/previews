@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#f2f3f0">
 <link rel="icon" href="img/logo-mark.png" type="image/png">
 <link rel="preload" href="fonts/familjen.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-660.webp" imagesrcset="img/hero-480.webp 480w, img/hero-660.webp 660w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 760px" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-660.webp" imagesrcset="img/hero-480.webp 480w, img/hero-660.webp 660w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 660px" fetchpriority="high">
 <style>
 @font-face{font-family:"Familjen";font-weight:400 700;font-display:swap;src:url(fonts/familjen.woff2) format("woff2")}
 @font-face{font-family:"Architects";font-weight:400;font-display:swap;src:url(fonts/architects.woff2) format("woff2")}
@@ -72,12 +72,13 @@ p{max-width:64ch}
 .facts b{display:block;color:var(--ink);font-size:1.4rem;line-height:1.1}
 .sheet{position:relative;background:#fff;border:1px solid var(--rule);padding:10px 10px 0}
 .sheet .frame{position:relative}
+.sheet{max-width:680px;justify-self:end;width:100%}
 .sheet .frame img{width:100%}
 .sheet svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .sheet .tb{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--graphite);padding:.55rem .1rem .6rem;border-top:0}
-.trace path,.trace rect{fill:none;stroke:var(--navy);stroke-width:1.6;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.trace path,.trace rect{fill:none;stroke:var(--navy);stroke-width:2;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
 .trace .dim{stroke:var(--brick);stroke-width:1.3}
-.trace text{font-family:"Architects",cursive;font-size:15px;fill:var(--brick);paint-order:stroke;stroke:#f2f3f0;stroke-width:4px;stroke-linejoin:round}
+.trace text{font-family:"Architects",cursive;font-size:19px;font-weight:700;fill:var(--brick-2);paint-order:stroke;stroke:#fff;stroke-width:6px;stroke-linejoin:round}
 @media (prefers-reduced-motion:no-preference){
   .trace path,.trace rect{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.8s .25s cubic-bezier(.5,0,.2,1) forwards}
   .trace .dim{animation-delay:1.6s;animation-duration:.7s}
@@ -168,9 +169,9 @@ a.lane:hover{border-color:var(--ink)}
 .grid figure{margin:0}
 .zoom{display:block;padding:0;border:0;background:none;cursor:zoom-in;width:100%}
 .zoom img{transition:opacity .15s}.zoom:hover img{opacity:.88}
-.lb{border:0;padding:0;background:#fff;max-width:min(92vw,62rem);width:100%}
+.lb{margin:auto;border:0;padding:0;background:#fff;max-width:min(92vw,42rem);width:100%}
 .lb::backdrop{background:rgba(20,26,36,.88)}
-.lb figure{margin:0}.lb img{width:100%;height:auto;max-height:78vh;object-fit:contain;background:var(--ink)}
+.lb figure{margin:0}.lb img{width:100%;height:auto;max-height:75vh;object-fit:contain;background:var(--ink)}
 .lb figcaption{padding:.7rem 1rem;color:var(--graphite);font-size:.95rem}
 .lb-nav{display:flex;gap:.5rem;padding:0 1rem 1rem}
 .lb-nav button{font:inherit;font-weight:600;min-height:2.75rem;padding:.5rem 1rem;border:1.5px solid var(--ink);background:#fff;color:var(--ink);border-radius:3px;cursor:pointer}
@@ -272,20 +273,20 @@ footer .fbrand img{width:52px}
    <li><b>$0 deposit</b>on the HTB Fast Track</li>
   </ul>
  </div>
- <figure class="sheet"><div class="frame"><img src="img/hero-660.webp" srcset="img/hero-480.webp 480w, img/hero-660.webp 660w" sizes="(max-width: 860px) calc(100vw - 2rem), 760px" width="660" height="330" alt="Finished home with two dormers, a stone chimney and a wide front porch, from the HTB gallery" fetchpriority="high"><svg class="trace" viewBox="2 110 660 330" preserveAspectRatio="none" aria-hidden="true">
- <path pathLength="1" d="M165 265 L272 188 L300 186 L555 181 L596 172 L620 220 L660 222"/>
- <path pathLength="1" d="M165 265 H572 M200 276 H560"/>
- <path pathLength="1" d="M257 205 L290 185 L313 205 M272 205 V245 H305 V205"/>
- <path pathLength="1" d="M402 200 L435 180 L457 200 M417 200 V243 H452 V200"/>
- <rect pathLength="1" x="280" y="210" width="20" height="32"/>
- <rect pathLength="1" x="425" y="206" width="21" height="35"/>
- <rect pathLength="1" x="560" y="140" width="35" height="196"/>
- <rect pathLength="1" x="277" y="278" width="23" height="38"/>
- <rect pathLength="1" x="425" y="278" width="21" height="38"/>
- <rect pathLength="1" x="500" y="278" width="17" height="38"/>
- <path pathLength="1" d="M200 276 V336 M560 276 V336 M200 336 H560"/>
- <path class="dim" pathLength="1" d="M165 356 H620 M165 348 V364 M620 348 V364 M159 362 L171 350 M614 362 L626 350"/>
- <text x="392" y="380" text-anchor="middle">front elevation</text>
+ <figure class="sheet"><div class="frame"><img src="img/hero-660.webp" srcset="img/hero-480.webp 480w, img/hero-660.webp 660w" sizes="(max-width: 860px) calc(100vw - 2rem), 660px" width="660" height="330" alt="Finished two-tone stucco home with an arched entry and a two-car garage, from the HTB gallery" fetchpriority="high"><svg class="trace" viewBox="0 0 660 330" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+ <path pathLength="1" d="M0 67 L125 66 L192 42 L262 66"/>
+ <path pathLength="1" d="M292 112 V47 H415 V82"/>
+ <path pathLength="1" d="M405 42 L580 104 L568 112"/>
+ <path pathLength="1" d="M10 104 H262 L330 118"/>
+ <path pathLength="1" d="M40 192 V104 M568 112 V192 M40 192 H568 M455 192 V82 H568"/>
+ <rect pathLength="1" x="261" y="120" width="52" height="74"/>
+ <path pathLength="1" d="M119 175 V120 Q135 106 152 120 V175 Z"/>
+ <rect pathLength="1" x="334" y="125" width="36" height="47"/>
+ <rect pathLength="1" x="334" y="91" width="35" height="14"/>
+ <path pathLength="1" d="M392 192 V122 Q416 104 440 122 V192"/>
+ <rect pathLength="1" x="485" y="109" width="30" height="15"/>
+ <path class="dim" pathLength="1" d="M40 214 H568 M40 206 V222 M568 206 V222 M34 220 L46 208 M562 220 L574 208"/>
+ <text x="304" y="240" text-anchor="middle">front elevation</text>
 </svg></div>
   <figcaption class="tb"><span>A finished home from the HTB gallery</span><span class="hand">plans drawn here · built on your lot</span></figcaption></figure>
 </div></section>
@@ -293,10 +294,10 @@ footer .fbrand img{width:52px}
 <section class="band band-alt"><div class="wrap">
  <div class="head"><h2>Two things we build</h2><p>Custom homes, and metal and commercial buildings. Both start with a plan drawn here.</p></div>
  <div class="two">
-  <a class="lane" href="custom-homes.html"><img src="img/8767324-400.webp" srcset="img/8767324-400.webp 400w, img/8767324-660.webp 660w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="660" height="343" alt="Light stucco home with an arched entry and two-car garage" loading="lazy" decoding="async">
+  <a class="lane" href="custom-homes.html"><img src="img/8767324-400.webp" srcset="img/8767324-400.webp 400w, img/8767324-660.webp 660w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="660" height="343" alt="Light stucco home with an arched entry and two-car garage" loading="lazy" decoding="async">
    <div><h3>Custom homes</h3><p>New home, modern approach, reliable build. Plans tailored, price budgeted, process easy.</p>
    <ul><li>Homes to live in, sell or rent</li><li>Duplex, triplex, quadplex</li><li>Apartments</li></ul><span class="go">See custom homes</span></div></a>
-  <a class="lane" href="metal-buildings.html"><img src="img/8655645-400.webp" srcset="img/8655645-400.webp 400w, img/8655645-660.webp 660w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="660" height="426" alt="White metal building with two roll-up doors in a green field" loading="lazy" decoding="async">
+  <a class="lane" href="metal-buildings.html"><img src="img/8655645-400.webp" srcset="img/8655645-400.webp 400w, img/8655645-660.webp 660w" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="660" height="426" alt="White metal building with two roll-up doors in a green field" loading="lazy" decoding="async">
    <div><h3>Metal buildings and commercial</h3><p>Private and commercial contractor. Many applications, extremely reliable, a turnkey solution.</p>
    <ul><li>Welded</li><li>Prefabricated</li><li>Clear-span</li><li>Multi-span</li></ul><span class="go">See metal buildings</span></div></a>
  </div>
