@@ -120,7 +120,19 @@ p { max-width: 62ch; }
 .dark .btn.line:hover { background: #efe6df; color: var(--walnut); }
 .old { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .old .txt p + p { margin-top: 1rem; }
+.old .txt h2 { margin-bottom: 1rem; }
 .old .txt .actions { margin-top: 1.8rem; }
+/* Their preservation work as a dated line; each stop is a small gable, like the logo houses. */
+.years { list-style: none; padding: 0; margin-top: 1.6rem; position: relative; }
+.years::before { content: ""; position: absolute; left: 6.95rem; top: .6rem; bottom: .9rem; width: 2px; background: #5a463b; }
+.years li { display: grid; grid-template-columns: 5.6rem 1fr; gap: 2.4rem; position: relative; padding-bottom: 1.6rem; }
+.years li:last-child { padding-bottom: 0; }
+.years li::after { content: ""; position: absolute; left: 6.45rem; top: .35rem; width: 1.05rem; height: 1.1rem; background: var(--straw); clip-path: polygon(0 40%, 50% 0, 100% 40%, 100% 100%, 0 100%); }
+.years li:last-child::after { background: #fff; }
+.years b { font-family: "Rokkitt", serif; font-size: 2.1rem; line-height: 1; color: var(--straw); text-align: right; font-weight: 700; font-variant-numeric: lining-nums; }
+.years li:last-child b { color: #fff; }
+.years span { color: #d9cdc5; font-size: 1.02rem; line-height: 1.45; }
+.years strong { display: block; color: #fff; font-family: "Rokkitt", serif; font-weight: 600; font-size: 1.4rem; line-height: 1.15; }
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
 .pair img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
 
@@ -205,7 +217,7 @@ details.faq div p + p { margin-top: .8rem; }
 .foot ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
 .foot a { text-decoration: none; }
 .foot a:hover { text-decoration: underline; }
-.foot .work { margin-top: 1.2rem; height: 1.9rem; width: auto; }
+.foot .logo .work { margin-top: 1.2rem; height: auto; width: 205px; max-width: 100%; }
 .foot .legal { margin-top: 3rem; border-top: 1px solid #4a3a31; padding: 1.2rem 0 1.6rem; font-size: .875rem; color: #bfb1a8; }
 .foot .legal p { max-width: none; }
 
@@ -249,7 +261,6 @@ details.faq div p + p { margin-top: .8rem; }
   .quotes, .steps, .people { grid-template-columns: 1fr; }
   .trio { grid-template-columns: 1fr 1fr; gap: 1.2rem 1rem; margin-top: 2rem; }
   .trio figure:first-child { grid-column: span 2; }
-  .foot .work { height: 1.6rem; }
   .quotes blockquote:nth-child(n+3) { display: none; }
   .grid, .grid.two { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .grid figure.wide { grid-column: span 2; }
@@ -305,8 +316,13 @@ details.faq div p + p { margin-top: .8rem; }
   </div>
   <div class="txt">
     <h2 id="old-h">Old buildings, new uses.</h2>
-    <p>Perkins once kept its offices in a lumberyard building from the 1950s. Today the office is in a house built in the forties, in the Village of Dixboro.</p>
-    <p>The same idea goes into client work: a 1928 gas station turned into a banking facility, a dining room added to an 1886 railroad station. When a building has outlived its purpose, they adapt it to today's needs and keep what makes it worth saving.</p>
+    <p>When a building has outlived its purpose, Perkins adapts it to today's needs and keeps its charm. Four buildings from their own preservation page:</p>
+    <ol class="years">
+      <li><b>1886</b><span><strong>A railroad station</strong>Gets a new dining room.</span></li>
+      <li><b>1928</b><span><strong>A gas station</strong>Becomes a banking facility.</span></li>
+      <li><b>1950s</b><span><strong>A lumberyard building</strong>Becomes the Perkins offices.</span></li>
+      <li><b>Today</b><span><strong>A house from the forties</strong>The Perkins office, in the Village of Dixboro.</span></li>
+    </ol>
     <div class="actions"><a class="btn straw" href="preservation.html">See preservation work</a></div>
   </div>
 </div></section>
@@ -322,7 +338,7 @@ details.faq div p + p { margin-top: .8rem; }
     </div>
   </div>
   <div class="trio">
-    <figure><img src="img/new-purchase-1000.webp" srcset="img/new-purchase-480.webp 480w, img/new-purchase-640.webp 640w, img/new-purchase-820.webp 820w, img/new-purchase-1000.webp 1000w, img/new-purchase-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 400px" width="1400" height="1050" alt="The rear of a remodeled blue house with a wraparound porch, in snow" loading="lazy" decoding="async"><figcaption>New Purchase Remodel<span>A new house, reworked inside and out</span></figcaption></figure>
+    <figure><img src="img/new-purchase-1000.webp" srcset="img/new-purchase-480.webp 480w, img/new-purchase-640.webp 640w, img/new-purchase-820.webp 820w, img/new-purchase-1000.webp 1000w, img/new-purchase-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 400px" width="1400" height="1050" alt="The rear of a remodeled blue house with a wraparound porch, in snow" loading="lazy" decoding="async"><figcaption>New Purchase Remodel<span>A new house, reworked inside and out</span></figcaption></figure>
     <figure><img src="img/theater-1000.webp" srcset="img/theater-480.webp 480w, img/theater-640.webp 640w, img/theater-820.webp 820w, img/theater-1000.webp 1000w, img/theater-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 400px" width="1400" height="1050" alt="A home theater with a starry ceiling and backlit acoustic panels" loading="lazy" decoding="async"><figcaption>Immersive Home Theater<span>Star ceiling, acoustic panels, lit walls</span></figcaption></figure>
     <figure><img src="img/laundry-modern-1000.webp" srcset="img/laundry-modern-480.webp 480w, img/laundry-modern-640.webp 640w, img/laundry-modern-820.webp 820w, img/laundry-modern-1000.webp 1000w, img/laundry-modern-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 400px" width="1400" height="1050" alt="A laundry room with a wood counter built over two front-load machines" loading="lazy" decoding="async"><figcaption>Modern Laundry<span>Built-in counter over the machines</span></figcaption></figure>
   </div>
