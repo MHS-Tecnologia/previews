@@ -37,7 +37,7 @@ p{margin:0 0 1em;max-width:66ch}
 .skip:focus{left:8px;top:8px}
 
 /* demo notice */
-.demo{background:var(--ink);color:#E6ECE8;font:400 .74rem/1.35 var(--sans);text-align:center;padding:6px var(--gut)}
+.demo{background:var(--ink);color:#E6ECE8;font:400 .66rem/1.3 var(--sans);letter-spacing:-.005em;text-align:center;padding:4px 8px}
 @media (min-width:900px){.demo{font-size:.8rem;padding:7px var(--gut)}}
 
 /* header */
@@ -379,7 +379,7 @@ details.feat li{margin:3px 0;break-inside:avoid}
       if(w){w.style.setProperty('--frame',b.dataset.c);w.setAttribute('data-frame',b.dataset.k)}
     });
   });
-  var bar=document.querySelector('.callbar'),mark=document.querySelector('[data-callbar-after]');
+  var bar=document.querySelector('.callbar'),mark=document.querySelector('.hero .btns, .phead .btns')||document.querySelector('[data-callbar-after]');
   if(bar&&mark&&'IntersectionObserver' in window){
     new IntersectionObserver(function(e){
       var past=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;
