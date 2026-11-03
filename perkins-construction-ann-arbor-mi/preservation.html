@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="img/logo.png">
+<meta name="theme-color" content="#ebeae6">
+<title>Historic preservation | Perkins Construction Company</title>
+<meta name="description" content="Historic preservation and adaptive reuse in Ann Arbor, from a 1928 gas station to an 1886 railroad station.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rokkitt.woff2" crossorigin>
+<link rel="preload" as="image" href="img/historic-stone-480.webp" imagesrcset="img/historic-stone-480.webp 480w, img/historic-stone-640.webp 640w, img/historic-stone-820.webp 820w, img/historic-stone-1000.webp 1000w, img/historic-stone-1400.webp 1400w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 600px" fetchpriority="high">
+<style>
+@font-face { font-family: "Rokkitt"; font-weight: 100 900; font-display: swap; src: url(fonts/rokkitt.woff2) format("woff2"); }
+@font-face { font-family: "Work Sans"; font-weight: 100 900; font-display: swap; src: url(fonts/worksans.woff2) format("woff2"); }
+/* The logo: oxblood ribbon, clapboard-blue house, straw-yellow house. */
+:root {
+  --plaster: #ebeae6; --paper: #f8f7f4; --line: #d3d0c9;
+  --walnut: #271b15; --walnut-2: #3a2a22; --soft: #5b4e47;
+  --oxblood: #6c2214; --oxblood-2: #571a0f;
+  --blue: #3b6884; --straw: #f0bd45;
+  --pad: clamp(1rem, 4vw, 3rem); --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--plaster); color: var(--walnut); font: 400 1.0625rem/1.62 "Work Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+h1, h2, h3 { font-family: "Rokkitt", Rockwell, Georgia, serif; font-weight: 700; line-height: 1; letter-spacing: -.012em; text-wrap: balance; }
+h1 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); }
+h2 { font-size: clamp(2.1rem, 3.8vw, 3.2rem); }
+h3 { font-size: 1.6rem; line-height: 1.05; }
+p { max-width: 62ch; }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.box { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+
+.demo { max-width: none; background: var(--walnut); color: #d8cfc8; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .45rem 1rem; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; padding-top: .7rem; padding-bottom: .7rem; }
+.brand img { height: 4.25rem; width: auto; }
+.nav { display: flex; align-items: center; gap: 1.35rem; font-size: .95rem; font-weight: 500; }
+.nav a { text-decoration: none; padding: .3rem 0; }
+.nav a:not(.btn):hover, .nav a[aria-current] { text-decoration: underline; text-decoration-color: var(--oxblood); text-decoration-thickness: 3px; text-underline-offset: 7px; }
+.menu { display: none; }
+
+.btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 3.1rem; padding: .7rem 1.35rem; border-radius: 3px; font-weight: 600; text-decoration: none; background: var(--oxblood); color: #fff; transition: background-color .15s ease; }
+.btn:hover { background: var(--oxblood-2); }
+.btn svg { width: 1.1rem; height: 1.1rem; flex: none; }
+.btn.line { background: transparent; color: var(--walnut); box-shadow: inset 0 0 0 2px var(--walnut); }
+.btn.line:hover { background: var(--walnut); color: #fff; }
+.btn.straw { background: var(--straw); color: var(--walnut); }
+.btn.straw:hover { background: #f6cb63; }
+.nav .btn { min-height: 2.6rem; padding: .45rem 1rem; }
+
+/* The gable: the roofline of the houses in their logo, around each lead photo. */
+.gable { position: relative; }
+.gable img { width: 100%; clip-path: polygon(0 18%, 50% 0, 100% 18%, 100% 100%, 0 100%); }
+.gable .roof { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.gable .roof polyline { fill: none; stroke: var(--oxblood); stroke-width: 7px; vector-effect: non-scaling-stroke; stroke-linejoin: miter; }
+@media (prefers-reduced-motion: no-preference) {
+  .rise img { animation: rise-img .9s cubic-bezier(.2,.7,.2,1) .15s both; }
+  .rise .roof { animation: rise-roof .9s cubic-bezier(.2,.7,.2,1) .15s both; transform-origin: 50% 18%; }
+  @keyframes rise-img { from { clip-path: polygon(0 18%, 50% 18%, 100% 18%, 100% 100%, 0 100%); } }
+  @keyframes rise-roof { from { transform: scaleY(0); } }
+}
+
+/* Home hero */
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.hero h1 { margin-bottom: 1.1rem; }
+.hero .lede { font-size: 1.15rem; color: var(--soft); margin-bottom: 1.6rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.where { margin-top: 1.4rem; font-size: .95rem; color: var(--soft); }
+.where strong { color: var(--walnut); font-weight: 600; }
+.hero .gable { align-self: end; }
+
+.towns { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.towns p { max-width: none; padding: 1rem 0; font-size: .98rem; color: var(--soft); }
+.towns strong { color: var(--walnut); font-weight: 600; }
+
+/* Sections */
+.sec { padding-top: clamp(3.5rem, 7vw, 6rem); padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem 3rem; align-items: end; margin-bottom: 2.4rem; }
+.head p { color: var(--soft); }
+
+/* Services: one large tile, four smaller, captions under the photo. */
+.services { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2.2rem 1.5rem; }
+.svc { grid-column: span 3; text-decoration: none; display: block; }
+.svc.big { grid-column: span 6; grid-row: span 2; }
+.svc.big .ph { aspect-ratio: 1 / 1; }
+.svc.big h3 { font-size: 2rem; }
+.svc .ph { overflow: hidden; border-radius: 2px; background: var(--line); aspect-ratio: 4 / 3; }
+.svc .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.svc h3 { margin-top: 1rem; display: flex; align-items: baseline; gap: .5rem; }
+.svc h3::after { content: ""; flex: 1; height: 2px; background: var(--line); transform: translateY(-.3rem); }
+.svc p { margin-top: .45rem; color: var(--soft); font-size: 1rem; }
+.svc .go { display: inline-block; margin-top: .6rem; font-weight: 600; color: var(--oxblood); text-decoration: underline; text-underline-offset: 4px; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) { .svc:hover .ph img { transform: scale(1.03); } }
+
+/* Old buildings band, on walnut like the barn wood in their photos. */
+.dark { background: var(--walnut); color: #efe6df; }
+.dark h2, .dark h3 { color: var(--straw); }
+.dark p { color: #d9cdc5; }
+.dark .people p { color: #d9cdc5; }
+.dark .people .role { color: #a9cbe0; }
+.dark figcaption span, .dark .head p { color: #cbbdb3; }
+.dark .btn.line { color: #fff; box-shadow: inset 0 0 0 2px #efe6df; }
+.dark .btn.line:hover { background: #efe6df; color: var(--walnut); }
+.old { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.old .txt p + p { margin-top: 1rem; }
+.old .txt .actions { margin-top: 1.8rem; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+.pair img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+
+/* Projects */
+.feature { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.feature .txt p { margin-top: 1rem; color: var(--soft); }
+.feature .tag { color: var(--blue); font-weight: 600; font-size: .95rem; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.trio figure img, .grid figure img, .cards figure img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; border-radius: 2px; }
+figcaption { margin-top: .6rem; font-weight: 600; }
+figcaption span { display: block; font-weight: 400; color: var(--soft); font-size: .95rem; }
+
+/* Clients */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+blockquote { border-top: 4px solid var(--straw); padding-top: 1.1rem; }
+blockquote p { font-family: "Rokkitt", Georgia, serif; font-size: 1.45rem; line-height: 1.22; font-weight: 500; }
+blockquote footer { margin-top: .9rem; color: var(--soft); font-size: .95rem; }
+
+/* How a project starts: their FAQ, in order. */
+.steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; counter-reset: s; }
+.steps li { counter-increment: s; border-left: 2px solid var(--oxblood); padding-left: 1.2rem; }
+.steps li::before { content: counter(s); display: block; font-family: "Rokkitt", serif; font-size: 2.6rem; line-height: 1; color: var(--oxblood); font-weight: 700; margin-bottom: .5rem; }
+.steps h3 { font-size: 1.35rem; margin-bottom: .4rem; }
+.steps p { color: var(--soft); font-size: 1rem; }
+
+/* Call band */
+.call { background: var(--blue); color: #fff; }
+.call .in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem 3rem; align-items: center; padding-top: clamp(2.5rem, 5vw, 4rem); padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.call h2 { color: #fff; }
+.call p { margin-top: .7rem; color: #e3edf3; }
+.call .btn.line { color: #fff; box-shadow: inset 0 0 0 2px #fff; }
+.call .btn.line:hover { background: #fff; color: var(--blue); }
+
+/* Interior pages */
+.ph-head { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: end; padding-top: clamp(1.5rem, 4vw, 3rem); padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.ph-head .gable img { aspect-ratio: 3 / 2; object-fit: cover; }
+.ph-head .crumb { font-size: .95rem; color: var(--soft); margin-bottom: .8rem; }
+.ph-head .crumb a { color: var(--oxblood); }
+.ph-head h1 { font-size: clamp(2.4rem, 4.6vw, 4rem); margin-bottom: 1rem; }
+.ph-head .lede { font-size: 1.12rem; color: var(--soft); margin-bottom: 1.5rem; }
+.prose { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 1.5rem clamp(2rem, 5vw, 4.5rem); }
+.prose .body p + p { margin-top: 1rem; }
+.prose .body h3 { margin-top: 2rem; margin-bottom: .6rem; }
+.ticks { list-style: none; padding: 0; margin-top: 1.4rem; display: grid; gap: 1rem; }
+.ticks li { padding-left: 1.6rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .45rem; width: .7rem; height: .7rem; background: var(--straw); clip-path: polygon(0 35%, 50% 0, 100% 35%, 100% 100%, 0 100%); }
+.ticks strong { display: block; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid figure.wide { grid-column: span 2; }
+.grid figure.tall img { aspect-ratio: 3 / 4; }
+.people { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.people h3 { font-size: 1.45rem; }
+.people .role { color: var(--blue); font-weight: 600; margin: .35rem 0 .7rem; font-size: .98rem; }
+.people p { font-size: 1rem; color: var(--soft); }
+details.faq { border-top: 1px solid var(--line); }
+details.faq:last-child { border-bottom: 1px solid var(--line); }
+details.faq summary { cursor: pointer; list-style: none; padding: 1.1rem 2.4rem 1.1rem 0; position: relative; font-family: "Rokkitt", serif; font-size: 1.4rem; font-weight: 600; line-height: 1.15; }
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after { content: "+"; position: absolute; right: .2rem; top: .9rem; font-size: 1.8rem; color: var(--oxblood); font-family: "Work Sans", sans-serif; font-weight: 400; }
+details.faq[open] summary::after { content: "\2212"; }
+details.faq div { padding-bottom: 1.4rem; }
+details.faq div p + p { margin-top: .8rem; }
+.qwall { columns: 3 18rem; column-gap: 2.5rem; }
+.qwall blockquote { break-inside: avoid; margin-bottom: 2.5rem; }
+.qwall blockquote p { font-size: 1.25rem; }
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+.dl { display: grid; grid-template-columns: auto 1fr; gap: .8rem 1.5rem; font-size: 1.1rem; }
+.dl dt { color: var(--soft); }
+.dl dd a { font-weight: 600; color: var(--oxblood); }
+.note { font-size: .95rem; color: var(--soft); margin-top: 1rem; }
+
+/* Footer */
+.foot { background: var(--walnut); color: #d9cdc5; padding-top: 3.5rem; font-size: .98rem; }
+.foot .cols { display: grid; grid-template-columns: auto 1fr 1fr 1fr; gap: 2rem 3rem; align-items: start; }
+.foot .logo img { height: 5.5rem; width: auto; }
+.foot h2 { font-size: 1.25rem; color: var(--straw); margin-bottom: .7rem; }
+.foot ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+.foot a { text-decoration: none; }
+.foot a:hover { text-decoration: underline; }
+.foot .work { margin-top: 1.2rem; height: 1.9rem; width: auto; }
+.foot .legal { margin-top: 3rem; border-top: 1px solid #4a3a31; padding: 1.2rem 0 1.6rem; font-size: .875rem; color: #bfb1a8; }
+.foot .legal p { max-width: none; }
+
+/* Sticky call bar on phones, after the first screen. */
+.bar { display: none; }
+
+@media (max-width: 1100px) {
+  .nav a:not(.btn) { display: none; }
+  .menu { display: block; position: relative; }
+  .menu summary { list-style: none; cursor: pointer; min-height: 2.75rem; padding: .5rem .9rem; border: 2px solid var(--walnut); border-radius: 3px; font-weight: 600; display: flex; align-items: center; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu ul { position: absolute; right: 0; top: calc(100% + .4rem); z-index: 30; list-style: none; padding: .5rem; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 10px 30px rgba(39, 27, 21, .18); min-width: 13rem; }
+  .menu ul a { display: block; padding: .65rem .8rem; text-decoration: none; font-weight: 500; }
+  .menu ul a[aria-current] { color: var(--oxblood); font-weight: 700; }
+}
+@media (max-width: 860px) {
+  body { font-size: 1rem; }
+  .brand img { height: 3.4rem; }
+  .nav .btn { display: none; }
+  .hero, .ph-head { grid-template-columns: 1fr; gap: 1.1rem; padding-top: .6rem; }
+  .hero .gable, .ph-head .gable { order: -1; }
+  .hero .gable img { aspect-ratio: 16 / 10; object-fit: cover; }
+  .ph-head .gable img { aspect-ratio: 16 / 9; object-fit: cover; }
+  .hero h1 { font-size: 2.45rem; margin-bottom: .6rem; }
+  .hero .lede { font-size: 1.02rem; margin-bottom: 1rem; line-height: 1.5; }
+  .ph-head h1 { font-size: 2.3rem; margin-bottom: .6rem; }
+  .ph-head .lede { font-size: 1.02rem; margin-bottom: 1rem; }
+  .actions .btn { flex: 1 1 auto; padding-left: 1rem; padding-right: 1rem; }
+  .wide-only { display: none; }
+  .where { margin-top: 1rem; font-size: .9rem; }
+  .head, .old, .feature, .prose, .call .in { grid-template-columns: 1fr; }
+  .services { grid-template-columns: 1fr 1fr; gap: 1.8rem 1rem; }
+  .svc, .svc.big { grid-column: span 1; grid-row: auto; }
+  .svc.big { grid-column: span 2; }
+  .svc.big .ph { aspect-ratio: 4 / 3; }
+  .svc.big h3 { font-size: 1.6rem; }
+  .svc h3 { font-size: 1.3rem; }
+  .svc p { display: none; }
+  .svc.big p { display: block; }
+  .quotes, .steps, .people { grid-template-columns: 1fr; }
+  .trio { grid-template-columns: 1fr 1fr; gap: 1.2rem 1rem; margin-top: 2rem; }
+  .trio figure:first-child { grid-column: span 2; }
+  .foot .work { height: 1.6rem; }
+  .quotes blockquote:nth-child(n+3) { display: none; }
+  .grid, .grid.two { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .grid figure.wide { grid-column: span 2; }
+  .cards { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  figcaption { font-size: .95rem; }
+  .foot .cols { grid-template-columns: 1fr 1fr; }
+  .foot .logo { grid-column: span 2; }
+  .bar { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; padding: .55rem .75rem calc(.55rem + env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .25s ease; }
+  .bar.on { transform: none; }
+  .bar .btn { min-height: 2.9rem; }
+  .foot .legal { padding-bottom: 5.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .bar { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Perkins Construction Company. Not affiliated with or endorsed by Perkins Construction Company.</p>
+<header class="box top">
+  <a class="brand" href="index.html"><img src="img/logo.webp" width="218" height="180" alt="Perkins Construction Co., established 1984"></a>
+  <nav class="nav" aria-label="Main"><a href="new-construction.html">New homes</a><a href="remodeling.html">Remodeling</a><a href="design.html">Design</a><a href="preservation.html" aria-current="page">Preservation</a><a href="repairs.html">Repairs</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="btn " href="tel:+17347697760"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 734.769.7760</a>
+    <details class="menu"><summary>Menu</summary><ul><li><a href="index.html">Home</a></li><li><a href="new-construction.html">New homes</a></li><li><a href="remodeling.html">Remodeling</a></li><li><a href="design.html">Design</a></li><li><a href="preservation.html" aria-current="page">Preservation</a></li><li><a href="repairs.html">Repairs</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></details>
+  </nav>
+</header>
+<main id="main">
+<section class="box ph-head" data-first>
+  <div>
+    <p class="crumb"><a href="index.html">Home</a> / Historic preservation</p>
+    <h1>Historic preservation and adaptive reuse.</h1>
+    <p class="lede">Ann Arbor's historic buildings give the community its identity. Perkins adapts them to today's needs and keeps their charm.</p>
+    <div class="actions"><a class="btn " href="tel:+17347697760"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 734.769.7760</a><a class="btn line" href="mailto:info@perkinsconstruction.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 7.3L4.3 7v.1L12 12.3 19.7 7.1V7L12 12.3Zm-8 -3.1V17h16V9.2l-8 5.3-8-5.3Z"/></svg>Email<span class="wide-only"> the office</span></a></div>
+  </div>
+  <div class="gable rise"><img src="img/historic-stone-1000.webp" srcset="img/historic-stone-480.webp 480w, img/historic-stone-640.webp 640w, img/historic-stone-820.webp 820w, img/historic-stone-1000.webp 1000w, img/historic-stone-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 600px" width="1400" height="933" alt="A historic stone building with a slate roof and a drive-up canopy" fetchpriority="high"><svg class="roof" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,18 50,0.6 100,18" /></svg></div>
+</section>
+<section class="box sec" style="padding-top:0"><div class="prose">
+  <h2>Not by accident</h2>
+  <div class="body">
+    <p>The Perkins offices were once inside a lumberyard building constructed in the 1950s. Today they are in a residence built in the forties, in the Village of Dixboro. The company believes in adaptive reuse and historic preservation.</p>
+    <p>When a building has outlived its purpose, they work to adapt it while safeguarding its inherent charm. That puts their strengths to work: craftsmanship and attention to detail. They go to great lengths to be historically accurate.</p>
+    <p>From transforming a 1928 gas station into a banking facility to adding a dining room to an 1886 railroad station, they have made all kinds of old buildings feel new.</p>
+  </div>
+</div></section>
+<section class="dark"><div class="box sec">
+  <h2 style="margin-bottom:2rem">Barns, kept standing</h2>
+  <div class="grid two">
+    <figure><img src="img/barn-hall-1000.webp" srcset="img/barn-hall-480.webp 480w, img/barn-hall-640.webp 640w, img/barn-hall-820.webp 820w, img/barn-hall-1000.webp 1000w, img/barn-hall-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 580px" width="1400" height="933" alt="A converted barn with its original timber trusses, now a meeting room with a long table" loading="lazy" decoding="async"><figcaption>Timber trusses, new use<span>Now a meeting room</span></figcaption></figure>
+    <figure class="tall"><img src="img/barn-dining-1000.webp" srcset="img/barn-dining-480.webp 480w, img/barn-dining-640.webp 640w, img/barn-dining-820.webp 820w, img/barn-dining-1000.webp 1000w" sizes="(max-width: 860px) 50vw, 580px" width="1000" height="1500" alt="The timber frame of a converted barn, with a dining room and a loft stair" loading="lazy" decoding="async"><figcaption>The frame left open<span>Dining room and loft</span></figcaption></figure>
+  </div>
+</div></section>
+<section class="call" aria-labelledby="call-h"><div class="box in">
+  <div><h2 id="call-h">Have an old building with a future?</h2><p>Tell Perkins what it is and what you need it to become.</p></div>
+  <div class="actions"><a class="btn straw" href="tel:+17347697760"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 734.769.7760</a><a class="btn line" href="mailto:info@perkinsconstruction.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 7.3L4.3 7v.1L12 12.3 19.7 7.1V7L12 12.3Zm-8 -3.1V17h16V9.2l-8 5.3-8-5.3Z"/></svg>Email<span class="wide-only"> the office</span></a></div>
+</div></section>
+</main>
+<footer class="foot">
+  <div class="box">
+    <div class="cols">
+      <div class="logo"><img src="img/logo.webp" width="218" height="180" alt="Perkins Construction Co." loading="lazy"><img class="work" src="img/work.webp" width="205" height="58" alt="Let's get to work." loading="lazy"></div>
+      <div><h2>Services</h2><ul><li><a href="new-construction.html">New homes</a></li><li><a href="remodeling.html">Remodeling</a></li><li><a href="design.html">Design</a></li><li><a href="preservation.html">Preservation</a></li><li><a href="repairs.html">Repairs</a></li></ul></div>
+      <div><h2>Perkins</h2><ul><li><a href="projects.html">Projects</a></li><li><a href="about.html">About and leadership</a></li><li><a href="clients.html">What clients say</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h2>Office</h2><p>5643 Plymouth Road<br>Ann Arbor, MI 48105<br>In the Village of Dixboro</p><p style="margin-top:.7rem"><a href="tel:+17347697760">734.769.7760</a><br><a href="mailto:info@perkinsconstruction.net">info@perkinsconstruction.net</a></p></div>
+    </div>
+    <div class="legal"><p>Unofficial demo built by MHS Tecnologia for Perkins Construction Company. Not affiliated with or endorsed by Perkins Construction Company. Photos and text from perkinsconstruction.net. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p></div>
+  </div>
+</footer>
+<div class="bar" id="bar"><a class="btn " href="tel:+17347697760"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 734.769.7760</a><a class="btn line" href="mailto:info@perkinsconstruction.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 7.3L4.3 7v.1L12 12.3 19.7 7.1V7L12 12.3Zm-8 -3.1V17h16V9.2l-8 5.3-8-5.3Z"/></svg>Email</a></div>
+<script>
+(function(){var b=document.getElementById('bar'),t=document.querySelector('[data-first]');if(!b||!t||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting)}).observe(t);document.addEventListener('click',function(e){document.querySelectorAll('details.menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});})();
+</script>
+</body>
+</html>
