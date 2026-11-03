@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#1c368b">
+<title>Services: road service, towing, recovery and specialized moving | Brewer’s Towing</title>
+<meta name="description" content="Lockouts, jump starts, flat tires, towing for cars to buses, heavy recovery with a 75-ton rotator and air cushions, lowboy hauling and equipment moving.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/barlowcondensed-800.woff2" crossorigin>
+<style>
+@font-face{font-family:"Barlow";font-weight:400;font-display:swap;src:url(fonts/barlow-400.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:600;font-display:swap;src:url(fonts/barlow-600.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:swap;src:url(fonts/barlowcondensed-800.woff2) format("woff2")}
+:root{--navy:#1c368b;--navy-2:#14276a;--navy-3:#0e1c4d;--gold:#f4ce53;--gold-2:#e8b923;--asphalt:#1b1e25;--road:#eef0f3;--line:#cfd4dd;--muted:#4a5160;--pad:clamp(1rem,4vw,3rem);--max:78rem}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--road);color:var(--asphalt);font:400 1.0625rem/1.6 "Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased;touch-action:manipulation}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.on-light :focus-visible,main :focus-visible{outline-color:var(--navy)}
+.navy :focus-visible,.hero :focus-visible,.site-head :focus-visible,.site-foot :focus-visible{outline-color:var(--gold)}
+h1,h2,h3,.cond{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:800;line-height:.98;letter-spacing:-.005em;text-wrap:balance}
+h2{font-size:clamp(2.25rem,4.6vw,3.5rem)}
+h3{font-size:1.65rem;line-height:1.05}
+p{max-width:38rem}
+[id]{scroll-margin-top:1rem}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;color:var(--asphalt);padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.demo{background:var(--asphalt);color:#d3d7df;font-size:.8125rem;line-height:1.4;text-align:center;padding:.5rem 1rem}
+
+/* header */
+.site-head{background:var(--navy);color:#fff;border-bottom:4px solid var(--gold)}
+.site-head .wrap{display:flex;align-items:center;gap:1.5rem;min-height:4.75rem}
+.brand{display:block;flex:none;padding:.4rem 0}
+.brand img{width:190px;height:auto}
+.nav{display:flex;align-items:center;gap:.25rem;margin-left:auto}
+.nav>a{text-decoration:none;font-weight:600;font-size:1rem;padding:.55rem .8rem;border-radius:3px}
+.nav>a:hover{background:var(--navy-2)}
+.nav>a[aria-current]{box-shadow:inset 0 -3px 0 var(--gold)}
+.nav>a.call{background:var(--gold);color:var(--asphalt);margin-left:.75rem;font-weight:700;white-space:nowrap}
+.nav>a.call:hover{background:#fff}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:.6rem .9rem;border:2px solid rgba(255,255,255,.5);border-radius:3px;user-select:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--navy-2)}
+.menu div{position:absolute;right:0;top:calc(100% + .6rem);background:var(--navy-3);border:1px solid var(--navy);border-top:4px solid var(--gold);min-width:15rem;z-index:30;padding:.4rem 0;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.menu div a{display:block;padding:.8rem 1.1rem;text-decoration:none;font-weight:600}
+.menu div a[aria-current]{color:var(--gold)}
+.menu div a:hover{background:var(--navy-2)}
+
+/* the lettered phone number: yellow with the black drop their logo and doors use */
+.lettered{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:800;color:var(--gold);text-shadow:.06em .06em 0 #05091a;letter-spacing:.01em;line-height:.95}
+.callout{display:inline-flex;flex-direction:column;text-decoration:none;padding:.85rem 1.25rem .95rem;background:var(--navy-3);border:2px solid var(--gold);border-radius:4px}
+.callout small{font-size:.95rem;font-weight:600;color:#fff;display:flex;align-items:center;gap:.55rem}
+.callout .lettered{font-size:clamp(2.6rem,5.2vw,4.1rem)}
+.callout:hover{background:#09133a}
+.beacon{width:.6rem;height:.6rem;border-radius:50%;background:#ffab1a;box-shadow:0 0 0 0 rgba(255,171,26,.6);flex:none}
+@media (prefers-reduced-motion:no-preference){.beacon{animation:beacon 1.6s ease-in-out infinite}}
+@keyframes beacon{0%,100%{opacity:1}50%{opacity:.25}}
+.textlink{font-weight:600;color:inherit;text-underline-offset:.2em;text-decoration-thickness:2px}
+
+/* hero */
+.hero{background:var(--navy-2);color:#fff;padding:clamp(1.5rem,3.4vw,2.75rem) 0 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,3.5vw,3.25rem);align-items:center}
+.hero h1{font-size:clamp(2.5rem,4.4vw,4rem);margin-bottom:1.1rem}
+.hero .lede{color:#dfe4f1;font-size:1.125rem;margin-bottom:1.6rem}
+.hero .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.hero figure{margin:0}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;background:var(--navy-3)}
+.hero figcaption{font-size:.875rem;color:#c3cbe0;margin-top:.5rem}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(1.5rem,3vw,2.5rem);border-top:1px solid rgba(255,255,255,.18)}
+.facts p{padding:1rem 1.25rem 1.25rem 0;font-size:.98rem;color:#dfe4f1;max-width:none}
+.facts p+p{padding-left:1.25rem;border-left:1px solid rgba(255,255,255,.18)}
+.facts strong{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.75rem;line-height:1.05;color:#fff}
+
+/* sections */
+.sec{padding:clamp(3.5rem,8vw,6rem) 0}
+.sec-head{margin-bottom:clamp(1.75rem,4vw,3rem)}
+.sec-head p{margin-top:.9rem;color:var(--muted);font-size:1.125rem}
+.navy{background:var(--navy-2);color:#fff}
+.navy .sec-head p,.navy p{color:#dfe4f1}
+.dark{background:var(--navy-3);color:#fff}
+.lane{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;padding:clamp(1.5rem,3vw,2.25rem) 0;border-top:2px solid var(--asphalt)}
+.lane:last-child{border-bottom:2px solid var(--asphalt)}
+.lane:nth-child(even) .lane-img{order:2}
+.lane img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.lane h3{font-size:clamp(1.9rem,3vw,2.5rem);margin-bottom:.75rem}
+.lane p+p{margin-top:.75rem}
+.lane .textlink{display:inline-block;margin-top:1rem}
+.ticks{list-style:none;padding:0;columns:2;column-gap:2.5rem}
+.ticks li{break-inside:avoid;padding:.6rem 0 .6rem 1.6rem;position:relative;border-bottom:1px solid rgba(255,255,255,.16)}
+.ticks li::before{content:"";position:absolute;left:0;top:1.1rem;width:.7rem;height:.35rem;background:var(--gold)}
+.on-light .ticks li{border-color:var(--line)}
+.on-light .ticks li::before{background:var(--navy)}
+.fleet{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.fleet figure{margin:0}
+.fleet img{width:100%;border-radius:4px}
+.fleet figcaption{font-size:.875rem;color:#c3cbe0;margin-top:.5rem}
+.crew{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--asphalt);margin-top:2rem}
+.crew div{padding:1.25rem 1.25rem 0 0}
+.crew div+div{padding-left:1.25rem;border-left:1px solid var(--line)}
+.crew dt{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:clamp(2.75rem,5vw,4rem);line-height:1;color:var(--navy)}
+.crew dd{margin:.35rem 0 0;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.split figure{margin:0}
+.split img{width:100%;border-radius:4px}
+.split figcaption{font-size:.875rem;color:var(--muted);margin-top:.5rem}
+.split p+p{margin-top:.9rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem)}
+.pair>div{padding-top:1.25rem;border-top:4px solid var(--gold)}
+.pair h3{margin-bottom:.6rem}
+.pair .textlink{display:inline-block;margin-top:.9rem}
+
+/* contact band */
+.callband{background:var(--navy);color:#fff;padding:clamp(3rem,7vw,5rem) 0;border-top:4px solid var(--gold)}
+.callband .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:2rem 3rem;align-items:end}
+.callband h2{margin-bottom:1rem}
+.callband p{color:#dfe4f1}
+.callband address{font-style:normal;line-height:1.7}
+.callband address a{font-weight:600}
+
+/* inner pages */
+.page-head{background:var(--navy-2);color:#fff;padding:clamp(2.25rem,6vw,4rem) 0}
+.page-head h1{font-size:clamp(2.6rem,6vw,4.75rem);margin-bottom:.9rem}
+.page-head p{color:#dfe4f1;font-size:1.125rem}
+.page-head .ctas{margin-top:1.5rem}
+.svc{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,4rem);padding:clamp(2.5rem,5vw,3.5rem) 0;border-bottom:1px solid var(--line);align-items:start}
+.svc:nth-of-type(even){grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.svc:nth-of-type(even) figure{order:-1}
+.svc h2{margin-bottom:1rem}
+.svc p+p{margin-top:.8rem}
+.svc figure{margin:0}
+.svc img{width:100%;border-radius:4px;aspect-ratio:4/3;object-fit:cover}
+.svc figcaption{font-size:.875rem;color:var(--muted);margin-top:.5rem}
+.quote{font-size:1.2rem;font-weight:600;border-left:4px solid var(--gold);padding-left:1rem;margin-top:1rem}
+
+/* gallery */
+.gal-sec{padding:clamp(2.25rem,5vw,3.5rem) 0;border-bottom:1px solid var(--line)}
+.gal-sec h2{margin-bottom:1.25rem}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;list-style:none;padding:0}
+.grid button{all:unset;cursor:zoom-in;display:block;width:100%}
+.grid button:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;background:#d9dde5}
+.grid button:hover img{filter:brightness(1.06)}
+.grid span{display:block;font-size:.95rem;padding:.5rem .1rem 0;color:var(--asphalt);font-weight:600}
+.grid li{min-width:0}
+dialog.lb{margin:auto;padding:0;border:0;background:transparent;max-width:min(92vw,1000px);max-height:92vh;overflow:visible}
+dialog.lb::backdrop{background:rgba(6,10,28,.9)}
+dialog.lb img{max-width:100%;max-height:80vh;width:auto;margin:0 auto;border-radius:4px}
+dialog.lb p{color:#fff;text-align:center;margin:.75rem auto 0;font-weight:600}
+dialog.lb button{position:absolute;top:-3rem;right:0;background:var(--gold);color:var(--asphalt);border:0;border-radius:3px;font:700 1rem "Barlow",sans-serif;padding:.5rem .9rem;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){dialog.lb[open]{animation:lbin .2s ease-out}}
+@keyframes lbin{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+
+/* auctions & contact */
+.rules{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.rules li{background:#fff;border-left:4px solid var(--navy);padding:1rem 1.2rem;border-radius:0 4px 4px 0}
+.rules strong{display:block;font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.35rem;line-height:1.1;margin-bottom:.2rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.card{background:#fff;padding:1.4rem 1.4rem 1.6rem;border-radius:4px;border-top:4px solid var(--navy)}
+.card h2{font-size:1.7rem;margin-bottom:.6rem}
+.card p+p{margin-top:.6rem}
+.card a{font-weight:600;overflow-wrap:anywhere}
+.big-tel{font-size:clamp(2.2rem,4vw,3rem);display:inline-block;text-decoration:none}
+.note{font-size:.95rem;color:var(--muted)}
+
+/* footer */
+.site-foot{background:var(--asphalt);color:#c9ced8;padding:2.75rem 0 6rem;font-size:.95rem}
+.site-foot .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid #353a46}
+.site-foot img{width:150px;margin-bottom:.9rem}
+.site-foot h2{font-size:1.25rem;color:#fff;margin-bottom:.6rem}
+.site-foot ul{list-style:none;padding:0}
+.site-foot li{padding:.2rem 0}
+.site-foot a{color:#fff}
+.legal{font-size:.8125rem;color:#a5abb8;margin-top:1.5rem;max-width:60rem}
+
+/* sticky call bar (mobile) */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:15;display:none;background:var(--gold);color:var(--asphalt);text-decoration:none;text-align:center;font-weight:700;font-size:1.1rem;padding:.85rem 1rem calc(.85rem + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(0,0,0,.25);transform:translateY(110%);transition:transform .25s ease}
+.callbar.show{transform:none}
+
+@media (max-width:1060px){.nav>a{padding:.5rem .55rem;font-size:.95rem}.brand img{width:160px}}
+@media (max-width:899px){
+  .nav>a{display:none}
+  .menu{display:block}
+  .hero-grid,.fleet,.split,.svc,.svc:nth-of-type(even),.callband .wrap{grid-template-columns:1fr}
+  .svc:nth-of-type(even) figure{order:0}
+  .callbar{display:block}
+  .site-foot .cols{grid-template-columns:1fr 1fr}
+  .site-foot .cols>div:first-child{grid-column:1/-1}
+  .cards{grid-template-columns:1fr}
+}
+@media (max-width:759px){
+  .lane{grid-template-columns:1fr}
+  .lane:nth-child(even) .lane-img{order:0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+  .crew{grid-template-columns:1fr 1fr}
+  .crew div:nth-child(3){padding-left:0;border-left:0}
+  .crew div:nth-child(n+3){margin-top:1rem}
+  .pair,.rules{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .demo{font-size:.75rem;padding:.4rem .75rem}
+  .site-head .wrap{min-height:3.75rem}
+  .brand img{width:132px}
+  .hero{padding-top:1.25rem}
+  .hero h1{font-size:2.45rem;margin-bottom:.75rem}
+  .hero .lede{font-size:1.02rem;margin-bottom:1.1rem}
+  .callout{width:100%;padding:.7rem 1rem .8rem}
+  .callout .lettered{font-size:2.9rem}
+  .facts{grid-template-columns:1fr}
+  .facts p,.facts p+p{padding:.85rem 0;border-left:0}
+  .facts p+p{border-top:1px solid rgba(255,255,255,.18)}
+  .ticks{columns:1}
+  .grid{grid-template-columns:1fr}
+  .site-foot .cols{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Brewer’s Towing. Not affiliated with or endorsed by Brewer’s Towing.</div>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Brewer’s Towing, home"><img src="img/logo.webp" width="440" height="120" alt="Brewer’s"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="gallery.html">Photo gallery</a><a href="auctions.html">Auctions</a><a href="history.html">Our history</a><a href="contact.html">Contact</a><a class="call" href="tel:+17346658888">Call 734-665-8888</a>
+      <details class="menu"><summary>Menu</summary><div><a href="index.html">Home</a><a href="services.html" aria-current="page">Services</a><a href="gallery.html">Photo gallery</a><a href="auctions.html">Auctions</a><a href="history.html">Our history</a><a href="contact.html">Contact</a><a href="tel:+17346658888">Call 734-665-8888</a></div></details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Services</h1>
+    <p>Towing and roadside assistance for your every need, 24 hours a day, 365 days a year. Brewer’s serves Ann Arbor, the surrounding areas in Michigan and the greater Midwest region.</p>
+    <div class="ctas" data-callbar-after><a class="callout" href="tel:+17346658888"><small><span class="beacon" aria-hidden="true"></span>Call dispatch, including for pricing</small><span class="lettered">734-665-8888</span></a></div>
+  </div>
+</section>
+<div class="wrap on-light">
+  <section class="svc" id="road-service" aria-labelledby="rs-h">
+    <div>
+      <h2 id="rs-h">Road service</h2>
+      <p>Lockouts, jump starts, flat tires and stuck calls. Brewer’s roadside services are mostly completed by its light and medium duty tow trucks and flatbeds.</p>
+      <p>At Brewer’s, an owner or manager is on call 24 hours a day, seven days a week.</p>
+    </div>
+    <figure>
+      <img src="img/lockout-480.webp" srcset="img/lockout-480.webp 480w, img/lockout-800.webp 800w" sizes="(max-width: 899px) calc(100vw - 2rem), 456px" width="800" height="1067" alt="A Brewer’s driver in a hi-vis vest opening the door of a locked red pickup" loading="lazy" decoding="async">
+      <figcaption>Lockout service, from Brewer’s gallery.</figcaption>
+    </figure>
+  </section>
+  <section class="svc" id="towing" aria-labelledby="tw-h">
+    <div>
+      <h2 id="tw-h">Towing</h2>
+      <p>Brewer’s can safely tow your car, truck, bus, recreational vehicle or motorcycle with its fleet of tow trucks and flatbeds. Local and long distance towing, heavy duty towing and private property towing.</p>
+      <p>Brewer’s tows to and from the locations most convenient for its customers, and has extensive experience with luxury and other special vehicles. Dollies go on all-wheel-drive vehicles.</p>
+    </div>
+    <figure>
+      <img src="img/g-heavy-rv-400.webp" srcset="img/g-heavy-rv-400.webp 400w, img/g-heavy-rv-800.webp 800w" sizes="(max-width: 899px) calc(100vw - 2rem), 456px" width="800" height="600" alt="A navy Brewer’s heavy duty wrecker towing a large motorhome" loading="lazy" decoding="async">
+      <figcaption>Heavy duty towing of a recreational vehicle.</figcaption>
+    </figure>
+  </section>
+  <section class="svc" id="recovery" aria-labelledby="rc-h">
+    <div>
+      <h2 id="rc-h">Recovery</h2>
+      <p>Air cushion recovery units, a 75-ton rotator, and the deep experience of Brewer’s heavy duty and recovery specialists give the company the capability to respond to virtually any request.</p>
+      <p class="quote">“We accept any challenge.”</p>
+    </div>
+    <figure>
+      <img src="img/g-rec-2-400.webp" srcset="img/g-rec-2-400.webp 400w, img/g-rec-2-800.webp 800w" sizes="(max-width: 899px) calc(100vw - 2rem), 456px" width="800" height="600" alt="A Brewer’s wrecker lifting an overturned box truck among trees" loading="lazy" decoding="async">
+      <figcaption>From the recovery section of Brewer’s gallery.</figcaption>
+    </figure>
+  </section>
+  <section class="svc" id="specialized" aria-labelledby="sp-h">
+    <div>
+      <h2 id="sp-h">Specialized services</h2>
+      <p>For less common needs, Brewer’s Landoll lowboy and Trail King detach trailers can safely transport nearly anything. Brewer’s handles mis-loads, load shifts and steel coils of any size.</p>
+      <p>The fleet can also be used for equipment moving of all sizes, shapes and weights, along with vehicle and equipment storage.</p>
+    </div>
+    <figure>
+      <img src="img/g-lowboy-bus-400.webp" srcset="img/g-lowboy-bus-400.webp 400w, img/g-lowboy-bus-800.webp 800w" sizes="(max-width: 899px) calc(100vw - 2rem), 456px" width="800" height="600" alt="A Brewer’s truck hauling a painted bus on a Landoll lowboy trailer" loading="lazy" decoding="async">
+      <figcaption>A bus on the Landoll lowboy.</figcaption>
+    </figure>
+  </section>
+</div>
+<section class="sec on-light" aria-labelledby="who-h">
+  <div class="wrap">
+    <h2 id="who-h">Who Brewer’s works for</h2>
+    <p style="margin-top:1rem;font-size:1.125rem">The general public, Agero, Quest Towing Services, The Towing Network, city, county and state agencies, auto dealerships and manufacturers, and private property locations.</p>
+    <h3 style="margin:2.5rem 0 1rem">Services and equipment</h3>
+    <ul class="ticks">
+      <li>Light, medium and heavy duty tow trucks</li>
+      <li>Light and heavy duty flatbeds</li>
+      <li>Air cushion recovery units</li>
+      <li>Heavy duty hydraulic wreckers</li>
+      <li>Lowboy and detached trailers</li>
+      <li>Semi tractor and trailers</li>
+      <li>Front end loader, forklift, hi-lo</li>
+      <li>Lockouts, jump starts, flat tires, stuck calls</li>
+      <li>Uprighting, lifting, hauling and moving any vehicle or object</li>
+      <li>Vehicle and equipment storage</li>
+    </ul>
+  </div>
+</section>
+
+<section class="callband" aria-labelledby="cb-h">
+  <div class="wrap">
+    <div>
+      <h2 id="cb-h">Stuck, locked out or broken down? Call dispatch.</h2>
+      <p>Our 24-hour in-house dispatch team answers the phone day and night. For dispatch questions, including pricing, call the dispatch center.</p>
+      <p style="margin-top:1.5rem"><a class="callout" href="tel:+17346658888"><small><span class="beacon" aria-hidden="true"></span>Dispatch is open 24/7</small><span class="lettered">734-665-8888</span></a></p>
+    </div>
+    <address>
+      Brewer’s Inc.<br>1763 Plymouth Road<br>Ann Arbor, MI 48105<br>
+      <a href="mailto:info@brewerstowing.com">info@brewerstowing.com</a><br>
+      <span style="color:#c3cbe0">Email is not monitored 24/7. Call for immediate towing or road service.</span>
+    </address>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="img/logo.webp" width="440" height="120" alt="Brewer’s" loading="lazy">
+        <p>Brewer’s Inc., 1763 Plymouth Road, Ann Arbor, MI 48105. Towing, road service and recovery, 24 hours a day, seven days a week.</p>
+      </div>
+      <div>
+        <h2>Reach dispatch</h2>
+        <ul>
+          <li><a href="tel:+17346658888">734-665-8888</a></li>
+          <li><a href="mailto:info@brewerstowing.com">info@brewerstowing.com</a></li>
+          <li>Fax 734-926-0526</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Photo gallery</a></li><li><a href="auctions.html">Auctions</a></li><li><a href="history.html">Our history</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Brewer’s Towing. Text and photos come from the public website of Brewer’s Towing. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </div>
+</footer>
+<a class="callbar" href="tel:+17346658888" aria-label="Call Brewer’s dispatch, 734-665-8888">Call dispatch · 734-665-8888</a>
+<script>
+(function(){var b=document.querySelector('.callbar'),t=document.querySelector('[data-callbar-after]');
+if(!b)return;if(!t||!('IntersectionObserver' in window)){b.classList.add('show');return}
+new IntersectionObserver(function(e){b.classList.toggle('show',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t);
+document.addEventListener('click',function(e){var m=document.querySelector('.menu[open]');if(m&&!m.contains(e.target))m.removeAttribute('open')});})();
+</script>
+</body>
+</html>
