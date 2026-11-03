@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Westlake Music Academy | Music lessons in Westlake, OH</title>
+<meta name="description" content="Private lessons in piano, guitar, voice, violin, cello, drums, flute and more, taught by degreed specialists. Westlake, Ohio.">
+<meta name="theme-color" content="#33554d">
+<link rel="icon" href="data:,">
+<link rel="preload" href="fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m.webp" imagesrcset="img/hero-m.webp 800w" imagesizes="calc(100vw - 2rem)" media="(max-width: 760px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1100.webp" imagesrcset="img/hero-720.webp 720w, img/hero-1100.webp 1100w" imagesizes="(min-width: 1216px) 620px, 52vw" media="(min-width: 761px)" fetchpriority="high">
+<style>
+@font-face{font-family:"Alegreya";font-weight:400 900;font-style:normal;font-display:swap;src:url(fonts/alegreya.woff2) format("woff2")}
+@font-face{font-family:"Alegreya";font-weight:400 900;font-style:italic;font-display:swap;src:url(fonts/alegreya-italic.woff2) format("woff2")}
+@font-face{font-family:"Commissioner";font-weight:100 900;font-display:swap;src:url(fonts/commissioner.woff2) format("woff2")}
+
+/* The green of their logo, and the butter-yellow paint on every lesson-room wall in their photos. */
+:root{
+  --green:#33554d; --green-deep:#1f3a33; --green-soft:#e3ebe7;
+  --wall:#efd683; --wall-soft:#f8edc4;
+  --ink:#1c2321; --muted:#4a5450; --paper:#fff; --rule:#d8d2bd;
+  --serif:"Alegreya",Georgia,serif; --sans:"Commissioner",system-ui,sans-serif;
+  --pad:clamp(1rem,4vw,3rem); --max:76rem;
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+body{font-family:var(--sans);font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--paper);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:50;background:#fff;padding:.5rem 1rem}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;color:var(--green-deep);text-wrap:balance}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.01em}
+h3{font-size:1.45rem}
+p{max-width:64ch}
+.lede{font-size:1.15rem;color:var(--muted)}
+
+.demo{max-width:none;background:var(--green-deep);color:#e8efe9;font-size:.8125rem;line-height:1.35;padding:.5rem var(--pad);text-align:center}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand img{width:172px;height:auto}
+.nav{display:flex;align-items:center;gap:1.6rem}
+.nav > a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem}
+.nav > a:hover,.nav > a[aria-current]{color:var(--green);text-decoration:underline;text-underline-offset:.35em;text-decoration-thickness:2px}
+.nav > a.call{background:var(--green);color:#fff;padding:.55rem 1rem;border-radius:999px;text-decoration:none}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:.55rem 1rem;border:1.5px solid var(--green);border-radius:999px;color:var(--green)}
+.menu summary::-webkit-details-marker{display:none}
+.menu .panel{position:absolute;right:0;top:calc(100% + .6rem);background:#fff;border:1px solid var(--rule);border-radius:12px;box-shadow:0 18px 40px rgba(31,58,51,.18);padding:.6rem;min-width:15rem;display:grid}
+.menu .panel a{padding:.75rem .9rem;color:var(--ink);text-decoration:none;font-weight:500;border-radius:8px}
+.menu .panel a:hover{background:var(--green-soft)}
+.menu .panel a.call{background:var(--green);color:#fff;margin-top:.3rem;text-align:center}
+@media (max-width:900px){.nav > a{display:none}.menu{display:block}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.7rem 1.35rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:1rem;line-height:1.2}
+.btn.solid{background:var(--green);color:#fff}
+.btn.solid:hover{background:var(--green-deep)}
+.btn.line{border:1.5px solid var(--green);color:var(--green);background:transparent}
+.btn.line:hover{background:var(--green-soft)}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+
+/* hero: the lesson-room wall runs behind the photo */
+.hero{background:var(--wall)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(1.5rem,4vw,4rem);align-items:center;padding-block:clamp(2.5rem,5vw,4.5rem)}
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.85rem);letter-spacing:-.015em}
+.hero .sub{font-size:1.15rem;margin-top:1.1rem;color:#3b3a2c;max-width:34ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.hero .fact{margin-top:1.4rem;font-size:.95rem;color:#3b3a2c;max-width:40ch}
+.hero .fact strong{color:var(--green-deep)}
+.hero figure{position:relative}
+.hero figure img{border-radius:6px;width:100%;box-shadow:0 1px 0 rgba(0,0,0,.05)}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;gap:1.1rem;padding-block:1.4rem 1.6rem}
+  .hero h1{font-size:2.05rem}
+  .hero .sub{font-size:1rem;margin-top:.7rem}
+  .hero .actions{margin-top:1rem;flex-wrap:nowrap}
+  .hero .actions .btn{flex:1 1 auto;padding-inline:.85rem;font-size:.94rem;white-space:nowrap;gap:.4rem}
+  .hero .actions .btn.solid{flex-grow:1.6}
+  .hero .fact{display:none}
+}
+
+/* the instrument finder (signature) */
+.finder{padding-block:clamp(3rem,7vw,6rem)}
+.finder header{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2.4rem}
+.finder header p{color:var(--muted)}
+.board{display:grid;grid-template-columns:minmax(14rem,19rem) 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.inst{display:grid;gap:.1rem;border-top:2px solid var(--green-deep)}
+.inst button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.62rem .2rem;border-bottom:1px solid var(--rule);font-family:var(--serif);font-size:1.5rem;font-style:italic;color:var(--muted)}
+.inst button span{font-family:var(--sans);font-style:normal;font-size:.85rem;color:var(--muted)}
+.inst button:hover{color:var(--green)}
+.inst button[aria-selected=true]{color:var(--green-deep);font-weight:700;font-style:normal}
+.inst button[aria-selected=true] span{color:var(--green)}
+.inst button:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.sheet{position:relative;padding-top:2.6rem}
+/* five staff lines across the top of the sheet: the instrument's own page */
+.sheet::before{content:"";position:absolute;inset:0 0 auto 0;height:1.65rem;background:repeating-linear-gradient(to bottom,var(--green) 0 1px,transparent 1px 6.5px)}
+.sheet h3{font-size:clamp(2rem,3.6vw,3rem)}
+.sheet .meta{margin-top:.4rem;color:var(--muted)}
+.sheet ul{list-style:none;padding:0;margin-top:1.6rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 2rem}
+.sheet li{border-left:3px solid var(--wall);padding-left:.9rem}
+.sheet li b{display:block;font-family:var(--serif);font-size:1.45rem;color:var(--ink);line-height:1.2}
+.sheet li small{font-size:.9rem;color:var(--muted)}
+.sheet .more{margin-top:1.8rem;display:inline-block;font-weight:600}
+.sheet[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){.sheet.show{animation:in .28s ease-out}@keyframes in{from{opacity:0;transform:translateY(6px)}}}
+@media (max-width:760px){
+  .finder header{grid-template-columns:1fr;gap:.8rem}
+  .board{grid-template-columns:1fr}
+  .inst{display:flex;flex-wrap:wrap;gap:.5rem;border:0}
+  .inst button{font-size:1.05rem;border:1.5px solid var(--rule);border-radius:999px;padding:.45rem .9rem;font-style:normal}
+  .inst button span{display:none}
+  .inst button[aria-selected=true]{background:var(--green);border-color:var(--green);color:#fff}
+  .sheet ul{grid-template-columns:1fr}
+}
+
+/* how a month of lessons works */
+.month{background:var(--wall-soft);padding-block:clamp(3rem,7vw,6rem)}
+.month .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.month figure img{border-radius:6px}
+.month figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem}
+dl.terms{margin-top:1.6rem;display:grid;gap:0}
+dl.terms div{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;padding-block:1rem;border-top:1px solid var(--rule)}
+dl.terms dt{font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--green-deep);line-height:1.3}
+dl.terms dd{color:var(--ink)}
+@media (max-width:760px){.month .wrap{grid-template-columns:1fr}dl.terms div{grid-template-columns:1fr;gap:.2rem}}
+
+/* who studies here */
+.who{padding-block:clamp(3rem,7vw,6rem)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,3vw,2.5rem);margin-top:2.2rem}
+.pair article img{border-radius:6px;aspect-ratio:3/2;object-fit:cover;width:100%}
+.pair h3{margin-top:1.1rem}
+.pair p{margin-top:.5rem;color:var(--muted)}
+.pair a.more{display:inline-block;margin-top:.7rem;font-weight:600}
+@media (max-width:760px){.pair{grid-template-columns:1fr}}
+
+/* visit band */
+.visit{background:var(--green-deep);color:#eef3ef;padding-block:clamp(3rem,6vw,5rem)}
+.visit .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2.5rem}
+.visit h2{color:#fff}
+.visit h3{color:var(--wall);font-size:1.2rem;margin-bottom:.5rem}
+.visit a{color:#fff}
+.visit .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.visit .btn.solid{background:var(--wall);color:var(--green-deep)}
+.visit .btn.line{border-color:#cfe0d7;color:#fff}
+.visit .btn.line:hover{background:rgba(255,255,255,.08)}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr}}
+
+/* inner pages */
+.pagehead{background:var(--wall);padding-block:clamp(2rem,5vw,3.6rem)}
+.pagehead h1{font-size:clamp(2.2rem,5vw,3.8rem)}
+.pagehead p{margin-top:.8rem;font-size:1.15rem;color:#3b3a2c;max-width:52ch}
+.section{padding-block:clamp(2.6rem,6vw,4.8rem)}
+.section + .section{border-top:1px solid var(--rule)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.split img{border-radius:6px}
+.prose > * + *{margin-top:1rem}
+.prose h2 + p,.prose h3 + p{margin-top:.7rem}
+.prose ul,.prose ol{padding-left:1.2rem;max-width:62ch}
+.prose li + li{margin-top:.4rem}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+
+.ages{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.8rem;margin-top:1.4rem}
+.ages li{background:var(--wall-soft);border-radius:8px;padding:.9rem 1rem}
+.ages b{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--green-deep)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;margin-top:2rem}
+.gallery figure img{border-radius:6px;aspect-ratio:3/2;object-fit:cover;width:100%}
+.gallery figcaption{font-size:.9rem;color:var(--muted);margin-top:.45rem}
+@media (max-width:760px){.gallery{grid-template-columns:1fr}}
+.classes{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.4rem}
+.classes article{border:1px solid var(--rule);border-radius:10px;padding:1.3rem 1.4rem}
+.classes h3{font-size:1.3rem}
+.classes p{margin-top:.4rem}
+@media (max-width:760px){.classes{grid-template-columns:1fr}}
+
+.jump{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.jump a{border:1.5px solid var(--green);border-radius:999px;padding:.4rem .9rem;text-decoration:none;font-weight:500;font-size:.95rem;background:#fff}
+.jump a:hover{background:var(--green-soft)}
+.group{padding-block:2.4rem;border-top:1px solid var(--rule)}
+.group h2{font-size:clamp(1.8rem,3vw,2.4rem);display:inline}
+.group summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.group summary::-webkit-details-marker{display:none}
+.group summary::after{content:"";width:.7rem;height:.7rem;border-right:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(45deg);flex:none;margin-right:.4rem}
+.group[open] summary::after{transform:rotate(-135deg)}
+@media (max-width:760px){.group{padding-block:1.1rem}.group h2{font-size:1.6rem}}
+.group .count{font-family:var(--sans);font-size:1rem;font-weight:500;color:var(--muted);margin-left:.6rem}
+.teachers{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem 2.6rem;margin-top:1.4rem}
+.teachers li{border-left:3px solid var(--wall);padding-left:1rem}
+.teachers b{display:block;font-family:var(--serif);font-size:1.35rem;line-height:1.2}
+.teachers i{display:block;font-style:normal;font-size:.9rem;color:var(--green);font-weight:600;margin:.15rem 0 .35rem}
+.teachers p{font-size:.95rem;color:var(--muted)}
+@media (max-width:760px){.teachers{grid-template-columns:1fr}}
+
+.price{display:grid;grid-template-columns:auto 1fr;gap:1.4rem 2rem;align-items:baseline;margin-top:1.4rem}
+.price .num{font-family:var(--serif);font-weight:800;font-size:clamp(3rem,7vw,4.6rem);color:var(--green-deep);line-height:1}
+.faq{display:grid;gap:0;margin-top:1.2rem}
+.faq div{padding-block:1.2rem;border-top:1px solid var(--rule)}
+.faq h3{font-size:1.3rem}
+.faq p{margin-top:.4rem}
+.wins{list-style:none;padding:0;display:grid;gap:0;margin-top:1.4rem}
+.wins li{padding-block:.9rem;border-top:1px solid var(--rule);max-width:70ch}
+.wins b{font-family:var(--serif);font-size:1.15rem;color:var(--green-deep)}
+.areas{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.areas li{background:var(--green-soft);border-radius:999px;padding:.35rem .85rem;font-size:.95rem}
+
+/* sticky call bar on phones, after the hero */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:.6rem;padding:.6rem .8rem calc(.6rem + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--rule);box-shadow:0 -6px 20px rgba(31,58,51,.12);transform:translateY(110%);transition:transform .25s}
+.bar .btn{flex:1;min-height:2.85rem}
+.bar.on{transform:none}
+@media (max-width:760px){.bar{display:flex}body{padding-bottom:4.5rem}}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+
+footer.foot{background:#16231f;color:#cbd6d0;padding-block:2.6rem;font-size:.92rem}
+footer.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer.foot a{color:#fff}
+footer.foot nav{display:grid;gap:.35rem}
+footer.foot .legal{grid-column:1/-1;border-top:1px solid #2f413a;padding-top:1.2rem;color:#a9b8b1}
+@media (max-width:760px){footer.foot .wrap{grid-template-columns:1fr}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Westlake Music Academy | Music lessons in Westlake, OH">
+<meta property="og:description" content="Private lessons in piano, guitar, voice, violin, cello, drums, flute and more, taught by degreed specialists. Westlake, Ohio.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/westlake-music-academy-westlake-oh/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/westlake-music-academy-westlake-oh/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Westlake Music Academy. Not affiliated with or endorsed by Westlake Music Academy.</p>
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="img/logo.webp" width="520" height="155" alt="Westlake Music Academy home"></a>
+  <nav class="nav" aria-label="Main">
+   <a href="lessons.html">Lessons</a><a href="faculty.html">Faculty</a><a href="tuition.html">Tuition</a><a href="about.html">About</a><a href="visit.html">Visit</a>
+   <a class="call" href="tel:+14405586876">Call (440) 558-6876</a>
+   <details class="menu"><summary>Menu</summary><div class="panel"><a href="lessons.html">Lessons</a><a href="faculty.html">Faculty</a><a href="tuition.html">Tuition</a><a href="about.html">About</a><a href="visit.html">Visit</a><a class="call" href="tel:+14405586876">Call (440) 558-6876</a></div></details>
+  </nav>
+ </div>
+</header>
+<main id="main">
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <h1>Every teacher here holds a degree in the instrument they teach.</h1>
+   <p class="sub">Private music lessons in Westlake, Ohio, for students from age 4 to adults in their 80s.</p>
+   <div class="actions">
+    <a class="btn solid" href="tel:+14405586876"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (440) 558-6876</a>
+    <a class="btn line" href="mailto:westlakemusicacademy1@gmail.com?subject=Music%20lessons"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email us</a>
+   </div>
+   <p class="fact"><strong>$38 per half-hour lesson</strong>, the same for every instrument, age and level. Paid month to month, with no semester contract.</p>
+  </div>
+  <figure>
+   <picture>
+    <source media="(max-width: 760px)" srcset="img/hero-m.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="474">
+    <img src="img/hero-1100.webp" srcset="img/hero-720.webp 720w, img/hero-1100.webp 1100w" sizes="(min-width: 1216px) 620px, 52vw" width="1100" height="835" alt="A teacher sitting beside her student at a grand piano in a yellow lesson room" fetchpriority="high">
+   </picture>
+  </figure>
+ </div>
+</section>
+<span data-bar-after></span>
+<section class="finder" aria-labelledby="finder-h">
+ <div class="wrap">
+  <header>
+   <h2 id="finder-h">Pick an instrument. See who teaches it.</h2>
+   <p>WMA does not do &ldquo;crossover teaching,&rdquo; where a guitarist who once took voice lessons also teaches voice. Each teacher holds at least a bachelor&rsquo;s degree in the instrument they teach, and most hold advanced degrees.</p>
+  </header>
+  <div class="board">
+   <div class="inst" role="tablist" aria-label="Instruments" aria-orientation="vertical"><button role="tab" id="t-piano" aria-controls="p-piano" aria-selected="false">Piano<span>9 teachers</span></button><button role="tab" id="t-guitar" aria-controls="p-guitar" aria-selected="false">Guitar<span>7 teachers</span></button><button role="tab" id="t-voice" aria-controls="p-voice" aria-selected="false">Voice<span>7 teachers</span></button><button role="tab" id="t-violin" aria-controls="p-violin" aria-selected="false">Violin & Viola<span>4 teachers</span></button><button role="tab" id="t-cello" aria-controls="p-cello" aria-selected="false">Cello<span>2 teachers</span></button><button role="tab" id="t-bass" aria-controls="p-bass" aria-selected="false">Double Bass<span>2 teachers</span></button><button role="tab" id="t-drums" aria-controls="p-drums" aria-selected="false">Drums & Percussion<span>2 teachers</span></button><button role="tab" id="t-flute" aria-controls="p-flute" aria-selected="false">Flute<span>2 teachers</span></button><button role="tab" id="t-classical" aria-controls="p-classical" aria-selected="false">Classical Guitar<span>1 teacher</span></button></div>
+   <div><div class="sheet" role="tabpanel" id="p-piano" aria-labelledby="t-piano">
+  <h3>Piano</h3><p class="meta">Private lessons from age 4. 9 teachers on the faculty.</p>
+  <ul><li><b>Carlo Balmoria</b><small>Piano</small></li><li><b>Roma Bandza</b><small>Piano</small></li><li><b>Diane Haley</b><small>Piano</small></li><li><b>Dr. Gary Graning</b><small>Piano</small></li><li><b>Anna Judkins</b><small>Piano &amp; Organ</small></li><li><b>Annie Qin</b><small>Piano</small></li><li><b>Ryan Reynolds</b><small>Piano</small></li><li><b>Jarred Sorauf</b><small>Piano</small></li><li><b>Maeve Woehrman</b><small>Piano</small></li></ul>
+  <a class="more" href="faculty.html#piano">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-guitar" aria-labelledby="t-guitar">
+  <h3>Guitar</h3><p class="meta">Private lessons from age 6. 7 teachers on the faculty.</p>
+  <ul><li><b>Mark Brennan</b><small>Guitar</small></li><li><b>Kris Downs</b><small>Guitar &amp; Electric Bass</small></li><li><b>Christopher Ellicott</b><small>Guitar &amp; Ukulele</small></li><li><b>John Karkosiak</b><small>Guitar &amp; Ukulele</small></li><li><b>Adam Keeler</b><small>Guitar &amp; Ukulele</small></li><li><b>Tom Ray</b><small>Guitar, Ukulele, &amp; Electric Bass</small></li><li><b>Alex Truver</b><small>Guitar</small></li></ul>
+  <a class="more" href="faculty.html#guitar">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-voice" aria-labelledby="t-voice">
+  <h3>Voice</h3><p class="meta">Private lessons from age 6. 7 teachers on the faculty.</p>
+  <ul><li><b>Albert Donze</b><small>Voice</small></li><li><b>Olivia Helman</b><small>Voice</small></li><li><b>Samantha Loomis-Heckman</b><small>Voice</small></li><li><b>Anastasia Rainbow</b><small>Voice</small></li><li><b>Alexa Richardson</b><small>Voice</small></li><li><b>Cara Rovella</b><small>Voice</small></li><li><b>Mary Krason Wiker</b><small>Voice</small></li></ul>
+  <a class="more" href="faculty.html#voice">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-violin" aria-labelledby="t-violin">
+  <h3>Violin & Viola</h3><p class="meta">Violin lessons from age 4. 4 teachers on the faculty.</p>
+  <ul><li><b>Courtney Clark</b><small>Violin</small></li><li><b>Ryan Detwiler</b><small>Violin &amp; Viola</small></li><li><b>Shayna Rhodes</b><small>Violin, Viola, &amp; Early Childhood Music</small></li><li><b>Lauren Swartz</b><small>Violin &amp; Viola</small></li></ul>
+  <a class="more" href="faculty.html#violin">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-cello" aria-labelledby="t-cello">
+  <h3>Cello</h3><p class="meta">Private lessons from age 4. 2 teachers on the faculty.</p>
+  <ul><li><b>Logan Dailey</b><small>Cello</small></li><li><b>Ariel David Londono</b><small>Cello</small></li></ul>
+  <a class="more" href="faculty.html#cello">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-bass" aria-labelledby="t-bass">
+  <h3>Double Bass</h3><p class="meta">Double bass and electric bass. 2 teachers on the faculty.</p>
+  <ul><li><b>Steven Brija</b><small>Double Bass &amp; Electric Bass</small></li><li><b>Cían Liaskos</b><small>Electric &amp; Double Bass</small></li></ul>
+  <a class="more" href="faculty.html#bass">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-drums" aria-labelledby="t-drums">
+  <h3>Drums & Percussion</h3><p class="meta">Private lessons from age 6. 2 teachers on the faculty.</p>
+  <ul><li><b>Bill Ransom</b><small>Drums &amp; Percussion</small></li><li><b>Paul Stranahan</b><small>Drums &amp; Percussion</small></li></ul>
+  <a class="more" href="faculty.html#drums">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-flute" aria-labelledby="t-flute">
+  <h3>Flute</h3><p class="meta">Private lessons from age 10. 2 teachers on the faculty.</p>
+  <ul><li><b>Courtney Flynn</b><small>Flute</small></li><li><b>Jacqueline Wood</b><small>Flute</small></li></ul>
+  <a class="more" href="faculty.html#flute">Read their backgrounds</a>
+ </div><div class="sheet" role="tabpanel" id="p-classical" aria-labelledby="t-classical">
+  <h3>Classical Guitar</h3><p class="meta">Taught by the academy's founder. 1 teacher on the faculty.</p>
+  <ul><li><b>James Flood</b><small>Classical Guitar</small></li></ul>
+  <a class="more" href="faculty.html#classical">Read their backgrounds</a>
+ </div></div>
+  </div>
+ </div>
+</section>
+<section class="month" aria-labelledby="month-h">
+ <div class="wrap">
+  <figure>
+   <img src="img/room-960.webp" srcset="img/room-560.webp 560w, img/room-960.webp 960w" sizes="(min-width: 1216px) 560px, (min-width: 761px) 46vw, calc(100vw - 2rem)" width="960" height="640" alt="An empty lesson room with an upright piano and a window in the door" loading="lazy" decoding="async">
+   <figcaption>Every lesson room has a window in the door.</figcaption>
+  </figure>
+  <div>
+   <h2 id="month-h">How lessons work</h2>
+   <dl class="terms">
+    <div><dt>Tuition</dt><dd>$38 per half-hour lesson, whatever the instrument, age or level. A one-time $25 registration fee per household, and the first month is prorated.</dd></div>
+    <div><dt>Commitment</dt><dd>Weekly lessons, paid month to month. No large upfront payments and no long semester commitments.</dd></div>
+    <div><dt>Missed lessons</dt><dd>Makeup classes on Fridays and Saturdays.</dd></div>
+    <div><dt>Parents</dt><dd>Welcome to sit in on any lesson. Children do better, and stick with lessons longer, when a parent is in the loop.</dd></div>
+    <div><dt>Safety</dt><dd>A security camera in every lesson room (no audio), an observation window, and two nationwide background checks for every teacher.</dd></div>
+   </dl>
+   <p style="margin-top:1.4rem"><a href="tuition.html"><strong>Tuition and policies in full</strong></a></p>
+  </div>
+ </div>
+</section>
+<section class="who" aria-labelledby="who-h">
+ <div class="wrap">
+  <h2 id="who-h">Lessons from age 4 to your 80s</h2>
+  <div class="pair">
+   <article>
+    <img src="img/kids-960.webp" srcset="img/kids-560.webp 560w, img/kids-960.webp 960w" sizes="(min-width: 1216px) 560px, (min-width: 761px) 46vw, calc(100vw - 2rem)" width="960" height="640" alt="A boy at the piano with his teacher, another adult watching from behind" loading="lazy" decoding="async">
+    <h3>Children</h3>
+    <p>Private lessons from as young as age 4 through the teen years, with a patient teacher who takes each child&rsquo;s age, level and way of learning into account.</p>
+    <a class="more" href="lessons.html#children">Lessons for children</a>
+   </article>
+   <article>
+    <img src="img/adults-960.webp" srcset="img/adults-560.webp 560w, img/adults-960.webp 960w" sizes="(min-width: 1216px) 560px, (min-width: 761px) 46vw, calc(100vw - 2rem)" width="960" height="640" alt="Two adults playing an upright piano together and laughing" loading="lazy" decoding="async">
+    <h3>Adults</h3>
+    <p>Over 25% of WMA students are adults, from their 20s to their 80s. Complete beginners are welcome, and so are players coming back after 10, 20 or 40 years.</p>
+    <a class="more" href="lessons.html#adults">Lessons for adults</a>
+   </article>
+  </div>
+ </div>
+</section>
+<section class="visit" aria-labelledby="visit-h">
+ <div class="wrap">
+  <div>
+   <h2 id="visit-h">Stop in, or call the front desk</h2>
+   <p style="margin-top:.8rem">Sign up by phone, by email, or during office hours, when you can tour the building and meet the staff.</p>
+   <div class="actions">
+    <a class="btn solid" href="tel:+14405586876"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (440) 558-6876</a>
+    <a class="btn line" href="mailto:westlakemusicacademy1@gmail.com?subject=Music%20lessons"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+   </div>
+  </div>
+  <div>
+   <h3>Address</h3>
+   <p>26325 Detroit Road<br>Westlake, OH 44145</p>
+   <p style="margin-top:.6rem">Free parking in the lot. A couple of minutes from I-90.</p>
+   <p style="margin-top:.6rem"><a href="visit.html">Directions and areas served</a></p>
+  </div>
+  <div>
+   <h3>Office hours</h3>
+   <p class="hours"><span>Mon to Thu</span><span>10 am to 9 pm</span><span>Friday</span><span>10 am to 7 pm</span><span>Saturday</span><span>10 am to 4 pm</span></p>
+  </div>
+ </div>
+</section>
+
+</main>
+<div class="bar" aria-label="Contact">
+ <a class="btn solid" href="tel:+14405586876"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call</a>
+ <a class="btn line" href="mailto:westlakemusicacademy1@gmail.com?subject=Music%20lessons"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+</div>
+<footer class="foot">
+ <div class="wrap">
+  <div>
+   <p><strong>Westlake Music Academy</strong><br>26325 Detroit Road, Westlake, OH 44145</p>
+   <p style="margin-top:.6rem"><a href="tel:+14405586876">(440) 558-6876</a><br><a href="mailto:westlakemusicacademy1@gmail.com">westlakemusicacademy1@gmail.com</a></p>
+  </div>
+  <nav aria-label="Footer"><a href="lessons.html">Lessons</a><a href="faculty.html">Faculty</a><a href="tuition.html">Tuition</a><a href="about.html">About</a><a href="visit.html">Visit</a></nav>
+  <p>Office hours<br>Mon to Thu 10 am to 9 pm<br>Fri 10 am to 7 pm<br>Sat 10 am to 4 pm</p>
+  <p class="legal">Unofficial demo built by MHS Tecnologia for Westlake Music Academy, using content and photos from its public website. Not affiliated with or endorsed by Westlake Music Academy. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+ </div>
+</footer>
+
+<script>
+(()=>{const tabs=[...document.querySelectorAll('.inst [role=tab]')];
+if(tabs.length){const show=t=>{tabs.forEach(b=>{const on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;const p=document.getElementById(b.getAttribute('aria-controls'));p.hidden=!on;if(on){p.classList.remove('show');void p.offsetWidth;p.classList.add('show')}})};
+tabs.forEach((b,i)=>{b.addEventListener('click',()=>show(b));b.addEventListener('keydown',e=>{const k=e.key;let j=null;if(k==='ArrowDown'||k==='ArrowRight')j=(i+1)%tabs.length;if(k==='ArrowUp'||k==='ArrowLeft')j=(i-1+tabs.length)%tabs.length;if(j!==null){e.preventDefault();tabs[j].focus();show(tabs[j])}})});
+show(tabs[0]);}
+const bar=document.querySelector('.bar'),mark=document.querySelector('[data-bar-after]');
+if(bar&&mark&&'IntersectionObserver'in window){new IntersectionObserver(([e])=>bar.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(mark)}
+else if(bar){bar.classList.add('on')}
+const groups=[...document.querySelectorAll('details.group')];
+if(groups.length&&matchMedia('(max-width: 760px)').matches){const h=location.hash.slice(1);groups.forEach(g=>{if(g.id!==h)g.open=false})}
+addEventListener('hashchange',()=>{const g=document.getElementById(location.hash.slice(1));if(g&&g.tagName==='DETAILS')g.open=true});})();
+</script>
+</body>
+</html>
