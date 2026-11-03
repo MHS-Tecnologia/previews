@@ -115,11 +115,14 @@ p{max-width:38em}
 .trade .more{display:inline-block;margin-top:.7rem;font-weight:700;color:var(--cedar);text-decoration:underline;text-underline-offset:.2em}
 .trade .ph{overflow:hidden}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.trade:hover img{transform:scale(1.03)}}
-.inside{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;margin-top:clamp(1rem,2.5vw,2rem);background:var(--ink);color:#e9e7e1;padding:clamp(1.6rem,4vw,2.8rem);border-radius:2px}
-.inside ul{list-style:none;padding:0;columns:2;column-gap:1.5rem}
-.inside li{font-family:"Forum",serif;font-size:1.45rem;line-height:1.25;padding:.35rem 0;border-bottom:1px solid #3a3833;break-inside:avoid}
-.inside .more{display:inline-block;margin-top:.9rem;color:#f0b892;font-weight:700;text-decoration:underline;text-underline-offset:.2em}
-@media (max-width:860px){.grid2,.inside{grid-template-columns:1fr}.inside li{font-size:1.25rem}}
+.kit{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;background:var(--ink);color:#e9e7e1;padding:clamp(1.25rem,3.5vw,2.6rem);border-radius:2px;margin-bottom:clamp(1rem,2.5vw,2rem);text-decoration:none}
+.kit h3{color:#fff;font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:.8rem}
+.kit .also{font-size:.9rem;color:#bdbab2;margin-top:.8rem}
+.kit .more{display:inline-block;margin-top:1rem;color:#f0b892;font-weight:700;text-decoration:underline;text-underline-offset:.2em}
+.kit .pics{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.kit .pics img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+.kit .pics img:first-child{grid-column:1/-1}
+@media (max-width:860px){.grid2,.kit{grid-template-columns:1fr}.kit .pics{order:-1}}
 /* Roof maintenance */
 .plan{background:var(--white);padding:clamp(3rem,7vw,5.5rem) 0}
 .plan .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -194,6 +197,9 @@ p{max-width:38em}
 .key li{display:flex;align-items:baseline;gap:.6rem;border-bottom:1px solid var(--mortar-2);padding:.35rem 0}
 .key i{width:.9rem;height:.9rem;flex:none;background:var(--c);border:1.5px solid var(--ink);transform:translateY(.1rem)}
 .key b{margin-left:auto;font-variant-numeric:tabular-nums}
+.kitrow{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.5vw,1rem)}
+.kitrow img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+@media (max-width:860px){.kitrow{grid-template-columns:1fr}}
 .list2{columns:2;column-gap:2rem;padding-left:1.1rem}
 .list2 li{margin-bottom:.5rem;break-inside:avoid}
 @media (max-width:640px){.list2{columns:1}}
@@ -239,7 +245,7 @@ p{max-width:38em}
       <p>A deck is an extension of your living space: morning coffee in the sun, or the evening view. We design and build it, and handle the permit.</p>
       <div class="btns"><a class="btn solid" href="tel:+14123442961"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (412) 344-2961</a><a class="btn line" href="mailto:info@capitalrealestateconstruction.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>Email for an estimate</a></div>
     </div>
-    <img src="img/deck-composite-560.webp" srcset="img/deck-composite-560.webp 560w, img/deck-composite-900.webp 900w" sizes="(max-width: 860px) 100vw, 580px" width="900" height="600" alt="A long composite deck in a dark grey-brown with black aluminum railing, along a brick house above a wooded slope" decoding="async" loading="eager" fetchpriority="high">
+    <img src="img/deck-composite-560.webp" srcset="img/deck-composite-560.webp 560w, img/deck-composite-900.webp 900w, img/deck-composite-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 580px" width="1200" height="800" alt="A long composite deck in a dark grey-brown with black aluminum railing, along a brick house above a wooded slope" decoding="async" loading="eager" fetchpriority="high">
   </div>
 </section>
 <div data-sentinel></div>
@@ -262,8 +268,8 @@ p{max-width:38em}
 <section class="band">
   <div class="wrap">
     <div class="gallery">
-      <div class="tall"><img src="img/hero-800.webp" srcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 780px" width="1200" height="960" alt="A two-level deck with flower boxes overlooking a green valley" loading="lazy" decoding="async"></div>
-      <img src="img/deck-rail-560.webp" srcset="img/deck-rail-560.webp 560w, img/deck-rail-900.webp 900w" sizes="(max-width: 860px) 100vw, 390px" width="900" height="600" alt="A raised deck with brown post caps and black balusters" loading="lazy" decoding="async">
+      <div class="tall"><img src="img/hero-800.webp" srcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w, img/hero-1350.webp 1350w" sizes="(max-width: 860px) 100vw, 780px" width="1350" height="1080" alt="A two-level deck with flower boxes overlooking a green valley" loading="lazy" decoding="async"></div>
+      <img src="img/deck-rail-560.webp" srcset="img/deck-rail-560.webp 560w, img/deck-rail-900.webp 900w, img/deck-rail-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 390px" width="1200" height="800" alt="A raised deck with brown post caps and black balusters" loading="lazy" decoding="async">
       <img src="img/deck-porch-480.webp" srcset="img/deck-porch-480.webp 480w, img/deck-porch-768.webp 768w" sizes="(max-width: 860px) 100vw, 390px" width="768" height="1024" alt="A covered deck with a ceiling fan, outdoor sofa and wide wood-tone boards" loading="lazy" decoding="async" style="aspect-ratio:3/2;object-position:50% 70%">
     </div>
   </div>
@@ -276,7 +282,7 @@ p{max-width:38em}
       <p style="margin-top:.8rem">Requesting an estimate is the most accurate way to price your deck. Here is the general picture.</p>
     </div>
     <div class="qa">
-      <details open><summary>What does a deck cost?</summary><p>Generally from around $20 to $50+ per square foot. Height and how complex the build is also affect the cost.</p></details>
+      <details open><summary>What does a deck cost?</summary><p>Generally from around $20 to $50+ per square foot. Height and complexity also affect the cost.</p></details>
       <details><summary>Do I need a permit?</summary><p>Assume a building permit is required. As your licensed and insured contractor, we handle the permitting and municipal compliance as part of the job.</p></details>
       <details><summary>How long does it take?</summary><p>With permits and planning done and all materials on site, most decks take about 1 to 3 weeks. Permits, inspections and weather can cause delays.</p></details>
       <details><summary>Can you add a door to reach it?</summary><p>Yes. As a full service general contractor we handle every building trade, so a new deck off your second-story family room can come with the door to get to it.</p></details>

@@ -9,8 +9,8 @@
 <title>Capital Real Estate Construction | Decks, Roofing &amp; Remodeling, South Hills of Pittsburgh</title>
 <meta name="description" content="Decks, roofs, kitchens, baths, windows and doors for the South Hills of Pittsburgh. Done Fast… Done Right! Call (412) 344-2961.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/forum.woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width: 860px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-1200.webp" imagesrcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w" imagesizes="(max-width: 1240px) 46vw, 580px" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w, img/hero-m-1080.webp 1080w" imagesizes="100vw" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1200.webp" imagesrcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w, img/hero-1350.webp 1350w" imagesizes="(max-width: 1240px) 46vw, 580px" media="(min-width: 861px)" fetchpriority="high">
 <style>@font-face{font-family:"Forum";font-weight:400;font-display:swap;src:url(fonts/forum.woff2) format("woff2")}
 @font-face{font-family:"Libre Franklin";font-weight:100 900;font-display:swap;src:url(fonts/franklin.woff2) format("woff2")}
 /* Their crest is black; the decks are cedar-stained; the South Hills behind them are deep green. */
@@ -116,11 +116,14 @@ p{max-width:38em}
 .trade .more{display:inline-block;margin-top:.7rem;font-weight:700;color:var(--cedar);text-decoration:underline;text-underline-offset:.2em}
 .trade .ph{overflow:hidden}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.trade:hover img{transform:scale(1.03)}}
-.inside{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;margin-top:clamp(1rem,2.5vw,2rem);background:var(--ink);color:#e9e7e1;padding:clamp(1.6rem,4vw,2.8rem);border-radius:2px}
-.inside ul{list-style:none;padding:0;columns:2;column-gap:1.5rem}
-.inside li{font-family:"Forum",serif;font-size:1.45rem;line-height:1.25;padding:.35rem 0;border-bottom:1px solid #3a3833;break-inside:avoid}
-.inside .more{display:inline-block;margin-top:.9rem;color:#f0b892;font-weight:700;text-decoration:underline;text-underline-offset:.2em}
-@media (max-width:860px){.grid2,.inside{grid-template-columns:1fr}.inside li{font-size:1.25rem}}
+.kit{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;background:var(--ink);color:#e9e7e1;padding:clamp(1.25rem,3.5vw,2.6rem);border-radius:2px;margin-bottom:clamp(1rem,2.5vw,2rem);text-decoration:none}
+.kit h3{color:#fff;font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:.8rem}
+.kit .also{font-size:.9rem;color:#bdbab2;margin-top:.8rem}
+.kit .more{display:inline-block;margin-top:1rem;color:#f0b892;font-weight:700;text-decoration:underline;text-underline-offset:.2em}
+.kit .pics{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.kit .pics img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+.kit .pics img:first-child{grid-column:1/-1}
+@media (max-width:860px){.grid2,.kit{grid-template-columns:1fr}.kit .pics{order:-1}}
 /* Roof maintenance */
 .plan{background:var(--white);padding:clamp(3rem,7vw,5.5rem) 0}
 .plan .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -195,6 +198,9 @@ p{max-width:38em}
 .key li{display:flex;align-items:baseline;gap:.6rem;border-bottom:1px solid var(--mortar-2);padding:.35rem 0}
 .key i{width:.9rem;height:.9rem;flex:none;background:var(--c);border:1.5px solid var(--ink);transform:translateY(.1rem)}
 .key b{margin-left:auto;font-variant-numeric:tabular-nums}
+.kitrow{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.5vw,1rem)}
+.kitrow img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+@media (max-width:860px){.kitrow{grid-template-columns:1fr}}
 .list2{columns:2;column-gap:2rem;padding-left:1.1rem}
 .list2 li{margin-bottom:.5rem;break-inside:avoid}
 @media (max-width:640px){.list2{columns:1}}
@@ -245,13 +251,13 @@ p{max-width:38em}
     <div class="copy">
       <h1><span>Done fast…</span><span>done right!</span></h1>
       <div class="level" aria-hidden="true"><i></i></div>
-      <p class="lede">Decks, roofs, kitchens, baths, windows and doors for our South Hills neighbors, from one general contractor since 2005.</p>
+      <p class="lede">Kitchens, baths, decks, roofs, windows and doors for our South Hills neighbors, from one general contractor since 2005.</p>
       <div class="btns"><a class="btn solid" href="tel:+14123442961"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (412) 344-2961</a><a class="btn line" href="mailto:info@capitalrealestateconstruction.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>Email for an estimate</a></div>
     </div>
     <figure class="shot">
       <picture>
-        <source media="(max-width: 860px)" srcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w" sizes="100vw" width="800" height="600">
-        <img src="img/hero-1200.webp" srcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w" sizes="(max-width: 1240px) 46vw, 580px" width="1200" height="960" alt="A two-level composite deck with black balusters and flower boxes, looking out over a wooded South Hills valley" fetchpriority="high">
+        <source media="(max-width: 860px)" srcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w, img/hero-m-1080.webp 1080w" sizes="100vw" width="800" height="600">
+        <img src="img/hero-1200.webp" srcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w, img/hero-1350.webp 1350w" sizes="(max-width: 1240px) 46vw, 580px" width="1200" height="960" alt="A two-level composite deck with black balusters and flower boxes, looking out over a wooded South Hills valley" fetchpriority="high">
       </picture>
       <figcaption>A deck by Capital Real Estate Construction, looking over the hills south of the city.</figcaption>
     </figure>
@@ -285,26 +291,32 @@ p{max-width:38em}
 
 <section class="trades">
   <div class="wrap">
-    <h2>Outside the house, and in it</h2>
-    <p class="intro">An exterior division and an interior division, under one roof.</p>
+    <h2>Kitchens, baths &amp; more</h2>
+    <p class="intro">An interior division and an exterior division, under one roof.</p>
+    <a class="kit" href="remodeling.html">
+      <div>
+        <h3>Hundreds of upscale kitchens for our South Hills neighbors</h3>
+        <p>Our design team can work from your idea or draw the room from scratch, then install all of it: cabinets, granite, backsplash, flooring and paint. Some full high-end kitchens are done in as little as 4 weeks.*</p>
+        <p class="also">Also inside: bathrooms, cabinets, windows &amp; doors, basements and flooring.</p>
+        <span class="more">See kitchens, baths, windows and doors</span>
+        <p class="also" style="margin-top:1rem">*With in-stock flooring, backsplash, granite, Forevermark cabinetry and paint.</p>
+      </div>
+      <div class="pics">
+        <img src="img/kit-espresso-480.webp" srcset="img/kit-espresso-480.webp 480w, img/kit-espresso-768.webp 768w" sizes="(max-width: 860px) 100vw, 640px" width="768" height="515" alt="A kitchen with dark espresso cabinets, a stainless range and a tumbled stone backsplash" loading="lazy" decoding="async">
+        <img src="img/kit-grey-480.webp" srcset="img/kit-grey-480.webp 480w, img/kit-grey-768.webp 768w" sizes="(max-width: 860px) 50vw, 320px" width="768" height="515" alt="A grey kitchen with a black granite island, white stools and a crystal chandelier" loading="lazy" decoding="async">
+        <img src="img/kit-white-480.webp" srcset="img/kit-white-480.webp 480w, img/kit-white-768.webp 768w" sizes="(max-width: 860px) 50vw, 320px" width="768" height="515" alt="White cabinets with a grey arabesque tile backsplash and a double sink" loading="lazy" decoding="async">
+      </div>
+    </a>
     <div class="grid2">
       <a class="trade" href="decks.html">
-        <div class="ph"><img src="img/deck-rail-560.webp" srcset="img/deck-rail-560.webp 560w, img/deck-rail-900.webp 900w" sizes="(max-width: 860px) 100vw, 580px" width="900" height="600" alt="A raised deck with a cedar-tone floor, brown post caps and black balusters" loading="lazy" decoding="async"></div>
+        <div class="ph"><img src="img/deck-rail-560.webp" srcset="img/deck-rail-560.webp 560w, img/deck-rail-900.webp 900w, img/deck-rail-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 580px" width="1200" height="800" alt="A raised deck with a cedar-tone floor, brown post caps and black balusters" loading="lazy" decoding="async"></div>
         <div class="t"><h3>Decks</h3><p>Treated lumber, cedar, composite and Trex, or PVC. Designed and built by Pittsburgh’s deck builder, permits included.</p><span class="more">See deck materials and costs</span></div>
       </a>
       <a class="trade" href="roofing.html">
-        <div class="ph"><img src="img/roof-tearoff-600.webp" srcset="img/roof-tearoff-600.webp 600w, img/roof-tearoff-1000.webp 1000w" sizes="(max-width: 860px) 100vw, 580px" width="1000" height="750" alt="Bundles of GAF shingles staged on a roof over new underlayment, mid-replacement" loading="lazy" decoding="async" style="aspect-ratio:3/2"></div>
+        <div class="ph"><img src="img/roof-tearoff-600.webp" srcset="img/roof-tearoff-600.webp 600w, img/roof-tearoff-1000.webp 1000w, img/roof-tearoff-1440.webp 1440w" sizes="(max-width: 860px) 100vw, 580px" width="1440" height="1080" alt="Bundles of GAF shingles staged on a roof over new underlayment, mid-replacement" loading="lazy" decoding="async" style="aspect-ratio:3/2"></div>
         <div class="t"><h3>Roofing</h3><p>Shingled, steel and flat rubber roofs, repaired or replaced with GAF products. Box gutters too.</p><span class="more">See roofing and the maintenance plan</span></div>
       </a>
     </div>
-    <a class="inside" href="remodeling.html" style="text-decoration:none">
-      <div>
-        <h3 style="color:#fff;font-size:clamp(1.9rem,3.4vw,2.6rem)">Inside: hundreds of upscale kitchens and counting</h3>
-        <p style="margin-top:.7rem">Our design team can work from your idea or draw the room from scratch, then install it, from cabinets to faucets.</p>
-        <span class="more">See kitchens, baths, windows and doors</span>
-      </div>
-      <ul><li>Kitchens</li><li>Bathrooms</li><li>Cabinets</li><li>Windows &amp; doors</li><li>Basements</li><li>Flooring</li></ul>
-    </a>
   </div>
 </section>
 

@@ -115,11 +115,14 @@ p{max-width:38em}
 .trade .more{display:inline-block;margin-top:.7rem;font-weight:700;color:var(--cedar);text-decoration:underline;text-underline-offset:.2em}
 .trade .ph{overflow:hidden}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){.trade:hover img{transform:scale(1.03)}}
-.inside{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;margin-top:clamp(1rem,2.5vw,2rem);background:var(--ink);color:#e9e7e1;padding:clamp(1.6rem,4vw,2.8rem);border-radius:2px}
-.inside ul{list-style:none;padding:0;columns:2;column-gap:1.5rem}
-.inside li{font-family:"Forum",serif;font-size:1.45rem;line-height:1.25;padding:.35rem 0;border-bottom:1px solid #3a3833;break-inside:avoid}
-.inside .more{display:inline-block;margin-top:.9rem;color:#f0b892;font-weight:700;text-decoration:underline;text-underline-offset:.2em}
-@media (max-width:860px){.grid2,.inside{grid-template-columns:1fr}.inside li{font-size:1.25rem}}
+.kit{display:grid;grid-template-columns:1fr 1.35fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;background:var(--ink);color:#e9e7e1;padding:clamp(1.25rem,3.5vw,2.6rem);border-radius:2px;margin-bottom:clamp(1rem,2.5vw,2rem);text-decoration:none}
+.kit h3{color:#fff;font-size:clamp(1.9rem,3.4vw,2.7rem);margin-bottom:.8rem}
+.kit .also{font-size:.9rem;color:#bdbab2;margin-top:.8rem}
+.kit .more{display:inline-block;margin-top:1rem;color:#f0b892;font-weight:700;text-decoration:underline;text-underline-offset:.2em}
+.kit .pics{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.kit .pics img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+.kit .pics img:first-child{grid-column:1/-1}
+@media (max-width:860px){.grid2,.kit{grid-template-columns:1fr}.kit .pics{order:-1}}
 /* Roof maintenance */
 .plan{background:var(--white);padding:clamp(3rem,7vw,5.5rem) 0}
 .plan .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -194,6 +197,9 @@ p{max-width:38em}
 .key li{display:flex;align-items:baseline;gap:.6rem;border-bottom:1px solid var(--mortar-2);padding:.35rem 0}
 .key i{width:.9rem;height:.9rem;flex:none;background:var(--c);border:1.5px solid var(--ink);transform:translateY(.1rem)}
 .key b{margin-left:auto;font-variant-numeric:tabular-nums}
+.kitrow{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.5vw,1rem)}
+.kitrow img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:2px}
+@media (max-width:860px){.kitrow{grid-template-columns:1fr}}
 .list2{columns:2;column-gap:2rem;padding-left:1.1rem}
 .list2 li{margin-bottom:.5rem;break-inside:avoid}
 @media (max-width:640px){.list2{columns:1}}
@@ -247,7 +253,12 @@ p{max-width:38em}
 <div data-sentinel></div>
 <section class="band white">
   <div class="wrap cols">
-    <div><h2>What to put in your email</h2></div>
+    <div><h2>What to put in your email</h2>
+      <figure style="margin-top:1.6rem">
+        <img src="img/storefront-800.webp" srcset="img/storefront-800.webp 800w, img/storefront-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 580px" width="1400" height="787" alt="The Capital Real Estate Construction storefront sign: Roofing, Windows, Doors, Kitchens, Baths, 412-344-2961" loading="lazy" decoding="async">
+        <figcaption class="small" style="margin-top:.6rem">The sign out front, from our own photos.</figcaption>
+      </figure>
+    </div>
     <ul class="ticks">
       <li>Your name, phone and town</li>
       <li>The project: deck, roof, kitchen, bath, windows or doors</li>
