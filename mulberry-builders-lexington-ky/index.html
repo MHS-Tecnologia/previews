@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:,">
+<meta name="theme-color" content="#f2f5f8">
+<title>Mulberry Builders, Lexington, KY: new homes, remodeling, roofing</title>
+<meta name="description" content="Custom and semi-custom homes, kitchen, bath and basement remodels, roofing and restoration across Central Kentucky, from Chris and Chellie Mulberry in Lexington.">
+<link rel="preload" as="font" type="font/woff2" href="fonts/sofiacond.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1360.webp" imagesrcset="img/hero-1360.webp 1360w" imagesizes="(max-width: 1400px) 54vw, 720px" media="(min-width: 861px)" fetchpriority="high">
+<style>
+@font-face { font-family: "Sofia Sans Condensed"; font-weight: 400 900; font-display: swap; src: url(fonts/sofiacond.woff2) format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-weight: 400 600; font-display: swap; src: url(fonts/sourceserif.woff2) format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/sourceserif-italic.woff2) format("woff2"); }
+
+/* Drafting paper, plan-book ink, and the blue of their roofline logo (#0971CE). */
+:root {
+  --paper: #f2f5f8;
+  --white: #ffffff;
+  --ink: #0e1a26;
+  --ink-2: #3a4855;
+  --blue: #0971ce;
+  --blue-ink: #0a5daa;
+  --rule: #c9d4de;
+  --night-text: #d9e3ec;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 76rem;
+  --display: "Sofia Sans Condensed", "Arial Narrow", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font: 400 1.125rem/1.65 "Source Serif 4", Georgia, serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--blue-ink); text-underline-offset: .18em; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+h1, h2, h3, .display { font-family: var(--display); font-weight: 800; line-height: .98; letter-spacing: -.005em; text-wrap: balance; }
+h1 { font-size: clamp(2.6rem, 5.2vw, 4.6rem); }
+h2 { font-size: clamp(2.1rem, 4vw, 3.3rem); }
+h3 { font-size: 1.65rem; line-height: 1.05; font-weight: 700; }
+p { max-width: 64ch; }
+[id] { scroll-margin-top: 1rem; }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.num { font-variant-numeric: tabular-nums; }
+
+.demo { background: var(--ink); color: var(--night-text); font: 400 .8125rem/1.4 system-ui, sans-serif; text-align: center; padding: .45rem 1rem; }
+
+/* Header: their logo, the pages, the phone. */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .7rem; padding-bottom: .7rem; }
+.brand img { height: 3rem; width: auto; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font: 600 1.08rem/1 var(--display); letter-spacing: .01em; }
+.nav a { color: var(--ink); text-decoration: none; padding: .35rem 0; }
+.nav a:not(.btn):hover, .nav a[aria-current] { color: var(--blue-ink); box-shadow: inset 0 -3px 0 var(--blue); }
+.menu { display: none; }
+.top-right { display: none; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.1rem; padding: .8rem 1.35rem; border-radius: .3rem; font: 700 1.15rem/1 var(--display); letter-spacing: .01em; text-decoration: none; background: var(--blue); color: #fff; transition: background-color .15s ease, color .15s ease; }
+.btn:hover { background: var(--blue-ink); }
+.btn.line { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.btn.line:hover { background: var(--ink); color: #fff; }
+.night .btn.line { color: #fff; box-shadow: inset 0 0 0 2px #fff; }
+.night .btn.line:hover { background: #fff; color: var(--ink); }
+.nav .btn { min-height: 2.6rem; padding: .55rem 1rem; color: #fff; }
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+
+/* Hero: their house, cut to the gable of their logo; the blue roofline draws once. */
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 4rem); align-items: end; padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(2rem, 3vw, 2.5rem); }
+.hero + div + .band { padding-top: clamp(2.5rem, 4vw, 3rem); }
+.hero-text { padding-bottom: .5rem; }
+.hero h1 { margin-bottom: 1.1rem; }
+.lede { font-size: 1.2rem; color: var(--ink-2); margin-bottom: 1.6rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.honor { display: flex; gap: .85rem; align-items: flex-start; margin-top: 1.8rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); font-size: 1rem; line-height: 1.45; color: var(--ink-2); max-width: 30rem; }
+.honor b { display: block; font: 700 1.3rem/1.1 var(--display); color: var(--ink); }
+.honor svg { flex: none; width: 2.2rem; height: 2.2rem; color: var(--blue); margin-top: .1rem; }
+.gable { margin: 0; }
+.gable .frame { position: relative; }
+.gable picture { display: block; }
+.gable picture img { width: 100%; clip-path: polygon(0 100%, 0 40%, 50% 0, 100% 40%, 100% 100%); }
+.gable svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; transform: translateY(-10px); }
+.gable path { fill: none; stroke: var(--blue); stroke-linejoin: miter; stroke-linecap: square; }
+.roof-d path { stroke-width: 11; }
+.roof-m path { stroke-width: 11; }
+.roof-m { display: none; }
+.gable figcaption { font-size: .9rem; color: var(--ink-2); margin-top: .55rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .gable path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.5s .25s cubic-bezier(.6, 0, .2, 1) forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+}
+
+/* Sections */
+.band { padding-top: clamp(3.5rem, 7vw, 6rem); padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.band.white { background: var(--white); }
+.band.night { background: var(--ink); color: var(--night-text); }
+.band.night h2, .band.night h3 { color: #fff; }
+.band.night a:not(.btn) { color: #9fcbf5; }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem 3rem; align-items: end; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.head p { color: var(--ink-2); }
+.night .head p { color: var(--night-text); }
+
+/* What we do: four doors, photo first. */
+.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+.door { display: flex; flex-direction: column; gap: .8rem; color: inherit; text-decoration: none; }
+.door img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: .25rem; }
+.door h3 { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.door h3 span { color: var(--blue); font-size: 1.3rem; transition: transform .2s ease; }
+.door:hover h3 span { transform: translateX(4px); }
+.door p { font-size: 1rem; color: var(--ink-2); }
+.door ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem .9rem; font: 600 1rem/1.3 var(--display); color: var(--ink); }
+
+/* The Elizabeth: plan-book page with a drawing title block. */
+.feature { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.feature-photos { display: grid; grid-template-columns: 3fr 1.25fr; gap: .75rem; align-items: end; }
+.feature-photos img { border-radius: .2rem; }
+.kicker { font: 600 1.15rem/1.2 var(--display); color: #9fcbf5; margin-bottom: .7rem; }
+.feature h2 { font-size: clamp(2.8rem, 6vw, 5rem); margin-bottom: 1rem; }
+.feature p + p { margin-top: .9rem; }
+.prizes { list-style: none; padding: 0; margin: 1.3rem 0 1.6rem; display: flex; flex-wrap: wrap; gap: .45rem; }
+.prizes li { font: 600 .98rem/1 var(--display); padding: .45rem .7rem; border: 1px solid #3b5268; border-radius: 2rem; color: #fff; }
+.prizes li.top { background: var(--blue); border-color: var(--blue); }
+
+.tblock { display: grid; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)); border: 1px solid var(--rule); border-radius: .2rem; background: var(--white); }
+.tblock div { padding: .5rem .7rem; border-left: 1px solid var(--rule); }
+.tblock div:first-child { border-left: 0; }
+.tblock dt { font: 500 .85rem/1.2 var(--display); color: var(--ink-2); letter-spacing: .02em; }
+.tblock dd { font: 700 1.2rem/1.2 var(--display); color: var(--ink); }
+.night .tblock { background: transparent; border-color: #3b5268; }
+.night .tblock div { border-color: #3b5268; }
+.night .tblock dt { color: #a9bccd; }
+.night .tblock dd { color: #fff; }
+
+/* Mulberrys */
+.people { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.people img { border-radius: .25rem; }
+.people h2 { margin-bottom: 1.2rem; }
+.people p + p { margin-top: .9rem; }
+.roles { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.6rem 0; padding: 1.1rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.roles b { display: block; font: 700 1.35rem/1.1 var(--display); }
+.roles span { font-size: 1rem; color: var(--ink-2); }
+
+/* Words of clients */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+.quote blockquote { font-style: italic; font-size: 1.1rem; line-height: 1.6; }
+.quote blockquote::before { content: "\201C"; display: block; font: 800 3.4rem/.6 var(--display); color: var(--blue); margin-bottom: .6rem; font-style: normal; }
+.quote figcaption { margin-top: .9rem; font: 600 1.05rem/1.3 var(--display); color: var(--ink-2); }
+
+/* St. Jude line */
+.cause { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.cause img { border-radius: .25rem; }
+.cause h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin-bottom: .9rem; }
+
+/* Contact band */
+.reach { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.reach h2 { margin-bottom: 1rem; }
+.reach .actions { margin-top: 1.6rem; }
+.facts { list-style: none; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.facts li { padding: .9rem 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; }
+.facts li > span:first-child { font: 600 1.05rem/1.5 var(--display); color: var(--ink-2); }
+.night .facts, .night .facts li { border-color: #3b5268; }
+.night .facts li > span:first-child { color: #a9bccd; }
+
+/* Inner pages */
+.page-head { padding-top: clamp(2rem, 4vw, 3.5rem); padding-bottom: clamp(2rem, 4vw, 3rem); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1.5rem 3rem; align-items: end; border-bottom: 1px solid var(--rule); }
+.page-head p { color: var(--ink-2); font-size: 1.15rem; }
+.crumb { font: 600 1.05rem/1 var(--display); color: var(--blue-ink); margin-bottom: .8rem; display: block; }
+.split { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.split.flip > :first-child { order: 2; }
+.split img { border-radius: .25rem; }
+.split h2 { margin-bottom: 1rem; }
+.split p + p { margin-top: .9rem; }
+.award { display: inline-flex; gap: .55rem; align-items: center; margin-bottom: 1rem; font: 600 1.02rem/1.25 var(--display); color: var(--blue-ink); }
+.award svg { width: 1.3rem; height: 1.3rem; flex: none; }
+.night .award { color: #9fcbf5; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.ticks { list-style: none; padding: 0; margin-top: 1.2rem; display: grid; gap: .5rem; }
+.ticks li { padding-left: 1.6rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .55em; width: .9rem; height: .5rem; border-left: 3px solid var(--blue); border-bottom: 3px solid var(--blue); transform: rotate(-45deg); }
+.stack > * + * { margin-top: clamp(3.5rem, 7vw, 6rem); }
+
+/* Plan book */
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 1.75rem; }
+.plan img { aspect-ratio: 2.2 / 1; object-fit: cover; border-radius: .2rem .2rem 0 0; }
+.plan .tblock { border-top: 0; border-radius: 0 0 .2rem .2rem; }
+.plan h3 { margin: 1rem 0 .4rem; }
+.plan p { font-size: 1rem; color: var(--ink-2); }
+.plan .tag { font: 600 .98rem/1.2 var(--display); color: var(--blue-ink); margin-bottom: .35rem; }
+.more-plans { margin-top: 3rem; padding: 1.4rem 1.6rem; border: 1px dashed var(--rule); border-radius: .25rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 2rem; }
+.more-plans b { display: block; font: 700 1.25rem/1.2 var(--display); margin-bottom: .25rem; }
+.more-plans span { font-size: 1rem; color: var(--ink-2); }
+.stories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.stories h3 { margin-bottom: .6rem; }
+.stories p { font-size: 1rem; color: var(--ink-2); }
+.night .stories p { color: var(--night-text); }
+.stories img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: .2rem; }
+.strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .75rem; margin-top: 2.5rem; }
+.strip img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: .2rem; }
+
+/* Awards */
+.years { display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.year { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.5rem; padding: 1.6rem 0; border-bottom: 1px solid var(--rule); }
+.year > h3 { font-size: 2.6rem; color: var(--blue); }
+.groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 2.5rem; }
+.groups h4 { font: 700 1.2rem/1.2 var(--display); margin-bottom: .35rem; }
+.groups ul { list-style: none; padding: 0; font-size: 1rem; color: var(--ink-2); }
+.groups li { padding: .15rem 0; }
+.allquotes { columns: 3 18rem; column-gap: 2.5rem; }
+.allquotes .quote { break-inside: avoid; margin-bottom: 2.2rem; }
+
+/* Footer */
+.foot { background: var(--ink); color: var(--night-text); padding: 3.5rem 0 1.5rem; font-size: 1rem; }
+.foot-grid { display: grid; grid-template-columns: minmax(0, 4fr) repeat(2, minmax(0, 3fr)); gap: 2rem; }
+.foot img { height: 3.2rem; width: auto; margin-bottom: 1rem; }
+.foot h2 { font: 700 1.15rem/1.2 var(--display); color: #fff; margin-bottom: .6rem; }
+.foot ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+.foot a { color: #fff; }
+.legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #2c3e50; font: 400 .85rem/1.5 system-ui, sans-serif; color: #a9bccd; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; }
+.legal p { max-width: none; }
+
+/* Mobile call bar, after the hero */
+.callbar { display: none; }
+.more { display: none; }
+
+@media (max-width: 1080px) {
+  .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  body { font-size: 1.0625rem; }
+  .nav { display: none; }
+  .menu { display: block; position: relative; }
+  .menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .4rem; font: 700 1.1rem/1 var(--display); padding: .7rem .8rem; border: 2px solid var(--ink); border-radius: .3rem; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { background: var(--ink); color: #fff; }
+  .menu nav { position: absolute; right: 0; top: calc(100% + .5rem); z-index: 30; background: var(--white); border: 1px solid var(--rule); border-radius: .3rem; box-shadow: 0 12px 30px rgba(14, 26, 38, .18); min-width: 15rem; display: grid; padding: .4rem 0; }
+  .menu nav a { font: 600 1.2rem/1 var(--display); color: var(--ink); text-decoration: none; padding: .85rem 1.2rem; }
+  .menu nav a[aria-current] { color: var(--blue-ink); }
+  .top-right { display: flex; gap: .5rem; align-items: center; }
+  .top-call { min-height: 2.75rem; padding: .55rem .85rem; }
+  .brand img { height: 2.5rem; }
+  .hero { grid-template-columns: 1fr; gap: 1.1rem; padding-top: .9rem; padding-bottom: 2.5rem; }
+  .gable { order: -1; }
+  .roof-d { display: none; }
+  .roof-m { display: block; }
+  .gable figcaption { display: none; }
+  .hero h1 { font-size: clamp(2.2rem, 9.6vw, 2.9rem); margin-bottom: .7rem; }
+  .lede { font-size: 1.05rem; margin-bottom: 1.1rem; }
+  .hero .actions { flex-direction: column; gap: .6rem; }
+  .actions .btn { flex: 1 1 auto; }
+  .honor { margin-top: 1.4rem; }
+  .head, .feature, .people, .reach, .cause, .page-head, .split { grid-template-columns: 1fr; }
+  .split.flip > :first-child { order: 0; }
+  .quotes { grid-template-columns: 1fr; gap: 2rem; }
+  .stories { grid-template-columns: 1fr; }
+  .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .more-plans { grid-template-columns: 1fr; }
+  .year { grid-template-columns: 1fr; gap: .6rem; }
+  .groups { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; }
+  [data-more].folded > .extra { display: none; }
+  .more { display: flex; width: 100%; margin-top: 1.5rem; }
+  .callbar { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(242, 245, 248, .97); border-top: 1px solid var(--rule); transform: translateY(110%); transition: transform .25s ease; }
+  .callbar.on { transform: none; }
+  .callbar .btn { min-height: 2.9rem; }
+  body.has-bar .foot { padding-bottom: 5rem; }
+}
+@media (max-width: 600px) {
+  .doors { grid-template-columns: 1fr; gap: 2.2rem; }
+  .plans { grid-template-columns: 1fr; }
+  .feature-photos { grid-template-columns: 1fr; }
+  .feature-photos img + img { display: none; }
+  .tblock { --cols: 3; }
+  .tblock dd { font-size: 1.1rem; }
+  .facts li { grid-template-columns: 1fr; gap: .1rem; }
+  .roles { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mulberry Builders, Lexington, KY: new homes, remodeling, roofing">
+<meta property="og:description" content="Custom and semi-custom homes, kitchen, bath and basement remodels, roofing and restoration across Central Kentucky, from Chris and Chellie Mulberry in Lexington.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/mulberry-builders-lexington-ky/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/mulberry-builders-lexington-ky/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Mulberry Builders. Not affiliated with or endorsed by Mulberry Builders.</div>
+<header class="wrap top">
+  <a class="brand" href="index.html"><img src="img/logo.webp" width="665" height="280" alt="Mulberry Builders home"></a>
+  <nav class="nav" aria-label="Main"><a href="homes.html">New homes</a><a href="remodeling.html">Remodeling</a><a href="roofing.html">Roofing &amp; restoration</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>(859) 396-2523</a></nav>
+  <div class="top-right menu-wrap">
+    <a class="btn top-call menu-call" href="tel:+18593962523" aria-label="Call (859) 396-2523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call</a>
+    <details class="menu"><summary>Menu</summary><nav aria-label="Main, mobile"><a href="index.html" aria-current="page">Home</a><a href="homes.html">New homes</a><a href="remodeling.html">Remodeling</a><a href="roofing.html">Roofing &amp; restoration</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></details>
+  </div>
+</header>
+<main id="main">
+<section class="wrap hero" aria-labelledby="h1">
+  <div class="hero-text">
+    <h1 id="h1">New homes, remodels and roofs, built by the Mulberrys in Lexington</h1>
+    <p class="lede">A design-build team led by Chris and Chellie Mulberry, building and remodeling homes across Central Kentucky.</p>
+    <div class="actions">
+      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (859) 396-2523</a>
+      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email for an estimate</a>
+    </div>
+    <p class="honor"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2.8l2.6 1.6 3 .3.9 2.9 2 2.3-1.1 2.8.1 3-2.7 1.4-1.7 2.5-3-.6-3 .6-1.7-2.5-2.7-1.4.1-3L3.5 9.9l2-2.3.9-2.9 3-.3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8.6 12.2l2.3 2.2 4.5-4.6"/></svg><span><b>2023 Builder of the Year</b>Chris Mulberry, named by the Builders Industry Association of Central Kentucky</span></p>
+  </div>
+  <figure class="gable"><div class="frame">
+    <picture>
+      <source media="(max-width: 860px)" srcset="img/hero-m-800.webp 800w" sizes="100vw" width="800" height="552">
+      <img src="img/hero-1360.webp" srcset="img/hero-1360.webp 1360w" sizes="(max-width: 1400px) 54vw, 720px" width="1360" height="1114" alt="A two-story home with blue siding, a brick front and a two-car garage, built by Mulberry Builders" fetchpriority="high">
+    </picture>
+    <svg class="roof-d" viewBox="0 0 1360 1114" aria-hidden="true"><path pathLength="1" d="M-40.8,445.6 L0.0,445.6 L272.0,267.4 L272.0,66.8 L394.4,66.8 L394.4,187.2 L680.0,0.0 L1360.0,445.6 L1360.0,557.0"/></svg>
+    <svg class="roof-m" viewBox="0 0 800 552" aria-hidden="true"><path pathLength="1" d="M-24.0,220.8 L0.0,220.8 L160.0,132.5 L160.0,33.1 L232.0,33.1 L232.0,92.7 L400.0,0.0 L800.0,220.8 L800.0,276.0"/></svg></div>
+  </figure>
+</section>
+<div data-bar-after></div>
+
+<section class="band white" aria-labelledby="what">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="what">One team, from the foundation to the roof</h2>
+      <p>Our licensed team designs, remodels and builds anything from kitchens and bathrooms to basements, and everything in between. We build custom and semi-custom homes, and we handle roofing and restoration.</p>
+    </div>
+    <div class="doors">
+      <a class="door" href="homes.html"><img src="img/s-homes-560.webp" srcset="img/s-homes-560.webp 560w, img/s-homes-800.webp 800w, img/s-homes-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="A white farmhouse built by Mulberry Builders, seen across a field of tall grass" loading="lazy" decoding="async">
+        <h3>New homes <span aria-hidden="true">&#8250;</span></h3>
+        <p>Custom homes and a book of floor plans that can be tailored to your family.</p>
+        <ul><li>Floor plans</li><li>Custom homes</li></ul></a>
+      <a class="door" href="remodeling.html"><img src="img/s-remodel-560.webp" srcset="img/s-remodel-560.webp 560w, img/s-remodel-800.webp 800w, img/s-remodel-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="A remodeled kitchen with a gray island, white quartz top and wood floors" loading="lazy" decoding="async">
+        <h3>Remodeling <span aria-hidden="true">&#8250;</span></h3>
+        <p>From refreshing a single room to whole-home renovations and additions.</p>
+        <ul><li>Kitchens</li><li>Baths</li><li>Basements</li><li>Decks</li></ul></a>
+      <a class="door" href="roofing.html"><img src="img/s-roof-560.webp" srcset="img/s-roof-560.webp 560w, img/s-roof-800.webp 800w, img/s-roof-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="Aerial view of a new shingle roof on a two-story home" loading="lazy" decoding="async">
+        <h3>Roofing <span aria-hidden="true">&#8250;</span></h3>
+        <p>A roofing division for replacements, repairs, gutters and siding.</p>
+        <ul><li>Roofs</li><li>Gutters</li><li>Siding</li></ul></a>
+      <a class="door" href="roofing.html#restoration"><img src="img/s-restore-560.webp" srcset="img/s-restore-560.webp 560w, img/s-restore-800.webp 800w, img/s-restore-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1080px) 46vw, 290px" width="900" height="675" alt="A storm-damaged roof covered with blue tarps for emergency protection" loading="lazy" decoding="async">
+        <h3>Restoration <span aria-hidden="true">&#8250;</span></h3>
+        <p>Storm, fire and water damage repaired, with help through the insurance process.</p>
+        <ul><li>Storm</li><li>Fire</li><li>Water</li></ul></a>
+    </div>
+  </div>
+</section>
+
+<section class="band night" aria-labelledby="eliz">
+  <div class="wrap feature">
+    <div class="feature-photos">
+      <img src="img/eliz-640.webp" srcset="img/eliz-640.webp 640w, img/eliz-800.webp 800w, img/eliz-1000.webp 1000w" sizes="(max-width: 600px) 100vw, (max-width: 860px) 70vw, 520px" width="1000" height="667" alt="The Elizabeth: a white two-story home with a covered front porch and black windows" loading="lazy" decoding="async">
+      <img src="img/eliz-bath-400.webp" srcset="img/eliz-bath-400.webp 400w, img/eliz-bath-600.webp 600w" sizes="(max-width: 860px) 30vw, 180px" width="600" height="900" alt="A half bathroom in The Elizabeth with wainscoting and a round mirror" loading="lazy" decoding="async">
+    </div>
+    <div>
+      <p class="kicker">From our floor plans</p>
+      <h2 id="eliz">The Elizabeth</h2>
+      <p>At the 2023 Grand Tour of Homes, The Elizabeth won Best Overall in the $426,000 to $550,000 class, along with seven other awards in that class.</p>
+      <ul class="prizes">
+        <li class="top">Best Overall</li><li>Curb Appeal</li><li>Landscaping</li><li>Kitchen</li><li>Primary Bedroom Suite</li><li>Floor Plan</li><li>Interior Fixtures</li><li>Interior Lighting</li>
+      </ul>
+      <dl class="tblock" style="--cols:3"><div><dt>Bedrooms</dt><dd class="num">3 or 4</dd></div><div><dt>4-bed size</dt><dd class="num">2,200 sq ft</dd></div><div><dt>4-bed baths</dt><dd class="num">2.5</dd></div></dl>
+      <p style="margin-top:1.6rem"><a class="btn" href="homes.html#plans">See the floor plans</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="who">
+  <div class="wrap people">
+    <img src="img/mulberrys-480.webp" srcset="img/mulberrys-480.webp 480w, img/mulberrys-760.webp 640w" sizes="(max-width: 860px) 100vw, 400px" width="640" height="800" alt="Chris and Chellie Mulberry in their design studio, in front of cabinet samples" loading="lazy" decoding="async">
+    <div>
+      <h2 id="who">Chris and Chellie Mulberry, Lexington natives</h2>
+      <p>Chris began rehabilitating abandoned properties in and around Lexington in 2005, and found his passion for seeing the old become new. Chellie joined in 2007, and they were married in 2009. Over the years their relationships with clients, and their team's craftsmanship, made Mulberry Builders one of the most trusted contractors in Central Kentucky.</p>
+      <div class="roles">
+        <p><b>Chris Mulberry</b><span>Principal builder and head of business development</span></p>
+        <p><b>Chellie Mulberry</b><span>Principal designer, whose touch is in every space they build or remodel</span></p>
+      </div>
+      <a href="about.html">Meet the Mulberrys and the team</a>
+    </div>
+  </div>
+</section>
+
+<section class="band white" aria-labelledby="words">
+  <div class="wrap">
+    <div class="head"><h2 id="words">What clients say</h2><p>Homeowners across Lexington, Georgetown, Nicholasville, Versailles, Richmond and the rest of Central Kentucky.</p></div>
+    <div class="quotes"><figure class="quote"><blockquote><p>We started our kitchen renovation with another local company years ago only to be completely disappointed with no progress made. We hired Mulberry and ended up with our dream kitchen, quality work, and nothing but positive feelings about Mulberry and the work they do.</p></blockquote><figcaption>Erika S., kitchen renovation</figcaption></figure><figure class="quote"><blockquote><p>Mulberry built our custom home. We worked with them from showing a picture of what we wanted till the last detail was installed and we loved the process.</p></blockquote><figcaption>Amy M., custom home</figcaption></figure><figure class="quote"><blockquote><p>We could not be happier with the service and work the team at Mulberry Builders provided. They helped fix the water damage inside and outside… Work and cleanup was fantastic.</p></blockquote><figcaption>Allison T., Nicholasville, KY</figcaption></figure></div>
+    <p style="margin-top:2.2rem"><a href="about.html#clients">Read more client stories</a></p>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="jude">
+  <div class="wrap cause">
+    <img src="img/stjude-560.webp" srcset="img/stjude-560.webp 560w, img/stjude-800.webp 800w, img/stjude-900.webp 900w" sizes="(max-width: 860px) 100vw, 460px" width="900" height="600" alt="A St. Jude Dream Home built by Mulberry Builders" loading="lazy" decoding="async">
+    <div>
+      <h2 id="jude">St. Jude Dream Home builder</h2>
+      <p>Mulberry Builders was chosen to build the St. Jude Dream Home in Lexington for the fourth year, and received the St. Jude Golden Hammer Award. Our Natalie floor plan was first designed as the 2024 St. Jude Dream Home.</p>
+      <p style="margin-top:1rem"><a href="about.html#stjude">Read Chris and Chellie's letter</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<section class="band night" aria-labelledby="reach">
+  <div class="wrap reach">
+    <div>
+      <h2 id="reach">Tell us what you want to build</h2>
+      <p>If you have questions, we want to make sure we answer them. If you are ready to talk through your project, we can help you come up with a realistic plan that makes sense for your family and budget.</p>
+      <div class="actions">
+      <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (859) 396-2523</a>
+      <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email for an estimate</a>
+    </div>
+    </div>
+    <ul class="facts">
+      <li><span>Phone</span><span><a href="tel:+18593962523">(859) 396-2523</a></span></li>
+      <li><span>Email</span><span><a href="mailto:admin@mulberry-builders.com?subject=Estimate%20request">admin@mulberry-builders.com</a></span></li>
+      <li><span>Office</span><span>3264 Loch Ness Dr, Lexington, KY 40517</span></li>
+      <li><span>Hours</span><span>Monday to Friday, 8am to 5pm</span></li>
+    </ul>
+  </div>
+</section>
+<div class="callbar" aria-label="Contact Mulberry Builders">
+  <a class="btn" href="tel:+18593962523"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call</a>
+  <a class="btn line" href="mailto:admin@mulberry-builders.com?subject=Estimate%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>Email</a>
+</div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="img/logo-light.webp" width="665" height="280" alt="Mulberry Builders" loading="lazy">
+        <p>Licensed general contractor and home builder in Lexington, Kentucky, owned and operated by Chris and Chellie Mulberry.</p>
+      </div>
+      <div>
+        <h2>Reach us</h2>
+        <ul>
+          <li><a href="tel:+18593962523">(859) 396-2523</a></li>
+          <li><a href="mailto:admin@mulberry-builders.com?subject=Estimate%20request">admin@mulberry-builders.com</a></li>
+          <li>3264 Loch Ness Dr, Lexington, KY 40517</li>
+          <li>Monday to Friday, 8am to 5pm</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="homes.html">New homes</a></li><li><a href="remodeling.html">Remodeling</a></li><li><a href="roofing.html">Roofing &amp; restoration</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Unofficial demo built by MHS Tecnologia for Mulberry Builders. Not affiliated with or endorsed by Mulberry Builders. Photos and text from mulberry-builders.com.</p>
+      <p>Removed on request: contato@mhstecnologia.com.br</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function () {
+  document.querySelectorAll('[data-more]').forEach(function (box) {
+    var keep = +box.getAttribute('data-more'), kids = [].slice.call(box.children);
+    if (kids.length <= keep) return;
+    kids.slice(keep).forEach(function (k) { k.classList.add('extra'); });
+    box.classList.add('folded');
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'btn line more';
+    b.textContent = box.getAttribute('data-label') || 'Show all';
+    b.addEventListener('click', function () { box.classList.remove('folded'); b.remove(); });
+    box.after(b);
+  });
+})();
+(function () {
+  var bar = document.querySelector('.callbar'), mark = document.querySelector('[data-bar-after]');
+  if (!bar || !mark || !('IntersectionObserver' in window)) return;
+  document.body.classList.add('has-bar');
+  new IntersectionObserver(function (e) {
+    var past = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
+    bar.classList.toggle('on', past);
+  }).observe(mark);
+})();
+</script>
+</body>
+</html>
