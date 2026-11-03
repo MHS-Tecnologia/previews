@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Richard Marks Restorations, Inc. | Architectural conservation in Charleston, SC</title>
+<meta name="description" content="Architectural conservation, preservation and restoration in Charleston and the South Carolina Low Country since 1985.">
+<meta name="theme-color" content="#18241A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23EED576'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='19' text-anchor='middle' fill='%23271E16'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/hero-m-500.webp" media="(max-width: 900px)" fetchpriority="high"><link rel="preload" as="image" href="img/hero-800.webp" media="(min-width: 901px)" fetchpriority="high">
+<link rel="preload" href="fonts/caslon-display.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/caslon-text-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Caslon Display";font-weight:400;font-display:swap;src:url(fonts/caslon-display.woff2) format("woff2")}
+@font-face{font-family:"Caslon";font-weight:400;font-display:swap;src:url(fonts/caslon-text-400.woff2) format("woff2")}
+@font-face{font-family:"Caslon";font-weight:700;font-display:swap;src:url(fonts/caslon-text-700.woff2) format("woff2")}
+@font-face{font-family:"Caslon";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/caslon-text-400-italic.woff2) format("woff2")}
+:root{
+  --lime:#F3F2EE;      /* lime-washed plaster */
+  --lime-2:#E7E4DC;
+  --stucco:#EED576;    /* their ochre stucco, sampled from the bracket photo */
+  --stucco-deep:#D8B957;
+  --shutter:#203E21;   /* the shutter green in the same photo */
+  --night:#18241A;     /* Charleston green, nearly black */
+  --wood:#59432D;      /* the carved bracket */
+  --ink:#271E16;
+  --muted:#5A4D40;
+  --scoring:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='176' height='96'%3E%3Cpath d='M0 1H176M0 49H176M1 1V49M89 49V97' stroke='%23fff6cf' stroke-opacity='.6' stroke-width='1.3' fill='none'/%3E%3Cpath d='M0 2.6H176M0 50.6H176M2.6 1V49M90.6 49V97' stroke='%23b8963c' stroke-opacity='.22' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--lime);color:var(--ink);font:400 1.0625rem/1.65 Caslon,Georgia,serif;font-kerning:normal;font-variant-numeric:oldstyle-nums}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:"Caslon Display",Caslon,Georgia,serif;font-weight:400;line-height:1.08;margin:0;letter-spacing:-.005em;text-wrap:balance}
+h1{font-size:clamp(2.35rem,5.4vw,4.6rem)}
+h2{font-size:clamp(1.9rem,3.6vw,3rem)}
+h3{font-size:1.6rem;line-height:1.15}
+p{margin:0 0 1em;max-width:62ch}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-999px;top:0;background:var(--night);color:#fff;padding:10px 14px;z-index:20}
+.skip:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--shutter);outline-offset:3px}
+.night :focus-visible,.foot :focus-visible{outline-color:var(--stucco)}
+
+/* demo notice */
+.notice{background:var(--night);color:#E9E4D6;font-size:.8125rem;line-height:1.4;text-align:center;padding:7px 16px;margin:0;max-width:none}
+
+/* header */
+.top{background:var(--lime);border-bottom:1px solid var(--lime-2)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:84px}
+.brand{display:block;text-decoration:none;flex:0 1 auto}
+.brand img{width:340px}
+.nav{display:flex;gap:30px;align-items:center;font-size:1.0625rem}
+.nav a{text-decoration:none;padding:8px 0;border-bottom:1.5px solid transparent}
+.nav a:hover,.nav a[aria-current]{border-color:var(--wood)}
+.nav .call{background:var(--night);color:#fff;padding:10px 18px;border:0;border-radius:2px}
+.nav .call:hover{background:var(--shutter)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;padding:10px 14px;border:1.5px solid var(--ink);border-radius:2px;font-size:1rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + 8px);background:var(--lime);border:1px solid var(--lime-2);box-shadow:0 12px 30px rgb(39 30 22/.18);display:flex;flex-direction:column;min-width:210px;z-index:10;padding:6px 0}
+.menu nav a{padding:12px 20px;text-decoration:none;font-size:1.0625rem}
+.menu nav a[aria-current]{font-style:italic}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 24px;font:700 1.0625rem/1.2 Caslon,Georgia,serif;text-decoration:none;border-radius:2px;border:1.5px solid var(--night)}
+.btn.solid{background:var(--night);color:#fff}
+.btn.solid:hover{background:var(--shutter);border-color:var(--shutter)}
+.btn.line{background:transparent;color:var(--night)}
+.btn.line:hover{background:rgb(24 36 26/.08)}
+.btn svg{width:18px;height:18px;flex:none}
+.short{display:none}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* ------------------------------------------------------------------ hero: a window set in scored stucco */
+.hero{background:linear-gradient(90deg,var(--stucco) 50%,transparent 50%),var(--scoring) var(--stucco);background-position:0 0,-1px -1px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:stretch}
+.hero-copy{padding:72px 56px 76px 0}
+.hero-copy p{font-size:1.1875rem;color:#3A2D20;margin-top:22px;max-width:34em}
+.hero-copy .since{font-style:italic;font-size:1.125rem;margin:0 0 18px;color:var(--wood)}
+.facade{padding:56px 0 0 72px;display:flex;flex-direction:column;justify-content:center}
+.window{position:relative;perspective:1200px;background:var(--night);padding:10px;box-shadow:inset 0 0 0 1px rgb(0 0 0/.2)}
+.window img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.sill{height:18px;margin:0 -22px;background:linear-gradient(#F7E6A0,#E3C565 60%,#C9A94A);box-shadow:0 10px 16px -8px rgb(70 50 10/.45)}
+.cap{font-style:italic;font-size:.9375rem;color:#4A3B2A;padding:14px 0 40px;margin:0}
+.shutter{position:absolute;top:10px;bottom:10px;width:calc(50% - 10px);background:repeating-linear-gradient(180deg,#2B5A2D 0 9px,#1B3A1D 9px 12px);border:4px solid #224A24;box-shadow:inset 0 0 0 2px #18321A;transform-style:preserve-3d;backface-visibility:hidden;pointer-events:none}
+.shutter.l{left:10px;transform-origin:left center;animation:open-l 1.25s cubic-bezier(.5,0,.2,1) .35s both}
+.shutter.r{right:10px;transform-origin:right center;animation:open-r 1.25s cubic-bezier(.5,0,.2,1) .35s both}
+@keyframes open-l{from{transform:rotateY(0)}to{transform:rotateY(-104deg);visibility:hidden}}
+@keyframes open-r{from{transform:rotateY(0)}to{transform:rotateY(104deg);visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.shutter{display:none}*{scroll-behavior:auto!important}}
+
+/* page title band for inner pages */
+.title{background:var(--stucco) var(--scoring);background-position:-1px -1px}
+.title .wrap{padding-top:64px;padding-bottom:0}
+.title-card{background:var(--stucco);display:inline-block;padding:28px 36px 30px 0;margin-left:-0px;max-width:820px;box-shadow:24px 0 0 var(--stucco)}
+.title-card p{margin:16px 0 0;font-size:1.1875rem;color:#3A2D20}
+.title .sill{margin:0 0 0;height:14px}
+
+/* sections */
+section{padding:96px 0}
+.lead-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:end;margin-bottom:48px}
+.lead-in p{margin:0;color:var(--muted);font-size:1.125rem}
+.more{display:inline-block;margin-top:8px;font-weight:700;text-decoration-thickness:1.5px;text-underline-offset:4px}
+
+/* services trio */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.trio article img{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:22px}
+.trio h3{margin-bottom:12px}
+.trio p{font-size:1rem}
+
+/* portfolio teaser, on Charleston green */
+.night{background:var(--night);color:#ECE6D6}
+.night .lead-in p{color:#BFB59E}
+.rooms{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.room{grid-column:span 3;text-decoration:none;display:block}
+.room.wide{grid-column:span 6;grid-row:span 2}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:filter .3s}
+.room.wide img{aspect-ratio:auto;height:calc(100% - 64px);min-height:300px}
+.room span{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0 0;font-family:"Caslon Display",Georgia,serif;font-size:1.5rem;line-height:1.2}
+.room small{font-family:Caslon,Georgia,serif;font-style:italic;font-size:.9375rem;color:#BFB59E;white-space:nowrap}
+.room:hover img{filter:brightness(1.08)}
+
+/* workshops */
+.shop{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:center}
+.shop figure{margin:0}
+.shop figcaption{font-style:italic;font-size:.9375rem;color:var(--muted);margin-top:12px}
+.trades{list-style:none;padding:0;margin:28px 0 0;border-top:1px solid #CFC8B8}
+.trades li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #CFC8B8;font-size:1.125rem}
+.trades li em{color:var(--muted);font-size:1rem}
+
+/* founder */
+.founder{display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;align-items:start}
+.founder img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.founder blockquote{margin:0}
+.founder ul{margin:22px 0 0;padding:0;list-style:none}
+.founder li{padding:10px 0 10px 22px;position:relative;border-bottom:1px solid #CFC8B8}
+.founder li::before{content:"";position:absolute;left:0;top:1.15em;width:9px;height:9px;background:var(--stucco-deep);transform:rotate(45deg)}
+
+/* call band */
+.call-band{background:var(--stucco) var(--scoring);background-position:-1px -1px;padding:80px 0}
+.call-card{background:var(--lime);padding:48px 56px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:center;box-shadow:0 18px 40px -20px rgb(70 50 10/.5)}
+.call-card address{font-style:normal;line-height:1.7}
+.call-card .actions{margin-top:20px}
+
+/* services page */
+.svc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start;padding:72px 0;border-bottom:1px solid #CFC8B8}
+.svc:last-child{border-bottom:0}
+.svc:nth-child(even) figure{order:2}
+.svc figure{margin:0}
+.svc figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.svc h2{margin-bottom:22px}
+.svc .first{font-size:1.25rem}
+.partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#CFC8B8;border:1px solid #CFC8B8;margin-top:32px}
+.partners div{background:var(--lime);padding:22px 20px;font-size:1rem}
+.partners b{display:block;font-family:"Caslon Display",Georgia,serif;font-weight:400;font-size:1.3rem;margin-bottom:4px}
+
+/* portfolio page */
+.group{padding:72px 0;border-bottom:1px solid #CFC8B8}
+.group:last-of-type{border-bottom:0}
+.group header{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:28px}
+.group header p{margin:0;color:var(--muted);font-style:italic}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid figure{margin:0;background:var(--lime-2)}
+.grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.grid .tall img{aspect-ratio:3/4}
+.grid .first{grid-column:span 2;grid-row:span 2}
+.grid .first img{height:100%;aspect-ratio:auto}
+.rest summary{display:inline-flex;align-items:center;min-height:48px;margin-top:20px;padding:10px 20px;border:1.5px solid var(--night);border-radius:2px;cursor:pointer;font-weight:700;list-style:none}
+.rest summary::-webkit-details-marker{display:none}
+.rest[open] summary{display:none}
+.rest .grid{margin-top:16px}
+
+/* about page */
+.team{margin:0}
+.team img{width:100%;max-width:984px}
+.team figcaption{font-style:italic;color:var(--muted);font-size:.9375rem;margin-top:10px}
+.bio{display:grid;grid-template-columns:300px minmax(0,1fr);gap:64px;align-items:start}
+.bio figure{margin:0}
+.bio figcaption{font-style:italic;margin-top:10px}
+.years{list-style:none;margin:36px 0 0;padding:0}
+.years li{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;padding:16px 0;border-top:1px solid #CFC8B8}
+.years b{font-family:"Caslon Display",Georgia,serif;font-weight:400;font-size:1.6rem;line-height:1.1;font-variant-numeric:lining-nums}
+.firm-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:48px}
+.firm-facts div{border-top:3px solid var(--stucco-deep);padding-top:16px}
+.firm-facts b{display:block;font-family:"Caslon Display",Georgia,serif;font-weight:400;font-size:1.5rem;line-height:1.15;margin-bottom:6px}
+
+/* contact page */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.lines{margin:0;display:grid;gap:0;border-top:1px solid #CFC8B8}
+.lines div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid #CFC8B8}
+.lines dt{font-style:italic;color:var(--muted)}
+.lines dd{margin:0;font-size:1.1875rem}
+.lines a{text-underline-offset:4px}
+.contact figure{margin:0}
+.contact figcaption{font-style:italic;color:var(--muted);font-size:.9375rem;margin-top:10px}
+
+/* footer */
+.foot{background:var(--night);color:#D9D2C1;padding:64px 0 48px;font-size:.9375rem}
+.foot .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:40px}
+.foot img{width:300px;margin-bottom:20px}
+.foot address{font-style:normal;line-height:1.7}
+.foot nav{display:flex;flex-direction:column;gap:6px}
+.foot nav a{text-decoration:none;padding:4px 0}
+.foot nav a:hover{text-decoration:underline}
+.foot .legal{border-top:1px solid #34443A;margin-top:40px;padding-top:20px;color:#B9B19E;font-size:.875rem}
+.foot .legal p{max-width:none;margin:0 0 6px}
+
+/* sticky call bar (mobile, after the hero) */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:15;display:none;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgb(24 36 26/.97);transform:translateY(110%);transition:transform .25s ease}
+.dock.on{transform:none}
+.dock a{min-height:48px;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;border-radius:2px}
+.dock .a1{background:var(--stucco);color:var(--ink)}
+.dock .a2{border:1.5px solid #E9E4D6;color:#fff}
+.dock svg{width:18px;height:18px}
+
+@media (max-width:1080px){
+  .nav{gap:20px}.brand img{width:280px}
+  .rooms .room{grid-column:span 6}.rooms .room.wide{grid-column:span 12;grid-row:auto}
+  .room.wide img{height:auto;aspect-ratio:16/9;min-height:0}
+}
+@media (max-width:900px){
+  .nav{display:none}.menu{display:block}
+  .hero .wrap{grid-template-columns:1fr;padding:0}
+  .hero{background:var(--stucco)}
+  .facade{order:-1;padding:14px 16px 0;background:var(--scoring);background-position:-1px -1px}
+  .notice{font-size:.75rem;padding:6px 12px}
+  .window{padding:6px}
+  .window img{aspect-ratio:16/9}
+  .shutter{top:6px;bottom:6px;width:calc(50% - 6px)}.shutter.l{left:6px}.shutter.r{right:6px}
+  .sill{height:12px;margin:0 -10px}
+  .cap{display:none}
+  .hero-copy{padding:22px 16px 30px}
+  .hero-copy .since{margin-bottom:10px;font-size:1rem}
+  .hero-copy p{font-size:1.0625rem;margin-top:14px;line-height:1.55}
+  .actions{margin-top:20px}
+  .lead-in,.shop,.founder,.svc,.bio,.contact,.call-card{grid-template-columns:1fr;gap:28px}
+  .svc:nth-child(even) figure{order:0}
+  .trio{grid-template-columns:1fr;gap:44px}
+  .firm-facts{grid-template-columns:1fr;gap:24px}
+  .foot .cols{grid-template-columns:1fr}
+  .founder img{max-width:260px}
+  .dock{display:grid}
+  .foot{padding-bottom:110px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  body{font-size:1.0625rem}
+  .top .wrap{min-height:64px;gap:12px}
+  .brand img{width:220px}
+  section{padding:64px 0}
+  .hero-copy .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .hero-copy .actions .btn{padding:12px 10px}
+  .hero .long{display:none}
+  .hero .short{display:inline}
+  .rooms{gap:28px 12px}
+  .rooms .room{grid-column:span 6}
+  .rooms .room.wide{grid-column:span 12}
+  .room span{flex-direction:column;gap:2px}
+  .room span{font-size:1.3rem}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .grid .first{grid-column:span 2;grid-row:auto}
+  .grid .first img{aspect-ratio:4/3;height:auto}
+  .grid .first ~ figure:nth-child(even):last-child,.rest .grid figure:nth-child(odd):last-child{grid-column:span 2}
+  .group header{flex-direction:column;gap:6px}
+  .call-band{padding:40px 0}
+  .call-card{padding:28px 22px}
+  .call-card .btn{flex:1 1 100%}
+  .title .wrap{padding-top:28px}
+  .title-card{padding:22px 22px 24px 0;box-shadow:16px 0 0 var(--stucco)}
+  .years li{grid-template-columns:80px minmax(0,1fr)}
+  .lines div{grid-template-columns:1fr;gap:2px}
+  .partners{grid-template-columns:1fr}
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Richard Marks Restorations, Inc. | Architectural conservation in Charleston, SC">
+<meta property="og:description" content="Architectural conservation, preservation and restoration in Charleston and the South Carolina Low Country since 1985.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/richard-marks-restorations-charleston-sc/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/richard-marks-restorations-charleston-sc/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="notice">Unofficial demo built by MHS Tecnologia for Richard Marks Restorations. Not affiliated with or endorsed by Richard Marks Restorations.</p>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Richard Marks Restorations, home"><img src="img/logo.webp" width="664" height="48" alt="Richard Marks Restorations, Inc. Architectural conservation"></a>
+  <nav class="nav" aria-label="Main"><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a><a class="call" href="tel:+18438530024">Call 843.853.0024</a></nav>
+  <details class="menu"><summary>Menu</summary><nav aria-label="Main, mobile"><a href="index.html" aria-current="page">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="tel:+18438530024">Call 843.853.0024</a></nav></details>
+</div></header>
+<main id="main">
+
+<div class="hero" data-dock><div class="wrap">
+  <div class="hero-copy">
+    <p class="since">Architectural conservation, since 1985</p>
+    <h1>Restoring the historic buildings of Charleston and the Low Country.</h1>
+    <p>A full-service general contractor with over thirty full-time carpenters, masons, plasterers and decorative craftspeople, from private residences to National Register sites and Board of Architectural Review submittals.</p>
+    <div class="actions"><a class="btn solid" href="tel:+18438530024"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call<span class="long"> 843.853.0024</span><span class="short"> office</span></a><a class="btn line" href="mailto:rmr@richardmarksrestorations.com?subject=Preservation%20project"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email<span class="long"> the office</span><span class="short"> office</span></a></div>
+  </div>
+  <div class="facade">
+    <figure class="window" style="margin:0">
+      <picture>
+        <source media="(max-width: 900px)" srcset="img/hero-m-500.webp" width="500" height="312">
+        <img src="img/hero-800.webp" width="800" height="600" alt="Carved wooden bracket under a cornice, ochre stucco and green louvered shutters" fetchpriority="high">
+      </picture>
+      <span class="shutter l" aria-hidden="true"></span><span class="shutter r" aria-hidden="true"></span>
+    </figure>
+    <div class="sill" aria-hidden="true"></div>
+    <p class="cap">A carved bracket, stucco and shutters, from the firm's house museum work.</p>
+  </div>
+</div></div>
+
+<section aria-labelledby="what"><div class="wrap">
+  <div class="lead-in"><h2 id="what">Three ways into an old building</h2>
+    <p>Each project is unique, with its own set of priorities and programs. The work is to respond with sensitivity to the historic fabric and to the wishes of its owners.</p></div>
+  <div class="trio">
+    <article><img src="img/t-08.webp" width="386" height="286" alt="A craftsman working on wood trim beside a window" loading="lazy" decoding="async">
+      <h3>Restoration</h3><p>Many levels of restoration, alongside some of the finest preservation architects, interior designers and landscape architects, or with in-house design. Fine furniture restoration and reproduction, too.</p></article>
+    <article><img src="img/t-09.webp" width="386" height="286" alt="Two people reviewing drawings on a job site" loading="lazy" decoding="async">
+      <h3>Consulting</h3><p>Reading a historic structure, accurate documentation and estimating, and the ins and outs of Federal, State and local ordinances.</p></article>
+    <article><img src="img/t-10.webp" width="386" height="286" alt="Magnified cross-section of a paint sample showing its layers" loading="lazy" decoding="async">
+      <h3>Research</h3><p>Documentary and physical research with trained architectural conservators, to work out the chronology of a structure before design begins.</p></article>
+  </div>
+  <a class="more" href="services.html">Read about each service</a>
+</div></section>
+
+<section class="night" aria-labelledby="work"><div class="wrap">
+  <div class="lead-in"><h2 id="work">Where the work has been</h2>
+    <p>Preservation projects in and around the South Carolina Low Country: sites on the National Register of Historic Places, historic churches and civic buildings, private plantations and residences.</p></div>
+  <div class="rooms">
+    <a class="room wide" href="portfolio.html#residences"><img src="img/g-21-480.webp" srcset="img/g-21-480.webp 480w, img/g-21-640.webp 640w, img/g-21-800.webp 800w" sizes="(max-width: 1080px) calc(100vw - 32px), 590px" width="800" height="600" alt="A white two-story house with deep porches under live oaks" loading="lazy" decoding="async"><span>Private residences <small>13 photographs</small></span></a>
+    <a class="room" href="portfolio.html#museums"><img src="img/g-24-480.webp" srcset="img/g-24-480.webp 480w, img/g-24-640.webp 640w, img/g-24-800.webp 800w" sizes="(max-width: 640px) calc(50vw - 22px), 290px" width="800" height="600" alt="A yellow three-story house with columned piazzas behind palmettos" loading="lazy" decoding="async"><span>House museums <small>9 photographs</small></span></a>
+    <a class="room" href="portfolio.html#churches"><img src="img/g-33-480.webp" srcset="img/g-33-480.webp 480w, img/g-33-640.webp 640w, img/g-33-800.webp 800w" sizes="(max-width: 640px) calc(50vw - 22px), 290px" width="800" height="600" alt="A small white church with arched windows behind a brick wall" loading="lazy" decoding="async"><span>Churches <small>3 photographs</small></span></a>
+    <a class="room" href="portfolio.html#millwork"><img src="img/t-05.webp" width="386" height="286" alt="Rows of newly turned wooden balusters beside painted ones" loading="lazy" decoding="async"><span>Millwork <small>3 photographs</small></span></a>
+    <a class="room" href="portfolio.html#residences"><img src="img/g-17-480.webp" srcset="img/g-17-480.webp 480w, img/g-17-640.webp 640w, img/g-17-800.webp 800w" sizes="(max-width: 640px) calc(50vw - 22px), 290px" width="800" height="600" alt="A mahogany stair rail with turned balusters" loading="lazy" decoding="async"><span>Interiors <small>in residences</small></span></a>
+  </div>
+</div></section>
+
+<section aria-labelledby="shop"><div class="wrap shop">
+  <figure><img src="img/g-23-480.webp" srcset="img/g-23-480.webp 480w, img/g-23-640.webp 640w, img/g-23-800.webp 800w" sizes="(max-width: 900px) calc(100vw - 32px), 640px" width="800" height="600" alt="A white plaster mantel frieze with shells, coral and swags in relief" loading="lazy" decoding="async">
+    <figcaption>A seashell mantel from the firm's residential portfolio.</figcaption></figure>
+  <div><h2 id="shop">The trades, under one firm</h2>
+    <p style="margin-top:20px">Richard Marks Restorations retains several preservation and documentation consultants, as well as over thirty full-time carpenters, masons, plasterers and decorative craftspeople. Its own facilities include:</p>
+    <ul class="trades">
+      <li>Cabinetry <em>workshop</em></li><li>Millwork <em>workshop</em></li><li>Stone <em>workshop</em></li>
+      <li>Plaster casting <em>workshop</em></li><li>Analytical conservation examination and research <em>lab</em></li>
+    </ul></div>
+</div></section>
+
+<section style="padding-top:0" aria-labelledby="founder"><div class="wrap founder">
+  <img src="img/t-37.webp" width="284" height="385" alt="Portrait of Richard D. Marks III" loading="lazy" decoding="async">
+  <div><h2 id="founder">Richard D. Marks III, founder</h2>
+    <p style="margin-top:18px;font-size:1.1875rem">The firm began in 1985 to be a qualified resource for anyone seeking advice or services on the stabilization, preservation, restoration and conservation of historic buildings and sites.</p>
+    <ul>
+      <li>Bachelor of Science in construction management, College of Architecture, Clemson University, 1985</li>
+      <li>Certificate in Historic Preservation, University of Pennsylvania, 1995</li>
+      <li>Former trustee of the Historic Charleston Foundation</li>
+    </ul>
+    <a class="more" href="about.html">More about the firm</a></div>
+</div></section>
+<div class="call-band"><div class="wrap"><div class="call-card">
+  <div><h2>Let us help with your preservation project</h2>
+    <p style="margin-top:16px;color:var(--muted)">Projects range from private residential restorations to National Register nominations and Board of Architectural Review submittals.</p></div>
+  <div><address>Richard Marks Restorations, Inc.<br>12 Vanderhorst Street, Suite D<br>Charleston, South Carolina 29403</address>
+    <div class="actions"><a class="btn solid" href="tel:+18438530024"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call 843.853.0024</a><a class="btn line" href="mailto:rmr@richardmarksrestorations.com?subject=Preservation%20project"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email the office</a></div></div>
+</div></div></div>
+
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="cols">
+    <div><img src="img/logo-light.webp" width="664" height="48" alt="Richard Marks Restorations, Inc." loading="lazy">
+      <p>Architectural conservation, preservation and restoration in and around the South Carolina Low Country since 1985.</p></div>
+    <address>Richard Marks Restorations, Inc.<br>12 Vanderhorst Street, Suite D<br>Charleston, South Carolina 29403<br><br>Office <a href="tel:+18438530024">843.853.0024</a><br>Fax 843.577.6070<br><a href="mailto:rmr@richardmarksrestorations.com?subject=Preservation%20project">rmr@richardmarksrestorations.com</a></address>
+    <nav aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  </div>
+  <div class="legal">
+    <p>Unofficial demo built by MHS Tecnologia for Richard Marks Restorations. Not affiliated with or endorsed by Richard Marks Restorations. Text and photographs are from Richard Marks Restorations's own website.</p>
+    <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</div></footer>
+<div class="dock" id="dock" aria-label="Contact the office"><a class="a1" href="tel:+18438530024"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call the office</a><a class="a2" href="mailto:rmr@richardmarksrestorations.com?subject=Preservation%20project"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email</a></div>
+<script>
+(()=>{const d=document.getElementById('dock'),h=document.querySelector('[data-dock]');if(!d||!h||!('IntersectionObserver'in window))return;
+new IntersectionObserver(([e])=>d.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(h)})();
+</script>
+</body>
+</html>
