@@ -10,7 +10,7 @@
 <meta name="description" content="New construction, remodeling and additions, design, historic preservation and repairs in Ann Arbor and Southeast Michigan, since 1984.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/rokkitt.woff2" crossorigin>
 <link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width: 860px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-1400.webp" imagesrcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" imagesizes="(max-width: 1240px) 56vw, 700px" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1800.webp" imagesrcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w, img/hero-1800.webp 1800w" imagesizes="(max-width: 1240px) 46vw, 660px" media="(min-width: 861px)" fetchpriority="high">
 <style>
 @font-face { font-family: "Rokkitt"; font-weight: 100 900; font-display: swap; src: url(fonts/rokkitt.woff2) format("woff2"); }
 @font-face { font-family: "Work Sans"; font-weight: 100 900; font-display: swap; src: url(fonts/worksans.woff2) format("woff2"); }
@@ -90,7 +90,8 @@ p { max-width: 62ch; }
 .services { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2.2rem 1.5rem; }
 .svc { grid-column: span 3; text-decoration: none; display: block; }
 .svc.big { grid-column: span 6; grid-row: span 2; }
-.svc.big .ph { aspect-ratio: 1 / 1; }
+.svc.big .ph { aspect-ratio: 3 / 2; }
+.svc:not(.big) .ph { aspect-ratio: 16 / 10; }
 .svc.big h3 { font-size: 2rem; }
 .svc .ph { overflow: hidden; border-radius: 2px; background: var(--line); aspect-ratio: 4 / 3; }
 .svc .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
@@ -107,6 +108,14 @@ p { max-width: 62ch; }
 .dark .people p { color: #d9cdc5; }
 .dark .people .role { color: #a9cbe0; }
 .dark figcaption span, .dark .head p { color: #cbbdb3; }
+.names { list-style: none; padding: 0; margin-top: 1.6rem; display: grid; gap: 1.2rem; }
+.names strong { display: block; font-family: "Rokkitt", serif; font-size: 1.5rem; color: #fff; font-weight: 600; }
+.names li { color: #d9cdc5; }
+.more { margin-top: 1.4rem; }
+.more a { color: var(--straw); font-weight: 600; text-underline-offset: 4px; }
+.dark details.faq { border-color: #4a3a31; }
+.dark details.faq summary { color: #fff; }
+.dark details.faq summary::after { color: var(--straw); }
 .dark .btn.line { color: #fff; box-shadow: inset 0 0 0 2px #efe6df; }
 .dark .btn.line:hover { background: #efe6df; color: var(--walnut); }
 .old { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
@@ -118,6 +127,10 @@ p { max-width: 62ch; }
 /* Projects */
 .feature { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
 .feature .txt p { margin-top: 1rem; color: var(--soft); }
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.pairs > img, .pairs figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 2px; }
+.pairs .span2 { grid-column: span 2; aspect-ratio: 3 / 2; }
+.feature.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
 .feature .tag { color: var(--blue); font-weight: 600; font-size: .95rem; }
 .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; }
 .trio figure img, .grid figure img, .cards figure img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; border-radius: 2px; }
@@ -200,7 +213,7 @@ details.faq div p + p { margin-top: .8rem; }
 .bar { display: none; }
 
 @media (max-width: 1100px) {
-  .nav a:not(.btn) { display: none; }
+  .nav > a:not(.btn) { display: none; }
   .menu { display: block; position: relative; }
   .menu summary { list-style: none; cursor: pointer; min-height: 2.75rem; padding: .5rem .9rem; border: 2px solid var(--walnut); border-radius: 3px; font-weight: 600; display: flex; align-items: center; }
   .menu summary::-webkit-details-marker { display: none; }
@@ -223,11 +236,12 @@ details.faq div p + p { margin-top: .8rem; }
   .actions .btn { flex: 1 1 auto; padding-left: 1rem; padding-right: 1rem; }
   .wide-only { display: none; }
   .where { margin-top: 1rem; font-size: .9rem; }
-  .head, .old, .feature, .prose, .call .in { grid-template-columns: 1fr; }
+  .head, .old, .feature, .feature.flip, .prose, .call .in { grid-template-columns: 1fr; }
+  .feature.flip .txt { order: -1; }
   .services { grid-template-columns: 1fr 1fr; gap: 1.8rem 1rem; }
   .svc, .svc.big { grid-column: span 1; grid-row: auto; }
   .svc.big { grid-column: span 2; }
-  .svc.big .ph { aspect-ratio: 4 / 3; }
+  .svc.big .ph { aspect-ratio: 3 / 2; }
   .svc.big h3 { font-size: 1.6rem; }
   .svc h3 { font-size: 1.3rem; }
   .svc p { display: none; }
@@ -275,13 +289,13 @@ details.faq div p + p { margin-top: .8rem; }
     <div class="actions"><a class="btn " href="tel:+17347697760"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 734.769.7760</a><a class="btn line" href="mailto:info@perkinsconstruction.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 7.3L4.3 7v.1L12 12.3 19.7 7.1V7L12 12.3Zm-8 -3.1V17h16V9.2l-8 5.3-8-5.3Z"/></svg>Email<span class="wide-only"> the office</span></a></div>
     <p class="where"><strong>Office:</strong> 5643 Plymouth Road, Ann Arbor</p>
   </div>
-  <div class="gable rise"><picture><source media="(max-width: 860px)" srcset="img/hero-m-800.webp 800w" sizes="100vw"><img src="img/hero-1000.webp" srcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" sizes="(max-width: 1240px) 56vw, 700px" width="1400" height="933" alt="A Perkins-built house at dusk, lit from inside, seen through a stand of trees" fetchpriority="high"></picture><svg class="roof" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,18 50,0.6 100,18" /></svg></div>
+  <div class="gable rise"><picture><source media="(max-width: 860px)" srcset="img/hero-m-800.webp 800w" sizes="100vw"><img src="img/hero-1000.webp" srcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w, img/hero-1800.webp 1800w" sizes="(max-width: 1240px) 46vw, 660px" width="1400" height="933" alt="A Perkins-built house at dusk, lit from inside, seen through a stand of trees" fetchpriority="high"></picture><svg class="roof" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,18 50,0.6 100,18" /></svg></div>
 </section>
 <div class="towns"><div class="box"><p><strong>Working across Southeast Michigan:</strong> Ann Arbor, Saline, Canton, Brighton, Dexter, Milan and more. Residential, commercial, institutional and industrial.</p></div></div>
 
 <section class="box sec" id="services" aria-labelledby="svc-h">
   <div class="head"><h2 id="svc-h">One builder, from the foundation to a stuck door.</h2><p>General contracting, design and construction management, for homes and for commercial buildings. Most of the Perkins crew has worked with the company for years.</p></div>
-  <div class="services"><a class="svc big" href="new-construction.html"><div class="ph"><img src="img/nc-court-1000.webp" srcset="img/nc-court-480.webp 480w, img/nc-court-640.webp 640w, img/nc-court-820.webp 820w, img/nc-court-1000.webp 1000w, img/nc-court-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="1400" height="933" alt="A cedar-shingled house with a curved wall of windows and a stone patio, lit at dusk" loading="lazy" decoding="async"></div><h3>New construction</h3><p>Building from the ground up, homes and commercial buildings, from the first design meeting to the final walk-through.</p></a><a class="svc" href="remodeling.html"><div class="ph"><img src="img/kitchen-paul-1000.webp" srcset="img/kitchen-paul-480.webp 480w, img/kitchen-paul-640.webp 640w, img/kitchen-paul-820.webp 820w, img/kitchen-paul-1000.webp 1000w, img/kitchen-paul-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="1051" alt="A remodeled kitchen with a butcher-block island and dark cabinets" loading="lazy" decoding="async"></div><h3>Remodeling and additions</h3><p>Additions and renovations that blend with the house you already have.</p></a><a class="svc" href="design.html"><div class="ph"><img src="img/addition-living-1000.webp" srcset="img/addition-living-480.webp 480w, img/addition-living-640.webp 640w, img/addition-living-820.webp 820w, img/addition-living-1000.webp 1000w, img/addition-living-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="933" alt="A family room addition with sliding barn doors and a fireplace" loading="lazy" decoding="async"></div><h3>Design</h3><p>Space planning, material selection and 3D models before anything is built.</p></a><a class="svc" href="preservation.html"><div class="ph"><img src="img/historic-stone-1000.webp" srcset="img/historic-stone-480.webp 480w, img/historic-stone-640.webp 640w, img/historic-stone-820.webp 820w, img/historic-stone-1000.webp 1000w, img/historic-stone-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="933" alt="A historic stone building with a slate roof, restored and in use" loading="lazy" decoding="async"></div><h3>Historic preservation</h3><p>Old buildings adapted to new uses, with their character kept.</p></a><a class="svc" href="repairs.html"><div class="ph"><img src="img/tree-damage-1000.webp" srcset="img/tree-damage-480.webp 480w, img/tree-damage-640.webp 640w, img/tree-damage-820.webp 820w, img/tree-damage-1000.webp 1000w, img/tree-damage-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="1050" alt="A tree fallen onto the side of a house, waiting for repair" loading="lazy" decoding="async"></div><h3>Maintenance and repairs</h3><p>From a stuck door to a fallen tree, by crews who build for a living.</p></a></div>
+  <div class="services"><a class="svc big" href="new-construction.html"><div class="ph"><img src="img/nc-court-1000.webp" srcset="img/nc-court-480.webp 480w, img/nc-court-640.webp 640w, img/nc-court-820.webp 820w, img/nc-court-1000.webp 1000w, img/nc-court-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="1400" height="933" alt="A cedar-shingled house with a curved wall of windows and a stone patio, lit at dusk" loading="lazy" decoding="async"></div><h3>New construction</h3><p>Building from the ground up, homes and commercial buildings, from the first design meeting to the final walk-through.</p></a><a class="svc" href="remodeling.html"><div class="ph"><img src="img/kitchen-paul-1000.webp" srcset="img/kitchen-paul-480.webp 480w, img/kitchen-paul-640.webp 640w, img/kitchen-paul-820.webp 820w, img/kitchen-paul-1000.webp 1000w, img/kitchen-paul-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="1051" alt="A remodeled kitchen with a butcher-block island and dark cabinets" loading="lazy" decoding="async"></div><h3>Remodeling and additions</h3><p>Additions and renovations that blend with the house you already have.</p></a><a class="svc" href="design.html"><div class="ph"><img src="img/addition-living-1000.webp" srcset="img/addition-living-480.webp 480w, img/addition-living-640.webp 640w, img/addition-living-820.webp 820w, img/addition-living-1000.webp 1000w, img/addition-living-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="933" alt="A family room addition with sliding barn doors and a fireplace" loading="lazy" decoding="async"></div><h3>Design</h3><p>Space planning, material selection and 3D models before anything is built.</p></a><a class="svc" href="preservation.html"><div class="ph"><img src="img/historic-stone-1000.webp" srcset="img/historic-stone-480.webp 480w, img/historic-stone-640.webp 640w, img/historic-stone-820.webp 820w, img/historic-stone-1000.webp 1000w, img/historic-stone-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="933" alt="A historic stone building with a slate roof, restored and in use" loading="lazy" decoding="async"></div><h3>Historic preservation</h3><p>Old buildings adapted to new uses, with their character kept.</p></a><a class="svc" href="repairs.html"><div class="ph"><img src="img/tree-damage-1000.webp" srcset="img/tree-damage-480.webp 480w, img/tree-damage-640.webp 640w, img/tree-damage-820.webp 820w, img/tree-damage-1000.webp 1000w, img/tree-damage-1400.webp 1400w" sizes="(max-width: 860px) 50vw, 380px" width="1400" height="1050" alt="A tree fallen onto the side of a house, waiting for repair" loading="lazy" decoding="async"></div><h3>Maintenance and repairs</h3><p>From a stuck door to kitchen updates to facility repair.</p></a></div>
 </section>
 
 <section class="dark" aria-labelledby="old-h"><div class="box sec old">
@@ -331,6 +345,24 @@ details.faq div p + p { margin-top: .8rem; }
     <li><h3>Get a fee structure and schedule</h3><p>A proposal from pre-construction through completion, at no charge.</p></li>
   </ol>
 </section>
+
+<section class="dark" aria-labelledby="who-h"><div class="box sec prose">
+  <div>
+    <h2 id="who-h">Who you'll deal with</h2>
+    <ul class="names">
+      <li><strong>Geoff Perkins</strong>CEO. Founded the company in 1984.</li>
+      <li><strong>Carl Wurster</strong>Vice President and Director of Construction. With Perkins since 1988.</li>
+      <li><strong>Angela Say-Craig</strong>Treasurer and COO. With Perkins since 1997.</li>
+    </ul>
+    <p class="more"><a href="about.html">More about the team</a></p>
+  </div>
+  <div class="body">
+    <details class="faq" open><summary>Who will be working on my project?</summary><div><p>The laborers and carpenters in your home are on the Perkins payroll, handpicked, and many have been with the company a long time. Subcontractors are handpicked too, for their reliability.</p></div></details>
+    <details class="faq"><summary>Will I have to move out during a renovation?</summary><div><p>For a major renovation it's better if you can: construction is dirty and noisy. If you stay, and many people do, Perkins puts up temporary protection, dust barriers and filters on registers. In their words: we'll look out for your kids, and even take care of your dog.</p></div></details>
+    <details class="faq"><summary>When will I know what it will cost?</summary><div><p>A firm price comes once drawings and specifications are complete. Before that, Perkins forecasts costs and helps you set a realistic budget, and the earlier they are involved, the better that forecast.</p></div></details>
+    <p class="more"><a href="about.html#faq-h">All questions and answers</a></p>
+  </div>
+</div></section>
 <section class="call" aria-labelledby="call-h"><div class="box in">
   <div><h2 id="call-h">Tell us about your project.</h2><p>A phone call to the office almost always leads to a first meeting, about an hour, face to face. Then you get a proposed fee structure and schedule, at no charge.</p></div>
   <div class="actions"><a class="btn straw" href="tel:+17347697760"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 734.769.7760</a><a class="btn line" href="mailto:info@perkinsconstruction.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18c.6 0 1 .4 1 1v12c0 .6-.4 1-1 1H3c-.6 0-1-.4-1-1V6c0-.6.4-1 1-1Zm9 7.3L4.3 7v.1L12 12.3 19.7 7.1V7L12 12.3Zm-8 -3.1V17h16V9.2l-8 5.3-8-5.3Z"/></svg>Email<span class="wide-only"> the office</span></a></div>
