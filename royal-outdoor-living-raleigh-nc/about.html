@@ -51,6 +51,7 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
 .dark .lede { color: #cfc6dc; }
 
 .demo { max-width: none; background: #000; color: #d8d2e2; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .5rem 1rem; }
+@media (max-width: 600px) { .demo { font-size: .6875rem; line-height: 1.3; padding: .3rem .6rem; letter-spacing: -.005em; } }
 
 /* Header */
 .top { background: var(--night); color: #fff; }
@@ -86,7 +87,7 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
 /* Home hero: their tiered walls and paver steps across the whole width, the words on a night scrim. */
 .hero { position: relative; background: var(--night); color: #fff; padding: 0 var(--pad); overflow: hidden; }
 .hero figure { position: absolute; inset: 0; margin: 0; }
-.hero figure img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 55%; }
+.hero figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .hero figure::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28,20,38,.94) 0%, rgba(28,20,38,.82) 34%, rgba(28,20,38,.25) 62%, rgba(28,20,38,0) 78%); }
 .hero .wrap { position: relative; z-index: 1; min-height: clamp(34rem, calc(100vh - 7.5rem), 44rem); display: flex; align-items: center; padding-block: 3rem; }
 .hero .wrap > div { max-width: 36rem; }
@@ -115,6 +116,13 @@ section { padding: clamp(3.5rem, 8vw, 6.5rem) var(--pad); }
 .facts li { border-left: 3px solid var(--royal); padding-left: 1rem; }
 .facts b { display: block; font-family: "Anybody", sans-serif; font-stretch: 118%; font-weight: 760; font-size: 1.35rem; line-height: 1.1; color: var(--royal); }
 .facts span { color: var(--muted); font-size: .95rem; }
+.facts ul { grid-template-columns: 1.35fr 1.25fr 1fr 1fr; align-items: center; }
+.facts .badge { border-left: 0; padding-left: 0; display: flex; align-items: center; gap: .9rem; }
+.facts .badge b { color: var(--text); font-size: 1.15rem; }
+.facts .badge span { color: var(--royal); font-weight: 700; font-size: 1rem; }
+.crest { flex: none; width: 4rem; height: auto; filter: drop-shadow(0 4px 8px rgba(91,42,140,.28)); }
+.crest text { font-family: "Anybody", sans-serif; font-stretch: 115%; font-weight: 800; font-size: 19px; }
+@media (max-width: 860px) { .facts .badge { grid-column: 1 / -1; } .crest { width: 3.4rem; } }
 @media (max-width: 860px) { .facts ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1rem; } .facts li { padding-left: .75rem; } .facts b { font-size: 1.08rem; font-stretch: 104%; } }
 
 /* What they build */
