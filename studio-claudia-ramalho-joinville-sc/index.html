@@ -7,6 +7,7 @@
 <title>Studio Cláudia Ramalho · Ballet para crianças em Joinville</title>
 <meta name="description" content="Ballet clássico para crianças, jovens e adultos em Joinville, com o Método Charm criado pela Prof. Cláudia Ramalho. Aula experimental + matrícula gratuita.">
 <meta name="theme-color" content="#2a0a1f">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" href="fonts/bodoni.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="img/palco-m.webp" media="(max-width:700px)" fetchpriority="high">
 <link rel="preload" as="image" href="img/palco-1080.webp" media="(min-width:701px)" fetchpriority="high">
@@ -120,21 +121,18 @@ figure{margin:0}
 .zoom:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .zoom img{width:100%;transition:transform .5s ease}
 .zoom:hover img{transform:scale(1.025)}
-.ficha{background:#fff;border-radius:14px;padding:28px;border:1px solid #2e17261f;max-width:640px}
+.ficha{border-left:3px solid var(--magenta);padding:4px 0 4px 28px;max-width:640px}
 .ficha h3{margin-bottom:6px}
-.campo{display:grid;gap:6px;margin-top:16px}
-.campo span{font-size:.88rem;color:var(--muted);font-weight:600}
-.campo div{border:1px solid #2e172633;border-radius:8px;padding:11px 14px;color:#6c5763;background:#faf6f6}
-.opcoes{display:flex;flex-wrap:wrap;gap:8px}
-.opcoes b{font-weight:500;border:1px solid #2e172633;border-radius:999px;padding:7px 14px;background:#faf6f6;color:var(--ink)}
 .nota{font-size:.92rem;color:var(--muted);margin-top:18px}
 .aulas{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-.aulas li{background:#ffffff0f;border:1px solid #ffffff26;border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
-.aulas span{font-size:.85rem;color:#d8bcc9;white-space:nowrap}
+.aulas li{padding:12px 0;border-bottom:1px solid #ffffff26}
+.disco{width:min(300px,70%);border-radius:50%;background:#fff;margin:0 0 8px}
+.texto.lado{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.sec.galeria{padding-top:40px}
+.grade.tres img{aspect-ratio:4/5;object-fit:cover}
+.galeria .grade:first-child{margin-top:0}
 .faixas{columns:2;column-gap:40px;padding:0;margin:18px 0 0;list-style:none}
 .faixas li{break-inside:avoid;padding:9px 0;border-bottom:1px solid #2e172622;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.2rem}
-.plataformas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.plataformas span{border:1px solid #2e172633;border-radius:999px;padding:6px 14px;font-size:.9rem;color:var(--muted)}
 .preco{font-family:"Bodoni Moda",serif;font-size:2.6rem;color:var(--ink);line-height:1;margin:6px 0 4px}
 .depo{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;max-width:860px}
 .depo img{border-radius:50%;width:120px;height:120px;object-fit:cover}
@@ -188,7 +186,7 @@ body{font-size:1rem}
 .grade{grid-template-columns:1fr 1fr;gap:10px}
 .faixas{columns:1}
 .depo{grid-template-columns:1fr}
-.aulas li{flex-direction:column;align-items:flex-start;gap:4px}
+.texto.lado{grid-template-columns:1fr;gap:0}
 .fixo{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;transform:translateY(140%);transition:transform .3s ease;box-shadow:0 10px 28px #2a0a1f66}
 .fixo.on{transform:none}
 }
@@ -219,7 +217,7 @@ html{scroll-behavior:auto}
 <h1>Ballet clássico para crianças, da sala de aula ao palco.</h1>
 <div class="palco">
 <div class="bambinela" aria-hidden="true"></div>
-<picture><source media="(max-width:700px)" srcset="img/palco-m.webp" width="780" height="520"><img src="img/palco-1080.webp" width="1080" height="540" alt="As alunas do Studio Cláudia Ramalho no palco do teatro, em agradecimento final do espetáculo" fetchpriority="high"></picture>
+<picture><source media="(max-width:700px)" srcset="img/palco-m.webp" width="780" height="520"><img src="img/palco-1080.webp" width="1080" height="540" alt="As alunas do Studio Cláudia Ramalho no palco, em agradecimento final do espetáculo" fetchpriority="high"></picture>
 <div class="cortina e" aria-hidden="true"></div><div class="cortina d" aria-hidden="true"></div>
 </div>
 <div class="hero-side">
@@ -261,10 +259,10 @@ html{scroll-behavior:auto}
 </div></section>
 
 <section class="sec"><div class="wrap">
-<div class="intro"><h2>E então, o palco</h2><p>No Festival de Dança, as alunas sobem ao palco do teatro com figurino, cenário e luz de espetáculo.</p></div>
+<div class="intro"><h2>E então, o palco</h2><p>No Festival de Dança, as alunas sobem ao palco.</p></div>
 <div class="palco-foto">
 <figure><button class="zoom" type="button" data-full="img/palco09-1080.webp" aria-label="Ampliar foto: Bailarinas de tutu azul e dourado agradecem de mãos dadas no palco"><img src="img/palco09-1080.webp" srcset="img/palco09-640.webp 640w, img/palco09-1080.webp 1080w" sizes="(max-width:980px) calc(100vw - 32px), 700px" width="1080" height="700" alt="Bailarinas de tutu azul e dourado agradecem de mãos dadas no palco" loading="lazy" decoding="async"></button></figure>
-<figure><button class="zoom" type="button" data-full="img/solo22-900.webp" aria-label="Ampliar foto: Bailarina em arabesque diante da cortina dourada do teatro"><img src="img/solo22-900.webp" srcset="img/solo22-520.webp 520w, img/solo22-900.webp 900w" sizes="(max-width:980px) calc(100vw - 32px), 410px" width="900" height="1315" alt="Bailarina em arabesque diante da cortina dourada do teatro" loading="lazy" decoding="async"></button></figure>
+<figure><button class="zoom" type="button" data-full="img/solo18-900.webp" aria-label="Ampliar foto: Alunas deitadas no palco com tutus em tons de azul"><img src="img/solo18-900.webp" srcset="img/solo18-520.webp 520w, img/solo18-900.webp 900w" sizes="(max-width:980px) calc(100vw - 32px), 410px" width="900" height="1315" alt="Alunas deitadas no palco com tutus em tons de azul" loading="lazy" decoding="async"></button></figure>
 </div>
 <a class="mais" href="palco.html">Ver as fotos do Festival</a>
 </div></section>

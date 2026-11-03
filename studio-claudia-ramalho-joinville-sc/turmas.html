@@ -7,6 +7,7 @@
 <title>Turmas · Studio Cláudia Ramalho</title>
 <meta name="description" content="Turmas de ballet clássico do Baby Class ao Grade 5, ballet adulto, aulas particulares, danças populares brasileiras e danças urbanas, em Joinville.">
 <meta name="theme-color" content="#2a0a1f">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" href="fonts/bodoni.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
@@ -119,21 +120,18 @@ figure{margin:0}
 .zoom:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .zoom img{width:100%;transition:transform .5s ease}
 .zoom:hover img{transform:scale(1.025)}
-.ficha{background:#fff;border-radius:14px;padding:28px;border:1px solid #2e17261f;max-width:640px}
+.ficha{border-left:3px solid var(--magenta);padding:4px 0 4px 28px;max-width:640px}
 .ficha h3{margin-bottom:6px}
-.campo{display:grid;gap:6px;margin-top:16px}
-.campo span{font-size:.88rem;color:var(--muted);font-weight:600}
-.campo div{border:1px solid #2e172633;border-radius:8px;padding:11px 14px;color:#6c5763;background:#faf6f6}
-.opcoes{display:flex;flex-wrap:wrap;gap:8px}
-.opcoes b{font-weight:500;border:1px solid #2e172633;border-radius:999px;padding:7px 14px;background:#faf6f6;color:var(--ink)}
 .nota{font-size:.92rem;color:var(--muted);margin-top:18px}
 .aulas{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-.aulas li{background:#ffffff0f;border:1px solid #ffffff26;border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
-.aulas span{font-size:.85rem;color:#d8bcc9;white-space:nowrap}
+.aulas li{padding:12px 0;border-bottom:1px solid #ffffff26}
+.disco{width:min(300px,70%);border-radius:50%;background:#fff;margin:0 0 8px}
+.texto.lado{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.sec.galeria{padding-top:40px}
+.grade.tres img{aspect-ratio:4/5;object-fit:cover}
+.galeria .grade:first-child{margin-top:0}
 .faixas{columns:2;column-gap:40px;padding:0;margin:18px 0 0;list-style:none}
 .faixas li{break-inside:avoid;padding:9px 0;border-bottom:1px solid #2e172622;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.2rem}
-.plataformas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.plataformas span{border:1px solid #2e172633;border-radius:999px;padding:6px 14px;font-size:.9rem;color:var(--muted)}
 .preco{font-family:"Bodoni Moda",serif;font-size:2.6rem;color:var(--ink);line-height:1;margin:6px 0 4px}
 .depo{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;max-width:860px}
 .depo img{border-radius:50%;width:120px;height:120px;object-fit:cover}
@@ -187,7 +185,7 @@ body{font-size:1rem}
 .grade{grid-template-columns:1fr 1fr;gap:10px}
 .faixas{columns:1}
 .depo{grid-template-columns:1fr}
-.aulas li{flex-direction:column;align-items:flex-start;gap:4px}
+.texto.lado{grid-template-columns:1fr;gap:0}
 .fixo{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;transform:translateY(140%);transition:transform .3s ease;box-shadow:0 10px 28px #2a0a1f66}
 .fixo.on{transform:none}
 }
@@ -238,27 +236,26 @@ html{scroll-behavior:auto}
 <p>Para saber dias e horários de cada turma, chame no WhatsApp.</p>
 <a class="btn" href="https://wa.me/5547997423695?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20aula%20experimental."><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Perguntar horários</a>
 </div>
-<div class="grade tres" style="grid-template-columns:1fr 1fr">
-<button class="zoom" type="button" data-full="img/solo17-900.webp" aria-label="Ampliar foto: Alunas com figurino oriental e sombrinhas no palco"><img src="img/solo17-900.webp" srcset="img/solo17-520.webp 520w, img/solo17-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 45vw, 270px" width="900" height="1315" alt="Alunas com figurino oriental e sombrinhas no palco" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/solo21-900.webp" aria-label="Ampliar foto: Bailarinas de tutu rosa em cena sob luz magenta"><img src="img/solo21-900.webp" srcset="img/solo21-520.webp 520w, img/solo21-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 45vw, 270px" width="900" height="1315" alt="Bailarinas de tutu rosa em cena sob luz magenta" loading="lazy" decoding="async"></button>
-</div>
+<figure><button class="zoom" type="button" data-full="img/palco11-1080.webp" aria-label="Ampliar foto: Coreografia em grupo com sombrinhas diante de um cenário oriental"><img src="img/palco11-1080.webp" srcset="img/palco11-640.webp 640w, img/palco11-1080.webp 1080w" sizes="(max-width:980px) calc(100vw - 32px), 552px" width="1080" height="700" alt="Coreografia em grupo com sombrinhas diante de um cenário oriental" loading="lazy" decoding="async"></button></figure>
 </div></section>
 
 <section class="sec"><div class="wrap dois">
 <div class="texto">
 <h2>Como fazer a matrícula</h2>
-<p>No site oficial do Studio a matrícula é feita por um formulário de cadastro. Nele, o responsável escolhe o tipo de turma, o turno e quantas aulas por semana, e informa os dados do aluno.</p>
-<p>Nesta demonstração o formulário aparece só como exemplo. Para se matricular, fale com o Studio pelo WhatsApp.</p>
+<p>A matrícula é feita por um formulário de cadastro, preenchido pelo responsável. Ao lado, o que ele pede.</p>
+<p>Para começar, fale com o Studio pelo WhatsApp.</p>
 <div class="ctas"><a class="btn" href="https://wa.me/5547997423695?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20aula%20experimental."><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Matricular pelo WhatsApp</a><a class="btn linha" href="tel:+5547997423695">(47) 99742-3695</a></div>
 </div>
-<div class="ficha" aria-label="Exemplo do formulário de cadastro, desativado nesta demonstração">
-<h3>Formulário de cadastro</h3>
-<p class="nota" style="margin-top:0">Exemplo: desativado nesta demonstração.</p>
-<div class="campo"><span>Tipo de turma</span><div class="opcoes"><b>Ballet Clássico</b><b>Danças Populares Brasileiras</b><b>Danças Urbanas</b></div></div>
-<div class="campo"><span>Turno</span><div class="opcoes"><b>Manhã</b><b>Tarde</b><b>Noite</b></div></div>
-<div class="campo"><span>Aulas</span><div class="opcoes"><b>1 vez / semana</b><b>2 vezes / semana</b></div></div>
-<div class="campo"><span>Nome do aluno(a)</span><div>&nbsp;</div></div>
-<div class="campo"><span>Data de nascimento</span><div>&nbsp;</div></div>
+<div class="ficha">
+<h3>O que o cadastro pede</h3>
+<ul class="lista">
+<li>Tipo de turma: Ballet Clássico, Danças Populares Brasileiras ou Danças Urbanas</li>
+<li>Turma de ballet: Baby Class, Pré-Primary, Primary, Grade 1 a 5, Ballet Adulto ou Aulas Particulares</li>
+<li>Turno: manhã, tarde ou noite</li>
+<li>Aulas: 1 ou 2 vezes por semana</li>
+<li>Dados do aluno e do responsável, documentos e comprovante de residência</li>
+<li>Algumas perguntas rápidas de saúde para a atividade física</li>
+</ul>
 </div>
 </div></section>
 

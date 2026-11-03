@@ -7,6 +7,7 @@
 <title>Método Charm · Studio Cláudia Ramalho</title>
 <meta name="description" content="O Método Charm, criado pela Prof. Cláudia Ramalho, ensina ballet às crianças através da ludicidade. Também há curso para professores de ballet infantil.">
 <meta name="theme-color" content="#2a0a1f">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" href="fonts/bodoni.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
@@ -119,21 +120,18 @@ figure{margin:0}
 .zoom:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .zoom img{width:100%;transition:transform .5s ease}
 .zoom:hover img{transform:scale(1.025)}
-.ficha{background:#fff;border-radius:14px;padding:28px;border:1px solid #2e17261f;max-width:640px}
+.ficha{border-left:3px solid var(--magenta);padding:4px 0 4px 28px;max-width:640px}
 .ficha h3{margin-bottom:6px}
-.campo{display:grid;gap:6px;margin-top:16px}
-.campo span{font-size:.88rem;color:var(--muted);font-weight:600}
-.campo div{border:1px solid #2e172633;border-radius:8px;padding:11px 14px;color:#6c5763;background:#faf6f6}
-.opcoes{display:flex;flex-wrap:wrap;gap:8px}
-.opcoes b{font-weight:500;border:1px solid #2e172633;border-radius:999px;padding:7px 14px;background:#faf6f6;color:var(--ink)}
 .nota{font-size:.92rem;color:var(--muted);margin-top:18px}
 .aulas{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-.aulas li{background:#ffffff0f;border:1px solid #ffffff26;border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
-.aulas span{font-size:.85rem;color:#d8bcc9;white-space:nowrap}
+.aulas li{padding:12px 0;border-bottom:1px solid #ffffff26}
+.disco{width:min(300px,70%);border-radius:50%;background:#fff;margin:0 0 8px}
+.texto.lado{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.sec.galeria{padding-top:40px}
+.grade.tres img{aspect-ratio:4/5;object-fit:cover}
+.galeria .grade:first-child{margin-top:0}
 .faixas{columns:2;column-gap:40px;padding:0;margin:18px 0 0;list-style:none}
 .faixas li{break-inside:avoid;padding:9px 0;border-bottom:1px solid #2e172622;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.2rem}
-.plataformas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.plataformas span{border:1px solid #2e172633;border-radius:999px;padding:6px 14px;font-size:.9rem;color:var(--muted)}
 .preco{font-family:"Bodoni Moda",serif;font-size:2.6rem;color:var(--ink);line-height:1;margin:6px 0 4px}
 .depo{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;max-width:860px}
 .depo img{border-radius:50%;width:120px;height:120px;object-fit:cover}
@@ -187,7 +185,7 @@ body{font-size:1rem}
 .grade{grid-template-columns:1fr 1fr;gap:10px}
 .faixas{columns:1}
 .depo{grid-template-columns:1fr}
-.aulas li{flex-direction:column;align-items:flex-start;gap:4px}
+.texto.lado{grid-template-columns:1fr;gap:0}
 .fixo{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;transform:translateY(140%);transition:transform .3s ease;box-shadow:0 10px 28px #2a0a1f66}
 .fixo.on{transform:none}
 }
@@ -212,17 +210,14 @@ html{scroll-behavior:auto}
 </div></section>
 
 <section class="sec"><div class="wrap">
-<div class="texto">
+<div class="texto lado">
 <p>O Método Charm usa instrumentos pedagógicos que facilitam o processo de ensino e aprendizagem. É um programa de ensino baseado na ludicidade, porém atuando com toda clareza e sensibilidade para despertar a alegria de dançar e todos os aspectos positivos voltados ao desenvolvimento da criança.</p>
 <p>Na sala, isso vira aula com barra, chão, música e materiais coloridos: a criança aprende a técnica do ballet sem perder a vontade de brincar.</p>
 </div>
-<div class="grade">
-<button class="zoom" type="button" data-full="img/aula28-800.webp" aria-label="Ampliar foto: Fila de alunas pequenas na barra, de collant e saia rosa, com a professora"><img src="img/aula28-800.webp" srcset="img/aula28-480.webp 480w, img/aula28-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="800" height="1200" alt="Fila de alunas pequenas na barra, de collant e saia rosa, com a professora" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/aula24-800.webp" aria-label="Ampliar foto: Professora se abaixa para ajudar uma aluna pequena na barra"><img src="img/aula24-800.webp" srcset="img/aula24-480.webp 480w, img/aula24-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="800" height="1080" alt="Professora se abaixa para ajudar uma aluna pequena na barra" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/aula29-800.webp" aria-label="Ampliar foto: Alunas sentadas no chão da sala com uma maleta de materiais"><img src="img/aula29-800.webp" srcset="img/aula29-480.webp 480w, img/aula29-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="800" height="1080" alt="Alunas sentadas no chão da sala com uma maleta de materiais" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/aula30-800.webp" aria-label="Ampliar foto: Alunas montam um painel colorido no chão junto com a professora"><img src="img/aula30-800.webp" srcset="img/aula30-480.webp 480w, img/aula30-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="800" height="1080" alt="Alunas montam um painel colorido no chão junto com a professora" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/aula25-800.webp" aria-label="Ampliar foto: Professora acompanha o alongamento de uma aluna na barra"><img src="img/aula25-800.webp" srcset="img/aula25-480.webp 480w, img/aula25-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="800" height="1080" alt="Professora acompanha o alongamento de uma aluna na barra" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/aula26-800.webp" aria-label="Ampliar foto: Professora ajusta a postura de uma aluna no centro da sala"><img src="img/aula26-800.webp" srcset="img/aula26-480.webp 480w, img/aula26-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="800" height="1080" alt="Professora ajusta a postura de uma aluna no centro da sala" loading="lazy" decoding="async"></button>
+<div class="grade tres">
+<button class="zoom" type="button" data-full="img/aula28-800.webp" aria-label="Ampliar foto: Fila de alunas pequenas na barra, de collant e saia rosa, com a professora"><img src="img/aula28-800.webp" srcset="img/aula28-480.webp 480w, img/aula28-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 31vw, 375px" width="800" height="1200" alt="Fila de alunas pequenas na barra, de collant e saia rosa, com a professora" loading="lazy" decoding="async"></button>
+<button class="zoom" type="button" data-full="img/aula29-800.webp" aria-label="Ampliar foto: Alunas sentadas no chão da sala com uma maleta de materiais"><img src="img/aula29-800.webp" srcset="img/aula29-480.webp 480w, img/aula29-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 31vw, 375px" width="800" height="1080" alt="Alunas sentadas no chão da sala com uma maleta de materiais" loading="lazy" decoding="async"></button>
+<button class="zoom" type="button" data-full="img/aula30-800.webp" aria-label="Ampliar foto: Alunas montam um painel colorido no chão junto com a professora"><img src="img/aula30-800.webp" srcset="img/aula30-480.webp 480w, img/aula30-800.webp 800w" sizes="(max-width:700px) 46vw, (max-width:980px) 31vw, 375px" width="800" height="1080" alt="Alunas montam um painel colorido no chão junto com a professora" loading="lazy" decoding="async"></button>
 </div>
 </div></section>
 
@@ -233,12 +228,14 @@ html{scroll-behavior:auto}
 <p>O livro <i>Dance Comigo</i> é o guia prático do método, e o CD traz as músicas compostas pela Prof. Cláudia Ramalho.</p>
 <div class="ctas"><a class="btn" href="https://wa.me/5547997423695?text=Ol%C3%A1!%20Tenho%20interesse%20no%20curso%20do%20M%C3%A9todo%20Charm%20para%20professores."><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>Quero o curso</a><a class="btn claro" href="livro-e-musicas.html">Livro e músicas</a></div>
 </div>
+<div><img class="disco" src="img/video-aulas-600.webp" width="600" height="600" alt="Prof. Cláudia Ramalho gravando as vídeo-aulas do Método Charm" loading="lazy">
 <ol class="aulas">
-<li>Aula 1: Como planejar aulas encantadoras <span>vídeo no site oficial</span></li>
-<li>Aula 2: O que ensinar, ballet ou brincadeira? <span>vídeo no site oficial</span></li>
-<li>Aula 3: Musicalidade e coreografia com crianças <span>vídeo no site oficial</span></li>
-<li>Aula 4: Introduzir disciplina com encanto <span>vídeo no site oficial</span></li>
+<li>Aula 1: Como planejar aulas encantadoras</li>
+<li>Aula 2: O que ensinar, ballet ou brincadeira?</li>
+<li>Aula 3: Musicalidade e coreografia com crianças</li>
+<li>Aula 4: Introduzir disciplina com encanto</li>
 </ol>
+<p class="nota" style="color:#d8bcc9">As vídeo-aulas ficam no site oficial do Studio.</p></div>
 </div></section>
 
 <section class="fim"><div class="wrap">

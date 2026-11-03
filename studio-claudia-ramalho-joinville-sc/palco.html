@@ -7,6 +7,7 @@
 <title>Festival de Dança · Studio Cláudia Ramalho</title>
 <meta name="description" content="Fotos dos espetáculos do Studio Cláudia Ramalho: alunas de todas as idades no palco do Festival de Dança.">
 <meta name="theme-color" content="#2a0a1f">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" href="fonts/bodoni.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
@@ -119,21 +120,18 @@ figure{margin:0}
 .zoom:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .zoom img{width:100%;transition:transform .5s ease}
 .zoom:hover img{transform:scale(1.025)}
-.ficha{background:#fff;border-radius:14px;padding:28px;border:1px solid #2e17261f;max-width:640px}
+.ficha{border-left:3px solid var(--magenta);padding:4px 0 4px 28px;max-width:640px}
 .ficha h3{margin-bottom:6px}
-.campo{display:grid;gap:6px;margin-top:16px}
-.campo span{font-size:.88rem;color:var(--muted);font-weight:600}
-.campo div{border:1px solid #2e172633;border-radius:8px;padding:11px 14px;color:#6c5763;background:#faf6f6}
-.opcoes{display:flex;flex-wrap:wrap;gap:8px}
-.opcoes b{font-weight:500;border:1px solid #2e172633;border-radius:999px;padding:7px 14px;background:#faf6f6;color:var(--ink)}
 .nota{font-size:.92rem;color:var(--muted);margin-top:18px}
 .aulas{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-.aulas li{background:#ffffff0f;border:1px solid #ffffff26;border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
-.aulas span{font-size:.85rem;color:#d8bcc9;white-space:nowrap}
+.aulas li{padding:12px 0;border-bottom:1px solid #ffffff26}
+.disco{width:min(300px,70%);border-radius:50%;background:#fff;margin:0 0 8px}
+.texto.lado{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.sec.galeria{padding-top:40px}
+.grade.tres img{aspect-ratio:4/5;object-fit:cover}
+.galeria .grade:first-child{margin-top:0}
 .faixas{columns:2;column-gap:40px;padding:0;margin:18px 0 0;list-style:none}
 .faixas li{break-inside:avoid;padding:9px 0;border-bottom:1px solid #2e172622;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.2rem}
-.plataformas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.plataformas span{border:1px solid #2e172633;border-radius:999px;padding:6px 14px;font-size:.9rem;color:var(--muted)}
 .preco{font-family:"Bodoni Moda",serif;font-size:2.6rem;color:var(--ink);line-height:1;margin:6px 0 4px}
 .depo{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;max-width:860px}
 .depo img{border-radius:50%;width:120px;height:120px;object-fit:cover}
@@ -187,7 +185,7 @@ body{font-size:1rem}
 .grade{grid-template-columns:1fr 1fr;gap:10px}
 .faixas{columns:1}
 .depo{grid-template-columns:1fr}
-.aulas li{flex-direction:column;align-items:flex-start;gap:4px}
+.texto.lado{grid-template-columns:1fr;gap:0}
 .fixo{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;transform:translateY(140%);transition:transform .3s ease;box-shadow:0 10px 28px #2a0a1f66}
 .fixo.on{transform:none}
 }
@@ -208,9 +206,9 @@ html{scroll-behavior:auto}
 <main id="conteudo">
 <section class="cab"><div class="wrap">
 <h1>Festival de Dança</h1>
-<p>O que se aprende na sala vai para o palco: figurino, cenário, luz e plateia. Toque numa foto para ampliar.</p>
+<p>O que se aprende na sala sobe ao palco no Festival de Dança. Toque numa foto para ampliar.</p>
 </div></section>
-<section class="sec"><div class="wrap">
+<section class="sec galeria"><div class="wrap">
 <div class="grade">
 <button class="zoom" type="button" data-full="img/palco06-1080.webp" aria-label="Ampliar foto: Agradecimento final com todo o elenco infantil no palco"><img src="img/palco06-1080.webp" srcset="img/palco06-640.webp 640w, img/palco06-1080.webp 1080w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="1080" height="700" alt="Agradecimento final com todo o elenco infantil no palco" loading="lazy" decoding="async"></button>
 <button class="zoom" type="button" data-full="img/palco10-1080.webp" aria-label="Ampliar foto: Alunas pequenas de tutu rosa e coroa dançam no palco"><img src="img/palco10-1080.webp" srcset="img/palco10-640.webp 640w, img/palco10-1080.webp 1080w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="1080" height="700" alt="Alunas pequenas de tutu rosa e coroa dançam no palco" loading="lazy" decoding="async"></button>
@@ -219,13 +217,9 @@ html{scroll-behavior:auto}
 <button class="zoom" type="button" data-full="img/palco12-1080.webp" aria-label="Ampliar foto: Cena sob luz azul, com bailarinas no chão e personagens em pé"><img src="img/palco12-1080.webp" srcset="img/palco12-640.webp 640w, img/palco12-1080.webp 1080w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="1080" height="700" alt="Cena sob luz azul, com bailarinas no chão e personagens em pé" loading="lazy" decoding="async"></button>
 <button class="zoom" type="button" data-full="img/palco08-1080.webp" aria-label="Ampliar foto: Cena com cenário de palácio e personagens de figurino"><img src="img/palco08-1080.webp" srcset="img/palco08-640.webp 640w, img/palco08-1080.webp 1080w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="1080" height="700" alt="Cena com cenário de palácio e personagens de figurino" loading="lazy" decoding="async"></button>
 </div>
-<div class="grade tres">
-<button class="zoom" type="button" data-full="img/solo22-900.webp" aria-label="Ampliar foto: Bailarina em arabesque diante da cortina dourada"><img src="img/solo22-900.webp" srcset="img/solo22-520.webp 520w, img/solo22-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 375px" width="900" height="1315" alt="Bailarina em arabesque diante da cortina dourada" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/solo19-900.webp" aria-label="Ampliar foto: Aluna de orelhinhas e tutu branco em cena"><img src="img/solo19-900.webp" srcset="img/solo19-520.webp 520w, img/solo19-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 375px" width="900" height="1315" alt="Aluna de orelhinhas e tutu branco em cena" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/solo21-900.webp" aria-label="Ampliar foto: Duas bailarinas de tutu rosa sob luz magenta"><img src="img/solo21-900.webp" srcset="img/solo21-520.webp 520w, img/solo21-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 375px" width="900" height="1315" alt="Duas bailarinas de tutu rosa sob luz magenta" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/solo18-900.webp" aria-label="Ampliar foto: Alunas deitadas no palco com tutus em tons de azul"><img src="img/solo18-900.webp" srcset="img/solo18-520.webp 520w, img/solo18-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 375px" width="900" height="1315" alt="Alunas deitadas no palco com tutus em tons de azul" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/solo23-900.webp" aria-label="Ampliar foto: Aluna de figurino azul e vermelho com coroa, braço erguido"><img src="img/solo23-900.webp" srcset="img/solo23-520.webp 520w, img/solo23-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 375px" width="900" height="1315" alt="Aluna de figurino azul e vermelho com coroa, braço erguido" loading="lazy" decoding="async"></button>
-<button class="zoom" type="button" data-full="img/solo17-900.webp" aria-label="Ampliar foto: Alunas com figurino oriental e sombrinhas"><img src="img/solo17-900.webp" srcset="img/solo17-520.webp 520w, img/solo17-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 375px" width="900" height="1315" alt="Alunas com figurino oriental e sombrinhas" loading="lazy" decoding="async"></button>
+<div class="grade">
+<button class="zoom" type="button" data-full="img/solo18-900.webp" aria-label="Ampliar foto: Alunas deitadas no palco com tutus em tons de azul"><img src="img/solo18-900.webp" srcset="img/solo18-520.webp 520w, img/solo18-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="900" height="1315" alt="Alunas deitadas no palco com tutus em tons de azul" loading="lazy" decoding="async"></button>
+<button class="zoom" type="button" data-full="img/solo17-900.webp" aria-label="Ampliar foto: Alunas com figurino oriental e sombrinhas"><img src="img/solo17-900.webp" srcset="img/solo17-520.webp 520w, img/solo17-900.webp 900w" sizes="(max-width:700px) 46vw, (max-width:980px) 47vw, 570px" width="900" height="1315" alt="Alunas com figurino oriental e sombrinhas" loading="lazy" decoding="async"></button>
 </div>
 </div></section>
 <section class="fim"><div class="wrap">

@@ -7,6 +7,7 @@
 <title>Quem somos · Studio Cláudia Ramalho</title>
 <meta name="description" content="O Studio Cláudia Ramalho nasceu do projeto social Dance Comigo, em Petrolina (PE), em 2003. Hoje é um estúdio de dança em Joinville (SC).">
 <meta name="theme-color" content="#2a0a1f">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" href="fonts/bodoni.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>@font-face{font-family:"Bodoni Moda";src:url(fonts/bodoni.woff2) format("woff2");font-weight:400 900;font-style:normal;font-display:swap}
@@ -119,21 +120,18 @@ figure{margin:0}
 .zoom:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .zoom img{width:100%;transition:transform .5s ease}
 .zoom:hover img{transform:scale(1.025)}
-.ficha{background:#fff;border-radius:14px;padding:28px;border:1px solid #2e17261f;max-width:640px}
+.ficha{border-left:3px solid var(--magenta);padding:4px 0 4px 28px;max-width:640px}
 .ficha h3{margin-bottom:6px}
-.campo{display:grid;gap:6px;margin-top:16px}
-.campo span{font-size:.88rem;color:var(--muted);font-weight:600}
-.campo div{border:1px solid #2e172633;border-radius:8px;padding:11px 14px;color:#6c5763;background:#faf6f6}
-.opcoes{display:flex;flex-wrap:wrap;gap:8px}
-.opcoes b{font-weight:500;border:1px solid #2e172633;border-radius:999px;padding:7px 14px;background:#faf6f6;color:var(--ink)}
 .nota{font-size:.92rem;color:var(--muted);margin-top:18px}
 .aulas{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:12px}
-.aulas li{background:#ffffff0f;border:1px solid #ffffff26;border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
-.aulas span{font-size:.85rem;color:#d8bcc9;white-space:nowrap}
+.aulas li{padding:12px 0;border-bottom:1px solid #ffffff26}
+.disco{width:min(300px,70%);border-radius:50%;background:#fff;margin:0 0 8px}
+.texto.lado{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.sec.galeria{padding-top:40px}
+.grade.tres img{aspect-ratio:4/5;object-fit:cover}
+.galeria .grade:first-child{margin-top:0}
 .faixas{columns:2;column-gap:40px;padding:0;margin:18px 0 0;list-style:none}
 .faixas li{break-inside:avoid;padding:9px 0;border-bottom:1px solid #2e172622;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.2rem}
-.plataformas{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.plataformas span{border:1px solid #2e172633;border-radius:999px;padding:6px 14px;font-size:.9rem;color:var(--muted)}
 .preco{font-family:"Bodoni Moda",serif;font-size:2.6rem;color:var(--ink);line-height:1;margin:6px 0 4px}
 .depo{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;max-width:860px}
 .depo img{border-radius:50%;width:120px;height:120px;object-fit:cover}
@@ -187,7 +185,7 @@ body{font-size:1rem}
 .grade{grid-template-columns:1fr 1fr;gap:10px}
 .faixas{columns:1}
 .depo{grid-template-columns:1fr}
-.aulas li{flex-direction:column;align-items:flex-start;gap:4px}
+.texto.lado{grid-template-columns:1fr;gap:0}
 .fixo{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;transform:translateY(140%);transition:transform .3s ease;box-shadow:0 10px 28px #2a0a1f66}
 .fixo.on{transform:none}
 }
