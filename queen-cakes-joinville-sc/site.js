@@ -17,8 +17,8 @@
   }
 
   var fixo = document.querySelector('.fixo')
-  var cta = document.getElementById('cta')
-  if (fixo && !cta) fixo.classList.add('ver-fixo')
+  // Início: o botão do herói. Páginas internas: o primeiro botão da página.
+  var cta = document.getElementById('cta') || document.querySelector('main .btn')
   if (fixo && cta && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (es) {
       var e = es[0]

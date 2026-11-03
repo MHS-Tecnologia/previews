@@ -108,7 +108,7 @@ h3 { font-size: 1.5rem; }
 .cor input:checked + span { background: var(--uva-escura); border-color: var(--uva-escura); color: #fff; }
 .cor input:focus-visible + span { outline: 3px solid var(--ouro); outline-offset: 3px; }
 
-.vitrine { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; list-style: none; }
+.vitrine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; list-style: none; }
 .vitrine li { transition: opacity .35s ease, transform .35s ease; }
 .foto { display: block; width: 100%; padding: 0; border: 0; background: #fff; border-radius: var(--raio); overflow: hidden; cursor: zoom-in; text-align: left; font: inherit; color: inherit; }
 .foto img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
@@ -130,6 +130,25 @@ h3 { font-size: 1.5rem; }
   .cor span::before { width: 22px; height: 22px; }
   .foto .leg { font-size: .9rem; padding: 9px 11px 11px; }
 }
+
+/* Quem já encomendou: as palavras que a própria Queen Cakes repostou */
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.voz { padding-top: 0; }
+.voz .caixa { display: grid; grid-template-columns: 1fr 1.15fr; gap: 28px 64px; align-items: center; border-top: 1px solid var(--lilas-forte); padding-top: 72px; }
+.frase blockquote p { font-family: "Rozha One", Georgia, serif; font-size: clamp(2.3rem, 5vw, 3.8rem); line-height: 1.05; color: var(--uva-escura); }
+.avaliacao { background: #fff; border: 1px solid var(--lilas-forte); border-radius: var(--raio); padding: 28px 30px; }
+.avaliacao blockquote p { font-size: 1.15rem; line-height: 1.55; }
+.avaliacao blockquote p + p { margin-top: 10px; }
+figcaption { margin-top: 14px; font-size: .95rem; color: var(--suave); font-weight: 600; }
+.seguidores { grid-column: 1 / -1; color: var(--suave); }
+@media (max-width: 899px) { .voz .caixa { grid-template-columns: 1fr; padding-top: 48px; } .avaliacao { padding: 22px; } }
+
+.foto.esq img { object-position: 28% 50%; }
+.topo-pag .acoes { margin-top: 22px; }
+.lista-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.lista-info > div { background: #fff; border: 1px solid var(--lilas-forte); border-radius: var(--raio); padding: 20px 22px; }
+.lista-info dt { font-family: "Rozha One", Georgia, serif; font-size: 1.35rem; color: var(--uva-escura); }
+.lista-info dd { margin-top: 4px; color: var(--suave); }
 
 /* Bolo + salgados */
 .dupla { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
@@ -160,7 +179,7 @@ h3 { font-size: 1.5rem; }
 .ocasiao .btn { margin-top: 22px; }
 .ocasiao.inv > :first-child { order: 2; }
 .lado { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
-.lado img { aspect-ratio: 4 / 5; object-fit: cover; }
+.lado img { aspect-ratio: 1 / 1; object-fit: cover; }
 @media (max-width: 899px) {
   .ocasiao { grid-template-columns: 1fr; gap: 22px; }
   .ocasiao.inv > :first-child { order: 0; }
