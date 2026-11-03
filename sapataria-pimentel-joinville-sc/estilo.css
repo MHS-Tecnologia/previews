@@ -1,0 +1,186 @@
+@font-face{font-family:"Young Serif";src:url(fonts/youngserif.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-sans.woff2) format("woff2");font-weight:400 700;font-display:swap}
+
+:root{
+  --placa:#1d1817;      /* preto da placa da loja */
+  --pimenta:#c4161c;    /* o SP vermelho */
+  --pimenta-esc:#9e1015;
+  --parede:#f2f2f0;     /* parede branca da loja */
+  --branco:#fff;
+  --tinta:#1d1817;
+  --cinza:#58514e;
+  --linha:#d8d4d1;
+  --zap:#14753c;
+  --caixa:1160px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--parede);color:var(--tinta);font:400 1.0625rem/1.6 "Instrument Sans",system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0 0 .9em}
+.caixa{max-width:var(--caixa);margin:0 auto;padding:0 16px}
+@media (min-width:700px){.caixa{padding:0 32px}}
+.salto{position:absolute;left:-999px;top:0;background:var(--branco);padding:8px 12px;z-index:50}
+.salto:focus{left:8px}
+:focus-visible{outline:3px solid var(--pimenta);outline-offset:3px}
+
+/* aviso */
+.aviso{background:#ecebe8;color:#3d3735;font-size:.75rem;line-height:1.4;padding:6px 16px;text-align:center}
+.aviso a{color:inherit}
+
+/* topo: a placa da loja */
+.topo{background:var(--placa);color:#fff;position:relative}
+.topo::after{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:var(--pimenta);z-index:0;opacity:.9}
+.nav{display:flex;align-items:center;gap:6px;min-height:72px;position:relative;z-index:1}
+.marca{background:var(--placa);margin-right:auto;line-height:0}
+.marca img{height:56px;width:auto}
+.nav > a:not(.marca):not(.nav-wa){display:none}
+.nav .nav-wa{display:none}
+@media (min-width:900px){
+  .nav{min-height:84px}
+  .marca img{height:70px}
+  .topo::after{top:32px}
+  .nav > a:not(.marca):not(.nav-wa){display:inline-block;background:var(--placa);text-decoration:none;padding:8px 12px;font-weight:500;font-size:.98rem;color:#eee}
+  .nav > a[aria-current]{color:#fff;text-decoration:underline;text-decoration-color:var(--pimenta);text-decoration-thickness:2px;text-underline-offset:6px}
+  .nav > a:not(.marca):hover{color:#fff}
+  .nav .nav-wa{display:inline-flex;margin-left:10px}
+  .menu{display:none}
+}
+.menu{position:static}
+.menu summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer;background:var(--placa);border:1px solid #57504d;border-radius:6px;padding:9px 14px;font-weight:600;min-height:44px}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary svg{width:20px;height:20px}
+.menu nav{position:absolute;left:0;right:0;top:100%;background:var(--placa);border-top:2px solid var(--pimenta);padding:8px 16px 18px;display:flex;flex-direction:column;z-index:20}
+.menu nav a{padding:13px 4px;text-decoration:none;border-bottom:1px solid #3a3331;font-size:1.05rem}
+.menu nav a[aria-current]{color:#fff;font-weight:700}
+.menu nav .menu-wa{display:flex;align-items:center;gap:8px;margin-top:12px;border:0;background:var(--zap);border-radius:8px;justify-content:center;font-weight:600}
+
+/* botões */
+.ico{width:20px;height:20px;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:12px 22px;border-radius:8px;font-weight:600;font-size:1rem;text-decoration:none;line-height:1.2}
+.btn-wa{background:var(--zap);color:#fff}
+.btn-wa:hover{background:#0f5f30}
+.btn-linha{border:2px solid var(--tinta);color:var(--tinta)}
+.btn-linha:hover{background:var(--tinta);color:#fff}
+.nav-wa{min-height:44px;padding:9px 16px}
+.acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.mais{display:inline-block;margin-top:18px;font-weight:600;color:var(--pimenta-esc);text-underline-offset:4px}
+
+/* hero */
+.hero{padding:26px 0 44px;background:var(--branco)}
+.hero-grade{display:grid;gap:26px}
+.sobre{font-size:.95rem;color:var(--cinza);margin-bottom:10px}
+.hero h1{font-size:clamp(2.35rem,9.6vw,4.6rem);color:var(--tinta)}
+.lead{font-size:1.12rem;color:#3a3433;margin-top:16px;max-width:34em}
+@media (min-width:960px){
+  .hero{padding:56px 0 72px}
+  .hero-grade{grid-template-columns:minmax(0,1fr) 520px;gap:64px;align-items:center}
+  .lead{font-size:1.22rem}
+}
+
+/* comparador antes e depois */
+.cmp{margin:0}
+.cmp-caixa{position:relative;aspect-ratio:1120/1154;overflow:hidden;border-radius:10px;background:#ddd;touch-action:pan-y;user-select:none}
+.cmp-caixa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp-antes{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp-linha{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:var(--pimenta);pointer-events:none}
+.cmp-pega{position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:var(--pimenta);color:#fff;display:grid;place-items:center;box-shadow:0 2px 8px rgba(29,24,23,.35)}
+.cmp-pega svg{width:24px;height:24px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none}
+.cmp-caixa:has(input:focus-visible){outline:3px solid var(--pimenta);outline-offset:3px}
+.etq{position:absolute;top:12px;padding:5px 12px;border-radius:999px;font-weight:700;font-size:.9rem;pointer-events:none}
+.etq-antes{left:12px;background:rgba(255,255,255,.92);color:var(--tinta)}
+.etq-depois{right:12px;background:var(--placa);color:#fff}
+.cmp figcaption{font-size:.92rem;color:var(--cinza);margin-top:10px}
+
+/* vitrine: a lista da vitrine da loja */
+.vitrine{padding:56px 0}
+.vitrine h2,.balcao h2,.lojas-resumo h2{font-size:clamp(1.9rem,5.6vw,2.9rem)}
+.intro{color:var(--cinza);margin-top:10px}
+.vitrine-grade{display:grid;gap:36px}
+.lista{margin:26px 0 0}
+.lista > div{padding:16px 0;border-top:1px solid var(--linha)}
+.lista > div:last-child{border-bottom:1px solid var(--linha)}
+.lista dt{font-family:"Young Serif",Georgia,serif;font-size:1.4rem;line-height:1.2}
+.lista dd{margin:4px 0 0;color:#3f3836}
+.foto-fachada{margin:0}
+.foto-fachada img,.foto-atendente img{border-radius:10px}
+.foto-fachada figcaption{font-size:.92rem;color:var(--cinza);margin-top:10px}
+@media (min-width:960px){
+  .vitrine{padding:88px 0}
+  .vitrine-grade{grid-template-columns:minmax(0,1fr) 460px;gap:72px;align-items:start}
+  .lista > div{display:grid;grid-template-columns:15em 1fr;gap:24px;align-items:baseline}
+  .lista dd{margin:0}
+}
+
+.vitrine-painel{text-align:center;max-width:860px}
+.vitrine-painel .lista{background:var(--branco);border-radius:10px;padding:8px 22px;border-top:10px solid var(--placa)}
+.vitrine-painel .lista > div{display:block;padding:18px 0;border-top:1px solid var(--linha)}
+.vitrine-painel .lista > div:first-child{border-top:0}
+.vitrine-painel .lista > div:last-child{border-bottom:0}
+.vitrine-painel .lista dt{font-size:clamp(1.35rem,4.4vw,1.9rem)}
+.vitrine-painel .lista dd{margin:6px auto 0;max-width:34em;color:var(--cinza)}
+
+/* balcão */
+.balcao{background:var(--placa);color:#f1eeec;padding:56px 0}
+.balcao p{color:#d9d3d0;max-width:32em;margin-top:14px}
+.balcao .btn-linha{border-color:#f1eeec;color:#f1eeec}
+.balcao .btn-linha:hover{background:#f1eeec;color:var(--placa)}
+.balcao-grade{display:grid;gap:30px;align-items:center}
+.foto-atendente{margin:0;max-width:420px}
+@media (min-width:960px){
+  .balcao{padding:80px 0}
+  .balcao-grade{grid-template-columns:420px 1fr;gap:72px}
+}
+
+/* lojas */
+.lojas-resumo{padding:56px 0 64px}
+.lojas-grade{display:grid;gap:16px;margin-top:26px}
+.loja{background:var(--branco);border-left:4px solid var(--pimenta);padding:20px 22px;border-radius:0 8px 8px 0}
+.loja h2,.loja h3{font-size:1.45rem}
+.loja .end{font-weight:600;font-size:1.12rem;margin:8px 0 4px}
+.loja p{margin-bottom:4px;color:#3f3836}
+.loja .end{color:var(--tinta)}
+@media (min-width:760px){.lojas-grade{grid-template-columns:1fr 1fr}}
+
+/* páginas internas */
+.cab-pag{background:var(--branco);padding:36px 0 34px;border-bottom:1px solid var(--linha)}
+.cab-pag h1{font-size:clamp(2.4rem,8vw,4rem)}
+.servicos,.trabalhos,.lojas-pag{padding:40px 0 72px}
+.lista-grande{margin-top:0}
+.lista-grande dt{font-size:1.6rem}
+.faixa-cta{margin-top:40px;padding:26px;background:var(--branco);border-radius:10px}
+.faixa-cta p{font-size:1.1rem;margin:0}
+.trab-destaque{display:grid;gap:28px;align-items:center}
+.trab-destaque h2{font-size:clamp(1.8rem,5vw,2.6rem)}
+.trab-destaque p{margin-top:12px;max-width:30em}
+.grade-fotos{display:grid;gap:28px;margin-top:56px}
+.grade-fotos figure{margin:0}
+.grade-fotos img{border-radius:10px;width:100%}
+.grade-fotos figcaption{margin-top:10px;color:var(--cinza);font-size:.95rem}
+.trabalhos > .faixa-cta{margin-top:48px}
+@media (min-width:960px){
+  .trab-destaque{grid-template-columns:620px 1fr;gap:64px}
+  .grade-fotos{grid-template-columns:1fr 1fr;align-items:start}
+}
+.lojas-pag-grade{display:grid;gap:36px}
+.lojas-col{display:grid;gap:16px;align-content:start}
+.lojas-col .faixa-cta{margin-top:12px}
+@media (min-width:960px){.lojas-pag-grade{grid-template-columns:1fr 480px;gap:64px}}
+
+/* rodapé */
+.rodape{background:var(--placa);color:#d9d3d0;padding:48px 0 96px;font-size:.95rem}
+.rodape h2{font-family:"Instrument Sans",system-ui,sans-serif;font-weight:700;font-size:1rem;color:#fff;margin-bottom:8px}
+.rodape p{margin:0 0 6px}
+.rod-grade{display:grid;gap:28px}
+.rod-logo{width:150px;margin-bottom:12px}
+.rod-aviso{margin-top:36px;padding-top:20px;border-top:1px solid #3a3331;font-size:.85rem;color:#bdb5b1}
+@media (min-width:760px){.rod-grade{grid-template-columns:1.4fr 1fr 1fr}.rodape{padding-bottom:48px}}
+
+/* botão fixo no celular */
+.fixo{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border-radius:10px;background:var(--zap);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);transform:translateY(160%);transition:transform .25s ease;visibility:hidden}
+.fixo.on{transform:none;visibility:visible}
+@media (min-width:900px){.fixo{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
