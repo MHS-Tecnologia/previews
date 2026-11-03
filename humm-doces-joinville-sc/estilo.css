@@ -168,3 +168,12 @@ p{margin:0}
 @media (min-width:900px){.prat .vidro{margin-inline:-14px}.prat .item:first-child .vidro{margin-left:-8px}.prat .item:last-child .vidro{margin-right:-8px}}
 @media (max-width:899px){.pedir .foto-dona img{aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}}
 .hero .lead{margin-top:18px}
+.passos{list-style:none;counter-reset:p;padding:0;margin:28px 0 0;display:grid;gap:16px}
+.passos li{counter-increment:p;background:var(--branco);border-radius:22px;padding:20px 22px 20px 72px;position:relative;display:grid;gap:4px}
+.passos li::before{content:counter(p);position:absolute;left:20px;top:18px;width:36px;height:36px;border-radius:50%;background:var(--morango);color:#fff;font:400 1.2rem/36px "Bagel Fat One",sans-serif;text-align:center}
+.passos b{font-weight:600;font-size:1.1rem}
+.passos span{color:var(--suave)}
+.onde{margin:28px 0 0}.onde dt{font-weight:600}.onde dd{margin:2px 0 0;color:var(--suave)}
+@media (min-width:900px){.passos{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1000px){.grade{grid-template-columns:1fr 1fr}}
+.cab.pedir,.cab .pedir{align-items:center}
