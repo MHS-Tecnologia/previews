@@ -235,3 +235,4 @@ p { margin: 0 0 1em; }
   .anc-loja img { aspect-ratio: 4 / 3; }
   .bloco-g .lista { columns: 2; }
 }
+.abre, .locacao { overflow-x: clip; }
