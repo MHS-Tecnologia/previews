@@ -78,7 +78,6 @@ p{margin:0 0 1em;max-width:66ch}
 .selo b{font-weight:600;color:#f3d9b8}
 .hero h1{margin-top:30px;margin-bottom:.35em}
 .hero .lead{font-size:1.1rem;color:var(--suave);margin-bottom:1.1em}
-.hero .acoes .btn{flex:1 1 auto}
 .preco{margin:16px 0 0;font-size:.98rem;color:var(--suave)}
 .preco strong{color:var(--texto)}
 @media (min-width:900px){
@@ -88,7 +87,6 @@ p{margin:0 0 1em;max-width:66ch}
   .hero-foto img{aspect-ratio:944/768;border-radius:var(--raio)}
   .selo{left:-22px;bottom:28px;font-size:1.1rem}
   .hero h1{margin-top:0}
-  .hero .acoes .btn{flex:0 0 auto}
 }
 
 /* faixas */
@@ -254,3 +252,26 @@ figcaption{font-size:.9rem;color:var(--suave);margin-top:6px}
 @media (min-width:900px){.barra{display:none}}
 .faixa-preco + .acoes{margin-top:20px}
 .acoes + .itens{margin-top:32px}
+
+/* reserva online: o motor do site oficial, mostrado sem link */
+.btn-online{background:var(--tinta);border-color:var(--tinta);color:#fff;cursor:default}
+.btn-online:hover{background:var(--tinta);border-color:var(--tinta)}
+.faixa-tinta .btn-online,.fecho .btn-online{background:#fff;border-color:#fff;color:var(--tinta)}
+.nota-online{display:flex;gap:6px;align-items:flex-start;font-size:.85rem;line-height:1.4;color:var(--suave);margin:10px 0 0;max-width:52ch}
+.nota-online .ico{width:1em;height:1em;margin-top:2px}
+.faixa-tinta .nota-online{color:#b9c6cb}
+.acoes .btn-online,.acoes .btn-2{flex:1 1 0}
+.acoes .btn:first-child{flex:1 1 100%}
+@media (max-width:599px){.acoes .num{display:none}}
+@media (min-width:600px){.acoes .btn:first-child{flex:0 0 auto}.acoes .btn-online,.acoes .btn-2{flex:0 0 auto}}
+
+/* o dia de quem acompanha alguém no hospital */
+.dia{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:18px}
+.dia li{display:grid;grid-template-columns:78px 1fr;gap:14px;align-items:start}
+.dia .h{font:500 1.7rem/1 "Jost",sans-serif;color:var(--carvalho-2);border-top:3px solid var(--tinta);padding-top:8px}
+.dia b{display:block;color:var(--tinta);font-family:"Jost",sans-serif;font-weight:500;font-size:1.15rem;margin-bottom:2px}
+.dia li > span:last-child{color:var(--suave);padding-top:6px}
+.acomp figure img{border-radius:var(--raio);aspect-ratio:944/768;object-fit:cover}
+@media (min-width:900px){.acomp .duas{align-items:center}}
+@media (max-width:599px){.acoes .btn-online{flex:1.6 1 0;white-space:nowrap;padding-inline:.7em}.acoes .btn-2{padding-inline:.7em}}
+.acoes .num{margin-left:-.5em}
