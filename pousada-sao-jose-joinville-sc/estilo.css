@@ -34,6 +34,8 @@ p{margin:0 0 1em;max-width:66ch}
 /* aviso da demo */
 .aviso{background:var(--tinta-2);color:#dfe7ea;font-size:.8125rem;line-height:1.45;padding:.55em 20px;text-align:center}
 .aviso a{color:#fff}
+.av-curto{display:none}
+@media (max-width:899px){.aviso{font-size:.72rem;line-height:1.35;padding:4px 12px}.av-longo{display:none}.av-curto{display:inline}}
 .nq{white-space:nowrap}
 
 /* cabeçalho */
@@ -98,28 +100,44 @@ p{margin:0 0 1em;max-width:66ch}
 .intro{max-width:62ch;color:var(--suave);font-size:1.1rem}
 @media (min-width:900px){.faixa{padding:84px 0}}
 
-/* a régua: a rua vista da porta da pousada */
-.regua{margin-top:30px;list-style:none;padding:0 0 0 30px;position:relative}
-.regua::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;background:var(--tinta);transform-origin:top;transform:scaleY(var(--prog,1))}
-.regua li{position:relative;padding:0 0 22px}
-.regua li::before{content:"";position:absolute;left:-27px;top:8px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--tinta)}
-.regua li.origem::before{background:var(--carvalho);border-color:var(--carvalho)}
-.regua .m{display:block;font:500 1.6rem/1 "Jost",sans-serif;color:var(--carvalho-2);margin-bottom:4px}
-.regua .n{font-weight:700;color:var(--tinta)}
-.regua .d{display:block;color:var(--suave);font-size:.98rem}
+/* a régua: a rua, da porta da pousada até a maternidade, em escala */
+.regua{--h:600px;list-style:none;margin:34px 0 8px;padding:0;position:relative;height:calc(var(--h) + 60px)}
+.regua::before{content:"";position:absolute;left:0;top:-14px;bottom:40px;width:34px;background:var(--tinta);border-radius:6px;transform-origin:top;transform:scaleY(var(--prog,1))}
+.regua::after{content:"";position:absolute;left:16px;top:0;bottom:52px;width:2px;background:repeating-linear-gradient(#fff 0 9px,transparent 9px 18px);transform-origin:top;transform:scaleY(var(--prog,1))}
+.regua li{position:absolute;left:0;right:0;top:calc(var(--p)*var(--h));z-index:1}
+.regua li::before{content:"";position:absolute;left:5px;top:-12px;width:24px;height:24px;border-radius:50%;background:#fff;border:5px solid var(--carvalho);box-sizing:border-box}
+.regua li.origem::before{background:var(--carvalho)}
+.regua li::after{content:"";position:absolute;left:34px;top:-1px;width:12px;height:2px;background:var(--carvalho)}
+.regua li > div{margin-left:54px;display:grid;grid-template-columns:76px 1fr;column-gap:8px;transform:translateY(-15px)}
+.regua .m{grid-row:span 2;font:500 1.5rem/1.1 "Jost",sans-serif;color:var(--carvalho-2)}
+.regua .n{font-weight:700;color:var(--tinta);line-height:1.3;padding-top:3px}
+.regua .d{color:var(--suave);font-size:.95rem;line-height:1.3}
 @media (min-width:900px){
-  .regua{padding:120px 0 120px;height:auto;display:block;margin:24px 0 18px}
-  .regua::before{left:0;right:0;top:50%;bottom:auto;height:3px;width:auto;transform-origin:left;transform:scaleX(var(--prog,1))}
-  .regua li{position:absolute;top:0;bottom:0;left:var(--x);width:0;padding:0}
-  .regua li::before{left:-9px;top:calc(50% - 8px)}
-  .regua li > div{position:absolute;left:-2px;width:230px;padding-left:12px;border-left:1px solid var(--linha)}
-  .regua li:nth-child(odd) > div{bottom:calc(50% + 18px)}
-  .regua li:nth-child(even) > div{top:calc(50% + 18px)}
-  .regua li.fim > div{left:auto;right:-2px;padding:0 12px 0 0;border-left:0;border-right:1px solid var(--linha);text-align:right}
+  .regua{height:300px;margin:28px 10px 18px}
+  .regua::before{left:-10px;right:-10px;top:calc(50% - 16px);bottom:auto;width:auto;height:32px;transform-origin:left;transform:scaleX(var(--prog,1))}
+  .regua::after{left:6px;right:6px;top:calc(50% - 1px);bottom:auto;width:auto;height:2px;background:repeating-linear-gradient(90deg,#fff 0 12px,transparent 12px 24px);transform-origin:left;transform:scaleX(var(--prog,1))}
+  .regua li{top:0;bottom:0;right:auto;width:0;left:calc(var(--p)*100%)}
+  .regua li::before{left:-12px;top:calc(50% - 12px)}
+  .regua li::after{display:none}
+  .regua li > div{display:block;transform:none;margin:0;position:absolute;left:-1px;width:230px;padding-left:12px;border-left:2px solid var(--carvalho)}
+  .regua li:nth-child(odd) > div{bottom:calc(50% + 22px)}
+  .regua li:nth-child(even) > div{top:calc(50% + 22px)}
+  .regua li.fim > div{left:auto;right:-1px;padding:0 12px 0 0;border-left:0;border-right:2px solid var(--carvalho);text-align:right}
+  .regua .m{display:block;font-size:1.6rem;margin-bottom:4px}
+  .regua .n,.regua .d{display:block}
 }
 @media (prefers-reduced-motion:no-preference){
-  .regua.anima::before{transition:transform 1.4s cubic-bezier(.3,.6,.2,1)}
+  .regua.anima::before,.regua.anima::after{transition:transform 1.4s cubic-bezier(.3,.6,.2,1)}
 }
+
+/* avaliações, como o site deles mostra */
+.provas{padding:24px 0 26px;border-bottom:1px solid var(--linha)}
+.provas-t{font:400 .98rem/1.4 "Figtree",sans-serif;color:var(--suave);margin:0 0 14px;letter-spacing:0}
+.provas ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.provas li{display:flex;align-items:center;gap:10px;line-height:1.3;font-size:.95rem;color:var(--suave)}
+.provas .nota{font:500 2.1rem/1 "Jost",sans-serif;color:var(--tinta)}
+.provas b{display:block;color:var(--texto)}
+@media (min-width:900px){.provas ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
 
 /* listas e grades */
 .motivos{display:grid;gap:26px;margin-top:28px}
@@ -153,14 +171,24 @@ figcaption{font-size:.9rem;color:var(--suave);margin-top:6px}
 @media (min-width:900px){.passos{grid-template-columns:repeat(3,1fr);gap:36px}}
 
 /* quartos */
-.tipos{display:grid;gap:14px;margin-top:28px}
-.tipo{border:1px solid var(--linha);border-radius:var(--raio);padding:20px;display:flex;flex-direction:column;gap:8px;background:#fff}
+.tipos{display:grid;gap:16px;margin-top:24px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.tipo{border:1px solid var(--linha);border-radius:var(--raio);background:#fff;display:flex;flex-direction:column;overflow:hidden}
+.tipo-foto img,.tipo-planta{width:100%;height:170px}
+.tipo-foto img{object-fit:cover}
+.tipo-planta{background:var(--piso);display:grid;place-items:center}
+.planta{height:116px;width:auto;max-width:88%}
+.planta rect{fill:#fff;stroke:var(--tinta);stroke-width:2.5}
+.planta .sala{fill:none;stroke:var(--linha);stroke-width:2}
+.planta .trav{fill:var(--linha);stroke:none}
+.planta .beli{fill:none;stroke:var(--carvalho);stroke-width:2;stroke-dasharray:4 3}
+.tipo-txt{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .tipo h3{margin:0}
-.tipo p{color:var(--suave);margin:0 0 6px}
-.tipo .btn{margin-top:auto;align-self:flex-start}
-@media (min-width:760px){.tipos{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1050px){.tipos{grid-template-columns:repeat(4,1fr)}}
+.tag{align-self:flex-start;font-size:.85rem;font-weight:600;color:var(--carvalho-2);background:#f5ebe1;padding:2px 9px;border-radius:20px}
+.tipo-l{list-style:none;padding:0;margin:0 0 6px;color:var(--suave)}
+.tipo .btn{margin-top:auto;align-self:stretch}
+.nota-fonte{font-size:.92rem;color:var(--suave);margin-top:16px}
 .faixa-preco{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;margin-top:6px}
+.faixa-preco{gap:4px 12px}
 .faixa-preco .v{font:500 clamp(1.9rem,1.5rem + 1.6vw,2.6rem)/1.1 "Jost",sans-serif;color:var(--tinta)}
 
 .galeria{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin-top:26px}
