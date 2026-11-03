@@ -71,20 +71,19 @@ p{margin:0 0 1em;max-width:62ch}
 .btn.line{background:transparent;color:var(--night)}
 .btn.line:hover{background:rgb(24 36 26/.08)}
 .btn svg{width:18px;height:18px;flex:none}
-.short{display:none}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
 /* ------------------------------------------------------------------ hero: a window set in scored stucco */
-.hero{background:linear-gradient(90deg,var(--stucco) 50%,transparent 50%),var(--scoring) var(--stucco);background-position:0 0,-1px -1px;position:relative}
+.hero{background:linear-gradient(90deg,var(--stucco) 50%,transparent 50%),var(--scoring) var(--stucco);background-position:0 0,-1px -1px;position:relative;overflow-x:clip}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:stretch}
-.hero-copy{padding:72px 56px 76px 0}
+.hero-copy{padding:72px 48px 76px 0}
 .hero-copy p{font-size:1.1875rem;color:#3A2D20;margin-top:22px;max-width:34em}
 .hero-copy .since{font-style:italic;font-size:1.125rem;margin:0 0 18px;color:var(--wood)}
-.facade{padding:56px 0 0 72px;display:flex;flex-direction:column;justify-content:center}
-.window{position:relative;perspective:1200px;background:var(--night);padding:10px;box-shadow:inset 0 0 0 1px rgb(0 0 0/.2)}
-.window img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.facade{padding:36px 0 0 32px;display:flex;flex-direction:column;justify-content:flex-end}
+.window{position:relative;perspective:1200px;background:var(--night);padding:10px;box-shadow:inset 0 0 0 1px rgb(0 0 0/.2);overflow:clip}
+.window img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:60% 50%}
 .sill{height:18px;margin:0 -22px;background:linear-gradient(#F7E6A0,#E3C565 60%,#C9A94A);box-shadow:0 10px 16px -8px rgb(70 50 10/.45)}
-.cap{font-style:italic;font-size:.9375rem;color:#4A3B2A;padding:14px 0 40px;margin:0}
+.cap{font-style:italic;font-size:.9375rem;color:#4A3B2A;padding:12px 0 28px;margin:0}
 .shutter{position:absolute;top:10px;bottom:10px;width:calc(50% - 10px);background:repeating-linear-gradient(180deg,#2B5A2D 0 9px,#1B3A1D 9px 12px);border:4px solid #224A24;box-shadow:inset 0 0 0 2px #18321A;transform-style:preserve-3d;backface-visibility:hidden;pointer-events:none}
 .shutter.l{left:10px;transform-origin:left center;animation:open-l 1.25s cubic-bezier(.5,0,.2,1) .35s both}
 .shutter.r{right:10px;transform-origin:right center;animation:open-r 1.25s cubic-bezier(.5,0,.2,1) .35s both}
@@ -146,9 +145,8 @@ section{padding:96px 0}
 .call-card .actions{margin-top:20px}
 
 /* services page */
-.svc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start;padding:72px 0;border-bottom:1px solid #CFC8B8}
+.svc{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:64px;align-items:start;padding:72px 0;border-bottom:1px solid #CFC8B8}
 .svc:last-child{border-bottom:0}
-.svc:nth-child(even) figure{order:2}
 .svc figure{margin:0}
 .svc figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .svc h2{margin-bottom:22px}
@@ -228,7 +226,7 @@ section{padding:96px 0}
   .facade{order:-1;padding:14px 16px 0;background:var(--scoring);background-position:-1px -1px}
   .notice{font-size:.75rem;padding:6px 12px}
   .window{padding:6px}
-  .window img{aspect-ratio:16/9}
+  .window img{aspect-ratio:2/1;object-position:50% 50%}
   .shutter{top:6px;bottom:6px;width:calc(50% - 6px)}.shutter.l{left:6px}.shutter.r{right:6px}
   .sill{height:12px;margin:0 -10px}
   .cap{display:none}
@@ -237,8 +235,8 @@ section{padding:96px 0}
   .hero-copy p{font-size:1.0625rem;margin-top:14px;line-height:1.55}
   .actions{margin-top:20px}
   .lead-in,.shop,.founder,.svc,.bio,.contact,.call-card{grid-template-columns:1fr;gap:28px}
-  .svc:nth-child(even) figure{order:0}
   .trio{grid-template-columns:1fr;gap:44px}
+  .trio article img,.svc figure img{height:240px;aspect-ratio:auto}
   .firm-facts{grid-template-columns:1fr;gap:24px}
   .foot .cols{grid-template-columns:1fr}
   .founder img{max-width:260px}
@@ -251,10 +249,8 @@ section{padding:96px 0}
   .top .wrap{min-height:64px;gap:12px}
   .brand img{width:220px}
   section{padding:64px 0}
-  .hero-copy .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .hero-copy .actions .btn{padding:12px 10px}
-  .hero .long{display:none}
-  .hero .short{display:inline}
+  .hero-copy .actions{gap:10px;margin-top:18px}
+  .hero-copy .actions .btn{min-height:48px;flex:1 1 100%}
   .rooms{gap:28px 12px}
   .rooms .room{grid-column:span 6}
   .rooms .room.wide{grid-column:span 12}
@@ -298,7 +294,7 @@ section{padding:96px 0}
     <p class="since">Architectural conservation, since 1985</p>
     <h1>Restoring the historic buildings of Charleston and the Low Country.</h1>
     <p>A full-service general contractor with over thirty full-time carpenters, masons, plasterers and decorative craftspeople, from private residences to National Register sites and Board of Architectural Review submittals.</p>
-    <div class="actions"><a class="btn solid" href="tel:+18438530024"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call<span class="long"> 843.853.0024</span><span class="short"> office</span></a><a class="btn line" href="mailto:rmr@richardmarksrestorations.com?subject=Preservation%20project"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email<span class="long"> the office</span><span class="short"> office</span></a></div>
+    <div class="actions"><a class="btn solid" href="tel:+18438530024"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Call 843.853.0024</a><a class="btn line" href="mailto:rmr@richardmarksrestorations.com?subject=Preservation%20project"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email the office</a></div>
   </div>
   <div class="facade">
     <figure class="window" style="margin:0">
