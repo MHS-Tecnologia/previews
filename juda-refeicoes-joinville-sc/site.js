@@ -1,6 +1,6 @@
-// Marca o dia de hoje no trilho da semana (domingo: nenhum, o buffet fecha).
+// Marca o dia de hoje no trilho da semana (domingo não aparece no trilho).
 var hoje = new Date().getDay()
-document.querySelectorAll('[data-semana] [data-dia="' + hoje + '"]').forEach(function (el) { el.classList.add('hoje') })
+document.querySelectorAll('[data-semana] [data-dia]').forEach(function (el) { if (el.dataset.dia.split(' ').indexOf(String(hoje)) > -1) el.classList.add('hoje') })
 
 // CTA fixo no celular, depois que o botão do topo sai da tela.
 var fixo = document.querySelector('[data-fixo]')
