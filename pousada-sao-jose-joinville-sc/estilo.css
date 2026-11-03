@@ -254,9 +254,8 @@ figcaption{font-size:.9rem;color:var(--suave);margin-top:6px}
 .acoes + .itens{margin-top:32px}
 
 /* reserva online: o motor do site oficial, mostrado sem link */
-.btn-online{background:var(--tinta);border-color:var(--tinta);color:#fff;cursor:default}
-.btn-online:hover{background:var(--tinta);border-color:var(--tinta)}
-.faixa-tinta .btn-online,.fecho .btn-online{background:#fff;border-color:#fff;color:var(--tinta)}
+.btn-online,.btn-online:hover{background:#e6eaea;border:2px dashed #8b9aa0;color:#4a5960;cursor:default;font-weight:500}
+.faixa-tinta .btn-online,.fecho .btn-online,.faixa-tinta .btn-online:hover,.fecho .btn-online:hover{background:rgba(255,255,255,.1);border-color:#8fa3ab;color:#d3dde0}
 .nota-online{display:flex;gap:6px;align-items:flex-start;font-size:.85rem;line-height:1.4;color:var(--suave);margin:10px 0 0;max-width:52ch}
 .nota-online .ico{width:1em;height:1em;margin-top:2px}
 .faixa-tinta .nota-online{color:#b9c6cb}
