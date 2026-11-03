@@ -216,3 +216,6 @@ p{margin:0 0 .9em}
 .na-bancada h2{font-size:clamp(1.8rem,5vw,2.6rem)}
 .na-bancada p{color:var(--cinza);margin-top:8px}
 .na-bancada + .grade-fotos{margin-top:24px}
+.grade-fotos img{aspect-ratio:4/5;object-fit:cover}
+.btn{white-space:nowrap}
+.f-salto img{object-position:12% 50%}
