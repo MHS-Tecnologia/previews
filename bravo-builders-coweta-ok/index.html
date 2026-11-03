@@ -9,7 +9,8 @@
 <title>Bravo Builders LLC, commercial contractor in Coweta, Oklahoma</title>
 <meta name="description" content="Family owned commercial general contractor in Coweta, Oklahoma: preconstruction, design-build, construction management and general contracting.">
 <link rel="preload" as="font" type="font/woff2" href="fonts/alfaslab.woff2" crossorigin>
-<link rel="preload" as="image" href="img/tower-660.webp" imagesrcset="img/tower-400.webp 400w, img/tower-660.webp 660w" imagesizes="(max-width: 860px) calc(50vw - 1.4rem), 300px" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-m-780.webp" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/coweta-wide-1200.webp" imagesrcset="img/coweta-wide-800.webp 800w, img/coweta-wide-1200.webp 1200w" imagesizes="(max-width: 1240px) 46vw, 560px" media="(min-width: 861px)" fetchpriority="high">
 <style>
 @font-face { font-family: "Alfa Slab One"; font-weight: 400; font-display: swap; src: url(fonts/alfaslab.woff2) format("woff2"); }
 @font-face { font-family: "Overpass"; font-weight: 300 900; font-display: swap; src: url(fonts/overpass.woff2) format("woff2"); }
@@ -37,7 +38,7 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
 h1, h2, .big, .sec-name, .fl-n, .f-name { font-family: "Alfa Slab One", Rockwell, Georgia, serif; font-weight: 400; letter-spacing: 0; }
-h1 { font-size: clamp(2.2rem, 4.2vw, 3.6rem); line-height: 1.04; text-wrap: balance; }
+h1 { font-size: clamp(2.2rem, 4vw, 3.3rem); line-height: 1.04; text-wrap: balance; }
 h2 { font-size: clamp(1.75rem, 3.4vw, 2.6rem); line-height: 1.1; text-wrap: balance; }
 h3 { font-size: 1.2rem; line-height: 1.25; font-weight: 800; }
 h4 { font-size: 1rem; line-height: 1.3; font-weight: 700; }
@@ -74,11 +75,9 @@ p { max-width: 68ch; }
 .lede { font-size: 1.15rem; line-height: 1.55; margin-top: 1.1rem; color: #3b3533; }
 
 /* Hero: the two structures named in the headline, side by side, staggered */
-.hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
-.hero-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
-.hero-pics figure:nth-child(2) { margin-top: 3.5rem; }
-.hero-pics img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; border-bottom: 6px solid var(--buck); }
-.hero-pics figcaption, figcaption { font-size: .85rem; line-height: 1.35; color: var(--muted); margin-top: .5rem; }
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.hero-pic img { width: 100%; height: auto; border-bottom: 6px solid var(--buck); }
+figcaption { font-size: .85rem; line-height: 1.35; color: var(--muted); margin-top: .5rem; }
 
 /* Sector index */
 .sectors { padding: clamp(2.5rem, 6vw, 5rem) 0; border-top: 1px solid var(--line); }
@@ -103,6 +102,7 @@ p { max-width: 68ch; }
 .fl-n { display: grid; place-items: center; font-size: 1.05rem; color: #8f8783; border-right: 1px solid #4a4341; }
 .fl.on .fl-n { background: var(--buck); color: var(--ink); border-right-color: var(--buck); }
 .fl-x .fl-n { background: transparent !important; border-right-color: #4a4341 !important; }
+.fl-x .fl-none { padding-left: .2rem; }
 .fl-s { display: flex; flex-wrap: wrap; gap: .3rem; padding: .3rem .4rem; align-items: center; }
 .fl-none { font-size: .82rem; color: #a59d98; padding-left: .5rem; }
 .fl button { font: 600 .92rem/1.25 "Overpass", system-ui, sans-serif; color: #f1ece6; background: transparent; border: 1px solid transparent; border-radius: 2px; padding: .45rem .6rem; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: #7d6a55; text-underline-offset: 4px; }
@@ -169,7 +169,15 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #
 .psec > h2 { border-bottom: 3px solid var(--ink); padding-bottom: .5rem; margin-bottom: .5rem; }
 .proj { padding: 1.5rem 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 16rem 1fr; column-gap: 2rem; }
 .proj > h3 { font-size: 1.25rem; }
-.scopes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 1.6rem; align-items: start; }
+.scopes { display: grid; gap: 1.6rem; }
+.zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.zoom:hover img { outline: 3px solid var(--buck); outline-offset: -3px; }
+.lb { padding: 0; border: 0; background: var(--ink); color: #f1ece6; max-width: min(64rem, 94vw); width: 100%; }
+.lb::backdrop { background: rgba(20, 17, 17, .86); }
+.lb img { width: 100%; height: auto; max-height: 80vh; object-fit: contain; background: #000; }
+.lb p { padding: .7rem 1rem 1rem; font-size: .95rem; }
+.lb-bar { display: flex; justify-content: flex-end; }
+.lb-x { font: 700 .95rem "Overpass", system-ui, sans-serif; color: #fff; background: var(--red); border: 0; padding: .65rem 1.1rem; cursor: pointer; }
 .scope h4 { margin-bottom: .5rem; }
 .ph-row { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
 .ph-row img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--concrete); }
@@ -209,10 +217,8 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #
   .demo { font-size: .75rem; padding: .35rem .75rem; }
 
   .hero { grid-template-columns: 1fr; gap: 1.1rem; padding-top: .8rem; }
-  .hero-pics { order: -1; gap: .6rem; }
-  .hero-pics img { aspect-ratio: 5 / 4; border-bottom-width: 4px; }
-  .hero-pics figure:nth-child(2) { margin-top: 0; }
-  .hero-pics figcaption { font-size: .75rem; margin-top: .3rem; }
+  .hero-pic img { border-bottom-width: 4px; }
+  .hero-pic figcaption { font-size: .78rem; margin-top: .3rem; }
   h1 { font-size: 2.05rem; }
   .lede { font-size: 1.02rem; margin-top: .7rem; }
   .acts { margin-top: 1rem; gap: .5rem; }
@@ -284,24 +290,27 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #
 <main id="main">
 <section class="hero wrap" aria-labelledby="h1">
   <div class="hero-txt">
-    <h1 id="h1">From the Prayer Tower to the cement plant.</h1>
-    <p class="lede">Bravo Builders is a family owned commercial general contractor in Coweta, Oklahoma. We handle preconstruction, design-build, construction management and general contracting for schools, hospitals, offices and plants.</p>
+    <h1 id="h1">Schools, hospitals and plants, built by a family owned contractor.</h1>
+    <p class="lede">From the Coweta High School addition to the Prayer Tower renovation at Oral Roberts University, Bravo Builders handles preconstruction, design-build, construction management and general contracting from its office in Coweta, Oklahoma.</p>
     <div class="acts">
       <a class="btn" data-cta href="mailto:admin@bravo-builders.com?subject=Bid%20request">Request a bid</a>
       <a class="btn ghost" href="tel:+19182796526">Call 918-279-6526</a>
     </div>
   </div>
-  <div class="hero-pics">
-    <figure><img src="img/tower-660.webp" srcset="img/tower-400.webp 400w, img/tower-660.webp 660w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 300px" width="660" height="880" alt="The Prayer Tower at Oral Roberts University against a clear sky" fetchpriority="high"><figcaption>Prayer Tower renovation, Oral Roberts University</figcaption></figure>
-    <figure><img src="img/silo-660.webp" srcset="img/silo-400.webp 400w, img/silo-660.webp 660w" sizes="(max-width: 860px) calc(50vw - 1.4rem), 300px" width="660" height="880" alt="Steel silo, loadout canopy and block building at the Owasso Cement Plant"><figcaption>Owasso Cement Plant</figcaption></figure>
-  </div>
+  <figure class="hero-pic">
+    <picture>
+      <source media="(max-width: 860px)" srcset="img/hero-m-780.webp" width="780" height="520">
+      <img src="img/coweta-wide-1200.webp" srcset="img/coweta-wide-800.webp 800w, img/coweta-wide-1200.webp 1200w" sizes="(max-width: 1240px) 46vw, 560px" width="1200" height="700" alt="Coweta High School entrance and its tiger mascot lit up at dusk" fetchpriority="high">
+    </picture>
+    <figcaption>Coweta High School Addition</figcaption>
+  </figure>
 </section>
 
 <section class="sectors" aria-labelledby="sec-h">
   <div class="wrap">
     <div class="sec-head">
       <h2 id="sec-h">Seven kinds of buildings</h2>
-      <p>Fourteen clients, from a QuikTrip in Coweta to the Brookside Library renovation for Tulsa City/County Library.</p>
+      <p>From a QuikTrip in Coweta to the Brookside Library renovation for Tulsa City/County Library.</p>
     </div>
     <ul class="sec-rows">
 <li><a class="sec" href="projects.html#healthcare">
@@ -336,7 +345,7 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #
       </a></li>
 <li><a class="sec" href="projects.html#sports">
         <span class="sec-name">Sports</span>
-        <span class="sec-list">Oral Roberts University, HA Chapman, Wickham Softball Complex</span>
+        <span class="sec-list">Oral Roberts University – HA Chapman, Wickham Softball Complex</span>
         <img src="img/oral-roberts-university3-1-900.webp" srcset="img/oral-roberts-university3-1-480.webp 480w, img/oral-roberts-university3-1-900.webp 900w" sizes="(max-width: 700px) 96px, 132px" width="900" height="675" alt="Indoor practice field at ORU" loading="lazy" decoding="async">
       </a></li>
     </ul>
@@ -359,15 +368,15 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #
 <li class="fl on"><span class="fl-n">3</span><span class="fl-s"><button type="button" data-i="2" aria-pressed="false">Family waiting expansion</button><button type="button" data-i="3" aria-pressed="false">Pre-op and post-op</button></span></li>
 <li class="fl"><span class="fl-n">2</span><span class="fl-s"><span class="fl-none">Not in this project</span></span></li>
 <li class="fl on"><span class="fl-n">1</span><span class="fl-s"><button type="button" data-i="0" aria-pressed="false">MRI</button><button type="button" data-i="1" aria-pressed="false">Pre-admissions and testing</button></span></li>
-<li class="fl on fl-x"><span class="fl-n" aria-hidden="true"></span><span class="fl-s"><button type="button" data-i="7" aria-pressed="false">Physician locker rooms</button></span></li>
+<li class="fl on fl-x"><span class="fl-n" aria-hidden="true"></span><span class="fl-s"><button type="button" data-i="7" aria-pressed="false">Physician locker rooms</button><span class="fl-none">Floor not listed</span></span></li>
       </ol>
     </div>
     <figure class="tw-pic">
-      <img id="tw-img" src="img/dsc_0175-900.webp" srcset="img/dsc_0175-480.webp 480w, img/dsc_0175-900.webp 900w" sizes="(max-width: 860px) calc(100vw - 2rem), 620px" width="900" height="675" alt="Reception desk at the patient recovery suites" loading="lazy" decoding="async">
+      <img id="tw-img" src="img/patient-recovery-suites-osh5-900.webp" srcset="img/patient-recovery-suites-osh5-480.webp 480w, img/patient-recovery-suites-osh5-900.webp 900w" sizes="(max-width: 860px) calc(100vw - 2rem), 620px" width="900" height="675" alt="Reception desk with blue armchairs and a patterned rug" loading="lazy" decoding="async">
       <figcaption id="tw-cap" aria-live="polite">9th floor patient recovery suites</figcaption>
     </figure>
   </div>
-  <script type="application/json" id="tw-data">[{"s": "premier-family-care9", "a": "MRI scanner in the renovated first-floor MRI suite", "c": "1st floor MRI"}, {"s": "patient-recovery-suites-osh5", "a": "Reception desk with blue armchairs and a patterned rug", "c": "1st floor pre-admissions and testing"}, {"s": "img_2717", "a": "Family waiting room with leather recliners and a dark column", "c": "3rd floor family waiting expansion"}, {"s": "oklahoma-surgical-hospital-recovery-rooms3", "a": "Recovery bay seen through a wide sliding glass door", "c": "3rd floor pre-op and post-op"}, {"s": "premier-family-care11", "a": "Cath lab with ceiling-mounted imaging equipment", "c": "4th floor cath lab and nuclear medicine suite"}, {"s": "oklahoma-surgical-hospital-recovery-rooms5", "a": "Critical care corridor with glass doors on each room", "c": "5th floor critical care suite"}, {"s": "dsc_0175", "a": "Reception desk at the patient recovery suites", "c": "9th floor patient recovery suites"}, {"s": "premier-family-care10", "a": "Physician locker room with wood lockers and benches", "c": "Physician locker rooms"}]</script>
+  <script type="application/json" id="tw-data">[{"s": "premier-family-care9", "a": "MRI scanner in the renovated first-floor MRI suite", "c": "1st floor MRI"}, {"s": "pre-admissions-and-testing-osh4", "a": "Corridor of exam rooms with framed art and polished floors", "c": "1st floor pre-admissions and testing"}, {"s": "img_2717", "a": "Family waiting room with leather recliners and a dark column", "c": "3rd floor family waiting expansion"}, {"s": "oklahoma-surgical-hospital-recovery-rooms3", "a": "Recovery bay seen through a wide sliding glass door", "c": "3rd floor pre-op and post-op"}, {"s": "premier-family-care11", "a": "Cath lab with ceiling-mounted imaging equipment", "c": "4th floor cath lab and nuclear medicine suite"}, {"s": "oklahoma-surgical-hospital-recovery-rooms5", "a": "Critical care corridor with glass doors on each room", "c": "5th floor critical care suite"}, {"s": "patient-recovery-suites-osh5", "a": "Reception desk with blue armchairs and a patterned rug", "c": "9th floor patient recovery suites"}, {"s": "premier-family-care10", "a": "Physician locker room with wood lockers and benches", "c": "Physician locker rooms"}]</script>
 </section>
 
 <section class="svc" aria-labelledby="svc-h">
@@ -447,6 +456,26 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #
     }).observe(cta)
   }
 
+  // Projects page: open any photo larger in a dialog.
+  var lb = document.getElementById('lb')
+  if (lb && lb.showModal) {
+    var lbImg = document.getElementById('lb-img')
+    var lbCap = document.getElementById('lb-cap')
+    document.querySelectorAll('.zoom').forEach(function (z) {
+      z.addEventListener('click', function () {
+        var small = z.querySelector('img')
+        lbImg.src = z.dataset.full
+        lbImg.alt = small.alt
+        var scope = z.closest('.scope')
+        var h = scope && scope.querySelector('h4')
+        lbCap.textContent = (z.closest('.proj').querySelector('h3').textContent) + (h ? ': ' + h.textContent : '')
+        lb.showModal()
+      })
+    })
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close() })
+    document.getElementById('lb-x').addEventListener('click', function () { lb.close() })
+  }
+
   // Hospital floor directory: each button shows that area's photo.
   var data = document.getElementById('tw-data')
   if (!data) return
@@ -472,6 +501,9 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #
       }
       if (next.decode) next.decode().then(swap, swap)
       else swap()
+      // On a phone the photo sits below the list: bring it into view.
+      var r = img.getBoundingClientRect()
+      if (r.top < 0 || r.bottom > window.innerHeight) img.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'center' })
     })
   })
 })()
