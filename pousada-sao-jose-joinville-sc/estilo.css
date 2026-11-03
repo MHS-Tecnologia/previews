@@ -101,10 +101,13 @@ p{margin:0 0 1em;max-width:66ch}
 @media (min-width:900px){.faixa{padding:84px 0}}
 
 /* a régua: a rua, da porta da pousada até a maternidade, em escala */
-.regua{--h:600px;list-style:none;margin:34px 0 8px;padding:0;position:relative;height:calc(var(--h) + 60px)}
+.regua{--h:600px;list-style:none;margin:34px 0 8px;padding:0;position:relative;height:calc(var(--h) * .72 + 60px)}
 .regua::before{content:"";position:absolute;left:0;top:-14px;bottom:40px;width:34px;background:var(--tinta);border-radius:6px;transform-origin:top;transform:scaleY(var(--prog,1))}
 .regua::after{content:"";position:absolute;left:16px;top:0;bottom:52px;width:2px;background:repeating-linear-gradient(#fff 0 9px,transparent 9px 18px);transform-origin:top;transform:scaleY(var(--prog,1))}
-.regua li{position:absolute;left:0;right:0;top:calc(var(--p)*var(--h));z-index:1}
+.regua li{position:absolute;left:0;right:0;top:calc(var(--pm,var(--p))*var(--h));z-index:1}
+.regua li.corte{top:calc(.62*var(--h))}
+.regua li.corte::before{left:-2px;top:-13px;width:38px;height:26px;border:0;border-radius:0;background:var(--piso)}
+.regua li.corte::after{content:"≈";left:0;top:-21px;width:34px;height:auto;background:none;text-align:center;font:700 1.9rem/1 "Jost",sans-serif;color:var(--tinta)}
 .regua li::before{content:"";position:absolute;left:5px;top:-12px;width:24px;height:24px;border-radius:50%;background:#fff;border:5px solid var(--carvalho);box-sizing:border-box}
 .regua li.origem::before{background:var(--carvalho)}
 .regua li::after{content:"";position:absolute;left:34px;top:-1px;width:12px;height:2px;background:var(--carvalho)}
@@ -118,7 +121,7 @@ p{margin:0 0 1em;max-width:66ch}
   .regua::after{left:6px;right:6px;top:calc(50% - 1px);bottom:auto;width:auto;height:2px;background:repeating-linear-gradient(90deg,#fff 0 12px,transparent 12px 24px);transform-origin:left;transform:scaleX(var(--prog,1))}
   .regua li{top:0;bottom:0;right:auto;width:0;left:calc(var(--p)*100%)}
   .regua li::before{left:-12px;top:calc(50% - 12px)}
-  .regua li::after{display:none}
+  .regua li::after,.regua li.corte{display:none}
   .regua li > div{display:block;transform:none;margin:0;position:absolute;left:-1px;width:230px;padding-left:12px;border-left:2px solid var(--carvalho)}
   .regua li:nth-child(odd) > div{bottom:calc(50% + 22px)}
   .regua li:nth-child(even) > div{top:calc(50% + 22px)}
@@ -171,7 +174,21 @@ figcaption{font-size:.9rem;color:var(--suave);margin-top:6px}
 @media (min-width:900px){.passos{grid-template-columns:repeat(3,1fr);gap:36px}}
 
 /* quartos */
-.tipos{display:grid;gap:16px;margin-top:24px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.tipos{display:grid;gap:16px;margin-top:24px}
+@media (min-width:760px){.tipos{grid-template-columns:1fr 1fr}}
+.linhas{display:grid;gap:12px;margin-top:16px}
+.linhas .tipo{flex-direction:row;align-items:flex-start;gap:14px;padding:14px}
+.linhas .planta{flex:none;height:auto;max-width:none;background:var(--piso);border-radius:4px}
+.linhas .tipo-txt{padding:0;gap:6px}
+.linhas .tipo-l{margin:0 0 4px}
+.linhas .tipo-l li{display:inline}
+.linhas .tipo-l li+li::before{content:", "}
+.linhas .tipo-l li+li{text-transform:lowercase}
+.linhas .planta{width:64px;padding:4px}
+.linhas .btn{font-size:.95rem;padding:.45em .75em;gap:.4em;white-space:nowrap;align-self:flex-start}
+.linhas .tag{font-size:.78rem;padding:1px 8px}
+.linhas h3{font-size:1.18rem}
+@media (min-width:760px){.linhas{grid-template-columns:1fr 1fr}}
 .tipo{border:1px solid var(--linha);border-radius:var(--raio);background:#fff;display:flex;flex-direction:column;overflow:hidden}
 .tipo-foto img,.tipo-planta{width:100%;height:170px}
 .tipo-foto img{object-fit:cover}
