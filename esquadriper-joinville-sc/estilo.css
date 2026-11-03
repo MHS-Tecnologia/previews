@@ -33,7 +33,7 @@ p{margin:0}
 
 /* aviso da demo */
 .aviso{background:var(--ferro);color:#d9dfdc;font-size:.8rem;line-height:1.4;padding:7px var(--g);text-align:center}
-.aviso a{color:#fff}
+.aviso a{color:#fff;display:inline-block;padding:6px 2px;margin:-6px 0}
 .nq{white-space:nowrap}
 .md{display:none}
 
@@ -68,7 +68,7 @@ p{margin:0}
 .escuro .btn-2{color:#fff;border-color:#fff}
 .escuro .btn-2:hover{background:#fff;color:var(--ferro)}
 .ico{width:21px;height:21px;flex:none}
-.link{font-weight:600;color:var(--verde);text-underline-offset:4px}
+.link{font-weight:600;color:var(--verde);text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
 .escuro .link{color:var(--bronze-claro)}
 
 /* hero */
