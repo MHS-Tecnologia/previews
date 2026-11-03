@@ -184,3 +184,35 @@ p{margin:0 0 .9em}
 .fixo.on{transform:none;visibility:visible}
 @media (min-width:900px){.fixo{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* a vitrine da loja, como o adesivo */
+.decal{background:var(--branco);border-radius:10px;overflow:hidden;text-align:center;margin-top:24px;box-shadow:0 1px 0 var(--linha)}
+.decal-topo{margin:0;background:var(--placa);color:#e9e6e4;font:700 clamp(2.2rem,9vw,3.6rem)/1 "Instrument Sans",system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:16px 12px 14px;border-bottom:3px solid var(--pimenta)}
+.decal-lista{margin:0;padding:10px 18px 22px}
+.decal-lista > div{padding:16px 0 4px}
+.decal-lista dt{font:700 clamp(1.2rem,4.6vw,1.75rem)/1.15 "Instrument Sans",system-ui,sans-serif;text-transform:uppercase;letter-spacing:.01em;color:#2d2827}
+.decal-lista dd{margin:6px auto 0;max-width:38em;font-size:.84rem;text-transform:uppercase;letter-spacing:.03em;color:#4d4643;line-height:1.5}
+.cartaz{margin-top:18px;background:var(--placa);color:#f1eeec;border-radius:10px;padding:20px 22px;text-align:center}
+.cartaz p{margin:0}
+.cartaz-de{font-size:.9rem;color:#c9c1bd}
+.cartaz-titulo{font-family:"Young Serif",Georgia,serif;font-size:1.7rem;color:#fff;margin:4px 0 6px!important}
+.cartaz-bota{background:var(--branco);color:var(--tinta);border:2px solid var(--placa)}
+.cartaz-bota .cartaz-titulo{color:var(--tinta)}
+.servicos .vitrine-painel{margin:0 auto;padding:0}
+.servicos .intro{text-align:center}
+
+/* placas das lojas */
+.placas{display:grid;gap:18px;margin-top:26px}
+.placa{position:relative;background:var(--placa);color:#fff;border-radius:8px;padding:22px 24px 24px;overflow:hidden}
+.placa::before{content:"";position:absolute;left:0;right:0;top:64px;height:2px;background:var(--pimenta)}
+.placa p{margin:0}
+.placa-n{position:relative;display:inline-block;background:var(--pimenta);color:#fff;font-weight:700;font-size:.85rem;padding:3px 10px;border-radius:4px}
+.placa-bairro{position:relative;display:inline-block;background:var(--placa);font-size:clamp(1.9rem,6vw,2.5rem);padding-right:14px;margin:14px 0 10px!important;line-height:1}
+.placa-rua{font-size:1.2rem;font-weight:600}
+.placa-ref{color:#d4ccc8;margin-top:4px!important}
+@media (min-width:760px){.lojas-resumo .placas{grid-template-columns:1fr 1fr}}
+.lojas-col .placas{margin-top:0}
+.na-bancada{margin-top:64px}
+.na-bancada h2{font-size:clamp(1.8rem,5vw,2.6rem)}
+.na-bancada p{color:var(--cinza);margin-top:8px}
+.na-bancada + .grade-fotos{margin-top:24px}
