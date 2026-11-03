@@ -1,0 +1,170 @@
+@font-face{font-family:"Bagel Fat One";src:url(fonts/bagel.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Rubik;src:url(fonts/rubik.woff2) format("woff2");font-weight:300 800;font-display:swap}
+
+:root{
+  --glace:#fcf1f2;      /* fundo: glacê rosado */
+  --choco:#3a1e22;      /* tinta: chocolate */
+  --morango:#b8233d;    /* ação */
+  --morango-esc:#951a30;
+  --denim:#3d5a80;      /* o avental */
+  --menta:#cfe8df;      /* a prateleira e a parede da loja */
+  --menta-esc:#5f9e8c;
+  --branco:#fff;
+  --suave:#6b4a50;
+  --caixa:1120px;
+  --tampa:50% 50% 22px 22px / 30% 30% 22px 22px; /* a tampa bolha dos copos e bolos */
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--glace);color:var(--choco);font:400 1.0625rem/1.6 Rubik,system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--denim)}
+:focus-visible{outline:3px solid var(--denim);outline-offset:3px}
+h1,h2,h3{font-family:"Bagel Fat One",Rubik,sans-serif;font-weight:400;line-height:1.08;margin:0;letter-spacing:.005em}
+p{margin:0}
+.caixa{width:min(100% - 32px,var(--caixa));margin-inline:auto}
+.salto{position:absolute;left:-999px;top:0;background:var(--choco);color:#fff;padding:8px 12px;z-index:50}
+.salto:focus{left:8px}
+
+/* aviso */
+.aviso{background:var(--choco);color:#f6dfe3;font-size:.75rem;line-height:1.4;padding:6px 16px;text-align:center}
+.aviso a{color:#fff}
+.nq{white-space:nowrap}
+
+/* topo */
+.topo{background:var(--glace);border-bottom:1px solid #efd9dc;position:relative;z-index:20}
+.nav{display:flex;align-items:center;gap:28px;min-height:64px}
+.marca{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--choco);margin-right:auto}
+.marca b{font:400 1.9rem/1 "Bagel Fat One",sans-serif;color:var(--morango)}
+.marca span{font-size:.85rem;color:var(--suave)}
+.nav > a.lk{color:var(--choco);text-decoration:none;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a.lk:hover,.nav > a.lk[aria-current]{border-bottom-color:var(--morango)}
+.menu-btn{display:none}
+.menu{display:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:600 1.0625rem/1 Rubik,sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn-p{background:var(--morango);color:#fff}
+.btn-p:hover{background:var(--morango-esc)}
+.btn-s{background:transparent;color:var(--choco);box-shadow:inset 0 0 0 2px var(--choco)}
+.ico{width:22px;height:22px;flex:none}
+.nav .btn{min-height:44px;padding:0 18px;font-size:.95rem}
+
+@media (max-width:899px){
+  .nav{gap:12px;min-height:58px}
+  .nav > a.lk,.nav > a.nav-wa{display:none}
+  .menu-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;border:2px solid var(--choco);background:none;color:var(--choco);font:600 .95rem Rubik,sans-serif;cursor:pointer}
+  .menu-btn svg{width:20px;height:20px}
+  .menu.aberto{display:flex;flex-direction:column;padding:8px 16px 18px;border-top:1px solid #efd9dc}
+  .menu a{padding:12px 0;color:var(--choco);text-decoration:none;font-weight:500;font-size:1.1rem;border-bottom:1px solid #f1e0e2}
+  .menu a[aria-current]{color:var(--morango)}
+  .menu a.btn{margin-top:14px;color:#fff;border:0}
+}
+
+/* herói */
+.hero{padding:28px 0 8px}
+.hero .caixa{display:grid;gap:22px}
+.hero h1{font-size:clamp(2.1rem,7.4vw,4.1rem);color:var(--choco)}
+.hero .lead{font-size:1.08rem;color:var(--suave);margin-top:14px;max-width:34ch}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero-foto{margin:0;position:relative}
+.hero-foto img{border-radius:var(--tampa);width:100%;background:var(--menta)}
+.hero-foto figcaption{margin-top:10px;font-size:.9rem;color:var(--suave)}
+@media (min-width:900px){
+  .hero{padding:44px 0 56px}
+  .hero .caixa{grid-template-columns:1fr 440px;align-items:center;gap:64px}
+  .hero .lead{font-size:1.2rem}
+}
+
+/* prateleira: as fotos ficam em pé sobre a borda de vidro verde, como na loja */
+.prateleira{padding:56px 0 64px}
+.prateleira h2,.secao h2{font-size:clamp(1.8rem,5vw,2.6rem)}
+.prateleira .intro{color:var(--suave);margin-top:8px;max-width:52ch}
+.prat{position:relative;margin-top:28px;display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 16px 0;margin-inline:-16px;scrollbar-width:none}
+.prat::-webkit-scrollbar{display:none}
+.prat::after{content:"";flex:none;width:1px}
+.item{flex:0 0 68%;scroll-snap-align:start;display:flex;flex-direction:column}
+.item .foto{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:var(--tampa);overflow:hidden}
+.item .foto img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .35s ease}
+.item .foto:hover img{transform:scale(1.03)}
+.borda{height:14px;margin-top:-2px;border-radius:3px;background:linear-gradient(var(--menta-esc),#86bfae 55%,var(--menta));box-shadow:0 10px 18px -12px rgba(58,30,34,.35)}
+.prat .borda{display:none}
+.vidro{height:12px;border-radius:3px;background:linear-gradient(#7fb8a6,var(--menta));margin-top:-1px;box-shadow:0 12px 18px -12px rgba(58,30,34,.4)}
+.item p{margin-top:14px;font-size:.95rem;line-height:1.4}
+.ver{display:inline-block;margin-top:24px;font-weight:600;color:var(--denim)}
+@media (min-width:900px){
+  .prat{overflow:visible;margin-inline:0;padding:0;gap:28px}
+  .item{flex:1 1 0}
+}
+
+/* lema: a única animação da página */
+.lema{background:var(--choco);color:#f9d9df;padding:64px 0;text-align:center;overflow:hidden}
+.lema p{font:400 clamp(2.2rem,8vw,5.2rem)/1.05 "Bagel Fat One",sans-serif}
+.lema .humm{color:#fff}
+.lema small{display:block;font:400 .95rem Rubik,sans-serif;color:#d7b3ba;margin-top:18px}
+.pt{display:inline-block}
+@media (prefers-reduced-motion:no-preference){
+  .lema.vivo .pt{animation:pinga .5s cubic-bezier(.3,1.6,.5,1) both}
+  .lema.vivo .pt:nth-child(2){animation-delay:.35s}
+  .lema.vivo .pt:nth-child(3){animation-delay:.7s}
+  .lema.vivo .deli{animation:surge .5s 1.15s ease-out both}
+  .lema.espera .pt,.lema.espera .deli{opacity:0}
+}
+@keyframes pinga{from{opacity:0;transform:translateY(-.5em) scale(.4)}to{opacity:1;transform:none}}
+@keyframes surge{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+
+/* seções */
+.secao{padding:64px 0}
+.secao.menta{background:var(--menta)}
+.secao .sub{color:var(--suave);margin-top:10px;max-width:56ch}
+.etiquetas{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.etiquetas li{background:var(--branco);border-radius:999px;padding:9px 18px;font-weight:500;box-shadow:inset 0 0 0 1.5px #e6c9ce}
+.etiquetas li.epoca{background:transparent;box-shadow:inset 0 0 0 1.5px var(--menta-esc)}
+
+.pedir{display:grid;gap:32px}
+.pedir dl{margin:24px 0 0;display:grid;gap:18px}
+.pedir dt{font-weight:600}
+.pedir dd{margin:2px 0 0;color:var(--suave)}
+.pedir .foto-dona img{border-radius:var(--tampa);width:100%}
+@media (min-width:900px){
+  .pedir{grid-template-columns:1fr 400px;gap:72px;align-items:center}
+}
+
+/* páginas internas */
+.cab{padding:40px 0 8px}
+.cab h1{font-size:clamp(2.2rem,7vw,3.6rem)}
+.cab p{color:var(--suave);margin-top:12px;max-width:54ch;font-size:1.08rem}
+.grade{display:grid;gap:40px 28px;padding:32px 0 64px;grid-template-columns:1fr}
+.grade .item{flex:none}
+.grade .linha{display:contents}
+@media (min-width:640px){.grade{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.grade{grid-template-columns:repeat(3,1fr)}}
+
+/* lightbox */
+.lb{border:0;padding:0;background:transparent;max-width:min(92vw,560px);max-height:92vh;overflow:visible}
+.lb::backdrop{background:rgba(42,20,24,.95)}
+.lb img{max-height:80vh;width:auto;margin:0 auto;border-radius:18px}
+.lb p{color:#fff;text-align:center;margin-top:12px}
+.lb button{position:absolute;top:-14px;right:-6px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--choco);font-size:1.6rem;line-height:1;cursor:pointer}
+
+/* rodapé */
+.rodape{background:var(--choco);color:#e9cfd4;padding:44px 0 110px;font-size:.92rem}
+.rodape .caixa{display:grid;gap:22px}
+.rodape b{font:400 1.8rem/1 "Bagel Fat One",sans-serif;color:#fff}
+.rodape a{color:#fff}
+.rodape .legal{border-top:1px solid #5a3a40;padding-top:18px;color:#c9a9b0;font-size:.85rem;display:grid;gap:6px}
+@media (min-width:900px){
+  .rodape{padding-bottom:44px}
+  .rodape .caixa{grid-template-columns:1fr 1fr}
+  .rodape .legal{grid-column:1/-1}
+}
+
+/* CTA fixo no celular, depois do herói */
+.fixo{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;transform:translateY(140%);transition:transform .3s ease;box-shadow:0 10px 30px -8px rgba(58,30,34,.5)}
+.fixo.ver-fixo{transform:none}
+@media (min-width:900px){.fixo{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:899px){.so-desk{display:none}}
+.prat{scroll-padding-inline:16px}
+@media (min-width:900px){.prat .vidro{margin-inline:-14px}.prat .item:first-child .vidro{margin-left:-8px}.prat .item:last-child .vidro{margin-right:-8px}}
+@media (max-width:899px){.pedir .foto-dona img{aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}}
+.hero .lead{margin-top:18px}
