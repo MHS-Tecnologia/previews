@@ -6,11 +6,10 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Dona Kiki Confeitaria Artesanal · Bolos e kit festas em Joinville</title>
 <meta name="description" content="Dona Kiki Confeitaria Artesanal, Joinville – SC. Bolos, kit festas, doces tradicionais e personalizados. Encomendas sob reserva pelo WhatsApp (47) 99668-6513.">
-<meta name="theme-color" content="#e6eff5">
-<link rel="preload" href="fonts/gloock.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/karla.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="img/heroi-m-480.webp 480w, img/heroi-m-640.webp 640w, img/heroi-m-800.webp 800w" imagesizes="calc(100vw - 32px)" media="(max-width: 859px)" fetchpriority="high">
-<link rel="preload" as="image" imagesrcset="img/heroi-560.webp 560w, img/heroi-900.webp 900w, img/heroi-1200.webp 1200w" imagesizes="(min-width: 1220px) 580px, 48vw" media="(min-width: 860px)" fetchpriority="high">
+<meta name="theme-color" content="#fffdfb">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sacramento-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" imagesrcset="img/heroi-400.webp 400w, img/heroi-720.webp 720w, img/heroi-960.webp 960w" imagesizes="(min-width: 860px) 370px, calc(66vw - 18px)" fetchpriority="high">
 <link rel="stylesheet" href="estilo.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -25,63 +24,76 @@
 <a class="salto" href="#conteudo">Pular para o conteúdo</a>
 <div class="aviso" role="note">Demonstração não oficial feita pela MHS Tecnologia para a Dona Kiki Confeitaria Artesanal, sem vínculo com a Dona Kiki Confeitaria Artesanal. Quem fez: <a href="https://mhstecnologia.com.br/pt">mhstecnologia.com.br</a> · <span class="nq">CNPJ 49.394.230/0001-71</span></div>
 <header class="topo">
-  <div class="caixa nav">
-    <a class="marca" href="index.html"><b>Dona Kiki</b><span>Confeitaria Artesanal</span></a>
-    <a href="bolos.html">Bolos</a><a href="kit-festa.html">Kit festas e doces</a><a href="encomendas.html">Encomendas</a>
-    <a class="btn nav-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20fazer%20uma%20encomenda."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Encomendar</a>
-    <details class="menu"><summary>Menu</summary><div><a href="index.html" aria-current="page">Início</a><a href="bolos.html">Bolos</a><a href="kit-festa.html">Kit festas e doces</a><a href="encomendas.html">Encomendas</a><a class="btn" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20fazer%20uma%20encomenda."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Encomendar pelo WhatsApp</a></div></details>
-  </div>
+  <a class="marca" href="index.html"><span class="mono">Dona Kiki</span><span class="marca-sub">Confeitaria Artesanal</span></a>
+  <nav class="nav-desk" aria-label="Páginas"><a href="bolos.html">Bolos</a><a href="kit-festa.html">Kit festas e doces</a><a href="encomendas.html">Encomendas</a><a class="btn btn-p" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20fazer%20uma%20encomenda."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Encomendar</a></nav>
 </header>
 <main id="conteudo">
 <section class="heroi">
-  <div class="caixa">
-    <div class="heroi-txt">
-      <h1>Bolo de aniversário decorado, com o kit de docinhos junto.</h1>
-      <p class="sub">Dona Kiki Confeitaria Artesanal, em Joinville. Bolos, kit festas, doces tradicionais e personalizados. Encomendas sob reserva.</p>
-      <div class="acoes" id="cta">
-        <a class="btn" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20um%20or%C3%A7amento%20de%20bolo%20de%20anivers%C3%A1rio%20decorado."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Encomendar pelo WhatsApp</a>
-        <a class="btn btn-s" href="bolos.html">Ver os bolos</a>
-      </div>
+  <div class="borda borda-topo" aria-hidden="true"></div>
+  <div class="caixa heroi-txt">
+    <h1>Bolo de aniversário confeitado e docinhos para a mesa da festa</h1>
+    <p class="sub">Dona Kiki Confeitaria Artesanal, em Joinville – SC. Bolos, kit festas, doces tradicionais e personalizados. Encomendas sob reserva.</p>
+    <div class="acoes" id="cta">
+      <a class="btn btn-p" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20um%20or%C3%A7amento%20de%20bolo%20de%20anivers%C3%A1rio%20decorado."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Encomendar pelo WhatsApp</a>
+      <a class="btn btn-s" href="bolos.html">Ver os bolos</a>
     </div>
-    <picture class="heroi-foto">
-      <source media="(max-width: 859px)" srcset="img/heroi-m-480.webp 480w, img/heroi-m-640.webp 640w, img/heroi-m-800.webp 800w" sizes="calc(100vw - 32px)" width="1440" height="1240">
-      <img src="img/heroi-900.webp" srcset="img/heroi-560.webp 560w, img/heroi-900.webp 900w, img/heroi-1200.webp 1200w" sizes="(min-width: 1220px) 580px, 48vw" width="1440" height="1440" alt="Bolo azul com bordas confeitadas em conchas, corações de bico e laços de fita lilás" fetchpriority="high">
-    </picture>
+  </div>
+  <div class="mesa">
+    <img class="centro" src="img/heroi-720.webp" srcset="img/heroi-400.webp 400w, img/heroi-720.webp 720w, img/heroi-960.webp 960w" sizes="(min-width: 860px) 370px, calc(66vw - 18px)" width="1440" height="1440" alt="Bolo azul com bordas confeitadas em conchas, corações de bico e laços de fita lilás" fetchpriority="high">
+    <img class="lado l1" src="img/docinhos-granulado-800.webp" srcset="img/docinhos-granulado-400.webp 400w, img/docinhos-granulado-600.webp 600w, img/docinhos-granulado-800.webp 800w, img/docinhos-granulado-1200.webp 1200w" sizes="(min-width: 860px) 230px, calc(33vw - 10px)" width="1440" height="1440" alt="Bandeja com docinhos de chocolate com granulado e docinhos brancos, em forminhas brancas" loading="lazy" decoding="async">
+    <img class="lado l2" src="img/copinho-morango-800.webp" srcset="img/copinho-morango-400.webp 400w, img/copinho-morango-600.webp 600w, img/copinho-morango-800.webp 800w, img/copinho-morango-1200.webp 1200w" sizes="(min-width: 860px) 230px, calc(33vw - 10px)" width="1440" height="1438" alt="Doce de copinho em camadas, com creme e meio morango em cima, segurado na mão" loading="lazy" decoding="async">
   </div>
   <div class="borda borda-heroi" aria-hidden="true"></div>
 </section>
 
 <section class="secao">
-  <div class="caixa">
+  <div class="caixa larga">
     <div class="titulo">
       <h2>Bolos de aniversário</h2>
       <p>Laço de fita, rosas confeitadas, borboletas. Cada um é feito sob encomenda.</p>
     </div>
-    <div class="grade">
+    <div class="fila" role="region" aria-label="Bolos" tabindex="0">
       <figure class="peca">
-      <img src="img/bolo-lacos-vermelhos-800.webp" srcset="img/bolo-lacos-vermelhos-400.webp 400w, img/bolo-lacos-vermelhos-800.webp 800w, img/bolo-lacos-vermelhos-1200.webp 1200w" sizes="(min-width: 1220px) 568px, (min-width: 860px) calc(50vw - 40px), calc(100vw - 32px)" width="1440" height="1440" alt="Bolo branco com coraçõezinhos vermelhos, borda confeitada e laços de fita vermelha" loading="lazy" decoding="async">
+      <img src="img/bolo-vintage-azul-800.webp" srcset="img/bolo-vintage-azul-400.webp 400w, img/bolo-vintage-azul-600.webp 600w, img/bolo-vintage-azul-800.webp 800w, img/bolo-vintage-azul-1200.webp 1200w" sizes="(min-width: 1300px) 401px, (min-width: 860px) calc(33vw - 32px), 78vw" width="1440" height="1440" alt="Bolo azul com bordas confeitadas em conchas, corações de bico e laços de fita lilás" loading="lazy" decoding="async">
+      <figcaption><span>Azul com laços lilás</span><a class="lk-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20no%20site%20o%20bolo%20%22Azul%20com%20la%C3%A7os%20lil%C3%A1s%22%20e%20queria%20um%20parecido."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Quero um parecido</a></figcaption>
+    </figure>
+      <figure class="peca">
+      <img src="img/bolo-lacos-vermelhos-800.webp" srcset="img/bolo-lacos-vermelhos-400.webp 400w, img/bolo-lacos-vermelhos-600.webp 600w, img/bolo-lacos-vermelhos-800.webp 800w, img/bolo-lacos-vermelhos-1200.webp 1200w" sizes="(min-width: 1300px) 401px, (min-width: 860px) calc(33vw - 32px), 78vw" width="1440" height="1440" alt="Bolo branco com coraçõezinhos vermelhos, borda confeitada e laços de fita vermelha" loading="lazy" decoding="async">
       <figcaption><span>Branco com laços vermelhos</span><a class="lk-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20no%20site%20o%20bolo%20%22Branco%20com%20la%C3%A7os%20vermelhos%22%20e%20queria%20um%20parecido."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Quero um parecido</a></figcaption>
     </figure>
       <figure class="peca">
-      <img src="img/bolo-rosas-800.webp" srcset="img/bolo-rosas-400.webp 400w, img/bolo-rosas-800.webp 800w, img/bolo-rosas-1200.webp 1200w" sizes="(min-width: 1220px) 568px, (min-width: 860px) calc(50vw - 40px), calc(100vw - 32px)" width="1440" height="1440" alt="Bolo branco frisado com rosas cor-de-rosa e folhas verdes confeitadas" loading="lazy" decoding="async">
+      <img src="img/bolo-borboletas-800.webp" srcset="img/bolo-borboletas-400.webp 400w, img/bolo-borboletas-600.webp 600w, img/bolo-borboletas-800.webp 800w, img/bolo-borboletas-1200.webp 1200w" sizes="(min-width: 1300px) 401px, (min-width: 860px) calc(33vw - 32px), 78vw" width="1440" height="1439" alt="Bolo branco frisado com uma faixa de borboletas lilás na lateral, sobre base rendada" loading="lazy" decoding="async">
+      <figcaption><span>Borboletas lilás</span><a class="lk-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20no%20site%20o%20bolo%20%22Borboletas%20lil%C3%A1s%22%20e%20queria%20um%20parecido."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Quero um parecido</a></figcaption>
+    </figure>
+      <figure class="peca">
+      <img src="img/bolo-rosas-800.webp" srcset="img/bolo-rosas-400.webp 400w, img/bolo-rosas-600.webp 600w, img/bolo-rosas-800.webp 800w, img/bolo-rosas-1200.webp 1200w" sizes="(min-width: 1300px) 401px, (min-width: 860px) calc(33vw - 32px), 78vw" width="1440" height="1440" alt="Bolo branco frisado com rosas cor-de-rosa e folhas verdes confeitadas" loading="lazy" decoding="async">
       <figcaption><span>Rosas cor-de-rosa</span><a class="lk-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20no%20site%20o%20bolo%20%22Rosas%20cor-de-rosa%22%20e%20queria%20um%20parecido."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Quero um parecido</a></figcaption>
     </figure>
+      <figure class="peca">
+      <img src="img/bolo-dourado-800.webp" srcset="img/bolo-dourado-400.webp 400w, img/bolo-dourado-600.webp 600w, img/bolo-dourado-800.webp 800w, img/bolo-dourado-1200.webp 1200w" sizes="(min-width: 1300px) 401px, (min-width: 860px) calc(33vw - 32px), 78vw" width="1440" height="1440" alt="Bolo branco com pérolas e respingos dourados e borda azul, sobre base dourada" loading="lazy" decoding="async">
+      <figcaption><span>Branco, azul e dourado</span><a class="lk-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20no%20site%20o%20bolo%20%22Branco%2C%20azul%20e%20dourado%22%20e%20queria%20um%20parecido."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Quero um parecido</a></figcaption>
+    </figure>
+      <figure class="peca">
+      <img src="img/bolo-confeitado-laranja-800.webp" srcset="img/bolo-confeitado-laranja-400.webp 400w, img/bolo-confeitado-laranja-600.webp 600w, img/bolo-confeitado-laranja-800.webp 800w, img/bolo-confeitado-laranja-1200.webp 1200w" sizes="(min-width: 1300px) 401px, (min-width: 860px) calc(33vw - 32px), 78vw" width="1440" height="1440" alt="Bolo branco visto de cima, com flores laranja e brancas confeitadas e folhinhas verdes" loading="lazy" decoding="async">
+      <figcaption><span>Flores laranja</span><a class="lk-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20no%20site%20o%20bolo%20%22Flores%20laranja%22%20e%20queria%20um%20parecido."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Quero um parecido</a></figcaption>
+    </figure>
     </div>
-    <p class="mais"><a class="btn btn-s" href="bolos.html">Ver os 6 bolos</a></p>
+    <p class="mais"><a class="btn btn-s" href="bolos.html">Ver a página de bolos</a></p>
   </div>
 </section>
 
 <section class="secao kit">
   <div class="caixa kit-caixa">
-    <div class="kit-fotos">
-      <img src="img/docinhos-coloridos-800.webp" srcset="img/docinhos-coloridos-400.webp 400w, img/docinhos-coloridos-800.webp 800w, img/docinhos-coloridos-1200.webp 1200w" sizes="(min-width: 860px) 46vw, calc(100vw - 32px)" width="1440" height="1440" alt="Docinhos lilás, brancos e azuis com uma borboleta dourada em cima, em forminhas coloridas" loading="lazy" decoding="async">
-      <img src="img/docinhos-granulado-800.webp" srcset="img/docinhos-granulado-400.webp 400w, img/docinhos-granulado-800.webp 800w, img/docinhos-granulado-1200.webp 1200w" sizes="(min-width: 860px) 20vw, 45vw" width="1440" height="1440" alt="Caixa com docinhos de chocolate com granulado e docinhos brancos, em forminhas brancas" loading="lazy" decoding="async">
+    <div class="mosaico">
+      <img src="img/docinhos-coloridos-800.webp" srcset="img/docinhos-coloridos-400.webp 400w, img/docinhos-coloridos-600.webp 600w, img/docinhos-coloridos-800.webp 800w, img/docinhos-coloridos-1200.webp 1200w" sizes="(min-width: 860px) 420px, calc(66vw - 20px)" width="1440" height="1440" alt="Docinhos lilás, brancos e azuis com uma borboleta dourada em cima, em forminhas coloridas" loading="lazy" decoding="async">
+      <img src="img/docinhos-abobora-800.webp" srcset="img/docinhos-abobora-400.webp 400w, img/docinhos-abobora-600.webp 600w, img/docinhos-abobora-800.webp 800w, img/docinhos-abobora-1200.webp 1200w" sizes="(min-width: 860px) 210px, calc(33vw - 12px)" width="1440" height="1440" alt="Docinhos laranja em forma de abóbora, ao lado de docinhos coloridos e de granulado" loading="lazy" decoding="async">
+      <img src="img/mesa-doces-cupcakes-800.webp" srcset="img/mesa-doces-cupcakes-400.webp 400w, img/mesa-doces-cupcakes-600.webp 600w, img/mesa-doces-cupcakes-800.webp 800w, img/mesa-doces-cupcakes-1200.webp 1200w" sizes="(min-width: 860px) 210px, calc(33vw - 12px)" width="1440" height="1440" alt="Bandeja com docinhos coloridos e cupcakes de cobertura lilás" loading="lazy" decoding="async">
     </div>
     <div class="kit-txt">
       <h2>Kit festas e doces</h2>
-      <p>Doces tradicionais e personalizados, nas cores do tema, para fechar a mesa junto com o bolo.</p>
-      <a class="btn" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20um%20or%C3%A7amento%20de%20kit%20festa."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Pedir orçamento do kit festa</a>
-      <p><a class="lk" href="kit-festa.html">Ver os doces</a></p>
+      <p>Doces tradicionais e personalizados, nas cores do tema, para completar a mesa junto com o bolo.</p>
+      <a class="btn btn-p" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20um%20or%C3%A7amento%20de%20kit%20festa."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Pedir orçamento do kit festa</a>
+      <p><a class="lk" href="kit-festa.html">Ver todos os doces</a></p>
     </div>
   </div>
 </section>
@@ -90,7 +102,7 @@
   <div class="caixa">
     <h2>Encomendas sob reserva</h2>
     <p>Chame no WhatsApp com a data da festa e o tema, e reserve o seu bolo.</p>
-    <a class="btn" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20um%20or%C3%A7amento%20de%20bolo%20de%20anivers%C3%A1rio%20decorado."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Reservar pelo WhatsApp</a>
+    <a class="btn btn-p" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20um%20or%C3%A7amento%20de%20bolo%20de%20anivers%C3%A1rio%20decorado."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Reservar pelo WhatsApp</a>
     <p class="num">WhatsApp <a href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20fazer%20uma%20encomenda.">(47) 99668-6513</a></p>
   </div>
 </section>
@@ -99,7 +111,8 @@
 <footer class="rodape">
   <div class="caixa">
     <div>
-      <p class="marca"><b>Dona Kiki</b><span>Confeitaria Artesanal</span></p>
+      <p class="mono">Dona Kiki</p>
+      <p>Confeitaria Artesanal</p>
       <p>Bolos · Kit festas · Doces tradicionais e personalizados</p>
       <p>Joinville – SC · Encomendas sob reserva</p>
       <p><a href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20fazer%20uma%20encomenda.">WhatsApp (47) 99668-6513</a></p>
@@ -111,7 +124,6 @@
     </div>
   </div>
 </footer>
-<a tabindex="-1" class="btn fixo" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20um%20or%C3%A7amento%20de%20bolo%20de%20anivers%C3%A1rio%20decorado."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Encomendar pelo WhatsApp</a>
-<script src="site.js" defer></script>
+<nav class="abas" aria-label="Páginas (celular)"><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4Z"/></svg>Início</a><a href="bolos.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5 20v-7h14v7M5 13c2 2 3.5 2 5 0 1.5 2 3 2 4.5 0S18 15 19 13M12 9V5"/></svg>Bolos</a><a href="kit-festa.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="9" r="3"/><circle cx="17" cy="9" r="3"/><circle cx="12" cy="17" r="3"/></svg>Doces</a><a class="aba-wa" href="https://wa.me/5547996686513?text=Oi%2C%20Dona%20Kiki!%20Vi%20o%20site%20e%20queria%20fazer%20uma%20encomenda."><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.7 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3 0-1.4.8-2.1 1-2.4.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.6.3.1.2.1.8-.1 1.4Z"/></svg>Encomendar</a></nav>
 </body>
 </html>
