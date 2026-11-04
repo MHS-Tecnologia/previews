@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Winter Greenhouse, Winter, Wisconsin</title>
+<meta name="description" content="Garden center and nursery in Winter, Wisconsin, near Hayward. Local store closed for the season, online shop open year round.">
+<meta name="theme-color" content="#f1f4f2">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/newsreader.woff2" crossorigin>
+<link rel="preload" as="image" media="(max-width: 760px)" imagesrcset="img/aerial-m520.webp 520w, img/aerial-m800.webp 800w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 761px)" imagesrcset="img/aerial-1000.webp 1000w, img/aerial-1600.webp 1600w" imagesizes="(min-width: 1312px) 1216px, calc(100vw - 6rem)" fetchpriority="high">
+<style>
+@font-face { font-family: "Newsreader"; font-weight: 300 600; font-display: swap; src: url(fonts/newsreader.woff2) format("woff2"); }
+@font-face { font-family: "Instrument Sans"; font-weight: 400 700; font-stretch: 75% 100%; font-display: swap; src: url(fonts/instrument-sans.woff2) format("woff2"); }
+
+/* Frost white of a Northwoods November, spruce green, and the pink and leaf green of their own lotus logo.
+   The season colours are the ones their photos run through: spring green, summer pink, autumn rust, winter ice. */
+:root {
+  --frost: #f1f4f2;
+  --paper: #ffffff;
+  --spruce: #1c3227;
+  --spruce-2: #2b4a3a;
+  --ink-soft: #4a5a51;
+  --lotus: #b02a68;
+  --lotus-deep: #8f1f53;
+  --lotus-pale: #f7d6e6;
+  --leaf: #3d7a30;
+  --rust: #a4471f;
+  --ice: #d5e4ec;
+  --line: #cfd8d2;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 76rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--frost); color: var(--spruce); font: 400 1.0625rem/1.6 "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--lotus); outline-offset: 3px; }
+h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 450; letter-spacing: -0.015em; text-wrap: balance; }
+h1 { font-size: clamp(2.6rem, 6.6vw, 5rem); line-height: .98; font-weight: 400; }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.04; }
+h3 { font-size: 1.45rem; line-height: 1.15; }
+p { max-width: 36em; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: var(--paper); padding: .5rem 1rem; z-index: 30; }
+.skip:focus { left: .5rem; }
+
+.demo { background: var(--spruce); color: #d9e3dc; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .5rem 1rem; max-width: none; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .8rem; padding-bottom: .8rem; position: relative; }
+.brand img { width: 154px; height: 44px; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-weight: 550; font-size: .97rem; }
+.nav > a { text-decoration: none; padding: .35rem 0; }
+.nav > a:hover, .nav > a[aria-current] { text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: var(--lotus); text-underline-offset: 7px; }
+.menu { display: none; }
+.menu summary { list-style: none; cursor: pointer; font-weight: 600; padding: .6rem .9rem; border: 1.5px solid var(--spruce); border-radius: 999px; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { background: var(--spruce); color: var(--frost); }
+.menu-list { position: absolute; right: var(--pad); left: var(--pad); top: calc(100% - .2rem); background: var(--paper); border: 1px solid var(--line); border-radius: .8rem; padding: .5rem; z-index: 20; box-shadow: 0 14px 30px rgba(28, 50, 39, .16); }
+.menu-list a { display: block; padding: .85rem 1rem; text-decoration: none; font-weight: 600; border-radius: .5rem; }
+.menu-list a:hover { background: var(--frost); }
+.menu-list a[aria-current] { color: var(--lotus); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .8rem 1.35rem; border-radius: 999px; font-weight: 650; text-decoration: none; line-height: 1.2; border: 2px solid transparent; transition: background-color .15s ease, color .15s ease; }
+.btn.pink { background: var(--lotus); color: #fff; }
+.btn.pink:hover { background: var(--lotus-deep); }
+.btn.line { border-color: var(--spruce); color: var(--spruce); }
+.btn.line:hover { background: var(--spruce); color: var(--frost); }
+.btn.small { min-height: 2.6rem; padding: .55rem 1.05rem; font-size: .95rem; }
+.on-dark .btn.line { border-color: #e4ece6; color: #fff; }
+.on-dark .btn.line:hover { background: #fff; color: var(--spruce); }
+
+/* Season status: the one live fact on their site */
+.status { display: flex; gap: .7rem; align-items: flex-start; font-weight: 550; line-height: 1.35; }
+.status i { flex: none; width: .6rem; height: .6rem; margin-top: .42rem; border-radius: 50%; background: #5f93ad; }
+.status b { font-weight: 650; }
+
+/* Home hero: the name of the town is the headline */
+.hero { padding-top: clamp(1.4rem, 4vw, 3.2rem); }
+.hero-text { display: grid; grid-template-columns: 1fr minmax(18rem, 25rem); gap: 1.5rem 3rem; align-items: end; margin-bottom: clamp(1.2rem, 2.6vw, 2rem); }
+.hero-text .lede { color: var(--ink-soft); margin-top: 1rem; font-size: 1.1rem; }
+.hero-side { display: grid; gap: 1.1rem; padding-bottom: .35rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+.photo { border-radius: 1rem; overflow: hidden; background: #cfd8d2; }
+.photo img { width: 100%; }
+.hero .photo img { aspect-ratio: 1216 / 440; object-fit: cover; object-position: 50% 62%; }
+.side img { aspect-ratio: 800 / 660; object-fit: cover; }
+.cap { font-size: .875rem; color: var(--ink-soft); margin-top: .6rem; }
+
+/* The year ribbon: their 2026 event calendar, month by month, ending where the season stands today */
+.year { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+.year-head { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.year-head p { color: var(--ink-soft); max-width: 30em; }
+.months { list-style: none; padding: 0; align-items: start; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)) minmax(0, 1.5fr); }
+.month { position: relative; padding: 0 .9rem 0 0; }
+.month .band { display: block; height: .9rem; background: var(--c); transform-origin: left; }
+.month:first-child .band { border-radius: 999px 0 0 999px; }
+.month:last-child .band { border-radius: 0 999px 999px 0; }
+.month .m { display: block; font-weight: 650; font-size: .95rem; margin: .8rem 0 .9rem; }
+.ev { margin-bottom: 1.1rem; }
+.ev time { display: block; font-size: .85rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.ev strong { display: block; font-family: "Newsreader", Georgia, serif; font-weight: 500; font-size: 1.22rem; line-height: 1.15; margin: .1rem 0 .25rem; }
+.ev span { display: block; font-size: .9rem; line-height: 1.4; color: var(--ink-soft); }
+.month.now { background: var(--paper); border-radius: 0 0 .8rem .8rem; padding-right: 0; }
+.month.now .m, .month.now .ev { padding: 0 1rem; }
+.month.now .ev strong { color: var(--spruce); }
+.month.now .ev { padding-bottom: 1rem; margin: 0; }
+.now-tag { display: inline-block; background: var(--spruce); color: #fff; font-size: .78rem; font-weight: 650; border-radius: 999px; padding: .15rem .6rem; margin-left: .35rem; vertical-align: .1em; }
+.year-foot { margin-top: 1.4rem; }
+.js .months .band { transform: scaleX(0); }
+.js .months.go .band { transform: scaleX(1); transition: transform .45s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--i) * 110ms); }
+
+/* Sections */
+.sec { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.sec.paper { background: var(--paper); }
+.grows { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.kinds { list-style: none; padding: 0; margin: 1.3rem 0 1.5rem; display: flex; flex-wrap: wrap; gap: .45rem; }
+.kinds li { border: 1.5px solid var(--line); border-radius: 999px; padding: .3rem .8rem; font-size: .95rem; background: var(--frost); }
+.paper .kinds li { background: var(--paper); }
+
+.on-dark { background: var(--spruce); color: #eef3ef; }
+.on-dark p, .on-dark .cap { color: #c9d6cd; }
+.shop { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); }
+.shop .kinds li { background: transparent; border-color: #4b6a59; color: #eef3ef; }
+.quotes { display: grid; gap: 1.2rem; align-content: start; }
+blockquote { border-left: 3px solid var(--lotus-pale); padding: .1rem 0 .1rem 1.1rem; }
+blockquote p { font-family: "Newsreader", Georgia, serif; font-size: 1.25rem; line-height: 1.4; color: inherit; }
+.on-dark blockquote p { color: #fff; }
+blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft); }
+.on-dark blockquote footer { color: #b8c9be; }
+
+.garden { display: grid; gap: 1.6rem; }
+.garden-text { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 3rem; align-items: end; }
+
+.visit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.facts { display: grid; gap: 1rem; margin-top: 1.4rem; }
+.facts div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; border-top: 1px solid var(--line); padding-top: .9rem; }
+.facts dt { font-weight: 650; }
+.facts dd a { font-weight: 600; text-decoration-color: var(--lotus); text-underline-offset: 4px; }
+.facts dd a:hover { color: var(--lotus); }
+
+/* Inner pages */
+.page-head { padding-top: clamp(2rem, 5vw, 3.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.2rem); }
+.page-head p { color: var(--ink-soft); margin-top: .9rem; font-size: 1.1rem; }
+.page-head .actions { margin-top: 1.3rem; }
+.tags { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+.tag { background: var(--paper); border-radius: .35rem .35rem 1.6rem 1.6rem; padding: 1.1rem 1.2rem 1.4rem; border-top: .45rem solid var(--c, var(--leaf)); }
+.tag h3 { font-size: 1.28rem; }
+.tag .kind { font-stretch: 85%; font-weight: 600; font-size: .9rem; color: var(--ink-soft); margin-top: .2rem; }
+.tag p { font-size: .97rem; line-height: 1.5; margin-top: .55rem; color: var(--ink-soft); }
+.block { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.block > h2 { margin-bottom: 1.2rem; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.prose p + p { margin-top: 1rem; }
+.prose h3 { margin: 1.8rem 0 .6rem; }
+.steps { list-style: none; padding: 0; counter-reset: s; display: grid; gap: 1rem; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2.4rem 1fr; gap: .9rem; }
+.steps li::before { content: counter(s); font-family: "Newsreader", Georgia, serif; font-size: 1.5rem; line-height: 1.8rem; width: 2.4rem; height: 2.4rem; border-radius: 50%; display: grid; place-items: center; background: var(--paper); border: 1.5px solid var(--line); }
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.plan { background: var(--paper); border-radius: .9rem; padding: 1.3rem 1.3rem 1.5rem; }
+.plan .price { font-family: "Newsreader", Georgia, serif; font-size: 2.2rem; line-height: 1.1; margin: .4rem 0 .5rem; font-variant-numeric: lining-nums; }
+.plan p { font-size: .97rem; color: var(--ink-soft); }
+.note { background: var(--paper); border-radius: .9rem; padding: 1.2rem 1.3rem; }
+.note p { font-size: .97rem; }
+.note p + p { margin-top: .7rem; }
+.shop-sign { background: var(--paper); border-radius: .9rem; padding: 1.2rem 1.3rem; display: grid; gap: .5rem; }
+.shop-sign .addr { font-family: "Newsreader", Georgia, serif; font-size: 1.6rem; line-height: 1.1; overflow-wrap: anywhere; }
+.list-events { list-style: none; padding: 0; display: grid; gap: 0; }
+.list-events li { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 1.5rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
+.list-events time { font-weight: 650; font-variant-numeric: tabular-nums; }
+.list-events time small { display: block; font-weight: 400; color: var(--ink-soft); font-size: .9rem; }
+.list-events h2 { font-size: 1.45rem; line-height: 1.15; margin-bottom: .45rem; }
+.list-events p { color: var(--ink-soft); }
+.list-events p + p { margin-top: .6rem; }
+.list-events .chip { display: inline-block; width: .8rem; height: .8rem; border-radius: 50%; background: var(--c); margin-right: .5rem; vertical-align: .05em; }
+
+/* Footer */
+.foot { background: var(--spruce); color: #d6e1da; padding: 3rem 0 6rem; margin-top: clamp(3rem, 7vw, 5rem); font-size: .95rem; }
+.foot .cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2rem; }
+.foot h2 { font-size: 1.5rem; color: #fff; margin-bottom: .6rem; }
+.foot a { color: #fff; text-underline-offset: 3px; }
+.foot nav { display: grid; gap: .35rem; }
+.foot .legal { margin-top: 2.2rem; padding-top: 1.2rem; border-top: 1px solid #3c5a4a; font-size: .85rem; color: #b9c8bf; max-width: none; }
+
+/* Sticky phone bar after the hero */
+.dock { display: none; }
+
+@media (max-width: 900px) {
+  .months { grid-template-columns: 1fr; }
+  .month { display: grid; grid-template-columns: .55rem 5.6rem 1fr; gap: 0 1rem; padding: 0; }
+  .month .band { grid-row: 1 / span 9; width: .55rem; height: auto; transform-origin: top; }
+  .month:first-child .band { border-radius: 999px 999px 0 0; }
+  .month:last-child .band { border-radius: 0 0 999px 999px; }
+  .month .m { margin: .25rem 0 1rem; grid-column: 2; }
+  .month .evs { grid-column: 3; padding-bottom: .4rem; }
+  .month.empty .m { margin-bottom: 1.2rem; }
+  .month.now { background: transparent; }
+  .month.now .m, .month.now .ev { padding: 0; }
+  .month.now .evs { background: var(--paper); border-radius: .8rem; padding: .9rem 1rem; margin-bottom: .3rem; }
+  .js .months .band { transform: scaleY(0); }
+  .js .months.go .band { transform: scaleY(1); }
+  .grows, .shop, .visit, .two { grid-template-columns: 1fr; }
+  .plans { grid-template-columns: 1fr; }
+  .foot .cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .nav > a { display: none; }
+  .menu { display: block; }
+  .brand img { width: 133px; height: 38px; }
+  .hero-text { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.2rem; }
+  .hero-text .lede { font-size: 1rem; margin-top: .7rem; }
+  h1 { font-size: clamp(2.45rem, 11.5vw, 3.4rem); }
+  .actions .btn { flex: 1 1 100%; }
+  .hero .photo img { aspect-ratio: 800 / 660; }
+  .garden-text { grid-template-columns: 1fr; }
+  .list-events li { grid-template-columns: 1fr; gap: .5rem; }
+  .tags { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: .75rem; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) .6rem; scroll-padding: 0 var(--pad); }
+  .tag { flex: 0 0 82%; scroll-snap-align: start; }
+  .facts div { grid-template-columns: 1fr; gap: .2rem; }
+  .dock { display: flex; gap: .6rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; padding: .65rem 1rem calc(.65rem + env(safe-area-inset-bottom)); background: rgba(241, 244, 242, .96); border-top: 1px solid var(--line); transform: translateY(110%); transition: transform .25s ease; }
+  .dock.show { transform: none; }
+  .dock .btn { flex: 1; min-height: 2.9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+  .js .months .band { transform: none; }
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Winter Greenhouse, Winter, Wisconsin">
+<meta property="og:description" content="Garden center and nursery in Winter, Wisconsin, near Hayward. Local store closed for the season, online shop open year round.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/winter-greenhouse-winter-wi/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/winter-greenhouse-winter-wi/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Winter Greenhouse. Not affiliated with or endorsed by Winter Greenhouse.</p>
+<header class="wrap top">
+  <a class="brand" href="index.html"><img src="img/logo.webp" width="308" height="88" alt="Winter Greenhouse, growing with you"></a>
+  <nav class="nav" aria-label="Main">
+    <a href="plants.html">Plants</a><a href="shop.html">Shop online</a><a href="landscaping.html">Landscaping</a><a href="events.html">Events</a><a href="visit.html">Visit</a>
+    <details class="menu"><summary>Menu</summary><div class="menu-list"><a href="index.html" aria-current="page">Home</a><a href="plants.html">Plants</a><a href="shop.html">Shop online</a><a href="landscaping.html">Landscaping</a><a href="events.html">Events</a><a href="visit.html">Visit</a><a href="tel:+17152005430">Call (715) 200-5430</a></div></details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="wrap hero" data-hero>
+  <div class="hero-text">
+    <div>
+      <h1>A greenhouse in Winter, Wisconsin</h1>
+      <p class="lede">Garden center and nursery in the Northwoods, 30 miles southeast of Hayward. Hardy perennials, annuals, trees, shrubs, water plants and exotics, with display gardens they have designed and grown for 40 years.</p>
+    </div>
+    <div class="hero-side">
+      <p class="status"><i aria-hidden="true"></i><span><b>Local store currently closed for the season.</b> Online shop open year round.</span></p>
+      <div class="actions"><a class="btn pink" href="shop.html">Shop online</a><a class="btn line" href="tel:+17152005430">Call (715) 200-5430</a></div>
+    </div>
+  </div>
+  <div class="photo"><picture><source media="(max-width: 760px)" srcset="img/aerial-m520.webp 520w, img/aerial-m800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="660"><img src="img/aerial-1000.webp" srcset="img/aerial-1000.webp 1000w, img/aerial-1600.webp 1600w" sizes="(min-width: 1312px) 1216px, calc(100vw - 6rem)" width="1600" height="660" alt="Aerial view of Winter Greenhouse: the long white greenhouses, the nursery yard and the shop buildings, with the Northwoods in fall colour around them" fetchpriority="high"></picture></div>
+</section>
+
+<section class="wrap year" aria-labelledby="year-h">
+  <div class="year-head">
+    <h2 id="year-h">The 2026 season at the greenhouse</h2>
+    <p>Seven weekends and sales, from the bareroot trees in spring to the mums in September. Dates as posted on their event pages.</p>
+  </div>
+  <ol class="months" aria-label="2026 season, April to now"><li class="month" style="--c:#9cc77a;--i:0"><i class="band" aria-hidden="true"></i><span class="m">April</span><div class="evs"><div class="ev"><time datetime="2026-04-30">Apr 30 – May 2</time><strong>Bareroot Days</strong><span>The three-day bareroot sale that starts the season.</span></div></div></li><li class="month" style="--c:#e889b5;--i:1"><i class="band" aria-hidden="true"></i><span class="m">May</span><div class="evs"><div class="ev"><time datetime="2026-05-09">May 9 – 10</time><strong>Mother’s Day Weekend</strong><span>Hundreds of gifts and containers planted for the weekend.</span></div><div class="ev"><time datetime="2026-05-23">May 23 – 25</time><strong>Memorial Day Weekend</strong><span>Time to plant out veggies and bedding plants.</span></div></div></li><li class="month" style="--c:#5f9c48;--i:2"><i class="band" aria-hidden="true"></i><span class="m">June</span><div class="evs"><div class="ev"><time datetime="2026-06-20">June 20 – 21</time><strong>Father’s Day</strong><span>Fruit trees and unusual evergreens.</span></div></div></li><li class="month" style="--c:#2f6f3f;--i:3"><i class="band" aria-hidden="true"></i><span class="m">July</span><div class="evs"><div class="ev"><time datetime="2026-07-01">July 1 – 31</time><strong>Bonus Bill Days</strong><span>Bonus Bills apply to up to 50% of plant purchases.</span></div></div></li><li class="month" style="--c:#c23b7a;--i:4"><i class="band" aria-hidden="true"></i><span class="m">August</span><div class="evs"><div class="ev"><time datetime="2026-08-01">Aug 1</time><strong>ScentSational Summer Sale</strong><span>Scent and sensory displays, one day only.</span></div></div></li><li class="month" style="--c:#c8652c;--i:5"><i class="band" aria-hidden="true"></i><span class="m">September</span><div class="evs"><div class="ev"><time datetime="2026-09-05">Sept 5 – 6</time><strong>Autumn Splendor</strong><span>The last event of the year, with drawings for free mums.</span></div></div></li><li class="month empty" style="--c:#8e3d1b;--i:6"><i class="band" aria-hidden="true"></i><span class="m">October</span><div class="evs"></div></li><li class="month now" style="--c:#b9d3e0;--i:7"><i class="band" aria-hidden="true"></i><span class="m">November <span class="now-tag">Now</span></span><div class="evs"><div class="ev"><strong>Store closed for the season</strong><span>The online shop is open year round.</span></div></div></li></ol>
+  <p class="year-foot"><a class="btn line small" href="events.html">What happens at each event</a></p>
+</section>
+
+<section class="sec paper" aria-labelledby="grow-h">
+  <div class="wrap grows">
+    <div class="photo side"><img src="img/benches-m800.webp" srcset="img/benches-m520.webp 520w, img/benches-m800.webp 800w" sizes="(min-width: 1312px) 720px, (min-width: 901px) 58vw, calc(100vw - 2rem)" width="800" height="660" alt="Greenhouse benches full of red and pink flowers under rows of hanging baskets" loading="lazy" decoding="async"></div>
+    <div>
+      <h2 id="grow-h">What grows here</h2>
+      <ul class="kinds">
+        <li>Hardy perennials</li><li>Annuals</li><li>Vegetables</li><li>Ornamental trees</li><li>Evergreens</li><li>Fruit trees</li><li>Small fruits</li><li>Shrubs</li><li>Vines</li><li>Roses</li><li>Herbs</li><li>Water plants</li><li>Exotics</li><li>Wildflowers</li><li>Ornamental grasses</li>
+      </ul>
+      <p>Hanging baskets and planters of every description, size and shape surround the facility.</p>
+      <p style="margin-top:1.3rem"><a class="btn pink small" href="plants.html">See this year’s new plants</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-dark" aria-labelledby="shop-h">
+  <div class="wrap shop">
+    <div>
+      <h2 id="shop-h">Online shop open year round</h2>
+      <p style="margin-top:1rem">Alongside the greenhouse they sell a limited variety of smaller plants and garden items online, shipped to your door.</p>
+      <ul class="kinds">
+        <li>Ground cover plants</li><li>Smaller houseplants</li><li>Succulents</li><li>Hen &amp; chicks</li><li>Terrarium plants</li><li>Air plants</li><li>Quart sized shrubs</li><li>Fairy garden items</li>
+      </ul>
+      <div class="actions"><a class="btn pink" href="shop.html">Shop online</a><a class="btn line" href="shop.html#voucher">Gift voucher</a></div>
+    </div>
+    <div class="quotes">
+      <blockquote><p>“MUCH nicer than I ever expected mail order. I appreciate it very much! 110% satisfied customer!”</p><footer>Tom Smith, online customer</footer></blockquote>
+      <blockquote><p>“I’ve been buying various sempervivums looking to acquire many species and yours have been the healthiest and most accurate to the picture.”</p><footer>Terry, online customer</footer></blockquote>
+      <blockquote><p>“Received my order in perfect condition. Thank you so much Sheila for the great packing.”</p><footer>Angela, online customer</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="garden-h">
+  <div class="wrap garden">
+    <div class="garden-text">
+      <div>
+        <h2 id="garden-h">Display gardens, and the people who grew them</h2>
+        <p style="margin-top:1rem">Based on 40 years of experience designing and growing the greenhouse display gardens, Winter Greenhouse also designs and installs landscapes, with before-and-after images of your own yard.</p>
+      </div>
+      <a class="btn line" href="landscaping.html">Landscape design</a>
+    </div>
+    <div class="photo"><picture><source media="(max-width: 760px)" srcset="img/pond-m520.webp 520w, img/pond-m800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="660"><img src="img/pond-1000.webp" srcset="img/pond-1000.webp 1000w, img/pond-1600.webp 1600w" sizes="(min-width: 1312px) 1216px, calc(100vw - 6rem)" width="1600" height="660" alt="A pond in the greenhouse display garden, with water lilies, reeds and the summer sky reflected in the water" loading="lazy" decoding="async"></picture></div>
+  </div>
+</section>
+
+<section class="sec paper" aria-labelledby="visit-h">
+  <div class="wrap visit">
+    <div>
+      <h2 id="visit-h">Hidden away in the Northwoods</h2>
+      <p style="margin-top:1rem">About 90 miles north of Eau Claire and 30 miles southeast of Hayward. From Winter, at the junction of State Hwy. 70 and County Road W, go 2 miles north on W to Olmstead Road. Turn left and go about half a mile to the greenhouse. Just watch for the signs.</p>
+      <dl class="facts">
+        <div><dt>Address</dt><dd>W7041 Olmstead Road, Winter, WI 54896</dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+17152005430">(715) 200-5430</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:info@wintergreenhouse.com">info@wintergreenhouse.com</a></dd></div>
+        <div><dt>Season</dt><dd>Local store currently closed for the season, online shop open year round!</dd></div>
+      </dl>
+    </div>
+    <div>
+      <div class="photo side"><img src="img/staff-m800.webp" srcset="img/staff-m520.webp 520w, img/staff-m800.webp 800w" sizes="(min-width: 1312px) 584px, (min-width: 901px) 46vw, calc(100vw - 2rem)" width="800" height="660" alt="Inside the greenhouse shop, holding up a hanging basket of flowers" loading="lazy" decoding="async"></div>
+      <p class="cap">Featured on TravelWISCONSIN.com as one of the top 15 places in Wisconsin “to Stop and Smell the Roses, Lilacs and Other Blooming Wonders”.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2>Winter Greenhouse</h2>
+        <p>W7041 Olmstead Road<br>Winter, WI 54896</p>
+        <p style="margin-top:.8rem">Local store currently closed for the season, online shop open year round!</p>
+      </div>
+      <div>
+        <p><a href="tel:+17152005430">(715) 200-5430</a><br><a href="mailto:info@wintergreenhouse.com">info@wintergreenhouse.com</a></p>
+        <p style="margin-top:.8rem">Fax +1-715-200-5431</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a><a href="plants.html">Plants</a><a href="shop.html">Shop online</a><a href="landscaping.html">Landscaping</a><a href="events.html">Events</a><a href="visit.html">Visit</a>
+      </nav>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Winter Greenhouse. Not affiliated with or endorsed by Winter Greenhouse. Text and photos are Winter Greenhouse's own, from their public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="dock" aria-label="Quick actions"><a class="btn pink" href="shop.html">Shop online</a><a class="btn line" href="tel:+17152005430">Call</a></div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var months = document.querySelector('.months');
+  var dock = document.querySelector('.dock');
+  var hero = document.querySelector('[data-hero]');
+  if (!('IntersectionObserver' in window)) { root.classList.remove('js'); if (dock) dock.classList.add('show'); return; }
+  if (months) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { months.classList.add('go'); io.disconnect(); } }); }, { threshold: 0.25 });
+    io.observe(months);
+  }
+  if (dock && hero) {
+    new IntersectionObserver(function (es) { dock.classList.toggle('show', !es[0].isIntersecting); }).observe(hero);
+  } else if (dock) { dock.classList.add('show'); }
+})();
+</script>
+
+</body>
+</html>
