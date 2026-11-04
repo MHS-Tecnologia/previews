@@ -133,7 +133,17 @@ blockquote p { font-family: "Newsreader", Georgia, serif; font-size: 1.25rem; li
 blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft); }
 .on-dark blockquote footer { color: #b8c9be; }
 
-.garden { display: grid; gap: 1.6rem; }
+.garden-home { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.land-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'h ba' 't ba'; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.land-hero h1 { grid-area: h; align-self: end; }
+.land-hero .ba-wrap { grid-area: ba; }
+.land-hero .t { grid-area: t; }
+.land-hero .t > p { color: var(--ink-soft); font-size: 1.1rem; }
+.land-hero .actions { margin-top: 1.3rem; }
+.ba-grid .side { border-radius: 1rem; }
+.strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; }
+.strip img { border-radius: 1rem; width: 100%; aspect-ratio: 1; object-fit: cover; background: #fff; }
+.strip figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: .5rem; }
 .garden-text { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 3rem; align-items: end; }
 
 .visit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
@@ -221,6 +231,10 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .grows, .shop, .visit, .two { grid-template-columns: 1fr; }
   .plans { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: 1fr; }
+  .garden-home { grid-template-columns: 1fr; }
+  .land-hero { grid-template-columns: 1fr; grid-template-areas: 'h' 'ba' 't'; }
+  .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) .6rem; scroll-padding: 0 var(--pad); }
+  .strip li { flex: 0 0 78%; scroll-snap-align: start; }
   .foot .cols { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
@@ -323,15 +337,13 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
 </section>
 
 <section class="sec" aria-labelledby="garden-h">
-  <div class="wrap garden">
-    <div class="garden-text">
-      <div>
-        <h2 id="garden-h">Display gardens, and the people who grew them</h2>
-        <p style="margin-top:1rem">Based on 40 years of experience designing and growing the greenhouse display gardens, Winter Greenhouse also designs and installs landscapes, with before-and-after images of your own yard.</p>
-      </div>
-      <div class="actions"><a class="btn pink" href="landscaping.html#cost">Plan your yard, from ~$199</a><a class="btn line" href="landscaping.html">Landscape design</a></div>
+  <div class="wrap garden-home">
+    <div>
+      <h2 id="garden-h">See your yard planted before it is planted</h2>
+      <p style="margin-top:1rem">Based on 40 years of experience designing and growing the greenhouse display gardens, Winter Greenhouse also designs and installs landscapes. They photograph your yard and digitally impose the design on it, so you see the result first.</p>
+      <div class="actions" style="margin-top:1.4rem"><a class="btn pink" href="landscaping.html#cost">Plan your yard, from ~$199</a><a class="btn line" href="landscaping.html">Landscape design</a></div>
     </div>
-    <div class="photo"><picture><source media="(max-width: 760px)" srcset="img/pond-m520.webp 520w, img/pond-m640.webp 640w, img/pond-m800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="660"><img src="img/pond-1000.webp" srcset="img/pond-1000.webp 1000w, img/pond-1600.webp 1600w" sizes="(min-width: 1312px) 1216px, calc(100vw - 6rem)" width="1600" height="660" alt="A pond in the greenhouse display garden, with water lilies, reeds and the summer sky reflected in the water" loading="lazy" decoding="async"></picture></div>
+    <div><figure class="ba" style="--x:50%"><div class="ba-box"><img src="img/ba-koehler-before.webp" width="760" height="540" alt="Before: A log home with a bare dirt yard along the stone foundation" loading="lazy" decoding="async"><img class="ba-after" src="img/ba-koehler-after.webp" width="760" height="540" alt="Design image: The same log home with a planted border of flowering shrubs, grasses and lawn" loading="lazy" decoding="async"><span class="ba-line" aria-hidden="true"></span><span class="ba-l b" aria-hidden="true">Before</span><span class="ba-l a" aria-hidden="true">Design</span><input type="range" min="0" max="100" value="50" aria-label="Compare before and design image"></div></figure><p class="cap">Drag to compare: a yard as photographed, and their design image for it.</p></div>
   </div>
 </section>
 
@@ -388,9 +400,16 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
     io.observe(months);
   }
   document.querySelectorAll('.ba').forEach(function (f) { var r = f.querySelector('input'); r.addEventListener('input', function () { f.style.setProperty('--x', r.value + '%'); }); });
-  if (dock && hero) {
-    new IntersectionObserver(function (es) { dock.classList.toggle('show', !es[0].isIntersecting); }).observe(hero);
-  } else if (dock) { dock.classList.add('show'); }
+  if (dock) {
+    var seen = new Set();
+    var watch = [].slice.call(document.querySelectorAll('[data-hero], .ba'));
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+      dock.classList.toggle('show', seen.size === 0 && (!hero || hero.getBoundingClientRect().bottom < 0));
+    });
+    watch.forEach(function (el) { io2.observe(el); });
+    if (!watch.length) dock.classList.add('show');
+  }
 })();
 </script>
 

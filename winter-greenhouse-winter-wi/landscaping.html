@@ -9,8 +9,7 @@
 <meta name="theme-color" content="#f1f4f2">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/newsreader.woff2" crossorigin>
-<link rel="preload" as="image" media="(max-width: 760px)" imagesrcset="img/garden-m520.webp 520w, img/garden-m640.webp 640w, img/garden-m800.webp 800w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
-<link rel="preload" as="image" media="(min-width: 761px)" imagesrcset="img/garden-1000.webp 1000w, img/garden-1600.webp 1600w" imagesizes="(min-width: 1312px) 1216px, calc(100vw - 6rem)" fetchpriority="high">
+
 <style>
 @font-face { font-family: "Newsreader"; font-weight: 300 600; font-display: swap; src: url(fonts/newsreader.woff2) format("woff2"); }
 @font-face { font-family: "Instrument Sans"; font-weight: 400 700; font-stretch: 75% 100%; font-display: swap; src: url(fonts/instrument-sans.woff2) format("woff2"); }
@@ -133,7 +132,17 @@ blockquote p { font-family: "Newsreader", Georgia, serif; font-size: 1.25rem; li
 blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft); }
 .on-dark blockquote footer { color: #b8c9be; }
 
-.garden { display: grid; gap: 1.6rem; }
+.garden-home { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.land-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'h ba' 't ba'; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.land-hero h1 { grid-area: h; align-self: end; }
+.land-hero .ba-wrap { grid-area: ba; }
+.land-hero .t { grid-area: t; }
+.land-hero .t > p { color: var(--ink-soft); font-size: 1.1rem; }
+.land-hero .actions { margin-top: 1.3rem; }
+.ba-grid .side { border-radius: 1rem; }
+.strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; }
+.strip img { border-radius: 1rem; width: 100%; aspect-ratio: 1; object-fit: cover; background: #fff; }
+.strip figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: .5rem; }
 .garden-text { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 3rem; align-items: end; }
 
 .visit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
@@ -221,6 +230,10 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .grows, .shop, .visit, .two { grid-template-columns: 1fr; }
   .plans { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: 1fr; }
+  .garden-home { grid-template-columns: 1fr; }
+  .land-hero { grid-template-columns: 1fr; grid-template-areas: 'h' 'ba' 't'; }
+  .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) .6rem; scroll-padding: 0 var(--pad); }
+  .strip li { flex: 0 0 78%; scroll-snap-align: start; }
   .foot .cols { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
@@ -260,19 +273,20 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
 </header>
 <main id="main">
 
-<section class="wrap page-head">
+<section class="wrap page-head land-hero">
   <h1>Landscape design, seen before it is planted</h1>
-  <p>Built on 40 years of designing and growing the greenhouse display gardens. They photograph your yard, then show you the design on your own house with digitally imposed images, before anything goes in the ground.</p>
-  <div class="actions"><a class="btn pink" href="tel:+17152005430">Call (715) 200-5430</a><a class="btn line" href="mailto:info@wintergreenhouse.com?subject=Landscaping">Email about a project</a></div>
+  <div class="ba-wrap"><figure class="ba" style="--x:50%"><div class="ba-box"><img src="img/ba-koehler-before.webp" width="760" height="540" alt="Before: A log home with a bare dirt yard along the stone foundation" fetchpriority="high"><img class="ba-after" src="img/ba-koehler-after.webp" width="760" height="540" alt="Design image: The same log home with a planted border of flowering shrubs, grasses and lawn" fetchpriority="high"><span class="ba-line" aria-hidden="true"></span><span class="ba-l b" aria-hidden="true">Before</span><span class="ba-l a" aria-hidden="true">Design</span><input type="range" min="0" max="100" value="50" aria-label="Compare before and design image"></div></figure><p class="cap">Drag to compare: the yard as photographed, and the design digitally imposed on it. From their landscaping page.</p></div>
+  <div class="t">
+    <p>Built on 40 years of designing and growing the greenhouse display gardens. They photograph your yard, then show you the design on your own house with digitally imposed images, before anything goes in the ground.</p>
+    <div class="actions"><a class="btn pink" href="tel:+17152005430">Call (715) 200-5430</a><a class="btn line" href="mailto:info@wintergreenhouse.com?subject=Landscaping">Email about a project</a></div>
+  </div>
 </section>
 <div class="wrap">
-  <div class="photo"><picture><source media="(max-width: 760px)" srcset="img/garden-m520.webp 520w, img/garden-m640.webp 640w, img/garden-m800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="660"><img src="img/garden-1000.webp" srcset="img/garden-1000.webp 1000w, img/garden-1600.webp 1600w" sizes="(min-width: 1312px) 1216px, calc(100vw - 6rem)" width="1600" height="660" alt="The display garden at Winter Greenhouse: a stone-edged pond with water plants, ornamental grasses and a blue spruce, with the greenhouses behind" fetchpriority="high"></picture></div>
-  <p class="cap">The display garden at the greenhouse.</p>
 
   <section class="block" aria-labelledby="ba-h">
-    <h2 id="ba-h">Before, and the design image</h2>
-    <p style="margin:.6rem 0 1.4rem;color:var(--ink-soft)">Two pairs from the before-and-after slideshows on their landscaping page: the yard as photographed, and the design digitally imposed on it. Drag the handle to compare.</p>
-    <div class="ba-grid"><figure class="ba" style="--x:50%"><div class="ba-box"><img src="img/ba-koehler-before.webp" width="760" height="540" alt="Before: A log home with a bare dirt yard along the stone foundation" loading="lazy" decoding="async"><img class="ba-after" src="img/ba-koehler-after.webp" width="760" height="540" alt="Design image: The same log home with a planted border of flowering shrubs, grasses and lawn" loading="lazy" decoding="async"><span class="ba-line" aria-hidden="true"></span><span class="ba-l b" aria-hidden="true">Before</span><span class="ba-l a" aria-hidden="true">Design</span><input type="range" min="0" max="100" value="50" aria-label="Compare before and design image"></div></figure><figure class="ba" style="--x:50%"><div class="ba-box"><img src="img/ba-harty1-before.webp" width="760" height="540" alt="Before: Bare, dug-up ground under a raised deck on stone piers" loading="lazy" decoding="async"><img class="ba-after" src="img/ba-harty1-after.webp" width="760" height="540" alt="Design image: The same deck with a curving bed of grasses, shrubs and flowers edged by lawn" loading="lazy" decoding="async"><span class="ba-line" aria-hidden="true"></span><span class="ba-l b" aria-hidden="true">Before</span><span class="ba-l a" aria-hidden="true">Design</span><input type="range" min="0" max="100" value="50" aria-label="Compare before and design image"></div></figure></div>
+    <h2 id="ba-h">Another yard, and the gardens behind the designs</h2>
+    <p style="margin:.6rem 0 1.4rem;color:var(--ink-soft)">Left, a second pair from their before-and-after slideshows. Right, the display garden at the greenhouse.</p>
+    <div class="ba-grid"><figure class="ba" style="--x:50%"><div class="ba-box"><img src="img/ba-harty1-before.webp" width="760" height="540" alt="Before: Bare, dug-up ground under a raised deck on stone piers" loading="lazy" decoding="async"><img class="ba-after" src="img/ba-harty1-after.webp" width="760" height="540" alt="Design image: The same deck with a curving bed of grasses, shrubs and flowers edged by lawn" loading="lazy" decoding="async"><span class="ba-line" aria-hidden="true"></span><span class="ba-l b" aria-hidden="true">Before</span><span class="ba-l a" aria-hidden="true">Design</span><input type="range" min="0" max="100" value="50" aria-label="Compare before and design image"></div></figure><div class="photo side"><img src="img/garden-m800.webp" srcset="img/garden-m520.webp 520w, img/garden-m640.webp 640w, img/garden-m800.webp 800w" sizes="(min-width: 1312px) 600px, (min-width: 901px) 48vw, calc(100vw - 2rem)" width="800" height="660" alt="The display garden at Winter Greenhouse: a stone-edged pond with water plants, ornamental grasses and a blue spruce, with the greenhouses behind" loading="lazy" decoding="async"></div></div>
   </section>
   <section class="block two" aria-labelledby="how-h">
     <div>
@@ -342,9 +356,16 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
     io.observe(months);
   }
   document.querySelectorAll('.ba').forEach(function (f) { var r = f.querySelector('input'); r.addEventListener('input', function () { f.style.setProperty('--x', r.value + '%'); }); });
-  if (dock && hero) {
-    new IntersectionObserver(function (es) { dock.classList.toggle('show', !es[0].isIntersecting); }).observe(hero);
-  } else if (dock) { dock.classList.add('show'); }
+  if (dock) {
+    var seen = new Set();
+    var watch = [].slice.call(document.querySelectorAll('[data-hero], .ba'));
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+      dock.classList.toggle('show', seen.size === 0 && (!hero || hero.getBoundingClientRect().bottom < 0));
+    });
+    watch.forEach(function (el) { io2.observe(el); });
+    if (!watch.length) dock.classList.add('show');
+  }
 })();
 </script>
 

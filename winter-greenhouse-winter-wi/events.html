@@ -133,7 +133,17 @@ blockquote p { font-family: "Newsreader", Georgia, serif; font-size: 1.25rem; li
 blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft); }
 .on-dark blockquote footer { color: #b8c9be; }
 
-.garden { display: grid; gap: 1.6rem; }
+.garden-home { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.land-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'h ba' 't ba'; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.land-hero h1 { grid-area: h; align-self: end; }
+.land-hero .ba-wrap { grid-area: ba; }
+.land-hero .t { grid-area: t; }
+.land-hero .t > p { color: var(--ink-soft); font-size: 1.1rem; }
+.land-hero .actions { margin-top: 1.3rem; }
+.ba-grid .side { border-radius: 1rem; }
+.strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; }
+.strip img { border-radius: 1rem; width: 100%; aspect-ratio: 1; object-fit: cover; background: #fff; }
+.strip figcaption { font-size: .9rem; color: var(--ink-soft); margin-top: .5rem; }
 .garden-text { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 3rem; align-items: end; }
 
 .visit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
@@ -221,6 +231,10 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .grows, .shop, .visit, .two { grid-template-columns: 1fr; }
   .plans { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: 1fr; }
+  .garden-home { grid-template-columns: 1fr; }
+  .land-hero { grid-template-columns: 1fr; grid-template-areas: 'h' 'ba' 't'; }
+  .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) .6rem; scroll-padding: 0 var(--pad); }
+  .strip li { flex: 0 0 78%; scroll-snap-align: start; }
   .foot .cols { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
@@ -306,9 +320,16 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
     io.observe(months);
   }
   document.querySelectorAll('.ba').forEach(function (f) { var r = f.querySelector('input'); r.addEventListener('input', function () { f.style.setProperty('--x', r.value + '%'); }); });
-  if (dock && hero) {
-    new IntersectionObserver(function (es) { dock.classList.toggle('show', !es[0].isIntersecting); }).observe(hero);
-  } else if (dock) { dock.classList.add('show'); }
+  if (dock) {
+    var seen = new Set();
+    var watch = [].slice.call(document.querySelectorAll('[data-hero], .ba'));
+    var io2 = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+      dock.classList.toggle('show', seen.size === 0 && (!hero || hero.getBoundingClientRect().bottom < 0));
+    });
+    watch.forEach(function (el) { io2.observe(el); });
+    if (!watch.length) dock.classList.add('show');
+  }
 })();
 </script>
 
