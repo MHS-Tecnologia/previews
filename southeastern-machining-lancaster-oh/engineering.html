@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Engineering and design | Southeastern Machining and Field Service</title>
+<meta name="description" content="SolidWorks and Autodesk Fusion models, ASME Y14.5 drawings, reverse engineering and prototypes from SEM&#x27;s engineering team in Lancaster, Ohio.">
+<meta name="theme-color" content="#fafbfb">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/encode.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" imagesrcset="img/drawing-640.webp 640w, img/drawing-1100.webp 1100w" imagesizes="(min-width: 75rem) 39rem, (min-width: 960px) 52vw, calc(100vw - 2rem - 4px)" fetchpriority="high">
+<style>
+@font-face { font-family: "Encode Sans"; font-weight: 100 900; font-stretch: 75% 125%; font-display: swap; src: url(fonts/encode.woff2) format("woff2"); }
+
+/* Drawing paper, the graphite of a print, steel grey, and the red of the SEM logo. */
+:root {
+  --paper: #eceeef;
+  --sheet: #fafbfb;
+  --ink: #1d2125;
+  --steel: #565e66;
+  --line: #b4bbc1;
+  --red: #e2141e;
+  --red-ink: #b3101a;
+  --pad: clamp(1rem, 3.5vw, 2.5rem);
+  --max: 75rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 "Encode Sans", system-ui, sans-serif; font-stretch: 100%; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--red-ink); outline-offset: 3px; }
+h1, h2, h3 { font-stretch: 125%; font-weight: 800; line-height: 1.04; letter-spacing: -.01em; text-wrap: balance; }
+h2 { font-size: clamp(1.6rem, 1.1rem + 2vw, 2.5rem); }
+h3 { font-size: 1.15rem; line-height: 1.2; }
+p { max-width: 68ch; text-wrap: pretty; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff; padding: .6rem 1rem; z-index: 50; }
+.skip:focus { left: 1rem; }
+
+/* demo notice */
+.demo { background: var(--ink); color: #d9dde0; font-size: .78rem; line-height: 1.4; padding: .45rem var(--pad); text-align: center; max-width: none; }
+
+/* header */
+.top { background: var(--sheet); border-bottom: 1px solid var(--line); position: relative; z-index: 20; }
+.top .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
+.brand { display: block; flex: none; }
+.brand img { width: 6rem; height: auto; }
+.nav { display: flex; align-items: center; gap: 1.6rem; margin-left: auto; font-size: .95rem; font-weight: 600; }
+.nav > a { text-decoration: none; padding: .4rem 0; border-bottom: 2px solid transparent; }
+.nav > a:hover { border-color: var(--line); }
+.nav > a[aria-current] { border-color: var(--red); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; padding: .7rem 1.25rem; font-weight: 700; font-size: 1rem; text-decoration: none; border: 2px solid var(--red-ink); background: var(--red-ink); color: #fff; border-radius: 2px; }
+.btn:hover { background: #8f0c14; border-color: #8f0c14; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: #fff; }
+.btn svg { width: 1.1rem; height: 1.1rem; flex: none; }
+.top .tel { font-weight: 700; text-decoration: none; white-space: nowrap; }
+.menu { display: none; position: relative; margin-left: auto; }
+.menu summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: 0 .9rem; border: 2px solid var(--ink); font-weight: 700; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { background: var(--ink); color: #fff; }
+.menu nav { position: absolute; right: 0; top: calc(100% + .5rem); width: min(18rem, calc(100vw - 2rem)); background: var(--sheet); border: 1px solid var(--ink); box-shadow: 6px 6px 0 rgba(29,33,37,.18); display: grid; }
+.menu nav a { padding: .85rem 1rem; text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--line); }
+.menu nav a:last-child { border-bottom: 0; }
+.menu nav a[aria-current] { color: var(--red-ink); }
+
+/* ---------- the drawing sheet (hero of every page) ---------- */
+.hero { padding: 1.5rem 0 0; }
+.sheet { position: relative; background: var(--sheet); border: 2px solid var(--ink); display: grid; grid-template-columns: 1.6rem 1fr 1.6rem; grid-template-rows: 1.6rem auto 1.6rem; }
+.zones { display: grid; font-size: .7rem; font-weight: 600; color: var(--steel); font-stretch: 100%; }
+.zones span { display: grid; place-items: center; }
+.zones.x { grid-column: 2; grid-template-columns: repeat(8, 1fr); }
+.zones.x span + span { border-left: 1px solid var(--line); }
+.zones.x.t { grid-row: 1; border-bottom: 1px solid var(--ink); }
+.zones.x.b { grid-row: 3; border-top: 1px solid var(--ink); }
+.zones.y { grid-row: 2; grid-template-rows: repeat(4, 1fr); }
+.zones.y span + span { border-top: 1px solid var(--line); }
+.zones.y.l { grid-column: 1; border-right: 1px solid var(--ink); }
+.zones.y.r { grid-column: 3; border-left: 1px solid var(--ink); }
+.field { grid-column: 2; grid-row: 2; display: grid; grid-template-columns: minmax(0, 13fr) minmax(0, 11fr); }
+.view { margin: 0; position: relative; border-right: 1px solid var(--ink); background: var(--ink); }
+.view img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+.view figcaption { position: absolute; left: 0; bottom: 0; background: var(--sheet); border: 1px solid var(--ink); border-left: 0; border-bottom: 0; padding: .35rem .8rem; font-size: .8rem; font-weight: 600; }
+.side { display: flex; flex-direction: column; }
+.side .lead { padding: clamp(1.25rem, 2.2vw, 2rem); flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+.side h1 { font-size: clamp(2rem, 1.2rem + 2vw, 2.85rem); }
+.side .lead p { color: var(--steel); font-size: 1.05rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.tb { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--ink); font-size: .9rem; line-height: 1.3; }
+.tb > div { padding: .45rem .8rem .5rem; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); min-width: 0; }
+.tb > div:nth-child(2n) { border-right: 0; }
+.tb > div:nth-last-child(-n+2) { border-bottom: 0; }
+.tb dt { font-size: .72rem; color: var(--steel); font-weight: 500; }
+.tb dd { font-weight: 700; }
+.tb .title { border-right: 0 !important; padding-left: 4.9rem !important; background: url(img/logo-red.webp) no-repeat .8rem 50% / 3.6rem auto; }
+.tb .sheetno { text-align: right; }
+.tb .title dd { font-stretch: 125%; font-size: 1.05rem; font-weight: 800; }
+.tb .sheetno dd { color: var(--red-ink); font-stretch: 125%; font-weight: 800; }
+
+/* one orchestrated moment: the border of the home sheet is drawn once, on load */
+@media (prefers-reduced-motion: no-preference) {
+  .draw .sheet::after { content: ""; position: absolute; inset: -2px; border: 2px solid var(--red); pointer-events: none; clip-path: inset(0 100% 100% 0); animation: trace 1.4s .2s cubic-bezier(.6,0,.3,1) forwards; }
+  @keyframes trace { 50% { clip-path: inset(0 0 100% 0); } 99% { opacity: 1; } 100% { clip-path: inset(0 0 0 0); opacity: 0; } }
+}
+
+/* ---------- sections ---------- */
+.sec { padding: clamp(3rem, 6vw, 5.5rem) 0; }
+.hero + .sec { padding-top: clamp(2.5rem, 4vw, 3.5rem); }
+.sec.tight { padding-top: clamp(2rem, 4vw, 3rem); }
+.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.split > .head { position: sticky; top: 1.5rem; }
+.head p { margin-top: 1rem; color: var(--steel); }
+.quote { font-stretch: 112%; font-weight: 600; font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); line-height: 1.35; color: var(--ink) !important; }
+.kicker { font-size: .9rem; font-weight: 700; color: var(--red-ink); margin-bottom: .6rem; }
+
+/* departments list: each row goes to its sheet */
+.rows { border-top: 2px solid var(--ink); }
+.rows a { display: grid; grid-template-columns: 1fr auto; gap: .35rem 1.5rem; padding: 1.3rem 0 1.4rem; border-bottom: 1px solid var(--line); text-decoration: none; }
+.rows a:hover h3 { color: var(--red-ink); }
+.rows h3 { font-size: clamp(1.2rem, 1rem + .6vw, 1.45rem); }
+.rows p { grid-column: 1; color: var(--steel); }
+.rows .go { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: .85rem; font-weight: 700; white-space: nowrap; border: 1px solid var(--ink); padding: .4rem .7rem; }
+.rows a:hover .go { background: var(--ink); color: #fff; }
+
+/* work photos */
+.work { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.work figure { margin: 0; background: var(--sheet); border: 1px solid var(--line); }
+.work img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.work figcaption { padding: .6rem .9rem .7rem; font-size: .9rem; font-weight: 600; border-top: 1px solid var(--line); }
+.work .wide { grid-column: 1 / -1; }
+.work .wide img { aspect-ratio: 1100 / 508; }
+
+/* dark band: the inspection room */
+.dark { background: var(--ink); color: #e9ecee; }
+.dark .head p, .dark p { color: #c4cacf; }
+.dark .kicker { color: #ff6b70; }
+.dark .btn.ghost { color: #fff; border-color: #fff; }
+.dark .btn.ghost:hover { background: #fff; color: var(--ink); }
+.iso { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.iso figure { margin: 0; }
+.iso figure img { width: 100%; }
+.iso figcaption { font-size: .85rem; color: #aab2b8; margin-top: .6rem; }
+.iso h2 { margin-bottom: 1rem; }
+.ticks { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .45rem 1.5rem; margin: 1.5rem 0; }
+.ticks li { padding-left: 1.3rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .62em; width: .6rem; height: 2px; background: var(--red); }
+.file { display: inline-flex; gap: .6rem; align-items: center; font-size: .9rem; padding: .55rem .8rem; border: 1px dashed currentColor; opacity: .9; }
+
+/* the desk directory: one number, five extensions */
+.desks { background: var(--sheet); border: 2px solid var(--ink); }
+.desks .num { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; padding: 1.2rem 1.4rem; border-bottom: 2px solid var(--ink); }
+.desks .num a { font-stretch: 125%; font-weight: 800; font-size: clamp(1.7rem, 1.2rem + 2vw, 2.6rem); text-decoration: none; letter-spacing: -.01em; }
+.desks .num span { color: var(--steel); font-size: .95rem; }
+.desks ul { list-style: none; padding: 0; }
+.desks li + li { border-top: 1px solid var(--line); }
+.desks li a { display: grid; grid-template-columns: 4.2rem 1fr auto; align-items: center; gap: 1rem; padding: .85rem 1.4rem; text-decoration: none; min-height: 3.25rem; }
+.desks li a:hover { background: var(--paper); }
+.desks .x { font-stretch: 125%; font-weight: 800; font-size: 1.35rem; color: var(--red-ink); }
+.desks .who { font-weight: 600; }
+.desks .dial { font-size: .85rem; color: var(--steel); white-space: nowrap; }
+.facts { display: grid; gap: 1.1rem; margin-top: 1.75rem; }
+.facts div { border-left: 3px solid var(--red); padding-left: .9rem; }
+.facts dt { font-size: .82rem; color: var(--steel); }
+.facts dd { font-weight: 600; }
+.facts a { text-decoration-color: var(--line); text-underline-offset: 3px; }
+
+/* spec tables */
+.spec { width: 100%; border-collapse: collapse; font-size: .97rem; }
+.spec caption { text-align: left; font-stretch: 125%; font-weight: 800; font-size: 1.3rem; padding-bottom: .6rem; }
+.spec th, .spec td { text-align: left; vertical-align: top; padding: .7rem .9rem .75rem 0; border-bottom: 1px solid var(--line); }
+.spec thead th { font-size: .78rem; font-weight: 600; color: var(--steel); border-bottom: 2px solid var(--ink); }
+.spec tbody th { font-weight: 700; white-space: nowrap; }
+.spec td { color: #3a4148; }
+.tables { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; margin-top: 2rem; }
+.note { font-size: .88rem; color: var(--steel); margin-top: .8rem; }
+
+/* service cards (plain text blocks in a ruled grid) */
+.grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); border-left: 1px solid var(--line); margin-top: 2rem; }
+.grid3 > div { padding: 1.3rem 1.3rem 1.5rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--sheet); }
+.grid3 h3 { margin-bottom: .5rem; }
+.grid3 .inset { width: 100%; max-width: 444px; aspect-ratio: 444 / 351; margin-bottom: 1rem; border: 1px solid var(--line); }
+.grid3 p { color: var(--steel); font-size: .98rem; }
+.grid3 .meta { margin-top: .7rem; font-size: .88rem; color: var(--ink); font-weight: 600; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+.pair figure { margin: 0; position: relative; }
+.pair img { width: 100%; }
+.pair.cad { margin-top: 3rem; align-items: center; }
+.pair.cad figure { background: #fff; border: 1px solid var(--line); }
+.pair figcaption { position: absolute; left: 0; top: 0; background: var(--ink); color: #fff; font-weight: 700; font-size: .85rem; padding: .35rem .75rem; }
+.big { margin: 2rem 0 0; }
+.big img { width: 100%; }
+.big figcaption { font-size: .9rem; color: var(--steel); margin-top: .6rem; }
+.cta-band { background: var(--red-ink); color: #fff; }
+.cta-band .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.cta-band h2 { font-size: clamp(1.5rem, 1.1rem + 1.5vw, 2.2rem); max-width: 26ch; }
+.cta-band .btn { background: #fff; color: var(--red-ink); border-color: #fff; }
+.cta-band .btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.cta-band .btn.ghost { background: transparent; color: #fff; }
+
+/* footer */
+.foot { background: var(--ink); color: #c4cacf; font-size: .92rem; padding: 3rem 0 2rem; }
+.foot .cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2rem; }
+.foot img { width: 7rem; margin-bottom: 1rem; }
+.foot h2 { font-size: .95rem; font-stretch: 100%; color: #fff; margin-bottom: .7rem; letter-spacing: 0; }
+.foot a { color: #fff; text-underline-offset: 3px; text-decoration-color: #6b747c; }
+.foot ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+.foot .fine { border-top: 1px solid #3b4249; margin-top: 2.5rem; padding-top: 1.25rem; font-size: .8rem; color: #aab2b8; }
+
+/* sticky call bar on phones, after the hero */
+.dock { display: none; }
+
+@media (max-width: 959px) {
+  .nav > a, .top .tel, .top .btn { display: none; }
+  .menu { display: block; }
+  .top .wrap { min-height: 3.75rem; }
+  .brand img { width: 4.9rem; }
+  .hero { padding-top: 1rem; }
+  .sheet { display: block; border-width: 2px; }
+  .zones { display: none; }
+  .field { display: flex; flex-direction: column; }
+  .side { display: contents; }
+  .side .lead { order: 1; padding: 1.1rem 1.1rem 1.2rem; gap: .75rem; }
+  .side h1 { font-size: clamp(1.75rem, 1rem + 4vw, 2.4rem); }
+  .side .lead p { font-size: 1rem; line-height: 1.5; }
+  .view { order: 2; border-right: 0; border-top: 1px solid var(--ink); }
+  .view img { aspect-ratio: 780 / 484; height: auto; }
+  .tb { order: 3; }
+  .hero .actions { display: grid; gap: .6rem; }
+  .split, .iso, .tables { grid-template-columns: 1fr; }
+  .split > .head { position: static; }
+  .grid3 { grid-template-columns: 1fr 1fr; }
+  .foot .cols { grid-template-columns: 1fr 1fr; }
+  .foot .cols > :first-child { grid-column: 1 / -1; }
+  .dock { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: .55rem .75rem calc(.55rem + env(safe-area-inset-bottom)); background: var(--sheet); border-top: 2px solid var(--ink); transform: translateY(110%); transition: transform .25s ease; }
+  .dock.on { transform: none; }
+  .dock .btn { min-height: 2.9rem; padding: .5rem; }
+  body { padding-bottom: 4.5rem; }
+}
+@media (max-width: 600px) {
+  .work, .pair, .grid3 { grid-template-columns: 1fr; }
+  .work .wide img { aspect-ratio: 4 / 3; }
+  .ticks { grid-template-columns: 1fr; }
+  .rows a { grid-template-columns: 1fr; }
+  .rows .go { display: none; }
+  .desks li a { grid-template-columns: 3.2rem 1fr; padding: .8rem 1rem; }
+  .desks .dial { display: none; }
+  .desks .num { padding: 1rem; }
+  .spec thead { display: none; }
+  .spec tr { display: block; padding: .65rem 0 .7rem; border-bottom: 1px solid var(--line); }
+  .spec tbody tr:first-child { border-top: 2px solid var(--ink); }
+  .spec th, .spec td { display: block; border: 0; padding: 0; }
+  .spec tbody th { white-space: normal; margin-bottom: .15rem; }
+  .spec td { font-size: .93rem; }
+}
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Southeastern Machining and Field Service. Not affiliated with or endorsed by Southeastern Machining and Field Service.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo-red.webp" width="400" height="267" alt="SEM, Southeastern Machining &amp; Field Service, home"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="machining.html">Machining</a><a href="fabrication.html">Fabrication</a><a href="engineering.html" aria-current="page">Engineering</a><a href="quality.html">Quality</a><a href="contact.html">Contact</a>
+      <a class="tel" href="tel:+17406891147">740-689-1147</a>
+      <a class="btn" href="mailto:rfq@semohio.com?subject=Request%20for%20quote">Request a quote</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav aria-label="Main, mobile"><a href="index.html">Home</a><a href="machining.html">Machining</a><a href="fabrication.html">Fabrication</a><a href="engineering.html" aria-current="page">Engineering</a><a href="quality.html">Quality</a><a href="contact.html">Contact</a><a href="tel:+17406891147">Call 740-689-1147</a><a href="mailto:rfq@semohio.com?subject=Request%20for%20quote">Email rfq@semohio.com</a></nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="sheet">
+      <div class="zones x t" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+      <div class="zones y l" aria-hidden="true"><span>D</span><span>C</span><span>B</span><span>A</span></div>
+      <div class="field">
+        <figure class="view"><img src="img/drawing-640.webp" srcset="img/drawing-640.webp 640w, img/drawing-1100.webp 1100w" sizes="(min-width: 75rem) 39rem, (min-width: 960px) 52vw, calc(100vw - 2rem - 4px)" width="1100" height="619" alt="Graphing calculator and pen on an engineering drawing at SEM" fetchpriority="high"><figcaption>Engineered drawings</figcaption></figure>
+        <div class="side">
+          <div class="lead">
+            <h1 id="h1">Engineering</h1>
+            <p>SEM’s internal engineering team designs production fixtures and helps with reverse engineering, so your components get improved designs that meet and exceed your expectations.</p>
+            <div class="actions">
+              <a class="btn" href="mailto:rfq@semohio.com?subject=Request%20for%20quote"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Request a quote</a>
+              <a class="btn ghost" href="tel:+17406891147"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call 740-689-1147</a>
+            </div>
+          </div>
+          <dl class="tb">
+            <div class="title"><dt>Title</dt><dd>Engineering</dd></div><div class="sheetno"><dt>Sheet</dt><dd>4 of 6</dd></div>
+            <div><dt>CAD</dt><dd>SolidWorks, Autodesk Fusion</dd></div><div><dt>Standard</dt><dd>ASME Y14.5</dd></div><div><dt>Delivered as</dt><dd>2D drawings, 3D models</dd></div><div><dt>Measuring</dt><dd>FARO Arm portable CMM</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="zones y r" aria-hidden="true"><span>D</span><span>C</span><span>B</span><span>A</span></div>
+      <div class="zones x b" aria-hidden="true"><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+    </div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="h-asme">
+  <div class="wrap split">
+    <div class="head">
+      <p class="kicker">ASME Y14.5 standards</p>
+      <h2 id="h-asme">Coffee stained hand sketches are welcome.</h2>
+    </div>
+    <div>
+      <p class="quote">“We at SEM are familiar with both coffee stained hand sketches and thoroughly engineered drawings with tight tolerances, GD&amp;T, and assemblies within assemblies within assemblies.”</p>
+      <p style="margin-top:1rem">Current drawings adhere to the latest version of ASME Y14.5 standards of dimensioning and tolerancing. With SolidWorks and Autodesk Fusion, SEM generates 3D models quickly and accurately, and creates the CNC programs to machine your parts to the accuracy you need.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="pair cad">
+      <figure><img src="img/exploded-640.webp" srcset="img/exploded-640.webp 640w, img/exploded-1100.webp 1100w" sizes="(min-width: 75rem) 35rem, (min-width: 601px) calc(50vw - 3rem), calc(100vw - 2rem)" width="1100" height="643" alt="Exploded CAD view of a fixture assembly with its bolts" loading="lazy" decoding="async"></figure>
+      <figure><img src="img/assembly-640.webp" srcset="img/assembly-640.webp 640w, img/assembly-1000.webp 1000w" sizes="(min-width: 75rem) 35rem, (min-width: 601px) calc(50vw - 3rem), calc(100vw - 2rem)" width="1000" height="800" alt="Rendered CAD model of a machined assembly" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+<section class="sec tight" aria-labelledby="h-es">
+  <div class="wrap">
+    <h2 id="h-es">Engineering services</h2>
+    <div class="grid3">
+      <div><h3>2D drawings</h3><p>All the information needed to produce your part, now and whenever you need another. CAD drawings in AutoCAD format with your title block.</p></div>
+      <div><h3>3D models</h3><p>Three-dimensional representations of your part with integrated dimensions, relations, materials, and appearances.</p></div>
+      <div><h3>Engineering support</h3><p>Ideas on how to bridge the gap between your specific idea or concern and a practical solution.</p></div>
+      <div><h3>Photo realistic renderings</h3><p>Want to pitch an idea and showcase the beauty of your design? Ask for a rendering.</p></div>
+      <div><h3>Simulations</h3><p>Make sure the design will stand up to the demands of the real world.</p></div>
+      <div><h3>Prototypes</h3><p>Because you can’t test the feel of something on a computer screen.</p></div>
+      <div><h3>FARO Arm</h3><p>Portable CMM for on-the-go precision measuring.</p></div>
+      <div><h3>DWGs</h3><p>Great for creating patterns for laser cutting and water jetting.</p></div>
+      <div><h3>Value added</h3><p>SEM collaborates with your engineers for the best possible solution.</p></div>
+    </div>
+    <p class="note">Also: mechanical design, reverse engineering, pick-n-place, retro-fit upgrades, machine integration, proposals, jigs and fixtures. PDF drawings available at additional cost.</p>
+  </div>
+</section>
+<section class="cta-band" aria-label="Request a quote">
+  <div class="wrap">
+    <h2>Email your project to the engineering team.</h2>
+    <div class="actions">
+      <a class="btn" href="mailto:rfq@semohio.com?subject=Project%20for%20the%20engineering%20team"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Email rfq@semohio.com</a>
+      <a class="btn ghost" href="tel:+17406891147"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call 740-689-1147</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="img/logo-white.webp" width="400" height="267" alt="SEM, Southeastern Machining &amp; Field Service" loading="lazy" decoding="async">
+        <p>500 Lincoln Avenue, Lancaster, Ohio 43130</p>
+        <p>Office hours: M–F, 7:00 AM – 5:00 PM</p>
+      </div>
+      <div>
+        <h2>Reach SEM</h2>
+        <ul>
+          <li>Phone <a href="tel:+17406891147">740-689-1147</a></li>
+          <li>Emergency / off hours <a href="tel:+17406891147,5">740-689-1147 x 5</a></li>
+          <li>Fax 740-689-1148</li>
+          <li>Quotes <a href="mailto:rfq@semohio.com?subject=Request%20for%20quote">rfq@semohio.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Sheets</h2>
+        <ul><li><a href="index.html">Home</a></li><li><a href="machining.html">Machining</a></li><li><a href="fabrication.html">Fabrication</a></li><li><a href="engineering.html">Engineering</a></li><li><a href="quality.html">Quality</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+    </div>
+    <p class="fine">Unofficial demo built by MHS Tecnologia for Southeastern Machining and Field Service. Not affiliated with or endorsed by Southeastern Machining and Field Service. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="dock" id="dock" aria-label="Contact shortcuts">
+  <a class="btn ghost" href="tel:+17406891147"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a class="btn" href="mailto:rfq@semohio.com?subject=Request%20for%20quote"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>Request a quote</a>
+</div>
+<script>
+(function () {
+  var d = document.getElementById('dock'), h = document.querySelector('.hero');
+  if (!d || !h || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) { d.classList.toggle('on', !e[0].isIntersecting); }).observe(h);
+  var m = document.querySelector('.menu');
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && m && m.open) { m.open = false; m.querySelector('summary').focus(); } });
+})();
+</script>
+</body>
+</html>
