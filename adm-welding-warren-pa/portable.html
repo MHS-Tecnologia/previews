@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Portable bridges — ADM Welding & Fabrication</title>
+<meta name="description" content="Hinged, hybrid, skidder panel and long-span temporary bridges for rent, rental/purchase or purchase.">
+<meta name="theme-color" content="#10362a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/encode.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" imagesrcset="img/hybrid-top-480.webp 480w, img/hybrid-top-800.webp 800w, img/hybrid-top-1200.webp 1200w" imagesizes="(min-width: 1340px) 700px, (min-width: 900px) 52vw, calc(100vw - 32px)" fetchpriority="high">
+<style>@font-face{font-family:"Encode Sans";src:url(fonts/encode.woff2) format("woff2");font-weight:100 900;font-stretch:75% 125%;font-display:swap}
+:root{--forest:#10362a;--forest2:#174a3a;--green:#2b6a50;--rail:#3f8a6b;--bronze:#a8925a;--bronze-ink:#5c4e28;--oak:#dcc9a3;--oak2:#efe5d0;--gravel:#eceeea;--line:#c9cec6;--ink:#17211d;--muted:#46524c;--hl:#f2c200;--wrap:1280px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--gravel);color:var(--ink);font:400 1.0625rem/1.6 "Encode Sans",system-ui,sans-serif;font-stretch:100%;font-variant-numeric:tabular-nums}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-stretch:75%;font-weight:750;line-height:1.02;letter-spacing:-.005em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.3rem,1.4rem + 3.3vw,4.1rem)}
+h2{font-size:clamp(1.85rem,1.3rem + 1.9vw,2.9rem)}
+h3{font-size:1.45rem}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-999px;top:0;background:var(--hl);color:var(--ink);padding:10px 16px;z-index:20}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--hl);outline-offset:2px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.small{font-size:.9rem;color:var(--muted)}
+
+.demo-note{margin:0;background:var(--oak2);color:var(--bronze-ink);font-size:.76rem;line-height:1.35;text-align:center;padding:7px 16px}
+.site-head{background:var(--forest);color:#fff;position:relative;z-index:5}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
+.brand img{width:190px;height:auto}
+.nav{display:flex;align-items:center;gap:26px;font-weight:600;font-size:.98rem}
+.nav > a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-bottom-color:var(--bronze)}
+.nav > .nav-tel{background:var(--oak);color:var(--forest);padding:9px 16px;border-radius:3px;border:0}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;padding:10px 16px;border:1.5px solid rgba(255,255,255,.55);border-radius:3px;font-weight:650}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:#fff;color:var(--forest)}
+.menu-panel{position:absolute;right:0;top:calc(100% + 10px);background:var(--forest);border:1px solid var(--forest2);min-width:250px;padding:8px 0;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.menu-panel a{display:block;padding:13px 20px;text-decoration:none;font-size:1.05rem}
+.menu-panel a:hover,.menu-panel a[aria-current]{background:var(--forest2)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 22px;border-radius:3px;font-weight:700;font-stretch:87%;font-size:1.05rem;text-decoration:none;line-height:1.15;text-align:center}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--forest2)}
+.btn-line{border:2px solid var(--green);color:var(--forest)}
+.btn-line:hover{background:#fff}
+.btn-oak{background:var(--oak);color:var(--forest)}
+.btn-oak:hover{background:#fff}
+.btn-line-light{border:2px solid rgba(255,255,255,.7);color:#fff}
+.btn-line-light:hover{background:var(--forest2)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:0}
+.text-link{color:var(--green);font-weight:700;text-underline-offset:3px}
+
+/* hero */
+.hero{padding:56px 0 64px}
+.hero-grid{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
+.hero h1{max-width:12ch}
+.lead{font-size:1.15rem;color:var(--muted);max-width:44ch;margin:22px 0 28px}
+.hero-photo img,.page-head-photo img{width:100%;border-radius:2px}
+
+/* span finder */
+.finder{background:var(--forest);color:#fff;padding:64px 0 72px}
+.finder-top{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:end}
+.finder-top p{color:#cfdcd5;max-width:52ch;margin:0}
+.finder-ctl{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;margin:40px 0 8px}
+.finder-ctl label{font-weight:650;color:#cfdcd5}
+.finder-ctl output{font-stretch:75%;font-size:1.3rem;min-width:4.6ch;text-align:right}
+.finder-ctl output b{font-size:3.2rem;font-weight:800;line-height:1}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:6px;background:linear-gradient(90deg,var(--oak) var(--p,29%),rgba(255,255,255,.22) var(--p,29%));border-radius:3px}
+input[type=range]::-moz-range-track{height:6px;background:rgba(255,255,255,.22);border-radius:3px}
+input[type=range]::-moz-range-progress{height:6px;background:var(--oak);border-radius:3px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;margin-top:-12px;border-radius:50%;background:var(--oak);border:4px solid var(--forest);box-shadow:0 0 0 2px var(--oak)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--oak);border:4px solid var(--forest);box-shadow:0 0 0 2px var(--oak)}
+input[type=range]:focus-visible{outline:none}
+input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 2px var(--oak),0 0 0 6px var(--hl)}
+.elev{width:100%;height:auto;display:block;margin:4px 0 36px}
+.elev .bank{fill:#24584a}
+.elev .abut{fill:#8d9a93}
+.elev .water{fill:#5f8f9a;opacity:.6}
+.elev .deck{fill:var(--oak)}
+.elev .girder{fill:var(--rail)}
+.elev .rail line{stroke:var(--rail);stroke-width:4}
+.elev .dim line{stroke:#cfdcd5;stroke-width:2}
+.elev text{fill:#fff;font:800 26px "Encode Sans",sans-serif;font-stretch:75%}
+.finder-out{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:start}
+.fit h3{font-size:1.7rem;margin-bottom:16px}
+.fit-list{list-style:none;margin:0 0 16px;padding:0;border-top:1px solid rgba(255,255,255,.18)}
+.fit-list a{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.18);text-decoration:none;font-weight:650}
+.fit-list a span{color:#cfdcd5;font-weight:400;font-size:.95rem;text-align:right}
+.fit-list a:hover{color:var(--oak)}
+.fit-note{color:#cfdcd5;font-size:.98rem;min-height:1.6em}
+.near{margin:0;background:var(--forest2);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.near img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.near figcaption{padding:22px 24px}
+.near .k{color:var(--oak);font-weight:650;font-size:.95rem;display:block;margin-bottom:6px}
+.near .span-num{color:#fff}
+.near .cap{color:#dbe6e0}
+
+/* lines ruler */
+.lines{padding:80px 0 64px}
+.sec-lead{color:var(--muted);max-width:62ch;margin:14px 0 32px}
+.ruler{position:relative}
+.ruler-scale{position:relative;height:26px;margin-left:calc(38% + 24px);border-bottom:1.5px solid var(--ink);font-size:.82rem;color:var(--muted)}
+.ruler-scale span{position:absolute;bottom:6px;transform:translateX(-50%);white-space:nowrap}
+.ruler-scale span::after{content:" ft"}
+.ruler-scale span:first-child{transform:none}
+.ruler-scale span:last-child{transform:translateX(-100%)}
+.line-list{list-style:none;margin:0;padding:0}
+.line-row{display:grid;grid-template-columns:38% 1fr;grid-template-areas:"t bar" "r txt";column-gap:24px;row-gap:4px;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.line-title{grid-area:t;font-stretch:75%;font-weight:750;font-size:1.55rem;line-height:1.1}
+.line-range{grid-area:r;color:var(--bronze-ink);font-weight:600;font-size:.95rem}
+.line-bar{grid-area:bar;position:relative;height:16px;align-self:center;background:repeating-linear-gradient(90deg,transparent 0 calc(100%/12 - 1px),var(--line) calc(100%/12 - 1px) calc(100%/12))}
+.line-bar i{position:absolute;top:0;bottom:0;background:var(--green);border-radius:1px}
+.line-bar i.upto{background:linear-gradient(90deg,rgba(43,106,80,0),var(--green) 34%)}
+.line-bar-none{background:none;border-top:2px dashed var(--line);height:0}
+.line-text{grid-area:txt;color:var(--muted);max-width:64ch}
+.line-row:hover .line-title{color:var(--green)}
+.line-row:hover .line-bar i{background:var(--forest)}
+.line-row:hover .line-bar i.upto{background:linear-gradient(90deg,rgba(16,54,42,0),var(--forest) 34%)}
+
+/* sectors */
+.sectors{padding:16px 0 72px}
+.sectors-grid{display:grid;grid-template-columns:5fr 7fr;gap:48px}
+.sectors ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.sectors li{padding:12px 0;border-top:1px solid var(--line)}
+.sectors b{display:block;font-stretch:87%;font-size:1.15rem}
+.sectors li span{color:var(--muted);font-size:.95rem}
+
+/* fabrication teaser */
+.fab-teaser{background:var(--oak2);padding:72px 0}
+.fab-grid{display:grid;grid-template-columns:6fr 6fr;gap:48px;align-items:center}
+.fab-grid h2{margin-bottom:18px}
+.fab-photo img{width:100%;max-width:540px;margin-left:auto;background:#fff}
+.ticks{margin:0 0 1em;padding:0;list-style:none}
+.ticks li{position:relative;padding:0 0 0 22px;margin:0 0 .55em}
+.ticks li::before{content:"";position:absolute;left:0;top:.62em;width:11px;height:3px;background:var(--bronze)}
+
+/* contact band */
+.contact-band{background:var(--forest);color:#fff;padding:64px 0}
+.cb-grid{display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:end}
+.cb-grid p{color:#cfdcd5}
+
+/* inner pages */
+.page-head{padding:48px 0 56px}
+.page-head-grid{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center}
+.page-head h1{max-width:13ch}
+.page-head-plain h1{max-width:20ch}
+.badge{display:inline-block;border:2px solid var(--bronze);color:var(--bronze-ink);font-weight:700;padding:6px 12px;border-radius:3px;margin:-8px 0 24px}
+.sec{padding:64px 0}
+.sec-tight{padding:8px 0 64px}
+.sec-alt{background:#e2e6df}
+.spec-grid{display:grid;grid-template-columns:5fr 7fr;gap:48px;margin-bottom:36px}
+.spec-grid h2{margin-bottom:10px}
+.sub{color:var(--bronze-ink);font-weight:600;font-size:1.1rem}
+.jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.jobs-wide{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+.job{margin:0}
+.job img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#cfd5cc}
+.jobs-wide .job:first-child img{aspect-ratio:auto;height:100%;max-height:520px}
+.job figcaption{padding:12px 0 0}
+.job-head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
+.span-num{font-stretch:75%;font-weight:800;font-size:1.9rem;line-height:1;color:var(--forest)}
+.span-num small{font-size:1rem;font-weight:650}
+.job-label{font-weight:700}
+.line-name{display:block;color:var(--bronze-ink);font-size:.9rem;font-weight:600}
+.cap{display:block;color:var(--muted);font-size:.97rem;line-height:1.5}
+.before-after{margin:0 0 40px}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:1132px}
+.ba-pair > div{position:relative}
+.ba-pair img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.ba-tag{position:absolute;left:0;top:0;background:var(--forest);color:#fff;font-weight:700;padding:6px 12px;font-size:.92rem}
+.before-after figcaption{padding-top:12px;max-width:80ch}
+.specs{margin:20px 0 10px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.specs div{border-top:1px solid var(--line);padding:10px 0}
+.specs dt{font-weight:700;font-stretch:87%}
+.specs dd{margin:0;color:var(--muted)}
+.tbl{overflow-x:auto;margin:0 0 32px;background:#fff;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:640px}
+caption{text-align:left;padding:14px 16px;font-weight:600;color:var(--forest);caption-side:top}
+th,td{text-align:left;padding:10px 16px;border-top:1px solid var(--line);vertical-align:top}
+th{font-stretch:87%;background:var(--oak2)}
+.notes{color:var(--muted);font-size:.95rem;padding-left:20px;max-width:80ch}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.filters button{font:inherit;font-weight:650;font-size:.95rem;min-height:44px;padding:8px 16px;border:1.5px solid var(--green);background:transparent;color:var(--forest);border-radius:3px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--green);color:#fff}
+.job[hidden]{display:none}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-bottom:48px}
+.svc-grid h3{margin-bottom:10px;font-size:1.35rem}
+.sale-grid{display:grid;grid-template-columns:400px 1fr;gap:48px;align-items:center}
+.sale-grid h2{margin-bottom:18px}
+.contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+address{font-style:normal}
+.big{font-stretch:75%;font-weight:750;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);line-height:1.1;margin-bottom:12px;overflow-wrap:anywhere}
+.big a{text-decoration-thickness:2px;text-underline-offset:5px}
+.ask{background:#fff;border:1px solid var(--line);padding:32px}
+.ask h2{font-size:1.7rem;margin-bottom:16px}
+.ask ol{padding-left:22px;margin:0 0 24px}
+.ask li{margin-bottom:8px}
+
+/* footer */
+.site-foot{background:#0b271e;color:#cfdcd5;padding:48px 0 96px;font-size:.95rem}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot-grid img{width:180px;margin-bottom:14px}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.demo-foot{border-top:1px solid rgba(255,255,255,.15);margin-top:28px;padding-top:20px;font-size:.85rem;color:#a9bcb3}
+.site-foot a{color:#fff}
+
+/* mobile dock */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:10;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--forest);box-shadow:0 -6px 20px rgba(0,0,0,.25);transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+.dock .btn{flex:1;min-height:48px;padding:10px 8px;font-size:1rem}
+.dock.on{transform:none;visibility:visible;transition:transform .25s ease}
+
+@media (max-width:1100px){
+ .nav{gap:18px;font-size:.92rem}
+ .jobs{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .svc-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:980px){
+ .nav > a{display:none}
+ .menu{display:block}
+}
+@media (max-width:899px){
+ .wrap{padding:0 16px}
+ .hero{padding:24px 0 32px}
+ .hero-grid,.page-head-grid,.finder-top,.finder-out,.sectors-grid,.fab-grid,.cb-grid,.spec-grid,.contact-grid,.sale-grid{grid-template-columns:1fr;gap:24px}
+ .lead{margin:14px 0 20px;font-size:1.05rem}
+ .finder{padding:44px 0 48px}
+ .finder-ctl{grid-template-columns:1fr auto;margin-top:28px}
+ .finder-ctl label{grid-column:1}
+ .finder-ctl input{grid-column:1/-1;grid-row:2}
+ .finder-ctl output{grid-column:2;grid-row:1}
+ .elev{margin-bottom:24px}
+ .elev text{font-size:34px}
+ .ruler-scale .odd{display:none}
+ .near{grid-template-columns:1fr}
+ .lines{padding:56px 0 40px}
+ .ruler-scale{margin-left:0}
+ .line-row{grid-template-columns:1fr;grid-template-areas:"t" "r" "bar" "txt";row-gap:8px}
+ .line-bar{height:12px}
+ .sectors ul{grid-template-columns:1fr 1fr;gap:0 16px}
+ .page-head{padding:24px 0 36px}
+ .sec{padding:44px 0}
+ .jobs-wide{grid-template-columns:1fr}
+ .sale-grid .sale-photo{max-width:400px}
+ .ask{padding:22px}
+ .dock{display:flex}
+}
+@media (max-width:599px){
+ .jobs{grid-template-columns:1fr}
+ .specs{grid-template-columns:1fr}
+ .svc-grid{grid-template-columns:1fr;gap:20px}
+ .actions .btn{flex:1 1 140px;padding:12px 8px;font-stretch:75%;white-space:nowrap}
+ .ba-pair{grid-template-columns:1fr}
+ .brand img{width:150px}
+ .head-row{min-height:64px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo-note">Unofficial demo built by MHS Tecnologia for ADM Welding &amp; Fabrication. Not affiliated with or endorsed by ADM Welding &amp; Fabrication.</p>
+<header class="site-head">
+ <div class="wrap head-row">
+  <a class="brand" href="index.html"><img src="img/logo-280.webp" srcset="img/logo-280.webp 280w, img/logo-560.webp 560w" sizes="190px" width="280" height="63" alt="ADM Welding &amp; Fabrication, LLC — home"></a>
+  <nav class="nav" aria-label="Main"><a href="portable.html" aria-current=page>Portable bridges</a><a href="permanent.html">Permanent bridges</a><a href="projects.html">Projects</a><a href="fabrication.html">Fabrication</a><a href="contact.html">Contact</a><a class="nav-tel" href="tel:+18147237227">814-723-7227</a>
+   <details class="menu"><summary>Menu</summary><div class="menu-panel"><a href="portable.html" aria-current=page>Portable bridges</a><a href="permanent.html">Permanent bridges</a><a href="projects.html">Projects</a><a href="fabrication.html">Fabrication</a><a href="contact.html">Contact</a><a href="tel:+18147237227">Call 814-723-7227</a></div></details>
+  </nav>
+ </div>
+</header>
+<main id="main">
+<section class="page-head" id="hero">
+ <div class="wrap page-head-grid">
+  <div class="page-head-text"><h1>Portable bridges, ready to rent or buy.</h1><p class="lead">Hinged, hybrid, “skidder” panel and long-span temporary bridges, designed for repeated use in different locations. Nearly all rentals include a purchase option.</p>
+   <p class="actions"><a class="btn btn-green" href="tel:+18147237227">Call 814-723-7227</a><a class="btn btn-line" href="mailto:admwelding@verizon.net?subject=Bridge%20request&amp;body=Company%20or%20organization%3A%0AContact%20name%3A%0APhone%20number%3A%0ABridge%20length%3A%0AMinimum%20width%3A%0ACapacity%20%28vehicle/equipment%20and%20weight%2C%20e.g.%20%22Three-axle%20articulated%20dump%2C%20weighing%2070%20tons%22%29%3A%0ADescription%20of%20use%20%28e.g.%20%22bypass%20for%20public%20traffic%20during%20bridge%20replacement%20project%22%29%3A%0ABridge%20type%20%28permanent%2C%20temporary%2C%20or%20both/unsure%29%3A%0AIf%20temporary%20%28rental%2C%20purchase%2C%20or%20both%29%3A%0AIf%20renting%2C%20how%20soon%20is%20the%20bridge%20needed%3A%0AAdditional%20comments%3A%0A">Email a bridge request</a></p></div>
+  <div class="page-head-photo"><img src="img/hybrid-top-1200.webp" srcset="img/hybrid-top-480.webp 480w, img/hybrid-top-800.webp 800w, img/hybrid-top-1200.webp 1200w" sizes="(min-width: 1340px) 700px, (min-width: 900px) 52vw, calc(100vw - 32px)" width="1200" height="606" alt="Deck view of an ADM hybrid portable bridge with green pipe guardrail and white oak planks" fetchpriority="high"></div>
+ </div>
+</section>
+<section class="sec" id="hinged" aria-labelledby="h-hinged">
+ <div class="wrap spec-grid">
+  <div><h2 id="h-hinged">Hinged portable bridges</h2><p class="sub">Readily available, rapidly deployable.</p></div>
+  <ul class="ticks">
+   <li>Readily available: 30’ through 50’ lengths typically maintained in inventory for immediate rental, rental/purchase, or outright purchase.</li>
+   <li>12’-6” travel width. 45-ton nominal capacity when used at “full” span. Capacity can be increased by shortening span.</li>
+   <li>Hinged along their length for transport as a single legal-width assembly.</li>
+   <li>Tapered ends, heavy-duty towbars, and additional reinforcing to withstand installation at multiple sites and handling with excavating/forestry equipment. Bridges can be “skidded” (pushed/pulled) for significant distances.</li>
+   <li>Pipe guardrail system and white oak plank deck system, pre-installed.</li>
+   <li>Typical installation time under one hour.</li>
+   <li>Other lengths, capacities, guardrail systems, and deck systems available upon request. Also suitable for permanent installations.</li>
+  </ul>
+ </div>
+ <div class="wrap"><div class="jobs"><figure class="job" data-line="portable"><img src="img/portable-construction-bridge-1-lg-518.webp" srcset="img/portable-construction-bridge-1-lg-480.webp 480w, img/portable-construction-bridge-1-lg-518.webp 518w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="518" height="351" alt="Construction: Two 50’ portable bridges used side-by-side for temporary bypass during bridge replacement project." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">50<small> ft</small></span><span class="job-label">Construction</span></span><span class="cap">Two 50’ portable bridges used side-by-side for temporary bypass during bridge replacement project.</span></figcaption></figure><figure class="job" data-line="portable"><img src="img/portable-construction-bridge-2-560.webp" srcset="img/portable-construction-bridge-2-480.webp 480w, img/portable-construction-bridge-2-560.webp 560w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="560" height="420" alt="Construction: 50’ portable bridge used for temporary bypass during bridge replacement project." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">50<small> ft</small></span><span class="job-label">Construction</span></span><span class="cap">50’ portable bridge used for temporary bypass during bridge replacement project.</span></figcaption></figure><figure class="job" data-line="portable"><img src="img/portable-construction-bridge-3-lg-600.webp" srcset="img/portable-construction-bridge-3-lg-480.webp 480w, img/portable-construction-bridge-3-lg-600.webp 600w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="600" height="450" alt="Construction: 40’ portable bridge used for temporary bypass during bridge replacement project." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">40<small> ft</small></span><span class="job-label">Construction</span></span><span class="cap">40’ portable bridge used for temporary bypass during bridge replacement project.</span></figcaption></figure><figure class="job" data-line="portable"><img src="img/portable-construction-bridge-4-600.webp" srcset="img/portable-construction-bridge-4-480.webp 480w, img/portable-construction-bridge-4-600.webp 600w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="600" height="450" alt="Construction: 40’ portable bridge used for temporary bypass during bridge replacement project." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">40<small> ft</small></span><span class="job-label">Construction</span></span><span class="cap">40’ portable bridge used for temporary bypass during bridge replacement project.</span></figcaption></figure><figure class="job" data-line="portable"><img src="img/portable-residential-bridge-560.webp" srcset="img/portable-residential-bridge-480.webp 480w, img/portable-residential-bridge-560.webp 560w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="560" height="382" alt="Residential: 35’ portable bridge utilized to provide access for modular home installation. Bridge installation, home delivery, and bridge removal were all completed in one day." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">35<small> ft</small></span><span class="job-label">Residential</span></span><span class="cap">35’ portable bridge utilized to provide access for modular home installation. Bridge installation, home delivery, and bridge removal were all completed in one day.</span></figcaption></figure><figure class="job" data-line="portable"><img src="img/portable-timber-bridge-1-1-560.webp" srcset="img/portable-timber-bridge-1-1-480.webp 480w, img/portable-timber-bridge-1-1-560.webp 560w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="560" height="395" alt="Timber: 50’ portable bridge utilized for timber harvest." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">50<small> ft</small></span><span class="job-label">Timber</span></span><span class="cap">50’ portable bridge utilized for timber harvest.</span></figcaption></figure><figure class="job" data-line="portable"><img src="img/portable-pipeline-bridge-lg-520.webp" srcset="img/portable-pipeline-bridge-lg-480.webp 480w, img/portable-pipeline-bridge-lg-520.webp 520w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="520" height="388" alt="Pipeline: 40’ &amp; 35’ portable bridges utilized with precast concrete temporary piers to form a multi-span bridge for access during pipeline maintenance project." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">40<small> ft</small></span><span class="job-label">Pipeline</span></span><span class="cap">40’ & 35’ portable bridges utilized with precast concrete temporary piers to form a multi-span bridge for access during pipeline maintenance project.</span></figcaption></figure><figure class="job" data-line="portable"><img src="img/barge-604.webp" srcset="img/barge-480.webp 480w, img/barge-604.webp 604w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="604" height="425" alt="Marine: 40’ portable bridge utilized as temporary barge access ramp." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">40<small> ft</small></span><span class="job-label">Marine</span></span><span class="cap">40’ portable bridge utilized as temporary barge access ramp.</span></figcaption></figure></div></div>
+</section>
+<section class="sec sec-alt" id="hybrid" aria-labelledby="h-hybrid">
+ <div class="wrap spec-grid">
+  <div><h2 id="h-hybrid">Hybrid portable bridges</h2><p class="sub">Available in a variety of configurations.</p></div>
+  <div>
+   <p>Used instead of the hinged bridges when:</p>
+   <ul class="ticks"><li>the desired width is greater than the hinged bridges can accommodate;</li><li>you want to reduce pick/handling weight;</li><li>the structure’s dimensions or weight mean it has to travel as multiple loads;</li><li>the guardrail system is more elaborate than the hinged bridges can take.</li></ul>
+   <p>Partial-width by full-length modular units, with guardrail and deck pre-installed, that bolt together. Can be designed/fabricated to nearly any width, capacity, and lengths up through 70’. Also suitable for permanent installations.</p>
+  </div>
+ </div>
+ <div class="wrap"><div class="jobs"><figure class="job" data-line="hybrid"><img src="img/new-slider-photo-540.webp" srcset="img/new-slider-photo-480.webp 480w, img/new-slider-photo-540.webp 540w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="540" height="402" alt="Pipeline: 70’ portable bridge for pipeline construction project." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">70<small> ft</small></span><span class="job-label">Pipeline</span></span><span class="cap">70’ portable bridge for pipeline construction project.</span></figcaption></figure><figure class="job" data-line="hybrid"><img src="img/ecms-1200.webp" srcset="img/ecms-480.webp 480w, img/ecms-800.webp 800w, img/ecms-1200.webp 1200w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="1200" height="896" alt="Construction: 55’ portable bridge with “strong-post” railing system providing temporary bypass during bridge replacement project." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">55<small> ft</small></span><span class="job-label">Construction</span></span><span class="cap">55’ portable bridge with “strong-post” railing system providing temporary bypass during bridge replacement project.</span></figcaption></figure><figure class="job" data-line="hybrid"><img src="img/utility-540.webp" srcset="img/utility-480.webp 480w, img/utility-540.webp 540w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="540" height="405" alt="Utility: 60’ portable bridge utilized for electrical transmission line upgrades." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">60<small> ft</small></span><span class="job-label">Utility</span></span><span class="cap">60’ portable bridge utilized for electrical transmission line upgrades.</span></figcaption></figure></div></div>
+</section>
+<section class="sec" id="skidder" aria-labelledby="h-skidder">
+ <div class="wrap spec-grid">
+  <div><h2 id="h-skidder">“Skidder” panel bridges</h2><p class="sub">Alternative to timber mat bridges.</p></div>
+  <div>
+   <p>Developed as a more durable, engineered alternative to timber mat bridges. Originally intended for timber skidding operations, but suitable for any shorter span, shorter duration, low traffic volume application where timber mats might otherwise be used. Can offer a lower price point than the hinged and hybrid bridges, depending on the options selected.</p>
+   <p>Two half-width by full-length steel-framed panels, with (optional) guardrail and timber deck pre-installed. Panels are butted together, and two threaded rods can be inserted to connect them.</p>
+   <dl class="specs">
+    <div><dt>Panel widths</dt><dd>5’, 6’ and 7’</dd></div>
+    <div><dt>Lengths</dt><dd>20’, 25’ and 30’</dd></div>
+    <div><dt>Capacities</dt><dd>15-ton (“skidder”) and 45-ton (“truck”)</dd></div>
+    <div><dt>Guardrail</dt><dd>Optional 3.5” OD pipe guardrail system</dd></div>
+    <div><dt>Finish</dt><dd>Bare steel, prime painted only, or primed and topcoated</dd></div>
+    <div><dt>Deck</dt><dd>Optional white oak plank deck system, or furnish/install your own timber decking</dd></div>
+   </dl>
+   <p class="small">Typical configurations; others available upon request.</p>
+  </div>
+ </div>
+</section>
+<section class="sec sec-alt" id="long-span" aria-labelledby="h-long">
+ <div class="wrap spec-grid">
+  <div><h2 id="h-long">Long-span temporary bridges</h2><p class="sub">Modular solution for longer crossings.</p></div>
+  <ul class="ticks"><li>For lengths from 75’ through 100’.</li><li>Typically install in 2-3 days with 4 laborers plus equipment/operators.</li></ul>
+ </div>
+ <div class="wrap jobs-wide">
+  <figure class="job"><img src="img/longspan-top-1200.webp" srcset="img/longspan-top-480.webp 480w, img/longspan-top-800.webp 800w, img/longspan-top-1200.webp 1200w" sizes="(min-width: 1340px) 1240px, calc(100vw - 32px)" width="1200" height="606" alt="ADM long-span temporary bridge crossing a stream, with a loader on the deck" loading="lazy" decoding="async">
+  <figcaption><span class="job-head"><span class="job-label">Long-span temporary bridge</span></span></figcaption></figure>
+  <figure class="job" data-line="longspan"><img src="img/ramsey-520.webp" srcset="img/ramsey-480.webp 480w, img/ramsey-520.webp 520w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="520" height="388" alt="Oil &amp;amp; Gas: 80’ bridge providing “long-term temporary” access to shale gas pad site." loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="span-num">80<small> ft</small></span><span class="job-label">Oil &amp; Gas</span></span><span class="cap">80’ bridge providing “long-term temporary” access to shale gas pad site.</span></figcaption></figure>
+ </div>
+</section>
+<section class="sec" id="fleet" aria-labelledby="h-fleet">
+ <div class="wrap">
+  <h2 id="h-fleet">Rental fleet: stock sizes</h2>
+  <p class="sec-lead">Call or email for current daily rates. Used bridges from the rental fleet are available for purchase, typically discounted 5%–25% from the new price depending on age, use and condition.</p>
+  <div class="tbl"><table><caption>Hinged portable bridges. Capacity HS25 (45-ton/5-axle tractor-trailer), subject to 10 mph speed restriction. Minimum rental 2 weeks; each ships as a single load.</caption><thead><tr><th scope="col">Clear width</th><th scope="col">Nominal length</th><th scope="col">Guardrail</th><th scope="col">Weight (lb)</th></tr></thead><tbody><tr><td>12.5’</td><td>30’</td><td>3.5” OD pipe</td><td>17,000</td></tr><tr><td>12.5’</td><td>35’</td><td>3.5” OD pipe</td><td>22,000</td></tr><tr><td>12.5’</td><td>40’</td><td>3.5” OD pipe</td><td>27,000</td></tr><tr><td>12.5’</td><td>45’</td><td>3.5” OD pipe</td><td>32,000</td></tr><tr><td>12.5’</td><td>50’</td><td>3.5” OD pipe</td><td>37,000</td></tr></tbody></table></div>
+  <div class="tbl"><table><caption>“Skidder” panel bridge.</caption><thead><tr><th scope="col">Clear width</th><th scope="col">Nominal length</th><th scope="col">Guardrail</th><th scope="col">Weight (lb)</th><th scope="col">Minimum rental</th><th scope="col">Transport</th></tr></thead><tbody><tr><td>14’</td><td>25’</td><td>3.5” OD pipe</td><td>2 sections @ 9,000 each</td><td>2 weeks</td><td>single load</td></tr></tbody></table></div>
+  <div class="tbl"><table><caption>Hybrid bridges. Capacity HL93, with no speed restriction; 9-axle/94-ton combination vehicle, subject to 10 mph speed restriction.</caption><thead><tr><th scope="col">Clear width</th><th scope="col">Nominal length</th><th scope="col">Guardrail</th><th scope="col">Weight (lb)</th><th scope="col">Minimum rental</th><th scope="col">Transport</th></tr></thead><tbody><tr><td>15.33’</td><td>30’</td><td>W-rail</td><td>2 sections @ 14,000 each</td><td>3 weeks</td><td>single load</td></tr><tr><td>15.33’</td><td>40’</td><td>W-rail</td><td>2 sections @ 20,000 each</td><td>3 weeks</td><td>single load</td></tr><tr><td>14’</td><td>45’</td><td>3.5” OD square tube</td><td>2 sections @ 20,000 each</td><td>3 weeks</td><td>single load</td></tr><tr><td>14’</td><td>50’</td><td>3.5” OD square tube</td><td>2 sections @ 23,000 each</td><td>3 weeks</td><td>single load</td></tr><tr><td>15.33’</td><td>55’</td><td>W-rail</td><td>2 sections @ 32,000 each</td><td>1 month</td><td>two loads</td></tr><tr><td>14’</td><td>60’</td><td>3.5” OD square tube w/ curb/“mudguard”</td><td>2 sections @ 37,000 each</td><td>1 month</td><td>two overlength loads</td></tr><tr><td>14’</td><td>70’</td><td>3.5” OD square tube</td><td>2 sections @ 38,000 each</td><td>1 month</td><td>two overlength loads</td></tr></tbody></table></div>
+  <ul class="notes">
+   <li>Detailed specifications available upon request.</li>
+   <li>Capacities are based on the bridges being used at their “full” span. Capacity increases as clear span is reduced.</li>
+   <li>Other widths, lengths, capacities and guardrail systems quoted upon request.</li>
+   <li>Rentals include a 3.5”x6” white oak plank deck system. Other deck systems available upon request.</li>
+   <li>Transportation information is typical and may vary with state DOT regulations, the tractor-trailer used and other factors.</li>
+  </ul>
+ </div>
+</section><section class="contact-band" aria-labelledby="cb-h">
+ <div class="wrap cb-grid">
+  <h2 id="cb-h">Tell ADM the length, width and load.</h2>
+  <div><p>37 Broadhead St., Warren, PA 16365</p>
+  <p class="actions"><a class="btn btn-oak" href="tel:+18147237227">Call 814-723-7227</a><a class="btn btn-line-light" href="mailto:admwelding@verizon.net?subject=Bridge%20request&amp;body=Company%20or%20organization%3A%0AContact%20name%3A%0APhone%20number%3A%0ABridge%20length%3A%0AMinimum%20width%3A%0ACapacity%20%28vehicle/equipment%20and%20weight%2C%20e.g.%20%22Three-axle%20articulated%20dump%2C%20weighing%2070%20tons%22%29%3A%0ADescription%20of%20use%20%28e.g.%20%22bypass%20for%20public%20traffic%20during%20bridge%20replacement%20project%22%29%3A%0ABridge%20type%20%28permanent%2C%20temporary%2C%20or%20both/unsure%29%3A%0AIf%20temporary%20%28rental%2C%20purchase%2C%20or%20both%29%3A%0AIf%20renting%2C%20how%20soon%20is%20the%20bridge%20needed%3A%0AAdditional%20comments%3A%0A">Email admwelding@verizon.net</a></p></div>
+ </div>
+</section>
+</main>
+<footer class="site-foot">
+ <div class="wrap foot-grid">
+  <div>
+   <img src="img/logo-280.webp" width="280" height="63" alt="ADM Welding &amp; Fabrication, LLC" loading="lazy">
+   <p>37 Broadhead St.<br>Warren, PA 16365</p>
+  </div>
+  <div>
+   <p><a href="tel:+18147237227">814-723-7227</a><br><a href="mailto:admwelding@verizon.net">admwelding@verizon.net</a></p>
+   <p class="foot-links"><a href="portable.html">Portable bridges</a><a href="permanent.html">Permanent bridges</a><a href="projects.html">Projects</a><a href="fabrication.html">Fabrication</a><a href="contact.html">Contact</a></p>
+  </div>
+ </div>
+ <div class="wrap demo-foot">
+  <p>Unofficial demo built by MHS Tecnologia for ADM Welding &amp; Fabrication. Not affiliated with or endorsed by ADM Welding &amp; Fabrication. Photos and text come from ADM Welding &amp; Fabrication’s public website.</p>
+  <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+ </div>
+</footer>
+<div class="dock" data-after="hero" aria-hidden="true">
+ <a class="btn btn-oak" href="tel:+18147237227" tabindex="-1">Call 814-723-7227</a>
+ <a class="btn btn-line-light" href="mailto:admwelding@verizon.net?subject=Bridge%20request&amp;body=Company%20or%20organization%3A%0AContact%20name%3A%0APhone%20number%3A%0ABridge%20length%3A%0AMinimum%20width%3A%0ACapacity%20%28vehicle/equipment%20and%20weight%2C%20e.g.%20%22Three-axle%20articulated%20dump%2C%20weighing%2070%20tons%22%29%3A%0ADescription%20of%20use%20%28e.g.%20%22bypass%20for%20public%20traffic%20during%20bridge%20replacement%20project%22%29%3A%0ABridge%20type%20%28permanent%2C%20temporary%2C%20or%20both/unsure%29%3A%0AIf%20temporary%20%28rental%2C%20purchase%2C%20or%20both%29%3A%0AIf%20renting%2C%20how%20soon%20is%20the%20bridge%20needed%3A%0AAdditional%20comments%3A%0A" tabindex="-1">Email a request</a>
+</div>
+<script>(function(){
+var d=document;
+// mobile call/email dock: appears once the page head has scrolled away
+var dock=d.querySelector('.dock'),hero=d.getElementById('hero');
+if(dock&&hero&&'IntersectionObserver' in window){
+ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;dock.classList.toggle('on',on);dock.setAttribute('aria-hidden',on?'false':'true');dock.querySelectorAll('a').forEach(function(a){a.tabIndex=on?0:-1})}).observe(hero);
+}
+// close the menu when clicking elsewhere
+var menu=d.querySelector('.menu');
+if(menu)d.addEventListener('click',function(e){if(menu.open&&!menu.contains(e.target))menu.open=false});
+
+// projects filter
+var fb=d.querySelectorAll('.filters button'),jobs=d.querySelectorAll('#jobs .job'),count=d.getElementById('count');
+function show(f){var n=0;jobs.forEach(function(j){var s=f==='all'||j.dataset.line===f;j.hidden=!s;if(s)n++});fb.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===f?'true':'false')});if(count)count.textContent=n+' bridges shown.'}
+fb.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.f)})});
+
+// span finder
+var F=window.FINDER,inp=d.getElementById('span');
+if(!F||!inp)return;
+var $=function(i){return d.getElementById(i)},NS='http://www.w3.org/2000/svg';
+var fits=[['skidder',20,30,'20’, 25’, 30’'],['portable',30,50,'in inventory, 30’–50’'],['hybrid',16,70,'up through 70’'],['longspan',75,100,'75’–100’'],['permanent',16,100,'to order, up through 100’'],['pedestrian',16,115,'to order']];
+function mail(L){var b=['Company or organization:','Contact name:','Phone number:','Bridge length: '+L+' ft','Minimum width:','Capacity (vehicle/equipment and weight, e.g. "Three-axle articulated dump, weighing 70 tons"):','Description of use (e.g. "bypass for public traffic during bridge replacement project"):','Bridge type (permanent, temporary, or both/unsure):','If temporary (rental, purchase, or both):','If renting, how soon is the bridge needed:','Additional comments:',''].join('\n');
+ return 'mailto:'+F.mail+'?subject='+encodeURIComponent('Bridge request – '+L+' ft crossing')+'&body='+encodeURIComponent(b)}
+function draw(L){
+ var nar=innerWidth<700,g=L*(nar?5.8:7.1),c=500;$('elev').setAttribute('viewBox',nar?'140 40 720 200':'0 30 1000 210');var l=c-g/2,r=c+g/2;
+ $('bank-l').setAttribute('d','M0 150 H'+l+' L'+(l+34)+' 228 V240 H0Z');
+ $('bank-r').setAttribute('d','M1000 150 H'+r+' L'+(r-34)+' 228 V240 H1000Z');
+ $('water').setAttribute('d','M'+(l+10)+' 206 H'+(r-10)+' L'+(r-34)+' 240 H'+(l+34)+'Z');
+ $('abut-l').setAttribute('x',l-34);$('abut-r').setAttribute('x',r);
+ var x0=l-24,w=g+48;
+ ['deck','girder'].forEach(function(id){$(id).setAttribute('x',x0);$(id).setAttribute('width',w)});
+ var rail=$('rail');rail.textContent='';
+ var n=Math.max(2,Math.round(L/8)),add=function(a){var e=d.createElementNS(NS,'line');for(var k in a)e.setAttribute(k,a[k]);rail.appendChild(e)};
+ add({x1:x0+6,x2:x0+w-6,y1:96,y2:96});
+ for(var i=0;i<=n;i++){var x=x0+6+(w-12)*i/n;add({x1:x,x2:x,y1:96,y2:124})}
+ $('dim').setAttribute('x1',x0);$('dim').setAttribute('x2',x0+w);
+ ['dim-a','dim-b'].forEach(function(id,i){var x=i?x0+w:x0;$(id).setAttribute('x1',x);$(id).setAttribute('x2',x)});
+ $('dim-t').textContent=L+' ft';
+}
+function near(L){var best=null;F.p.forEach(function(p){if(!best||Math.abs(p.s-L)<Math.abs(best.s-L))best=p});return best}
+var lastNear='';
+function update(){
+ var L=+inp.value;
+ inp.style.setProperty('--p',((L-16)/(115-16)*100)+'%');
+ $('span-out').innerHTML='<b>'+L+'</b> ft';
+ draw(L);
+ $('fit-h').textContent='ADM bridges at '+L+' ft';
+ var ul=$('fit-list');ul.textContent='';
+ fits.forEach(function(f){if(L>=f[1]&&L<=f[2]){var li=d.createElement('li'),a=d.createElement('a');a.href=F.l[f[0]].h;a.innerHTML=F.l[f[0]].t+' <span>'+f[3]+'</span>';li.appendChild(a);ul.appendChild(li)}});
+ var note='';
+ if(L>70&&L<75)note='Temporary lines are listed up through 70’ and from 75’. Ask ADM about '+L+' ft.';
+ else if(L>100)note='Vehicular bridges are listed up through 100’. ADM has built a 110’ multi-span forestry bridge and a 115’ pedestrian trail bridge.';
+ else if(L<20)note='Short spans: the shortest bridge on ADM’s project pages is a 16’ golf course bridge.';
+ $('fit-note').textContent=note;
+ var m=$('fit-mail');m.href=mail(L);m.textContent='Email ADM about a '+L+' ft crossing';
+ var p=near(L);
+ if(p&&p.n!==lastNear){lastNear=p.n;var top=p.w[p.w.length-1];
+  $('near').innerHTML='<img src="img/'+p.n+'-'+top+'.webp" srcset="'+p.w.map(function(w){return 'img/'+p.n+'-'+w+'.webp '+w+'w'}).join(', ')+'" sizes="(min-width: 1340px) 420px, (min-width: 900px) 32vw, calc(100vw - 32px)" width="'+top+'" height="'+p.h+'" alt="" loading="lazy">'+
+  '<figcaption><span class="k">Closest job ADM has built</span><span class="job-head"><span class="span-num">'+p.s+'<small> ft</small></span><span class="job-label">'+p.lb+'</span></span><span class="cap">'+p.c+'</span></figcaption>';}
+}
+inp.addEventListener('input',update);addEventListener('resize',update);update();
+})();
+</script>
+</body>
+</html>
