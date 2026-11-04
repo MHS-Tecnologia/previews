@@ -224,7 +224,7 @@ p { max-width: 68ch; text-wrap: pretty; }
   .field { display: flex; flex-direction: column; }
   .side { display: contents; }
   .side .lead { order: 1; padding: 1.1rem 1.1rem 1.2rem; gap: .75rem; }
-  .side h1 { font-size: clamp(1.75rem, 1rem + 4vw, 2.4rem); }
+  .side h1 { font-size: clamp(1.5rem, .9rem + 3vw, 2.2rem); font-stretch: 110%; }
   .side .lead p { font-size: 1rem; line-height: 1.5; }
   .view { order: 2; border-right: 0; border-top: 1px solid var(--ink); }
   .view img { aspect-ratio: 780 / 484; height: auto; }
@@ -318,6 +318,7 @@ p { max-width: 68ch; text-wrap: pretty; }
       <h2 id="h-dept">Large enough to handle your manufacturing needs.</h2>
       <p class="quote">Small enough to offer the kind of personal service that sets us apart from all the others.</p>
       <p>Over the years, SEM has established a reputation for quality, reliability, and commitment when turning customers’ ideas into reality.</p>
+      <figure class="big"><img src="img/catwalk-800.webp" srcset="img/catwalk-800.webp 800w, img/catwalk-1400.webp 1400w" sizes="(min-width: 75rem) 28rem, (min-width: 960px) 37vw, calc(100vw - 2rem)" width="1400" height="1050" alt="Yellow steel platform and railings installed over conveyor equipment inside a plant" loading="lazy" decoding="async"><figcaption>On-site installation.</figcaption></figure>
     </div>
     <nav class="rows" aria-label="Departments">
       <a href="machining.html"><h3>CNC machining</h3><p>From a single part, to long term contracts, SEM has the expertise and capability to meet your requirements utilizing a wide range of equipment.</p><span class="go">Machining</span></a>
