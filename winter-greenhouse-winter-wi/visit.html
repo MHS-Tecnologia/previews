@@ -110,6 +110,7 @@ p { max-width: 36em; }
 .month.now .ev { padding-bottom: 1rem; margin: 0; }
 .now-tag { display: inline-block; background: var(--spruce); color: #fff; font-size: .78rem; font-weight: 650; border-radius: 999px; padding: .15rem .6rem; margin-left: .35rem; vertical-align: .1em; }
 .year-foot { margin-top: 1.4rem; }
+.now-card { display: none; }
 .js .months .band { transform: scaleX(0); }
 .js .months.go .band { transform: scaleX(1); transition: transform .45s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--i) * 110ms); }
 
@@ -120,6 +121,7 @@ p { max-width: 36em; }
 .kinds { list-style: none; padding: 0; margin: 1.3rem 0 1.5rem; display: flex; flex-wrap: wrap; gap: .45rem; }
 .kinds li { border: 1.5px solid var(--line); border-radius: 999px; padding: .3rem .8rem; font-size: .95rem; background: var(--frost); }
 .paper .kinds li { background: var(--paper); }
+.sec:not(.paper):not(.on-dark) .kinds li { background: var(--paper); }
 
 .on-dark { background: var(--spruce); color: #eef3ef; }
 .on-dark p, .on-dark .cap { color: #c9d6cd; }
@@ -133,12 +135,14 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
 .on-dark blockquote footer { color: #b8c9be; }
 
 .garden-home { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
-.land-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'h ba' 't ba'; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.land-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'h ba' 't ba' 'a ba'; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
 .land-hero h1 { grid-area: h; align-self: end; }
 .land-hero .ba-wrap { grid-area: ba; }
 .land-hero .t { grid-area: t; }
 .land-hero .t > p { color: var(--ink-soft); font-size: 1.1rem; }
-.land-hero .actions { margin-top: 1.3rem; }
+.land-hero > .actions { grid-area: a; }
+.land-hero .num { margin-left: .3em; }
+.land-hero h1 { font-size: clamp(2.4rem, 5.2vw, 4.4rem); }
 .ba-grid .side { border-radius: 1rem; }
 .strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; }
 .strip img { border-radius: 1rem; width: 100%; aspect-ratio: 1; object-fit: cover; background: #fff; }
@@ -228,10 +232,12 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .js .months .band { transform: scaleY(0); }
   .js .months.go .band { transform: scaleY(1); }
   .grows, .shop, .visit, .two { grid-template-columns: 1fr; }
+  .now-card { display: grid; gap: .8rem; justify-items: start; background: var(--paper); border-radius: .9rem; padding: 1rem 1.1rem; margin: -.6rem 0 1.8rem; border-left: .45rem solid #b9d3e0; }
+  .now-card .now-tag { margin: 0 .3rem 0 0; }
   .plans { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: 1fr; }
   .garden-home { grid-template-columns: 1fr; }
-  .land-hero { grid-template-columns: 1fr; grid-template-areas: 'h' 'ba' 't'; }
+  .land-hero { grid-template-columns: 1fr; grid-template-areas: 'h' 'ba' 'a' 't'; }
   .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) .6rem; scroll-padding: 0 var(--pad); }
   .strip li { flex: 0 0 78%; scroll-snap-align: start; }
   .foot .cols { grid-template-columns: 1fr; }
@@ -245,6 +251,11 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .hero-text .lede .more { display: none; }
   h1 { font-size: clamp(2.45rem, 11.5vw, 3.4rem); }
   .actions .btn { flex: 1 1 100%; }
+  .actions.row { flex-wrap: nowrap; }
+  .actions.row .btn { flex: 0 0 auto; padding-left: 1.4rem; padding-right: 1.4rem; }
+  .actions.row .btn + .btn { flex: 1 1 auto; padding-left: .8rem; padding-right: .8rem; white-space: nowrap; }
+  .actions.row .num { display: none; }
+  .land-hero .ba-wrap .cap { margin-top: .4rem; }
   .hero .photo img { aspect-ratio: 800 / 660; }
   .garden-text { grid-template-columns: 1fr; }
   .list-events li { grid-template-columns: 1fr; gap: .5rem; }
@@ -345,7 +356,7 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   document.querySelectorAll('.ba').forEach(function (f) { var r = f.querySelector('input'); r.addEventListener('input', function () { f.style.setProperty('--x', r.value + '%'); }); });
   if (dock) {
     var seen = new Set();
-    var watch = [].slice.call(document.querySelectorAll('[data-hero], .ba'));
+    var watch = [].slice.call(document.querySelectorAll('[data-hero], .ba')).filter(function (el) { return !el.closest('[data-hero] .ba-wrap'); });
     var io2 = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
       dock.classList.toggle('show', seen.size === 0 && (!hero || hero.getBoundingClientRect().bottom < 0));

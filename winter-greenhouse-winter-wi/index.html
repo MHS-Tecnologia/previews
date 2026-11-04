@@ -111,6 +111,7 @@ p { max-width: 36em; }
 .month.now .ev { padding-bottom: 1rem; margin: 0; }
 .now-tag { display: inline-block; background: var(--spruce); color: #fff; font-size: .78rem; font-weight: 650; border-radius: 999px; padding: .15rem .6rem; margin-left: .35rem; vertical-align: .1em; }
 .year-foot { margin-top: 1.4rem; }
+.now-card { display: none; }
 .js .months .band { transform: scaleX(0); }
 .js .months.go .band { transform: scaleX(1); transition: transform .45s cubic-bezier(.3,.7,.3,1); transition-delay: calc(var(--i) * 110ms); }
 
@@ -121,6 +122,7 @@ p { max-width: 36em; }
 .kinds { list-style: none; padding: 0; margin: 1.3rem 0 1.5rem; display: flex; flex-wrap: wrap; gap: .45rem; }
 .kinds li { border: 1.5px solid var(--line); border-radius: 999px; padding: .3rem .8rem; font-size: .95rem; background: var(--frost); }
 .paper .kinds li { background: var(--paper); }
+.sec:not(.paper):not(.on-dark) .kinds li { background: var(--paper); }
 
 .on-dark { background: var(--spruce); color: #eef3ef; }
 .on-dark p, .on-dark .cap { color: #c9d6cd; }
@@ -134,12 +136,14 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
 .on-dark blockquote footer { color: #b8c9be; }
 
 .garden-home { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
-.land-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'h ba' 't ba'; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.land-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-areas: 'h ba' 't ba' 'a ba'; gap: 1rem clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
 .land-hero h1 { grid-area: h; align-self: end; }
 .land-hero .ba-wrap { grid-area: ba; }
 .land-hero .t { grid-area: t; }
 .land-hero .t > p { color: var(--ink-soft); font-size: 1.1rem; }
-.land-hero .actions { margin-top: 1.3rem; }
+.land-hero > .actions { grid-area: a; }
+.land-hero .num { margin-left: .3em; }
+.land-hero h1 { font-size: clamp(2.4rem, 5.2vw, 4.4rem); }
 .ba-grid .side { border-radius: 1rem; }
 .strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; padding: 0; }
 .strip img { border-radius: 1rem; width: 100%; aspect-ratio: 1; object-fit: cover; background: #fff; }
@@ -229,10 +233,12 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .js .months .band { transform: scaleY(0); }
   .js .months.go .band { transform: scaleY(1); }
   .grows, .shop, .visit, .two { grid-template-columns: 1fr; }
+  .now-card { display: grid; gap: .8rem; justify-items: start; background: var(--paper); border-radius: .9rem; padding: 1rem 1.1rem; margin: -.6rem 0 1.8rem; border-left: .45rem solid #b9d3e0; }
+  .now-card .now-tag { margin: 0 .3rem 0 0; }
   .plans { grid-template-columns: 1fr; }
   .ba-grid { grid-template-columns: 1fr; }
   .garden-home { grid-template-columns: 1fr; }
-  .land-hero { grid-template-columns: 1fr; grid-template-areas: 'h' 'ba' 't'; }
+  .land-hero { grid-template-columns: 1fr; grid-template-areas: 'h' 'ba' 'a' 't'; }
   .strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad) .6rem; scroll-padding: 0 var(--pad); }
   .strip li { flex: 0 0 78%; scroll-snap-align: start; }
   .foot .cols { grid-template-columns: 1fr; }
@@ -246,6 +252,11 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .hero-text .lede .more { display: none; }
   h1 { font-size: clamp(2.45rem, 11.5vw, 3.4rem); }
   .actions .btn { flex: 1 1 100%; }
+  .actions.row { flex-wrap: nowrap; }
+  .actions.row .btn { flex: 0 0 auto; padding-left: 1.4rem; padding-right: 1.4rem; }
+  .actions.row .btn + .btn { flex: 1 1 auto; padding-left: .8rem; padding-right: .8rem; white-space: nowrap; }
+  .actions.row .num { display: none; }
+  .land-hero .ba-wrap .cap { margin-top: .4rem; }
   .hero .photo img { aspect-ratio: 800 / 660; }
   .garden-text { grid-template-columns: 1fr; }
   .list-events li { grid-template-columns: 1fr; gap: .5rem; }
@@ -289,7 +300,7 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
     </div>
     <div class="hero-side">
       <p class="status"><i aria-hidden="true"></i><span><b>Local store currently closed for the season.</b> Online shop open year round.</span></p>
-      <div class="actions"><a class="btn pink" href="shop.html">Shop online</a><a class="btn line" href="tel:+17152005430">Call (715) 200-5430</a></div>
+      <div class="actions"><a class="btn pink" href="shop.html">Shop online</a><a class="btn line" href="tel:+17152005430">Call (715) 200-5430</a><a class="btn line" href="landscaping.html#cost">Landscape design from ~$199</a></div>
     </div>
   </div>
   <div class="photo"><picture><source media="(max-width: 760px)" srcset="img/aerial-m520.webp 520w, img/aerial-m640.webp 640w, img/aerial-m800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="660"><img src="img/aerial-1000.webp" srcset="img/aerial-1000.webp 1000w, img/aerial-1600.webp 1600w" sizes="(min-width: 1312px) 1216px, calc(100vw - 6rem)" width="1600" height="660" alt="Aerial view of Winter Greenhouse: the long white greenhouses, the nursery yard and the shop buildings, with the Northwoods in fall colour around them" fetchpriority="high"></picture></div>
@@ -300,11 +311,23 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
     <h2 id="year-h">The 2026 season at the greenhouse</h2>
     <p>Seven weekends and sales, from the bareroot trees in spring to the mums in September. Dates as posted on their event pages.</p>
   </div>
+  <div class="now-card"><p><span class="now-tag">Now</span> <b>November:</b> local store currently closed for the season, online shop open year round.</p><a class="btn pink small" href="shop.html">Shop online</a></div>
   <ol class="months" aria-label="2026 season, April to now"><li class="month" style="--c:#9cc77a;--i:0"><i class="band" aria-hidden="true"></i><span class="m">April</span><div class="evs"><div class="ev"><time datetime="2026-04-30">Apr 30 – May 2</time><strong>Bareroot Days</strong><span>The three-day bareroot sale that starts the season.</span></div></div></li><li class="month" style="--c:#e889b5;--i:1"><i class="band" aria-hidden="true"></i><span class="m">May</span><div class="evs"><div class="ev"><time datetime="2026-05-09">May 9 – 10</time><strong>Mother’s Day Weekend</strong><span>Hundreds of gifts and containers planted for the weekend.</span></div><div class="ev"><time datetime="2026-05-23">May 23 – 25</time><strong>Memorial Day Weekend</strong><span>Time to plant out veggies and bedding plants.</span></div></div></li><li class="month" style="--c:#5f9c48;--i:2"><i class="band" aria-hidden="true"></i><span class="m">June</span><div class="evs"><div class="ev"><time datetime="2026-06-20">June 20 – 21</time><strong>Father’s Day</strong><span>Fruit trees and unusual evergreens.</span></div></div></li><li class="month" style="--c:#2f6f3f;--i:3"><i class="band" aria-hidden="true"></i><span class="m">July</span><div class="evs"><div class="ev"><time datetime="2026-07-01">July 1 – 31</time><strong>Bonus Bill Days</strong><span>Bonus Bills apply to up to 50% of plant purchases.</span></div></div></li><li class="month" style="--c:#c23b7a;--i:4"><i class="band" aria-hidden="true"></i><span class="m">August</span><div class="evs"><div class="ev"><time datetime="2026-08-01">Aug 1</time><strong>ScentSational Summer Sale</strong><span>Scent and sensory displays, one day only.</span></div></div></li><li class="month" style="--c:#c8652c;--i:5"><i class="band" aria-hidden="true"></i><span class="m">September</span><div class="evs"><div class="ev"><time datetime="2026-09-05">Sept 5 – 6</time><strong>Autumn Splendor</strong><span>The last event of the year, with drawings for free mums.</span></div></div></li><li class="month empty" style="--c:#8e3d1b;--i:6"><i class="band" aria-hidden="true"></i><span class="m">October</span><div class="evs"></div></li><li class="month now" style="--c:#b9d3e0;--i:7"><i class="band" aria-hidden="true"></i><span class="m">November <span class="now-tag">Now</span></span><div class="evs"><div class="ev"><strong>Store closed for the season</strong><span>The online shop is open year round.</span></div></div></li></ol>
   <p class="year-foot"><a class="btn line small" href="events.html">What happens at each event</a></p>
 </section>
 
-<section class="sec paper" aria-labelledby="grow-h">
+<section class="sec paper" aria-labelledby="garden-h">
+  <div class="wrap garden-home">
+    <div>
+      <h2 id="garden-h">See the design on your own yard first</h2>
+      <p style="margin-top:1rem">Based on 40 years of experience designing and growing the greenhouse display gardens, Winter Greenhouse also designs and installs landscapes. They photograph your yard and digitally impose the design on it, so you see the result first.</p>
+      <div class="actions" style="margin-top:1.4rem"><a class="btn pink" href="landscaping.html#cost">Plan your yard, from ~$199</a><a class="btn line" href="landscaping.html">Landscape design</a></div>
+    </div>
+    <div><figure class="ba" style="--x:50%"><div class="ba-box"><img src="img/ba-koehler-before.webp" width="760" height="540" alt="Before: A log home with a bare dirt yard along the stone foundation" loading="lazy" decoding="async"><img class="ba-after" src="img/ba-koehler-after.webp" width="760" height="540" alt="Design image: The same log home with a planted border of flowering shrubs, grasses and lawn" loading="lazy" decoding="async"><span class="ba-line" aria-hidden="true"></span><span class="ba-l b" aria-hidden="true">Before</span><span class="ba-l a" aria-hidden="true">Design</span><input type="range" min="0" max="100" value="50" aria-label="Compare before and design image"></div></figure><p class="cap">Drag to compare: a yard as photographed, and their design image for it.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="grow-h">
   <div class="wrap grows">
     <div class="photo side"><img src="img/benches-m800.webp" srcset="img/benches-m520.webp 520w, img/benches-m640.webp 640w, img/benches-m800.webp 800w" sizes="(min-width: 1312px) 720px, (min-width: 901px) 58vw, calc(100vw - 2rem)" width="800" height="660" alt="Greenhouse benches full of red and pink flowers under rows of hanging baskets" loading="lazy" decoding="async"></div>
     <div>
@@ -336,16 +359,6 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   </div>
 </section>
 
-<section class="sec" aria-labelledby="garden-h">
-  <div class="wrap garden-home">
-    <div>
-      <h2 id="garden-h">See your yard planted before it is planted</h2>
-      <p style="margin-top:1rem">Based on 40 years of experience designing and growing the greenhouse display gardens, Winter Greenhouse also designs and installs landscapes. They photograph your yard and digitally impose the design on it, so you see the result first.</p>
-      <div class="actions" style="margin-top:1.4rem"><a class="btn pink" href="landscaping.html#cost">Plan your yard, from ~$199</a><a class="btn line" href="landscaping.html">Landscape design</a></div>
-    </div>
-    <div><figure class="ba" style="--x:50%"><div class="ba-box"><img src="img/ba-koehler-before.webp" width="760" height="540" alt="Before: A log home with a bare dirt yard along the stone foundation" loading="lazy" decoding="async"><img class="ba-after" src="img/ba-koehler-after.webp" width="760" height="540" alt="Design image: The same log home with a planted border of flowering shrubs, grasses and lawn" loading="lazy" decoding="async"><span class="ba-line" aria-hidden="true"></span><span class="ba-l b" aria-hidden="true">Before</span><span class="ba-l a" aria-hidden="true">Design</span><input type="range" min="0" max="100" value="50" aria-label="Compare before and design image"></div></figure><p class="cap">Drag to compare: a yard as photographed, and their design image for it.</p></div>
-  </div>
-</section>
 
 <section class="sec paper" aria-labelledby="visit-h">
   <div class="wrap visit">
@@ -402,7 +415,7 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   document.querySelectorAll('.ba').forEach(function (f) { var r = f.querySelector('input'); r.addEventListener('input', function () { f.style.setProperty('--x', r.value + '%'); }); });
   if (dock) {
     var seen = new Set();
-    var watch = [].slice.call(document.querySelectorAll('[data-hero], .ba'));
+    var watch = [].slice.call(document.querySelectorAll('[data-hero], .ba')).filter(function (el) { return !el.closest('[data-hero] .ba-wrap'); });
     var io2 = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
       dock.classList.toggle('show', seen.size === 0 && (!hero || hero.getBoundingClientRect().bottom < 0));
