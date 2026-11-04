@@ -162,7 +162,9 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
 .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .plan { background: var(--paper); border-radius: .9rem; padding: 1.3rem 1.3rem 1.5rem; }
 .plan .price { font-family: "Newsreader", Georgia, serif; font-size: 2.2rem; line-height: 1.1; margin: .4rem 0 .5rem; font-variant-numeric: lining-nums; }
+.plan { display: flex; flex-direction: column; }
 .plan p { font-size: .97rem; color: var(--ink-soft); }
+.plan-act { margin-top: auto; padding-top: 1.1rem; }
 .note { background: var(--paper); border-radius: .9rem; padding: 1.2rem 1.3rem; }
 .note p { font-size: .97rem; }
 .note p + p { margin-top: .7rem; }
@@ -176,6 +178,19 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
 .list-events p { color: var(--ink-soft); }
 .list-events p + p { margin-top: .6rem; }
 .list-events .chip { display: inline-block; width: .8rem; height: .8rem; border-radius: 50%; background: var(--c); margin-right: .5rem; vertical-align: .05em; }
+
+
+/* Before / design-image comparison */
+.ba-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.ba-box { position: relative; border-radius: 1rem; overflow: hidden; aspect-ratio: 760 / 540; background: #cfd8d2; }
+.ba-box img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ba-after { clip-path: inset(0 0 0 var(--x)); }
+.ba-line { position: absolute; top: 0; bottom: 0; left: var(--x); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 6px rgba(0,0,0,.35); pointer-events: none; }
+.ba-line::after { content: ""; position: absolute; top: 50%; left: 50%; width: 2.6rem; height: 2.6rem; margin: -1.3rem 0 0 -1.3rem; border-radius: 50%; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231c3227' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center / 1.3rem no-repeat; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+.ba-l { position: absolute; bottom: .7rem; background: rgba(28, 50, 39, .85); color: #fff; font-size: .82rem; font-weight: 650; padding: .2rem .6rem; border-radius: 999px; pointer-events: none; }
+.ba-l.b { left: .7rem; } .ba-l.a { right: .7rem; }
+.ba-box input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+.ba-box:has(input:focus-visible) { outline: 3px solid var(--lotus); outline-offset: 3px; }
 
 /* Footer */
 .foot { background: var(--spruce); color: #d6e1da; padding: 3rem 0 6rem; margin-top: clamp(3rem, 7vw, 5rem); font-size: .95rem; }
@@ -204,6 +219,7 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .js .months.go .band { transform: scaleY(1); }
   .grows, .shop, .visit, .two { grid-template-columns: 1fr; }
   .plans { grid-template-columns: 1fr; }
+  .ba-grid { grid-template-columns: 1fr; }
   .foot .cols { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
@@ -212,6 +228,7 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
   .brand img { width: 133px; height: 38px; }
   .hero-text { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.2rem; }
   .hero-text .lede { font-size: 1rem; margin-top: .7rem; }
+  .hero-text .lede .more { display: none; }
   h1 { font-size: clamp(2.45rem, 11.5vw, 3.4rem); }
   .actions .btn { flex: 1 1 100%; }
   .hero .photo img { aspect-ratio: 800 / 660; }
@@ -264,12 +281,12 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
       <p>A code that works as payment both in the local retail store and in the web shop. You see the code on your invoice right after checkout, and in your account’s order history.</p>
       <p>Values from $10 to $1,000. Choose a credit-card size plastic card (Waterfall or Waterlilies) to get a hardcopy by mail, or No Card to make your own.</p>
     </div>
-    <div class="photo side"><img src="img/lilies-m800.webp" srcset="img/lilies-m520.webp 520w, img/lilies-m800.webp 800w" sizes="(min-width: 1312px) 584px, (min-width: 901px) 46vw, calc(100vw - 2rem)" width="800" height="660" alt="Pink water lilies open on a pond" loading="lazy" decoding="async"></div>
+    <div class="photo side"><img src="img/lilies-m800.webp" srcset="img/lilies-m520.webp 520w, img/lilies-m640.webp 640w, img/lilies-m800.webp 800w" sizes="(min-width: 1312px) 584px, (min-width: 901px) 46vw, calc(100vw - 2rem)" width="800" height="660" alt="Pink water lilies open on a pond" loading="lazy" decoding="async"></div>
   </section>
   <section class="block" aria-labelledby="say-h">
     <h2 id="say-h">From customers who ordered online</h2>
     <div class="two" style="margin-top:1.2rem">
-      <blockquote><p>“I ordered Bellium minutum for 2 companies and the ones from your company arrived in perfect order, well packed and protected and VERY healthy plants.”</p><footer>Donna Roylance</footer></blockquote><blockquote><p>“I received all of the plants today! I could not be more pleased!! Each plant is perfect and your packaging is the best I have ever seen!”</p><footer>Nancy</footer></blockquote><blockquote><p>“Several months ago I wrote and told you my Sempervivum had died and you graciously replaced it. The replacement has been growing extremely well and is beautiful. It is almost double in size and has 5 babies!”</p><footer>Louise Snyder</footer></blockquote><blockquote><p>“Just a quick note on the Blue Mouse Ears hosta. It’s already responding to its new pot / environment. Many thanks for the fine product, and excellent service.”</p><footer>Steve Gelderman</footer></blockquote>
+      <blockquote><p>“I ordered Bellium minutum for 2 companies and the ones from your company arrived in perfect order, well packed and protected and VERY healthy plants--thank you for your work &amp; honesty in this market~!”</p><footer>Donna Roylance</footer></blockquote><blockquote><p>“Hello! I received all of the plants today! THANK YOU THANK YOU THANK YOU!! I could not be more pleased!! Each plant is perfect and your packaging is the best I have ever seen!”</p><footer>Nancy</footer></blockquote><blockquote><p>“Several months ago I wrote and told you my Sempervivum had died and you graciously replaced it. I am here to tell you the replacement has been growing extremely well and is beautiful. It is almost double in size and has 5 babies! …”</p><footer>Louise Snyder</footer></blockquote><blockquote><p>“…Just a quick note on the Blue Mouse Ears hosta. Its already responding to its new pot / environment. Many Thanks for the fine product, and excellent service.”</p><footer>Steve Gelderman</footer></blockquote>
     </div>
   </section>
 </div>
@@ -307,6 +324,7 @@ blockquote footer { font-size: .9rem; margin-top: .35rem; color: var(--ink-soft)
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { months.classList.add('go'); io.disconnect(); } }); }, { threshold: 0.25 });
     io.observe(months);
   }
+  document.querySelectorAll('.ba').forEach(function (f) { var r = f.querySelector('input'); r.addEventListener('input', function () { f.style.setProperty('--x', r.value + '%'); }); });
   if (dock && hero) {
     new IntersectionObserver(function (es) { dock.classList.toggle('show', !es[0].isIntersecting); }).observe(hero);
   } else if (dock) { dock.classList.add('show'); }
