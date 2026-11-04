@@ -253,7 +253,20 @@ address{font-style:normal}
  .dock{display:flex}
 }
 @media (max-width:599px){
- .jobs{grid-template-columns:1fr}
+ .jobs{grid-template-columns:1fr 1fr;gap:20px 12px}
+ .jobs-wide{grid-template-columns:1fr 1fr;gap:20px 12px}
+ .jobs-wide .job:first-child{grid-column:1/-1}
+ .job-head{flex-direction:column;gap:2px}
+ .span-num{font-size:1.5rem}
+ .job-label{font-size:.92rem;line-height:1.25}
+ .cap,.line-name{font-size:.84rem;line-height:1.4}
+ .tbl{background:none;border:0;overflow:visible}
+ table,tbody,tr,td{display:block;min-width:0}
+ thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ caption{display:block;padding:0 0 10px}
+ tr{background:#fff;border:1px solid var(--line);margin-bottom:10px;padding:8px 14px}
+ td{display:flex;justify-content:space-between;gap:16px;border:0;padding:5px 0;text-align:right}
+ td::before{content:attr(data-l);font-weight:700;font-stretch:87%;text-align:left;flex:none}
  .specs{grid-template-columns:1fr}
  .svc-grid{grid-template-columns:1fr;gap:20px}
  .actions .btn{flex:1 1 140px;padding:12px 8px;font-stretch:75%;white-space:nowrap}
@@ -291,7 +304,7 @@ address{font-style:normal}
   <div><h3>Portable/field welding</h3><p>Services available.</p></div>
   <div><h3>Oilfield fabrications</h3><p>Skids, pipe tubs/boats, pipe racks, custom tanks, road gates, and more.</p></div>
  </div>
- <div class="wrap"><div class="jobs"><figure class="job"><img src="img/new-log-truck-560.webp" srcset="img/new-log-truck-480.webp 480w, img/new-log-truck-560.webp 560w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="560" height="304" alt="Trucks, Trailers &amp;amp; Heavy Equipment: Fit-up of new log truck including bunks, bumper, and headboard" loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="job-label">Trucks, Trailers &amp; Heavy Equipment</span></span><span class="cap">Fit-up of new log truck including bunks, bumper, and headboard</span></figcaption></figure><figure class="job"><img src="img/custom-aluminum-flatbed-560.webp" srcset="img/custom-aluminum-flatbed-480.webp 480w, img/custom-aluminum-flatbed-560.webp 560w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="560" height="300" alt="Trucks, Trailers &amp;amp; Heavy Equipment: Custom aluminum flatbed" loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="job-label">Trucks, Trailers &amp; Heavy Equipment</span></span><span class="cap">Custom aluminum flatbed</span></figcaption></figure><figure class="job"><img src="img/tilt-bed-538.webp" srcset="img/tilt-bed-480.webp 480w, img/tilt-bed-538.webp 538w" sizes="(min-width: 1340px) 404px, (min-width: 900px) calc((100vw - 112px) / 2), calc(100vw - 32px)" width="538" height="228" alt="Trucks, Trailers &amp;amp; Heavy Equipment: Custom tilt-bed and headache rack" loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="job-label">Trucks, Trailers &amp; Heavy Equipment</span></span><span class="cap">Custom tilt-bed and headache rack</span></figcaption></figure></div></div>
+ <div class="wrap"><div class="jobs"><figure class="job"><img src="img/new-log-truck-560.webp" srcset="img/new-log-truck-480.webp 480w, img/new-log-truck-560.webp 560w" sizes="(min-width: 1340px) 404px, (min-width: 600px) calc((100vw - 112px) / 2), calc(50vw - 22px)" width="560" height="304" alt="Trucks, Trailers &amp;amp; Heavy Equipment: Fit-up of new log truck including bunks, bumper, and headboard" loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="job-label">Trucks, Trailers &amp; Heavy Equipment</span></span><span class="cap">Fit-up of new log truck including bunks, bumper, and headboard</span></figcaption></figure><figure class="job"><img src="img/custom-aluminum-flatbed-560.webp" srcset="img/custom-aluminum-flatbed-480.webp 480w, img/custom-aluminum-flatbed-560.webp 560w" sizes="(min-width: 1340px) 404px, (min-width: 600px) calc((100vw - 112px) / 2), calc(50vw - 22px)" width="560" height="300" alt="Trucks, Trailers &amp;amp; Heavy Equipment: Custom aluminum flatbed" loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="job-label">Trucks, Trailers &amp; Heavy Equipment</span></span><span class="cap">Custom aluminum flatbed</span></figcaption></figure><figure class="job"><img src="img/tilt-bed-538.webp" srcset="img/tilt-bed-480.webp 480w, img/tilt-bed-538.webp 538w" sizes="(min-width: 1340px) 404px, (min-width: 600px) calc((100vw - 112px) / 2), calc(50vw - 22px)" width="538" height="228" alt="Trucks, Trailers &amp;amp; Heavy Equipment: Custom tilt-bed and headache rack" loading="lazy" decoding="async"><figcaption><span class="job-head"><span class="job-label">Trucks, Trailers &amp; Heavy Equipment</span></span><span class="cap">Custom tilt-bed and headache rack</span></figcaption></figure></div></div>
 </section>
 <section class="sec sec-alt" id="for-sale" aria-labelledby="h-sale">
  <div class="wrap sale-grid">
