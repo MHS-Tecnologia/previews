@@ -77,6 +77,8 @@ p { max-width: 40rem; }
 .btn-line:hover { background: var(--night); color: #fff; box-shadow: inset 0 0 0 2px var(--night); }
 .on-dark .btn-line:hover { background: #fff; color: var(--night); box-shadow: inset 0 0 0 2px #fff; }
 .btn svg { width: 1.15em; height: 1.15em; flex: none; }
+.more { background: transparent; color: #fff; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.ruler:not(.clip) .more { display: none; }
 
 /* Home hero: the headline beside the next step, then one wide photo of their own canoes. */
 .hero { padding-top: clamp(1.25rem, 4vw, 3.25rem); }
@@ -108,7 +110,7 @@ section { padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: clamp(3.5rem, 8
 .route .note { font-size: 1rem; color: #c3d0d8; line-height: 1.35; }
 .track { position: relative; height: 1.9rem; background: repeating-linear-gradient(90deg, rgba(255,255,255,.09) 0 1px, transparent 1px calc(100% / var(--cols))); }
 .bar { grid-row: 1; align-self: center; height: 1.15rem; border-radius: 1rem; background: var(--kevlar); position: relative; display: flex; align-items: center; justify-content: center; min-width: 2.6rem; transform-origin: left center; }
-.bar b { font-size: .8125rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
+.bar b { white-space: pre; font-size: .8125rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
 .bar.open { background: linear-gradient(90deg, var(--kevlar) 55%, rgba(232,165,60,.15)); justify-content: flex-start; padding-left: .55rem; }
 .rod { margin-top: 2.25rem; font-size: 1rem; color: #c3d0d8; max-width: 46rem; }
 .rod strong { color: #fff; }
@@ -252,7 +254,7 @@ details.gear summary:hover { color: var(--navy); }
   .track { height: 1.5rem; }
   .ruler.clip .route:nth-child(n+6) { display: none; }
   .ruler.clip .more { display: inline-flex; margin-top: 1rem; }
-  .more { background: transparent; color: #fff; border: 0; font: inherit; cursor: pointer; }
+  .bar { min-width: 0; }
   th, td { padding: .5rem .35rem; }
 }
 @media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
@@ -362,7 +364,7 @@ details.gear summary:hover { color: var(--navy); }
     <h2>Andy and Ada</h2>
     <img src="img/owners-1024.webp" srcset="img/owners-640.webp 640w, img/owners-1024.webp 1024w" sizes="(max-width: 860px) calc(100vw - 2rem), 46rem" width="1024" height="681" alt="Andy McDonnell and Ada Igoe standing by a rocky creek in autumn" loading="lazy" decoding="async">
     <blockquote>“We both grew up outside of Grand Marais, MN and spent our childhoods in the woods. We love using our local knowledge to help you create your best canoe trip or cabin getaway ever.”</blockquote>
-    <p class="sig">Andy McDonnell and Ada Igoe met working at the same Gunflint Trail outfitters for a summer, and have been making their lives together on the Gunflint Trail since.</p>
+    <p class="sig">Andy McDonnell and Ada Igoe reconnected after college when they both worked at the same Gunflint Trail outfitters for a summer, and have been making their lives together on the Gunflint Trail since.</p>
   </div>
 </section>
 

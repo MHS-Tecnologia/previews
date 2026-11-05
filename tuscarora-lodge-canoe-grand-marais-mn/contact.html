@@ -75,6 +75,8 @@ p { max-width: 40rem; }
 .btn-line:hover { background: var(--night); color: #fff; box-shadow: inset 0 0 0 2px var(--night); }
 .on-dark .btn-line:hover { background: #fff; color: var(--night); box-shadow: inset 0 0 0 2px #fff; }
 .btn svg { width: 1.15em; height: 1.15em; flex: none; }
+.more { background: transparent; color: #fff; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.ruler:not(.clip) .more { display: none; }
 
 /* Home hero: the headline beside the next step, then one wide photo of their own canoes. */
 .hero { padding-top: clamp(1.25rem, 4vw, 3.25rem); }
@@ -106,7 +108,7 @@ section { padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: clamp(3.5rem, 8
 .route .note { font-size: 1rem; color: #c3d0d8; line-height: 1.35; }
 .track { position: relative; height: 1.9rem; background: repeating-linear-gradient(90deg, rgba(255,255,255,.09) 0 1px, transparent 1px calc(100% / var(--cols))); }
 .bar { grid-row: 1; align-self: center; height: 1.15rem; border-radius: 1rem; background: var(--kevlar); position: relative; display: flex; align-items: center; justify-content: center; min-width: 2.6rem; transform-origin: left center; }
-.bar b { font-size: .8125rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
+.bar b { white-space: pre; font-size: .8125rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
 .bar.open { background: linear-gradient(90deg, var(--kevlar) 55%, rgba(232,165,60,.15)); justify-content: flex-start; padding-left: .55rem; }
 .rod { margin-top: 2.25rem; font-size: 1rem; color: #c3d0d8; max-width: 46rem; }
 .rod strong { color: #fff; }
@@ -250,7 +252,7 @@ details.gear summary:hover { color: var(--navy); }
   .track { height: 1.5rem; }
   .ruler.clip .route:nth-child(n+6) { display: none; }
   .ruler.clip .more { display: inline-flex; margin-top: 1rem; }
-  .more { background: transparent; color: #fff; border: 0; font: inherit; cursor: pointer; }
+  .bar { min-width: 0; }
   th, td { padding: .5rem .35rem; }
 }
 @media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
@@ -317,12 +319,12 @@ details.gear summary:hover { color: var(--navy); }
         <tr><th scope="row">Grand Marais Cook County</th><td>1 hour’s drive; no car rental there</td></tr>
       </tbody></table>
     </div>
-    <figure><img src="img/centennial-1024.webp" srcset="img/centennial-640.webp 640w, img/centennial-1024.webp 1024w" sizes="(max-width: 860px) calc(100vw - 2rem), 38rem" width="1024" height="768" alt="Autumn view over a forested valley with lakes from the Centennial Trail" loading="lazy" decoding="async"><figcaption class="cap">Fall colors from the Centennial Trail, half a mile up Round Lake Road.</figcaption></figure>
+    <figure><img src="img/centennial-1024.webp" srcset="img/centennial-640.webp 640w, img/centennial-1024.webp 1024w" sizes="(max-width: 860px) calc(100vw - 2rem), 38rem" width="1024" height="768" alt="Autumn view over a forested valley with lakes from the Centennial Trail" loading="lazy" decoding="async"><figcaption class="cap">Fall colors from the Centennial Trail.</figcaption></figure>
   </div>
 </section>
 <section class="wrap">
   <h2>Questions we hear a lot</h2>
-  <div style="margin-top:1.5rem;max-width:48rem"><details class="faq"><summary>What are your hours?</summary><p>The canoe season starts May 1st and runs through mid-October. The dining hall is open from Fishing Opener until mid September for breakfast; advance meal reservations are requested. Tuscarora cabins are available for rent in the winter as well.</p></details><details class="faq"><summary>What if we arrive after hours?</summary><p>Often our guests arrive late at night. This is no problem, as long as we know that you are coming. We leave signs out and lights on in your bunkhouse or cabin; we just ask that you come in quietly.</p></details><details class="faq"><summary>Can we rent a cabin the night before a canoe trip?</summary><p>We have private bunkhouses for the night before your trip. Our cabins are typically booked Saturday to Saturday during the summer months, with a 3 night minimum.</p></details><details class="faq"><summary>Do you have permits at Tuscarora?</summary><p>Yes, we are a Forest Service issuing station, and we will gladly reserve permits for our outfitting guests. If you reserve your own permit on recreation.gov, list Tuscarora as your issuing station.</p></details><details class="faq"><summary>Can our groups travel together?</summary><p>Forest Service regulations allow a maximum of nine people in any one place in the BWCA: on portages, campsites, or in the water. Larger groups often take entirely different routes, often the same route in reverse.</p></details><details class="faq"><summary>Do you sell fishing licenses or bait?</summary><p>We do not sell fishing licenses; buy your MN fishing license online before you arrive. We sell leeches by the dozen (call for availability in late summer) and have a full line of fishing tackle in our Trading Post.</p></details><details class="faq"><summary>Can we get meals in your dining room?</summary><p>We serve breakfast with advance reservation in our dining room promptly at 7 a.m. Picnics are available for large groups on request. We are not open for evening meals, but can recommend restaurants nearby.</p></details></div>
+  <div style="margin-top:1.5rem;max-width:48rem"><details class="faq"><summary>What are your hours?</summary><p>The canoe season starts May 1st and runs through mid-October. Our office is open from 7:00 am to 7:00 pm daily including Sundays and holidays during the summer. The dining hall is open from Fishing Opener until mid September for breakfast; advance meal reservations are requested. Tuscarora cabins are available for rent in the winter as well.</p></details><details class="faq"><summary>What if we arrive after hours?</summary><p>Often our guests arrive late at night. This is no problem, as long as we know that you are coming. We leave signs out and lights on in your bunkhouse or cabin; we just ask that you come in quietly.</p></details><details class="faq"><summary>Can we rent a cabin the night before a canoe trip?</summary><p>We have private bunkhouses for the night before your trip. Our cabins are typically booked Saturday to Saturday during the summer months, with a 3 night minimum.</p></details><details class="faq"><summary>Do you have permits at Tuscarora?</summary><p>Yes, we are a Forest Service issuing station, and we will gladly reserve permits for our outfitting guests. If you reserve your own permit on recreation.gov, list Tuscarora as your issuing station.</p></details><details class="faq"><summary>Can our groups travel together?</summary><p>Forest Service regulations allow a maximum of nine people in any one place in the BWCA: on portages, campsites, or in the water. Larger groups often take entirely different routes, often the same route in reverse.</p></details><details class="faq"><summary>Do you sell fishing licenses or bait?</summary><p>We do not sell fishing licenses; buy your MN fishing license online before you arrive. We sell leeches by the dozen (call for availability in late summer) and have a full line of fishing tackle in our Trading Post.</p></details><details class="faq"><summary>Can we get meals in your dining room?</summary><p>We serve breakfast with advance reservation in our dining room promptly at 7 a.m. Picnics are available for large groups on request. We are not open for evening meals, but can recommend restaurants nearby.</p></details></div>
 </section>
 
 </main>
