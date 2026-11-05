@@ -27,6 +27,8 @@
     barra.setAttribute('inert', '')
   }
 
+  if (matchMedia('(max-width: 900px)').matches) document.querySelectorAll('details.dobra').forEach((d) => d.removeAttribute('open'))
+
   document.addEventListener('click', (e) => {
     document.querySelectorAll('details.menu[open]').forEach((m) => { if (!m.contains(e.target)) m.removeAttribute('open') })
   })

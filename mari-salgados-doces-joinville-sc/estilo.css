@@ -204,6 +204,42 @@ dialog.foto figcaption{padding:.9rem 1.1rem;display:flex;justify-content:space-b
   .fatias .zoom:nth-child(3){grid-column:1/-1}
   .fatias .zoom:nth-child(3) img{aspect-ratio:4/3}
 }
+
+/* round 2: menu lists, kits, resale */
+.hero-foto img{box-shadow:0 0 0 8px var(--prato)}
+.sabores{max-width:860px;margin:2.6rem auto 0;text-align:center}
+.sabores h3{font:400 2rem/1 var(--letreiro);color:var(--parede);margin-bottom:1rem}
+.sabores-lista{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem 1.4rem;font:400 1.375rem/1.4 var(--plaquinha);color:var(--tinta)}
+.acoes.centro{justify-content:center;margin-top:1.8rem}
+.kits{background:var(--oliva)}
+.kits .sec-cab p{color:var(--tinta)}
+.kits-lista{list-style:none;margin:0 0 2rem;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem 1.4rem}
+.kits-lista li{background:var(--prato);border-radius:8px;padding:.9rem 1.1rem;font-weight:600;line-height:1.4;border-left:6px solid var(--parede)}
+.b-linha-esc{border-color:var(--tinta);color:var(--tinta)}
+.b-linha-esc:hover{background:rgba(42,18,11,.08)}
+.bolos{background:var(--prato)}
+.bolos .sec-cab p{color:var(--tinta-2)}
+.producao .zoom img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.legenda{font-size:.95rem;color:#f3d6c9;margin:.6rem 0 0}
+.cardapio{list-style:none;margin:1.2rem 0 1.6rem;padding:0;columns:2;column-gap:1.6rem}
+.cardapio li{break-inside:avoid;padding:.4rem 0;border-bottom:1px dashed #e2cdbb;font-weight:600;color:var(--tinta)}
+.caixa.tres{grid-template-columns:repeat(3,1fr)}
+.caixa.tres .cardapio{columns:1}
+.dobra summary{display:none}
+.dobra .kits-lista{grid-template-columns:1fr;margin:0}
+.tipo{scroll-margin-top:1rem}
+@media (min-width:901px){
+  .tipo p,.topo-pag p{font-size:1.1875rem;line-height:1.6}
+  .tipo .caixa{grid-template-columns:.9fr 1.1fr}
+}
+@media (max-width:900px){
+  body{padding-bottom:72px}
+  .rodape{padding-bottom:3rem}
+  .kits-lista{grid-template-columns:1fr}
+  .caixa.tres{grid-template-columns:1fr}
+  .dobra summary{display:block;cursor:pointer;font-weight:800;color:var(--parede);padding:.8rem 0;text-decoration:underline;text-underline-offset:4px}
+  .sabores-lista{font-size:1.2rem}
+}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
