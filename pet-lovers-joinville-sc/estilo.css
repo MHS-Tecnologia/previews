@@ -94,7 +94,7 @@ blockquote{margin:0}
 .palco{background:var(--tinta);color:#fff}
 .palco .cabeca p{color:#d8d0d5}
 .palco h2{color:#fff}
-.retratos{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:0;padding:0;list-style:none}
+.retratos{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:0;padding:0;list-style:none}
 .retrato{margin:0}
 .moldura{display:block;width:100%;padding:12px;border:0;cursor:zoom-in;background:var(--painel) var(--padrao) 0 0/64px 64px;border-radius:999px 999px 22px 22px;transition:transform .2s ease}
 .moldura:hover{transform:translateY(-4px)}
@@ -111,6 +111,17 @@ blockquote{margin:0}
 .fala-foto img{width:100%;height:100%;object-fit:cover}
 .fala-foto div{padding:30px 28px;align-self:center}
 
+.servico .extra{margin-top:12px;padding-top:12px;border-top:2px dashed #e3d9dd;color:var(--tinta)}
+.depoimento{grid-column:1/-1;margin:0;background:#fff;border:2px solid var(--tinta);border-radius:28px;padding:40px 44px 34px;position:relative}
+.depoimento::before{content:"“";position:absolute;top:-30px;left:34px;font:800 6rem/1 var(--display);color:var(--rosa)}
+.depoimento blockquote p{font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.55;max-width:46em;margin:0 0 .8em}
+.depoimento figcaption{color:var(--cinza);font-size:.95rem}
+.fala-painel{background:var(--painel) var(--padrao) 0 0/72px 72px;border:2px solid var(--tinta);display:flex;flex-direction:column;justify-content:center}
+.fala-painel blockquote,.fala-painel cite{background:var(--papel);border-radius:14px;padding:14px 18px;align-self:flex-start}
+.fala-painel cite{margin-top:10px;font-size:.9rem}
+.fala-painel blockquote p{margin:0}
+.btn-mini{display:none}
+
 /* hora marcada */
 .hora{background:var(--rosa);border-top:2px solid var(--tinta);border-bottom:2px solid var(--tinta)}
 .hora .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:72px}
@@ -119,7 +130,7 @@ blockquote{margin:0}
 .hora .link-tel{text-decoration-color:var(--tinta)}
 
 /* gallery page */
-.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;list-style:none;margin:0;padding:0}
+.grade{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;list-style:none;margin:0;padding:0}
 .grade .moldura{background-size:56px 56px}
 .grade figcaption{margin-top:10px;color:var(--cinza);text-align:center;font-size:.95rem}
 .claro .moldura{box-shadow:0 0 0 2px var(--tinta)}
@@ -167,8 +178,11 @@ dialog.lupa[open]{animation:abre .22s ease-out}
   .espelho{width:min(100%,360px)}
   .servicos,.falas,.hora .wrap{grid-template-columns:1fr}
   .principal{grid-row:auto}
-  .retratos{grid-template-columns:1fr 1fr;gap:16px}
-  .grade{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+  .retratos{gap:10px}
+  .retrato figcaption{font-size:.85rem}
+  .moldura{padding:6px}
+  .grade{grid-template-columns:1fr 1fr;gap:16px}
+  .grade .moldura{padding:8px}
   .passos,.escolha{grid-template-columns:1fr}
   .rodape .wrap{grid-template-columns:1fr;gap:24px}
   .secao{padding:64px 0}
@@ -176,7 +190,16 @@ dialog.lupa[open]{animation:abre .22s ease-out}
 @media (max-width:760px){
   .nav > a,.btn-cab{display:none}
   .menu{display:block}
-  .cab .wrap{min-height:64px}
+  .btn-mini{display:inline-flex;min-height:46px;padding:0 16px;font-size:.95rem;gap:7px}
+  .btn-mini svg{width:18px;height:18px}
+  .cab .wrap{min-height:62px;gap:10px}
+  .hero .wrap{padding-top:12px;gap:16px}
+  .hero-texto{padding:20px 18px}
+  .hero h1{margin-bottom:12px}
+  .hero .sub{font-size:.98rem;line-height:1.5;margin-bottom:16px}
+  .acoes{gap:12px 20px}
+  .espelho img{aspect-ratio:4/5}
+  .depoimento{padding:34px 22px 26px}
   .marca img{width:104px}
   .lado{grid-template-columns:40% 1fr}
   .lado .txt{padding:18px 18px 20px}
