@@ -85,10 +85,19 @@ p{margin:0 0 1em}
 .fr{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--ink)}
 .fr-box{position:relative;width:calc(var(--w)*var(--ft));height:calc(var(--d)*var(--ft));background-color:#fff;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:var(--ft) var(--ft);transition:background-color .2s}
 .fr-box svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.fr-box rect{x:1.25px;y:1.25px;width:calc(100% - 2.5px);height:calc(100% - 2.5px);fill:none;stroke:var(--peri);stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:0}
-.fr-n{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font:600 2rem/1 var(--s);color:var(--peri);text-align:center;padding:4px}
-.fr-n small{font:600 .78rem/1.2 var(--u);color:var(--mute)}
-.fr-t{display:flex;flex-direction:column;max-width:11rem;min-width:5.5rem}
+.fr-o rect{x:1.25px;y:1.25px;width:calc(100% - 2.5px);height:calc(100% - 2.5px);fill:none;stroke:var(--peri);stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:0}
+.fr-f{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fr-f *{vector-effect:non-scaling-stroke;stroke-width:1.25px}
+.f-bed{fill:var(--wash);stroke:var(--peri)}
+.f-pil{fill:#fff;stroke:var(--peri)}
+.f-ln{fill:none;stroke:var(--peri)}
+.f-k{fill:#fff;stroke:var(--ink)}
+.f-wall{fill:none;stroke:var(--peri);stroke-width:2.5px}
+.f-gap{fill:none;stroke:#fff;stroke-width:4px}
+.f-t{font:700 1.15px var(--u);fill:var(--peri);stroke:none}
+.fr{width:max(calc(var(--w)*var(--ft)),6.5rem)}
+.fr-t{display:flex;flex-direction:column}
+.fr-name b{color:var(--peri);font-weight:600;margin-right:2px}
 .fr-name{font:600 1rem/1.25 var(--s);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .fr-dim{font:500 .85rem/1.4 var(--u);color:var(--mute)}
 .fr:hover .fr-box{background-color:var(--wash)}
@@ -96,16 +105,16 @@ p{margin:0 0 1em}
 .plan-key{display:flex;align-items:center;gap:8px;font:500 .85rem/1.4 var(--u);color:var(--mute);margin:0}
 .key-sq{width:var(--ft);height:var(--ft);border:1px solid var(--peri)}
 @media (min-width:1100px){:root{--ft:11px}}
-@media (min-width:700px) and (max-width:1099px){:root{--ft:8px}.fr-n small{display:none}}
-@media (max-width:699px){:root{--ft:4.3px}.fp{flex-direction:column;align-items:stretch;gap:12px}.fr{display:grid;grid-template-columns:calc(36*var(--ft)) 1fr;align-items:center;gap:14px}.fr-n{font-size:1.25rem}.fr-n small{display:none}.fr-t{max-width:none}}
+@media (min-width:700px) and (max-width:1099px){:root{--ft:8px}}
+@media (max-width:699px){:root{--ft:calc((100vw - 32px) / 36)}.fp{gap:20px 12px}.fr{width:calc(var(--w)*var(--ft))}}
 @media (prefers-reduced-motion:no-preference){
-  .js .plan:not(.on) rect{stroke-dashoffset:1}
-  .js .plan:not(.on) .fr-n{opacity:0}
-  .js .plan rect{transition:stroke-dashoffset 1.1s cubic-bezier(.6,.1,.3,1)}
-  .js .plan .fr-n{transition:opacity .5s .9s}
-  .js .plan .fr:nth-child(2) rect{transition-delay:.12s}
-  .js .plan .fr:nth-child(3) rect{transition-delay:.24s}
-  .js .plan .fr:nth-child(4) rect{transition-delay:.36s}
+  .js .plan:not(.on) .fr-o rect{stroke-dashoffset:1}
+  .js .plan:not(.on) .fr-f{opacity:0}
+  .js .plan .fr-o rect{transition:stroke-dashoffset 1.1s cubic-bezier(.6,.1,.3,1)}
+  .js .plan .fr-f{transition:opacity .6s .9s}
+  .js .plan .fr:nth-child(2) .fr-o rect{transition-delay:.12s}
+  .js .plan .fr:nth-child(3) .fr-o rect{transition-delay:.24s}
+  .js .plan .fr:nth-child(4) .fr-o rect{transition-delay:.36s}
 }
 
 /* walk */
@@ -214,6 +223,16 @@ figcaption{font:500 .9rem/1.4 var(--u);color:var(--mute);margin-top:8px}
 .res-c .btn{margin-bottom:16px}
 @media (min-width:960px){.res{grid-template-columns:380px 1fr;gap:64px}}
 @media (max-width:479px){.nav>a.nav-tel{display:none}}
+.mb{display:none}
+@media (max-width:479px){.dk{display:none}.mb{display:inline}.hero .ctas{flex-wrap:nowrap}.hero .ctas .btn{padding:0 16px}.hero .lede{font-size:1.08rem;margin-bottom:18px}.hero{padding-top:20px}}
+.plan-mini{padding:8px 0 24px;--ft:5px}
+.plan-mini .floor{padding:12px 0 16px}
+.plan-mini .floor-h{margin-bottom:10px}
+.plan-mini .fp{gap:16px 18px}
+.plan-mini .fr{width:max(calc(var(--w)*var(--ft)),7.5rem)}
+.plan-mini .fr-name{font-size:.95rem}
+.plan-mini .f-t{display:none}
+@media (max-width:699px){.plan-mini{--ft:4.2px}.plan-mini .fr{width:max(calc(var(--w)*var(--ft)),6.8rem)}}
 </style>
 </head>
 <body>
