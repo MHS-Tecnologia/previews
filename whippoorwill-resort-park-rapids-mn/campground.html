@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Campground, Whippoorwill Resort</title>
+<meta name="description" content="Four RV and tent sites among the pines at Whippoorwill Resort, Park Rapids, Minnesota, with rates.">
+<meta name="theme-color" content="#23402f">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/alfaslab.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/worksans.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Alfa Slab One";src:url(fonts/alfaslab.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Work Sans";src:url(fonts/worksans.woff2) format("woff2");font-weight:400 700;font-display:swap}
+:root{
+  --paper:#f2f4ee; --paper-2:#e6eae0; --ink:#1d2a22; --muted:#4a5a4f;
+  --pine:#23402f; --wall:#b5552b; --wall-dark:#9c4622; --plank:#3a2618; --plank-2:#4a3220;
+  --cream:#f4ebdd; --gold:#f0c94a; --lake:#1c5a74; --line:#cfd6c8;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 "Work Sans",system-ui,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--lake);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:"Alfa Slab One",Georgia,serif;font-weight:400;line-height:1.08;margin:0;letter-spacing:-.005em;text-wrap:balance}
+h2{font-size:clamp(30px,4.2vw,46px)}
+h3{font-size:22px}
+p{margin:0 0 1em;max-width:62ch}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;z-index:99;background:#fff;padding:8px 12px}
+
+.demo{background:var(--ink);color:#e8ece5;font-size:13px;line-height:1.4;padding:7px var(--gut);text-align:center}
+.demo a{color:#fff}
+
+.top{background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:76px}
+.brand{display:block;flex:none;border-radius:6px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.brand img{width:132px;height:55px;object-fit:cover}
+.nav{margin-left:auto;display:flex;align-items:center;gap:26px;font-weight:600;font-size:16px}
+.nav > a{color:var(--ink);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover{border-bottom-color:var(--wall)}
+.nav > a[aria-current]{border-bottom-color:var(--wall)}
+.nav .call{background:var(--pine);color:#fff;padding:10px 16px;border-radius:6px;border:0}
+.nav .call:hover{background:#1a3123;border:0}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:10px 14px;border:1.5px solid var(--ink);border-radius:6px}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--ink);color:#fff}
+.menu .drop{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 30px rgba(20,30,20,.18);padding:8px;min-width:240px;z-index:30;display:grid}
+.menu .drop a{color:var(--ink);text-decoration:none;padding:12px 14px;border-radius:6px;font-weight:600}
+.menu .drop a:hover{background:var(--paper-2)}
+@media (max-width:900px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .brand img{width:110px;height:46px}
+  .top .wrap{min-height:64px}
+}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:8px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid var(--pine)}
+.btn.solid{background:var(--pine);color:#fff}
+.btn.solid:hover{background:#1a3123}
+.btn.line{color:var(--pine);background:transparent}
+.btn.line:hover{background:var(--paper-2)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+
+/* hero */
+.hero{padding:clamp(22px,4vw,48px) 0 clamp(28px,4vw,48px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:clamp(28px,5vw,72px);align-items:center}
+.where{font-weight:600;color:var(--muted);margin-bottom:14px}
+.hero h1{font-size:clamp(38px,5.6vw,72px);margin-bottom:22px;max-width:14ch}
+.hero .lede{font-size:clamp(17px,1.5vw,20px);max-width:44ch;margin-bottom:26px}
+.voted{margin-top:22px;font-size:15px;color:var(--muted);max-width:none}
+.hero figure{margin:0}
+.hero figure img{border-radius:10px;width:460px;aspect-ratio:3/4;object-fit:cover}
+figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:22px}
+  .hero h1{max-width:none}
+  .hero .lede{margin-bottom:20px}
+  .hero figure img{width:100%;aspect-ratio:10/7}
+  .voted{margin-top:16px}
+}
+@media (max-width:420px){.btns .btn{flex:1 1 auto;padding:0 14px}}
+
+/* the board: the orange wall of the fish house, with routed planks on chains */
+.board,.wall-strip{background-color:var(--wall);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='92'%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.11' stroke-width='2'%3E%3Cpath d='M0 1h120M0 47h120M1 1v46M61 47v46'/%3E%3C/g%3E%3C/svg%3E");background-size:120px 92px}
+.board{
+  color:#fff;padding:clamp(44px,6vw,80px) 0}
+.board-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px;margin-bottom:clamp(26px,4vw,44px)}
+.board-head h2{color:#fff;max-width:16ch}
+.board-head p{margin:0;max-width:44ch;color:#fff;font-weight:500}
+.planks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:56px 22px}
+.plank{position:relative;background:linear-gradient(180deg,var(--plank-2),var(--plank));color:var(--cream);border-radius:10px 10px 16px 16px;padding:18px 18px 16px;
+  box-shadow:0 10px 0 -4px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.08);transform-origin:50% -38px}
+.plank::before,.plank::after{content:"";position:absolute;top:-40px;width:3px;height:40px;
+  background:repeating-linear-gradient(180deg,#5b5b55 0 5px,#8c8c84 5px 8px)}
+.plank::before{left:22%}.plank::after{right:22%}
+.plank .no{font-family:"Alfa Slab One",Georgia,serif;color:var(--gold);font-size:30px;line-height:1;display:block}
+.plank .kind{font-weight:600;font-size:15px;margin:4px 0 10px;color:#e9dccb;display:block}
+.plank .beds{font-size:15px;line-height:1.45;margin:0 0 12px;color:var(--cream)}
+.plank .rate{border-top:1px dashed rgba(244,235,221,.35);padding-top:10px;display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:14px;color:#e9dccb}
+.plank .rate b{font-family:"Alfa Slab One",Georgia,serif;font-weight:400;font-size:22px;color:#fff}
+.plank .desc{font-size:14.5px;line-height:1.5;color:#e9dccb;margin:0 0 12px}
+.board-foot{margin-top:clamp(30px,4vw,44px);display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
+.board-foot p{margin:0;color:#fff;max-width:60ch}
+.board-foot a{color:#fff;font-weight:700}
+.btn.onwall{background:#fff;color:var(--plank);border-color:#fff}
+.btn.onwall:hover{background:var(--cream)}
+@media (max-width:1020px){.planks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.planks{gap:44px 12px}.plank .kind{margin:4px 0 6px}.plank{padding:14px 12px}.plank .no{font-size:24px}.plank .rate{flex-direction:column;gap:0}.plank .rate b{font-size:20px}}
+@media (prefers-reduced-motion:no-preference){
+  .js .planks.ready .plank{animation:settle 1.6s cubic-bezier(.3,.6,.3,1) both}
+  .js .planks.ready .plank:nth-child(2n){animation-delay:.12s}
+  .js .planks.ready .plank:nth-child(3n){animation-delay:.22s}
+}
+@keyframes settle{0%{transform:rotate(-3.2deg)}35%{transform:rotate(2deg)}60%{transform:rotate(-.9deg)}80%{transform:rotate(.35deg)}100%{transform:rotate(0)}}
+
+/* sections */
+.sec{padding:clamp(48px,7vw,96px) 0}
+.sec.alt{background:var(--paper-2)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.split.wide-img{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.split img{border-radius:10px}
+.sec h2{margin-bottom:18px}
+.sec .intro{font-size:19px;max-width:52ch}
+.day{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+.day li{padding-left:18px;border-left:3px solid var(--wall);max-width:52ch}
+.day b{display:block}
+.free{margin-top:22px;padding:18px 20px;background:#fff;border-radius:10px;border:1px solid var(--line)}
+.free p{margin:0}
+@media (max-width:860px){.split,.split.wide-img{grid-template-columns:1fr}}
+
+.hosts{display:grid;grid-template-columns:400px minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center}
+.hosts blockquote{margin:0 0 16px;font-family:"Alfa Slab One",Georgia,serif;font-size:clamp(24px,2.8vw,34px);line-height:1.2;max-width:24ch;color:var(--pine)}
+@media (max-width:860px){.hosts{grid-template-columns:1fr}.hosts img{width:100%;max-width:400px}}
+
+.book{background:var(--pine);color:#eef2ec}
+.book h2{color:#fff}
+.book a{color:#fff}
+.book .grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
+.book dl{margin:0;display:grid;gap:16px}
+.book dt{font-weight:700;color:#fff}
+.book dd{margin:0}
+.book .btn.solid{background:#fff;color:var(--pine);border-color:#fff}
+.book .btn.line{color:#fff;border-color:#fff}
+.book .btn.line:hover{background:rgba(255,255,255,.1)}
+@media (max-width:860px){.book .grid{grid-template-columns:1fr}}
+
+/* inner pages */
+.page-head{padding:clamp(32px,5vw,64px) 0 clamp(20px,3vw,32px)}
+.page-head h1{font-size:clamp(36px,5vw,62px);margin-bottom:16px;max-width:18ch}
+.page-head p{font-size:19px;max-width:56ch}
+table{border-collapse:collapse;width:100%;font-size:16px;background:#fff;border-radius:10px;overflow:hidden}
+caption{text-align:left;font-weight:700;padding:0 0 10px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--ink);color:#fff;font-weight:600}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px)}
+.cols h3,.facts h3{margin-bottom:10px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.facts ul,.cols ul{margin:0;padding-left:20px}
+.facts li,.cols li{margin-bottom:6px}
+.note{font-size:15px;color:var(--muted)}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,400px));gap:22px;justify-content:start;align-items:start}
+.cols h3 + p + h3,.cols p + h3{margin-top:26px}
+td.n .note{white-space:normal}
+.photos figure{margin:0}
+.photos img{border-radius:8px;width:100%}
+.wall-strip{padding:clamp(28px,4vw,44px);border-radius:12px;color:#fff}
+.wall-strip p{color:#fff}
+.wall-strip .photos img{border-radius:4px;box-shadow:0 6px 0 -2px rgba(0,0,0,.2)}
+.wall-strip figcaption{color:#fff}
+.gps{font-variant-numeric:tabular-nums}
+@media (max-width:980px){.facts{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.photos{grid-template-columns:1fr}.photos img{max-width:400px}.cols,.facts{grid-template-columns:1fr}
+  .scroll{overflow-x:auto}
+  table.stack thead{display:none}
+  table.stack tr{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;padding:12px 14px;border-bottom:1px solid var(--line)}
+  table.stack td{border:0;padding:0;text-align:left}
+  table.stack td:first-child{grid-column:1/-1;font-weight:600}
+  table.stack td[data-l]::before{content:attr(data-l) ": ";color:var(--muted);font-weight:400}}
+
+footer{background:var(--ink);color:#d5ddd3;padding:44px 0 34px;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:28px}
+footer a{color:#fff}
+footer p{margin:0 0 8px}
+footer .legal{grid-column:1/-1;max-width:none;border-top:1px solid #3b4a40;padding-top:18px;font-size:14px;color:#b9c4b8}
+@media (max-width:860px){footer .wrap{grid-template-columns:1fr}}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--ink);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:none;gap:10px}
+.sticky a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-weight:700;text-decoration:none;color:#fff;border:2px solid #fff}
+.sticky a.solid{background:#fff;color:var(--ink)}
+@media (max-width:860px){.sticky.on{display:flex}body{padding-bottom:72px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Whippoorwill Resort. Not affiliated with or endorsed by Whippoorwill Resort.</div>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html" aria-label="Whippoorwill Resort, home"><img src="img/logo.webp" width="300" height="125" alt="Whippoorwill Resort"></a>
+<nav class="nav" aria-label="Main"><a href="cabins.html">Cabins &amp; rates</a><a href="lake.html">Beach, fishing &amp; boats</a><a href="campground.html" aria-current="page">Campground</a><a href="area.html">Area &amp; directions</a><a class="call" href="tel:+12187324639">Call 218-732-4639</a>
+<details class="menu"><summary>Menu</summary><div class="drop"><a href="index.html">Home</a><a href="cabins.html">Cabins &amp; rates</a><a href="lake.html">Beach, fishing &amp; boats</a><a href="campground.html">Campground</a><a href="area.html">Area &amp; directions</a><a href="tel:+12187324639">Call 218-732-4639</a><a href="mailto:info@whippoorwillresort.com">Email us</a></div></details>
+</nav></div></header>
+<main id="main">
+<section class="page-head" data-sticky-after><div class="wrap">
+<h1>The campground</h1>
+<p>A quiet campground nestled among the trees, with four sites: two with full hookups, one with electricity and water, and one with electricity.</p>
+<div class="btns"><a class="btn solid" href="tel:+12187324639">Call 218-732-4639</a><a class="btn line" href="mailto:info@whippoorwillresort.com">Email to book a site</a></div>
+</div></section>
+
+<section class="sec" style="padding-top:12px"><div class="wrap split wide-img">
+<figure style="margin:0"><img src="img/camp-sign-800.webp" srcset="img/camp-sign-480.webp 480w, img/camp-sign-800.webp 800w" sizes="(max-width: 860px) calc(100vw - 32px), 640px" width="800" height="520" alt="RVs parked under tall pines behind the Whippoorwill Resort campground sign" loading="lazy" decoding="async"></figure>
+<div><h2>On the grounds</h2><ul>
+<li>&ldquo;His&rdquo; and &ldquo;hers&rdquo; restrooms and showers</li>
+<li>A laundry room and a fish cleaning room</li>
+<li>A dump station</li>
+<li>A picnic table and a fire pit at every site</li>
+<li>Dock space when available; call ahead</li></ul>
+<p class="note">Firewood is sold at the resort. Please don&rsquo;t bring wood in.</p></div>
+</div></section>
+
+<section class="sec alt"><div class="wrap">
+<h2>Campground rates</h2>
+<div class="scroll" style="margin-top:18px"><table>
+<thead><tr><th>Site</th><th class="n">Daily</th><th class="n">Weekly</th></tr></thead>
+<tbody>
+<tr><td>RV, full hook-up</td><td class="n">$60</td><td class="n">$345</td></tr>
+<tr><td>RV, electric and water</td><td class="n">$55</td><td class="n">$275</td></tr>
+<tr><td>Tent site with electric</td><td class="n">$50</td><td class="n">$245</td></tr>
+<tr><td>Tent site</td><td class="n">$45</td><td class="n">$220</td></tr>
+</tbody></table></div>
+<p class="note" style="margin-top:12px">Rates are for 2 people per site, 6 maximum; each extra person is $5 a night. Two-night minimum, three nights on Memorial Day weekend, the 4th of July and Labor Day weekend. Subject to 7.375% sales tax. Deposit $75 a week, or $50 under seven nights. No pets.</p>
+<div class="photos" style="margin-top:28px">
+<figure><img src="img/camp-pines-800.webp" srcset="img/camp-pines-480.webp 480w, img/camp-pines-800.webp 800w" sizes="(max-width: 640px) calc(100vw - 32px), 400px" width="800" height="568" alt="A camper and pickup under tall red pines" loading="lazy" decoding="async"></figure>
+<figure><img src="img/camp-site-800.webp" srcset="img/camp-site-480.webp 480w, img/camp-site-800.webp 800w" sizes="(max-width: 640px) calc(100vw - 32px), 400px" width="800" height="518" alt="A fifth-wheel camper with its awning out at a shaded site" loading="lazy" decoding="async"></figure>
+</div>
+</div></section>
+
+<section class="sec book" id="book"><div class="wrap grid">
+<div><h2>Booking is a phone call</h2>
+<p class="intro">When you are ready to book, call or email Jim and Jill. If the week you want is taken, ask for the wait list: reservations do change.</p>
+<div class="btns"><a class="btn solid" href="tel:+12187324639">Call 218-732-4639</a><a class="btn line" href="mailto:info@whippoorwillresort.com">Email info@whippoorwillresort.com</a></div></div>
+<dl>
+<dt>Deposit</dt><dd>Personal check, or Visa, MasterCard or Discover. A cabin is held 10 days while your deposit reaches them. Inside 21 days of arrival, a credit card deposit is required.</dd>
+<dt>Check-in and check-out</dt><dd>Check-in 3:30&nbsp;p.m. Check-out by 9:00&nbsp;a.m.</dd>
+<dt>Pets</dt><dd>Not allowed at the resort or the campground. They can suggest a local kennel.</dd>
+</dl></div></section>
+
+</main>
+<footer><div class="wrap">
+<div><p><strong>Whippoorwill Resort</strong></p><p>21421 County Rd 24<br>Park Rapids, MN 56470</p><p>On Upper Bottle Lake</p></div>
+<div><p><a href="tel:+12187324639">218-732-4639</a></p><p><a href="mailto:info@whippoorwillresort.com">info@whippoorwillresort.com</a></p><p>Jim and Jill Dillon, owners</p></div>
+<div><p>Members of the Park Rapids Chamber of Commerce and the Congress of Minnesota Resorts.</p></div>
+<p class="legal">Unofficial demo built by MHS Tecnologia from the text and photos on Whippoorwill Resort&rsquo;s own website. Not affiliated with or endorsed by Whippoorwill Resort. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div></footer>
+<div class="sticky" aria-label="Book by phone or email"><a class="solid" href="tel:+12187324639">Call to book</a><a href="mailto:info@whippoorwillresort.com">Email</a></div>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var p=document.querySelector('.planks');
+  if(p&&'IntersectionObserver' in window){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){p.classList.add('ready');o.disconnect()}},{threshold:.25}).observe(p)}
+  var s=document.querySelector('.sticky'),h=document.querySelector('[data-sticky-after]');
+  if(s&&h&&'IntersectionObserver' in window){new IntersectionObserver(function(e){s.classList.toggle('on',!e[0].isIntersecting)}).observe(h)}
+})();
+</script>
+</body>
+</html>
