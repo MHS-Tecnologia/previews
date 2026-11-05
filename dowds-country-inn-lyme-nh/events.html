@@ -58,13 +58,19 @@ p{margin:0 0 1em;max-width:66ch}
 @media (prefers-reduced-motion:no-preference){.frieze svg{animation:paint 1.4s cubic-bezier(.3,.1,.2,1) .15s both}}
 @keyframes paint{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 .where{font-family:"Fell",Georgia,serif;font-style:italic;color:var(--slate);font-size:1.2rem;margin:0 0 14px}
-.hero{padding:44px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,13fr);gap:56px;align-items:center}
-.hero .lede{font-size:1.18rem;max-width:34em;margin-top:20px}
+.hero{position:relative;min-height:max(560px,calc(100vh - 230px));display:flex;align-items:flex-end;padding:64px 0 60px;isolation:isolate}
+.hero-photo{position:absolute;inset:0;z-index:-1}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,32,40,.9) 0,rgba(24,32,40,.84) calc((100% - min(100%,1240px))/2 + 600px),rgba(24,32,40,.3) calc((100% - min(100%,1240px))/2 + 800px),rgba(24,32,40,0) calc((100% - min(100%,1240px))/2 + 960px))}
+.hero-text{width:100%}
+.hero-copy{max-width:540px}
+.hero h1,.hero .lede{color:#fff}
+.hero .where{color:#d8dfe2}
+.hero .lede{font-size:1.18rem;max-width:34em;margin-top:20px;color:#eef1ec}
+.hero .btn.ghost{color:#fff;border-color:#fff}
+.hero .btn.ghost:hover{background:rgba(255,255,255,.12)}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.hero-photo{margin:0}
-.hero-photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
-.hero-photo figcaption,.cap{font-size:.875rem;color:var(--slate);margin-top:8px}
+.cap{font-size:.875rem;color:var(--slate);margin-top:8px}
 section{padding:72px 0}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px;flex-wrap:wrap}
 .sec-head p{margin:0;color:var(--slate)}
@@ -75,13 +81,15 @@ section{padding:72px 0}
 .ledger-photo{margin:0}
 .ledger-photo img{width:100%}
 .ledger{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
-.ledger li{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1.25fr);gap:6px 14px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.ledger li{display:grid;grid-template-columns:minmax(0,.9fr) 104px minmax(0,1.3fr);grid-template-rows:auto 1fr;gap:4px 20px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
+.ledger .th{grid-column:2;grid-row:1/3;width:104px;height:78px;object-fit:cover}
+.ledger .was{grid-column:1;grid-row:1/3;padding-top:4px}
+.ledger .now{grid-column:3;grid-row:1}
 .ledger .was{font-family:"Fell",Georgia,serif;font-style:italic;color:var(--slate);font-size:1.22rem;line-height:1.25}
-.ledger .mark{align-self:center;height:14px;background:radial-gradient(circle at 6px 7px,var(--berry) 3px,transparent 3.5px),radial-gradient(circle at 14px 4px,#b9606f 3px,transparent 3.5px),radial-gradient(circle at 15px 11px,var(--berry) 3px,transparent 3.5px);background-repeat:no-repeat}
 .ledger .now{font-family:"Fell",Georgia,serif;font-size:1.5rem;line-height:1.2}
 .ledger .now a{color:var(--ink);text-decoration-color:var(--line);text-underline-offset:4px}
 .ledger .now a:hover{text-decoration-color:var(--berry)}
-.ledger .why{grid-column:3;font-size:.98rem;color:#3d4955;margin:0}
+.ledger .why{grid-column:3;grid-row:2;font-size:.98rem;color:#3d4955;margin:0}
 .quote{margin:44px 0 0;padding:0 0 0 22px;border-left:3px solid var(--berry)}
 .quote p{font-family:"Fell",Georgia,serif;font-size:1.32rem;line-height:1.42;margin:0 0 10px;max-width:40ch}
 .quote cite{font-style:normal;font-weight:600;color:var(--slate)}
@@ -92,6 +100,7 @@ section{padding:72px 0}
 .roof h3{margin-top:16px}
 .roof h3 span{color:var(--berry);font-family:"Source Sans 3",sans-serif;font-size:1.1rem}
 .roof p{margin:6px 0 0;color:#3d4955}
+.roof .more{display:inline-block;margin-top:12px;font-weight:700;color:var(--berry);text-decoration:underline;text-underline-offset:4px}
 .roof a:hover h3{text-decoration:underline;text-decoration-color:var(--berry);text-underline-offset:5px}
 /* seasons */
 .seasons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -115,14 +124,12 @@ section{padding:72px 0}
 .floor{padding:56px 0 24px;border-top:1px solid var(--line)}
 .floor > .wrap > h2{margin-bottom:6px}
 .floor > .wrap > p{color:var(--slate)}
-.rooms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 44px;margin-top:30px}
+.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 44px;margin-top:30px}
 .fold > summary{display:none}
 .room{scroll-margin-top:20px}
-.room.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center}
 .room img{width:100%;aspect-ratio:3/2;object-fit:cover}
 #manchester img{object-position:50% 35%}
 .room h3{margin:14px 0 4px}
-.room.wide h3{margin-top:0}
 .room .once{font-family:"Fell",Georgia,serif;font-style:italic;color:var(--slate);font-size:1.12rem;margin:0 0 8px}
 .room .spec{display:flex;flex-wrap:wrap;gap:6px 20px;margin:10px 0 0;font-size:.95rem;color:#3d4955}
 .room .spec b{color:var(--ink);margin-right:4px}
@@ -132,6 +139,7 @@ section{padding:72px 0}
 .photo-pair > img{width:100%;height:100%;object-fit:cover}
 .photo-pair > div{align-self:center}
 .spaces{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 48px}
+.spaces img{width:100%;aspect-ratio:3/2;object-fit:cover;margin-bottom:16px}
 .spaces h3 small{display:block;font-family:"Source Sans 3",sans-serif;font-size:1rem;color:var(--berry);font-weight:700;margin-top:6px}
 .cta-band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .cta-band .wrap{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
@@ -169,24 +177,32 @@ footer .fine{grid-column:1/-1;border-top:1px solid #36424c;padding-top:18px;marg
  .brand img{width:74px}
  .nav .btn{display:none}
  .menu{margin-left:auto}
- .hero{padding:22px 0 36px}
- .hero .wrap{grid-template-columns:1fr;gap:22px}
+ .hero{display:block;min-height:0;padding:22px 0 0}
+ .hero-photo{position:static;display:block;margin-top:24px}
+ .hero-photo::after{display:none}
+ .hero-photo img{height:auto;aspect-ratio:4/3}
+ .hero h1{color:var(--ink)}
+ .hero .where{color:var(--slate)}
+ .hero .lede{color:var(--ink)}
+ .hero .btn.ghost{color:var(--ink);border-color:var(--slate)}
  .where{font-size:1.06rem;margin-bottom:8px}
  h1{font-size:2.3rem}
  .hero .lede{font-size:1.06rem;margin-top:12px}
  .actions{margin-top:18px;gap:10px}
  .actions .btn{flex:1 1 auto}
  section{padding:52px 0}
- .ledger-grid,.visit .cols,.split,.room.wide,.dogs,.photo-pair{grid-template-columns:1fr;gap:28px}
+ .ledger-grid,.visit .cols,.split,.dogs,.photo-pair{grid-template-columns:1fr;gap:28px}
  .ledger-grid{grid-template-areas:"intro" "side" "list";gap:0}
  .ledger-side{padding:22px 0 8px}
- .ledger li{grid-template-columns:minmax(0,1fr);gap:0;padding:13px 0}
+ .ledger li{grid-template-columns:88px minmax(0,1fr);grid-template-rows:auto auto auto;gap:0 14px;padding:14px 0}
+ .ledger .th{grid-column:1;grid-row:1/4;width:88px;height:66px}
+ .ledger .was{grid-column:2;grid-row:1;padding-top:0}
+ .ledger .now{grid-column:2;grid-row:2}
  .ledger .was{font-size:1.08rem}
  .ledger .now{font-size:1.36rem}
  .ledger .why{font-size:.94rem;line-height:1.5}
  .quote{margin-top:26px}
- .ledger .mark{display:none}
- .ledger .why{grid-column:1}
+ .ledger .why{grid-column:1/3;grid-row:4;margin-top:6px}
  .roof{grid-template-columns:1fr;gap:34px}
  .roof img{aspect-ratio:3/2}
  .seasons{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:6px}
@@ -257,10 +273,10 @@ footer .fine{grid-column:1/-1;border-top:1px solid #36424c;padding-top:18px;marg
 <section style="padding-top:24px" aria-labelledby="spaces-h"><div class="wrap">
 <h2 id="spaces-h" style="margin-bottom:30px">Four event spaces</h2>
 <div class="spaces">
-<div id="hall"><h3>The Banquet Hall<small>200 seats</small></h3><p>The main reception room, originally the barn. Weddings, company parties, conferences and business meetings. The courtyard and patio are right outside its doors.</p></div>
-<div id="courtyard"><h3>The Courtyard &amp; Patio<small>Patio added in 2015</small></h3><p>The patio is made for cocktail receptions. The courtyard can take a tent, with room for a dance floor and outdoor lighting for evening events.</p></div>
-<div id="carriage"><h3>The Carriage House<small>Built-in bar</small></h3><p>Once home to the carriages, attached to the barn. Basket-weave brick floors and historical charm make it a great place for a cocktail reception.</p></div>
-<div id="sunroom"><h3>The Sun Room<small>Breakfast room</small></h3><p>Where in-house guests have breakfast. Right for smaller gatherings: company parties, bridal and baby showers, birthday parties.</p></div>
+<div id="hall"><img src="img/s-hall-1200.webp" srcset="img/s-hall-640.webp 640w, img/s-hall-800.webp 800w, img/s-hall-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 32px), 574px" width="1200" height="800" alt="The banquet hall set for a reception, string lights on the timber posts" loading="lazy" decoding="async"><h3>The Banquet Hall<small>200 seats</small></h3><p>The main reception room, originally the barn. Weddings, company parties, conferences and business meetings. The courtyard and patio are right outside its doors.</p></div>
+<div id="courtyard"><img src="img/s-courtyard-1200.webp" srcset="img/s-courtyard-640.webp 640w, img/s-courtyard-800.webp 800w, img/s-courtyard-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 32px), 574px" width="1200" height="800" alt="Round tables with burgundy napkins and wildflowers set on the lawn" loading="lazy" decoding="async"><h3>The Courtyard &amp; Patio<small>Patio added in 2015</small></h3><p>The patio is made for cocktail receptions. The courtyard can take a tent, with room for a dance floor and outdoor lighting for evening events.</p></div>
+<div id="carriage"><img src="img/s-carriage-1200.webp" srcset="img/s-carriage-640.webp 640w, img/s-carriage-800.webp 800w, img/s-carriage-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 32px), 574px" width="1200" height="800" alt="The Carriage House: brick floor, wood stove, armchairs around a braided rug" loading="lazy" decoding="async"><h3>The Carriage House<small>Built-in bar</small></h3><p>Once home to the carriages, attached to the barn. Basket-weave brick floors and historical charm make it a great place for a cocktail reception.</p></div>
+<div id="sunroom"><img src="img/s-sunroom-1200.webp" srcset="img/s-sunroom-640.webp 640w, img/s-sunroom-800.webp 800w, img/s-sunroom-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 32px), 574px" width="1200" height="800" alt="The Sun Room: a round table with a checked cloth under a wall of windows" loading="lazy" decoding="async"><h3>The Sun Room<small>Breakfast room</small></h3><p>Where in-house guests have breakfast. Right for smaller gatherings: company parties, bridal and baby showers, birthday parties.</p></div>
 </div>
 </div></section>
 <section style="padding-top:0"><div class="wrap photo-pair">
