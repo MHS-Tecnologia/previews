@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact, Park Point Resort</title>
+<meta name="description" content="Call 218-875-0901 or email pprmn@citlink.net. 10498 Waltz Road, Kabetogama, MN 56669.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f3e6e'/%3E%3Cpath d='M5 20a11 11 0 0 1 22 0z' fill='%23ef8a2d'/%3E%3Cpath d='M4 22h24' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M9 26h14' stroke='%2391b6d6' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="fonts/bitter.woff2" crossorigin>
+<style>
+@font-face { font-family: "Bitter"; font-weight: 100 900; font-display: swap; src: url(fonts/bitter.woff2) format("woff2"); }
+@font-face { font-family: "Figtree"; font-weight: 300 900; font-display: swap; src: url(fonts/figtree.woff2) format("woff2"); }
+/* Lake water at depth, their map's blue badges, the logo's sunset, northwoods pine, and a cool mist instead of paper cream. */
+:root {
+  --ink: #15313a;
+  --muted: #47606a;
+  --mist: #eef3f2;
+  --mist-2: #dfe8e7;
+  --white: #fff;
+  --navy: #1f3e6e;
+  --sun: #f0902f;
+  --sun-deep: #c4661a;
+  --pine: #2c5a40;
+  --pad: clamp(1rem, 4vw, 2.5rem);
+  --max: 75rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--mist); color: var(--ink); font: 400 1.0625rem/1.6 "Figtree", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--navy); text-underline-offset: .18em; }
+:focus-visible { outline: 3px solid var(--sun-deep); outline-offset: 3px; }
+h1, h2, h3, .slab { font-family: "Bitter", Georgia, serif; font-weight: 800; letter-spacing: -.01em; text-wrap: balance; }
+h1 { font-size: clamp(2.35rem, 5.4vw, 4.6rem); line-height: 1.02; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.75rem); line-height: 1.08; }
+h3 { font-size: 1.4rem; line-height: 1.15; }
+p { max-width: 64ch; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 50; }
+.skip:focus { left: .5rem; }
+.num { font-variant-numeric: tabular-nums; }
+
+.demo { max-width: none; background: var(--ink); color: #d5e2e3; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .45rem 1rem; }
+
+/* Header: their logo on white, the pages, the phone. */
+.top { background: var(--white); border-bottom: 1px solid var(--mist-2); position: relative; z-index: 20; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .55rem; padding-bottom: .55rem; }
+.brand img { height: 4rem; width: auto; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-weight: 600; font-size: .98rem; }
+.nav > a { color: var(--ink); text-decoration: none; padding: .35rem 0; }
+.nav > a:hover, .nav > a[aria-current] { text-decoration: underline; text-decoration-color: var(--sun); text-decoration-thickness: 3px; text-underline-offset: .45em; }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; font-weight: 700; padding: .6rem .9rem; border: 2px solid var(--ink); border-radius: .5rem; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { background: var(--ink); color: #fff; }
+.menu nav { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--white); border: 1px solid var(--mist-2); border-radius: .6rem; box-shadow: 0 12px 30px rgba(21,49,58,.16); padding: .5rem; min-width: 14rem; display: grid; }
+.menu nav a { color: var(--ink); text-decoration: none; padding: .75rem .9rem; border-radius: .4rem; font-weight: 600; }
+.menu nav a:hover, .menu nav a[aria-current] { background: var(--mist); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; padding: .8rem 1.35rem; border-radius: .55rem; background: var(--sun); color: var(--ink); font-weight: 750; text-decoration: none; box-shadow: inset 0 -3px 0 var(--sun-deep); transition: background-color .15s ease; }
+.btn:hover { background: #f7a24c; }
+.btn svg { width: 1.15rem; height: 1.15rem; flex: none; }
+.btn.line { background: transparent; box-shadow: inset 0 0 0 2px var(--ink); }
+.btn.line:hover { background: var(--white); }
+.nav .btn { min-height: 2.75rem; padding: .55rem 1rem; }
+
+/* Home hero: the point from the water. */
+.hero { padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2rem, 4vw, 3.5rem); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.hero .lede { font-size: 1.15rem; margin-top: 1.1rem; color: var(--muted); max-width: 34rem; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.hero .facts { margin-top: 1.4rem; font-size: .95rem; color: var(--muted); }
+.hero figure { position: relative; }
+.hero figure img { width: 100%; border-radius: .9rem; aspect-ratio: 5 / 4; object-fit: cover; object-position: 58% 50%; }
+
+/* The map: their drawing of the point, each cabin a pin. */
+.point { background: var(--white); padding: clamp(2.5rem, 6vw, 5rem) 0; border-top: 1px solid var(--mist-2); border-bottom: 1px solid var(--mist-2); }
+.point .head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: .5rem 2rem; margin-bottom: clamp(1.25rem, 3vw, 2rem); }
+.point .head p { color: var(--muted); }
+.point .grid { display: grid; grid-template-columns: minmax(0, 780px) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.75rem); align-items: start; }
+.map { position: relative; aspect-ratio: 780 / 345; }
+.map > img { width: 100%; height: 100%; }
+.pin { position: absolute; transform: translate(-50%, -50%); width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 3px solid #fff; background: var(--navy); color: #fff; font: 800 1rem/1 "Bitter", Georgia, serif; cursor: pointer; display: grid; place-items: center; box-shadow: 0 2px 6px rgba(21,49,58,.35); transition: background-color .15s ease, transform .2s ease; }
+.pin:hover { background: #2d5694; }
+.pin[aria-pressed="true"] { background: var(--sun); color: var(--ink); transform: translate(-50%, -50%) scale(1.18); }
+.map-note { margin-top: .9rem; font-size: .9rem; color: var(--muted); }
+.js .map.wait .pin { opacity: 0; transform: translate(-50%, -50%) scale(.5); }
+.map .pin { transition: background-color .15s ease, transform .35s cubic-bezier(.3,1.6,.5,1), opacity .25s ease; }
+.card { background: var(--mist); border-radius: .9rem; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.card .body { padding: 1.1rem 1.25rem 1.35rem; }
+.card .no { font: 700 .95rem/1 "Bitter", Georgia, serif; color: var(--navy); }
+.card h3 { margin-top: .35rem; font-size: 1.65rem; }
+.card .beds { margin-top: .4rem; color: var(--muted); font-size: .98rem; }
+.card .rate { display: flex; gap: 1.25rem; margin-top: .8rem; font-weight: 700; }
+.card .rate span { font-weight: 400; color: var(--muted); }
+.card a { display: inline-block; margin-top: .9rem; font-weight: 700; }
+.card.swap img, .card.swap .body { opacity: .25; }
+.card img, .card .body { transition: opacity .18s ease; }
+
+/* Sections */
+.band { padding: clamp(2.75rem, 6vw, 5rem) 0; }
+.lake .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.lake img { border-radius: .9rem; width: 100%; }
+.lake p { margin-top: 1rem; }
+.lake .more { display: inline-block; margin-top: 1.2rem; font-weight: 700; }
+.inc h2 { max-width: 22ch; }
+.inc ul { list-style: none; padding: 0; margin-top: 1.5rem; columns: 3 15rem; column-gap: 2.5rem; }
+.inc li { break-inside: avoid; padding: .6rem 0; border-top: 1px solid var(--mist-2); }
+.callout { background: var(--ink); color: #e5eeee; }
+.callout .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; padding-top: clamp(2.25rem, 5vw, 3.5rem); padding-bottom: clamp(2.25rem, 5vw, 3.5rem); }
+.callout h2 { color: #fff; }
+.callout p { color: #c8d7d8; margin-top: .4rem; }
+.callout a:not(.btn) { color: #fff; }
+.callout .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.callout .btn.line { box-shadow: inset 0 0 0 2px #fff; color: #fff; }
+.callout .btn.line:hover { background: rgba(255,255,255,.08); }
+
+/* Inner pages */
+.page-head { padding: clamp(1.75rem, 4vw, 3rem) 0 clamp(1.25rem, 3vw, 2rem); }
+.page-head p { margin-top: .8rem; color: var(--muted); font-size: 1.1rem; }
+.cabin { padding: clamp(2rem, 4vw, 3rem) 0; border-top: 1px solid var(--mist-2); }
+.cabin .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(1.25rem, 3.5vw, 3rem); }
+.cabin .photo img { border-radius: .8rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.cabin .no { font: 700 1rem/1 "Bitter", Georgia, serif; color: var(--navy); }
+.cabin h2 { margin-top: .35rem; }
+.cabin .desc { margin-top: .75rem; }
+.cabin dl { display: grid; grid-template-columns: auto 1fr; gap: .45rem 1.25rem; margin-top: 1.1rem; }
+.cabin dt { color: var(--muted); }
+.cabin dd { font-weight: 600; }
+.thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr)); gap: .5rem; margin-top: 1.4rem; }
+.thumbs button { padding: 0; border: 0; background: var(--mist-2); border-radius: .45rem; overflow: hidden; cursor: zoom-in; aspect-ratio: 1; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+.thumbs button:hover img { transform: scale(1.05); }
+.thumbs-label { margin-top: 1.2rem; font-size: .92rem; color: var(--muted); }
+.policies { background: var(--white); }
+.policies .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem 2.5rem; margin-top: 1.5rem; }
+.policies h3 { font-size: 1.2rem; margin-bottom: .5rem; }
+.policies ul { padding-left: 1.1rem; }
+.policies li { margin: .3rem 0; }
+details.more-info { margin-top: 1.5rem; border-top: 1px solid var(--mist-2); border-bottom: 1px solid var(--mist-2); }
+details.more-info summary { cursor: pointer; padding: 1rem 0; font-weight: 700; }
+details.more-info p { margin-bottom: .8rem; }
+
+/* Lightbox */
+dialog.lb { margin: auto; padding: 0; border: 0; background: transparent; max-width: min(94vw, 72rem); max-height: 94vh; overflow: visible; }
+dialog.lb::backdrop { background: rgba(10,25,30,.88); }
+.lb figure { display: grid; gap: .6rem; justify-items: center; }
+.lb img { max-width: min(94vw, 72rem); max-height: calc(94vh - 4.5rem); width: auto; height: auto; border-radius: .5rem; background: #203c45; }
+.lb figcaption { color: #e8f0f0; font-size: .95rem; text-align: center; }
+.lb .ctrl { display: flex; gap: .5rem; justify-content: center; }
+.lb button { font: 700 .95rem/1 "Figtree", sans-serif; color: var(--ink); background: #fff; border: 0; border-radius: .45rem; padding: .7rem 1rem; min-height: 2.75rem; cursor: pointer; }
+
+/* Boats */
+.fleet { display: grid; gap: 1.25rem; }
+.boat { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1rem, 3vw, 2.5rem); background: var(--white); border-radius: .9rem; padding: clamp(1rem, 2.5vw, 1.5rem); align-items: center; }
+.boat img { border-radius: .6rem; width: 100%; }
+.boat.text-only { grid-template-columns: 1fr; }
+.boat .len { font: 800 clamp(2.4rem, 5vw, 3.4rem)/1 "Bitter", Georgia, serif; color: var(--navy); }
+.boat h2 { font-size: clamp(1.45rem, 2.6vw, 1.9rem); margin-top: .2rem; }
+.boat p { margin-top: .5rem; }
+.boat .price { font-weight: 700; margin-top: .6rem; }
+.rules { margin-top: 2rem; padding-left: 1.1rem; }
+.rules li { margin: .35rem 0; }
+
+/* Lake page */
+.prose p + p { margin-top: 1rem; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.split img { border-radius: .9rem; width: 100%; }
+.quote { font: 700 clamp(1.3rem, 2.4vw, 1.75rem)/1.3 "Bitter", Georgia, serif; border-left: 4px solid var(--sun); padding-left: 1.1rem; margin-top: 1.5rem; max-width: 34ch; }
+.quote small { display: block; font: 400 .9rem/1.4 "Figtree", sans-serif; color: var(--muted); margin-top: .5rem; }
+.list2 { columns: 2 14rem; column-gap: 2rem; padding-left: 1.1rem; margin-top: 1rem; }
+.list2 li { margin: .3rem 0; break-inside: avoid; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.big-phone { font: 800 clamp(2.2rem, 6vw, 3.6rem)/1.05 "Bitter", Georgia, serif; color: var(--ink); text-decoration: none; display: inline-block; margin-top: .5rem; }
+.big-phone:hover { color: var(--navy); }
+.contact-grid dl { margin-top: 1.5rem; display: grid; gap: 1rem; }
+.contact-grid dt { color: var(--muted); font-size: .92rem; }
+.contact-grid dd { font-weight: 600; font-size: 1.1rem; }
+.contact-grid figure img { border-radius: .6rem; border: 1px solid var(--mist-2); width: 100%; background: #fff; }
+.contact-grid figcaption { font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+
+/* Footer */
+footer { background: var(--white); border-top: 1px solid var(--mist-2); padding: 2.25rem 0 6rem; font-size: .95rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.25rem 2rem; }
+footer .who { color: var(--muted); }
+footer .legal { flex-basis: 100%; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--mist-2); padding-top: 1rem; }
+
+/* Sticky call bar on phones, after the hero */
+.callbar { position: fixed; left: .75rem; right: .75rem; bottom: .75rem; z-index: 30; display: none; }
+.callbar .btn { width: 100%; box-shadow: inset 0 -3px 0 var(--sun-deep), 0 8px 24px rgba(21,49,58,.3); }
+
+@media (max-width: 960px) {
+  .nav > a { display: none; }
+  .menu { display: block; }
+  .point .grid { grid-template-columns: 1fr; }
+  .card { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+  .card img { height: 100%; aspect-ratio: auto; }
+}
+@media (max-width: 860px) {
+  .hero .wrap, .lake .wrap, .cabin .wrap, .split, .contact-grid, .boat { grid-template-columns: 1fr; }
+  .hero { padding-top: 1.25rem; }
+  .hero .lede { font-size: 1.05rem; margin-top: .75rem; }
+  .hero .actions { margin-top: 1.1rem; }
+  .hero .facts { margin-top: 1rem; }
+  .hero figure img { aspect-ratio: 5 / 3; }
+  .callbar.on { display: block; }
+}
+@media (max-width: 560px) {
+  .brand img { height: 2.7rem; }
+  .pin { width: 1.9rem; height: 1.9rem; font-size: .9rem; border-width: 2px; }
+  .map-frame { overflow: hidden; margin: 0 calc(-1 * var(--pad)); }
+  .map { width: 135%; margin-left: -30%; }
+  .card { grid-template-columns: 1fr; }
+  .card img { aspect-ratio: 3 / 2; height: auto; }
+  .hero .actions .btn { flex: 1 1 100%; }
+  .inc ul { columns: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .js .map.wait .pin { opacity: 1; transform: translate(-50%, -50%); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Park Point Resort. Not affiliated with or endorsed by Park Point Resort.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.webp" width="327" height="173" alt="Park Point Resort, home"></a>
+    <div class="nav">
+      <a href="cabins.html">Cabins</a><a href="boats.html">Boats</a><a href="lake.html">The lake</a><a href="contact.html" aria-current="page">Contact</a>
+      <a class="btn" href="tel:+12188750901"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">218-875-0901</span></a>
+      <details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html">Home</a><a href="cabins.html">Cabins</a><a href="boats.html">Boats</a><a href="lake.html">The lake</a><a href="contact.html" aria-current="page">Contact</a></nav></details>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <h1>Information and reservations</h1>
+    <p>Park Point is owned by Jason &amp; Robyn Cooper. For information and reservations, call or email.</p>
+  </div>
+</section>
+<span data-callbar-after></span>
+<section class="band" style="padding-top:0">
+  <div class="wrap contact-grid">
+    <div>
+      <a class="big-phone num" href="tel:+12188750901">218-875-0901</a>
+      <dl>
+        <dt>Email</dt><dd><a href="mailto:pprmn@citlink.net">pprmn@citlink.net</a></dd>
+        <dt>Address</dt><dd>10498 Waltz Road<br>Kabetogama, MN 56669</dd>
+        <dt>Getting here</dt><dd>Gamma Rd north off Hwy 53. Follow the resort signs.</dd>
+        <dt>Check-in</dt><dd>After 4pm. Check-out before 9am.</dd>
+      </dl>
+    </div>
+    <figure>
+      <img src="img/location.webp" sizes="(max-width: 860px) calc(100vw - 2rem), 640px" width="867" height="583" alt="Park Point location map: Minnesota with Voyageurs National Park marked, and a close-up of Kabetogama with the resort starred near Echo Island, reached by Hwy 122 Gamma Rd from Hwy 53" loading="lazy" decoding="async">
+      <figcaption>Park Point's location map. The star marks the resort.</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>Park Point Resort</strong><br>
+      10498 Waltz Road, Kabetogama, MN 56669<br>
+      Information &amp; reservations: <a href="tel:+12188750901" class="num">218-875-0901</a><br>
+      <a href="mailto:pprmn@citlink.net">pprmn@citlink.net</a>
+    </div>
+    <p class="who">Jason &amp; Robyn Cooper<br>Lake Kabetogama, Voyageurs National Park</p>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Park Point Resort. Not affiliated with or endorsed by Park Point Resort. Photos, rates and text come from Park Point's own website; rates are subject to change. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="callbar" id="callbar"><a class="btn" href="tel:+12188750901"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call <span class="num">218-875-0901</span></a></div>
+<script>
+document.documentElement.classList.add('js');
+(function () {
+  var bar = document.getElementById('callbar'), mark = document.querySelector('[data-callbar-after]');
+  if (!mark || !('IntersectionObserver' in window)) { bar.classList.add('on'); return; }
+  new IntersectionObserver(function (e) { bar.classList.toggle('on', !e[0].isIntersecting && e[0].boundingClientRect.top < 0); }).observe(mark);
+})();
+document.addEventListener('click', function (e) { var m = document.querySelector('.menu[open]'); if (m && !m.contains(e.target)) m.removeAttribute('open'); });
+
+</script>
+</body>
+</html>
