@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact and reservations | Sherman's Resort, Curtis, MI</title>
+<meta name="description" content="Call (906) 586-6761 to reserve a cabin or campsite at Sherman's Resort, W18155 Neazor Point Rd S, Curtis, Michigan.">
+<meta name="theme-color" content="#004253">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rokkitt.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
+<style>
+@font-face{font-family:"Rokkitt";src:url(fonts/rokkitt.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Hanken";src:url(fonts/hanken.woff2) format("woff2");font-weight:100 900;font-display:swap}
+/* From their logo: the deep back-bay teal, the pines, the rising sun; birch for paper. */
+:root{--bay:#004253;--bay-2:#06323f;--lake:#0d86a3;--pine:#236a38;--sun:#ffa924;--birch:#f3f5f1;--birch-2:#e4e9e3;--ink:#13262c;--muted:#4a5c61;--pad:clamp(1rem,4vw,3rem);--max:75rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--birch);color:var(--ink);font:400 1.0625rem/1.6 Hanken,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+h1,h2,h3{font-family:Rokkitt,Georgia,serif;font-weight:700;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2rem,4.4vw,3.1rem)}
+h3{font-size:1.45rem;line-height:1.1}
+p{max-width:38rem}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.demo{background:var(--bay-2);color:#d6e3e6;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem;max-width:none}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.7rem;padding-bottom:.7rem;position:relative}
+.brand img{height:4.4rem;width:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;font-weight:600;font-size:.98rem}
+.nav > a{text-decoration:none;color:var(--bay)}
+.nav > a:not(.btn):hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--sun);text-underline-offset:7px}
+.menu{display:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.1rem;padding:.8rem 1.35rem;border-radius:.4rem;font-weight:700;text-decoration:none;background:var(--sun);color:var(--bay-2);box-shadow:inset 0 -3px 0 #d98a10;transition:background-color .15s}
+.btn:hover{background:#ffb846}
+.btn.line{background:transparent;color:var(--bay);box-shadow:inset 0 0 0 2px var(--bay)}
+.btn.line:hover{background:var(--bay);color:#fff}
+.nav .btn{min-height:2.6rem;padding:.5rem 1rem;font-size:.95rem}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+
+main{display:block}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+.lede{font-size:1.15rem;color:var(--muted)}
+
+/* Page heads on the inner pages */
+.head{padding:clamp(2rem,5vw,3.5rem) 0 clamp(1.5rem,3vw,2rem)}
+.head h1{font-size:clamp(2.5rem,6vw,4.4rem);color:var(--bay)}
+.head .lede{margin-top:1rem}
+.wide{border-radius:.5rem;width:100%}
+
+/* Footer */
+.foot{background:var(--bay);color:#dfeaec;padding:3rem 0 2rem;font-size:.97rem}
+.foot .cols{display:grid;grid-template-columns:auto 1fr 1fr;gap:2.5rem;align-items:start}
+.foot img{height:5.2rem;width:auto}
+.foot h2{font-size:1.4rem;color:#fff;margin-bottom:.6rem}
+.foot ul{list-style:none;padding:0;display:grid;gap:.35rem}
+.foot a{color:#fff}
+.foot address{font-style:normal}
+.foot .fine{border-top:1px solid #2a6372;margin-top:2.5rem;padding-top:1.2rem;color:#b9cfd4;font-size:.85rem;display:flex;flex-wrap:wrap;gap:.4rem 2rem;justify-content:space-between}
+
+/* Sticky call bar on phones */
+.callbar{display:none}
+
+@media (max-width:860px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.45rem;min-height:2.9rem;padding:.5rem .9rem;border:2px solid var(--bay);border-radius:.4rem;color:var(--bay);font-weight:700}
+  .menu summary::-webkit-details-marker{display:none}
+  .menu[open] summary{background:var(--bay);color:#fff}
+  .menu .panel{position:absolute;right:var(--pad);left:var(--pad);top:100%;background:#fff;border:1px solid var(--birch-2);border-radius:.5rem;box-shadow:0 18px 40px rgba(0,40,52,.18);padding:.5rem;z-index:30;display:grid}
+  .menu .panel a{padding:.85rem 1rem;text-decoration:none;font-weight:600;color:var(--bay);border-radius:.35rem}
+  .menu .panel a[aria-current]{background:var(--birch)}
+  .brand img{height:3rem}
+  .foot .cols{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:25;padding:.6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom));background:var(--bay-2);transform:translateY(110%);transition:transform .25s}
+  .callbar.on{transform:none}
+  .callbar .btn{width:100%}
+  body{padding-bottom:4.5rem}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+.reach{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.big{font-family:Rokkitt,Georgia,serif;font-size:clamp(2.2rem,6vw,3.8rem);font-weight:700;color:var(--bay);text-decoration:none;line-height:1}
+.big:hover{text-decoration:underline;text-decoration-color:var(--sun)}
+.reach h2{color:var(--bay);margin:2rem 0 .6rem;font-size:1.6rem}
+.reach address{font-style:normal}
+.mail{word-break:break-all;font-weight:600}
+.box{background:#fff;border-radius:.5rem;padding:1.6rem;border-top:6px solid var(--sun)}
+.box h2{margin-top:0}
+@media (max-width:860px){.reach{grid-template-columns:1fr}}
+
+.know{list-style:none;padding:0;display:grid;gap:.85rem}
+.know li{padding-left:1.3rem;position:relative}
+.know li::before{content:"";position:absolute;left:0;top:.62em;width:.55rem;height:.55rem;border-radius:50%;background:var(--sun)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Sherman's Resort. Not affiliated with or endorsed by Sherman's Resort.</p>
+<header class="wrap top">
+  <a class="brand" href="index.html"><img src="img/logo.webp" width="273" height="196" alt="Sherman's Resort, home"></a>
+  <nav class="nav" aria-label="Pages">
+    <a href="cabins.html">Cabins & rates</a>
+    <a href="campground.html">Campground</a>
+    <a href="lake.html">The lake</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a class="btn" href="tel:+19065866761"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>(906) 586-6761</span></a>
+    <details class="menu">
+      <summary>Menu</summary>
+      <div class="panel">
+        <a href="index.html">Home</a>
+        <a href="cabins.html">Cabins & rates</a>
+        <a href="campground.html">Campground</a>
+        <a href="lake.html">The lake</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="tel:+19065866761">Call (906) 586-6761</a>
+      </div>
+    </details>
+  </nav>
+</header>
+<main id="main">
+
+<div class="wrap head">
+  <h1>Call to reserve</h1>
+  <p class="lede">Reservations are made by phone. Call and make your reservations today.</p>
+</div>
+<section style="padding-top:1rem">
+  <div class="wrap reach">
+    <div data-callbar>
+      <a class="big num" href="tel:+19065866761">(906) 586-6761</a>
+      <h2>Email</h2>
+      <p><a class="mail" href="mailto:shermansresort5866761@gmail.com">shermansresort5866761@gmail.com</a></p>
+      <h2>Address</h2>
+      <address>Sherman's Resort Cabins &amp; Campground<br>W18155 Neazor Point Rd S<br>P.O. Box 116<br>Curtis, Michigan 49820</address>
+    </div>
+    <div class="box">
+      <h2>Before you call</h2>
+      
+<ul class="know">
+  <li><strong>Cash and checks only.</strong> No credit cards.</li>
+  <li><strong>$250 deposit per cabin</strong> holds a reservation. Deposits are non-refundable for 3 or more reserved cabins.</li>
+  <li><strong>Cancel a month and a half</strong> before arrival.</li>
+  <li><strong>No pets.</strong></li>
+  <li><strong>Bring towels and paper products.</strong> Ice and firewood are for sale on site.</li>
+  <li><strong>Not handicap accessible.</strong></li>
+</ul>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <img src="img/logo.webp" width="273" height="196" alt="" loading="lazy">
+      <div>
+        <h2>Sherman's Resort Cabins &amp; Campground</h2>
+        <address>W18155 Neazor Point Rd S<br>P.O. Box 116<br>Curtis, Michigan 49820</address>
+        <p style="margin-top:.8rem"><a href="tel:+19065866761">(906) 586-6761</a><br><a href="mailto:shermansresort5866761@gmail.com">shermansresort5866761@gmail.com</a></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul><li><a href="index.html">Home</a></li><li><a href="cabins.html">Cabins & rates</a></li><li><a href="campground.html">Campground</a></li><li><a href="lake.html">The lake</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>Unofficial demo built by MHS Tecnologia for Sherman's Resort. Not affiliated with or endorsed by Sherman's Resort.</span>
+      <span>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></span>
+    </div>
+  </div>
+</footer>
+<div class="callbar" id="callbar"><a class="btn" href="tel:+19065866761"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Call to reserve: (906) 586-6761</span></a></div>
+<script>
+(function(){var b=document.getElementById('callbar'),t=document.querySelector('[data-callbar]');if(!b||!t||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)})();
+
+</script>
+</body>
+</html>

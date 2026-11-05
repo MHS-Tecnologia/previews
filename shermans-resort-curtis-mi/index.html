@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sherman's Resort | Cabins & Campground on South Manistique Lake, Curtis, MI</title>
+<meta name="description" content="Lakeside cabins, chalets and a campground on the back bay of South Manistique Lake in Curtis, Michigan. Call (906) 586-6761 to reserve.">
+<meta name="theme-color" content="#004253">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rokkitt.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/hanken.woff2" crossorigin>
+<link rel="preload" as="image" href="img/lake-m-800.webp" imagesrcset="img/lake-m-600.webp 600w, img/lake-m-800.webp 800w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 1px" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/lake-1400.webp" imagesrcset="img/lake-1000.webp 1000w, img/lake-1400.webp 1400w" imagesizes="min(calc(100vw - 6rem), 75rem)" media="(min-width: 861px)" fetchpriority="high">
+<style>
+@font-face{font-family:"Rokkitt";src:url(fonts/rokkitt.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Hanken";src:url(fonts/hanken.woff2) format("woff2");font-weight:100 900;font-display:swap}
+/* From their logo: the deep back-bay teal, the pines, the rising sun; birch for paper. */
+:root{--bay:#004253;--bay-2:#06323f;--lake:#0d86a3;--pine:#236a38;--sun:#ffa924;--birch:#f3f5f1;--birch-2:#e4e9e3;--ink:#13262c;--muted:#4a5c61;--pad:clamp(1rem,4vw,3rem);--max:75rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--birch);color:var(--ink);font:400 1.0625rem/1.6 Hanken,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+h1,h2,h3{font-family:Rokkitt,Georgia,serif;font-weight:700;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2rem,4.4vw,3.1rem)}
+h3{font-size:1.45rem;line-height:1.1}
+p{max-width:38rem}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.num{font-variant-numeric:tabular-nums}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.demo{background:var(--bay-2);color:#d6e3e6;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem;max-width:none}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.7rem;padding-bottom:.7rem;position:relative}
+.brand img{height:4.4rem;width:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;font-weight:600;font-size:.98rem}
+.nav > a{text-decoration:none;color:var(--bay)}
+.nav > a:not(.btn):hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--sun);text-underline-offset:7px}
+.menu{display:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.1rem;padding:.8rem 1.35rem;border-radius:.4rem;font-weight:700;text-decoration:none;background:var(--sun);color:var(--bay-2);box-shadow:inset 0 -3px 0 #d98a10;transition:background-color .15s}
+.btn:hover{background:#ffb846}
+.btn.line{background:transparent;color:var(--bay);box-shadow:inset 0 0 0 2px var(--bay)}
+.btn.line:hover{background:var(--bay);color:#fff}
+.nav .btn{min-height:2.6rem;padding:.5rem 1rem;font-size:.95rem}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+
+main{display:block}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+.lede{font-size:1.15rem;color:var(--muted)}
+
+/* Page heads on the inner pages */
+.head{padding:clamp(2rem,5vw,3.5rem) 0 clamp(1.5rem,3vw,2rem)}
+.head h1{font-size:clamp(2.5rem,6vw,4.4rem);color:var(--bay)}
+.head .lede{margin-top:1rem}
+.wide{border-radius:.5rem;width:100%}
+
+/* Footer */
+.foot{background:var(--bay);color:#dfeaec;padding:3rem 0 2rem;font-size:.97rem}
+.foot .cols{display:grid;grid-template-columns:auto 1fr 1fr;gap:2.5rem;align-items:start}
+.foot img{height:5.2rem;width:auto}
+.foot h2{font-size:1.4rem;color:#fff;margin-bottom:.6rem}
+.foot ul{list-style:none;padding:0;display:grid;gap:.35rem}
+.foot a{color:#fff}
+.foot address{font-style:normal}
+.foot .fine{border-top:1px solid #2a6372;margin-top:2.5rem;padding-top:1.2rem;color:#b9cfd4;font-size:.85rem;display:flex;flex-wrap:wrap;gap:.4rem 2rem;justify-content:space-between}
+
+/* Sticky call bar on phones */
+.callbar{display:none}
+
+@media (max-width:860px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.45rem;min-height:2.9rem;padding:.5rem .9rem;border:2px solid var(--bay);border-radius:.4rem;color:var(--bay);font-weight:700}
+  .menu summary::-webkit-details-marker{display:none}
+  .menu[open] summary{background:var(--bay);color:#fff}
+  .menu .panel{position:absolute;right:var(--pad);left:var(--pad);top:100%;background:#fff;border:1px solid var(--birch-2);border-radius:.5rem;box-shadow:0 18px 40px rgba(0,40,52,.18);padding:.5rem;z-index:30;display:grid}
+  .menu .panel a{padding:.85rem 1rem;text-decoration:none;font-weight:600;color:var(--bay);border-radius:.35rem}
+  .menu .panel a[aria-current]{background:var(--birch)}
+  .brand img{height:3rem}
+  .foot .cols{grid-template-columns:1fr}
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:25;padding:.6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom));background:var(--bay-2);transform:translateY(110%);transition:transform .25s}
+  .callbar.on{transform:none}
+  .callbar .btn{width:100%}
+  body{padding-bottom:4.5rem}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+.hero{padding:clamp(1.5rem,4vw,3rem) 0 0}
+.hero .text{display:grid;grid-template-columns:1.75fr 1fr;gap:1.5rem 3.5rem;align-items:end}
+.hero h1{font-size:clamp(2.3rem,5vw,4.3rem);color:var(--bay);font-weight:700}
+.hero .lede{margin-bottom:1.2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero .note{margin-top:.9rem;font-size:.92rem;color:var(--muted)}
+.hero figure{margin-top:clamp(1.5rem,3vw,2.2rem)}
+.hero figure img{width:100%;border-radius:.5rem;aspect-ratio:1400/610;object-fit:cover}
+.hero figcaption{font-size:.88rem;color:var(--muted);margin-top:.5rem}
+
+.stays{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.stays img{border-radius:.5rem;aspect-ratio:4/3;object-fit:cover;width:100%}
+.stays dl{margin-top:1.6rem;display:grid;gap:0}
+.stays dl div{display:grid;grid-template-columns:1fr auto;gap:.2rem 1rem;padding:.9rem 0;border-top:1px solid var(--birch-2)}
+.stays dt{font-family:Rokkitt,Georgia,serif;font-size:1.35rem;font-weight:700;color:var(--bay)}
+.stays dd{color:var(--muted)}
+.stays dd.sleeps{grid-column:2;grid-row:1;font-weight:700;color:var(--ink);white-space:nowrap}
+.stays .cta{margin-top:1.6rem}
+
+.grounds{background:#fff}
+.grounds .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem)}
+.grounds h2{color:var(--bay);margin-bottom:1.4rem}
+.list{columns:2;gap:2rem;padding:0;list-style:none}
+.list li{break-inside:avoid;padding:.45rem 0;border-bottom:1px solid var(--birch-2)}
+@media (max-width:860px){
+  .hero .text,.stays,.grounds .cols{grid-template-columns:1fr}
+  .hero .lede{margin-bottom:1rem}
+  .hero .cta .btn{flex:1 1 100%}
+  .hero figure img{aspect-ratio:800/625}
+}
+
+/* The signature: their season, drawn on the calendar it actually runs on. */
+.season{background:var(--bay);color:#e8f1f2}
+.season h2{color:#fff}
+.season .intro{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 3rem;align-items:end}
+.season .intro p{color:#c4d8dc}
+.cal{position:relative;margin-top:2.5rem;padding-top:1.9rem}
+.months{display:grid;grid-template-columns:31fr 30fr 31fr 31fr 30fr 31fr 30fr;border-left:1px solid #2f6a79}
+.months span{border-right:1px solid #2f6a79;font-size:.85rem;color:#a9c6cd;padding:0 0 .5rem .45rem;font-weight:600}
+.lane{position:relative;height:3.1rem;margin-top:.55rem}
+.lane .seg{position:absolute;top:0;bottom:0;border-radius:.3rem;display:flex;align-items:center;padding:0 .7rem;font-weight:700;font-size:.92rem;white-space:nowrap;overflow:hidden}
+.seg.sf{background:#2f7a47;color:#fff}
+.seg.su{background:var(--sun);color:var(--bay-2)}
+.seg.fish{background:#0a7590;color:#fff}
+.seg.fade{background:linear-gradient(90deg,#2f7a47 60%,rgba(47,122,71,0))}
+.seg .short{display:none}
+.cal{padding-bottom:1.6rem}
+.lanelabel{max-width:78%;font-size:.85rem;color:#a9c6cd;margin-top:1.1rem}
+.today{position:absolute;top:3.9rem;bottom:-1.9rem;width:0;border-left:2px dashed #fff;left:var(--today);display:none}
+.today span{position:absolute;bottom:0;left:.4rem;font-size:.78rem;font-weight:700;color:#fff;white-space:nowrap}
+.today.flip span{left:auto;right:.4rem}
+.cal.has-today .today{display:block}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.8rem}
+.tier{background:#06394a;border-radius:.5rem;padding:1.4rem 1.4rem 1.2rem;border-top:6px solid #2f7a47}
+.tier.summer{border-top-color:var(--sun)}
+.tier h3{color:#fff}
+.tier .when{color:#c4d8dc;margin:.3rem 0 1rem;font-size:.97rem}
+.rates{width:100%;border-collapse:collapse;font-size:.95rem}
+.rates th,.rates td{text-align:left;padding:.55rem .4rem;border-bottom:1px solid rgba(255,255,255,.14);vertical-align:top}
+.rates thead th{font-size:.8rem;color:#a9c6cd;font-weight:600}
+.rates tbody th{font-weight:600;color:#fff}
+.season .after{margin-top:1.6rem;color:#c4d8dc;font-size:.95rem;max-width:none}
+.season .after a{color:#fff}
+@media (max-width:860px){
+  .tiers{grid-template-columns:1fr}
+  .months span{font-size:.72rem;padding-left:.2rem}
+  .lane{height:2.6rem}
+  .lane .seg{font-size:.78rem;padding:0 .45rem}
+  .seg .long{display:none}
+  .seg .short{display:inline}
+  .rates{font-size:.9rem}
+}
+@media (prefers-reduced-motion:no-preference){.cal.has-today .today{animation:drop .6s .3s ease-out both}@keyframes drop{from{opacity:0;transform:translateY(-.6rem)}}}
+
+.know{list-style:none;padding:0;display:grid;gap:.85rem}
+.know li{padding-left:1.3rem;position:relative}
+.know li::before{content:"";position:absolute;left:0;top:.62em;width:.55rem;height:.55rem;border-radius:50%;background:var(--sun)}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sherman's Resort | Cabins & Campground on South Manistique Lake, Curtis, MI">
+<meta property="og:description" content="Lakeside cabins, chalets and a campground on the back bay of South Manistique Lake in Curtis, Michigan. Call (906) 586-6761 to reserve.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/shermans-resort-curtis-mi/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/shermans-resort-curtis-mi/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Sherman's Resort. Not affiliated with or endorsed by Sherman's Resort.</p>
+<header class="wrap top">
+  <a class="brand" href="index.html" aria-current="page"><img src="img/logo.webp" width="273" height="196" alt="Sherman's Resort, home"></a>
+  <nav class="nav" aria-label="Pages">
+    <a href="cabins.html">Cabins & rates</a>
+    <a href="campground.html">Campground</a>
+    <a href="lake.html">The lake</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn" href="tel:+19065866761"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>(906) 586-6761</span></a>
+    <details class="menu">
+      <summary>Menu</summary>
+      <div class="panel">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="cabins.html">Cabins & rates</a>
+        <a href="campground.html">Campground</a>
+        <a href="lake.html">The lake</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+19065866761">Call (906) 586-6761</a>
+      </div>
+    </details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div class="text">
+      <h1 id="h1">Cabins and campsites on the back bay of South Manistique Lake</h1>
+      <div>
+        <p class="lede">Chalets, cabins and a lakeside campground in Curtis, Michigan, with 1,000 feet of lake frontage, a sandy beach and walleye in the water.</p>
+        <div class="cta" data-callbar>
+          <a class="btn" href="tel:+19065866761"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Call (906) 586-6761</span></a>
+          <a class="btn line" href="cabins.html">Cabins and rates</a>
+        </div>
+        <p class="note">Reservations by phone. Cash and checks only.</p>
+      </div>
+    </div>
+    <figure>
+      <picture>
+        <source media="(max-width: 860px)" srcset="img/lake-m-600.webp 600w, img/lake-m-800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="625">
+        <img src="img/lake-1400.webp" srcset="img/lake-1000.webp 1000w, img/lake-1400.webp 1400w" sizes="min(calc(100vw - 6rem), 75rem)" width="1400" height="610" alt="A flagpole, overturned rowboats and a green lawn running down to South Manistique Lake" fetchpriority="high">
+      </picture>
+    </figure>
+  </div>
+</section>
+
+<section class="season" aria-labelledby="season-h">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="season-h">The season at Sherman's</h2>
+      <p>Cabin rates follow three seasons, from May 15 into the first week of deer season. All rates plus tax.</p>
+    </div>
+    <div class="cal" id="cal" aria-hidden="true">
+      <div class="months"><span>May</span><span>June</span><span>July</span><span>Aug</span><span>Sept</span><span>Oct</span><span>Nov</span></div>
+      <p class="lanelabel">Cabins and chalets</p>
+      <div class="lane">
+        <div class="seg sf" style="left:6.54%;width:calc(11.21% - 3px)"><span class="long">Spring</span></div>
+        <div class="seg su" style="left:17.76%;width:calc(40.19% - 3px)"><span class="long">Summer, by the week</span><span class="short">Summer</span></div>
+        <div class="seg sf fade" style="left:57.94%;width:42.06%"><span class="long">Fall, into deer season</span><span class="short">Fall</span></div>
+      </div>
+      <p class="lanelabel">Walleye, northern pike and perch on South Manistique Lake</p>
+      <div class="lane">
+        <div class="seg fish" style="left:6.54%;width:64.49%">May 15 through September</div>
+      </div>
+      <div class="today" id="today"><span></span></div>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Spring and fall</h3>
+        <p class="when">May 15 to the 2nd week of June, and Labor Day to the 1st week of deer season. 2-day minimum. Call for deer season rates.</p>
+        <table class="rates num">
+  <caption class="vh">Spring and fall rates, plus tax</caption>
+  <thead><tr><th scope="col">Stay</th><th scope="col">Sleeps</th><th scope="col">Daily</th><th scope="col">Weekly</th></tr></thead>
+  <tbody><tr><th scope="row">2-bedroom cabin</th><td>5</td><td>$200.00</td><td>$950.00</td></tr><tr><th scope="row">3-bedroom cabin</th><td>7</td><td>$250.00</td><td>$1,000.00</td></tr><tr><th scope="row">2-bedroom chalet</th><td>5</td><td>$250.00</td><td>$1,000.00</td></tr></tbody>
+</table>
+      </div>
+      <div class="tier summer">
+        <h3>Summer</h3>
+        <p class="when">2nd week of June to Labor Day.</p>
+        <table class="rates num">
+  <caption class="vh">Summer rates, plus tax</caption>
+  <thead><tr><th scope="col">Stay</th><th scope="col">Sleeps</th><th scope="col">Daily</th><th scope="col">Weekly</th></tr></thead>
+  <tbody><tr><th scope="row">2-bedroom cabin</th><td>5</td><td>Call for availability</td><td>$1,000.00</td></tr><tr><th scope="row">3-bedroom cabin</th><td>7</td><td>Call for availability</td><td>$1,100.00</td></tr><tr><th scope="row">2-bedroom chalet</th><td>5</td><td>Call for availability</td><td>$1,100.00</td></tr></tbody>
+</table>
+      </div>
+    </div>
+    <p class="after">All rates plus tax. Deposit $75 for a daily stay, $250 for a weekly stay. Cash and checks only. Pontoon, kayak, and boat and motor rentals: call for pricing. <a href="cabins.html">What's in each cabin</a></p>
+  </div>
+</section>
+<section aria-labelledby="stay-h">
+  <div class="wrap stays">
+    <img src="img/cabin-43-1200.webp" srcset="img/cabin-43-700.webp 700w, img/cabin-43-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 38rem" width="1200" height="900" alt="A wood-sided cabin with a deck and steps, under tall trees" loading="lazy">
+    <div>
+      <h2 id="stay-h">Four ways to stay</h2>
+      <dl>
+        <div><dt>2-bedroom chalet</dt><dd class="sleeps">Sleeps 5</dd><dd>Vaulted ceilings, large windows on the lake, a large deck.</dd></div>
+        <div><dt>2-bedroom cabin</dt><dd class="sleeps">Sleeps 5</dd><dd>Lake views, a full kitchen and a living room.</dd></div>
+        <div><dt>3-bedroom cabin</dt><dd class="sleeps">Sleeps 7</dd><dd>A full-size bed in each room, plus a couch.</dd></div>
+        <div><dt>Campsite</dt><dd class="sleeps num">$40.00 a day</dd><dd>Water and electric, tents up to 40-foot RVs.</dd></div>
+      </dl>
+      <div class="cta"><a class="btn line" href="cabins.html">Cabins</a><a class="btn line" href="campground.html">Campground</a></div>
+    </div>
+  </div>
+</section>
+<section class="grounds" aria-labelledby="grounds-h">
+  <div class="wrap cols">
+    <div>
+      <h2 id="grounds-h">On the grounds</h2>
+      <ul class="list">
+        <li>Sandy swimming beach</li><li>Playground</li><li>Volleyball</li><li>Horseshoe pit</li>
+        <li>Fish cleaning house</li><li>Freezer for your fish</li><li>Charcoal grills</li><li>Campfire pits</li>
+        <li>Picnic tables</li><li>Campground dock</li><li>Pontoon rentals</li><li>Kayak rentals</li>
+        <li>Boat and motor rentals</li><li>Ice and firewood for sale</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Good to know before you call</h2>
+      
+<ul class="know">
+  <li><strong>Cash and checks only.</strong> No credit cards.</li>
+  <li><strong>$250 deposit per cabin</strong> holds a reservation. Deposits are non-refundable for 3 or more reserved cabins.</li>
+  <li><strong>Cancel a month and a half</strong> before arrival.</li>
+  <li><strong>No pets.</strong></li>
+  <li><strong>Bring towels and paper products.</strong> Ice and firewood are for sale on site.</li>
+  <li><strong>Not handicap accessible.</strong></li>
+</ul>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <img src="img/logo.webp" width="273" height="196" alt="" loading="lazy">
+      <div>
+        <h2>Sherman's Resort Cabins &amp; Campground</h2>
+        <address>W18155 Neazor Point Rd S<br>P.O. Box 116<br>Curtis, Michigan 49820</address>
+        <p style="margin-top:.8rem"><a href="tel:+19065866761">(906) 586-6761</a><br><a href="mailto:shermansresort5866761@gmail.com">shermansresort5866761@gmail.com</a></p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul><li><a href="index.html">Home</a></li><li><a href="cabins.html">Cabins & rates</a></li><li><a href="campground.html">Campground</a></li><li><a href="lake.html">The lake</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>Unofficial demo built by MHS Tecnologia for Sherman's Resort. Not affiliated with or endorsed by Sherman's Resort.</span>
+      <span>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></span>
+    </div>
+  </div>
+</footer>
+<div class="callbar" id="callbar"><a class="btn" href="tel:+19065866761"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Call to reserve: (906) 586-6761</span></a></div>
+<script>
+(function(){var b=document.getElementById('callbar'),t=document.querySelector('[data-callbar]');if(!b||!t||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)})();
+
+(function(){var c=document.getElementById('cal'),t=document.getElementById('today');if(!c||!t)return;var n=new Date(),s=new Date(n.getFullYear(),4,1),d=Math.floor((n-s)/864e5);if(d<0||d>213)return;var p=d/214*100;t.style.setProperty('--today',p+'%');t.firstChild.textContent='Today, '+n.toLocaleDateString('en-US',{month:'short',day:'numeric'});if(p>80)t.classList.add('flip');c.classList.add('has-today')})();
+</script>
+</body>
+</html>
