@@ -84,7 +84,7 @@ p { max-width: 64ch; text-wrap: pretty; }
 .roll li.last { font-family: "Petrona", Georgia, serif; font-size: 1.05rem; color: #d9e0cf; }
 @media (prefers-reduced-motion: no-preference) {
   .roll.wait li { clip-path: inset(-1em 100% -1em -.5em); }
-  .roll.wait.sign li { animation: write .55s cubic-bezier(.4, 0, .3, 1) calc(var(--i) * 85ms) forwards; }
+  .roll.wait.sign li { animation: write .4s cubic-bezier(.4, 0, .3, 1) calc(var(--i) * 40ms) forwards; }
   @keyframes write { to { clip-path: inset(-1em -1em -1em -.5em); } }
 }
 
@@ -129,8 +129,7 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 .house-rules { padding-bottom: clamp(3rem, 6vw, 5rem); }
 .house-rules p { margin-top: 1rem; }
 
-.online { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-.online { background: var(--mist-2); border-radius: 6px; padding-block: 1.6rem; max-width: calc(var(--max) + 2 * var(--pad)); }
+.online { background: var(--mist-2); border-radius: 6px; padding: 1.6rem clamp(1rem, 3vw, 2rem); width: calc(100% - 2 * var(--pad)); max-width: var(--max); margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
 .online h2 { font-size: 1.6rem; }
 .online p { margin-top: .5rem; }
 .core p { margin-top: 1.2rem; }
@@ -147,6 +146,10 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 .wide { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
 .wide img { width: 100%; border-radius: 6px; }
 .wide img { aspect-ratio: 21 / 9; object-fit: cover; }
+.wide.strip img { aspect-ratio: auto; }
+.wide.capped img { max-width: 1016px; }
+.goods-full .span { grid-column: 1 / -1; }
+.goods-full .span img { aspect-ratio: 21 / 9; }
 .farm-two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-bottom: clamp(3rem, 6vw, 5rem); }
 .farm-two p { margin-top: 1rem; }
 .farm-two img { border-radius: 6px; width: 100%; }
@@ -157,6 +160,8 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 .tile { padding: 0; border: 0; background: #2a2420; border-radius: 6px; overflow: hidden; cursor: zoom-in; display: block; }
 .tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 25%; transition: transform .3s ease; }
 .tile:hover img { transform: scale(1.03); }
+.tile { position: relative; text-align: left; color: #fff; font: inherit; }
+.tile .t { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem .8rem .6rem; background: linear-gradient(transparent, rgba(20, 12, 24, .78)); font-weight: 640; font-size: .95rem; line-height: 1.25; }
 .lb { margin: auto; border: 0; padding: 0; background: #1d1720; color: #eee; border-radius: 8px; max-width: min(92vw, 60rem); max-height: 92vh; overflow: auto; }
 .lb::backdrop { background: rgba(20, 12, 24, .82); }
 .lb img { max-height: 78vh; width: auto; margin: 0 auto; }
@@ -205,7 +210,10 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
   .hero { grid-template-columns: 1fr; gap: 1.6rem; padding-top: .6rem; }
   .hero-photo img { aspect-ratio: auto; }
   .cta-row .btn.ghost { flex: 1 1 0; padding-inline: .8rem; }
-  .hero h1 { font-size: clamp(3rem, 13vw, 4.4rem); }
+  .hero h1 { font-size: clamp(2.6rem, 11.5vw, 4.4rem); }
+  .hero .lede { font-size: 1.05rem; line-height: 1.55; }
+  .hero .note { margin-top: .6rem; }
+  .hero { gap: 1.1rem; }
   .lede { margin-top: .8rem; }
   .cta-row { margin-top: 1.2rem; }
   .cta-row .btn:first-child { flex: 1 1 100%; }
@@ -218,6 +226,8 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
   .events li { grid-template-columns: 1fr; gap: 0; }
   .room.cottage img { aspect-ratio: 4 / 3; }
   .wide img { aspect-ratio: 3 / 2; }
+  .wide.strip img { aspect-ratio: 2 / 1; }
+  .goods-full .span img { aspect-ratio: 4 / 3; }
 
   .dock { display: flex; gap: .6rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 12; padding: .65rem 1rem calc(.65rem + env(safe-area-inset-bottom)); background: rgba(243, 240, 246, .97); border-top: 1px solid #cfc4da; transform: translateY(110%); transition: transform .25s ease; }
   .dock.on { transform: none; }
@@ -269,15 +279,15 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
     </div>
 </section>
 <section class="gallery wrap" aria-label="Sculptures">
-  <button type="button" class="tile" data-full="img/art-cutting-960.webp" data-w="960" data-h="720" aria-label="Enlarge: Bronze of a rider on a horse in a sliding stop"><img src="img/art-cutting-960.webp" srcset="img/art-cutting-480.webp 480w, img/art-cutting-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="720" alt="Bronze of a rider on a horse in a sliding stop" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-team-500.webp" data-w="500" data-h="375" aria-label="Enlarge: Bronze busts of two draft horses in harness"><img src="img/art-team-500.webp" srcset="img/art-team-480.webp 480w, img/art-team-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="375" alt="Bronze busts of two draft horses in harness" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-gift-824.webp" data-w="824" data-h="600" aria-label="Enlarge: Bronze of a woman holding a butterfly, against the sky"><img src="img/art-gift-824.webp" srcset="img/art-gift-480.webp 480w, img/art-gift-824.webp 824w" sizes="(max-width: 1100px) 46vw, 24rem" width="824" height="600" alt="Bronze of a woman holding a butterfly, against the sky" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-rattler-960.webp" data-w="960" data-h="720" aria-label="Enlarge: Bronze rattlesnake coiled beside a prickly pear"><img src="img/art-rattler-960.webp" srcset="img/art-rattler-480.webp 480w, img/art-rattler-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="720" alt="Bronze rattlesnake coiled beside a prickly pear" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-shark-960.webp" data-w="960" data-h="640" aria-label="Enlarge: Bronze tiger shark, close up"><img src="img/art-shark-960.webp" srcset="img/art-shark-480.webp 480w, img/art-shark-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="640" alt="Bronze tiger shark, close up" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-lion-500.webp" data-w="500" data-h="667" aria-label="Enlarge: Bronze bust of a snarling mountain lion"><img src="img/art-lion-500.webp" srcset="img/art-lion-480.webp 480w, img/art-lion-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="667" alt="Bronze bust of a snarling mountain lion" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-hand-825.webp" data-w="825" data-h="600" aria-label="Enlarge: Bronze hand holding a butterfly among flowers"><img src="img/art-hand-825.webp" srcset="img/art-hand-480.webp 480w, img/art-hand-825.webp 825w" sizes="(max-width: 1100px) 46vw, 24rem" width="825" height="600" alt="Bronze hand holding a butterfly among flowers" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-rooster-640.webp" data-w="640" data-h="960" aria-label="Enlarge: Painted bronze rooster head"><img src="img/art-rooster-640.webp" srcset="img/art-rooster-480.webp 480w, img/art-rooster-640.webp 640w" sizes="(max-width: 1100px) 46vw, 24rem" width="640" height="960" alt="Painted bronze rooster head" loading="lazy" decoding="async"></button>
-  <button type="button" class="tile" data-full="img/art-horse-500.webp" data-w="500" data-h="511" aria-label="Enlarge: Bronze horse head bust on a round base"><img src="img/art-horse-500.webp" srcset="img/art-horse-480.webp 480w, img/art-horse-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="511" alt="Bronze horse head bust on a round base" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-cutting-960.webp" data-w="960" data-h="720" aria-label="Enlarge: Bronze of a rider on a horse in a sliding stop" data-title=""><img src="img/art-cutting-960.webp" srcset="img/art-cutting-480.webp 480w, img/art-cutting-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="720" alt="Bronze of a rider on a horse in a sliding stop" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-team-500.webp" data-w="500" data-h="375" aria-label="Enlarge: Welsh Ponies, Bronze busts of two ponies in harness" data-title="Welsh Ponies"><img src="img/art-team-500.webp" srcset="img/art-team-480.webp 480w, img/art-team-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="375" alt="Bronze busts of two ponies in harness" loading="lazy" decoding="async"><span class="t">Welsh Ponies</span></button>
+  <button type="button" class="tile" data-full="img/art-gift-824.webp" data-w="824" data-h="600" aria-label="Enlarge: Gift of New Life, Bronze of a woman holding a butterfly, against the sky" data-title="Gift of New Life"><img src="img/art-gift-824.webp" srcset="img/art-gift-480.webp 480w, img/art-gift-824.webp 824w" sizes="(max-width: 1100px) 46vw, 24rem" width="824" height="600" alt="Bronze of a woman holding a butterfly, against the sky" loading="lazy" decoding="async"><span class="t">Gift of New Life</span></button>
+  <button type="button" class="tile" data-full="img/art-rattler-960.webp" data-w="960" data-h="720" aria-label="Enlarge: Bronze rattlesnake coiled beside a prickly pear" data-title=""><img src="img/art-rattler-960.webp" srcset="img/art-rattler-480.webp 480w, img/art-rattler-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="720" alt="Bronze rattlesnake coiled beside a prickly pear" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-shark-960.webp" data-w="960" data-h="640" aria-label="Enlarge: Tiger Shark, detail, Bronze tiger shark, close up" data-title="Tiger Shark, detail"><img src="img/art-shark-960.webp" srcset="img/art-shark-480.webp 480w, img/art-shark-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="640" alt="Bronze tiger shark, close up" loading="lazy" decoding="async"><span class="t">Tiger Shark, detail</span></button>
+  <button type="button" class="tile" data-full="img/art-lion-500.webp" data-w="500" data-h="667" aria-label="Enlarge: Territorial Dispute, Bronze bust of a snarling mountain lion" data-title="Territorial Dispute"><img src="img/art-lion-500.webp" srcset="img/art-lion-480.webp 480w, img/art-lion-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="667" alt="Bronze bust of a snarling mountain lion" loading="lazy" decoding="async"><span class="t">Territorial Dispute</span></button>
+  <button type="button" class="tile" data-full="img/art-hand-825.webp" data-w="825" data-h="600" aria-label="Enlarge: Detail of Hand, Gift of New Life, Bronze hand holding a butterfly among flowers" data-title="Detail of Hand, Gift of New Life"><img src="img/art-hand-825.webp" srcset="img/art-hand-480.webp 480w, img/art-hand-825.webp 825w" sizes="(max-width: 1100px) 46vw, 24rem" width="825" height="600" alt="Bronze hand holding a butterfly among flowers" loading="lazy" decoding="async"><span class="t">Detail of Hand, Gift of New Life</span></button>
+  <button type="button" class="tile" data-full="img/art-rooster-640.webp" data-w="640" data-h="960" aria-label="Enlarge: Painted bronze rooster head" data-title=""><img src="img/art-rooster-640.webp" srcset="img/art-rooster-480.webp 480w, img/art-rooster-640.webp 640w" sizes="(max-width: 1100px) 46vw, 24rem" width="640" height="960" alt="Painted bronze rooster head" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-horse-500.webp" data-w="500" data-h="511" aria-label="Enlarge: Dos Riendas, Bronze horse head bust on a round base" data-title="Dos Riendas"><img src="img/art-horse-500.webp" srcset="img/art-horse-480.webp 480w, img/art-horse-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="511" alt="Bronze horse head bust on a round base" loading="lazy" decoding="async"><span class="t">Dos Riendas</span></button>
 </section>
 <dialog class="lb" aria-label="Sculpture">
   <div class="lb-bar"><button type="button" class="lb-close">Close</button></div>
@@ -320,11 +330,11 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
     }).observe(hero);
   }
   var roll = document.querySelector('.roll');
-  if (roll && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (roll && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches && matchMedia('(min-width: 861px)').matches) {
     roll.classList.add('wait');
     var io = new IntersectionObserver(function (e) {
       if (e[0].isIntersecting) { roll.classList.add('sign'); io.disconnect(); }
-    }, { threshold: 0.25 });
+    }, { threshold: 0.15 });
     io.observe(roll);
   }
   var dlg = document.querySelector('dialog.lb');
@@ -333,7 +343,7 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
     document.querySelectorAll('[data-full]').forEach(function (b) {
       b.addEventListener('click', function () {
         var t = b.querySelector('img');
-        big.src = b.dataset.full; big.width = +b.dataset.w; big.height = +b.dataset.h; big.alt = t.alt; cap.textContent = t.alt;
+        big.src = b.dataset.full; big.width = +b.dataset.w; big.height = +b.dataset.h; big.alt = t.alt; cap.textContent = b.dataset.title ? b.dataset.title + '. ' + t.alt : t.alt;
         dlg.showModal();
       });
     });

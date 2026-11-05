@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="img/apple-touch.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/petrona.woff2" crossorigin>
 <link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-800.webp 800w" imagesizes="calc(100vw - 2rem)" media="(max-width: 860px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-1400.webp" imagesrcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" imagesizes="(max-width: 1300px) 56vw, 44rem" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1400.webp" imagesrcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" imagesizes="(max-width: 1300px) 72vw, 63rem" media="(min-width: 861px)" fetchpriority="high">
 <style>
 @font-face { font-family: "Petrona"; font-weight: 100 900; font-display: swap; src: url(fonts/petrona.woff2) format("woff2"); }
 @font-face { font-family: "Homemade Apple"; font-weight: 400; font-display: swap; src: url(fonts/homemade-apple.woff2) format("woff2"); }
@@ -86,7 +86,7 @@ p { max-width: 64ch; text-wrap: pretty; }
 .roll li.last { font-family: "Petrona", Georgia, serif; font-size: 1.05rem; color: #d9e0cf; }
 @media (prefers-reduced-motion: no-preference) {
   .roll.wait li { clip-path: inset(-1em 100% -1em -.5em); }
-  .roll.wait.sign li { animation: write .55s cubic-bezier(.4, 0, .3, 1) calc(var(--i) * 85ms) forwards; }
+  .roll.wait.sign li { animation: write .4s cubic-bezier(.4, 0, .3, 1) calc(var(--i) * 40ms) forwards; }
   @keyframes write { to { clip-path: inset(-1em -1em -1em -.5em); } }
 }
 
@@ -131,8 +131,7 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 .house-rules { padding-bottom: clamp(3rem, 6vw, 5rem); }
 .house-rules p { margin-top: 1rem; }
 
-.online { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-.online { background: var(--mist-2); border-radius: 6px; padding-block: 1.6rem; max-width: calc(var(--max) + 2 * var(--pad)); }
+.online { background: var(--mist-2); border-radius: 6px; padding: 1.6rem clamp(1rem, 3vw, 2rem); width: calc(100% - 2 * var(--pad)); max-width: var(--max); margin: 0 auto clamp(2.5rem, 5vw, 4rem); }
 .online h2 { font-size: 1.6rem; }
 .online p { margin-top: .5rem; }
 .core p { margin-top: 1.2rem; }
@@ -149,6 +148,10 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 .wide { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
 .wide img { width: 100%; border-radius: 6px; }
 .wide img { aspect-ratio: 21 / 9; object-fit: cover; }
+.wide.strip img { aspect-ratio: auto; }
+.wide.capped img { max-width: 1016px; }
+.goods-full .span { grid-column: 1 / -1; }
+.goods-full .span img { aspect-ratio: 21 / 9; }
 .farm-two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-bottom: clamp(3rem, 6vw, 5rem); }
 .farm-two p { margin-top: 1rem; }
 .farm-two img { border-radius: 6px; width: 100%; }
@@ -159,6 +162,8 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 .tile { padding: 0; border: 0; background: #2a2420; border-radius: 6px; overflow: hidden; cursor: zoom-in; display: block; }
 .tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 25%; transition: transform .3s ease; }
 .tile:hover img { transform: scale(1.03); }
+.tile { position: relative; text-align: left; color: #fff; font: inherit; }
+.tile .t { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.6rem .8rem .6rem; background: linear-gradient(transparent, rgba(20, 12, 24, .78)); font-weight: 640; font-size: .95rem; line-height: 1.25; }
 .lb { margin: auto; border: 0; padding: 0; background: #1d1720; color: #eee; border-radius: 8px; max-width: min(92vw, 60rem); max-height: 92vh; overflow: auto; }
 .lb::backdrop { background: rgba(20, 12, 24, .82); }
 .lb img { max-height: 78vh; width: auto; margin: 0 auto; }
@@ -207,7 +212,10 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
   .hero { grid-template-columns: 1fr; gap: 1.6rem; padding-top: .6rem; }
   .hero-photo img { aspect-ratio: auto; }
   .cta-row .btn.ghost { flex: 1 1 0; padding-inline: .8rem; }
-  .hero h1 { font-size: clamp(3rem, 13vw, 4.4rem); }
+  .hero h1 { font-size: clamp(2.6rem, 11.5vw, 4.4rem); }
+  .hero .lede { font-size: 1.05rem; line-height: 1.55; }
+  .hero .note { margin-top: .6rem; }
+  .hero { gap: 1.1rem; }
   .lede { margin-top: .8rem; }
   .cta-row { margin-top: 1.2rem; }
   .cta-row .btn:first-child { flex: 1 1 100%; }
@@ -220,6 +228,8 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
   .events li { grid-template-columns: 1fr; gap: 0; }
   .room.cottage img { aspect-ratio: 4 / 3; }
   .wide img { aspect-ratio: 3 / 2; }
+  .wide.strip img { aspect-ratio: 2 / 1; }
+  .goods-full .span img { aspect-ratio: 4 / 3; }
 
   .dock { display: flex; gap: .6rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 12; padding: .65rem 1rem calc(.65rem + env(safe-area-inset-bottom)); background: rgba(243, 240, 246, .97); border-top: 1px solid #cfc4da; transform: translateY(110%); transition: transform .25s ease; }
   .dock.on { transform: none; }
@@ -267,7 +277,7 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 <section class="hero wrap" data-hero>
   <div class="hero-text">
     <h1>Relax.<br>Unplug.<br>Unwind.</h1>
-    <p class="lede">A farmstay bed and breakfast near Lynchburg, Tennessee, on the historic 1865 farm built by the brother of Jack Daniel. Stay on a working farm with lots of animals all around you.</p>
+    <p class="lede">A farmstay bed and breakfast near Lynchburg, Tennessee, on the historic 1865 farm that was the home of Jack Daniel’s brother Wiley. Stay on a working farm with lots of animals all around you.</p>
     <div class="cta-row">
       <a class="btn" href="tel:+19316322919">Call or text (931) 632-2919</a>
       <a class="btn ghost" href="stay.html">See the rooms</a>
@@ -277,7 +287,7 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
   <figure class="hero-photo">
     <picture>
       <source media="(max-width: 860px)" srcset="img/hero-m-800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="637">
-      <img src="img/hero-1400.webp" srcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" sizes="(max-width: 1300px) 56vw, 44rem" width="1400" height="787" alt="Navajo Churro sheep grazing between rows of lavender on the farm" fetchpriority="high">
+      <img src="img/hero-1400.webp" srcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" sizes="(max-width: 1300px) 72vw, 63rem" width="1400" height="787" alt="Navajo Churro sheep grazing between rows of lavender on the farm" fetchpriority="high">
     </picture>
     <figcaption>The Navajo Churro flock keeps the lavender weed free.</figcaption>
   </figure>
@@ -318,8 +328,8 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
     <p>Choose a cozy room in the 1860s farmhouse, with organic farm breakfast, or have the private lavender cottage to yourself.</p>
     <a class="btn ghost" href="stay.html">See the four rooms</a>
     <blockquote>
-      <p>“A wonderful and needed break from our hectic city life. The sheep are adorable and we loved to hear Earl the rooster in the morning as our wake-up call.”</p>
-      <footer>A guest, quoted on the farm’s website</footer>
+      <p>“A wonderful and needed break from our hectic city life. The sheep are adorable and we loved to hear Earl the rooster in the morning as our wake-up call. The 1860s decor is soothing and full with cozy comfort.”</p>
+      <footer>— A.S.</footer>
     </blockquote>
   </div>
 </section>
@@ -330,9 +340,9 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
     <p>Farm made local products for gifts to your friends, or just for you. The store is open by appointment: call or text <a href="tel:+19316322919">(931) 632-2919</a>.</p>
   </div>
   <ul class="goods">
-    <li><img src="img/honey-1000.webp" srcset="img/honey-600.webp 600w, img/honey-1000.webp 1000w" sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1100px) 31vw, 24rem" width="1000" height="750" alt="A jar of raw honey with a flowered cloth lid" loading="lazy" decoding="async"><span>Raw honey from the farm’s bees</span></li>
-    <li><img src="img/eggs-1200.webp" srcset="img/eggs-700.webp 700w, img/eggs-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1100px) 31vw, 24rem" width="1200" height="922" alt="A carton of brown farm eggs" loading="lazy" decoding="async"><span>Free-range eggs</span></li>
-    <li><img src="img/wool-1200.webp" srcset="img/wool-700.webp 700w, img/wool-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 1100px) 31vw, 24rem" width="1200" height="676" alt="Felted Navajo Churro wool dryer balls in a basket" loading="lazy" decoding="async"><span>Navajo Churro wool dryer balls</span></li>
+    <li><img src="img/honey-1000.webp" srcset="img/honey-600.webp 600w, img/honey-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 53rem" width="1000" height="750" alt="A jar of raw honey with a flowered cloth lid" loading="lazy" decoding="async"><span>Raw honey from the farm’s bees</span></li>
+    <li><img src="img/eggs-1200.webp" srcset="img/eggs-700.webp 700w, img/eggs-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 32rem" width="1200" height="922" alt="A carton of brown farm eggs" loading="lazy" decoding="async"><span>Free-range eggs</span></li>
+    <li><img src="img/wool-1400.webp" srcset="img/wool-700.webp 700w, img/wool-1000.webp 1000w, img/wool-1400.webp 1400w" sizes="(max-width: 860px) calc(133vw - 3rem), 36rem" width="1400" height="789" alt="Felted Navajo Churro wool dryer balls in a basket" loading="lazy" decoding="async"><span>Navajo Churro wool dryer balls</span></li>
   </ul>
   <p class="more">Also lavender essential oil, lavender hydrosol, elderberry syrup, tinctures, soap, culinary lavender and sachets. <a href="store.html">Everything in the farm store</a></p>
 </section>
@@ -378,11 +388,11 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
     }).observe(hero);
   }
   var roll = document.querySelector('.roll');
-  if (roll && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (roll && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches && matchMedia('(min-width: 861px)').matches) {
     roll.classList.add('wait');
     var io = new IntersectionObserver(function (e) {
       if (e[0].isIntersecting) { roll.classList.add('sign'); io.disconnect(); }
-    }, { threshold: 0.25 });
+    }, { threshold: 0.15 });
     io.observe(roll);
   }
   var dlg = document.querySelector('dialog.lb');
@@ -391,7 +401,7 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
     document.querySelectorAll('[data-full]').forEach(function (b) {
       b.addEventListener('click', function () {
         var t = b.querySelector('img');
-        big.src = b.dataset.full; big.width = +b.dataset.w; big.height = +b.dataset.h; big.alt = t.alt; cap.textContent = t.alt;
+        big.src = b.dataset.full; big.width = +b.dataset.w; big.height = +b.dataset.h; big.alt = t.alt; cap.textContent = b.dataset.title ? b.dataset.title + '. ' + t.alt : t.alt;
         dlg.showModal();
       });
     });
