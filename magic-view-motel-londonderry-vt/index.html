@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/grenze-gotisch-400-900.woff2" crossorigin>
 <link rel="preload" as="image" media="(max-width: 900px)" imagesrcset="img/winter-m800.webp 800w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
-<link rel="preload" as="image" media="(min-width: 901px)" imagesrcset="img/winter-600.webp 600w, img/winter-1200.webp 1200w" imagesizes="(min-width: 1312px) 681px, 56vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 901px)" imagesrcset="img/winter-600.webp 600w, img/winter-1200.webp 1200w" imagesizes="61vw" fetchpriority="high">
 <style>
   @font-face { font-family: "Grenze Gotisch"; font-weight: 400 900; font-display: swap; src: url(fonts/grenze-gotisch-400-900.woff2) format("woff2"); }
   @font-face { font-family: "Alegreya Sans"; font-weight: 400; font-display: swap; src: url(fonts/alegreya-sans-400.woff2) format("woff2"); }
@@ -79,13 +79,18 @@
   /* Home hero: the same chalet in both seasons. */
   .hero { background: var(--frost); transition: background-color .6s ease; padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2rem, 5vw, 4rem); }
   body[data-season="summer"] .hero { background: var(--meadow); }
-  .hero .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
-  .hero h1 { font-size: clamp(3.4rem, 7.6vw, 6.6rem); font-weight: 800; line-height: .9; color: var(--timber); }
+  /* Desktop: text in the content column, the photo runs to the right edge of the window. */
+  .hero .wrap { display: grid; grid-template-columns: 25rem 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; max-width: none; padding-right: 0; padding-left: max(var(--pad), calc((100vw - var(--max)) / 2)); }
+  .hero h1 { font-size: clamp(3.2rem, 5vw, 4.6rem); font-weight: 800; line-height: .92; color: var(--timber); }
+  .season-wrap { justify-self: end; width: 100%; max-width: 960px; }
+  .season picture img { border-radius: .4rem 0 0 .4rem; }
+  .season-wrap .switch { padding-right: max(var(--pad), calc((100vw - var(--max)) / 2)); margin-top: 1rem; }
+  .season-wrap .switch button { font-size: 1.125rem; padding: .7rem 1.4rem; }
   .hero .where { margin: 1rem 0 .4rem; font-size: 1.25rem; font-weight: 500; }
   .hero .line { color: var(--muted); min-height: 3.2em; margin-bottom: 1.4rem; }
   .season { display: grid; }
   .season picture { grid-area: 1 / 1; transition: opacity .6s ease; }
-  .season picture img { width: 100%; border-radius: .4rem; }
+  .season picture img { width: 100%; }
   .season picture[hidden] { display: block; opacity: 0; visibility: hidden; }
   .switch { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .8rem; flex-wrap: wrap; }
   .switch .toggle { display: inline-flex; padding: .25rem; gap: .25rem; background: #fff; border-radius: 2rem; border: 1px solid #c9d2db; }
@@ -126,7 +131,7 @@
   .page-head { background: var(--frost); padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(1.5rem, 4vw, 2.5rem); }
   .page-head h1 { font-size: clamp(3rem, 6.5vw, 5rem); font-weight: 800; color: var(--timber); margin-bottom: .8rem; }
   .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem 2rem; }
-  .gallery figure img { border-radius: .4rem; width: 100%; }
+  .gallery figure img { border-radius: .4rem; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
   .gallery figcaption { margin-top: .6rem; color: var(--muted); }
   .two { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
   .two img { border-radius: .4rem; }
@@ -138,6 +143,9 @@
   .card dl { display: grid; grid-template-columns: auto 1fr; gap: .5rem 1.2rem; }
   .card dt { color: var(--muted); }
   .card dd { font-weight: 500; }
+  .contact-grid { align-items: stretch; }
+  .contact-grid > img { height: 100%; object-fit: cover; }
+  .card-h { font-size: 1.9rem; margin: .8rem 0 0; padding-top: 1.2rem; border-top: 1px solid #dfe5ea; }
 
   footer { background: var(--ink); color: #cfc7c0; padding: 2.5rem 0 2rem; font-size: 1rem; }
   footer .wrap { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem 2rem; }
@@ -154,6 +162,9 @@
     .brand img { height: 2.7rem; }
     .hero .wrap, .rooms .wrap, .evening .wrap, .reach .wrap, .two { grid-template-columns: 1fr; }
     .hero { padding-top: 1.25rem; }
+    .hero .wrap { padding: 0 var(--pad); }
+    .season picture img { border-radius: .4rem; }
+    .season-wrap .switch { padding-right: 0; }
     .hero h1 { font-size: clamp(3.1rem, 14.5vw, 4.4rem); }
     .hero .where { margin-top: .6rem; font-size: 1.15rem; }
     .hero .line { min-height: 0; margin-bottom: 1.1rem; }
@@ -204,7 +215,7 @@
       <h1>Magic View Motel</h1>
       <p class="where">An alpine Vermont motel on Route 11 in Londonderry.</p>
       <p class="line" id="line-winter">Vermont skiing, with a ski rack in every room.</p>
-      <p class="line" id="line-summer" hidden>Vermont golf and other activities, from the same alpine motel.</p>
+      <p class="line" id="line-summer" hidden>Enjoy Vermont skiing, golf, and other activities.</p>
       <div class="actions">
         <a class="btn red" href="tel:+18028243793"><span class="num">Call (802) 824-3793</span></a>
         <a class="btn ghost" href="mailto:Stay@MagicViewMotel.com?subject=Room%20request">Email for a room</a>
@@ -214,11 +225,11 @@
       <div class="season">
       <picture id="pic-winter">
         <source media="(max-width: 900px)" srcset="img/winter-m800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="600">
-        <img src="img/winter-1200.webp" srcset="img/winter-600.webp 600w, img/winter-1200.webp 1200w" sizes="(min-width: 1312px) 681px, (min-width: 901px) 56vw, calc(100vw - 2rem)" width="1200" height="700" alt="The Magic View chalet, dark timber with red and white trim, in deep snow" fetchpriority="high">
+        <img src="img/winter-1200.webp" srcset="img/winter-600.webp 600w, img/winter-1200.webp 1200w" sizes="(min-width: 901px) 61vw, calc(100vw - 2rem)" width="1200" height="700" alt="The Magic View chalet, dark timber with red and white trim, in deep snow" fetchpriority="high">
       </picture>
       <picture id="pic-summer" hidden>
         <source media="(max-width: 900px)" srcset="img/summer-m800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="600">
-        <img src="img/summer-1200.webp" srcset="img/summer-600.webp 600w, img/summer-1200.webp 1200w" sizes="(min-width: 1312px) 681px, (min-width: 901px) 56vw, calc(100vw - 2rem)" width="1200" height="700" alt="The Magic View chalet and motel wing in summer, with flower beds by the road" loading="lazy" decoding="async">
+        <img src="img/summer-1200.webp" srcset="img/summer-600.webp 600w, img/summer-1200.webp 1200w" sizes="(min-width: 901px) 61vw, calc(100vw - 2rem)" width="1200" height="700" alt="The Magic View chalet and motel wing in summer, with flower beds by the road" loading="lazy" decoding="async">
       </picture>
       </div>
       <div class="switch">
@@ -236,7 +247,7 @@
   <div class="wrap">
     <img src="img/room-pine-600.webp" srcset="img/room-pine-600.webp 600w, img/room-pine-1200.webp 1200w" sizes="(min-width: 1312px) 681px, (min-width: 901px) 56vw, calc(100vw - 2rem)" width="1200" height="700" alt="A motel room with knotty-pine walls, a made bed, a TV and a window" loading="lazy" decoding="async">
     <div>
-      <h2 id="rooms-h">Eighteen rooms, all with</h2>
+      <h2 id="rooms-h">Eighteen rooms. Each has:</h2>
       <ul class="has">
         <li>A private bath</li>
         <li>Cable TV</li>
