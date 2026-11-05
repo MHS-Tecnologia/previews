@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Keweenaw | Minnetonka Resort, Copper Harbor</title>
+<meta name="description" content="Places to go and things to do around Copper Harbor and the Keweenaw Peninsula.">
+<meta name="theme-color" content="#2A1D16">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/rokkitt.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/publicsans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="has-dock">
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note"><p>Unofficial demo built by MHS Tecnologia for Minnetonka Resort. Not affiliated with or endorsed by Minnetonka Resort.</p></div>
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="index.html" aria-label="Minnetonka Resort, home"><img src="img/logo-382.webp" width="382" height="132" alt="Minnetonka Resort, Thunderbird Gifts"></a>
+  <nav class="nav" aria-label="Main">
+   <a href="index.html">Home</a><a href="stay.html">Cottages &amp; rooms</a><a href="gift-shop.html">Gift shop</a><a href="history.html">History</a><a href="keweenaw.html" aria-current="page">The Keweenaw</a><a href="contact.html">Contact</a>
+   <a class="call" href="tel:+19062894449">Call 906-289-4449</a>
+   <details class="menu"><summary>Menu</summary><div class="panel"><a href="index.html">Home</a><a href="stay.html">Cottages &amp; rooms</a><a href="gift-shop.html">Gift shop</a><a href="history.html">History</a><a href="keweenaw.html" aria-current="page">The Keweenaw</a><a href="contact.html">Contact</a><a href="tel:+19062894449">Call 906-289-4449</a><a href="mailto:minnetonkareservations@gmail.com">Email us</a></div></details>
+  </nav>
+ </div>
+</header>
+<main id="main">
+
+<section class="head">
+ <div class="wrap">
+  <h1>The Keweenaw</h1>
+  <p>We know all the best spots to make your stay an adventure to remember. Let us make your dinner reservation or pre-book your sunset cruise or an afternoon at the Spa! Please stop by the resort office for more information.</p>
+ </div>
+</section>
+<section class="section">
+ <div class="wrap">
+  <figure class="wide full"><img src="img/harbor-1000.webp" srcset="img/harbor-1000.webp 1000w" sizes="(min-width: 1200px) 1152px, calc(100vw - 32px)" width="1000" height="369" alt="Lake Superior shoreline and a small town in autumn trees, seen from above" loading="lazy" decoding="async"></figure>
+  <div class="lists" style="margin-top:44px">
+   <div><h2>Places to go</h2><ul style="margin-top:16px"><li>Isle Royale National Park</li><li>Golf at the Historic Keweenaw Mountain Lodge</li><li>Brockway Mountain Drive</li><li>Estivant Pines Nature Sanctuary</li><li>Fort Wilkins Historic State Park</li><li>Copper Harbor Lighthouse Ferry Tour</li><li>Hunter&#x27;s Point Park</li><li>Horseshoe Harbor Preserve</li><li>Delaware Copper Mine Tour</li><li>Clark Mine</li><li>Copper Harbor Historic Cemetery</li><li>Beginning of Highway 41</li></ul></div>
+   <div><h2>Things to do</h2><ul style="margin-top:16px"><li>Collect/rock hunt</li><li>Collect minerals (we rent metal detectors, inquire at the resort office)</li><li>Find waterfalls</li><li>Mountain biking world-class trails</li><li>Ride ATVs</li><li>Fishing</li><li>Scuba diving</li><li>Hiking</li><li>Swimming</li><li>Bird watching</li><li>Kayaking</li><li>Tour the gift shops</li><li>Get a massage, take a yoga class, or health workshops</li><li>Tour ghost towns</li><li>Mini golf at Into the Woods</li></ul></div>
+  </div>
+ </div>
+</section>
+
+</main>
+<footer class="foot">
+ <div class="wrap">
+  <div class="about">
+   <p><strong>Minnetonka Resort</strong><br>562 Gratiot Street, Copper Harbor, MI 49918</p>
+   <p><a href="tel:+19062894449">906-289-4449</a><br><a href="mailto:minnetonkareservations@gmail.com">minnetonkareservations@gmail.com</a></p>
+   <p>The resort hosts lodging guests May thru October.</p>
+  </div>
+  <nav aria-label="Footer"><a href="index.html">Home</a><a href="stay.html">Cottages &amp; rooms</a><a href="gift-shop.html">Gift shop</a><a href="history.html">History</a><a href="keweenaw.html">The Keweenaw</a><a href="contact.html">Contact</a></nav>
+  <div><p>Thunderbird Gift Center and Spirit of the North Wellness Center are on the main grounds.</p></div>
+  <div class="legal">
+   <p>Unofficial demo built by MHS Tecnologia for Minnetonka Resort. Not affiliated with or endorsed by Minnetonka Resort. Photos and text from minnetonkaresort.com.</p>
+   <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+ </div>
+</footer>
+<div class="dock" id="dock"><a class="btn solid" href="tel:+19062894449">Call 906-289-4449</a><a class="btn line" href="mailto:minnetonkareservations@gmail.com?subject=Reservation%20request&body=Check-in%20date%3A%20%0ANumber%20of%20nights%3A%20%0ACottage%20or%20room%3A%20%0AGuests%3A%20">Email</a></div>
+<script>
+(function(){
+ var d=document.getElementById('dock'),h=document.querySelector('[data-cta]');
+ if(d&&h&&'IntersectionObserver' in window){new IntersectionObserver(function(e){d.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(h)}
+ else if(d){d.classList.add('on')}
+ document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(){var x=document.getElementById(b.dataset.open);x.showModal();})});
+ document.querySelectorAll('dialog').forEach(function(x){
+  x.querySelector('.close').addEventListener('click',function(){x.close()});
+  x.addEventListener('click',function(e){if(e.target===x)x.close()});
+ });
+})();
+</script>
+</body>
+</html>
