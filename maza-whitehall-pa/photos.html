@@ -63,7 +63,7 @@ figure{margin:0}
 .btn-line:hover{background:var(--ink);color:#fff}
 
 /* hero */
-.hero{padding:44px 0 80px}
+.hero{padding:44px 0 92px}
 .hero-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center}
 .kicker{color:var(--fez);font-weight:500;margin-bottom:14px}
 h1{font-size:clamp(2.5rem,4.4vw,4.1rem);max-width:13ch}
@@ -71,7 +71,9 @@ h1{font-size:clamp(2.5rem,4.4vw,4.1rem);max-width:13ch}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .hero-photo{position:relative}
 .hero-photo img{width:100%;border-radius:6px}
-.hero-photo .inset{position:absolute;left:-28px;bottom:-36px;width:38%;border:6px solid var(--paper);border-radius:8px;box-shadow:0 14px 30px -14px rgba(38,33,28,.45)}
+.hero-photo .inset{position:absolute;left:-28px;bottom:-44px;width:41%;background:var(--paper);padding:6px 6px 0;border-radius:8px;box-shadow:0 14px 30px -14px rgba(38,33,28,.45)}
+.hero-photo .inset img{border-radius:4px}
+.inset-label{display:block;font-weight:500;font-size:.9375rem;padding:7px 4px 9px}
 
 /* the week (signature) */
 .dusk{background:var(--sand);color:var(--ink);padding:76px 0}
@@ -81,7 +83,8 @@ h1{font-size:clamp(2.5rem,4.4vw,4.1rem);max-width:13ch}
 .dusk-photo img{border-radius:6px;width:100%}
 .dusk-photo figcaption{font-size:.875rem;color:var(--muted);margin-top:10px}
 .week{margin-top:34px}
-.status{text-wrap:balance;font:700 1.375rem/1.3 var(--k);color:var(--ink);min-height:1.8em;margin-bottom:14px}
+.status{text-wrap:balance;font:700 1.375rem/1.3 var(--k);color:var(--ink);min-height:1.8em;margin-bottom:12px}
+.week-call{margin:0 0 24px}
 .week.open .status{color:var(--fez-d)}
 .axis,.day{display:grid;grid-template-columns:7.5rem minmax(0,1fr) 9.5rem;gap:20px;align-items:center}
 .ticks{position:relative;height:20px;font-size:.75rem;color:var(--muted)}
@@ -107,6 +110,18 @@ h1{font-size:clamp(2.5rem,4.4vw,4.1rem);max-width:13ch}
 }
 @keyframes grow{from{transform:scaleX(0)}}
 @keyframes fade{from{opacity:0}}
+
+/* the dishes named Maza */
+.house{background:var(--ink);color:#f3ece2;padding:76px 0}
+.house h2{font-size:clamp(2rem,3.6vw,3rem);color:#fff}
+.house .sub{color:#cbbfae}
+.house-list{list-style:none;margin:34px 0 0;padding:0}
+.house-list li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr) 6rem;gap:32px;align-items:baseline;padding:22px 0;border-top:1px solid rgba(255,255,255,.16)}
+.hn{font:700 clamp(1.8rem,3.2vw,2.75rem)/1.1 var(--k);color:#fff}
+.hm{color:var(--sand)}
+.hd{color:#ddd3c6}
+.hs{display:block;font-size:.875rem;color:#b3a591;margin-top:4px}
+.hp{font:700 1.375rem/1.2 var(--k);color:#fff;text-align:right;font-variant-numeric:tabular-nums}
 
 /* menu lists */
 .items{list-style:none;margin:0;padding:0}
@@ -207,6 +222,10 @@ h1{font-size:clamp(2.5rem,4.4vw,4.1rem);max-width:13ch}
   .actions .btn{padding:0 10px;min-height:48px}
   .hero-photo{margin-top:22px}
   .dusk{padding:52px 0}
+  .house{padding:52px 0}
+  .house-list li{grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:18px 0}
+  .hd{grid-column:1/-1;grid-row:2}
+  .week-call{width:100%}
   .dusk-in{display:block}
   .dusk-photo{margin-top:36px}
   .axis,.day{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px}
@@ -254,7 +273,7 @@ h1{font-size:clamp(2.5rem,4.4vw,4.1rem);max-width:13ch}
   <h1>Photos</h1>
   <p class="sub">The building, the patio and plates from the kitchen, all from Maza’s own gallery.</p>
 </div>
-<div class="wrap gallery"><section class="gsec" aria-label="The place"><h2>The place</h2><div class="grid place"><figure class="g"><img src="img/outside-600.webp" srcset="img/outside-600.webp 600w, img/outside-800.webp 800w, img/outside-1400.webp 1400w, img/outside-1600.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 770px" width="1600" height="917" alt="The Maza building on Mickley Ave, with the red Maza sign" loading="lazy" decoding="async"><figcaption>Mickley Ave, Whitehall</figcaption></figure><figure class="g tall"><img src="img/patio-440.webp" srcset="img/patio-440.webp 440w, img/patio-660.webp 660w, img/patio-880.webp 880w" sizes="(max-width: 760px) calc(100vw - 32px), 440px" width="880" height="1280" alt="The patio under the pergola at dusk, tables beside the stone wall" loading="lazy" decoding="async"><figcaption>The patio</figcaption></figure></div></section><section class="gsec" aria-label="From the kitchen"><h2>From the kitchen</h2><div class="grid"><figure class="g"><img src="img/hummus-600.webp" srcset="img/hummus-600.webp 600w, img/hummus-800.webp 800w, img/hummus-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1005" alt="A bowl of hummus with whole chickpeas, olive oil, lemon and an olive" loading="lazy" decoding="async"><figcaption>Hummus</figcaption></figure><figure class="g"><img src="img/chicken-fattoush-600.webp" srcset="img/chicken-fattoush-600.webp 600w, img/chicken-fattoush-800.webp 800w, img/chicken-fattoush-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="991" alt="Grilled chicken over salad with pita chips" loading="lazy" decoding="async"><figcaption>Chicken Fatoush</figcaption></figure><figure class="g"><img src="img/tabouleh-600.webp" srcset="img/tabouleh-600.webp 600w, img/tabouleh-800.webp 800w, img/tabouleh-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1031" alt="Tabouleh on romaine leaves, seen from above" loading="lazy" decoding="async"><figcaption>Tabouleh</figcaption></figure><figure class="g"><img src="img/wrap-600.webp" srcset="img/wrap-600.webp 600w, img/wrap-800.webp 800w, img/wrap-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="795" alt="A grilled wrap, cut open" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/dip-600.webp" srcset="img/dip-600.webp 600w, img/dip-800.webp 800w, img/dip-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1011" alt="A dip with chopped tomato, lemon and an olive" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/fried-600.webp" srcset="img/fried-600.webp 600w, img/fried-800.webp 800w, img/fried-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1097" alt="Four fried, round appetizers on a white plate" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/fattoush-600.webp" srcset="img/fattoush-600.webp 600w, img/fattoush-800.webp 800w, img/fattoush-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="625" alt="A salad of greens, tomato and pita chips" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/grill-plate-600.webp" srcset="img/grill-plate-600.webp 600w, img/grill-plate-800.webp 800w, img/grill-plate-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="644" alt="Grilled flatbread, grilled meat and a grilled tomato and pepper skewer" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/wrap-side-600.webp" srcset="img/wrap-side-600.webp 600w, img/wrap-side-800.webp 800w, img/wrap-side-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="900" alt="A wrap with a cup of chickpeas on the side" loading="lazy" decoding="async"></figure></div></section></div>
+<div class="wrap gallery"><section class="gsec" aria-label="The place"><h2>The place</h2><div class="grid place"><figure class="g"><img src="img/outside-600.webp" srcset="img/outside-600.webp 600w, img/outside-800.webp 800w, img/outside-1400.webp 1400w, img/outside-1600.webp 1600w" sizes="(max-width: 760px) calc(100vw - 32px), 770px" width="1600" height="917" alt="The Maza building on Mickley Ave, with the red Maza sign" loading="lazy" decoding="async"><figcaption>Mickley Ave, Whitehall</figcaption></figure><figure class="g tall"><img src="img/patio-440.webp" srcset="img/patio-440.webp 440w, img/patio-660.webp 660w, img/patio-880.webp 880w" sizes="(max-width: 760px) calc(100vw - 32px), 440px" width="880" height="1280" alt="The patio under the pergola at dusk, tables beside the stone wall" loading="lazy" decoding="async"><figcaption>The patio</figcaption></figure></div></section><section class="gsec" aria-label="From the kitchen"><h2>From the kitchen</h2><div class="grid"><figure class="g"><img src="img/hummus-600.webp" srcset="img/hummus-600.webp 600w, img/hummus-800.webp 800w, img/hummus-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1005" alt="A bowl of hummus with whole chickpeas, olive oil, lemon and an olive" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/chicken-fattoush-600.webp" srcset="img/chicken-fattoush-600.webp 600w, img/chicken-fattoush-800.webp 800w, img/chicken-fattoush-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="991" alt="Grilled chicken over salad with pita chips" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/tabouleh-600.webp" srcset="img/tabouleh-600.webp 600w, img/tabouleh-800.webp 800w, img/tabouleh-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1031" alt="Tabouleh on romaine leaves, seen from above" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/wrap-600.webp" srcset="img/wrap-600.webp 600w, img/wrap-800.webp 800w, img/wrap-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="795" alt="A grilled wrap, cut open" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/dip-600.webp" srcset="img/dip-600.webp 600w, img/dip-800.webp 800w, img/dip-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1011" alt="A dip with chopped tomato, lemon and an olive" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/fried-600.webp" srcset="img/fried-600.webp 600w, img/fried-800.webp 800w, img/fried-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="1097" alt="Four fried, round appetizers on a white plate" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/fattoush-600.webp" srcset="img/fattoush-600.webp 600w, img/fattoush-800.webp 800w, img/fattoush-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="625" alt="A salad of greens, tomato and pita chips" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/grill-plate-600.webp" srcset="img/grill-plate-600.webp 600w, img/grill-plate-800.webp 800w, img/grill-plate-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="644" alt="Grilled flatbread, grilled meat and a grilled tomato and pepper skewer" loading="lazy" decoding="async"></figure><figure class="g"><img src="img/wrap-side-600.webp" srcset="img/wrap-side-600.webp 600w, img/wrap-side-800.webp 800w, img/wrap-side-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 604px" width="1200" height="900" alt="A wrap with a cup of chickpeas on the side" loading="lazy" decoding="async"></figure></div></section></div>
 </main>
 <footer class="foot">
   <div class="wrap foot-in">
