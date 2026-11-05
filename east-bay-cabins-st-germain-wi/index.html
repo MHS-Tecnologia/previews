@@ -91,20 +91,19 @@ section{padding:88px 0}
 .route{background:var(--spruce);color:#eef0ea}
 .route .h2{color:#fff}
 .route .intro{color:#c9d1ca}
-.route-grid{display:grid;grid-template-columns:minmax(0,1fr) 216px;gap:40px;align-items:center;margin-top:40px}
-.road{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr 1.15fr 2.6fr 0;position:relative;padding-top:58px;margin-top:70px}
-.road::before{content:"";position:absolute;left:0;right:0;top:14px;height:16px;border-radius:8px;background:#0f1612 linear-gradient(90deg,#8a7a5c 0 55%,transparent 55%) 0 50%/22px 2px repeat-x;transform-origin:left;box-shadow:inset 0 0 0 1px #3a4d41}
+.route-grid{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:0;align-items:start;margin-top:28px}
+.road{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr 1.1fr 2.3fr 1.25fr;position:relative;padding-top:58px;margin-top:111px}
+.road::before{content:"";position:absolute;left:0;right:0;top:14px;border-radius:8px 0 0 8px!important;height:16px;border-radius:8px;background:#0f1612 linear-gradient(90deg,#8a7a5c 0 55%,transparent 55%) 0 50%/22px 2px repeat-x;transform-origin:left;box-shadow:inset 0 0 0 1px #3a4d41}
 .stop{position:relative;padding-right:16px}
 .stop::before{content:"";position:absolute;left:0;top:-52px;width:28px;height:28px;border-radius:50%;background:var(--spruce);border:3px solid #eef0ea;box-sizing:border-box}
 .stop b{display:block;font-family:Crete,Georgia,serif;font-weight:400;font-size:1.25rem;color:#fff;line-height:1.15}
 .stop span{display:block;color:#c9d1ca;font-size:.9375rem;margin-top:6px;max-width:22ch}
 .stop.long::after{content:"";position:absolute;left:14px;right:0;top:-41px;height:6px;border-radius:3px;background:var(--ember)}
 .stop.long .miles{position:absolute;left:50%;transform:translateX(-50%);top:-122px;font:400 3.6rem/1 Crete,Georgia,serif;color:var(--ember);white-space:nowrap}
-.stop.end{padding:0}
-.stop.end::after{content:"";position:absolute;left:17px;top:-39px;width:40px;height:2px;background:#eef0ea}
-.stop.end::before{background:var(--sign);border-color:#fff;width:34px;height:34px;top:-55px;left:-17px}
+.stop.end{padding:0 12px 0 0}
+.stop.end::before{background:var(--sign);border-color:#fff;width:34px;height:34px;top:-55px;left:-3px}
 .sign{margin:0}
-.sign img{border-radius:4px;border:3px solid #eef0ea;width:216px}
+.sign img{border-radius:4px;border:3px solid #eef0ea;width:150px}
 .sign figcaption{font-size:.875rem;color:#c9d1ca;margin-top:10px}
 .alt{margin-top:40px;color:#c9d1ca;max-width:70ch;border-left:3px solid var(--pine);padding-left:16px}
 @media (prefers-reduced-motion:no-preference){
@@ -135,6 +134,7 @@ section{padding:88px 0}
 .photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
 .photos figure{margin:0}
 .photos img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.photos.small{grid-template-columns:repeat(2,minmax(0,340px));margin-top:16px}
 .photos .wide{grid-column:1/-1}
 .photos .wide img{aspect-ratio:16/10}
 .photos figcaption{font-size:.875rem;color:var(--muted);margin-top:8px}
@@ -171,7 +171,7 @@ footer .legal{margin-top:40px;padding-top:20px;border-top:1px solid #2c3a31;font
 .dock.on{transform:none}
 @media (max-width:999px){
  .hero .wrap{grid-template-columns:1fr 400px;gap:40px}
- .road{grid-template-columns:1fr 1fr 1fr 2fr .1fr}
+ .road{grid-template-columns:1fr 1fr 1fr 2fr 1.2fr}
  .stop.long .miles{font-size:2.8rem;top:-110px}
 }
 @media (max-width:899px){
@@ -192,6 +192,8 @@ footer .legal{margin-top:40px;padding-top:20px;border-top:1px solid #2c3a31;font
  .water figure{position:static}
  .groups ul{column-gap:16px;font-size:.9375rem}
  .route-grid{grid-template-columns:1fr;gap:36px;margin-top:36px}
+ .road::before{border-radius:8px!important}
+ .sign img{width:216px}
  .road{display:block;padding:0 0 0 52px}
  .road::before{left:6px;right:auto;top:0;bottom:0;width:16px;height:auto;background:#0f1612 linear-gradient(180deg,var(--ember) 0 60%,transparent 60%) 50% 0/2px 26px repeat-y;transform-origin:top}
  .stop{padding:0 0 30px}
@@ -202,11 +204,11 @@ footer .legal{margin-top:40px;padding-top:20px;border-top:1px solid #2c3a31;font
  @media (prefers-reduced-motion:no-preference){.js .road::before{transform:scaleY(0)}.js .road .long::after{transform:scaleY(0);transform-origin:top}.js .road.go::before,.js .road.go .long::after{transform:none}}
  .stop.long .miles{left:0;transform:none;top:auto;bottom:38px;font-size:2.8rem}
  .stop.end::before{left:-49px;top:-4px}
- .stop.end::after{display:none}
  .stop span{max-width:none}
  .week{grid-template-columns:1fr}
  .week div{padding:16px 0;border-bottom:1px solid var(--line)}
  .photos{grid-template-columns:1fr}
+ .photos.small{grid-template-columns:1fr 1fr;gap:12px}
  .pagehead{padding:34px 0 32px}
  footer .cols{grid-template-columns:1fr}
  .dock{display:flex}
@@ -269,14 +271,14 @@ addEventListener('DOMContentLoaded',function(){
 <p class="intro">One with three bedrooms, one with two. Each has a set of bunk beds.</p>
 <div class="two">
 <article class="cabin">
-<img src="img/living3-1000.webp" srcset="img/living3-600.webp 600w, img/living3-800.webp 800w, img/living3-1000.webp 1000w" sizes="(max-width: 899px) calc(100vw - 32px), 566px" width="1000" height="1333" alt="Living room of the 3 bedroom cabin: plaid couches, a pine coffee table and knotty pine walls, with the kitchen behind" loading=lazy decoding=async>
+<img src="img/patio3-864.webp" srcset="img/patio3-500.webp 500w, img/patio3-700.webp 700w, img/patio3-864.webp 864w" sizes="(max-width: 899px) calc(100vw - 32px), 566px" width="864" height="1080" alt="The 3 bedroom cabin's orange pine siding and patio with a picnic table and Adirondack chairs under tall pines" loading=lazy decoding=async>
 <div class="body"><h3>3 bedroom cabin</h3>
 <ul class="beds"><li>2 queen beds</li><li>1 set of bunk beds</li><li>Patio area</li></ul>
 <p class="rate">Peak week, May 1 to Sept. 15: <strong>$1059</strong></p>
 <a class="more" href="cabins.html#three">See the 3 bedroom cabin</a></div>
 </article>
 <article class="cabin">
-<img src="img/living2-1000.webp" srcset="img/living2-600.webp 600w, img/living2-800.webp 800w, img/living2-1000.webp 1000w" sizes="(max-width: 899px) calc(100vw - 32px), 566px" width="1000" height="1333" alt="Living room of the 2 bedroom cabin with a plaid couch, wood floor and life jackets hanging by the door" loading=lazy decoding=async>
+<img src="img/kitchen2-1000.webp" srcset="img/kitchen2-600.webp 600w, img/kitchen2-800.webp 800w, img/kitchen2-1000.webp 1000w" sizes="(max-width: 899px) calc(100vw - 32px), 566px" width="1000" height="1333" alt="Kitchen of the 2 bedroom cabin with refrigerator, stove, wall A/C unit and a round dining table" loading=lazy decoding=async>
 <div class="body"><h3>2 bedroom cabin</h3>
 <ul class="beds"><li>1 double bed</li><li>1 queen bed</li><li>1 set of bunk beds</li><li>Raised deck</li></ul>
 <p class="rate">Peak week, May 1 to Sept. 15: <strong>$952</strong></p>
@@ -301,16 +303,16 @@ addEventListener('DOMContentLoaded',function(){
 
 <section class="route"><div class="wrap">
 <h2 class="h2">The last 4.1 miles</h2>
-<p class="intro">From Minocqua and Woodruff, this is the whole drive. Watch for the red sign.</p>
+<p class="intro">From Minocqua and Woodruff, this is the whole drive. Watch for the road sign.</p>
 <div class="route-grid">
 <ol class="road" aria-label="Route from Woodruff">
 <li class="stop"><b>STH 51, Woodruff</b><span>North through Woodruff to STH 70.</span></li>
 <li class="stop"><b>STH 70</b><span>East on 70 to STH 155.</span></li>
 <li class="stop"><b>STH 155</b><span>Left on 155, three blocks to Birchwood Drive.</span></li>
 <li class="stop long"><span class="miles" aria-hidden="true">4.1 miles</span><b>Birchwood Drive</b><span>Turn right. The cabins are 4.1 miles in.</span></li>
-<li class="stop end"><span class="vh">The East Bay Cabins road sign, on the right.</span></li>
+<li class="stop end"><b>Road sign, on the right</b><span>Birchwood Drive, mile 4.1.</span></li>
 </ol>
-<figure class="sign"><img src="img/sign-432.webp" srcset="img/sign-432.webp 432w" sizes="216px" width="432" height="768" alt="The red East Bay Cabins road sign at the drive, beside a flag and a ring of fieldstones" loading=lazy decoding=async>
+<figure class="sign"><img src="img/sign-432.webp" srcset="img/sign-432.webp 432w" sizes="(max-width: 899px) 216px, 150px" width="432" height="768" alt="The red East Bay Cabins road sign at the drive, beside a flag and a ring of fieldstones" loading=lazy decoding=async>
 <figcaption>The road sign on the right, 1615 Birchwood Drive.</figcaption></figure>
 </div>
 <p class="alt">Coming from Eagle River on STH 70 or 45: head west on STH 70 through St. Germain to where 70 meets 155, then follow the same last stretch to Birchwood Drive and the road sign.</p>
