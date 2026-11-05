@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Outpost Motel · Grand Marais, MN · Lake Superior&#x27;s North Shore</title>
+<meta name="description" content="A family-owned, 14-unit motel on Lake Superior&#x27;s North Shore in Grand Marais, Minnesota. Knotty pine rooms, kitchenette suites and a loft, with the lake across the road.">
+<meta name="theme-color" content="#f7f9f9">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" href="fonts/josefinslab.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/redhattext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-800.webp" imagesrcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 432px" fetchpriority="high">
+<style>
+@font-face { font-family: "Josefin Slab"; font-weight: 100 700; font-display: swap; src: url(fonts/josefinslab.woff2) format("woff2"); }
+@font-face { font-family: "Red Hat Text"; font-weight: 300 700; font-display: swap; src: url(fonts/redhattext.woff2) format("woff2"); }
+
+/* Lake fog, the grey of their sign, Superior in winter, knotty pine,
+   and the four colors of their own 2026 rate calendar. */
+:root {
+  --fog: #e9eeef;
+  --paper: #f7f9f9;
+  --ink: #1c2a31;
+  --sign: #5c6368;
+  --lake: #213a47;
+  --lake-2: #2c4c5c;
+  --pine: #8a531c;
+  --pine-lt: #d79a55;
+  --g: #5b8c37; --y: #e0b923; --r: #c63f2c; --p: #6c4192;
+  --g-t: #dfeacf; --y-t: #f6ebbb; --r-t: #f4d2cb; --p-t: #e3d7ee;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body { background: var(--fog); color: var(--ink); font: 400 1.0625rem/1.6 "Red Hat Text", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--pine); outline-offset: 3px; }
+h1, h2, h3 { font-family: "Josefin Slab", Rockwell, serif; font-weight: 700; line-height: 1.02; letter-spacing: -0.01em; }
+h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); text-wrap: balance; }
+h3 { font-size: 1.5rem; line-height: 1.1; }
+p { max-width: 64ch; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff; padding: .6rem 1rem; z-index: 50; }
+.skip:focus { left: 1rem; }
+
+/* Notice */
+.notice { background: var(--ink); color: #dbe4e7; font-size: .8125rem; line-height: 1.4; padding: .5rem var(--pad); text-align: center; max-width: none; }
+
+/* Header */
+.top { background: var(--paper); border-bottom: 1px solid #d3dadc; position: relative; z-index: 20; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.5rem; }
+.brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; }
+.brand img { width: 40px; height: auto; }
+.brand span { font-family: "Josefin Slab", serif; font-weight: 700; font-size: 1.35rem; letter-spacing: .01em; line-height: 1; }
+.brand small { display: block; font-family: "Red Hat Text", sans-serif; font-weight: 500; font-size: .78rem; color: var(--sign); letter-spacing: 0; margin-top: .2rem; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-weight: 500; font-size: .98rem; }
+.nav > a { text-decoration: none; padding: .4rem 0; border-bottom: 2px solid transparent; }
+.nav > a:hover { border-color: var(--pine-lt); }
+.nav > a[aria-current="page"] { border-color: var(--pine); }
+.nav > a.call { background: var(--lake); color: #fff; padding: .6rem 1rem; border-radius: 4px; border: 0; }
+.nav > a.call:hover { background: var(--lake-2); }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; font-weight: 600; padding: .6rem .9rem; border: 1.5px solid var(--ink); border-radius: 4px; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { background: var(--ink); color: #fff; }
+.menu div { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--paper); border: 1px solid #c9d1d4; border-radius: 6px; box-shadow: 0 12px 30px rgba(28,42,49,.18); min-width: 15rem; padding: .5rem; display: grid; }
+.menu div a { padding: .8rem .9rem; text-decoration: none; border-radius: 4px; font-weight: 500; }
+.menu div a:hover { background: var(--fog); }
+@media (max-width: 860px) { .nav > a { display: none; } .menu { display: block; } }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; padding: .7rem 1.3rem; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 1rem; border: 2px solid var(--lake); }
+.btn.solid { background: var(--lake); color: #fff; }
+.btn.solid:hover { background: var(--lake-2); border-color: var(--lake-2); }
+.btn.line { color: var(--lake); background: transparent; }
+.btn.line:hover { background: #dbe3e6; }
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+
+/* Hero */
+.hero { padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4.5rem); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 27rem); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hero h1 { font-size: clamp(2.35rem, 5vw, 4.25rem); font-weight: 700; line-height: .98; letter-spacing: -0.02em; text-wrap: balance; }
+.hero .lede { font-size: clamp(1.05rem, 1.5vw, 1.25rem); margin-top: 1.25rem; max-width: 36ch; color: #33434b; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.hero .toll { margin-top: .9rem; font-size: .95rem; color: var(--sign); }
+.hero .toll a { font-weight: 600; color: var(--ink); }
+.hero figure { position: relative; }
+.hero figure img { width: 100%; aspect-ratio: 5 / 6; object-fit: cover; border-radius: 3px; }
+.hero figcaption { font-size: .85rem; color: var(--sign); margin-top: .6rem; }
+@media (max-width: 860px) {
+  .hero { padding-top: 1.25rem; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero h1 { font-size: clamp(2.1rem, 9.4vw, 2.9rem); }
+  .hero .lede { margin-top: .9rem; font-size: 1.02rem; }
+  .hero .actions { margin-top: 1.2rem; }
+  .hero .actions .btn { flex: 1 1 100%; }
+  .hero .toll { margin-top: .6rem; }
+  .hero figure img { aspect-ratio: 4 / 3; object-position: 50% 30%; }
+}
+
+/* Planner: their season calendar, made live */
+.plan { background: var(--paper); border-block: 1px solid #d3dadc; padding: clamp(2.5rem, 6vw, 5rem) 0; scroll-margin-top: 1rem; }
+.plan-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 3rem; align-items: end; }
+.plan-head p { margin-top: .8rem; color: #33434b; }
+.key { display: flex; gap: .4rem; flex-wrap: wrap; }
+.key span { display: inline-flex; align-items: center; gap: .45rem; font-size: .9rem; font-weight: 600; padding: .35rem .7rem .35rem .45rem; border-radius: 999px; background: var(--fog); }
+.key i { width: .95rem; height: .95rem; border-radius: 3px; display: block; }
+.rooms-pick { display: flex; flex-wrap: wrap; gap: .5rem; margin: 2rem 0 1.5rem; border: 0; padding: 0; }
+.rooms-pick legend { font-weight: 600; margin-bottom: .6rem; font-size: .95rem; }
+.rooms-pick label { position: relative; }
+.rooms-pick input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.rooms-pick span { display: block; padding: .6rem .95rem; border: 1.5px solid #b9c4c8; border-radius: 4px; font-weight: 500; font-size: .95rem; cursor: pointer; background: #fff; }
+.rooms-pick input:checked + span { background: var(--ink); color: #fff; border-color: var(--ink); }
+.rooms-pick input:focus-visible + span { outline: 3px solid var(--pine); outline-offset: 2px; }
+.board { display: grid; grid-template-columns: minmax(0, 1fr) 20rem; gap: 2rem; align-items: start; }
+.months { display: grid; grid-template-columns: repeat(var(--n, 2), minmax(0, 1fr)); gap: 1.75rem; }
+.mnav { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+.mnav button { font: inherit; font-weight: 600; background: #fff; border: 1.5px solid #b9c4c8; border-radius: 4px; min-height: 2.75rem; padding: .3rem .9rem; cursor: pointer; color: var(--ink); }
+.mnav button:disabled { opacity: .35; cursor: default; }
+.mnav output { font-family: "Josefin Slab", serif; font-weight: 700; font-size: 1.3rem; }
+.month h3 { font-size: 1.35rem; margin-bottom: .6rem; }
+.grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
+.grid .dow { font-size: .75rem; font-weight: 600; color: var(--sign); text-align: center; padding-bottom: .2rem; }
+.day { font: inherit; border: 0; border-radius: 3px; min-height: 3.3rem; padding: .3rem .1rem .25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.1; cursor: pointer; color: var(--ink); position: relative; box-shadow: inset 0 3px 0 var(--c); background: var(--t); transition: background-color .12s, color .12s; }
+.day b { font-weight: 600; font-size: .95rem; }
+.day small { font-size: .74rem; font-weight: 500; margin-top: .15rem; }
+.day.G { --c: var(--g); --t: var(--g-t); } .day.Y { --c: var(--y); --t: var(--y-t); }
+.day.R { --c: var(--r); --t: var(--r-t); } .day.P { --c: var(--p); --t: var(--p-t); }
+.day:disabled { cursor: default; background: transparent; box-shadow: inset 0 3px 0 #d3dadc; color: #8a969b; }
+.day:disabled small { visibility: hidden; }
+.day:not(:disabled):hover { filter: brightness(.95); }
+.day.in { background: var(--lake-2); color: #fff; }
+.day.end { background: var(--pine); color: #fff; box-shadow: none; }
+.sum { background: var(--lake); color: #eef3f4; border-radius: 6px; padding: 1.5rem; position: sticky; top: 1rem; }
+.sum h3 { color: #fff; font-size: 1.45rem; }
+.sum p { font-size: .95rem; margin-top: .6rem; color: #cfdbdf; }
+.sum dl { margin-top: 1rem; display: grid; grid-template-columns: 1fr auto; gap: .35rem 1rem; font-size: .98rem; }
+.sum dt { color: #cfdbdf; } .sum dd { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sum dd.total, .sum dt.total { border-top: 1px solid #4f6c7a; padding-top: .55rem; margin-top: .25rem; font-size: 1.15rem; color: #fff; }
+.sum .warn { background: #f6ebbb; color: #3b2f00; padding: .6rem .75rem; border-radius: 4px; margin-top: 1rem; font-size: .9rem; }
+.sum .acts { display: grid; gap: .6rem; margin-top: 1.25rem; }
+.sum .btn.solid { background: #fff; color: var(--lake); border-color: #fff; }
+.sum .btn.solid:hover { background: #dfe8eb; }
+.sum .btn.line { color: #fff; border-color: #9fb5bf; }
+.sum .btn.line:hover { background: var(--lake-2); }
+.sum .fine { font-size: .8rem; color: #a9bcc4; margin-top: 1rem; }
+.plan .nojs { margin-top: 1.5rem; }
+@media (max-width: 1000px) { .board { grid-template-columns: 1fr; } .sum { position: static; } }
+@media (max-width: 860px) { .plan-head { grid-template-columns: 1fr; } .day { min-height: 3.1rem; } }
+
+/* Sections */
+.sec { padding: clamp(3rem, 7vw, 6rem) 0; }
+.lead-in { max-width: 40rem; }
+.lead-in p { margin-top: 1rem; }
+.rooms-home { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; margin-top: 2.25rem; }
+.rooms-home figure img { width: 100%; border-radius: 3px; }
+figcaption { font-size: .85rem; color: var(--sign); margin-top: .5rem; }
+.types { display: grid; gap: 1.5rem; }
+.types div { border-left: 3px solid var(--pine-lt); padding-left: 1rem; }
+.types h3 { font-size: 1.4rem; }
+.types p { margin-top: .35rem; font-size: 1rem; }
+.types .from { font-size: .92rem; font-weight: 600; color: var(--pine); margin-top: .3rem; }
+.more { display: inline-block; margin-top: 2rem; font-weight: 600; color: var(--lake); }
+
+.shore { background: var(--lake); color: #e3ebee; }
+.shore h2 { color: #fff; }
+.shore .cols2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem clamp(1.5rem, 5vw, 4rem); margin-top: clamp(1.5rem, 3vw, 2.5rem); align-items: start; }
+.shore figure img { aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 62%; }
+.shore p { margin-top: 1rem; color: #cfdbdf; }
+.shore h2 { max-width: 16ch; }
+.shore ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .6rem; }
+.shore li { padding-left: 1.4rem; position: relative; }
+.shore li::before { content: ""; position: absolute; left: 0; top: .62em; width: .7rem; height: 2px; background: var(--pine-lt); }
+.shore figure img { width: 100%; border-radius: 3px; }
+.shore figcaption { color: #a9bcc4; }
+.shore .more { color: #fff; }
+
+.reach { padding: clamp(3rem, 6vw, 5rem) 0; }
+.reach .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem 4rem; align-items: end; }
+.reach .lines { display: grid; gap: .3rem; font-size: 1.1rem; }
+.reach .lines a { font-weight: 600; }
+.reach address { font-style: normal; margin-top: .8rem; color: #33434b; }
+.reach .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+@media (max-width: 860px) {
+  .rooms-home, .shore .cols2, .reach .wrap { grid-template-columns: 1fr; }
+  .shore figure img { aspect-ratio: 4 / 3; }
+}
+
+/* Inner pages */
+.page-head { padding: clamp(2rem, 5vw, 4rem) 0 clamp(1.5rem, 3vw, 2.5rem); }
+.page-head h1 { font-size: clamp(2.3rem, 6vw, 4.2rem); letter-spacing: -0.02em; text-wrap: balance; max-width: 18ch; }
+.page-head p { margin-top: 1rem; font-size: 1.12rem; color: #33434b; max-width: 52ch; }
+.room { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 4vw, 3.5rem); padding: clamp(2rem, 4vw, 3rem) 0; border-top: 1px solid #cdd5d8; align-items: start; }
+.room p { margin-top: .8rem; }
+.room ul { margin: 1rem 0 0; padding-left: 1.1rem; }
+.room li { margin: .25rem 0; }
+.room figure img { width: 100%; border-radius: 3px; }
+.room .noimg { background: var(--paper); border: 1px solid #d3dadc; border-radius: 3px; padding: 1.5rem; }
+.room .noimg p { margin: 0; color: #33434b; }
+table.rates { width: 100%; border-collapse: collapse; margin-top: 1.5rem; background: var(--paper); font-variant-numeric: tabular-nums; }
+.rates th, .rates td { padding: .7rem .8rem; text-align: right; border-bottom: 1px solid #d3dadc; }
+.rates th:first-child, .rates td:first-child { text-align: left; }
+.rates thead th { font-size: .85rem; font-weight: 600; vertical-align: bottom; }
+.rates thead i { display: block; height: .55rem; border-radius: 2px; margin: 0 0 .35rem auto; width: 100%; }
+.scroll-x { overflow-x: auto; }
+@media (max-width: 520px) { .rates { font-size: .86rem; } .rates th, .rates td { padding: .55rem .4rem; } .rates tbody th { font-weight: 600; } }
+@media (max-width: 700px) { .rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 3rem; margin-top: 1.5rem; }
+.rules div { border-top: 3px solid var(--ink); padding-top: .8rem; }
+.rules h3 { font-size: 1.3rem; }
+.rules p { margin-top: .5rem; font-size: 1rem; }
+@media (max-width: 860px) { .room, .rules { grid-template-columns: 1fr; } }
+
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.cols p + p { margin-top: 1rem; }
+.cols figure img { width: 100%; border-radius: 3px; }
+.cols figure + figure { margin-top: 2rem; }
+.todo { columns: 2 18rem; column-gap: 3rem; margin-top: 1.5rem; padding: 0; list-style: none; }
+.todo li { break-inside: avoid; padding: .7rem 0; border-top: 1px solid #cdd5d8; }
+.group { margin-top: clamp(2rem, 4vw, 3rem); }
+.group h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+.todo .hide { display: none; }
+.showall { font: inherit; font-weight: 600; color: var(--lake); background: none; border: 1.5px solid var(--lake); border-radius: 4px; min-height: 2.75rem; padding: .4rem 1rem; margin-top: .75rem; cursor: pointer; }
+@media (max-width: 860px) { .cols { grid-template-columns: 1fr; } }
+.map img { width: 100%; max-width: 400px; image-rendering: auto; border: 1px solid #cdd5d8; border-radius: 3px; }
+.contact-lines { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.contact-lines div { border-top: 1px solid #cdd5d8; padding-top: .8rem; }
+.contact-lines dt { font-size: .9rem; color: var(--sign); font-weight: 600; }
+.contact-lines dd { font-size: 1.2rem; font-weight: 600; margin-top: .15rem; }
+.contact-lines address { font-style: normal; }
+
+/* Footer */
+footer { background: var(--ink); color: #c3cfd3; padding: 3rem 0 6rem; font-size: .95rem; }
+footer .wrap { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 2rem 3rem; align-items: start; }
+footer img { width: 72px; }
+footer h2 { font-size: 1.5rem; color: #fff; }
+footer address { font-style: normal; margin-top: .4rem; }
+footer ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+footer a { color: #fff; }
+footer .legal { grid-column: 1 / -1; border-top: 1px solid #3a4a52; padding-top: 1.25rem; font-size: .85rem; color: #9fb0b6; }
+@media (max-width: 860px) { footer .wrap { grid-template-columns: 1fr; } }
+@media (min-width: 861px) { footer { padding-bottom: 3rem; } }
+
+/* Sticky mobile call bar, after the hero */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: none; gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid #c9d1d4; transform: translateY(110%); transition: transform .2s; }
+.bar.on { transform: none; }
+.bar a { flex: 1; }
+@media (max-width: 860px) { .bar { display: flex; } }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Outpost Motel · Grand Marais, MN · Lake Superior&#x27;s North Shore">
+<meta property="og:description" content="A family-owned, 14-unit motel on Lake Superior&#x27;s North Shore in Grand Marais, Minnesota. Knotty pine rooms, kitchenette suites and a loft, with the lake across the road.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/outpost-motel-grand-marais-mn/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/outpost-motel-grand-marais-mn/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="notice">Unofficial demo built by MHS Tecnologia for Outpost Motel. Not affiliated with or endorsed by Outpost Motel.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.png" width="284" height="388" alt=""><span>The Outpost Motel<small>Grand Marais, Minnesota</small></span></a>
+    <nav class="nav" aria-label="Main">
+    <a href="rooms.html">Rooms & rates</a>
+    <a href="area.html">The North Shore</a>
+    <a href="contact.html">Contact</a>
+    <a class="call" href="tel:+12183871833">Call 218-387-1833</a>
+    <details class="menu">
+      <summary>Menu</summary>
+      <div>
+      <a href="index.html">Home</a>
+      <a href="rooms.html">Rooms & rates</a>
+      <a href="area.html">The North Shore</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:+12183871833">Call 218-387-1833</a>
+      <a href="mailto:info@outpostmotel.com?subject=Question%20about%20The%20Outpost%20Motel">Email info@outpostmotel.com</a>
+      </div>
+    </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>North woods cabin rooms, with Lake Superior across the road</h1>
+      <p class="lede">A family-owned motel with 14 units on 18 wooded acres in Grand Marais, between the lake and the Superior National Forest.</p>
+      <div class="actions">
+        <a class="btn solid" href="tel:+12183871833"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 218-387-1833</a>
+        <a class="btn line" href="#plan">See what your dates cost</a>
+      </div>
+      <p class="toll">Toll free <a href="tel:+18883801833">888-380-1833</a></p>
+    </div>
+    <figure>
+      <img src="img/hero-800.webp" srcset="img/hero-800.webp 800w, img/hero-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 432px" width="1200" height="1440" alt="The Outpost sign in the snow, with Lake Superior behind it" fetchpriority="high">
+      <figcaption>The Outpost sign, winter.</figcaption>
+    </figure>
+  </div>
+  <span data-bar-after></span>
+</section>
+<section class="plan" id="plan" aria-labelledby="plan-h">
+  <div class="wrap">
+    <div class="plan-head">
+      <div>
+        <h2 id="plan-h">What your nights cost, date by date</h2>
+        <p>The Outpost prices the year in four colors. Pick a room, tap your nights, and the 2026 calendar adds it up, with the 5 and 7 night discounts.</p>
+      </div>
+      <div class="key" aria-label="Queen Room rate for each calendar color"><span><i style="background:var(--g)"></i>$75</span><span><i style="background:var(--y)"></i>$85</span><span><i style="background:var(--r)"></i>$90</span><span><i style="background:var(--p)"></i>$95</span></div>
+    </div>
+    <div id="planner" hidden>
+      <fieldset class="rooms-pick">
+        <legend>Room</legend>
+      <label><input type="radio" name="room" value="q" checked><span>Queen Room</span></label>
+      <label><input type="radio" name="room" value="t"><span>2 Twin Bed Room</span></label>
+      <label><input type="radio" name="room" value="qq"><span>2 Queen Bed Room</span></label>
+      <label><input type="radio" name="room" value="k1"><span>1 Bedroom w/Kitchen</span></label>
+      <label><input type="radio" name="room" value="k2"><span>2 Bedroom/2 Bath w/Kitchen</span></label>
+      <label><input type="radio" name="room" value="loft"><span>Loft</span></label>
+      </fieldset>
+      <div class="board">
+        <div>
+          <div class="mnav">
+            <button type="button" data-prev>Earlier</button>
+            <output aria-live="polite"></output>
+            <button type="button" data-next>Later</button>
+          </div>
+          <div class="months"></div>
+        </div>
+        <aside class="sum" aria-live="polite">
+          <h3></h3>
+          <p class="state"></p>
+          <dl></dl>
+          <p class="warn" hidden></p>
+          <div class="acts">
+            <a class="btn solid" data-mail href="mailto:info@outpostmotel.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Ask about these dates</a>
+            <a class="btn line" href="tel:+12183871833"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 218-387-1833</a>
+            <button type="button" class="btn line" data-clear style="font:inherit;font-weight:600;cursor:pointer">Clear dates</button>
+          </div>
+          <p class="fine">Rates from The Outpost's 2026 rate table and calendar. Availability is confirmed by phone or email. Roll away bed $10.00 per night.</p>
+        </aside>
+      </div>
+    </div>
+    <p class="nojs" id="plan-nojs">See every rate on the <a href="rooms.html">Rooms &amp; rates</a> page.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="lead-in">
+      <h2>Knotty pine, hardwood floors, a lake view</h2>
+      <p>Every room has a private bathroom, an in-room coffee maker and a view of Lake Superior. All of them are non-smoking, and The Outpost is pet free.</p>
+    </div>
+    <div class="rooms-home">
+      <figure>
+        <img src="img/queen-640.webp" srcset="img/queen-640.webp 640w, img/queen-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 620px" width="1200" height="800" alt="A queen room: knotty pine walls, a window on the lake, a table and two chairs" loading="lazy" decoding="async">
+        <figcaption>A queen room.</figcaption>
+      </figure>
+      <div class="types">
+        <div>
+          <h3>Motel rooms</h3>
+          <p>One queen bed, two single beds, or two queen beds. One night stays are fine.</p>
+          <p class="from">2026: $75 to $120 a night</p>
+        </div>
+        <div>
+          <h3>Kitchenette suites</h3>
+          <p>One or two bedrooms, a living room with a sleeper sofa, and a fully equipped kitchen. A private bath for each bedroom.</p>
+          <p class="from">2026: $120 to $165 a night</p>
+        </div>
+        <div>
+          <h3>The loft apartment</h3>
+          <p>Upstairs in a separate building: the lake out front, the forest out back, two queen beds and a full kitchen.</p>
+          <p class="from">2026: $135 to $165 a night</p>
+        </div>
+      </div>
+    </div>
+    <a class="more" href="rooms.html">Rooms, rates and policies</a>
+  </div>
+</section>
+<section class="sec shore">
+  <div class="wrap">
+    <figure>
+      <img src="img/fishhouse-800.webp" srcset="img/fishhouse-800.webp 800w, img/fishhouse-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 1136px" width="1400" height="1050" alt="Sunrise light on the Fish House, a weathered building by the lake, with snow along the road" loading="lazy" decoding="async">
+      <figcaption>The Fish House, across the road from The Outpost.</figcaption>
+    </figure>
+    <div class="cols2">
+      <div>
+        <h2>The beach is across Highway 61. The forest starts out back.</h2>
+        <p>Across the road is a sand and pebble beach on Lake Superior: walks, rock hunting, picnics, a beach bonfire. Behind the motel is the Superior National Forest.</p>
+      </div>
+      <div>
+        <ul>
+          <li>A trail from The Outpost joins the Superior Hiking Trail</li>
+          <li>Kadunce Wayside Park, a short walk away, with its gorges and waterfalls</li>
+          <li>Four state parks and a national monument minutes away</li>
+          <li>A snowshoe trail right out the door</li>
+        </ul>
+        <a class="more" href="area.html">What to do around The Outpost</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="reach">
+  <div class="wrap">
+    <div>
+      <h2>Reservations by phone or email</h2>
+      <p style="margin-top:1rem">If you need anything or have a question before your stay, Todd and Holly would like to hear from you.</p>
+      <div class="actions">
+        <a class="btn solid" href="tel:+12183871833"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 218-387-1833</a>
+        <a class="btn line" href="mailto:info@outpostmotel.com?subject=Room%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email info@outpostmotel.com</a>
+      </div>
+    </div>
+    <div class="lines">
+      <span>Toll free <a href="tel:+18883801833">888-380-1833</a></span>
+      <address>2935 East Highway 61<br>Grand Marais, MN 55604</address>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <img src="img/logo-white.png" width="284" height="388" alt="The Outpost logo" loading="lazy">
+    <div>
+      <h2>The Outpost Motel</h2>
+      <address>2935 East Highway 61<br>Grand Marais, MN 55604</address>
+      <p style="margin-top:.6rem">Call <a href="tel:+12183871833">218-387-1833</a> or toll free <a href="tel:+18883801833">888-380-1833</a><br>
+      <a href="mailto:info@outpostmotel.com">info@outpostmotel.com</a></p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms & rates</a></li>
+        <li><a href="area.html">The North Shore</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Outpost Motel. Not affiliated with or endorsed by Outpost Motel. Text, rates and photos come from outpostmotel.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="bar" id="bar" aria-label="Quick contact">
+  <a class="btn solid" href="tel:+12183871833"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+  <a class="btn line" href="mailto:info@outpostmotel.com?subject=Room%20request"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email</a>
+</div>
+<script>
+(() => {
+  const bar = document.getElementById('bar'), mark = document.querySelector('[data-bar-after]');
+  if (!bar || !mark || !('IntersectionObserver' in window)) { bar && bar.classList.add('on'); return; }
+  new IntersectionObserver(([e]) => bar.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(mark);
+})();
+</script>
+<script>
+(() => {
+  const CAL = ["YYYGGGGGGGGGGGGGGGGGGGGGGGGGGGG","GGGGGYYGGGGGYYGGGGGYYGGGGGYY","GGGGGYYGGGGGYYGGGGGYYGGGGGYYGGG","GGGGGGGGGGGGGGGGGGGGGGGGGGGGGG","YYYYYYYYYYYYYYYYYYYYYYYRRRRRRRR","RRRRRRYYYYYRRYYYYYRRYYYYYRRYYY","PPPPPPPPPPPRRRRRPPRRRRRPPRRRRRP","PPPPPPPPRRRRRPPRRRRRPPRRRRRPPRR","RRRPPRRRRRPPRRRRRPPRRRRRPPRRRR","RPPRRRRRPPRRRRRPPRRRRRPPYYYYYYY","YYYYYYYYYYYYYYGGGGGGGGGGGGGGGG","GGGGGGGGGGGGGGGGGGGYYYYYYYYYYYY"];
+  const ROOMS = [{id:"q",name:"Queen Room",p:[75,85,90,95],min:1},{id:"t",name:"2 Twin Bed Room",p:[75,85,90,95],min:1},{id:"qq",name:"2 Queen Bed Room",p:[90,100,110,120],min:1},{id:"k1",name:"1 Bedroom w/Kitchen",p:[120,130,140,150],min:2},{id:"k2",name:"2 Bedroom/2 Bath w/Kitchen",p:[135,145,155,165],min:2},{id:"loft",name:"Loft",p:[135,145,155,165],min:2}];
+  const TIER = { G: 0, Y: 1, R: 2, P: 3 };
+  const MON = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const root = document.getElementById('planner');
+  if (!root) return;
+  root.hidden = false;
+  document.getElementById('plan-nojs').hidden = true;
+  const now = new Date();
+  const today = now.getFullYear() < 2026 ? 0 : now.getFullYear() > 2026 ? 999 : dayOfYear(now.getMonth(), now.getDate());
+  let room = ROOMS[0], first = null, last = null;
+  let start = now.getFullYear() === 2026 ? now.getMonth() : 0;
+  const monthsEl = root.querySelector('.months'), out = root.querySelector('.mnav output');
+  const prev = root.querySelector('[data-prev]'), next = root.querySelector('[data-next]');
+  const mq = matchMedia('(min-width: 861px)');
+  const count = () => (mq.matches ? 2 : 1);
+
+  function dayOfYear(m, d) { let n = d - 1; for (let i = 0; i < m; i++) n += CAL[i].length; return n; }
+  function fromDoy(n) { let m = 0; while (n >= CAL[m].length) { n -= CAL[m].length; m++; } return [m, n + 1]; }
+  function tierOf(n) { const [m, d] = fromDoy(n); return CAL[m][d - 1]; }
+  function price(n) { return room.p[TIER[tierOf(n)]]; }
+  function label(n) { const [m, d] = fromDoy(n); return SHORT[m] + ' ' + d; }
+  const money = (v) => '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  function render() {
+    const n = count();
+    if (start > 12 - n) start = 12 - n;
+    if (start < 0) start = 0;
+    monthsEl.style.setProperty('--n', n);
+    monthsEl.innerHTML = '';
+    for (let m = start; m < start + n; m++) {
+      const box = document.createElement('div');
+      box.className = 'month';
+      const h = document.createElement('h3');
+      h.textContent = MON[m] + ' 2026';
+      box.append(h);
+      const g = document.createElement('div');
+      g.className = 'grid';
+      g.setAttribute('role', 'group');
+      g.setAttribute('aria-label', MON[m] + ' 2026');
+      ['S','M','T','W','T','F','S'].forEach((d) => { const s = document.createElement('span'); s.className = 'dow'; s.textContent = d; s.setAttribute('aria-hidden', 'true'); g.append(s); });
+      const lead = new Date(2026, m, 1).getDay();
+      for (let i = 0; i < lead; i++) g.append(document.createElement('span'));
+      for (let d = 1; d <= CAL[m].length; d++) {
+        const doy = dayOfYear(m, d), t = CAL[m][d - 1];
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'day ' + t;
+        b.dataset.doy = doy;
+        b.innerHTML = '<span class="sr">' + SHORT[m] + ' </span><b>' + d + '</b> <small>$' + room.p[TIER[t]] + '</small>';
+        if (doy < today) b.disabled = true;
+        const lo = first, hi = last ?? first;
+        if (lo !== null && doy >= lo && doy <= hi) { b.classList.add(doy === lo || doy === hi ? 'end' : 'in'); b.setAttribute('aria-pressed', 'true'); }
+        else b.setAttribute('aria-pressed', 'false');
+        g.append(b);
+      }
+      box.append(g);
+      monthsEl.append(box);
+    }
+    out.textContent = n === 2 ? MON[start] + ' to ' + MON[start + 1] : MON[start];
+    prev.disabled = start === 0;
+    next.disabled = start >= 12 - n;
+    summary();
+  }
+
+  function summary() {
+    const s = root.querySelector('.sum');
+    const h = s.querySelector('h3'), p = s.querySelector('p.state'), dl = s.querySelector('dl'), w = s.querySelector('.warn');
+    const mail = s.querySelector('[data-mail]');
+    w.hidden = true;
+    if (first === null) {
+      h.textContent = room.name;
+      p.textContent = 'Tap the first night you would sleep at The Outpost, then the last one.';
+      dl.innerHTML = '';
+      mail.href = 'mailto:info@outpostmotel.com?subject=' + encodeURIComponent('Room request: ' + room.name);
+      return;
+    }
+    const lo = first, hi = last ?? first, nights = hi - lo + 1;
+    let sub = 0; const per = {};
+    for (let n = lo; n <= hi; n++) { const v = price(n); sub += v; per[v] = (per[v] || 0) + 1; }
+    const pct = nights >= 7 ? 20 : nights >= 5 ? 15 : 0;
+    const off = Math.round(sub * pct) / 100;
+    const out = hi + 1 < 365 ? label(hi + 1) : 'Jan 1, 2027';
+    h.textContent = nights + (nights === 1 ? ' night' : ' nights') + ', ' + room.name;
+    p.textContent = 'Check in ' + label(lo) + ', check out ' + out + '.' + (last === null ? ' Tap another date to make it longer.' : '');
+    let rows = Object.keys(per).sort((a, b) => a - b).map((v) => '<dt>' + per[v] + ' × $' + v + '</dt><dd>' + money(per[v] * v) + '</dd>').join('');
+    if (pct) rows += '<dt>' + pct + '% off, ' + (pct === 20 ? '7 nights or more' : '5 or 6 nights') + '</dt><dd>−' + money(off) + '</dd>';
+    rows += '<dt class="total">Before tax</dt><dd class="total">' + money(sub - off) + '</dd>';
+    dl.innerHTML = rows;
+    if (nights < room.min) { w.hidden = false; w.textContent = 'The ' + room.name + ' has a two night minimum. Tap one more night.'; }
+    else if (nights === 4) { w.hidden = false; w.textContent = 'Stay one more night and the whole stay is 15% off.'; }
+    const body = 'Hello Todd and Holly,\n\nIs the ' + room.name + ' available from ' + label(lo) + ' to ' + out + ' 2026 (' + nights + (nights === 1 ? ' night' : ' nights') + ')?\n\nThank you.';
+    mail.href = 'mailto:info@outpostmotel.com?subject=' + encodeURIComponent('Room request: ' + room.name + ', ' + label(lo) + ' to ' + out) + '&body=' + encodeURIComponent(body);
+  }
+
+  monthsEl.addEventListener('click', (e) => {
+    const b = e.target.closest('button.day');
+    if (!b || b.disabled) return;
+    const n = +b.dataset.doy;
+    if (first === null || last !== null || n < first) { first = n; last = null; }
+    else last = n;
+    render();
+    if (last !== null && !mq.matches) root.querySelector('.sum').scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    const again = monthsEl.querySelector('[data-doy="' + n + '"]');
+    again && again.focus({ preventScroll: true });
+  });
+  root.querySelectorAll('input[name=room]').forEach((r) => r.addEventListener('change', () => { room = ROOMS.find((x) => x.id === r.value); render(); }));
+  prev.addEventListener('click', () => { start -= count(); render(); });
+  next.addEventListener('click', () => { start += count(); render(); });
+  root.querySelector('[data-clear]').addEventListener('click', () => { first = last = null; render(); });
+  mq.addEventListener('change', render);
+  if (today === 999) {
+    root.querySelector('.board').innerHTML = '<p>The rates on this page are The Outpost\'s 2026 rates. Call ' + '218-387-1833' + ' for the current year.</p>';
+    return;
+  }
+  render();
+})();
+</script>
+</body>
+</html>
