@@ -1,0 +1,209 @@
+@font-face{font-family:"League Gothic";src:url(fonts/leaguegothic.woff2) format("woff2");font-weight:400;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Patrick Hand";src:url(fonts/patrickhand.woff2) format("woff2");font-weight:400;font-display:swap}
+
+/* the shop itself: red wall, yellow-green wall, wooden counter, golden crust, white plate */
+:root{
+  --parede:#b3211b;
+  --parede-esc:#7f150f;
+  --oliva:#b9b23e;
+  --oliva-esc:#8d8726;
+  --balcao:#6b3c1d;
+  --balcao-esc:#4a2812;
+  --fritura:#f4b63c;
+  --prato:#fffdf9;
+  --tinta:#2a120b;
+  --tinta-2:#5a3a2c;
+  --inox:#c7ccd1;
+  --letreiro:"League Gothic","Arial Narrow",sans-serif;
+  --texto:"Schibsted Grotesk",system-ui,sans-serif;
+  --plaquinha:"Patrick Hand","Comic Sans MS",cursive;
+  --largura:1180px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:1rem}
+body{margin:0;background:var(--prato);color:var(--tinta);font:400 1.0625rem/1.6 var(--texto)}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--fritura);outline-offset:3px}
+.pular{position:absolute;left:-999px;top:0;background:var(--prato);padding:.6rem 1rem;z-index:50}
+.pular:focus{left:1rem}
+.caixa{max-width:var(--largura);margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--letreiro);font-weight:400;letter-spacing:.005em;line-height:.95;margin:0}
+p{margin:0 0 1rem}
+
+/* notice */
+.aviso{background:var(--tinta);color:#f5e9df;font-size:.8125rem;line-height:1.45;padding:.5rem 1.25rem;text-align:center}
+.aviso a{color:#ffd88a}
+
+/* header on the red wall */
+.topo{background:var(--parede);color:#fff}
+.topo .caixa{display:flex;align-items:center;gap:1.5rem;min-height:76px}
+.marca{display:block;width:132px;flex:none}
+.marca img{width:132px;height:auto}
+.nav{margin-left:auto;display:flex;align-items:center;gap:1.6rem}
+.nav > a{text-decoration:none;font-weight:600;font-size:1rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a.botao{padding:.55rem 1.1rem;border:0}
+.nav > a:hover,.nav > a[aria-current]{border-color:var(--fritura)}
+.menu{position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;border:2px solid #fff;border-radius:6px;padding:.45rem .9rem;display:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu-lista{position:absolute;right:0;top:calc(100% + .5rem);background:var(--prato);color:var(--tinta);border-radius:10px;box-shadow:0 14px 30px rgba(60,10,5,.28);padding:.5rem;min-width:220px;z-index:30}
+.menu-lista a{display:block;padding:.75rem 1rem;text-decoration:none;font-weight:600;border-radius:6px}
+.menu-lista a:hover{background:#f6ece2}
+
+.botao{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:52px;padding:.8rem 1.4rem;border-radius:999px;font-weight:800;font-size:1.0625rem;text-decoration:none;line-height:1.2;border:2px solid transparent}
+.botao svg{width:22px;height:22px;flex:none}
+.b-amarelo{background:var(--fritura);color:var(--tinta)}
+.b-amarelo:hover{background:#ffc95c}
+.b-linha{border-color:currentColor}
+.b-linha:hover{background:rgba(255,255,255,.12)}
+.b-vermelho{background:var(--parede);color:#fff}
+.b-vermelho:hover{background:var(--parede-esc)}
+.b-peq{min-height:44px;padding:.55rem 1.1rem;font-size:.95rem}
+
+/* hero: the red wall above, the wooden counter below */
+.hero{background:var(--parede);color:#fff;position:relative;overflow:hidden}
+.hero .caixa{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:end;padding-top:3.5rem}
+.hero-txt{padding-bottom:5.5rem;position:relative}
+.hero h1{font-size:clamp(3.6rem,7.4vw,7.2rem);color:#fff}
+.hero h1 span{display:block;color:var(--fritura)}
+.hero .sub{font-size:1.1875rem;max-width:34ch;margin:1.4rem 0 1.8rem;color:#ffeee6}
+.acoes{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-foto{position:relative;z-index:2;margin-bottom:-1px}
+.hero-foto img{width:100%;border-radius:14px 14px 0 0;aspect-ratio:4/5;object-fit:cover}
+.balcao{height:46px;background:linear-gradient(var(--balcao) 0 70%,var(--balcao-esc) 70%);position:relative;z-index:3}
+.balcao::before{content:"";position:absolute;inset:0 0 auto;height:6px;background:#8a5530}
+.desde{position:absolute;left:0;bottom:1.4rem;margin:0;font-family:var(--plaquinha);font-size:1.25rem;color:#ffd7c7}
+
+/* the signature: a heated display case, the estufa of any neighbourhood salgaderia */
+.sec{padding:5rem 0}
+.sec-cab{max-width:46rem;margin-bottom:2.4rem}
+.sec-cab h2{font-size:clamp(2.8rem,5vw,4.4rem)}
+.sec-cab p{font-size:1.125rem;color:var(--tinta-2);margin-top:.9rem}
+.estufa{position:relative;max-width:1060px;margin:0 auto;padding:18px;border-radius:18px 18px 6px 6px;
+  background:linear-gradient(180deg,#e6e9ec,#a9b0b6 55%,#8d959c);box-shadow:0 30px 50px -28px rgba(70,30,10,.55)}
+.estufa-vidro{position:relative;border-radius:8px;overflow:hidden;
+  background:radial-gradient(120% 70% at 50% 0,#fff2cf 0,#f9e4b8 38%,#f1d39c 100%);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.7),inset 0 10px 30px rgba(255,190,80,.35)}
+.lampada{height:14px;margin:0 8%;background:linear-gradient(#fff9e8,#ffe2a1);border-radius:0 0 10px 10px;box-shadow:0 8px 40px 14px rgba(255,200,90,.65)}
+.vidro-reflexo{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 0 22%,rgba(255,255,255,.28) 22.5% 27%,transparent 27.5% 62%,rgba(255,255,255,.18) 62.5% 64%,transparent 64.5%)}
+.prateleira{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;padding:2.2rem 1.6rem 1.4rem;position:relative}
+.prateleira::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:linear-gradient(rgba(255,255,255,.85),rgba(190,200,205,.6));box-shadow:0 6px 10px rgba(80,40,10,.18)}
+.bandeja{position:relative;display:block;width:100%;padding:7px;border:0;border-radius:6px;cursor:zoom-in;
+  background:linear-gradient(145deg,#f4f5f6,#b9c0c6);box-shadow:0 8px 14px -6px rgba(60,30,10,.5);font:inherit;color:inherit;text-align:left;transition:transform .18s ease}
+.bandeja img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.bandeja:hover{transform:translateY(-3px)}
+.plaquinha{position:absolute;left:12px;top:-16px;background:#fff;color:var(--parede);font:400 1.375rem/1 var(--plaquinha);
+  padding:.45rem .8rem .35rem;border-radius:3px;box-shadow:0 3px 6px rgba(60,20,5,.25);transform:rotate(-3deg)}
+.plaquinha::before{content:"";position:absolute;left:50%;top:-7px;width:18px;height:10px;margin-left:-9px;background:#3b3f44;border-radius:2px}
+.bandeja:nth-child(2) .plaquinha{transform:rotate(2deg)}
+.bandeja:nth-child(3) .plaquinha{transform:rotate(-1deg)}
+.estufa-pe{max-width:1100px;height:30px;margin:0 auto;background:linear-gradient(var(--balcao) 0 65%,var(--balcao-esc) 65%);border-radius:0 0 6px 6px}
+.dica{text-align:center;color:var(--tinta-2);margin-top:1.1rem;font-size:.95rem}
+.dica + .acoes{justify-content:center;margin-top:1.4rem}
+
+/* cakes: the yellow-green wall of the shop */
+.bolos{background:var(--oliva);color:var(--tinta)}
+.bolos .caixa{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:center}
+.bolos .sec-cab p{color:var(--tinta)}
+.fatias{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.zoom{display:block;padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px;overflow:hidden}
+.fatias img{border-radius:10px;aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform .25s ease}
+.zoom:hover img{transform:scale(1.03)}
+.link-forte{font-weight:800;text-underline-offset:4px}
+
+/* their own words, for companies */
+.empresas{background:var(--parede-esc);color:#fff}
+.empresas .caixa{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.empresas h2{font-size:clamp(2.8rem,5.4vw,5rem);color:var(--fritura)}
+.empresas p{font-size:1.125rem;color:#ffe9df;max-width:40ch}
+.citacao{border-left:4px solid var(--fritura);padding:.4rem 0 .4rem 1.2rem;margin:1.6rem 0;font-size:1.25rem;font-weight:600;color:#fff}
+.empresas img{border-radius:12px;aspect-ratio:4/3;object-fit:cover}
+
+/* visit: on the wooden counter */
+.visita{background:var(--balcao);color:#fff7ef}
+.visita .caixa{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.visita h2{grid-column:1/-1;font-size:clamp(2.8rem,5vw,4.4rem);color:#fff}
+.visita h3{font:700 1rem/1.3 var(--texto);color:var(--fritura);margin-bottom:.4rem}
+.visita p{font-size:1.125rem;margin:0}
+.visita a{font-weight:700;text-underline-offset:4px}
+
+/* inner pages */
+.topo-pag{background:var(--parede);color:#fff;padding:3.2rem 0 3.4rem}
+.topo-pag h1{font-size:clamp(3.4rem,7vw,6rem)}
+.topo-pag p{font-size:1.1875rem;max-width:44ch;color:#ffeee6;margin:1rem 0 0}
+.tipo{padding:4.2rem 0;border-bottom:1px solid #ecdfd3}
+.tipo:nth-of-type(even){background:#fbf3ea}
+.tipo .caixa{display:grid;grid-template-columns:.75fr 1.25fr;gap:2.6rem;align-items:start}
+.tipo h2{font-size:clamp(2.8rem,5vw,4.2rem);color:var(--parede)}
+.tipo p{color:var(--tinta-2)}
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.galeria img{border-radius:10px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.galeria .alta{grid-row:span 2}
+.galeria .zoom{width:100%;height:100%}
+.galeria .alta img{aspect-ratio:auto;height:100%}
+.canais{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.canal{background:#fff;border:2px solid #efe1d4;border-radius:14px;padding:1.6rem}
+.canal h2{font-size:2.4rem;color:var(--parede);margin-bottom:.6rem}
+.canal p{color:var(--tinta-2)}
+.canal .num{font-weight:800;color:var(--tinta);font-size:1.25rem}
+
+/* footer */
+.rodape{background:var(--tinta);color:#ead9cd;padding:3.2rem 0 6rem;font-size:.95rem}
+.rodape .caixa{display:grid;grid-template-columns:auto 1fr;gap:2.4rem;align-items:start}
+.rodape img{width:120px}
+.rodape ul{list-style:none;margin:0 0 1.4rem;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem}
+.rodape ul a{text-decoration:none;font-weight:600;color:#fff;display:inline-block;padding:.35rem 0}
+.rodape ul a:hover{text-decoration:underline}
+.legal p{margin:0 0 .4rem;color:#cdb8aa}
+.legal a{color:#ffd88a}
+
+/* sticky mobile order bar */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(42,18,11,.96);transform:translateY(110%);transition:transform .25s ease}
+.barra.ver{transform:none}
+.barra .botao{flex:1;min-height:48px;padding:.6rem .8rem;font-size:1rem}
+.barra .b-linha{color:#fff;flex:0 0 auto}
+
+/* lightbox */
+dialog.foto{border:0;padding:0;background:transparent;max-width:min(92vw,720px);width:100%;margin:auto}
+dialog.foto::backdrop{background:rgba(30,10,5,.85)}
+dialog.foto figure{margin:0;background:var(--prato);border-radius:12px;overflow:hidden}
+dialog.foto img{width:100%;max-height:78vh;object-fit:contain;background:#1d0d07}
+dialog.foto figcaption{padding:.9rem 1.1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:600}
+.fechar{font:700 1rem var(--texto);background:var(--parede);color:#fff;border:0;border-radius:999px;padding:.6rem 1.1rem;cursor:pointer;min-height:44px}
+
+@media (max-width:900px){
+  .nav > a,.nav > a.botao{display:none}
+  .menu summary{display:block}
+  .topo .caixa{min-height:64px;gap:1rem}
+  .marca,.marca img{width:104px}
+  .hero .caixa{grid-template-columns:1fr;gap:1.6rem;padding-top:1.6rem}
+  .hero-txt{padding-bottom:0}
+  .hero h1{font-size:clamp(3.2rem,13.5vw,5rem)}
+  .hero .sub{font-size:1.0625rem;margin:.9rem 0 1.2rem}
+  .hero-foto img{aspect-ratio:10/7}
+  .desde{position:static;display:block;margin:.8rem 0 0}
+  .acoes .botao{flex:1 1 auto}
+  .sec{padding:3.6rem 0}
+  .estufa{padding:10px}
+  .prateleira{grid-template-columns:1fr 1fr;gap:1.4rem .9rem;padding:2rem .8rem 1.2rem}
+  .prateleira .bandeja:nth-child(3){grid-column:1/-1}
+  .plaquinha{font-size:1.15rem;left:8px}
+  .bolos .caixa,.empresas .caixa,.tipo .caixa{grid-template-columns:1fr;gap:1.8rem}
+  .visita .caixa,.canais{grid-template-columns:1fr;gap:1.4rem}
+  .galeria{grid-template-columns:1fr}
+  .galeria .alta{grid-row:auto}
+  .galeria .alta img{aspect-ratio:4/3;height:auto}
+  .rodape .caixa{grid-template-columns:1fr}
+  .barra{display:flex}
+}
+@media (max-width:420px){
+  .fatias{grid-template-columns:1fr 1fr}
+  .fatias .zoom:nth-child(3){grid-column:1/-1}
+  .fatias .zoom:nth-child(3) img{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
