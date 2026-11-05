@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Menu, ECHT Coffee House</title>
+<meta name="description" content="Light bites, bread baked daily in-house, waffles de Liège, sundaes, espresso and coffee at ECHT Coffee House, Mount Oliver.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/tektur.woff2" crossorigin>
+<style>
+@font-face { font-family: "Tektur"; font-weight: 400 900; font-stretch: 75% 100%; font-display: swap; src: url(fonts/tektur.woff2) format("woff2"); }
+@font-face { font-family: "Rethink Sans"; font-weight: 400 800; font-display: swap; src: url(fonts/rethink.woff2) format("woff2"); }
+
+/* ECHT's own menus: white paper ruled into boxes by a heavy grey frame, with orange and cyan blocks. */
+:root {
+  --paper: #ffffff;
+  --frame: #8f8f8f;
+  --logo: #767676;
+  --ink: #1f2021;
+  --mute: #5f6061;
+  --orange: #ff7b00;
+  --cyan: #00e3ee;
+  --rule: 6px;
+  --pad: clamp(1rem, 3.5vw, 2.5rem);
+  --max: 78rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 "Rethink Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+h1, h2, h3, .disp { font-family: "Tektur", "Arial Narrow", sans-serif; font-weight: 700; line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 3.9vw, 3.4rem); font-stretch: 88%; }
+h2 { font-size: clamp(1.75rem, 3.4vw, 2.75rem); font-stretch: 88%; }
+h3 { font-size: 1.3rem; }
+p { max-width: 64ch; }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* The frame: a grey grid whose gaps are the rules. */
+.frame { display: grid; gap: var(--rule); background: var(--frame); padding: var(--rule); }
+.frame > * { background: var(--paper); min-width: 0; }
+.frame > .o { background: var(--orange); }
+.frame > .c { background: var(--cyan); }
+
+.demo { max-width: none; background: var(--ink); color: #d7d7d7; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .5rem 1rem; }
+
+/* Header: the menu masthead. */
+.top { padding-top: .75rem; }
+.head { grid-template-columns: 1.1rem auto 1fr auto 3.5rem; align-items: stretch; position: relative; }
+.logo { display: flex; align-items: center; background: var(--logo) !important; color: #fff; padding: .55rem .9rem; text-decoration: none; }
+.logo svg { width: 6.2rem; height: auto; }
+.hd-t { display: flex; flex-direction: column; justify-content: center; padding: .35rem 1rem; }
+.hd-t b { font-family: "Tektur", sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1; color: var(--logo); }
+.hd-t span { font-size: .85rem; color: var(--mute); }
+.nav { display: flex; align-items: center; gap: 1.35rem; padding: 0 1.1rem; font-weight: 600; font-size: .98rem; }
+.nav > a { text-decoration: none; padding: .3rem 0; }
+.nav > a:hover, .nav > a[aria-current] { text-decoration: underline; text-decoration-thickness: 3px; text-decoration-color: var(--orange); text-underline-offset: 6px; }
+.nav > a.call { background: var(--ink); color: #fff; padding: .55rem .9rem; font-variant-numeric: tabular-nums; }
+.nav > a.call:hover { background: #3b3c3d; text-decoration: none; }
+.menu { display: none; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .7rem 1.25rem; font-weight: 700; text-decoration: none; background: var(--orange); color: var(--ink); border: 3px solid var(--ink); transition: background-color .15s; }
+.btn:hover { background: #ff9a3d; }
+.btn.ghost { background: var(--paper); }
+.btn.ghost:hover { background: var(--cyan); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* Home hero */
+.hero { margin-top: var(--rule); grid-template-columns: 2.25rem minmax(0, 1.05fr) minmax(0, 1fr); grid-template-rows: auto auto; }
+.hero .hs { grid-row: 1 / 3; }
+.hx { padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1.25rem, 3vw, 2.5rem); display: flex; flex-direction: column; justify-content: center; gap: 1.1rem; }
+.dict { font-size: 1rem; color: var(--mute); }
+.dict b { font-family: "Tektur", sans-serif; font-size: 1.3rem; color: var(--ink); margin-right: .35rem; }
+.dict .ipa { color: var(--ink); margin-right: .35rem; }
+.lede { font-size: 1.1rem; }
+.hp { grid-row: 1; grid-column: 3; display: flex; flex-direction: column; }
+.hp picture { flex: 1; display: block; min-height: 0; }
+.hp img { width: 100%; height: 100%; object-fit: cover; object-position: 52% 50%; }
+.cap { font-size: .875rem; color: var(--mute); padding: .5rem .8rem; }
+.hfoot { grid-column: 2 / 4; display: grid; grid-template-columns: 1fr 1fr 4rem; gap: var(--rule); background: var(--frame); }
+.hfoot > * { background: var(--paper); padding: .9rem clamp(1.25rem, 3vw, 2.5rem); font-size: .95rem; }
+.hfoot > .o { background: var(--orange); padding: 0; }
+.hfoot b { display: block; font-family: "Tektur", sans-serif; font-size: 1rem; margin-bottom: .15rem; }
+
+/* Load moment: the colour blocks fill in, like a menu page being printed. */
+@media (prefers-reduced-motion: no-preference) {
+  .frame > .o, .frame > .c, .hfoot > .o { animation: fill .7s cubic-bezier(.2,.7,.2,1) both; transform-origin: top; }
+  .frame > .c { animation-delay: .15s; }
+  .hfoot > .o { animation-delay: .3s; }
+  @keyframes fill { from { transform: scaleY(0); } }
+}
+
+/* Signature: the building drawn as a section, floor by floor. */
+.bldg { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.bldg-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: .5rem 2rem; margin-bottom: 1.25rem; }
+.bldg-h p { color: var(--mute); }
+.cut { grid-template-columns: 9rem 6rem minmax(0, 1fr) minmax(0, 24rem); }
+.cut .roof { grid-column: 1 / 5; display: grid; grid-template-columns: 9rem 1fr 6rem; gap: var(--rule); background: var(--frame); }
+.cut .roof > * { background: var(--paper); padding: .7rem 1rem; }
+.cut .roof .o { background: var(--orange); }
+.cut .roof b { font-family: "Tektur", sans-serif; font-size: 1.05rem; }
+.lv-n { padding: 1.1rem 1rem; font-family: "Tektur", sans-serif; font-weight: 700; font-size: 1.15rem; line-height: 1.1; }
+.lv-n small { display: block; font-family: "Rethink Sans", sans-serif; font-weight: 500; font-size: .85rem; color: var(--mute); margin-top: .35rem; }
+.lv-t { padding: 1.25rem clamp(1rem, 2.5vw, 2rem); display: flex; flex-direction: column; gap: .7rem; align-items: flex-start; }
+.lv-t h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
+.lv-t ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.lv-t li { border: 2px solid var(--frame); padding: .15rem .55rem; font-size: .9rem; font-weight: 600; }
+.lv-t .go { font-weight: 700; text-decoration-thickness: 2px; text-decoration-color: var(--orange); text-underline-offset: 5px; margin-top: auto; }
+.lv-p img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.lv-p.lab img { object-position: 50% 38%; }
+.u-n,.l-n,.b-n { grid-column: 1; } .u-t,.l-t,.b-t { grid-column: 3; } .u-p,.l-p,.b-p { grid-column: 4; }
+.u-n,.u-t,.u-p { grid-row: 2; } .l-n,.l-t,.l-p { grid-row: 3; } .b-n,.b-t,.b-p { grid-row: 4; }
+/* The spiral stair, drawn as its pole and treads swinging left and right all the way down. */
+.stair { grid-column: 2; grid-row: 3 / 5; background:
+  linear-gradient(var(--ink), var(--ink)) 50% 0 / 4px 100% no-repeat,
+  repeating-linear-gradient(to bottom, transparent 0 30px, var(--frame) 30px 34px, transparent 34px 60px) 0 0 / 50% 100% no-repeat,
+  repeating-linear-gradient(to bottom, transparent 0 60px, var(--frame) 60px 64px) 100% 0 / 50% 100% no-repeat,
+  var(--paper) !important; background-origin: content-box !important; padding: 1rem .75rem; }
+.cut .s-up { grid-column: 2; grid-row: 2; }
+
+/* Home: roasting */
+.roast { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 2.25rem; }
+.roast .rt { padding: clamp(1.5rem, 3.5vw, 2.75rem); display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+.roast img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* Press */
+.press { padding-top: clamp(3rem, 7vw, 5rem); }
+.press h2 { margin-bottom: 1.1rem; }
+.plist { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); list-style: none; }
+.plist li { padding: 1rem 1.1rem; font-size: .97rem; }
+.plist b { display: block; font-family: "Tektur", sans-serif; font-size: 1.02rem; margin-bottom: .2rem; }
+
+/* Inner pages */
+.ph { margin-top: var(--rule); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 3.5rem; }
+.ph .pt { padding: clamp(1.5rem, 3.5vw, 2.75rem); display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+.ph .tag { display: inline-block; background: var(--cyan); padding: .2rem .6rem; font-family: "Tektur", sans-serif; font-weight: 700; align-self: flex-start; }
+.ph figure img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 10; }
+.ph.solo { grid-template-columns: minmax(0, 1fr) 3.5rem; }
+.sec { padding: clamp(2.5rem, 6vw, 4.5rem) 0 0; }
+.sec > h2, .sec .wrap > h2 { margin-bottom: 1rem; }
+.prose { display: flex; flex-direction: column; gap: 1rem; }
+.cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.fig img { width: auto; max-width: 100%; }
+.fig figcaption { font-size: .875rem; color: var(--mute); margin-top: .45rem; }
+.note { font-size: .9rem; color: var(--mute); }
+
+/* Menu */
+.jump { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; list-style: none; padding: 0; }
+.jump a { display: inline-block; border: 2px solid var(--ink); padding: .35rem .75rem; font-weight: 600; text-decoration: none; font-size: .95rem; }
+.jump a:hover { background: var(--cyan); }
+.mgrp { margin-top: clamp(2rem, 5vw, 3.5rem); scroll-margin-top: 1rem; }
+.mgrp > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto 3rem; gap: var(--rule); background: var(--frame); padding: var(--rule); }
+.mgrp > summary::-webkit-details-marker { display: none; }
+.mgrp > summary > * { background: var(--paper); padding: .6rem 1rem; display: flex; align-items: center; }
+.mgrp > summary h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--ink); }
+.mgrp > summary .hint { font-size: .85rem; color: var(--mute); }
+.mgrp > summary .o { background: var(--orange); justify-content: center; font-weight: 800; font-size: 1.4rem; }
+.mgrp > summary .o::before { content: "+"; }
+.mgrp[open] > summary .o::before { content: "\2212"; }
+.mbody { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 20rem); gap: clamp(1.5rem, 4vw, 3rem); padding: 1.5rem 0 0; }
+.mbody.full { grid-template-columns: minmax(0, 46rem); }
+.mbody > div:first-child { max-width: 46rem; }
+.items { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.05rem; }
+.it { display: grid; grid-template-columns: 1fr auto; gap: .1rem 1rem; }
+.it .n { font-weight: 700; }
+.it .p { font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
+.it .d { grid-column: 1 / 3; color: var(--mute); font-size: .95rem; max-width: 62ch; }
+.sub { font-family: "Tektur", sans-serif; font-weight: 700; font-size: 1.1rem; margin: 1.6rem 0 .8rem; padding-left: .6rem; border-left: 6px solid var(--orange); }
+.sub:first-child { margin-top: 0; }
+.sub small { display: block; font-family: "Rethink Sans", sans-serif; font-weight: 500; font-size: .9rem; color: var(--mute); }
+.side { display: flex; flex-direction: column; gap: 1.25rem; }
+.fine { margin-top: clamp(2rem, 5vw, 3rem); grid-template-columns: 3rem minmax(0, 1fr); }
+.fine > div { padding: 1rem 1.2rem; font-size: .9rem; color: var(--mute); display: flex; flex-direction: column; gap: .4rem; }
+
+/* Gallery: the food experience */
+.gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr)); gap: var(--rule); background: var(--frame); padding: var(--rule); list-style: none; }
+.gal img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+/* Visit / footer */
+.visit { margin-top: clamp(3rem, 7vw, 5.5rem); grid-template-columns: 2.25rem repeat(3, minmax(0, 1fr)); }
+.visit > div { padding: 1.25rem 1.3rem; display: flex; flex-direction: column; gap: .35rem; }
+.visit h2 { font-size: 1.35rem; margin-bottom: .25rem; }
+.visit a { font-weight: 600; }
+.visit dl { display: grid; grid-template-columns: auto 1fr; gap: .2rem .9rem; }
+.visit dt { font-weight: 700; }
+.foot { padding: 1.5rem var(--pad) 2rem; text-align: center; font-size: .875rem; color: var(--mute); }
+.foot p { margin: 0 auto; }
+
+/* Sticky call bar on phones, after the hero. */
+.dock { display: none; }
+
+@media (max-width: 1080px) {
+  .nav { gap: 1rem; font-size: .93rem; }
+  .cut { grid-template-columns: 7.5rem 5rem minmax(0, 1fr) minmax(0, 18rem); }
+  .cut .roof { grid-template-columns: 7.5rem 1fr 5rem; }
+}
+
+@media (max-width: 900px) {
+  :root { --rule: 4px; }
+  .head { grid-template-columns: .6rem auto 1fr auto; }
+  .head > .o.end { display: none; }
+  .hd-t { padding: .3rem .7rem; }
+  .hd-t b { font-size: 1.05rem; }
+  .hd-t span { font-size: .78rem; }
+  @media (max-width: 420px) { .hd-t span { display: none; } }
+  .logo { padding: .45rem .6rem; }
+  .logo svg { width: 4.3rem; }
+  .nav { padding: 0 .5rem; }
+  .nav > a { display: none; }
+  .menu { display: block; position: static; }
+  .menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; font-size: .95rem; padding: .55rem .75rem; background: var(--ink); color: #fff; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu summary::after { content: ""; width: .9rem; height: 2px; background: currentColor; box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor; }
+  .menu ul { position: absolute; z-index: 9; top: calc(100% + 2px); left: 0; right: 0; list-style: none; padding: var(--rule); background: var(--frame); display: grid; gap: var(--rule); }
+  .menu li a { display: block; background: var(--paper); padding: .85rem 1rem; text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+  .menu li a[aria-current] { background: var(--cyan); }
+  .menu li a.call { background: var(--orange); }
+
+  .hero { grid-template-columns: .9rem minmax(0, 1fr); }
+  .hero .hs { grid-row: 1 / 4; }
+  .hx { grid-column: 2; padding: 1.15rem 1.1rem 1.25rem; gap: .8rem; }
+  .hp { grid-column: 2; grid-row: 2; }
+  .hp img { aspect-ratio: 760 / 600; height: auto; }
+  .hfoot { grid-column: 2; grid-row: 3; grid-template-columns: 1fr 1fr; }
+  .hfoot > .o { display: none; }
+  .hfoot > * { padding: .8rem 1rem; font-size: .9rem; }
+  .lede { font-size: 1rem; }
+  .btn { min-height: 3rem; padding: .6rem 1rem; }
+
+  .cut { grid-template-columns: 3rem minmax(0, 1fr); }
+  .cut .roof { grid-column: 1 / 3; grid-template-columns: 1fr 3rem; }
+  .cut .roof > :first-child { display: none; }
+  .lv-n { padding: .7rem 1rem; }
+  .lv-n small { display: inline; margin: 0 0 0 .4rem; }
+  .lv-t { padding: 1rem 1rem 1.15rem; }
+  .u-n,.l-n,.b-n,.u-t,.l-t,.b-t,.u-p,.l-p,.b-p { grid-column: 2; }
+  .u-n { grid-row: 2; } .u-t { grid-row: 3; } .u-p { grid-row: 4; }
+  .l-n { grid-row: 5; } .l-t { grid-row: 6; } .l-p { grid-row: 7; }
+  .b-n { grid-row: 8; } .b-t { grid-row: 9; } .b-p { grid-row: 10; }
+  .cut .s-up { grid-column: 1; grid-row: 2 / 5; }
+  .stair { grid-column: 1; grid-row: 5 / 11; }
+
+  .roast, .ph, .ph.solo { grid-template-columns: minmax(0, 1fr); }
+  .roast > .c, .ph > .o { display: none; }
+  .cols, .mbody { grid-template-columns: 1fr; }
+  .visit { grid-template-columns: minmax(0, 1fr); }
+  .visit > .o { display: none; }
+
+  .dock { display: grid; grid-template-columns: 1fr 1fr; gap: var(--rule); position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; background: var(--frame); padding: var(--rule); transform: translateY(110%); transition: transform .25s; }
+  .dock.on { transform: none; }
+  .dock a { display: flex; align-items: center; justify-content: center; min-height: 3rem; font-weight: 700; text-decoration: none; background: var(--paper); }
+  .dock a:first-child { background: var(--orange); }
+  body { padding-bottom: 4.2rem; }
+}
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for ECHT Coffee House. Not affiliated with or endorsed by ECHT Coffee House.</p>
+<header class="top wrap">
+  <div class="frame head">
+    <span class="o" aria-hidden="true"></span>
+    <a class="logo" href="index.html" aria-label="ECHT Coffee House, home"><svg viewBox="0 0 824 298" aria-hidden="true" focusable="false"><g transform="matrix(1,0,0,1,-743.4,-1740.8)" fill="currentColor"><g transform="matrix(300,0,0,300,720.3,1960.26)"><path d="M0.27,-0.548L0.688,-0.548L0.688,-0.715L0.077,-0.715L0.077,0.003L0.688,0.003L0.688,-0.164L0.27,-0.164L0.27,-0.276L0.688,-0.276L0.688,-0.46L0.27,-0.46L0.27,-0.548Z"/></g><g transform="matrix(300,0,0,300,1151.3,1960.26)"><path d="M0.691,0.003L0.691,-0.715L0.498,-0.715L0.498,-0.46L0.257,-0.46L0.257,-0.715L0.072,-0.715L0.072,0.003L0.257,0.003L0.257,-0.275L0.498,-0.275L0.498,0.003L0.691,0.003Z"/></g><g transform="matrix(300,0,0,300,1359.9,1960.26)"><path d="M0.078,-0.723L0.078,-0.536L0.285,-0.536L0.285,-0.003L0.478,-0.003L0.478,-0.539L0.689,-0.539L0.689,-0.723L0.078,-0.723Z"/></g><g transform="matrix(0.977428,0,0,1.5875,58.9642,-337.361)"><rect x="700.879" y="1464.63" width="839.166" height="31.992"/></g><g transform="matrix(1,0,0,1,4,0)"><path d="M1151.74,1878.29C1145.33,1925.56 1101.59,1962.19 1049.54,1962.19C987.892,1962.19 937.844,1912.14 937.844,1850.49C937.844,1788.85 987.892,1740.8 1049.54,1740.8C1101.55,1740.8 1146.23,1776.61 1151.71,1822.58L1096.14,1822.58C1089.3,1805.5 1070.31,1796.45 1049.54,1796.45C1018.61,1796.45 995.494,1819.56 995.494,1850.49C995.494,1881.42 1018.61,1904.54 1049.54,1904.54C1070.36,1904.54 1090.3,1894.6 1096.2,1878.29L1151.74,1878.29Z"/></g></g></svg></a>
+    <div class="hd-t"><b>Coffee House</b><span>Mount Oliver, Pittsburgh</span></div>
+    <nav class="nav" aria-label="Pages"><a href="menu.html" aria-current="page">Menu</a><a href="liquor-lab.html">Liquor Lab</a><a href="events.html">Events</a><a href="about.html">About</a><a href="visit.html">Visit</a><a class="call" href="tel:+14125764130">412-576-4130</a>
+      <details class="menu"><summary>Pages</summary><ul><li><a href="index.html">Home</a></li><li><a href="menu.html" aria-current="page">Menu</a></li><li><a href="liquor-lab.html">Liquor Lab</a></li><li><a href="events.html">Events</a></li><li><a href="about.html">About</a></li><li><a href="visit.html">Visit</a></li><li><a class="call" href="tel:+14125764130">Call 412-576-4130</a></li></ul></details>
+    </nav>
+    <span class="o end" aria-hidden="true"></span>
+  </div>
+</header>
+<main id="main">
+
+<div class="wrap">
+  <section class="frame ph solo" aria-labelledby="h1" data-dock>
+    <div class="pt">
+      <span class="tag">Lounge</span>
+      <h1 id="h1">Food and espresso bar menu</h1>
+      <p>Bistro-style small plates, desserts and elevated comfort food, inspired by James and Jorg’s travels in Europe, the Middle East, Africa and America. Coffee from single-origin beans roasted in-house.</p>
+      <div class="actions"><a class="btn" href="tel:+14125764130">Order by phone, 412-576-4130</a></div>
+      <p class="note">Pick-up in-house and curb-side delivery with phone ordering. Please order and pay at the bar. Please add tax &amp; credit card fee.</p>
+      <ul class="jump">
+        <li><a href="#light">Light bites</a></li><li><a href="#baked">Baked</a></li><li><a href="#waffles">Waffles</a></li><li><a href="#sundaes">Sundaes</a></li><li><a href="#espresso">Espresso</a></li><li><a href="#coffee">Coffee</a></li><li><a href="liquor-lab.html#cocktails">Cocktails</a></li>
+      </ul>
+    </div>
+    <span class="o" aria-hidden="true"></span>
+  </section>
+
+  <details class="mgrp" id="light" open>
+  <summary><span><h2>Light bites</h2></span><span class="hint">5 items</span><span class="o" aria-hidden="true"></span></summary>
+  <div class="mbody"><div><ul class="items"><li class="it"><span class="n">Two eggs in the glass</span><span class="p">$15</span><span class="d">Two eggs, poached, served in molten butter with herbs, served with a small puff pastry.</span></li><li class="it"><span class="n">Baked bacon, dusted with spices</span><span class="p">$9</span><span class="d">Four slices.</span></li><li class="it"><span class="n">“Bircher’s Muesli” overnite oats</span><span class="p">$10</span><span class="d">In a jar with whipped cream, apple chunks, lemon juice, apple juice, raisins, toasted candied hazelnuts, yogurt, milk, sugar, some red berries for serving. Mid-size cup. Optionally ask for whipped cream on top.</span></li><li class="it"><span class="n">Greek yogurt parfait</span><span class="p">$9</span><span class="d">Raisins, walnuts, hazelnuts, our red berry sauce, whipped cream. Mid-size cup.</span></li><li class="it"><span class="n">(Fridays) Citrus foam “Berlin Air”</span><span class="p">$10</span><span class="d">Berlin-style dessert with whipped eggs, lemon, our citrus amaro (+), and a home-made red berry sauce. Small cup.</span></li></ul></div><div class="side"><figure class="fig"><img src="img/m-food-058-680.webp" width="680" height="691" alt="A savoury dish served in a stemmed glass" loading="lazy" decoding="async"></figure></div></div>
+</details>
+  <details class="mgrp" id="baked">
+  <summary><span><h2>Baked</h2></span><span class="hint">Bread baked daily</span><span class="o" aria-hidden="true"></span></summary>
+  <div class="mbody"><div><h3 class="sub">Bread baked fresh daily in-house<small>Butter puff pastry square · Bagel with black sesame · Crusty rye bread, slice · Dark rye pumpernickel bread, slice, imported original from Germany</small></h3><ul class="items"><li class="it"><span class="n">A slice each with butter on the side</span><span class="p">$7</span></li><li class="it"><span class="n">A piece / slice each with hazelnut spread on the side</span><span class="p">$8</span></li><li class="it"><span class="n">A piece / slice each with butter and plum jam, or honey or berry compote on the side</span><span class="p">$9</span></li><li class="it"><span class="n">Bread basket, with four, one each bread, and butter</span><span class="p">$11</span></li><li class="it"><span class="n">Plate with cheese and / or cold meat selection plate</span><span class="p">$13</span></li></ul><h3 class="sub">Savoury salad in puff pastry “bowl”</h3><ul class="items"><li class="it"><span class="n">Waldorf salad (veg)</span><span class="p">$9</span></li><li class="it"><span class="n">Waldorf chicken salad</span><span class="p">$10</span></li></ul><h3 class="sub">Weekly changing</h3><ul class="items"><li class="it"><span class="n">Pickled bologna salad</span><span class="p">$10</span></li><li class="it"><span class="n">Boiled ham &amp; onion salad</span><span class="p">$10</span></li><li class="it"><span class="n">Tuna salad</span><span class="p">$10</span></li></ul><h3 class="sub">On a bagel</h3><ul class="items"><li class="it"><span class="n">Atlantic lox salmon on a bagel</span><span class="p">$13</span><span class="d">Cold smoked cured salmon, cream cheese, herbs and lemon zest, arugula, capers, onion.</span></li></ul></div><div class="side"><figure class="fig"><img src="img/m-food-075-900.webp" width="900" height="675" alt="Croissants, bagels with black sesame, a ring loaf and sliced dark rye bread" loading="lazy" decoding="async"><figcaption>From the Baked page of ECHT’s menu.</figcaption></figure><figure class="fig"><img src="img/m-food-083-789.webp" width="789" height="592" alt="Crusty rye bread with charcuterie on a marble table" loading="lazy" decoding="async"><figcaption>House baked crusty rye bread with charcuterie.</figcaption></figure></div></div>
+</details>
+  <details class="mgrp" id="waffles">
+  <summary><span><h2>Waffles</h2></span><span class="hint">De Liège, plain or spiked</span><span class="o" aria-hidden="true"></span></summary>
+  <div class="mbody full"><div><h3 class="sub">Belgian yeast dough waffles de Liège</h3><ul class="items"><li class="it"><span class="n">Waffle with powdered sugar</span><span class="p">$8</span></li><li class="it"><span class="n">Waffle with powdered sugar and red berry sauce on the side, and whipped cream on the side</span><span class="p">$10</span></li></ul><h3 class="sub">Homemade, with spiked alcoholic sauces<small>Sorry, not for kids: alcoholic.</small></h3><ul class="items"><li class="it"><span class="n">Waffle Rum Pear</span><span class="p">$14</span><span class="d">With infused pear and ECHT chocolate liqueur, almond slivers, and whipped cream with powdered cocoa powder.</span></li><li class="it"><span class="n">Waffle Vodka Black Forest</span><span class="p">$14</span><span class="d">Vodka infused cherries, ECHT chocolate liqueur, chocolate cookies, chocolate sprinkles, and whipped cream with powdered cocoa powder.</span></li><li class="it"><span class="n">Waffle Nut-Chocolate</span><span class="p">$13</span><span class="d">ECHT chocolate liqueur, burnt slivered almonds, toasted hazelnuts, candied walnuts, and whipped cream with powdered cocoa powder.</span></li><li class="it"><span class="n">Waffle Rum-Raisin</span><span class="p">$14</span><span class="d">ECHT chocolate liqueur, ECHT rum-raisins, burnt slivered almonds and whipped cream with powdered cocoa powder.</span></li></ul></div></div>
+</details>
+  <details class="mgrp" id="sundaes">
+  <summary><span><h2>Ice cream sundaes</h2></span><span class="hint">Plain or spiked</span><span class="o" aria-hidden="true"></span></summary>
+  <div class="mbody full"><div><h3 class="sub">Non-alcoholic, $9 cup</h3><ul class="items"><li class="it"><span class="n">Spaghetti ice cream (for the kids among us)</span><span class="p">$9</span><span class="d">Vanilla ice cream with a red fruit sauce and rasped white chocolate over it.</span></li></ul><h3 class="sub">Spiked ice cream sundaes, $16 cup<small>Sorry, not for kids: alcoholic.</small></h3><ul class="items"><li class="it"><span class="n">Ice cream sundae Pear Helene</span><span class="p">$16</span><span class="d">Pear slivers with vodka infused ECHT pear and chocolate liqueur, burnt almond slivers, and whipped cream.</span></li><li class="it"><span class="n">Black Forest ice cream sundae</span><span class="p">$16</span><span class="d">Vodka infused cherries, chocolate cookie crumbs, chocolate sprinkles, ECHT chocolate liqueur and whipped cream.</span></li><li class="it"><span class="n">Nut-vanilla-chocolate sundae</span><span class="p">$16</span><span class="d">Vanilla ice cream, ECHT chocolate liqueur, infused almonds, toasted hazelnuts, candied walnuts, burnt almond slivers, and whipped cream with powdered cocoa powder.</span></li><li class="it"><span class="n">Rum-raisin vanilla sundae</span><span class="p">$16</span><span class="d">Vanilla ice cream, ECHT chocolate liqueur, ECHT rum-raisins, burnt slivered almonds and whipped cream with powdered cocoa powder.</span></li><li class="it"><span class="n">Bananas Foster sundae</span><span class="p">$16</span><span class="d">Scoop of vanilla ice cream served on warm, previously flambéed in ECHT rum and banana liqueur, banana slivers caramelised in butter, walnuts, and whipped cream on the side, powdered sugar.</span></li></ul><h3 class="sub">Birthdays and other celebrations<small>Please reserve at least 2 days in advance.</small></h3><ul class="items"><li class="it"><span class="n">Baked Alaska, flambéed on the table, for four</span><span class="p">$10 × 4 = $40</span></li><li class="it"><span class="n">Bananas Foster, flambéed on the table, for four</span><span class="p">$10 × 4 = $40</span><span class="d">Banana slivers caramelised in butter and ECHT banana liqueur with ECHT rum, walnuts, and powdered sugar, whipped cream on the side.</span></li></ul><h3 class="sub">Small sweet items</h3><ul class="items"><li class="it"><span class="n">Small sweet items such as cookies</span><span class="p">$1 – $4 each</span></li></ul></div></div>
+</details>
+  <details class="mgrp" id="espresso">
+  <summary><span><h2>Espresso</h2></span><span class="hint">Roasted in-house</span><span class="o" aria-hidden="true"></span></summary>
+  <div class="mbody"><div><h3 class="sub">Espresso</h3><ul class="items"><li class="it"><span class="n">Double espresso</span><span class="p">$4</span><span class="d">19g per double-shot. Double shot of “exceptionally” rated high-altitude, African single-origin beans, roasted fresh in-house. Served with a cookie or a small piece of chocolate. We use the original Italian bean amount and coffee-to-water ratio.</span></li></ul><h3 class="sub">Espresso &amp; milk (VT)</h3><ul class="items"><li class="it"><span class="n">Macchiato</span><span class="p">$5</span><span class="d">+ 1/4oz milk foam</span></li><li class="it"><span class="n">Cortado</span><span class="p">$5</span><span class="d">+ 2oz of steamed milk</span></li><li class="it"><span class="n">Cappuccino</span><span class="p">$5</span><span class="d">+ 4oz steamed milk &amp; foam</span></li><li class="it"><span class="n">Oat milk</span><span class="p">+$1</span></li></ul><h3 class="sub">Speciality espresso</h3><ul class="items"><li class="it"><span class="n">Americano, hot or iced</span><span class="p">$5</span><span class="d">Espresso &amp; hot filtered mineral water, 6oz.</span></li><li class="it"><span class="n">Iced Americano citrus</span><span class="p">$6</span><span class="d">6oz. Grated citrus, optionally sweetened with simple syrup.</span></li><li class="it"><span class="n">Espresso Romano</span><span class="p">$6</span><span class="d">Espresso &amp; expressed citrus peel.</span></li><li class="it"><span class="n">Espresso con panna</span><span class="p">$6</span><span class="d">Espresso &amp; house-made whipped cream.</span></li><li class="it"><span class="n">Espresso con panna ginger</span><span class="p">$7</span><span class="d">3oz. Espresso &amp; house-made whipped cream, served with artisanal cocoa powder, confectioner’s sugar and dried ginger.</span></li><li class="it"><span class="n">Molten chocolate espresso con panna</span><span class="p">$7</span><span class="d">3oz. Served with a piece of chocolate that we melt in a bit of hot milk before extracting the espresso. Optionally cayenne pepper flakes.</span></li><li class="it"><span class="n">Espresso affogato</span><span class="p">$7</span><span class="d">Espresso &amp; a small spoon of vanilla ice cream.</span></li></ul><h3 class="sub">Take-home beans, in-house roasted</h3><ul class="items"><li class="it"><span class="n">Medium-to-lighter roast and medium-to-darker roast</span><span class="p">$22</span><span class="d">Single-origin, from various African growing areas. 500g bags, freshly ground if desired.</span></li></ul></div><div class="side"><figure class="fig"><img src="img/m-barista-059-380.webp" width="380" height="356" alt="Espresso con panna on a glass tray with a cookie" loading="lazy" decoding="async"><figcaption>Espresso con panna.</figcaption></figure></div></div>
+</details>
+  <details class="mgrp" id="coffee">
+  <summary><span><h2>Coffee &amp; more</h2></span><span class="hint">Drip, pour over, Turkish</span><span class="o" aria-hidden="true"></span></summary>
+  <div class="mbody"><div><h3 class="sub">Coffee, roast of the day</h3><ul class="items"><li class="it"><span class="n">Drip coffee (7oz)</span><span class="p">$3</span></li><li class="it"><span class="n">Iced coffee (8oz)</span><span class="p">$3.50</span></li><li class="it"><span class="n">Home style coffee (7oz)</span><span class="p">$3.50</span><span class="d">With sweet condensed milk and brown sugar.</span></li></ul><h3 class="sub">Pour over coffee (7oz)<small>Please ask for a shot of local milk or cream.</small></h3><ul class="items"><li class="it"><span class="n">Melitta ceramic for one</span><span class="p">$4.50</span></li><li class="it"><span class="n">Melitta for two</span><span class="p">$6.50</span></li><li class="it"><span class="n">Chemex for three</span><span class="p">$9.50</span></li><li class="it"><span class="n">French press for four</span><span class="p">$9.50</span></li><li class="it"><span class="n">Oat milk</span><span class="p">$1</span></li></ul><h3 class="sub">Speciality coffee</h3><ul class="items"><li class="it"><span class="n">Turkish coffee (4oz)</span><span class="p">$7</span><span class="d">Jorg enjoyed this traditional African-Arabian method in the highlands between Yemen and Ethiopia, where the coffee tree comes from. Finely ground beans are brewed in a copper kettle (a cezve), with water just below the boiling point, and not filtered. You get a timer: after three minutes, stir the floating grounds down and pour. Served “orta”, with only a small spoon of sugar; ask for more, or for cardamom.</span></li></ul></div><div class="side"><figure class="fig"><img src="img/m-barista-151-583.webp" width="583" height="553" alt="Turkish coffee in a copper cezve on a glass tray with sugar and a sand timer" loading="lazy" decoding="async"><figcaption>Turkish coffee.</figcaption></figure></div></div>
+</details>
+
+  <div class="frame fine">
+    <span class="o" aria-hidden="true"></span>
+    <div>
+      <p>VT = vegetarian, VG = vegan. Please ask us should you have concerns: items may contain allergens, caffeine, meat, egg, nuts, milk and cream. Preparations may be undercooked and could present a health issue for the vulnerable.</p>
+      <p>Alcoholic items are sold only to guests over 21; please show your ID.</p>
+      <p>Liquor Lab drinks are on <a href="liquor-lab.html">the Liquor Lab page</a>.</p>
+    </div>
+  </div>
+</div>
+
+<section class="wrap" aria-labelledby="visit-h">
+  <div class="frame visit">
+    <span class="c" aria-hidden="true"></span>
+    <div><h2 id="visit-h">Find us</h2><p>107 Penn Ave<br>Pittsburgh, PA 15210</p><p class="note">In the Borough of Mount Oliver, 10 minutes from Downtown, up the South Side Hill Top.</p></div>
+    <div><h2>Hours</h2><dl class="num">
+  <dt>Fri &amp; Sat</dt><dd>9am to 9pm, closed for a break 3pm to 5pm. Cocktail bar opens at 11am.</dd>
+  <dt>Sunday</dt><dd>10am to 3pm</dd>
+</dl></div>
+    <div><h2>Call or write</h2><a class="num" href="tel:+14125764130">412-576-4130</a><a href="mailto:office@echt-project.com">office@echt-project.com</a><p class="note">Bus 48, 51, 44 to Downtown, 54 to Oakland.</p></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <p>Unofficial demo built by MHS Tecnologia for ECHT Coffee House. Not affiliated with or endorsed by ECHT Coffee House. Facts, menu and photos from echt-coffee.com.</p>
+  <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</footer>
+<nav class="dock" aria-label="Quick actions"><a href="tel:+14125764130">Call 412-576-4130</a><a href="liquor-lab.html">Liquor Lab</a></nav>
+<script>
+(() => {
+  const m = document.querySelector('.menu')
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && m.open) { m.open = false; m.querySelector('summary').focus() } })
+  document.addEventListener('click', (ev) => { if (m.open && !m.contains(ev.target)) m.open = false })
+  const dock = document.querySelector('.dock'), mark = document.querySelector('[data-dock]')
+  if (mark && 'IntersectionObserver' in window) new IntersectionObserver(([en]) => dock.classList.toggle('on', !en.isIntersecting && en.boundingClientRect.top < 0)).observe(mark)
+  else dock.classList.add('on')
+  if (matchMedia('(min-width: 901px)').matches) document.querySelectorAll('details.mgrp').forEach((d) => (d.open = true))
+})()
+</script>
+</body>
+</html>
