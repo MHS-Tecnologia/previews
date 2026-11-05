@@ -90,7 +90,7 @@ p{margin:0 0 1rem}
 .photo figcaption{font-size:.875rem;color:var(--slate);margin-top:.6rem}
 @media (max-width:760px){
   .hero{padding:1.5rem 0 2.5rem}
-  .hero .wrap{grid-template-columns:1fr;grid-template-areas:'t' 'b' 'p';row-gap:1.25rem}
+  .hero .wrap{grid-template-columns:1fr;grid-template-areas:'t' 'p' 'b';row-gap:1rem}
   .hb .board{padding:.85rem .85rem .75rem}.hb .status{font-size:1.0625rem;margin-bottom:.6rem}.hb .months{padding-bottom:1.1rem}.hb .legend{font-size:.8125rem}
   .hero h1{font-size:2.1rem;margin-bottom:.75rem}
   .lede{font-size:1rem;line-height:1.55;margin-bottom:1rem}
@@ -138,10 +138,9 @@ p{margin:0 0 1rem}
 .page h1{font-size:clamp(2.1rem,4vw,3.2rem);margin-bottom:.9rem}
 .page .lede{margin-bottom:0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.grid2.tall{grid-template-rows:auto auto}
-.grid2 .span{grid-row:span 2}
-.grid2 .span img{height:100%;object-fit:cover}
-@media (max-width:760px){.grid2{grid-template-columns:1fr}.grid2 .span{grid-row:auto}}
+.shower{margin-top:2.5rem;align-items:center}
+.shower p{color:var(--slate)}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}.shower{margin-top:2rem}}
 .sub{display:grid;grid-template-columns:4fr 8fr;gap:3rem;align-items:baseline;margin-bottom:1.5rem}
 .sub p{color:var(--slate)}
 @media (max-width:760px){.sub{grid-template-columns:1fr;gap:1.25rem}}
@@ -151,8 +150,6 @@ p{margin:0 0 1rem}
 .big{font-family:var(--serif);font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;color:var(--sign);text-decoration:none;display:inline-block;margin:.25rem 0 1rem}
 .big:hover{text-decoration:underline;text-decoration-thickness:2px}
 address{font-style:normal;font-size:1.1875rem;line-height:1.5}
-.sign{display:flex;gap:1.25rem;align-items:flex-end;margin-top:2rem}
-.sign img{border-radius:6px;width:241px}
 @media (max-width:760px){.contact{grid-template-columns:1fr;gap:2rem}}
 
 /* footer */
@@ -207,12 +204,12 @@ address{font-style:normal;font-size:1.1875rem;line-height:1.5}
   <div class="wrap walk">
     <div>
       <h2>From the motel</h2>
-      <p>North Port Motel is centrally located, within a short walk of shops and restaurants.</p>
+      <p>North Port Motel is centrally located, within short walking distance of shops and restaurants.</p>
     </div>
     <ol class="route">
   <li><b>Across the street</b><span>Beach access, with a scenic view of the harbor</span></li>
   <li><b>2 blocks</b><span>The Isle Royale Boat Dock</span></li>
-  <li><b>A short walk</b><span>Shops and restaurants</span></li>
+  <li><b>Short walking distance</b><span>Shops and restaurants</span></li>
   <li><b>A short distance</b><span>The lighthouse ferry dock, at the Marina</span></li>
 </ol>
   </div>

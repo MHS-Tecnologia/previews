@@ -90,7 +90,7 @@ p{margin:0 0 1rem}
 .photo figcaption{font-size:.875rem;color:var(--slate);margin-top:.6rem}
 @media (max-width:760px){
   .hero{padding:1.5rem 0 2.5rem}
-  .hero .wrap{grid-template-columns:1fr;grid-template-areas:'t' 'b' 'p';row-gap:1.25rem}
+  .hero .wrap{grid-template-columns:1fr;grid-template-areas:'t' 'p' 'b';row-gap:1rem}
   .hb .board{padding:.85rem .85rem .75rem}.hb .status{font-size:1.0625rem;margin-bottom:.6rem}.hb .months{padding-bottom:1.1rem}.hb .legend{font-size:.8125rem}
   .hero h1{font-size:2.1rem;margin-bottom:.75rem}
   .lede{font-size:1rem;line-height:1.55;margin-bottom:1rem}
@@ -138,10 +138,9 @@ p{margin:0 0 1rem}
 .page h1{font-size:clamp(2.1rem,4vw,3.2rem);margin-bottom:.9rem}
 .page .lede{margin-bottom:0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.grid2.tall{grid-template-rows:auto auto}
-.grid2 .span{grid-row:span 2}
-.grid2 .span img{height:100%;object-fit:cover}
-@media (max-width:760px){.grid2{grid-template-columns:1fr}.grid2 .span{grid-row:auto}}
+.shower{margin-top:2.5rem;align-items:center}
+.shower p{color:var(--slate)}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}.shower{margin-top:2rem}}
 .sub{display:grid;grid-template-columns:4fr 8fr;gap:3rem;align-items:baseline;margin-bottom:1.5rem}
 .sub p{color:var(--slate)}
 @media (max-width:760px){.sub{grid-template-columns:1fr;gap:1.25rem}}
@@ -151,8 +150,6 @@ p{margin:0 0 1rem}
 .big{font-family:var(--serif);font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;color:var(--sign);text-decoration:none;display:inline-block;margin:.25rem 0 1rem}
 .big:hover{text-decoration:underline;text-decoration-thickness:2px}
 address{font-style:normal;font-size:1.1875rem;line-height:1.5}
-.sign{display:flex;gap:1.25rem;align-items:flex-end;margin-top:2rem}
-.sign img{border-radius:6px;width:241px}
 @media (max-width:760px){.contact{grid-template-columns:1fr;gap:2rem}}
 
 /* footer */
@@ -201,7 +198,6 @@ address{font-style:normal;font-size:1.1875rem;line-height:1.5}
   <ol class="months" aria-label="Months the motel is open"><li data-m="0"><span class="f" aria-hidden="true">Jan</span><span class="s" aria-hidden="true">J</span><span class="sr">January: closed</span></li><li data-m="1"><span class="f" aria-hidden="true">Feb</span><span class="s" aria-hidden="true">F</span><span class="sr">February: closed</span></li><li data-m="2"><span class="f" aria-hidden="true">Mar</span><span class="s" aria-hidden="true">M</span><span class="sr">March: closed</span></li><li data-m="3"><span class="f" aria-hidden="true">Apr</span><span class="s" aria-hidden="true">A</span><span class="sr">April: closed</span></li><li class="on" style="--i:0" data-m="4"><span class="f" aria-hidden="true">May</span><span class="s" aria-hidden="true">M</span><span class="sr">May: open</span></li><li class="on" style="--i:1" data-m="5"><span class="f" aria-hidden="true">Jun</span><span class="s" aria-hidden="true">J</span><span class="sr">June: open</span></li><li class="on" style="--i:2" data-m="6"><span class="f" aria-hidden="true">Jul</span><span class="s" aria-hidden="true">J</span><span class="sr">July: open</span></li><li class="on" style="--i:3" data-m="7"><span class="f" aria-hidden="true">Aug</span><span class="s" aria-hidden="true">A</span><span class="sr">August: open</span></li><li class="on" style="--i:4" data-m="8"><span class="f" aria-hidden="true">Sep</span><span class="s" aria-hidden="true">S</span><span class="sr">September: open</span></li><li class="on" style="--i:5" data-m="9"><span class="f" aria-hidden="true">Oct</span><span class="s" aria-hidden="true">O</span><span class="sr">October: open</span></li><li data-m="10"><span class="f" aria-hidden="true">Nov</span><span class="s" aria-hidden="true">N</span><span class="sr">November: closed</span></li><li data-m="11"><span class="f" aria-hidden="true">Dec</span><span class="s" aria-hidden="true">D</span><span class="sr">December: closed</span></li></ol>
   <p class="legend"><span class="lo">Open</span><span class="lc">Closed</span><span class="ln">This month</span></p>
 </div></div>
-      <figure class="photo sign"><img src="img/sign-241.webp" width="241" height="300" alt="The North Port Motel sign above a bed of purple flowers" loading="lazy"></figure>
     </div>
   </div>
 </section>
