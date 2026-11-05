@@ -81,6 +81,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;text-wrap:balance}
 
 /* home: work at size */
 .obras{display:grid;grid-template-columns:7fr 5fr;gap:56px 40px;align-items:start}
+.bancada img{aspect-ratio:16/9;object-fit:cover;object-position:50% 22%}
+@media (max-width:899px){.bancada img{aspect-ratio:auto}}
 .obras.inv{grid-template-columns:5fr 7fr;margin-top:56px}
 .obras .larga img{aspect-ratio:3/4;object-fit:cover}
 .obras .estreita img{aspect-ratio:15/28;object-fit:cover}
