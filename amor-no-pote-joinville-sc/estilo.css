@@ -17,9 +17,9 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--chantilly);color:var(--ardosia);font:400 1.0625rem/1.6 Manrope,system-ui,sans-serif}
+body{margin:0;font-variant-ligatures:no-common-ligatures;background:var(--chantilly);color:var(--ardosia);font:400 1.0625rem/1.6 Manrope,system-ui,sans-serif}
 img{display:block;max-width:100%;height:auto}
-h1,h2,h3{font-family:Corben,Georgia,serif;font-weight:700;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1,h2,h3{font-family:Corben,Georgia,serif;font-weight:700;line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em;font-variant-ligatures:no-common-ligatures no-discretionary-ligatures}
 h1{font-size:clamp(2.35rem,5.2vw,4.4rem)}
 h2{font-size:clamp(1.85rem,3.4vw,2.9rem)}
 h3{font-size:1.3rem}
@@ -105,16 +105,11 @@ a{color:inherit}
 .acab{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
 .acab-fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .acab-fotos li:first-child{grid-column:1 / -1}
-.acab-fotos li:first-child img{aspect-ratio:16/11}
+.acab-fotos li:first-child img{aspect-ratio:16/11;object-position:50% 12%}
+.acab-txt h2+p{margin-top:20px}
 .acab-txt p+p{margin-top:16px}
 .acab-txt p{max-width:32em}
 
-/* também */
-.linhas{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:center}
-.linhas .lista{list-style:none;margin:24px 0 0;padding:0;border-top:1.5px solid var(--ardosia)}
-.linhas .lista li{display:flex;justify-content:space-between;gap:16px;padding:16px 2px;border-bottom:1.5px solid var(--ardosia);font-family:Corben,Georgia,serif;font-size:clamp(1.3rem,2vw,1.6rem)}
-.linhas .lista li span{font-family:Manrope,sans-serif;font-size:.95rem;color:var(--ardosia-2);align-self:center;text-align:right}
-.linhas .nota{margin-top:18px;color:var(--ardosia-2);font-size:.95rem}
 
 /* chamada final */
 .fim{text-align:center}
@@ -129,7 +124,7 @@ a{color:inherit}
 .passos li::before{content:counter(p);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--cereja);color:#fff;font-family:Corben,Georgia,serif;font-size:1.3rem;margin-bottom:18px}
 .passos h2{font-size:1.45rem}
 .passos p{margin-top:10px;color:var(--ardosia-2)}
-.pagina-topo{padding:clamp(24px,4vw,56px) 0 clamp(28px,4vw,48px)}
+.pagina-topo{padding-block:clamp(24px,4vw,56px) clamp(28px,4vw,48px)}
 .pagina-topo p{max-width:36em;margin-top:16px;font-size:1.15rem;color:var(--ardosia-2)}
 .pagina-topo .acoes{margin-top:24px}
 
@@ -164,8 +159,7 @@ dialog.caixa-foto::backdrop{background:rgba(20,34,45,.88)}
   .acoes{margin-top:20px}
   .acoes .btn{flex:1 1 100%}
   .grade{grid-template-columns:1fr 1fr}
-  .acab,.linhas{grid-template-columns:1fr}
-  .acab-txt{order:-1}
+  .acab{grid-template-columns:1fr}
   .passos{grid-template-columns:1fr}
   .rodape .caixa{grid-template-columns:1fr}
   .barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:25;transition:transform .3s ease,opacity .3s,visibility .3s}
@@ -176,3 +170,18 @@ dialog.caixa-foto::backdrop{background:rgba(20,34,45,.88)}
 @media (min-width:861px){.heroi-m{display:none}}
 @media (max-width:420px){.marca small{display:none}.marca b{font-size:1.1rem}}
 @media (prefers-reduced-motion:reduce){.foto img{transition:none}}
+
+/* seção da espiral: espiral grande ao fundo, citação dela dentro */
+.espiral-secao{position:relative;overflow:hidden}
+.espiral-secao .caixa{position:relative;z-index:1}
+.fundo-espiral{position:absolute;left:-14%;top:50%;width:min(70vw,760px);height:auto;transform:translateY(-50%);opacity:.18}
+.citacao{margin:28px 0 0;padding:4px 0 4px 22px;border-left:4px solid var(--cereja)}
+.citacao p{font-family:Corben,Georgia,serif;font-size:clamp(1.35rem,2.2vw,1.75rem);line-height:1.3;font-variant-ligatures:no-common-ligatures}
+.citacao cite{display:block;margin-top:8px;font-style:normal;font-size:.95rem;color:var(--ardosia-2)}
+.tambem{margin-top:clamp(48px,6vw,80px);padding-top:clamp(32px,4vw,48px);border-top:1.5px solid var(--ardosia)}
+.tambem p{margin-top:10px;color:var(--ardosia-2)}
+.pilulas{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.pilulas a{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 20px;border-radius:999px;background:#fff;border:1.5px solid var(--ardosia);text-decoration:none;font-weight:700}
+.pilulas a:hover{background:var(--ardosia);color:#fff}
+.pilulas svg{width:18px;height:18px}
+@media (max-width:860px){.fundo-espiral{width:150vw;left:-25vw;top:auto;bottom:-30vw;transform:none}}
