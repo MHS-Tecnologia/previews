@@ -57,8 +57,9 @@ p{margin:0 0 1em;max-width:62ch}
 @media (max-width:900px){
   .nav > a{display:none}
   .menu{display:block}
-  .brand img{width:110px;height:46px}
-  .top .wrap{min-height:64px}
+  .brand img{width:96px;height:40px}
+  .top .wrap{min-height:56px}
+  .menu summary{padding:7px 12px}
 }
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:8px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid var(--pine)}
@@ -79,16 +80,21 @@ p{margin:0 0 1em;max-width:62ch}
 .hero figure img{border-radius:10px;width:460px;aspect-ratio:3/4;object-fit:cover}
 figcaption{font-size:14px;color:var(--muted);margin-top:8px}
 @media (max-width:860px){
-  .hero .wrap{grid-template-columns:1fr;gap:22px}
-  .hero h1{max-width:none}
-  .hero .lede{margin-bottom:20px}
-  .hero figure img{width:100%;aspect-ratio:10/7}
-  .voted{margin-top:16px}
+  .hero{padding:16px 0 28px}
+  .hero .wrap{grid-template-columns:1fr;gap:0}
+  .hero .txt{display:contents}
+  .where{display:none}
+  .hero h1{max-width:none;font-size:34px;margin-bottom:12px}
+  .hero .lede{font-size:16px;line-height:1.5;margin-bottom:16px}
+  .hero figure{margin-top:16px}
+  .hero figure img{width:100%;aspect-ratio:16/9}
+  .voted{order:1;margin-top:14px}
+  .demo{font-size:11.5px;padding:5px 12px}
 }
 @media (max-width:420px){.btns .btn{flex:1 1 auto;padding:0 14px}}
 
 /* the board: the orange wall of the fish house, with routed planks on chains */
-.board,.wall-strip{background-color:var(--wall);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='92'%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.11' stroke-width='2'%3E%3Cpath d='M0 1h120M0 47h120M1 1v46M61 47v46'/%3E%3C/g%3E%3C/svg%3E");background-size:120px 92px}
+.board,.wall-strip{background-color:var(--wall);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='164' height='152'%3E%3Cg fill='%23fff' fill-opacity='.045'%3E%3Crect x='3' y='3' width='158' height='70' rx='3'/%3E%3Crect x='-79' y='79' width='158' height='70' rx='3'/%3E%3Crect x='85' y='79' width='158' height='70' rx='3'/%3E%3C/g%3E%3Cg fill='none' stroke='%23000' stroke-opacity='.16' stroke-width='3'%3E%3Cpath d='M0 1.5h164M0 77.5h164M1.5 0v76M83.5 77v76'/%3E%3C/g%3E%3C/svg%3E");background-size:164px 152px}
 .board{
   color:#fff;padding:clamp(44px,6vw,80px) 0}
 .board-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:14px 40px;margin-bottom:clamp(26px,4vw,44px)}
@@ -105,6 +111,8 @@ figcaption{font-size:14px;color:var(--muted);margin-top:8px}
 .plank .beds{font-size:15px;line-height:1.45;margin:0 0 12px;color:var(--cream)}
 .plank .rate{border-top:1px dashed rgba(244,235,221,.35);padding-top:10px;display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:14px;color:#e9dccb}
 .plank .rate b{font-family:"Alfa Slab One",Georgia,serif;font-weight:400;font-size:22px;color:#fff}
+.plank .pic{display:block;width:calc(100% + 36px);max-width:none;margin:-18px -18px 14px;aspect-ratio:3/2;object-fit:cover;border-radius:10px 10px 0 0}
+@media (max-width:640px){.plank .pic{width:calc(100% + 24px);margin:-12px -12px 10px}}
 .plank .desc{font-size:14.5px;line-height:1.5;color:#e9dccb;margin:0 0 12px}
 .board-foot{margin-top:clamp(30px,4vw,44px);display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center}
 .board-foot p{margin:0;color:#fff;max-width:60ch}
@@ -112,7 +120,9 @@ figcaption{font-size:14px;color:var(--muted);margin-top:8px}
 .btn.onwall{background:#fff;color:var(--plank);border-color:#fff}
 .btn.onwall:hover{background:var(--cream)}
 @media (max-width:1020px){.planks{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:420px){.planks{gap:44px 12px}.plank .kind{margin:4px 0 6px}.plank{padding:14px 12px}.plank .no{font-size:24px}.plank .rate{flex-direction:column;gap:0}.plank .rate b{font-size:20px}}
+@media (max-width:640px){.planks{gap:26px 10px}.plank{padding:12px 12px 10px;transform-origin:50% -24px}.plank::before,.plank::after{top:-26px;height:26px}.plank .no{font-size:22px}.plank .kind{font-size:13px;margin:3px 0 6px}.plank .beds{font-size:13.5px;margin-bottom:8px}.plank .rate{flex-direction:column;gap:0;font-size:13px;padding-top:6px}.plank .rate b{font-size:19px}.plank .pic{display:block;width:calc(100% + 36px);max-width:none;margin:-18px -18px 14px;aspect-ratio:3/2;object-fit:cover;border-radius:10px 10px 0 0}
+@media (max-width:640px){.plank .pic{width:calc(100% + 24px);margin:-12px -12px 10px}}
+.plank .desc{font-size:13.5px}.board{padding:40px 0}.board-head{margin-bottom:34px}}
 @media (prefers-reduced-motion:no-preference){
   .js .planks.ready .plank{animation:settle 1.6s cubic-bezier(.3,.6,.3,1) both}
   .js .planks.ready .plank:nth-child(2n){animation-delay:.12s}
@@ -125,6 +135,7 @@ figcaption{font-size:14px;color:var(--muted);margin-top:8px}
 .sec.alt{background:var(--paper-2)}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
 .split.wide-img{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.split.wide-text{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
 .split img{border-radius:10px}
 .sec h2{margin-bottom:18px}
 .sec .intro{font-size:19px;max-width:52ch}
@@ -133,7 +144,7 @@ figcaption{font-size:14px;color:var(--muted);margin-top:8px}
 .day b{display:block}
 .free{margin-top:22px;padding:18px 20px;background:#fff;border-radius:10px;border:1px solid var(--line)}
 .free p{margin:0}
-@media (max-width:860px){.split,.split.wide-img{grid-template-columns:1fr}}
+@media (max-width:860px){.split,.split.wide-img,.split.wide-text{grid-template-columns:1fr}}
 
 .hosts{display:grid;grid-template-columns:400px minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center}
 .hosts blockquote{margin:0 0 16px;font-family:"Alfa Slab One",Georgia,serif;font-size:clamp(24px,2.8vw,34px);line-height:1.2;max-width:24ch;color:var(--pine)}
@@ -215,7 +226,7 @@ footer .legal{grid-column:1/-1;max-width:none;border-top:1px solid #3b4a40;paddi
 </nav></div></header>
 <main id="main">
 <section class="hero" data-sticky-after><div class="wrap">
-<div>
+<div class="txt">
 <p class="where">Upper Bottle Lake, 14 miles from Park Rapids, Minnesota</p>
 <h1>Eight cabins on a south-facing sand beach</h1>
 <p class="lede">Clean housekeeping cabins among the tall pines. The only thing between your cabin and your dock is a level grass yard and a huge sandy beach.</p>
