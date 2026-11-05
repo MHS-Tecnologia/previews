@@ -81,16 +81,16 @@ p { max-width: 64ch; }
 .hero .lede { margin-top: 1.1rem; color: #ccd5d7; font-size: 1.08rem; }
 .ctas { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
 .hero .small { margin-top: 1.2rem; font-size: .875rem; color: #9fb0b5; max-width: 34ch; }
-.aerial { position: relative; margin-left: -6rem; }
+.aerial { position: relative; margin-left: -2rem; }
 .aerial picture, .aerial img { width: 100%; }
-.aerial::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 9rem; background: linear-gradient(90deg, var(--lake), rgba(22,32,39,0)); z-index: 1; pointer-events: none; }
+.aerial::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3.5rem; background: linear-gradient(90deg, rgba(22,32,39,.85), rgba(22,32,39,0)); z-index: 1; pointer-events: none; }
 .aerial figcaption { position: absolute; right: .8rem; bottom: .6rem; z-index: 2; font-size: .75rem; color: #e3e8e6; background: rgba(22,32,39,.72); padding: .2rem .5rem; border-radius: .2rem; }
 /* One fact, pinned where it is in the photo: the piers in front of the lodge. */
 .pin { position: absolute; z-index: 2; left: var(--px); top: var(--py); width: 0; height: 0; }
 .pin::before { content: ""; position: absolute; left: -.42rem; top: -.42rem; width: .84rem; height: .84rem; border-radius: 50%; background: var(--beak); box-shadow: 0 0 0 3px rgba(22,32,39,.85); }
 .pin::after { content: ""; position: absolute; left: -1px; top: 0; width: 2px; height: 3.4rem; background: var(--beak); transform-origin: top; }
 .pin span { position: absolute; left: -.9rem; top: 3.4rem; width: 15rem; background: var(--lake); color: #f1efe6; font-size: .84rem; line-height: 1.35; font-weight: 600; padding: .5rem .7rem; border-left: 3px solid var(--beak); }
-.hero { --px: 30.3%; --py: 52.4%; }
+.hero { --px: 22.9%; --py: 54.5%; }
 @media (prefers-reduced-motion: no-preference) {
   .pin::after { animation: rise .7s .5s cubic-bezier(.2,.7,.2,1) both; }
   .pin span { animation: show .4s 1.1s ease-out both; }
@@ -165,8 +165,14 @@ section.band { padding: clamp(3.5rem, 7vw, 6rem) 0; }
 .room p { margin-top: .6rem; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; padding: 0; list-style: none; }
 .tags li { font-size: .82rem; font-weight: 600; padding: .2rem .55rem; background: #dfe5dc; color: var(--pine); border-radius: .2rem; }
-.room.text-only { background: var(--paper); padding: 1.6rem; border-left: 4px solid var(--roof); align-self: start; }
+.room.text-only { background: var(--lake); color: #f1efe6; padding: clamp(1.6rem, 3vw, 2.4rem); border-radius: .2rem; display: flex; flex-direction: column; }
 .room.text-only h2 { margin-top: 0; }
+.room.text-only .key { font-family: "Zilla Slab", Georgia, serif; font-weight: 700; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; color: var(--beak); margin-bottom: 1.2rem; }
+.room.text-only .beds { color: #f1efe6; }
+.room.text-only p { color: #ccd5d7; }
+.room.text-only .tags li { background: var(--lake-2); color: #e6e9e4; }
+.room.text-only .layout { list-style: none; padding: 0; margin-top: auto; padding-top: 1.4rem; border-top: 1px solid var(--lake-line); display: grid; gap: .3rem; font-size: .95rem; }
+.room.text-only .layout b { color: #fff; }
 .empty { padding: 2rem 0; font-weight: 600; }
 .every { padding: 1.5rem 0 3.5rem; color: var(--muted); }
 
@@ -232,6 +238,9 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid 
   .ctas { margin-top: 1.2rem; }
   .ctas .btn { flex: 1 1 100%; }
   .hero .small { display: none; }
+  .lede-more { display: none; }
+  .hero h1 { font-size: 2.15rem; }
+  .aerial { margin-top: 1rem; }
   .facts { grid-template-columns: 1fr; }
   .trio { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr; }

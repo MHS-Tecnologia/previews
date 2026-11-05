@@ -83,16 +83,16 @@ p { max-width: 64ch; }
 .hero .lede { margin-top: 1.1rem; color: #ccd5d7; font-size: 1.08rem; }
 .ctas { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
 .hero .small { margin-top: 1.2rem; font-size: .875rem; color: #9fb0b5; max-width: 34ch; }
-.aerial { position: relative; margin-left: -6rem; }
+.aerial { position: relative; margin-left: -2rem; }
 .aerial picture, .aerial img { width: 100%; }
-.aerial::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 9rem; background: linear-gradient(90deg, var(--lake), rgba(22,32,39,0)); z-index: 1; pointer-events: none; }
+.aerial::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3.5rem; background: linear-gradient(90deg, rgba(22,32,39,.85), rgba(22,32,39,0)); z-index: 1; pointer-events: none; }
 .aerial figcaption { position: absolute; right: .8rem; bottom: .6rem; z-index: 2; font-size: .75rem; color: #e3e8e6; background: rgba(22,32,39,.72); padding: .2rem .5rem; border-radius: .2rem; }
 /* One fact, pinned where it is in the photo: the piers in front of the lodge. */
 .pin { position: absolute; z-index: 2; left: var(--px); top: var(--py); width: 0; height: 0; }
 .pin::before { content: ""; position: absolute; left: -.42rem; top: -.42rem; width: .84rem; height: .84rem; border-radius: 50%; background: var(--beak); box-shadow: 0 0 0 3px rgba(22,32,39,.85); }
 .pin::after { content: ""; position: absolute; left: -1px; top: 0; width: 2px; height: 3.4rem; background: var(--beak); transform-origin: top; }
 .pin span { position: absolute; left: -.9rem; top: 3.4rem; width: 15rem; background: var(--lake); color: #f1efe6; font-size: .84rem; line-height: 1.35; font-weight: 600; padding: .5rem .7rem; border-left: 3px solid var(--beak); }
-.hero { --px: 30.3%; --py: 52.4%; }
+.hero { --px: 22.9%; --py: 54.5%; }
 @media (prefers-reduced-motion: no-preference) {
   .pin::after { animation: rise .7s .5s cubic-bezier(.2,.7,.2,1) both; }
   .pin span { animation: show .4s 1.1s ease-out both; }
@@ -167,8 +167,14 @@ section.band { padding: clamp(3.5rem, 7vw, 6rem) 0; }
 .room p { margin-top: .6rem; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; padding: 0; list-style: none; }
 .tags li { font-size: .82rem; font-weight: 600; padding: .2rem .55rem; background: #dfe5dc; color: var(--pine); border-radius: .2rem; }
-.room.text-only { background: var(--paper); padding: 1.6rem; border-left: 4px solid var(--roof); align-self: start; }
+.room.text-only { background: var(--lake); color: #f1efe6; padding: clamp(1.6rem, 3vw, 2.4rem); border-radius: .2rem; display: flex; flex-direction: column; }
 .room.text-only h2 { margin-top: 0; }
+.room.text-only .key { font-family: "Zilla Slab", Georgia, serif; font-weight: 700; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1; color: var(--beak); margin-bottom: 1.2rem; }
+.room.text-only .beds { color: #f1efe6; }
+.room.text-only p { color: #ccd5d7; }
+.room.text-only .tags li { background: var(--lake-2); color: #e6e9e4; }
+.room.text-only .layout { list-style: none; padding: 0; margin-top: auto; padding-top: 1.4rem; border-top: 1px solid var(--lake-line); display: grid; gap: .3rem; font-size: .95rem; }
+.room.text-only .layout b { color: #fff; }
 .empty { padding: 2rem 0; font-weight: 600; }
 .every { padding: 1.5rem 0 3.5rem; color: var(--muted); }
 
@@ -234,6 +240,9 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid 
   .ctas { margin-top: 1.2rem; }
   .ctas .btn { flex: 1 1 100%; }
   .hero .small { display: none; }
+  .lede-more { display: none; }
+  .hero h1 { font-size: 2.15rem; }
+  .aerial { margin-top: 1rem; }
   .facts { grid-template-columns: 1fr; }
   .trio { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr; }
@@ -277,7 +286,7 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid 
   <div class="hero-in">
     <div class="hero-text">
       <h1 id="h1">A Northwoods resort on Watersmeet Lake</h1>
-      <p class="lede">On the Eagle River Chain of 28 Lakes and right on the snowmobile trail. Over 40 rooms and suites, condos that sleep up to eight, an indoor pool, and Chef Rene's at the Inn.</p>
+      <p class="lede">On the Eagle River Chain of 28 Lakes and right on the snowmobile trail.<span class="lede-more"> Over 40 rooms and suites, condos that sleep up to eight, an indoor pool, and Chef Rene's at the Inn.</span></p>
       <div class="ctas">
         <a class="btn gold" href="tel:+17154792000"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call <span class="num">715-479-2000</span></a>
         <a class="btn line" href="rooms.html">See the 10 room types</a>
@@ -287,7 +296,7 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid 
     <figure class="aerial">
       <picture>
         <source media="(max-width: 900px)" srcset="img/hero-m-480.webp 480w, img/hero-m-800.webp 800w" sizes="100vw" width="800" height="514">
-        <img src="img/hero-1400.webp" srcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" sizes="(min-width: 1310px) 862px, calc(66vw - 1rem)" width="1400" height="1014" alt="Aerial photo of the Eagle River Inn and Resort on a point of Watersmeet Lake in autumn, with its piers on the water" fetchpriority="high">
+        <img src="img/hero-1400.webp" srcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" sizes="(min-width: 1310px) 862px, calc(66vw - 1rem)" width="1400" height="906" alt="Aerial photo of the Eagle River Inn and Resort on a point of Watersmeet Lake in autumn, with its piers on the water" fetchpriority="high">
       </picture>
       <span class="pin"><span>Free boat docking for hotel and restaurant guests</span></span>
     </figure>
@@ -320,7 +329,7 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid 
     <div>
       <h2 id="rooms-h">Ten room types to fit the trip</h2>
       <p class="intro">Lakeside patio rooms, Jacuzzi dream suites, one, two and three bedroom suites, and condos.</p>
-      <ul class="roomlist"><li><a href="rooms.html#deluxe-2-queen"><b>Deluxe 2 Queen</b><small>2 queen beds</small></a></li><li><a href="rooms.html#2-queen-patio"><b>Deluxe 2 Queen Lake Side Patio</b><small>2 queen beds</small></a></li><li><a href="rooms.html#king-patio"><b>1 King Deluxe Lake Side Patio</b><small>1 king bed</small></a></li><li><a href="rooms.html#bunk-bed"><b>Bunk Bed Room</b><small>1 queen bed and twin bunk beds</small></a></li><li><a href="rooms.html#king-kitchenette"><b>King room with Kitchenette</b><small>1 king bed and a queen sofa sleeper</small></a></li><li><a href="rooms.html#jacuzzi-suite"><b>Jacuzzi Suite</b><small>1 king bed and a Jacuzzi tub</small></a></li><li><a href="rooms.html#standard-suite"><b>Standard Suite</b><small>1 king bed in a private bedroom, 2 queen beds in the living area</small></a></li><li><a href="rooms.html#presidential-suite"><b>Presidential Suite</b><small>1 queen bed in a private bedroom, a king bed and queen sofa sleeper in the living area</small></a></li><li><a href="rooms.html#3-bedroom-suite"><b>3 Bedroom Suite</b><small>3 private bedrooms with queen beds, plus a queen sofa sleeper</small></a></li><li><a href="rooms.html#condo"><b>Condominium rental</b><small>Sleeps up to eight</small></a></li></ul>
+      <ul class="roomlist"><li><a href="rooms.html#deluxe-2-queen"><b>Deluxe 2 Queen</b><small>2 queen beds</small></a></li><li><a href="rooms.html#2-queen-patio"><b>Deluxe 2 Queen Lake Side Patio</b><small>2 queen beds</small></a></li><li><a href="rooms.html#king-patio"><b>1 King Deluxe Lake Side Patio</b><small>1 king bed</small></a></li><li><a href="rooms.html#bunk-bed"><b>Bunk Bed Room</b><small>1 queen bed and twin bunk beds</small></a></li><li><a href="rooms.html#king-kitchenette"><b>King room with Kitchenette</b><small>1 king bed and a queen sofa sleeper</small></a></li><li><a href="rooms.html#jacuzzi-suite"><b>Jacuzzi Suite</b><small>1 king bed and a Jacuzzi tub</small></a></li><li><a href="rooms.html#standard-suite"><b>Standard Suite</b><small>1 king bed in a private bedroom, 2 queen beds in the living area</small></a></li><li><a href="rooms.html#presidential-suite"><b>Presidential Suite</b><small>1 queen bed in a private bedroom, a king bed and queen sofa sleeper in the living area</small></a></li><li><a href="rooms.html#3-bedroom-suite"><b>3 Bedroom Suite</b><small>3 private bedrooms with queen beds, plus a queen sofa sleeper</small></a></li><li><a href="rooms.html#condo"><b>Condominium rental</b><small>A place of its own at the resort</small></a></li></ul>
       <a class="more" href="rooms.html">Compare the rooms</a>
     </div>
   </div>
@@ -336,7 +345,6 @@ footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid 
         <caption>Restaurant hours</caption>
         <tr><th scope="row">Wednesday and Thursday</th><td class="num">5 pm – 9 pm</td></tr>
         <tr><th scope="row">Friday and Saturday</th><td class="num">5 pm – 10 pm</td></tr>
-        <tr><th scope="row">Sunday breakfast buffet</th><td class="num">8 am – 12 pm</td></tr>
       </table>
       <div>
         <p>After a day of fishing, snowmobiling, skiing or boating, come in for drinks and dinner.</p>
