@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rentals | Presque Isle Passage</title>
+<meta name="description" content="Park Models, cabins, yurts, RV rentals, houses and a houseboat at Presque Isle Passage, each shown on the campground map.">
+<meta name="theme-color" content="#16325c">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/overpass.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
+:root{--navy:#16325c;--navy-2:#0e2444;--sail:#f4e550;--flag:#d8262b;--bg:#f2f5f0;--paper:#fff;--ink:#15202c;--muted:#465566;--line:#d2dbce;--wrap:1200px;--gut:clamp(1rem,4vw,2.5rem)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Overpass",system-ui,sans-serif;font-optical-sizing:auto}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--navy);text-underline-offset:.18em}
+a:hover{color:var(--flag)}
+:focus-visible{outline:3px solid var(--flag);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-weight:800;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+h2{font-size:clamp(1.65rem,3vw,2.35rem)}
+h3{font-size:1.25rem}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;z-index:50;background:#fff;padding:.5rem 1rem}
+.demo{background:var(--navy-2);color:#dfe7f2;font-size:.8125rem;line-height:1.35;padding:.5rem var(--gut);text-align:center}
+.top{background:var(--navy);position:relative;z-index:20}
+.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:68px}
+.brand{display:block;flex:none}
+.brand img{width:150px;height:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;margin-left:auto}
+.nav > a{color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current=page]{color:#fff;border-bottom-color:var(--sail)}
+.call{flex:none;display:inline-flex;align-items:center;gap:.5rem;background:var(--sail);color:var(--navy-2);font-weight:800;text-decoration:none;border-radius:999px;padding:.6rem 1.1rem;white-space:nowrap}
+.call:hover{background:#fff;color:var(--navy-2)}
+.nav > a.call{color:var(--navy-2);border-bottom:0;padding:.6rem 1.1rem}
+.nav > a.call:hover{color:var(--navy-2)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;color:#fff;font-weight:700;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:.45rem .95rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:#fff;color:var(--navy)}
+.menu ul{position:absolute;right:0;top:calc(100% + .6rem);list-style:none;margin:0;padding:.5rem 0;background:#fff;border-radius:10px;box-shadow:0 14px 40px rgba(10,25,50,.28);min-width:220px}
+.menu li a{display:block;padding:.7rem 1.1rem;color:var(--ink);text-decoration:none;font-weight:600}
+.menu li a:hover{background:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.7rem 1.35rem;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid var(--navy)}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{background:var(--navy-2);color:var(--sail)}
+.btn.ghost{color:var(--navy);background:transparent}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.lead{font-size:1.18rem;color:var(--muted);max-width:34em}
+.note{font-size:.95rem;color:var(--muted)}
+figure{margin:0}
+figcaption{font-size:.875rem;color:var(--muted);margin-top:.55rem}
+.photo{border-radius:8px;overflow:hidden;background:#cfd8cb}
+.photo img{width:100%}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+
+/* home hero */
+.hero{padding:clamp(1.25rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero .where{font-weight:700;color:var(--muted);font-size:.95rem;margin-bottom:.9rem}
+.hero h1{margin-bottom:1.1rem}
+.hero .lead{margin-bottom:1.6rem}
+.hero .photo{aspect-ratio:3/2}
+.hero .photo img{height:100%;object-fit:cover}
+
+/* the map: their own drawing, pins placed on it */
+.mapbox{position:relative;line-height:0;border-radius:8px;overflow:hidden;background:#8cc46a}
+.mapbox img{width:100%}
+.pin{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:4px solid var(--flag);box-shadow:0 0 0 3px #fff,0 4px 10px rgba(0,0,0,.35);display:none;pointer-events:none}
+.pin.on{display:block;animation:drop .45s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes drop{from{transform:translateY(-14px) scale(1.5);opacity:0}to{transform:none;opacity:1}}
+
+.walk{background:var(--navy);color:#e9eef6}
+.walk .wrap{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.walk h2{color:#fff;margin-bottom:1rem}
+.walk .lead{color:#c9d5e6;margin-bottom:2rem}
+.walk ol{list-style:none;margin:0 0 2.2rem;padding:0;border-left:3px solid var(--sail)}
+.walk li{position:relative;padding:0 0 1.5rem 1.6rem}
+.walk li::before{content:"";position:absolute;left:-9px;top:.35rem;width:15px;height:15px;border-radius:50%;background:var(--navy);border:3px solid var(--sail)}
+.walk li strong{display:block;color:#fff;font-size:1.15rem;margin-bottom:.15rem}
+.walk .btn{border-color:var(--sail);background:var(--sail);color:var(--navy-2)}
+.walk .btn:hover{background:#fff;border-color:#fff}
+.walk figcaption{color:#b8c6da}
+
+.boat .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.boat h2{margin-bottom:1rem}
+.boat p{margin-bottom:1rem}
+.sites{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sites .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem)}
+.sites h2{margin-bottom:1rem}
+.sites p{margin-bottom:1.2rem}
+.amen{columns:2;column-gap:1.5rem;list-style:none;padding:0;margin:0 0 1.6rem}
+.amen li{break-inside:avoid;padding:.35rem 0 .35rem 1.1rem;position:relative;border-bottom:1px solid var(--line)}
+.amen li::before{content:"";position:absolute;left:0;top:.95rem;width:6px;height:6px;border-radius:50%;background:var(--navy)}
+.road h2{margin-bottom:1.6rem}
+.road dl{margin:0 0 2rem;border-top:2px solid var(--ink)}
+.road dl div{display:grid;grid-template-columns:minmax(7rem,12rem) 1fr;gap:1rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
+.road dt{font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);font-variant-numeric:tabular-nums;line-height:1}
+.road dd{margin:0;font-size:1.1rem}
+.road address{font-style:normal;font-size:1.1rem;margin-bottom:1.4rem}
+
+/* inner pages */
+.pagehead{padding:clamp(2rem,5vw,3.5rem) 0 clamp(1.5rem,3vw,2.5rem)}
+.pagehead h1{margin-bottom:1rem;max-width:20ch}
+.pagehead .lead{max-width:40em}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem 2rem;padding:1.25rem 0;margin:1.5rem 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);list-style:none}
+.facts li{font-size:.98rem}
+.facts strong{display:block}
+
+.rentals{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,430px);gap:clamp(2rem,4vw,3.5rem);align-items:start;padding-bottom:4rem}
+.side{position:sticky;top:1rem}
+.side .mapbox img{max-height:calc(100vh - 7.5rem);width:auto;margin:0 auto}
+.side .mapbox{width:fit-content;margin:0 auto}
+.picked{font-weight:800;font-size:1.05rem;margin-top:.7rem;min-height:1.6em}
+.group{padding:0 0 3rem}
+.group > h2{margin:0 0 .9rem}
+.group > .photo{margin-bottom:1rem;aspect-ratio:16/9}
+.group > .photo img{height:100%;object-fit:cover}
+.group > p{color:var(--muted);margin-bottom:1.2rem;max-width:40em}
+.unit{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:1.2rem 1.3rem;margin-bottom:.9rem;scroll-margin-top:1rem}
+.unit .row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.4rem 1rem;margin-bottom:.5rem}
+.unit .sleeps{font-weight:700;color:var(--navy)}
+.unit ul{margin:0 0 .7rem;padding-left:1.1rem}
+.unit li{margin:.15rem 0}
+.unit .loc{font-size:.97rem;margin-bottom:.8rem}
+.unit .nopets{color:var(--flag);font-weight:700}
+.show{font:inherit;font-weight:800;font-size:.95rem;color:var(--navy);background:transparent;border:2px solid var(--navy);border-radius:999px;padding:.5rem 1rem;cursor:pointer;min-height:44px}
+.show:hover,.show[aria-pressed=true]{background:var(--navy);color:#fff}
+dialog.mapdlg{margin:auto;padding:.75rem;border:0;border-radius:12px;max-width:min(94vw,520px);max-height:94vh;width:100%;background:var(--paper)}
+dialog.mapdlg::backdrop{background:rgba(8,20,40,.72)}
+dialog.mapdlg .dlgbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.6rem}
+dialog.mapdlg .mapbox img{max-height:calc(94vh - 6rem);width:auto;margin:0 auto}
+dialog.mapdlg .mapbox{width:fit-content;margin:0 auto}
+.close{font:inherit;font-weight:800;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:.55rem 1.1rem;min-height:44px;cursor:pointer}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.prose h2{margin:0 0 .9rem}
+.prose h3{margin:1.6rem 0 .5rem}
+.prose p{margin-bottom:1rem;max-width:38em}
+.prose ul{padding-left:1.15rem;margin:0 0 1rem}
+.prose li{margin:.3rem 0}
+.band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cols{columns:2 18rem;column-gap:2.5rem}
+.cols > div{break-inside:avoid;margin-bottom:1.6rem}
+.rules{list-style:none;padding:0;margin:0}
+@media (min-width:861px){#rules .prose{position:sticky;top:1.5rem}}
+.rules li{padding:.8rem 0;border-bottom:1px solid var(--line)}
+.rules strong{display:inline}
+.contact{font-size:1.15rem}
+.contact p{margin-bottom:.6rem}
+
+.foot{background:var(--navy-2);color:#c9d5e6;padding:3rem 0;font-size:.95rem}
+.foot a{color:#fff}
+.foot .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem}
+.foot img{width:170px;margin-bottom:1rem}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin:.35rem 0}
+.foot h2{font-size:1rem;color:#fff;margin-bottom:.6rem}
+.foot .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem;font-size:.85rem;color:#a9b8cd}
+.foot .legal p{margin-bottom:.4rem}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:.6rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:var(--navy);box-shadow:0 -6px 20px rgba(0,0,0,.2);transform:translateY(110%);transition:transform .25s}
+.dock.on{transform:none}
+.dock a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:800;text-decoration:none}
+.dock .c1{background:var(--sail);color:var(--navy-2)}
+.dock .c2{border:2px solid #fff;color:#fff}
+
+@media (max-width:959px){
+  .rentals{grid-template-columns:1fr}
+  .side{display:none}
+}
+@media (max-width:860px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .top .call{display:none}
+  .hero .wrap,.walk .wrap,.boat .wrap,.sites .wrap,.split{grid-template-columns:1fr}
+  .boat .photo{order:2}
+  .foot .wrap{grid-template-columns:1fr}
+  .dock{display:flex}
+  .foot{padding-bottom:6rem}
+  .demo{font-size:.75rem;padding:.4rem 1rem}
+}
+@media (max-width:520px){
+  body{font-size:1rem}
+  .brand img{width:126px}
+  .top .wrap{min-height:60px}
+  h1{font-size:2.05rem}
+  .hero .where{margin-bottom:.6rem;font-size:.9rem}
+  .hero h1{margin-bottom:.8rem}
+  .hero .lead{font-size:1.05rem;margin-bottom:1.1rem}
+  .amen{columns:1}
+  .road dl div{grid-template-columns:6.5rem 1fr}
+  .btn{padding:.7rem 1.1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Presque Isle Passage. Not affiliated with or endorsed by Presque Isle Passage.</p>
+<header class="top">
+<div class="wrap">
+<a class="brand" href="index.html" aria-label="Presque Isle Passage, home"><img src="img/logo.webp" width="480" height="160" alt="Presque Isle Passage"></a>
+<nav class="nav" aria-label="Main">
+<a href="rentals.html" aria-current="page">Rentals</a><a href="campsites.html">Campsites</a><a href="area.html">The area</a><a href="visit.html">Contact & rules</a>
+<a class="call" href="tel:+18148333272">Call (814) 833-3272</a>
+<details class="menu"><summary>Menu</summary><ul><li><a href="index.html">Home</a></li><li><a href="rentals.html" aria-current="page">Rentals</a></li><li><a href="campsites.html">Campsites</a></li><li><a href="area.html">The area</a></li><li><a href="visit.html">Contact & rules</a></li><li><a href="tel:+18148333272">Call (814) 833-3272</a></li><li><a href="mailto:info@presqueislepassage.com">Email us</a></li></ul></details>
+</nav>
+</div>
+</header>
+<main id="main">
+
+<div class="pagehead" data-dock-after>
+<div class="wrap">
+<h1>Over 30 rentals. Pick one and see where it sits.</h1>
+<p class="lead">Park Models, cabins, yurts, RVs, houses and a houseboat, each with AC and heat, a picnic table and a fire ring outside. Press &ldquo;Show on map&rdquo; to find any of them on the campground map.</p>
+<ul class="facts">
+<li><strong>Bring your own linens</strong>Sheets, pillows and towels are not included.</li>
+<li><strong>Check in 3:30 PM, check out 11:00 AM</strong>2-night minimum, 3 on holidays.</li>
+<li><strong>Pets welcome</strong>Except in the Park Models and Deluxe Cabin 5.</li>
+<li><strong>To reserve</strong>Call <a href="tel:+18148333272">(814) 833-3272</a>. Online booking runs through Campspot.</li>
+</ul>
+</div>
+</div>
+<div class="wrap rentals">
+<div><section class="group" id="park-models" aria-labelledby="park-models-h" style="padding-top:0">
+<h2 id="park-models-h">Park Models / Tiny Homes</h2>
+<div class="photo"><img src="img/pm-out-800.webp" srcset="img/pm-out-800.webp 800w, img/pm-out-1400.webp 1400w" sizes="(max-width: 959px) calc(100vw - 2rem), 680px" width="1400" height="694" alt="Two of the new navy Park Model tiny homes, with a picnic table, fire ring and chairs out front" loading="lazy" decoding="async"></div>
+<p>Brand new as of 2025. Five tiny-home rentals near the back of the campground by the Pavilion.</p>
+<article class="unit" id="park-models-1-5">
+<div class="row"><h3>Park Models 1 to 5</h3></div>
+<ul><li>Full kitchen and full bathroom</li><li>Main bedroom with a queen bed</li><li>Second bedroom with two full-size bunk beds</li><li>Pull-out sofa</li></ul>
+<p class="loc">Near the back of the campground by the Pavilion.</p><p class="loc nopets">No pets in this rental.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="park-models-1-5" data-pins="pm-1 pm-2 pm-3 pm-4 pm-5" data-name="Park Models 1 to 5" data-where="Near the back of the campground by the Pavilion.">Show on map</button>
+</article>
+</section><section class="group" id="deluxe-cabins" aria-labelledby="deluxe-cabins-h" style="padding-top:0">
+<h2 id="deluxe-cabins-h">Deluxe Cabins</h2>
+<div class="photo"><img src="img/deluxe-800.webp" srcset="img/deluxe-800.webp 800w, img/deluxe-1000.webp 1000w" sizes="(max-width: 959px) calc(100vw - 2rem), 680px" width="1000" height="560" alt="A Deluxe Cabin with a green-trimmed porch and wooden steps on a gravel site" loading="lazy" decoding="async"></div>
+<p>Large cabins with a full bathroom and a kitchen area with a stove, microwave and full-size refrigerator.</p>
+<article class="unit" id="deluxe-1">
+<div class="row"><h3>Deluxe Cabin 1</h3><span class="sleeps">Sleeps up to 8</span></div>
+<ul><li>Two bedrooms, each with a twin bunk over a full bed, plus one more set of twin bunks</li><li>Futon, table with 4 chairs</li></ul>
+<p class="loc">At the front of the campground near the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="deluxe-1" data-pins="deluxe-1" data-name="Deluxe Cabin 1" data-where="At the front of the campground near the pool.">Show on map</button>
+</article><article class="unit" id="deluxe-2-3">
+<div class="row"><h3>Deluxe Cabins 2 and 3</h3><span class="sleeps">Sleeps up to 5</span></div>
+<ul><li>Bedroom with a queen bed</li><li>Twin bunks in the hall across from the bathroom</li><li>Futon, table with 4 chairs</li></ul>
+<p class="loc">Along the side of the campground past the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="deluxe-2-3" data-pins="deluxe-2 deluxe-3" data-name="Deluxe Cabins 2 and 3" data-where="Along the side of the campground past the pool.">Show on map</button>
+</article><article class="unit" id="deluxe-4">
+<div class="row"><h3>Deluxe Cabin 4</h3><span class="sleeps">Sleeps up to 5</span></div>
+<ul><li>Bedroom with a twin bunk over a full bed and a set of twin bunks</li><li>Futon, table with 4 chairs</li></ul>
+<p class="loc">Along the side of the campground past the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="deluxe-4" data-pins="deluxe-4" data-name="Deluxe Cabin 4" data-where="Along the side of the campground past the pool.">Show on map</button>
+</article><article class="unit" id="deluxe-5">
+<div class="row"><h3>Deluxe Cabin 5</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>Bedroom with a queen bed</li><li>Futon, table with 4 chairs</li></ul>
+<p class="loc">Along the side of the campground past the pool.</p><p class="loc nopets">No pets in this rental.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="deluxe-5" data-pins="deluxe-5" data-name="Deluxe Cabin 5" data-where="Along the side of the campground past the pool.">Show on map</button>
+</article><article class="unit" id="deluxe-6">
+<div class="row"><h3>Deluxe Cabin 6</h3><span class="sleeps">Sleeps up to 5</span></div>
+<ul><li>Bedroom with a queen bed</li><li>Twin bunks in the hall across from the bathroom</li><li>Futon, table with 4 chairs</li></ul>
+<p class="loc">Along the side of the campground past the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="deluxe-6" data-pins="deluxe-6" data-name="Deluxe Cabin 6" data-where="Along the side of the campground past the pool.">Show on map</button>
+</article><article class="unit" id="deluxe-7">
+<div class="row"><h3>Deluxe Cabin 7</h3><span class="sleeps">Sleeps up to 5</span></div>
+<ul><li>Bedroom with a queen bed</li><li>Twin bunks in the hall across from the bathroom</li><li>Futon, table with 4 chairs</li></ul>
+<p class="loc">Next to the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="deluxe-7" data-pins="deluxe-7" data-name="Deluxe Cabin 7" data-where="Next to the pool.">Show on map</button>
+</article>
+</section><section class="group" id="camping-cabins" aria-labelledby="camping-cabins-h" style="padding-top:0">
+<h2 id="camping-cabins-h">Camping Cabins</h2>
+<div class="photo"><img src="img/cabin1-800.webp" srcset="img/cabin1-800.webp 800w, img/cabin1-1000.webp 1000w" sizes="(max-width: 959px) calc(100vw - 2rem), 680px" width="1000" height="560" alt="Camping Cabin 1, a shingled cabin with a red door and a red picnic table on the porch" loading="lazy" decoding="async"></div>
+<p>Simple cabins with AC and heat. Cabins 1 to 3 are primitive: electric, but no running water.</p>
+<article class="unit" id="cabin-1">
+<div class="row"><h3>Cabin 1</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>Queen bed and a set of twin bunks</li><li>Small table, 2 chairs, small refrigerator</li><li>No running water</li></ul>
+<p class="loc">Near the front, close to the upper bathhouse and the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="cabin-1" data-pins="cabin-1" data-name="Cabin 1" data-where="Near the front, close to the upper bathhouse and the pool.">Show on map</button>
+</article><article class="unit" id="cabin-2">
+<div class="row"><h3>Cabin 2</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>Full bed and a set of twin bunks</li><li>Armchair, small couch, medium refrigerator</li><li>No running water</li></ul>
+<p class="loc">In the middle of the campground, between the upper and lower bathhouses.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="cabin-2" data-pins="cabin-2" data-name="Cabin 2" data-where="In the middle of the campground, between the upper and lower bathhouses.">Show on map</button>
+</article><article class="unit" id="cabin-3">
+<div class="row"><h3>Cabin 3</h3><span class="sleeps">Sleeps up to 2</span></div>
+<ul><li>Full bed</li><li>Small desk and chair, small refrigerator</li><li>No running water</li></ul>
+<p class="loc">Near the back, across from the lower bathhouse.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="cabin-3" data-pins="cabin-3" data-name="Cabin 3" data-where="Near the back, across from the lower bathhouse.">Show on map</button>
+</article><article class="unit" id="cabins-4-6">
+<div class="row"><h3>Cabins 4, 5 and 6</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>Full bed in the main room, twin bunks in a small back room</li><li>Kitchen area with a microwave and small cooktop</li><li>Full bathroom</li></ul>
+<p class="loc">At the back of the campground near the tenting area.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="cabins-4-6" data-pins="cabin-4 cabin-5 cabin-6" data-name="Cabins 4, 5 and 6" data-where="At the back of the campground near the tenting area.">Show on map</button>
+</article><article class="unit" id="cabins-7-9">
+<div class="row"><h3>Cabins 7, 8 and 9</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>Queen bed in the main room, twin bunks in a small back room</li><li>Kitchen area with a microwave and small cooktop</li><li>Full bathroom</li></ul>
+<p class="loc">At the back of the campground near the tenting area.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="cabins-7-9" data-pins="cabin-7 cabin-8 cabin-9" data-name="Cabins 7, 8 and 9" data-where="At the back of the campground near the tenting area.">Show on map</button>
+</article>
+</section><section class="group" id="yurts" aria-labelledby="yurts-h" style="padding-top:0">
+<h2 id="yurts-h">Yurts</h2>
+<div class="photo"><img src="img/yurt2-800.webp" srcset="img/yurt2-800.webp 800w, img/yurt2-1000.webp 1000w" sizes="(max-width: 959px) calc(100vw - 2rem), 680px" width="1000" height="560" alt="Yurt 2, a green canvas yurt on a wooden deck with chairs" loading="lazy" decoding="async"></div>
+<p>Permanent, round canvas tents with a wooden framework, a full bathroom and a kitchen area with a stove, microwave and full-size refrigerator.</p>
+<article class="unit" id="yurt-1">
+<div class="row"><h3>Yurt 1</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>Bedroom area with a queen bed</li><li>Table with 4 chairs, futon</li></ul>
+<p class="loc">In the back of the campground by the tenting area.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="yurt-1" data-pins="yurt-1" data-name="Yurt 1" data-where="In the back of the campground by the tenting area.">Show on map</button>
+</article><article class="unit" id="yurt-2">
+<div class="row"><h3>Yurt 2</h3><span class="sleeps">Sleeps up to 6</span></div>
+<ul><li>Bedroom area with a queen bed</li><li>Futon and a set of twin bunk beds</li><li>Table with 4 chairs</li></ul>
+<p class="loc">In the back of the campground by the tenting area.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="yurt-2" data-pins="yurt-2" data-name="Yurt 2" data-where="In the back of the campground by the tenting area.">Show on map</button>
+</article>
+</section><section class="group" id="rv-rentals" aria-labelledby="rv-rentals-h" style="padding-top:0">
+<h2 id="rv-rentals-h">RV Rentals</h2>
+<div class="photo"><img src="img/rv1-800.webp" srcset="img/rv1-800.webp 800w, img/rv1-1000.webp 1000w" sizes="(max-width: 959px) calc(100vw - 2rem), 680px" width="1000" height="560" alt="RV 1, the accessible Park Model trailer with its deck and ramp" loading="lazy" decoding="async"></div>
+<p>Park model RVs with a full bathroom, set up on their sites near the lower bathhouses.</p>
+<article class="unit" id="rv-1">
+<div class="row"><h3>RV 1, accessible</h3><span class="sleeps">Sleeps up to 5</span></div>
+<ul><li>Accessible kitchen with lowered countertops</li><li>Bathroom with a roll-in shower</li><li>Full bed; second bedroom with a twin bunk over a full bed and a loveseat</li></ul>
+<p class="loc">Across from the pavilion, near the lower bathhouse.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="rv-1" data-pins="rv-1" data-name="RV 1, accessible" data-where="Across from the pavilion, near the lower bathhouse.">Show on map</button>
+</article><article class="unit" id="rv-2">
+<div class="row"><h3>RV 2</h3><span class="sleeps">Sleeps up to 6</span></div>
+<ul><li>Full bed; second bedroom with a twin bed and a set of twin bunks</li><li>Day bed, table with 4 chairs</li><li>Stove, microwave, full-size refrigerator</li></ul>
+<p class="loc">Near the back of the campground by the lower bathhouses.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="rv-2" data-pins="rv-2" data-name="RV 2" data-where="Near the back of the campground by the lower bathhouses.">Show on map</button>
+</article><article class="unit" id="rv-3">
+<div class="row"><h3>RV 3</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>Queen bed with a twin bunk over top</li><li>Futon, table with 4 chairs</li><li>Electric cooktop, microwave, dorm-size refrigerator</li></ul>
+<p class="loc">Near the back of the campground by the lower bathhouses.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="rv-3" data-pins="rv-3" data-name="RV 3" data-where="Near the back of the campground by the lower bathhouses.">Show on map</button>
+</article>
+</section><section class="group" id="larger-rentals" aria-labelledby="larger-rentals-h" style="padding-top:0">
+<h2 id="larger-rentals-h">Houses, the Lodge and a houseboat</h2>
+<div class="photo"><img src="img/farmhouse-800.webp" srcset="img/farmhouse-800.webp 800w, img/farmhouse-1000.webp 1000w" sizes="(max-width: 959px) calc(100vw - 2rem), 680px" width="1000" height="560" alt="The Farmhouse, a red two-story house with picnic tables on the lawn" loading="lazy" decoding="async"></div>
+<p>Bigger groups, from a 10-guest farmhouse to a houseboat set on its own site.</p>
+<article class="unit" id="farmhouse">
+<div class="row"><h3>The Farmhouse</h3><span class="sleeps">Sleeps up to 10</span></div>
+<ul><li>Two main-floor bedrooms, each with a queen bed</li><li>Upstairs: one open room with two twin beds and two sets of twin bunks</li><li>Full kitchen and a full bathroom on each floor</li></ul>
+<p class="loc">At the front, across from the office, next to the playground.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="farmhouse" data-pins="farmhouse" data-name="The Farmhouse" data-where="At the front, across from the office, next to the playground.">Show on map</button>
+</article><article class="unit" id="cottage">
+<div class="row"><h3>The Cottage</h3><span class="sleeps">Sleeps up to 9</span></div>
+<ul><li>Queen bedroom and a bedroom with twin over full bunks</li><li>Four twin beds downstairs</li><li>Table with 6 chairs, full bathroom</li></ul>
+<p class="loc">At the front, behind the office and near the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="cottage" data-pins="cottage" data-name="The Cottage" data-where="At the front, behind the office and near the pool.">Show on map</button>
+</article><article class="unit" id="apartment">
+<div class="row"><h3>The Apartment</h3><span class="sleeps">Sleeps up to 8</span></div>
+<ul><li>Three bedrooms: a queen, a queen with a twin, and two twins</li><li>Full bathroom with bathtub and shower</li><li>Futon, couch, table with 4 chairs</li></ul>
+<p class="loc">At the front, in the same building as the main office.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="apartment" data-pins="apartment" data-name="The Apartment" data-where="At the front, in the same building as the main office.">Show on map</button>
+</article><article class="unit" id="studio">
+<div class="row"><h3>The Studio</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>One large room with a queen bed and a futon</li><li>Kitchen area, full bathroom</li></ul>
+<p class="loc">At the front, across from the office, attached to the Farmhouse.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="studio" data-pins="studio" data-name="The Studio" data-where="At the front, across from the office, attached to the Farmhouse.">Show on map</button>
+</article><article class="unit" id="lodge">
+<div class="row"><h3>The Lodge</h3><span class="sleeps">Sleeps up to 8</span></div>
+<ul><li>Two bedrooms with queen beds, twin bunks in a sleeping nook</li><li>Two futons; electric stove (no oven)</li><li>Full bathroom plus a half bath</li></ul>
+<p class="loc">At the back of the campground near the tenting area.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="lodge" data-pins="lodge" data-name="The Lodge" data-where="At the back of the campground near the tenting area.">Show on map</button>
+</article><article class="unit" id="landshark">
+<div class="row"><h3>The Landshark</h3><span class="sleeps">Sleeps up to 4</span></div>
+<ul><li>A houseboat placed on a site and rented like a cabin</li><li>One big room: futon, a table that folds into a bed, two twin bunks</li><li>Half bath only (no shower)</li></ul>
+<p class="loc">Along the side of the campground past the pool.</p>
+<button type="button" class="show" aria-pressed="false" data-unit="landshark" data-pins="landshark" data-name="The Landshark" data-where="Along the side of the campground past the pool.">Show on map</button>
+</article>
+</section>
+<p class="note">Listed capacities are from Presque Isle Passage&rsquo;s rental pages. Rates include 2 adults except where noted; additional guests over 18 are $3 per night. Ask the office for current rates and the cancellation policy.</p>
+</div>
+<aside class="side" aria-label="Campground map">
+<figure id="mapfig"><div class="mapbox"><img src="img/map-700.webp" srcset="img/map-700.webp 700w, img/map-1100.webp 1100w, img/map-1700.webp 1700w" sizes="430px" width="1700" height="2800" alt="Presque Isle Passage campground map: entrance on Sterrettania Road at the bottom, pool and office near the front, rows of RV sites in the middle, rentals, tent area and pond at the back" loading="lazy" decoding="async"><span class="pin" data-id="yurt-2" style="left:12.61%;top:11.48%"></span><span class="pin" data-id="yurt-1" style="left:13.18%;top:14.61%"></span><span class="pin" data-id="cabin-6" style="left:13.90%;top:16.70%"></span><span class="pin" data-id="cabin-5" style="left:13.90%;top:18.61%"></span><span class="pin" data-id="cabin-4" style="left:13.90%;top:20.53%"></span><span class="pin" data-id="lodge" style="left:24.64%;top:18.44%"></span><span class="pin" data-id="cabin-7" style="left:33.09%;top:18.70%"></span><span class="pin" data-id="cabin-8" style="left:36.10%;top:18.70%"></span><span class="pin" data-id="cabin-9" style="left:38.97%;top:18.70%"></span><span class="pin" data-id="pm-5" style="left:21.06%;top:20.88%"></span><span class="pin" data-id="pm-4" style="left:21.49%;top:22.70%"></span><span class="pin" data-id="pm-3" style="left:21.92%;top:24.53%"></span><span class="pin" data-id="pm-2" style="left:22.21%;top:26.36%"></span><span class="pin" data-id="pm-1" style="left:22.64%;top:28.27%"></span><span class="pin" data-id="rv-3" style="left:12.61%;top:22.70%"></span><span class="pin" data-id="rv-2" style="left:13.18%;top:27.83%"></span><span class="pin" data-id="rv-1" style="left:22.92%;top:30.10%"></span><span class="pin" data-id="cabin-3" style="left:27.51%;top:27.83%"></span><span class="pin" data-id="cabin-2" style="left:49.43%;top:54.80%"></span><span class="pin" data-id="deluxe-6" style="left:49.71%;top:57.23%"></span><span class="pin" data-id="deluxe-5" style="left:49.71%;top:58.80%"></span><span class="pin" data-id="deluxe-4" style="left:49.71%;top:60.19%"></span><span class="pin" data-id="deluxe-3" style="left:49.71%;top:61.76%"></span><span class="pin" data-id="deluxe-2" style="left:49.71%;top:63.32%"></span><span class="pin" data-id="landshark" style="left:53.01%;top:65.06%"></span><span class="pin" data-id="deluxe-1" style="left:52.01%;top:66.80%"></span><span class="pin" data-id="cabin-1" style="left:51.72%;top:69.33%"></span><span class="pin" data-id="deluxe-7" style="left:54.01%;top:76.11%"></span><span class="pin" data-id="cottage" style="left:45.27%;top:86.55%"></span><span class="pin" data-id="farmhouse" style="left:20.63%;top:90.55%"></span><span class="pin" data-id="studio" style="left:24.21%;top:90.38%"></span><span class="pin" data-id="apartment" style="left:33.95%;top:91.33%"></span></div><figcaption class="picked" id="picked" aria-live="polite">Pick a rental to see where it sits.</figcaption></figure>
+</aside>
+</div>
+<dialog class="mapdlg" id="mapdlg" aria-labelledby="dlgtitle">
+<div class="dlgbar"><h2 id="dlgtitle" style="font-size:1.2rem">Map</h2><button type="button" class="close" onclick="this.closest('dialog').close()">Close map</button></div>
+<div id="dlgslot"></div>
+</dialog>
+
+</main>
+<script>
+(()=>{
+const fig=document.getElementById('mapfig'),side=document.querySelector('.side'),dlg=document.getElementById('mapdlg'),slot=document.getElementById('dlgslot'),
+label=document.getElementById('picked'),dlgTitle=document.getElementById('dlgtitle'),btns=[...document.querySelectorAll('.show')],narrow=matchMedia('(max-width:959px)');
+let opener=null;
+function pick(b,open){
+  const ids=b.dataset.pins.split(' ');
+  fig.querySelectorAll('.pin').forEach(p=>{p.classList.remove('on');void p.offsetWidth;if(ids.includes(p.dataset.id))p.classList.add('on')});
+  btns.forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
+  const t=b.dataset.name+'. '+b.dataset.where;label.textContent=t;dlgTitle.textContent=b.dataset.name;
+  if(narrow.matches&&open){opener=b;slot.appendChild(fig);dlg.showModal()}
+}
+btns.forEach(b=>b.addEventListener('click',()=>pick(b,true)));
+dlg.addEventListener('close',()=>{side.appendChild(fig);if(opener)opener.focus()});
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+const h=location.hash.slice(1),b=h&&document.querySelector('.show[data-unit="'+h+'"]');
+if(b)pick(b,false);
+})();
+</script><footer class="foot">
+<div class="wrap">
+<div>
+<img src="img/logo.webp" width="480" height="160" alt="Presque Isle Passage" loading="lazy" decoding="async">
+<p>RV Park &amp; Cabin Rentals. Formerly known as Hill&rsquo;s Family Campground.</p>
+</div>
+<div>
+<h2>Find us</h2>
+<address style="font-style:normal">6300 Sterrettania Road<br>Fairview, PA 16415</address>
+<p style="margin-top:.6rem"><a href="tel:+18148333272">(814) 833-3272</a><br><a href="mailto:info@presqueislepassage.com">info@presqueislepassage.com</a></p>
+</div>
+<div>
+<h2>Pages</h2>
+<ul><li><a href="index.html">Home</a></li><li><a href="rentals.html">Rentals</a></li><li><a href="campsites.html">Campsites</a></li><li><a href="area.html">The area</a></li><li><a href="visit.html">Contact & rules</a></li></ul>
+</div>
+<div class="legal">
+<p>Member associations listed on their site: Visit Erie, Pennsylvania Campground Owners Assoc., Northeast Campground Association, National ARVC.</p>
+<p>Unofficial demo built by MHS Tecnologia for Presque Isle Passage. Not affiliated with or endorsed by Presque Isle Passage. Text and photos come from Presque Isle Passage&rsquo;s public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div>
+</div>
+</footer>
+<div class="dock" aria-label="Contact"><a class="c1" href="tel:+18148333272">Call</a><a class="c2" href="mailto:info@presqueislepassage.com">Email</a></div>
+<script>
+(()=>{const d=document.querySelector('.dock'),h=document.querySelector('[data-dock-after]');if(!d||!h||!('IntersectionObserver'in window))return;
+new IntersectionObserver(([e])=>d.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(h)})();
+</script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Presque Isle Passage | RV Park &amp; Cabin Rentals near Presque Isle</title>
+<meta name="description" content="RV sites, tent sites and over 30 rentals 500 feet off I-90 Exit 18 in Fairview, PA, 7 miles from the Presque Isle beaches.">
+<meta name="theme-color" content="#16325c">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/overpass.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/pool-800.webp 800w, img/pool-1350.webp 1350w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 680px" fetchpriority="high">
+<style>
+@font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
+:root{--navy:#16325c;--navy-2:#0e2444;--sail:#f4e550;--flag:#d8262b;--bg:#f2f5f0;--paper:#fff;--ink:#15202c;--muted:#465566;--line:#d2dbce;--wrap:1200px;--gut:clamp(1rem,4vw,2.5rem)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Overpass",system-ui,sans-serif;font-optical-sizing:auto}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--navy);text-underline-offset:.18em}
+a:hover{color:var(--flag)}
+:focus-visible{outline:3px solid var(--flag);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-weight:800;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+h2{font-size:clamp(1.65rem,3vw,2.35rem)}
+h3{font-size:1.25rem}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;z-index:50;background:#fff;padding:.5rem 1rem}
+.demo{background:var(--navy-2);color:#dfe7f2;font-size:.8125rem;line-height:1.35;padding:.5rem var(--gut);text-align:center}
+.top{background:var(--navy);position:relative;z-index:20}
+.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:68px}
+.brand{display:block;flex:none}
+.brand img{width:150px;height:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;margin-left:auto}
+.nav > a{color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current=page]{color:#fff;border-bottom-color:var(--sail)}
+.call{flex:none;display:inline-flex;align-items:center;gap:.5rem;background:var(--sail);color:var(--navy-2);font-weight:800;text-decoration:none;border-radius:999px;padding:.6rem 1.1rem;white-space:nowrap}
+.call:hover{background:#fff;color:var(--navy-2)}
+.nav > a.call{color:var(--navy-2);border-bottom:0;padding:.6rem 1.1rem}
+.nav > a.call:hover{color:var(--navy-2)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;color:#fff;font-weight:700;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:.45rem .95rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:#fff;color:var(--navy)}
+.menu ul{position:absolute;right:0;top:calc(100% + .6rem);list-style:none;margin:0;padding:.5rem 0;background:#fff;border-radius:10px;box-shadow:0 14px 40px rgba(10,25,50,.28);min-width:220px}
+.menu li a{display:block;padding:.7rem 1.1rem;color:var(--ink);text-decoration:none;font-weight:600}
+.menu li a:hover{background:var(--bg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.7rem 1.35rem;border-radius:999px;font-weight:800;text-decoration:none;border:2px solid var(--navy)}
+.btn.solid{background:var(--navy);color:#fff}
+.btn.solid:hover{background:var(--navy-2);color:var(--sail)}
+.btn.ghost{color:var(--navy);background:transparent}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.lead{font-size:1.18rem;color:var(--muted);max-width:34em}
+.note{font-size:.95rem;color:var(--muted)}
+figure{margin:0}
+figcaption{font-size:.875rem;color:var(--muted);margin-top:.55rem}
+.photo{border-radius:8px;overflow:hidden;background:#cfd8cb}
+.photo img{width:100%}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+
+/* home hero */
+.hero{padding:clamp(1.25rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero .where{font-weight:700;color:var(--muted);font-size:.95rem;margin-bottom:.9rem}
+.hero h1{margin-bottom:1.1rem}
+.hero .lead{margin-bottom:1.6rem}
+.hero .photo{aspect-ratio:3/2}
+.hero .photo img{height:100%;object-fit:cover}
+
+/* the map: their own drawing, pins placed on it */
+.mapbox{position:relative;line-height:0;border-radius:8px;overflow:hidden;background:#8cc46a}
+.mapbox img{width:100%}
+.pin{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:4px solid var(--flag);box-shadow:0 0 0 3px #fff,0 4px 10px rgba(0,0,0,.35);display:none;pointer-events:none}
+.pin.on{display:block;animation:drop .45s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes drop{from{transform:translateY(-14px) scale(1.5);opacity:0}to{transform:none;opacity:1}}
+
+.walk{background:var(--navy);color:#e9eef6}
+.walk .wrap{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.walk h2{color:#fff;margin-bottom:1rem}
+.walk .lead{color:#c9d5e6;margin-bottom:2rem}
+.walk ol{list-style:none;margin:0 0 2.2rem;padding:0;border-left:3px solid var(--sail)}
+.walk li{position:relative;padding:0 0 1.5rem 1.6rem}
+.walk li::before{content:"";position:absolute;left:-9px;top:.35rem;width:15px;height:15px;border-radius:50%;background:var(--navy);border:3px solid var(--sail)}
+.walk li strong{display:block;color:#fff;font-size:1.15rem;margin-bottom:.15rem}
+.walk .btn{border-color:var(--sail);background:var(--sail);color:var(--navy-2)}
+.walk .btn:hover{background:#fff;border-color:#fff}
+.walk figcaption{color:#b8c6da}
+
+.boat .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.boat h2{margin-bottom:1rem}
+.boat p{margin-bottom:1rem}
+.sites{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sites .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem)}
+.sites h2{margin-bottom:1rem}
+.sites p{margin-bottom:1.2rem}
+.amen{columns:2;column-gap:1.5rem;list-style:none;padding:0;margin:0 0 1.6rem}
+.amen li{break-inside:avoid;padding:.35rem 0 .35rem 1.1rem;position:relative;border-bottom:1px solid var(--line)}
+.amen li::before{content:"";position:absolute;left:0;top:.95rem;width:6px;height:6px;border-radius:50%;background:var(--navy)}
+.road h2{margin-bottom:1.6rem}
+.road dl{margin:0 0 2rem;border-top:2px solid var(--ink)}
+.road dl div{display:grid;grid-template-columns:minmax(7rem,12rem) 1fr;gap:1rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
+.road dt{font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);font-variant-numeric:tabular-nums;line-height:1}
+.road dd{margin:0;font-size:1.1rem}
+.road address{font-style:normal;font-size:1.1rem;margin-bottom:1.4rem}
+
+/* inner pages */
+.pagehead{padding:clamp(2rem,5vw,3.5rem) 0 clamp(1.5rem,3vw,2.5rem)}
+.pagehead h1{margin-bottom:1rem;max-width:20ch}
+.pagehead .lead{max-width:40em}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem 2rem;padding:1.25rem 0;margin:1.5rem 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);list-style:none}
+.facts li{font-size:.98rem}
+.facts strong{display:block}
+
+.rentals{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,430px);gap:clamp(2rem,4vw,3.5rem);align-items:start;padding-bottom:4rem}
+.side{position:sticky;top:1rem}
+.side .mapbox img{max-height:calc(100vh - 7.5rem);width:auto;margin:0 auto}
+.side .mapbox{width:fit-content;margin:0 auto}
+.picked{font-weight:800;font-size:1.05rem;margin-top:.7rem;min-height:1.6em}
+.group{padding:0 0 3rem}
+.group > h2{margin:0 0 .9rem}
+.group > .photo{margin-bottom:1rem;aspect-ratio:16/9}
+.group > .photo img{height:100%;object-fit:cover}
+.group > p{color:var(--muted);margin-bottom:1.2rem;max-width:40em}
+.unit{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:1.2rem 1.3rem;margin-bottom:.9rem;scroll-margin-top:1rem}
+.unit .row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.4rem 1rem;margin-bottom:.5rem}
+.unit .sleeps{font-weight:700;color:var(--navy)}
+.unit ul{margin:0 0 .7rem;padding-left:1.1rem}
+.unit li{margin:.15rem 0}
+.unit .loc{font-size:.97rem;margin-bottom:.8rem}
+.unit .nopets{color:var(--flag);font-weight:700}
+.show{font:inherit;font-weight:800;font-size:.95rem;color:var(--navy);background:transparent;border:2px solid var(--navy);border-radius:999px;padding:.5rem 1rem;cursor:pointer;min-height:44px}
+.show:hover,.show[aria-pressed=true]{background:var(--navy);color:#fff}
+dialog.mapdlg{margin:auto;padding:.75rem;border:0;border-radius:12px;max-width:min(94vw,520px);max-height:94vh;width:100%;background:var(--paper)}
+dialog.mapdlg::backdrop{background:rgba(8,20,40,.72)}
+dialog.mapdlg .dlgbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.6rem}
+dialog.mapdlg .mapbox img{max-height:calc(94vh - 6rem);width:auto;margin:0 auto}
+dialog.mapdlg .mapbox{width:fit-content;margin:0 auto}
+.close{font:inherit;font-weight:800;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:.55rem 1.1rem;min-height:44px;cursor:pointer}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.prose h2{margin:0 0 .9rem}
+.prose h3{margin:1.6rem 0 .5rem}
+.prose p{margin-bottom:1rem;max-width:38em}
+.prose ul{padding-left:1.15rem;margin:0 0 1rem}
+.prose li{margin:.3rem 0}
+.band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cols{columns:2 18rem;column-gap:2.5rem}
+.cols > div{break-inside:avoid;margin-bottom:1.6rem}
+.rules{list-style:none;padding:0;margin:0}
+@media (min-width:861px){#rules .prose{position:sticky;top:1.5rem}}
+.rules li{padding:.8rem 0;border-bottom:1px solid var(--line)}
+.rules strong{display:inline}
+.contact{font-size:1.15rem}
+.contact p{margin-bottom:.6rem}
+
+.foot{background:var(--navy-2);color:#c9d5e6;padding:3rem 0;font-size:.95rem}
+.foot a{color:#fff}
+.foot .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem}
+.foot img{width:170px;margin-bottom:1rem}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin:.35rem 0}
+.foot h2{font-size:1rem;color:#fff;margin-bottom:.6rem}
+.foot .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem;font-size:.85rem;color:#a9b8cd}
+.foot .legal p{margin-bottom:.4rem}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:.6rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:var(--navy);box-shadow:0 -6px 20px rgba(0,0,0,.2);transform:translateY(110%);transition:transform .25s}
+.dock.on{transform:none}
+.dock a{flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:800;text-decoration:none}
+.dock .c1{background:var(--sail);color:var(--navy-2)}
+.dock .c2{border:2px solid #fff;color:#fff}
+
+@media (max-width:959px){
+  .rentals{grid-template-columns:1fr}
+  .side{display:none}
+}
+@media (max-width:860px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .top .call{display:none}
+  .hero .wrap,.walk .wrap,.boat .wrap,.sites .wrap,.split{grid-template-columns:1fr}
+  .boat .photo{order:2}
+  .foot .wrap{grid-template-columns:1fr}
+  .dock{display:flex}
+  .foot{padding-bottom:6rem}
+  .demo{font-size:.75rem;padding:.4rem 1rem}
+}
+@media (max-width:520px){
+  body{font-size:1rem}
+  .brand img{width:126px}
+  .top .wrap{min-height:60px}
+  h1{font-size:2.05rem}
+  .hero .where{margin-bottom:.6rem;font-size:.9rem}
+  .hero h1{margin-bottom:.8rem}
+  .hero .lead{font-size:1.05rem;margin-bottom:1.1rem}
+  .amen{columns:1}
+  .road dl div{grid-template-columns:6.5rem 1fr}
+  .btn{padding:.7rem 1.1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Presque Isle Passage | RV Park &amp; Cabin Rentals near Presque Isle">
+<meta property="og:description" content="RV sites, tent sites and over 30 rentals 500 feet off I-90 Exit 18 in Fairview, PA, 7 miles from the Presque Isle beaches.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/presque-isle-passage-rv-fairview-pa/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/presque-isle-passage-rv-fairview-pa/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Presque Isle Passage. Not affiliated with or endorsed by Presque Isle Passage.</p>
+<header class="top">
+<div class="wrap">
+<a class="brand" href="index.html" aria-label="Presque Isle Passage, home"><img src="img/logo.webp" width="480" height="160" alt="Presque Isle Passage"></a>
+<nav class="nav" aria-label="Main">
+<a href="rentals.html">Rentals</a><a href="campsites.html">Campsites</a><a href="area.html">The area</a><a href="visit.html">Contact & rules</a>
+<a class="call" href="tel:+18148333272">Call (814) 833-3272</a>
+<details class="menu"><summary>Menu</summary><ul><li><a href="index.html">Home</a></li><li><a href="rentals.html">Rentals</a></li><li><a href="campsites.html">Campsites</a></li><li><a href="area.html">The area</a></li><li><a href="visit.html">Contact & rules</a></li><li><a href="tel:+18148333272">Call (814) 833-3272</a></li><li><a href="mailto:info@presqueislepassage.com">Email us</a></li></ul></details>
+</nav>
+</div>
+</header>
+<main id="main">
+
+<section class="hero" data-dock-after>
+<div class="wrap">
+<div>
+<p class="where">Fairview, PA. Formerly Hill&rsquo;s Family Campground.</p>
+<h1>RV sites, tent sites and over 30 rentals, 500 feet off I&#8209;90.</h1>
+<p class="lead">Exit 18, seven miles from the Presque Isle beaches on Lake Erie. Pull-thru sites for any size RV, cabins, yurts, tiny homes and one houseboat. Pets welcome.</p>
+<div class="actions"><a class="btn solid" href="tel:+18148333272">Call (814) 833-3272</a><a class="btn ghost" href="rentals.html">See the rentals</a></div>
+</div>
+<figure><div class="photo"><img src="img/pool-800.webp" srcset="img/pool-800.webp 800w, img/pool-1350.webp 1350w" sizes="(max-width: 860px) calc(100vw - 2rem), 680px" width="1350" height="900" alt="The fenced pool with red umbrellas, and RV sites under the trees behind it" fetchpriority="high"></div><figcaption>The heated pool, with RV sites behind it.</figcaption></figure>
+</div>
+</section>
+
+<section class="walk" aria-labelledby="walk-h">
+<div class="wrap">
+<figure><div class="mapbox"><img src="img/map-700.webp" srcset="img/map-700.webp 700w, img/map-1100.webp 1100w, img/map-1700.webp 1700w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="1700" height="2800" alt="Presque Isle Passage campground map: entrance on Sterrettania Road at the bottom, pool and office near the front, rows of RV sites in the middle, rentals, tent area and pond at the back" loading="lazy" decoding="async"></div><figcaption>Their campground map. Not to scale.</figcaption></figure>
+<div>
+<h2 id="walk-h">From the entrance to the pond</h2>
+<p class="lead">Every rental has its own spot in the park. This is the order you meet them in, driving in off Sterrettania Road.</p>
+<ol>
+<li><strong>At the entrance</strong>The office and store, laundry and firewood. The Apartment, the Farmhouse, the Studio, the playground and the Cottage.</li>
+<li><strong>Past the pool</strong>Deluxe Cabins 1 to 7, Cabins 1 and 2, and the Landshark houseboat, along the side of the campground.</li>
+<li><strong>Through the middle</strong>Rows of RV sites: full hookup, full hookup buddy sites, monthly and seasonal.</li>
+<li><strong>At the back</strong>The Pavilion, Park Models 1 to 5, RV rentals 1 to 3, Cabins 3 to 9, the Lodge, both yurts, the tent area and the pond.</li>
+</ol>
+<a class="btn" href="rentals.html">Pick a rental on the map</a>
+</div>
+</div>
+</section>
+
+<section class="boat" aria-labelledby="boat-h">
+<div class="wrap">
+<figure><div class="photo"><img src="img/landshark-800.webp" srcset="img/landshark-800.webp 800w, img/landshark-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 680px" width="1000" height="560" alt="The Landshark, a blue and white houseboat with a deck, set on a gravel campsite" loading="lazy" decoding="async"></div></figure>
+<div>
+<h2 id="boat-h">One of the rentals is a houseboat</h2>
+<p>The Landshark is a houseboat placed on a site and rented like any other cabin. It sleeps up to 4: a futon, a table that folds into a bed and two twin bunks, plus a kitchen with a stove, microwave and small refrigerator.</p>
+<p class="note">Half bath only, no shower. It sits along the side of the campground past the pool.</p>
+<p><a href="rentals.html#landshark">See where the Landshark sits</a></p>
+</div>
+</div>
+</section>
+
+<section class="sites" aria-labelledby="sites-h">
+<div class="wrap">
+<div>
+<h2 id="sites-h">A site for any size RV</h2>
+<p>With renovations over the past years, there&rsquo;s a site for any size RV, even with a towed vehicle (65 feet or longer). Most sites are pull-thrus, with 30 and 50 amp options. Full hookups include electric, water, sewer and Wi&#8209;Fi, and every site has a picnic table and a fire ring.</p>
+<p>Tent campers get several wooded, open field areas, rented first come, first served.</p>
+<a class="btn ghost" href="campsites.html">Campsites and extended stays</a>
+</div>
+<div>
+<h3 style="margin-bottom:.8rem">What the park offers</h3>
+<ul class="amen"><li>7 miles to Lake Erie, Presque Isle beaches</li><li>Cabin &amp; cottage rentals</li><li>RV rentals</li><li>30 &amp; 50 amp hookups</li><li>Pull-thru sites</li><li>Grassy and shaded sites</li><li>Spacious tent camping sites</li><li>Pet friendly</li><li>Heated pool</li><li>Wi-Fi</li><li>Game room</li><li>Playground</li><li>Outdoor games</li><li>Corn hole</li><li>Groceries</li></ul>
+</div>
+</div>
+</section>
+
+<section class="road" aria-labelledby="road-h">
+<div class="wrap split">
+<div>
+<h2 id="road-h">Getting here</h2>
+<dl>
+<div><dt>500 ft</dt><dd>from I&#8209;90, Exit 18, Sterrettania Rd / Presque Isle</dd></div>
+<div><dt>3 mi</dt><dd>from I&#8209;79, Exit 174</dd></div>
+<div><dt>7 mi</dt><dd>to Lake Erie and the Presque Isle beaches</dd></div>
+</dl>
+<address>6300 Sterrettania Road, Fairview, PA 16415</address>
+<div class="actions"><a class="btn solid" href="tel:+18148333272">Call (814) 833-3272</a><a class="btn ghost" href="mailto:info@presqueislepassage.com">Email the office</a></div>
+</div>
+<figure><div class="photo"><img src="img/beach-800.webp" srcset="img/beach-800.webp 800w, img/beach-1350.webp 1350w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="1350" height="900" alt="A sandy Lake Erie beach with a lifeguard stand and swimmers" loading="lazy" decoding="async"></div><figcaption>&ldquo;Only 7 miles to the beach!&rdquo;</figcaption></figure>
+</div>
+</section>
+
+</main>
+<footer class="foot">
+<div class="wrap">
+<div>
+<img src="img/logo.webp" width="480" height="160" alt="Presque Isle Passage" loading="lazy" decoding="async">
+<p>RV Park &amp; Cabin Rentals. Formerly known as Hill&rsquo;s Family Campground.</p>
+</div>
+<div>
+<h2>Find us</h2>
+<address style="font-style:normal">6300 Sterrettania Road<br>Fairview, PA 16415</address>
+<p style="margin-top:.6rem"><a href="tel:+18148333272">(814) 833-3272</a><br><a href="mailto:info@presqueislepassage.com">info@presqueislepassage.com</a></p>
+</div>
+<div>
+<h2>Pages</h2>
+<ul><li><a href="index.html">Home</a></li><li><a href="rentals.html">Rentals</a></li><li><a href="campsites.html">Campsites</a></li><li><a href="area.html">The area</a></li><li><a href="visit.html">Contact & rules</a></li></ul>
+</div>
+<div class="legal">
+<p>Member associations listed on their site: Visit Erie, Pennsylvania Campground Owners Assoc., Northeast Campground Association, National ARVC.</p>
+<p>Unofficial demo built by MHS Tecnologia for Presque Isle Passage. Not affiliated with or endorsed by Presque Isle Passage. Text and photos come from Presque Isle Passage&rsquo;s public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div>
+</div>
+</footer>
+<div class="dock" aria-label="Contact"><a class="c1" href="tel:+18148333272">Call</a><a class="c2" href="mailto:info@presqueislepassage.com">Email</a></div>
+<script>
+(()=>{const d=document.querySelector('.dock'),h=document.querySelector('[data-dock-after]');if(!d||!h||!('IntersectionObserver'in window))return;
+new IntersectionObserver(([e])=>d.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(h)})();
+</script>
+</body>
+</html>
