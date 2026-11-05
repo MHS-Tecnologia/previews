@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plan &amp; contact | Tuscarora</title>
+<meta name="description" content="Phone, email, directions up the Gunflint Trail, how reservations work and common questions.">
+<meta name="theme-color" content="#eef3f2">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/alegreya.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/alegreyasans-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/alegreyasans-700.woff2" crossorigin>
+<style>
+@font-face { font-family: "Alegreya"; font-weight: 400 900; font-display: swap; src: url(fonts/alegreya.woff2) format("woff2"); }
+@font-face { font-family: "Alegreya Sans"; font-weight: 400; font-display: swap; src: url(fonts/alegreyasans-400.woff2) format("woff2"); }
+@font-face { font-family: "Alegreya Sans"; font-weight: 700; font-display: swap; src: url(fonts/alegreyasans-700.woff2) format("woff2"); }
+
+/* Round Lake at dawn: the navy of their logo stripe deepened to lake water, morning mist,
+   spruce, and the amber of a Kevlar hull for the one thing to press. */
+:root {
+  --night: #0f2740;
+  --navy: #1f4f8a;
+  --mist: #eef3f2;
+  --mist-2: #dde6e4;
+  --ink: #15212b;
+  --body: #34424c;
+  --spruce: #2d4a3a;
+  --kevlar: #e8a53c;
+  --kevlar-2: #f3b955;
+  --pad: clamp(1rem, 4vw, 2.5rem);
+  --max: 78rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--mist); color: var(--ink); font: 400 1.125rem/1.6 "Alegreya Sans", "Gill Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+.on-dark :focus-visible { outline-color: var(--kevlar); }
+h1, h2, h3 { font-family: "Alegreya", Georgia, serif; font-weight: 800; color: var(--ink); text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 5.4vw, 4.6rem); line-height: 1.02; letter-spacing: -0.012em; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.06; letter-spacing: -0.008em; }
+h3 { font-size: 1.45rem; line-height: 1.15; font-weight: 700; }
+p { max-width: 40rem; }
+.num { font-variant-numeric: tabular-nums lining-nums; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+[id] { scroll-margin-top: 1rem; }
+
+.demo { background: var(--ink); color: #c9d3d8; font-size: .875rem; line-height: 1.4; text-align: center; padding: .5rem 1rem; max-width: none; }
+.foot .legal { max-width: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.more { display: none; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .8rem; padding-bottom: .8rem; position: relative; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+.brand img { width: 7.5rem; height: auto; }
+.brand span { font-family: "Alegreya", serif; font-weight: 700; font-size: 1rem; line-height: 1.1; color: var(--ink); max-width: 9rem; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-size: 1.0625rem; }
+.nav > a { text-decoration: none; font-weight: 700; }
+.nav > a:hover, .nav > a[aria-current] { text-decoration: underline; text-decoration-thickness: 3px; text-decoration-color: var(--kevlar); text-underline-offset: 7px; }
+.nav > a.call { background: var(--night); color: #fff; padding: .55rem 1rem; border-radius: 2rem; }
+.nav > a.call:hover { background: var(--navy); text-decoration: none; }
+.menu { display: none; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.2rem; padding: .75rem 1.5rem; border-radius: 2rem; font-weight: 700; font-size: 1.125rem; text-decoration: none; }
+.btn-amber { background: var(--kevlar); color: var(--ink); }
+.btn-amber:hover { background: var(--kevlar-2); }
+.btn-line { box-shadow: inset 0 0 0 2px currentColor; }
+.btn-line:hover { background: var(--night); color: #fff; box-shadow: inset 0 0 0 2px var(--night); }
+.on-dark .btn-line:hover { background: #fff; color: var(--night); box-shadow: inset 0 0 0 2px #fff; }
+.btn svg { width: 1.15em; height: 1.15em; flex: none; }
+
+/* Home hero: the headline beside the next step, then one wide photo of their own canoes. */
+.hero { padding-top: clamp(1.25rem, 4vw, 3.25rem); }
+.hero-head { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 1.5rem 3.5rem; align-items: end; }
+.hero h1 { max-width: 19ch; font-size: clamp(2.3rem, 4.6vw, 4rem); }
+.lede { font-size: clamp(1.125rem, 1.6vw, 1.3rem); color: var(--body); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; }
+.hero-photo { margin-top: clamp(1.25rem, 3vw, 2.5rem); }
+.hero-photo img { width: 100%; aspect-ratio: 2.3 / 1; object-fit: cover; object-position: 0 100%; border-radius: .5rem; }
+.hero-photo figcaption, .cap { font-size: .9375rem; color: #55636b; margin-top: .55rem; }
+
+section { padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: clamp(3.5rem, 8vw, 6rem); }
+.sub { font-size: 1.1875rem; color: var(--body); margin-top: .9rem; }
+
+/* The signature: their canoe routes laid on a ruler of trip days. */
+.routes { background: var(--night); color: #dfe7ec; }
+.routes h2, .routes h3 { color: #fff; }
+.routes .sub { color: #c3d0d8; }
+.ruler { margin-top: 2.5rem; --cols: 14; }
+.ruler-group + .ruler-group { margin-top: 2.75rem; }
+.ruler-group h3 { font-size: 1.3rem; padding-bottom: .6rem; }
+.scale, .route { display: grid; grid-template-columns: 17rem minmax(0, 1fr) 19rem; gap: 0 1.5rem; align-items: center; }
+.scale { font-size: .875rem; color: #9fb3c1; padding-bottom: .4rem; border-bottom: 1px solid rgba(255,255,255,.18); }
+.scale .ticks, .track { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); }
+.scale .ticks span { text-align: center; }
+.scale .unit { grid-column: 3; color: #9fb3c1; }
+.route { padding: .7rem 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+.route .name { font-weight: 700; color: #fff; line-height: 1.25; }
+.route .note { font-size: 1rem; color: #c3d0d8; line-height: 1.35; }
+.track { position: relative; height: 1.9rem; background: repeating-linear-gradient(90deg, rgba(255,255,255,.09) 0 1px, transparent 1px calc(100% / var(--cols))); }
+.bar { grid-row: 1; align-self: center; height: 1.15rem; border-radius: 1rem; background: var(--kevlar); position: relative; display: flex; align-items: center; justify-content: center; min-width: 2.6rem; transform-origin: left center; }
+.bar b { font-size: .8125rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
+.bar.open { background: linear-gradient(90deg, var(--kevlar) 55%, rgba(232,165,60,.15)); justify-content: flex-start; padding-left: .55rem; }
+.rod { margin-top: 2.25rem; font-size: 1rem; color: #c3d0d8; max-width: 46rem; }
+.rod strong { color: #fff; }
+.js .ruler .bar { transform: scaleX(.04); transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.js .ruler.seen .bar { transform: none; }
+.js .ruler.seen .route:nth-child(n) .bar { transition-delay: calc(var(--i, 0) * 45ms); }
+@media (prefers-reduced-motion: reduce) { .js .ruler .bar { transform: none; transition: none; } }
+
+/* The night before, the morning of: the order a Complete Outfitting trip runs in. */
+.day { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.steps { list-style: none; padding: 0; margin-top: 2rem; border-left: 3px solid var(--mist-2); }
+.steps li { position: relative; padding: 0 0 1.6rem 1.6rem; }
+.steps li::before { content: ""; position: absolute; left: -.6rem; top: .45rem; width: .9rem; height: .9rem; border-radius: 50%; background: var(--mist); border: 3px solid var(--navy); }
+.steps .when { display: block; font-family: "Alegreya", serif; font-weight: 700; font-size: 1.3rem; color: var(--navy); line-height: 1.2; }
+.steps p { color: var(--body); margin-top: .2rem; }
+.day figure img { border-radius: .5rem; width: 100%; }
+
+/* Cabins and the owners */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.split img { border-radius: .5rem; width: 100%; }
+.facts { list-style: none; padding: 0; margin-top: 1.4rem; display: grid; gap: .5rem; }
+.facts li { padding-left: 1.3rem; position: relative; color: var(--body); }
+.facts li::before { content: ""; position: absolute; left: 0; top: .62em; width: .55rem; height: .55rem; background: var(--spruce); border-radius: 2px; }
+.textlink { display: inline-block; margin-top: 1.5rem; font-weight: 700; color: var(--navy); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.textlink:hover { color: var(--ink); }
+.band { background: #fff; }
+.owners { max-width: 46rem; margin: 0 auto; }
+.owners img { width: 100%; border-radius: .5rem; margin-top: 1.5rem; }
+.owners blockquote { margin-top: 1.75rem; }
+blockquote { font-family: "Alegreya", serif; font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.45; color: var(--ink); margin-top: 1.2rem; max-width: 36rem; }
+.sig { margin-top: 1rem; color: var(--body); }
+
+/* Contact strip */
+.reach { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); }
+.reach dl { display: grid; grid-template-columns: max-content 1fr; gap: .6rem 1.25rem; margin-top: 1.5rem; }
+.reach dt { font-weight: 700; }
+.reach dd { color: var(--body); }
+.reach dd a { color: var(--ink); font-weight: 700; }
+ol.drive { padding-left: 1.3rem; margin-top: 1rem; display: grid; gap: .55rem; color: var(--body); }
+
+/* Inner pages */
+.page-head { padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.page-head .lede { margin-top: 1rem; }
+.jump { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin-top: 1.5rem; }
+.jump a { display: inline-block; padding: .4rem .9rem; border-radius: 2rem; box-shadow: inset 0 0 0 2px var(--mist-2); background: #fff; text-decoration: none; font-weight: 700; font-size: 1rem; }
+.jump a:hover { box-shadow: inset 0 0 0 2px var(--navy); }
+.wide-photo img { width: 100%; border-radius: .5rem; aspect-ratio: 21 / 9; object-fit: cover; }
+.pkg { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem clamp(2rem, 5vw, 4.5rem); padding: clamp(2.25rem, 5vw, 3.5rem) 0; border-top: 2px solid var(--mist-2); }
+.pkg:first-of-type { border-top: 0; }
+.pkg h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+.pkg .for { font-family: "Alegreya", serif; font-style: italic; font-size: 1.25rem; color: var(--navy); margin-top: .4rem; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums lining-nums; }
+caption { text-align: left; font-weight: 700; padding-bottom: .5rem; }
+th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--mist-2); vertical-align: top; }
+thead th { font-size: .9375rem; color: #55636b; font-weight: 700; border-bottom: 2px solid var(--ink); }
+td.r, th.r { text-align: right; }
+th.d { white-space: nowrap; }
+.reach dt, .price caption { white-space: nowrap; }
+.price { background: #fff; border-radius: .5rem; padding: 1.25rem 1.25rem .75rem; align-self: start; }
+.price p.small, .small { font-size: .9375rem; color: #55636b; margin-top: .75rem; }
+details.gear { margin-top: 1rem; background: #fff; border-radius: .5rem; }
+details.gear summary { cursor: pointer; padding: .8rem 1rem; font-weight: 700; list-style-position: inside; }
+details.gear summary:hover { color: var(--navy); }
+.gear-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 1.5rem; padding: 0 1rem 1rem; }
+.gear-cols h4 { font-size: 1rem; margin-bottom: .3rem; }
+.gear-cols ul { padding-left: 1.1rem; color: var(--body); font-size: 1rem; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.two img { border-radius: .5rem; width: 100%; }
+.panel { background: #fff; border-radius: .5rem; padding: clamp(1.25rem, 3vw, 2rem); }
+.howto { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 1rem; margin-top: 1.25rem; }
+.howto li { counter-increment: s; padding-left: 2.6rem; position: relative; color: var(--body); }
+.howto li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--night); color: #fff; font-weight: 700; display: grid; place-items: center; font-size: 1rem; }
+.howto strong { color: var(--ink); }
+.trail { padding: 1.5rem 0; border-top: 1px solid var(--mist-2); }
+.trail .meta { font-size: 1rem; color: var(--navy); font-weight: 700; margin-top: .25rem; }
+.trail p { color: var(--body); margin-top: .5rem; }
+.faq { border-top: 1px solid var(--mist-2); }
+.faq summary { cursor: pointer; padding: 1rem 0; font-weight: 700; font-size: 1.1875rem; }
+.faq summary:hover { color: var(--navy); }
+.faq p { padding-bottom: 1rem; color: var(--body); }
+
+/* Footer */
+.foot { background: var(--night); color: #c3d0d8; padding: 3rem 0 2rem; }
+.foot-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2rem; }
+.foot img { width: 9rem; height: auto; }
+.foot h2 { font-size: 1.15rem; color: #fff; margin-bottom: .6rem; }
+.foot ul { list-style: none; padding: 0; display: grid; gap: .35rem; }
+.foot a { color: #fff; }
+.foot .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.15); font-size: .9375rem; }
+
+/* Sticky call bar on phones, after the hero */
+.dock { display: none; }
+
+@media (max-width: 1100px) {
+  .scale, .route { grid-template-columns: 13rem minmax(0, 1fr); }
+  .route .note { grid-column: 2; padding-top: .3rem; }
+  .scale > :last-child { display: none; }
+}
+@media (max-width: 860px) {
+  .nav > a { display: none; }
+  .menu { display: block; }
+  .menu summary { list-style: none; cursor: pointer; padding: .55rem 1rem; border-radius: 2rem; font-weight: 700; box-shadow: inset 0 0 0 2px var(--ink); }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { background: var(--ink); color: #fff; }
+  .menu-links { position: absolute; right: var(--pad); left: var(--pad); top: calc(100% + .25rem); background: #fff; border-radius: .5rem; box-shadow: 0 12px 30px rgba(15,39,64,.18); padding: .5rem; z-index: 10; display: grid; }
+  .menu-links a { padding: .8rem 1rem; text-decoration: none; font-weight: 700; font-size: 1.125rem; border-radius: .35rem; }
+  .menu-links a:hover, .menu-links a[aria-current] { background: var(--mist); }
+  .hero-head, .day, .split, .reach, .pkg, .two { grid-template-columns: minmax(0, 1fr); }
+  .hero-head { gap: 1rem; }
+  .actions { margin-top: 1.1rem; }
+  .hero-photo img { aspect-ratio: 4 / 3; object-position: 0 50%; }
+  .day figure { max-width: 30rem; }
+  .gear-cols { grid-template-columns: minmax(0, 1fr); }
+  .foot-grid { grid-template-columns: minmax(0, 1fr); }
+  .dock { display: flex; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: var(--night); z-index: 15; transform: translateY(110%); transition: transform .25s ease; }
+  .dock.show { transform: none; }
+  .dock a { flex: 1; min-height: 3rem; }
+  body.has-dock { padding-bottom: 4.5rem; }
+}
+@media (max-width: 640px) {
+  body { font-size: 1.0625rem; }
+  h1 { font-size: 2.25rem; }
+  .brand img { width: 6.25rem; }
+  .brand span { display: none; }
+  .actions .btn { flex: 1 1 100%; }
+  .scale, .route { grid-template-columns: minmax(0, 1fr); }
+  .scale > :first-child { display: none; }
+  .route .name, .route .note { grid-column: 1; }
+  .route .track { margin-top: .4rem; }
+  .route .note { padding-top: .35rem; }
+  .scale .ticks span:nth-child(3n+2), .scale .ticks span:nth-child(3n) { visibility: hidden; }
+  .reach dl { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+  .reach dd { margin-bottom: .6rem; }
+  .wide-photo img { aspect-ratio: 4 / 3; }
+  .hero h1 { font-size: 2.1rem; }
+  .hero .lede { font-size: 1.0625rem; line-height: 1.45; }
+  .hero-photo { margin-top: 1rem; }
+  .hero-photo img { aspect-ratio: 1078 / 572; }
+  .route { padding: .55rem 0; }
+  .route .note { font-size: .9375rem; }
+  .track { height: 1.5rem; }
+  .ruler.clip .route:nth-child(n+6) { display: none; }
+  .ruler.clip .more { display: inline-flex; margin-top: 1rem; }
+  .more { background: transparent; color: #fff; border: 0; font: inherit; cursor: pointer; }
+  th, td { padding: .5rem .35rem; }
+}
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Tuscarora Lodge &amp; Canoe Outfitters. Not affiliated with or endorsed by Tuscarora Lodge &amp; Canoe Outfitters.</p>
+<header class="wrap top">
+  <a class="brand" href="index.html" aria-label="Tuscarora Lodge &amp; Canoe Outfitters, home"><img src="img/logo-240.webp" srcset="img/logo-240.webp 240w, img/logo-480.webp 480w" sizes="120px" width="240" height="114" alt=""><span>Tuscarora Lodge &amp; Canoe Outfitters</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="outfitting.html">Outfitting</a><a href="routes.html">Canoe routes</a><a href="cabins.html">Cabins</a><a href="contact.html" aria-current="page">Plan &amp; contact</a>
+    <a class="call" href="tel:+12183882221">218-388-2221</a>
+    <details class="menu"><summary>Menu</summary><div class="menu-links"><a href="index.html">Home</a><a href="outfitting.html">Outfitting</a><a href="routes.html">Canoe routes</a><a href="cabins.html">Cabins</a><a href="contact.html" aria-current="page">Plan &amp; contact</a><a href="tel:+12183882221">Call 218-388-2221</a></div></details>
+  </nav>
+</header>
+<main id="main">
+
+<div class="wrap page-head">
+  <h1>Plan your trip and reach us</h1>
+  <p class="lede">Not sure what you need for a trip? Overwhelmed by the route possibilities? Call or email. We love helping you plan your Boundary Waters canoe trip.</p>
+</div>
+<section class="wrap" style="padding-top:0">
+  <div class="two">
+    <div class="panel">
+      <h2>Contact</h2>
+      <div class="reach" style="display:block">
+        <dl>
+          <dt>Phone</dt><dd><a href="tel:+12183882221">218-388-2221</a>. Please call between 9&nbsp;a.m. and 7&nbsp;p.m. If we miss your call, leave a message so we can get right back to you.</dd>
+          <dt>Email</dt><dd><a href="mailto:info@tuscaroracanoe.com">info@tuscaroracanoe.com</a></dd>
+          <dt>Address</dt><dd>193 Round Lake Road, Grand Marais, MN 55604</dd>
+        </dl>
+      </div>
+      <div class="actions"><a class="btn btn-amber" href="tel:+12183882221"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 218-388-2221</a><a class="btn btn-line" href="mailto:info@tuscaroracanoe.com?subject=Outfitting%20reservation%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Email a trip request</a></div>
+    </div>
+    <div>
+      <h2>How reservations work</h2>
+      <ol class="howto">
+        <li><strong>Send a reservation request</strong> by email or phone: your dates, group size, where you want to go (BWCAW, Quetico or undecided) and the package you’re after.</li>
+        <li><strong>We email you within 24 hours</strong> with instructions on how to complete your reservation.</li>
+        <li><strong>Your reservation is confirmed</strong> when we receive your deposit payment.</li>
+      </ol>
+      <p class="small">Need a bunkhouse the night before? Include it in your outfitting request, along with breakfast and whether you need a tow on Saganaga Lake.</p>
+    </div>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap two">
+    <div>
+      <h2>Getting here</h2>
+      <p class="sub">An hour’s drive outside of Grand Marais, 47 miles up the Gunflint Trail.</p>
+      <ol class="drive">
+        <li>Drive 110 miles northeast up U.S. Highway 61 (North Shore Drive) from Duluth, MN to Grand Marais, MN.</li>
+        <li>Follow U.S. Highway 61 through Grand Marais and turn left onto Cook County Highway 12 (Gunflint Trail).</li>
+        <li>Drive up the Gunflint Trail for 47 miles and turn left onto Cook County Road 47 (Round Lake Road).</li>
+        <li>Drive one mile on the Round Lake Road to Tuscarora Lodge and Canoe Outfitters.</li>
+      </ol>
+      <h3 style="margin-top:2rem">Flying in</h3>
+      <p class="sub">We can’t help with airport shuttles, so rent a car and enjoy the drive up the North Shore.</p>
+      <table style="margin-top:1rem"><tbody>
+        <tr><th scope="row">Duluth International</th><td>3 hours’ drive</td></tr>
+        <tr><th scope="row">Minneapolis/St. Paul International</th><td>5.5 hours’ drive</td></tr>
+        <tr><th scope="row">Thunder Bay International</th><td>2.5 hours’ drive, crossing the border at Pigeon River (passport needed)</td></tr>
+        <tr><th scope="row">Grand Marais Cook County</th><td>1 hour’s drive; no car rental there</td></tr>
+      </tbody></table>
+    </div>
+    <figure><img src="img/centennial-1024.webp" srcset="img/centennial-640.webp 640w, img/centennial-1024.webp 1024w" sizes="(max-width: 860px) calc(100vw - 2rem), 38rem" width="1024" height="768" alt="Autumn view over a forested valley with lakes from the Centennial Trail" loading="lazy" decoding="async"><figcaption class="cap">Fall colors from the Centennial Trail, half a mile up Round Lake Road.</figcaption></figure>
+  </div>
+</section>
+<section class="wrap">
+  <h2>Questions we hear a lot</h2>
+  <div style="margin-top:1.5rem;max-width:48rem"><details class="faq"><summary>What are your hours?</summary><p>The canoe season starts May 1st and runs through mid-October. The dining hall is open from Fishing Opener until mid September for breakfast; advance meal reservations are requested. Tuscarora cabins are available for rent in the winter as well.</p></details><details class="faq"><summary>What if we arrive after hours?</summary><p>Often our guests arrive late at night. This is no problem, as long as we know that you are coming. We leave signs out and lights on in your bunkhouse or cabin; we just ask that you come in quietly.</p></details><details class="faq"><summary>Can we rent a cabin the night before a canoe trip?</summary><p>We have private bunkhouses for the night before your trip. Our cabins are typically booked Saturday to Saturday during the summer months, with a 3 night minimum.</p></details><details class="faq"><summary>Do you have permits at Tuscarora?</summary><p>Yes, we are a Forest Service issuing station, and we will gladly reserve permits for our outfitting guests. If you reserve your own permit on recreation.gov, list Tuscarora as your issuing station.</p></details><details class="faq"><summary>Can our groups travel together?</summary><p>Forest Service regulations allow a maximum of nine people in any one place in the BWCA: on portages, campsites, or in the water. Larger groups often take entirely different routes, often the same route in reverse.</p></details><details class="faq"><summary>Do you sell fishing licenses or bait?</summary><p>We do not sell fishing licenses; buy your MN fishing license online before you arrive. We sell leeches by the dozen (call for availability in late summer) and have a full line of fishing tackle in our Trading Post.</p></details><details class="faq"><summary>Can we get meals in your dining room?</summary><p>We serve breakfast with advance reservation in our dining room promptly at 7 a.m. Picnics are available for large groups on request. We are not open for evening meals, but can recommend restaurants nearby.</p></details></div>
+</section>
+
+</main>
+<footer class="foot on-dark">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="img/logo-white-240.webp" srcset="img/logo-white-240.webp 240w, img/logo-white-480.webp 480w" sizes="144px" width="240" height="115" alt="Tuscarora Lodge &amp; Canoe Outfitters">
+        <p style="margin-top:1rem">Boundary Waters &amp; Quetico canoe trips and Gunflint Trail cabins.</p>
+      </div>
+      <div>
+        <h2>Reach us</h2>
+        <ul>
+          <li>193 Round Lake Road<br>Grand Marais, MN 55604</li>
+          <li><a href="tel:+12183882221">218-388-2221</a></li>
+          <li><a href="mailto:info@tuscaroracanoe.com">info@tuscaroracanoe.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul><li><a href="index.html">Home</a></li><li><a href="outfitting.html">Outfitting</a></li><li><a href="routes.html">Canoe routes</a></li><li><a href="cabins.html">Cabins</a></li><li><a href="contact.html">Plan &amp; contact</a></li></ul>
+      </div>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Tuscarora Lodge &amp; Canoe Outfitters. Not affiliated with or endorsed by Tuscarora Lodge &amp; Canoe Outfitters. Photos, prices and text are from tuscaroracanoe.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="dock on-dark" aria-label="Contact"><a class="btn btn-amber" href="tel:+12183882221"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call</a><a class="btn btn-line" style="color:#fff" href="mailto:info@tuscaroracanoe.com?subject=Outfitting%20reservation%20request"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Email</a></div>
+<script>
+document.documentElement.classList.add('js');
+(function () {
+  var r = document.querySelector('.ruler');
+  if (r && 'IntersectionObserver' in window) {
+    var o = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { r.classList.add('seen'); o.disconnect(); } }, { threshold: .15 });
+    o.observe(r);
+  } else if (r) { r.classList.add('seen'); }
+  if (r && r.hasAttribute('data-clip')) {
+    r.classList.add('clip');
+    var b = r.querySelector('.more');
+    b.addEventListener('click', function () { r.classList.remove('clip'); });
+  }
+  var d = document.querySelector('.dock'), h = document.querySelector('[data-dock-after]');
+  if (d && h && 'IntersectionObserver' in window) {
+    document.body.classList.add('has-dock');
+    new IntersectionObserver(function (e) { d.classList.toggle('show', !e[0].isIntersecting && e[0].boundingClientRect.top < 0); }).observe(h);
+  }
+})();
+</script>
+</body>
+</html>
