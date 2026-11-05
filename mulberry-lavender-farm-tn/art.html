@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Farm Art, Mulberry Lavender Farm</title>
+<meta name="description" content="Fine art bronze sculptures and oil paintings by Bob Scheelings, capturing soul and spirit of all creatures great and small.">
+<meta name="theme-color" content="#f3f0f6">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/petrona.woff2" crossorigin>
+<style>
+@font-face { font-family: "Petrona"; font-weight: 100 900; font-display: swap; src: url(fonts/petrona.woff2) format("woff2"); }
+@font-face { font-family: "Homemade Apple"; font-weight: 400; font-display: swap; src: url(fonts/homemade-apple.woff2) format("woff2"); }
+
+/* Lavender-grey morning mist, the plum ink of their logo, pasture green, and the Navajo Churro fleece. */
+:root {
+  --mist: #f3f0f6;
+  --mist-2: #e7e1ee;
+  --ink: #2b2230;
+  --plum: #4a274f;
+  --plum-soft: #64506b;
+  --lavender: #8e7ab5;
+  --pasture: #2f4628;
+  --fleece: #ede3cc;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 76rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--mist); color: var(--ink); font: 400 1.0625rem/1.65 "Petrona", Georgia, serif; font-optical-sizing: auto; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--plum); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
+h1, h2, h3 { color: var(--plum); font-weight: 760; line-height: 1.05; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
+p { max-width: 64ch; text-wrap: pretty; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin-inline: auto; padding-inline: var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.demo { background: var(--plum); color: #efe7f2; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .5rem 1rem; }
+
+/* Header */
+.top { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 1rem; max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: .9rem var(--pad); }
+.brand img { height: 3.6rem; width: auto; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-size: 1rem; font-weight: 500; }
+.nav > a:not(.btn) { color: var(--ink); text-decoration: none; padding: .3rem 0; }
+.nav > a:not(.btn):hover, .nav > a[aria-current] { color: var(--plum); text-decoration: underline; text-decoration-color: var(--lavender); text-decoration-thickness: 2px; text-underline-offset: 7px; }
+.menu { display: none; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .7rem 1.35rem; border-radius: 999px; background: var(--plum); color: #fff; font-weight: 640; text-decoration: none; border: 2px solid var(--plum); transition: background-color .15s ease, color .15s ease; }
+.btn:hover { background: #36173b; border-color: #36173b; }
+.btn.ghost { background: transparent; color: var(--plum); }
+.btn.ghost:hover { background: var(--plum); color: #fff; }
+.btn.small { min-height: 2.6rem; padding: .45rem 1.1rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.note { margin-top: 1rem; font-size: .95rem; color: var(--plum-soft); }
+.addr { font-weight: 640; color: var(--plum); overflow-wrap: anywhere; }
+.lede { font-size: clamp(1.1rem, 1.5vw, 1.3rem); margin-top: 1.1rem; }
+
+/* Hero: the words first, then the flock in the lavender */
+.hero { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(2rem, 4vw, 4rem); align-items: center; padding-top: clamp(1rem, 3vw, 2.5rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+.hero h1 { font-size: clamp(3.2rem, 7.4vw, 7rem); font-weight: 800; line-height: .9; letter-spacing: -0.025em; }
+.hero-photo img { width: 100%; border-radius: 6px; aspect-ratio: 6 / 5; object-fit: cover; object-position: 45% 50%; }
+.hero-photo figcaption, figure figcaption { font-size: .9rem; color: var(--plum-soft); margin-top: .55rem; }
+
+/* Everyone on the farm has a job */
+.jobs { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.jobs h2 { max-width: 22ch; }
+.jobs-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(1.5rem, 4vw, 4rem); margin-top: 2rem; align-items: start; }
+.bella img { border-radius: 6px; }
+.chores { border-top: 2px solid var(--plum); }
+.chores > div { display: grid; grid-template-columns: 11rem 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid #cfc4da; }
+.chores dt { font-weight: 720; color: var(--plum); font-size: 1.15rem; }
+.chores dd { max-width: 56ch; }
+
+/* The animals' signed thank-you, names written from large to small */
+.roll-band { background: var(--pasture); color: var(--fleece); padding: clamp(3rem, 7vw, 6rem) 0; }
+.roll-band h2 { color: #fff; font-size: clamp(2rem, 4.4vw, 3.4rem); }
+.roll-intro { margin-top: .6rem; font-size: 1.15rem; color: #d9e0cf; }
+.roll { list-style: none; padding: 0; margin-top: 1.6rem; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: clamp(1rem, 2.2vw, 2rem); row-gap: .1rem; }
+.roll li { font-family: "Homemade Apple", cursive; font-size: calc(var(--s) * clamp(.72rem, 1.45vw, 1.2rem)); line-height: 1.9; color: var(--fleece); }
+.roll li.last { font-family: "Petrona", Georgia, serif; font-size: 1.05rem; color: #d9e0cf; }
+@media (prefers-reduced-motion: no-preference) {
+  .roll.wait li { clip-path: inset(-1em 100% -1em -.5em); }
+  .roll.wait.sign li { animation: write .55s cubic-bezier(.4, 0, .3, 1) calc(var(--i) * 85ms) forwards; }
+  @keyframes write { to { clip-path: inset(-1em -1em -1em -.5em); } }
+}
+
+/* Porch */
+.porch { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-top: clamp(3.5rem, 7vw, 6rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+.porch-photo img { border-radius: 6px; width: 100%; }
+.porch-text p { margin-top: 1rem; }
+.porch-text .btn { margin-top: 1.5rem; }
+blockquote { margin-top: 2.2rem; padding-left: 1.2rem; border-left: 3px solid var(--lavender); }
+blockquote p { font-size: 1.2rem; line-height: 1.5; margin: 0; }
+blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft); }
+
+/* Farm store teaser: one tall jar, two beside it */
+.shop { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.shop-head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; }
+.shop-head p { max-width: 40ch; }
+.goods { list-style: none; padding: 0; margin-top: 2rem; display: grid; grid-template-columns: 7fr 5fr; grid-template-rows: auto auto; gap: 1.25rem; }
+.goods li:first-child { grid-row: span 2; }
+.goods li { position: relative; }
+.goods img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.goods li:first-child img { aspect-ratio: 4 / 3.6; }
+.goods li:not(:first-child) img { aspect-ratio: 16 / 9; }
+.goods span { display: block; margin-top: .45rem; font-weight: 640; color: var(--plum); }
+.more { margin-top: 2rem; }
+
+.find { padding-bottom: clamp(3.5rem, 7vw, 6rem); padding-top: clamp(1rem, 3vw, 2rem); }
+.find p { margin-top: 1rem; font-size: 1.15rem; }
+.sign-off { font-family: "Homemade Apple", cursive; color: var(--plum); font-size: 1.35rem; line-height: 2; margin-top: 1.4rem !important; }
+
+/* Inner pages */
+.page-head { padding-top: clamp(1.2rem, 3vw, 2.5rem); padding-bottom: clamp(2rem, 4vw, 3.5rem); }
+.page-head h1 { font-size: clamp(2.5rem, 5.6vw, 4.8rem); font-weight: 800; line-height: .95; letter-spacing: -0.02em; max-width: 18ch; }
+.animals { margin-top: 1rem; font-size: 1.15rem; color: var(--plum); font-weight: 600; }
+.rooms { display: grid; gap: clamp(2.5rem, 5vw, 4rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+.room { display: grid; grid-template-columns: 3fr 2fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.room img { border-radius: 6px; width: 100%; }
+.room .line { font-family: "Homemade Apple", cursive; color: var(--plum-soft); font-size: 1.05rem; line-height: 2; margin-top: .3rem; }
+.room p:not(.line) { margin-top: .6rem; }
+.room.cottage { grid-template-columns: 1fr; }
+.room.cottage img { aspect-ratio: 21 / 9; object-fit: cover; }
+.room.cottage > div { max-width: 40rem; }
+.house-rules { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.house-rules p { margin-top: 1rem; }
+
+.online { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.online { background: var(--mist-2); border-radius: 6px; padding-block: 1.6rem; max-width: calc(var(--max) + 2 * var(--pad)); }
+.online h2 { font-size: 1.6rem; }
+.online p { margin-top: .5rem; }
+.core p { margin-top: 1.2rem; }
+.core-list { list-style: none; padding: 0; margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: .6rem; }
+.core-list li { border: 2px solid var(--plum); border-radius: 999px; padding: .35rem 1rem; color: var(--plum); font-weight: 600; }
+.goods-full { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; padding-block: clamp(2.5rem, 5vw, 4rem); }
+.goods-full img { border-radius: 6px; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.markets { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.markets > p { margin-top: 1rem; }
+.events { list-style: none; padding: 0; margin-top: 1.4rem; border-top: 1px solid #cfc4da; }
+.events li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid #cfc4da; }
+.events span { font-weight: 700; color: var(--plum); }
+
+.wide { padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.wide img { width: 100%; border-radius: 6px; }
+.wide img { aspect-ratio: 21 / 9; object-fit: cover; }
+.farm-two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-bottom: clamp(3rem, 6vw, 5rem); }
+.farm-two p { margin-top: 1rem; }
+.farm-two img { border-radius: 6px; width: 100%; }
+
+.art-notes { margin-top: 1.2rem; padding-left: 1.2rem; }
+.art-notes li { margin-top: .25rem; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding-bottom: clamp(3rem, 6vw, 5rem); }
+.tile { padding: 0; border: 0; background: #2a2420; border-radius: 6px; overflow: hidden; cursor: zoom-in; display: block; }
+.tile img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 25%; transition: transform .3s ease; }
+.tile:hover img { transform: scale(1.03); }
+.lb { margin: auto; border: 0; padding: 0; background: #1d1720; color: #eee; border-radius: 8px; max-width: min(92vw, 60rem); max-height: 92vh; overflow: auto; }
+.lb::backdrop { background: rgba(20, 12, 24, .82); }
+.lb img { max-height: 78vh; width: auto; margin: 0 auto; }
+.lb p { padding: .7rem 1rem 1rem; font-size: .95rem; }
+.lb-bar { display: flex; justify-content: flex-end; padding: .5rem; }
+.lb-close { font: inherit; background: #fff; color: var(--plum); border: 0; border-radius: 999px; padding: .4rem 1rem; cursor: pointer; font-weight: 640; }
+
+.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding-bottom: clamp(2.5rem, 5vw, 4rem); }
+.contact-grid > div { border-top: 2px solid var(--plum); padding-top: 1rem; }
+.contact-grid h2 { font-size: 1.35rem; }
+.contact-grid p, .contact-grid address { margin-top: .5rem; font-style: normal; overflow-wrap: anywhere; }
+.small { font-size: .95rem; }
+
+/* Footer */
+.foot { background: var(--plum); color: #efe7f2; padding: 3rem 0 6rem; margin-top: 1rem; }
+.foot a { color: #fff; }
+.foot-grid { display: grid; grid-template-columns: 1.2fr 1fr 1.3fr 1.5fr; gap: 2rem; align-items: start; }
+.foot-logo { height: 3.4rem; width: auto; filter: brightness(0) invert(1); }
+.sun { margin-top: .8rem; font-size: .95rem; }
+.foot address { font-style: normal; }
+.foot-contact span { font-size: .85rem; color: #d6c9dc; }
+.pay { font-size: .95rem; }
+.legal { margin-top: 2.5rem; font-size: .82rem; color: #d6c9dc; }
+
+.dock { display: none; }
+
+@media (max-width: 1100px) {
+  .nav { gap: 1.1rem; font-size: .95rem; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .brand img { height: 2.6rem; }
+  .nav > a { display: none; }
+  .menu { display: block; }
+  .menu summary { list-style: none; cursor: pointer; border: 2px solid var(--plum); color: var(--plum); border-radius: 999px; padding: .45rem 1.1rem; font-weight: 640; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { background: var(--plum); color: #fff; }
+  .menu-panel { position: absolute; left: var(--pad); right: var(--pad); top: 100%; z-index: 15; background: #fff; border-radius: 8px; box-shadow: 0 12px 30px rgba(43, 34, 48, .18); padding: .6rem 1rem 1rem; display: grid; }
+  .menu-panel a:not(.btn) { color: var(--ink); text-decoration: none; padding: .75rem 0; border-bottom: 1px solid var(--mist-2); font-size: 1.1rem; }
+  .menu-panel a[aria-current] { color: var(--plum); font-weight: 700; }
+  .menu-panel .btn { margin-top: .9rem; }
+
+  .hero { grid-template-columns: 1fr; gap: 1.6rem; padding-top: .6rem; }
+  .hero-photo img { aspect-ratio: auto; }
+  .cta-row .btn.ghost { flex: 1 1 0; padding-inline: .8rem; }
+  .hero h1 { font-size: clamp(3rem, 13vw, 4.4rem); }
+  .lede { margin-top: .8rem; }
+  .cta-row { margin-top: 1.2rem; }
+  .cta-row .btn:first-child { flex: 1 1 100%; }
+  .cta-row .btn.ghost { min-height: 2.8rem; }
+  .jobs-grid, .porch, .farm-two, .room, .goods-full { grid-template-columns: 1fr; }
+  .chores > div { grid-template-columns: 1fr; gap: .2rem; }
+  .goods { grid-template-columns: 1fr; }
+  .goods li:first-child { grid-row: auto; }
+  .goods li img, .goods li:first-child img { aspect-ratio: 4 / 3; }
+  .events li { grid-template-columns: 1fr; gap: 0; }
+  .room.cottage img { aspect-ratio: 4 / 3; }
+  .wide img { aspect-ratio: 3 / 2; }
+
+  .dock { display: flex; gap: .6rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 12; padding: .65rem 1rem calc(.65rem + env(safe-area-inset-bottom)); background: rgba(243, 240, 246, .97); border-top: 1px solid #cfc4da; transform: translateY(110%); transition: transform .25s ease; }
+  .dock.on { transform: none; }
+  .dock .btn { flex: 1; min-height: 2.9rem; }
+  .foot { padding-bottom: 6.5rem; }
+}
+
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .contact-grid, .foot-grid { grid-template-columns: 1fr; }
+  .roll { column-gap: .9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Mulberry Lavender Farm and B&amp;B. Not affiliated with or endorsed by Mulberry Lavender Farm and B&amp;B.</div>
+<header class="top">
+  <a class="brand" href="index.html"><img src="img/logo.webp" width="380" height="136" alt="Mulberry Lavender Farm, home"></a>
+  <nav class="nav" aria-label="Main">
+    <a href="stay.html">Stay</a><a href="store.html">Farm store</a><a href="farm.html">The farm</a><a href="art.html" aria-current="page">Farm art</a><a href="contact.html">Contact</a>
+    <a class="btn small" href="tel:+19316322919">Call or text</a>
+    <details class="menu">
+      <summary>Menu</summary>
+      <div class="menu-panel">
+        <a href="index.html">Home</a><a href="stay.html">Stay</a><a href="store.html">Farm store</a><a href="farm.html">The farm</a><a href="art.html" aria-current="page">Farm art</a><a href="contact.html">Contact</a>
+        <a class="btn" href="tel:+19316322919">Call or text (931) 632-2919</a>
+      </div>
+    </details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="page-head wrap" data-hero>
+  <h1>Farm Art</h1>
+  <p class="lede">Fine art bronze sculptures and oil paintings by Bob Scheelings, capturing soul and spirit of all creatures great and small.</p>
+  <ul class="art-notes">
+    <li>Pre-orders are taken on limited editions.</li>
+    <li>Paintings may also be available as giclée on canvas.</li>
+    <li>Inquire about custom or commemorative sculptures and paintings.</li>
+  </ul>
+  <div class="cta-row">
+      <a class="btn" href="tel:+19316322919">Call or text (931) 632-2919</a>
+      <a class="btn ghost" href="mailto:anita@mulberrylavender.com">Email Anita</a>
+    </div>
+</section>
+<section class="gallery wrap" aria-label="Sculptures">
+  <button type="button" class="tile" data-full="img/art-cutting-960.webp" data-w="960" data-h="720" aria-label="Enlarge: Bronze of a rider on a horse in a sliding stop"><img src="img/art-cutting-960.webp" srcset="img/art-cutting-480.webp 480w, img/art-cutting-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="720" alt="Bronze of a rider on a horse in a sliding stop" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-team-500.webp" data-w="500" data-h="375" aria-label="Enlarge: Bronze busts of two draft horses in harness"><img src="img/art-team-500.webp" srcset="img/art-team-480.webp 480w, img/art-team-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="375" alt="Bronze busts of two draft horses in harness" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-gift-824.webp" data-w="824" data-h="600" aria-label="Enlarge: Bronze of a woman holding a butterfly, against the sky"><img src="img/art-gift-824.webp" srcset="img/art-gift-480.webp 480w, img/art-gift-824.webp 824w" sizes="(max-width: 1100px) 46vw, 24rem" width="824" height="600" alt="Bronze of a woman holding a butterfly, against the sky" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-rattler-960.webp" data-w="960" data-h="720" aria-label="Enlarge: Bronze rattlesnake coiled beside a prickly pear"><img src="img/art-rattler-960.webp" srcset="img/art-rattler-480.webp 480w, img/art-rattler-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="720" alt="Bronze rattlesnake coiled beside a prickly pear" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-shark-960.webp" data-w="960" data-h="640" aria-label="Enlarge: Bronze tiger shark, close up"><img src="img/art-shark-960.webp" srcset="img/art-shark-480.webp 480w, img/art-shark-960.webp 960w" sizes="(max-width: 1100px) 46vw, 24rem" width="960" height="640" alt="Bronze tiger shark, close up" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-lion-500.webp" data-w="500" data-h="667" aria-label="Enlarge: Bronze bust of a snarling mountain lion"><img src="img/art-lion-500.webp" srcset="img/art-lion-480.webp 480w, img/art-lion-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="667" alt="Bronze bust of a snarling mountain lion" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-hand-825.webp" data-w="825" data-h="600" aria-label="Enlarge: Bronze hand holding a butterfly among flowers"><img src="img/art-hand-825.webp" srcset="img/art-hand-480.webp 480w, img/art-hand-825.webp 825w" sizes="(max-width: 1100px) 46vw, 24rem" width="825" height="600" alt="Bronze hand holding a butterfly among flowers" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-rooster-640.webp" data-w="640" data-h="960" aria-label="Enlarge: Painted bronze rooster head"><img src="img/art-rooster-640.webp" srcset="img/art-rooster-480.webp 480w, img/art-rooster-640.webp 640w" sizes="(max-width: 1100px) 46vw, 24rem" width="640" height="960" alt="Painted bronze rooster head" loading="lazy" decoding="async"></button>
+  <button type="button" class="tile" data-full="img/art-horse-500.webp" data-w="500" data-h="511" aria-label="Enlarge: Bronze horse head bust on a round base"><img src="img/art-horse-500.webp" srcset="img/art-horse-480.webp 480w, img/art-horse-500.webp 500w" sizes="(max-width: 1100px) 46vw, 24rem" width="500" height="511" alt="Bronze horse head bust on a round base" loading="lazy" decoding="async"></button>
+</section>
+<dialog class="lb" aria-label="Sculpture">
+  <div class="lb-bar"><button type="button" class="lb-close">Close</button></div>
+  <img src="img/art-cutting-960.webp" width="960" height="720" alt="">
+  <p></p>
+</dialog>
+
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <img class="foot-logo" src="img/logo.webp" width="380" height="136" alt="Mulberry Lavender Farm" loading="lazy">
+      <p class="sun">Powered by Tennessee Sunshine</p>
+    </div>
+    <address>
+      9 Back Street<br>Mulberry, Tennessee 37359
+    </address>
+    <div class="foot-contact">
+      <a href="tel:+19316322919">(931) 632-2919</a> <span>call or text</span><br>
+      <a href="tel:+19314388875">(931) 438-8875</a> <span>landline, no text</span><br>
+      <a href="mailto:anita@mulberrylavender.com">anita@mulberrylavender.com</a>
+    </div>
+    <p class="pay">We accept cash, checks, credit card, and crypto. Gift cards can be applied in the Farm Store or in the Farm Stay.</p>
+  </div>
+  <p class="legal wrap">Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Mulberry Lavender Farm and B&amp;B. Text and photos come from the farm’s public website; online booking and the online store are shown here but not linked. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+</footer>
+<div class="dock" aria-hidden="true">
+  <a class="btn" href="tel:+19316322919" tabindex="-1">Call or text</a>
+  <a class="btn ghost" href="mailto:anita@mulberrylavender.com" tabindex="-1">Email Anita</a>
+</div>
+<script>
+(function () {
+  var dock = document.querySelector('.dock'), hero = document.querySelector('[data-hero]');
+  if (dock && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      var show = !e[0].isIntersecting;
+      dock.classList.toggle('on', show);
+      dock.setAttribute('aria-hidden', String(!show));
+      dock.querySelectorAll('a').forEach(function (a) { a.tabIndex = show ? 0 : -1; });
+    }).observe(hero);
+  }
+  var roll = document.querySelector('.roll');
+  if (roll && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    roll.classList.add('wait');
+    var io = new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { roll.classList.add('sign'); io.disconnect(); }
+    }, { threshold: 0.25 });
+    io.observe(roll);
+  }
+  var dlg = document.querySelector('dialog.lb');
+  if (dlg) {
+    var big = dlg.querySelector('img'), cap = dlg.querySelector('p');
+    document.querySelectorAll('[data-full]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var t = b.querySelector('img');
+        big.src = b.dataset.full; big.width = +b.dataset.w; big.height = +b.dataset.h; big.alt = t.alt; cap.textContent = t.alt;
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.querySelector('.lb-close').addEventListener('click', function () { dlg.close(); });
+  }
+})();
+</script>
+</body>
+</html>
