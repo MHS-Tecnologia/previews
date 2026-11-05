@@ -20,10 +20,20 @@
   // Início: o botão do herói. Páginas internas: o primeiro botão da página.
   var cta = document.getElementById('cta') || document.querySelector('main .btn')
   if (fixo && cta && 'IntersectionObserver' in window) {
+    var passou = false
+    var cobertos = new Set()
+    var atualiza = function () { fixo.classList.toggle('ver-fixo', passou && cobertos.size === 0) }
     new IntersectionObserver(function (es) {
       var e = es[0]
-      fixo.classList.toggle('ver-fixo', !e.isIntersecting && e.boundingClientRect.top < 0)
+      passou = !e.isIntersecting && e.boundingClientRect.top < 0
+      atualiza()
     }).observe(cta)
+    // Some o botão fixo quando ele cobriria uma legenda, outro botão ou o rodapé.
+    var faixa = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) cobertos.add(e.target); else cobertos.delete(e.target) })
+      atualiza()
+    }, { rootMargin: '-' + Math.max(window.innerHeight - 90, 0) + 'px 0px 0px 0px' })
+    document.querySelectorAll('figcaption, .leg, .rodape, main .btn').forEach(function (el) { faixa.observe(el) })
   }
 
   var lb = document.querySelector('.lb')
