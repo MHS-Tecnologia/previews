@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lodging, Sugarloaf Inn</title>
+<meta name="description" content="Queen, Double Queen, King and Loft rooms at Sugarloaf Inn, ski-in/ski-out at the base of Sugarloaf Mountain.">
+<meta name="theme-color" content="#f3f6f7">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rubik.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/newsreader.woff2" crossorigin>
+<style>
+@font-face { font-family: "Rubik"; font-weight: 300 900; font-display: swap; src: url(fonts/rubik.woff2) format("woff2"); }
+@font-face { font-family: "Newsreader"; font-weight: 400 600; font-display: swap; src: url(fonts/newsreader.woff2) format("woff2"); }
+@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/newsreader-italic.woff2) format("woff2"); }
+
+/* Their logo's mustard and slate, their favicon's navy, the pine the logo was
+   drawn on, cool snow for the page and old card stock for postcard backs. */
+:root {
+  --snow: #f3f6f7;
+  --snow-2: #e4eaed;
+  --ink: #1b2a36;
+  --navy: #26435c;
+  --navy-2: #1d3549;
+  --mustard: #e1a724;
+  --mustard-2: #c48d12;
+  --pine: #3f6646;
+  --pine-2: #34573b;
+  --paper: #efe7d4;
+  --slate: #4a5660;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 76rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--snow); color: var(--ink); font: 400 1.125rem/1.6 "Newsreader", Georgia, serif; font-optical-sizing: auto; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--mustard-2); outline-offset: 3px; }
+h1, h2, h3, .sans { font-family: "Rubik", system-ui, sans-serif; }
+h1, h2, h3 { line-height: 1.02; letter-spacing: -0.02em; text-wrap: balance; }
+h1 { font-weight: 800; font-size: clamp(2.6rem, 6.4vw, 5.1rem); letter-spacing: -0.035em; }
+h2 { font-weight: 750; font-size: clamp(2rem, 4.2vw, 3.25rem); }
+h3 { font-weight: 650; font-size: 1.35rem; line-height: 1.15; letter-spacing: -0.01em; }
+p { max-width: 38em; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.num { font-variant-numeric: tabular-nums; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 30; }
+.skip:focus { left: .5rem; }
+[id] { scroll-margin-top: 1rem; }
+
+.demo { background: var(--navy-2); color: #cfdae3; font: 400 .8125rem/1.4 "Rubik", system-ui, sans-serif; text-align: center; padding: .5rem 1rem; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .8rem; padding-bottom: .8rem; position: relative; }
+.brand img { height: 3rem; width: auto; }
+.nav { display: flex; align-items: center; gap: 1.75rem; font: 500 1rem/1 "Rubik", system-ui, sans-serif; }
+.nav > a { text-decoration: none; padding: .4rem 0; }
+.nav > a:hover, .nav > a[aria-current] { text-decoration: underline; text-decoration-thickness: 3px; text-decoration-color: var(--mustard); text-underline-offset: 7px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: 600 1.0625rem/1 "Rubik", system-ui, sans-serif; text-decoration: none; padding: 1rem 1.4rem; border-radius: 999px; background: var(--mustard); color: var(--ink); box-shadow: inset 0 -3px 0 var(--mustard-2); transition: background-color .15s; }
+.btn:hover { background: #ebb534; }
+.btn.ghost { background: transparent; box-shadow: inset 0 0 0 2px var(--navy); color: var(--navy); }
+.btn.ghost:hover { background: var(--snow-2); }
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+.nav .btn { padding: .75rem 1.1rem; font-size: .95rem; }
+.menu { display: none; }
+.menu summary { list-style: none; cursor: pointer; font: 600 1rem/1 "Rubik", system-ui, sans-serif; padding: .8rem 1rem; border-radius: 999px; box-shadow: inset 0 0 0 2px var(--navy); color: var(--navy); }
+.menu summary::-webkit-details-marker { display: none; }
+.menu .panel { position: absolute; right: var(--pad); left: var(--pad); top: calc(100% - .2rem); background: #fff; border-radius: 1rem; box-shadow: 0 18px 40px rgba(27,42,54,.18); padding: .5rem; z-index: 20; display: grid; }
+.menu .panel a { padding: .9rem 1rem; font: 500 1.1rem/1.2 "Rubik", system-ui, sans-serif; text-decoration: none; border-radius: .6rem; }
+.menu .panel a:hover { background: var(--snow); }
+.menu .panel a[aria-current] { color: var(--pine); }
+
+/* Home hero: headline and the Inn at sunset, the mountain glowing behind it. */
+.hero { padding-top: clamp(1.5rem, 4vw, 3rem); }
+.hero .intro { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 1rem 3rem; align-items: end; }
+.hero h1 { color: var(--navy); }
+.hero .lede { font-size: 1.25rem; line-height: 1.5; color: var(--slate); margin-bottom: 1.25rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+.hero figure { margin-top: clamp(1.25rem, 3vw, 2.25rem); }
+.hero figure img { width: 100%; border-radius: 1.25rem; aspect-ratio: 2.55; object-fit: cover; object-position: 50% 78%; }
+.hero figcaption, .cap { font: 400 .9rem/1.4 "Rubik", system-ui, sans-serif; color: var(--slate); margin-top: .6rem; }
+
+/* The postcard rail: their own collection, 1959 to 1977, on the pine of their logo. */
+.cards { background: var(--pine); color: #f4f2ea; margin-top: clamp(3rem, 7vw, 5.5rem); padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem); }
+.cards .head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1rem 2rem; }
+.cards .head p { color: #dfe7dc; font-size: 1.15rem; margin-top: .75rem; }
+.cards h2 { color: #fff; }
+.ctrl { display: flex; gap: .5rem; }
+.ctrl button { width: 3rem; height: 3rem; border-radius: 50%; border: 0; background: #f4f2ea; color: var(--pine-2); cursor: pointer; display: grid; place-items: center; }
+.ctrl button:hover { background: #fff; }
+.ctrl button:disabled { opacity: .35; cursor: default; }
+.ctrl svg { width: 1.3rem; height: 1.3rem; }
+.rail { list-style: none; display: flex; gap: 0; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4.5rem max(var(--pad), calc((100vw - var(--max)) / 2)) 1rem; scroll-padding-inline: max(var(--pad), calc((100vw - var(--max)) / 2)); scrollbar-width: thin; scrollbar-color: #a9bfa9 transparent; }
+.pc { flex: none; width: min(25rem, 82vw); padding-right: 1.5rem; scroll-snap-align: start; position: relative; }
+.pc:last-child { padding-right: 0; }
+/* The year line: one continuous rule, a tick per card. */
+.pc::before { content: ""; position: absolute; left: 0; right: 0; top: -1.6rem; border-top: 2px solid #8fae90; }
+.pc:last-child::before { right: auto; width: 1rem; }
+.yr { position: absolute; top: -3.3rem; left: 0; height: 1.5rem; display: flex; align-items: center; gap: .45rem; font: 700 1rem/1 "Rubik", system-ui, sans-serif; color: #fff; background: var(--pine); padding-right: .5rem; }
+.pc .yr::after { content: ""; position: absolute; left: 0; top: 100%; width: 2px; height: .65rem; background: #fff; }
+.flag { font: 600 .78rem/1 "Rubik", system-ui, sans-serif; background: var(--mustard); color: var(--ink); padding: .32rem .55rem; border-radius: 999px; }
+.card { display: block; width: 100%; aspect-ratio: 817 / 515; border: 0; padding: 0; background: none; cursor: pointer; perspective: 1400px; color: inherit; font: inherit; text-align: left; }
+.card .in { position: relative; display: block; width: 100%; height: 100%; transition: transform .6s cubic-bezier(.3,.7,.2,1); transform-style: preserve-3d; }
+.card[aria-pressed="true"] .in { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; border-radius: .35rem; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 0 10px 24px rgba(10,30,15,.35); }
+.front { background: #fff; padding: 3.5%; }
+.front img { width: 100%; height: 100%; object-fit: cover; border-radius: 1px; }
+.back { transform: rotateY(180deg); background: var(--paper); color: #3b3326; display: grid; grid-template-columns: 1.15fr 1px .85fr; gap: 0 1rem; padding: 1rem 1rem 1.1rem 1.1rem; }
+.back .msg { font: italic 400 clamp(.95rem, 2.6vw, 1.08rem)/1.38 "Newsreader", Georgia, serif; align-self: center; }
+.back .msg::before { content: attr(data-cap); }
+.back .rule { background: #b9ab8c; }
+.back .addr { display: grid; grid-template-rows: auto 1fr; }
+.stamp { justify-self: end; width: 4.2rem; height: 4.9rem; border: 2px dashed #a8987a; display: grid; place-items: center; font: 700 1.05rem/1 "Rubik", system-ui, sans-serif; color: var(--pine-2); }
+.lines { align-self: end; display: grid; gap: 1.15rem; padding-bottom: .4rem; }
+.lines i { display: block; border-top: 1px solid #b9ab8c; }
+.pc h3 { font-size: 1.1rem; margin-top: 1rem; color: #fff; }
+.pc .turn { font: 400 .875rem/1.3 "Rubik", system-ui, sans-serif; color: #cfdccc; margin-top: .25rem; }
+.cards .foot { margin-top: 1.25rem; font: 400 .95rem/1.4 "Rubik", system-ui, sans-serif; color: #dfe7dc; }
+.cards .foot a { color: #fff; text-decoration-color: var(--mustard); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+
+/* Rooms */
+.sec { padding: clamp(3.5rem, 8vw, 6rem) 0 0; }
+.rooms { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 2rem 3.5rem; align-items: start; }
+.rooms .lead { color: var(--slate); margin-top: .9rem; font-size: 1.15rem; }
+.roomlist { list-style: none; padding: 0; margin-top: 1.75rem; border-top: 2px solid var(--navy); }
+.roomlist li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .2rem 1rem; padding: 1rem 0; border-bottom: 1px solid #c9d3d9; }
+.roomlist h3 { font-size: 1.25rem; color: var(--navy); }
+.roomlist .sl { font: 600 .95rem/1.3 "Rubik", system-ui, sans-serif; color: var(--pine); white-space: nowrap; align-self: center; }
+.roomlist p { grid-column: 1 / -1; color: var(--slate); font-size: 1rem; }
+.every { margin-top: 1.25rem; font-size: 1rem; color: var(--slate); }
+.every b { color: var(--ink); font-weight: 600; }
+.rooms figure { position: sticky; top: 1.5rem; }
+.rooms figure img { border-radius: 1rem; width: 100%; }
+.more { display: inline-block; margin-top: 1.25rem; font: 600 1.05rem/1.2 "Rubik", system-ui, sans-serif; color: var(--navy); text-decoration-color: var(--mustard); text-decoration-thickness: 3px; text-underline-offset: 6px; }
+
+/* Out the door */
+.door { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); gap: 2rem 3.5rem; align-items: center; }
+.door figure img { border-radius: 1rem; width: 100%; }
+.door .facts { list-style: none; padding: 0; margin-top: 1.5rem; display: grid; gap: 1.25rem; }
+.door .facts h3 { color: var(--navy); margin-bottom: .2rem; }
+.door .facts p { color: var(--slate); font-size: 1.05rem; }
+
+/* Contact band */
+.call { background: var(--navy); color: #e9eff3; margin-top: clamp(3.5rem, 8vw, 6rem); padding: clamp(3rem, 6vw, 4.5rem) 0; }
+.call .g { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem 3rem; align-items: end; }
+.call h2 { color: #fff; }
+.call p { color: #c9d6df; margin-top: .75rem; font-size: 1.15rem; }
+.call .btn.ghost { box-shadow: inset 0 0 0 2px #c9d6df; color: #fff; }
+.call .btn.ghost:hover { background: var(--navy-2); }
+.call address { font-style: normal; margin-top: 1.25rem; font: 400 1rem/1.5 "Rubik", system-ui, sans-serif; color: #c9d6df; }
+
+/* Inner pages */
+.page-head { padding: clamp(2rem, 5vw, 3.5rem) 0 0; }
+.page-head h1 { color: var(--navy); font-size: clamp(2.4rem, 6vw, 4.5rem); }
+.page-head p { color: var(--slate); font-size: 1.25rem; margin-top: 1rem; }
+.prose p + p { margin-top: 1rem; }
+.prose { font-size: 1.2rem; line-height: 1.65; }
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3.5rem; align-items: start; }
+.roomgrid { display: grid; gap: clamp(2.5rem, 5vw, 4rem); margin-top: 2.5rem; }
+.room { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem 3rem; align-items: center; padding-top: 2rem; border-top: 2px solid var(--navy); }
+.room h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--navy); }
+.room dl { display: grid; grid-template-columns: auto 1fr; gap: .35rem 1.25rem; margin-top: 1.1rem; font: 400 1rem/1.4 "Rubik", system-ui, sans-serif; }
+.room dt { color: var(--slate); }
+.room dd { margin: 0; font-weight: 500; }
+.room p { color: var(--slate); margin-top: 1rem; }
+.room figure img { border-radius: 1rem; width: 100%; }
+.room.noimg { grid-template-columns: minmax(0, 1fr); }
+.room.noimg > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 3rem; align-items: start; }
+.room.noimg > div > h2 { grid-column: 1; }
+.room.noimg > div > dl { grid-column: 1; }
+.room.noimg > div > p { grid-column: 2; grid-row: 1 / span 2; margin-top: .3rem; }
+.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+.pair img { border-radius: 1rem; width: 100%; }
+.names { list-style: none; padding: 0; columns: 2; column-gap: 2.5rem; margin-top: 1.25rem; font: 500 1.05rem/1.3 "Rubik", system-ui, sans-serif; }
+.names li { padding: .7rem 0; border-bottom: 1px solid #c9d3d9; break-inside: avoid; }
+.box { background: #fff; border-radius: 1rem; padding: clamp(1.25rem, 3vw, 2rem); }
+.faq { margin-top: 1.5rem; border-top: 2px solid var(--navy); }
+.faq details { border-bottom: 1px solid #c9d3d9; }
+.faq summary { cursor: pointer; padding: 1.1rem 2.5rem 1.1rem 0; font: 600 1.1rem/1.3 "Rubik", system-ui, sans-serif; color: var(--navy); list-style: none; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: .25rem; top: .85rem; font-size: 1.6rem; font-weight: 400; color: var(--pine); }
+.faq details[open] summary::after { content: "–"; }
+.faq details > div { padding: 0 0 1.2rem; color: var(--slate); }
+.faq ul { margin-top: .5rem; padding-left: 1.2rem; }
+.story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3.5rem; align-items: center; }
+.story figure img { border-radius: .35rem; width: 100%; box-shadow: 0 10px 24px rgba(10,30,15,.18); background: #fff; padding: 3%; }
+.pcgrid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem 2.5rem; margin-top: 2.5rem; }
+.pcgrid img { width: 100%; background: #fff; padding: 3%; border-radius: .3rem; box-shadow: 0 8px 20px rgba(27,42,54,.14); }
+.pcgrid h3 { margin-top: 1rem; color: var(--navy); }
+.pcgrid h3 span { color: var(--pine); font-weight: 500; margin-left: .35rem; }
+.pcgrid blockquote { margin-top: .4rem; font-style: italic; color: var(--slate); font-size: 1.05rem; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; border-top: 2px solid var(--navy); }
+.stats div { padding-top: 1rem; }
+.stats b { display: block; font: 750 clamp(2rem, 4vw, 3rem)/1 "Rubik", system-ui, sans-serif; color: var(--navy); letter-spacing: -0.03em; }
+.stats span { font: 400 1rem/1.3 "Rubik", system-ui, sans-serif; color: var(--slate); }
+.acts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; margin-top: 1.5rem; }
+.acts h3 { color: var(--navy); }
+.acts p { color: var(--slate); margin-top: .4rem; font-size: 1.05rem; }
+.hikes { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font: 400 1rem/1.4 "Rubik", system-ui, sans-serif; }
+.hikes th, .hikes td { text-align: left; padding: .85rem 1rem .85rem 0; border-bottom: 1px solid #c9d3d9; vertical-align: top; }
+.hikes thead th { border-bottom: 2px solid var(--navy); color: var(--slate); font-weight: 500; }
+.hikes tbody th { font-weight: 600; color: var(--navy); }
+.note { margin-top: 1.25rem; font: 400 .95rem/1.4 "Rubik", system-ui, sans-serif; color: var(--slate); }
+.wide img { border-radius: 1rem; width: 100%; }
+.ways { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; margin-top: 1.5rem; }
+.ways h3 { color: var(--navy); }
+.ways p { color: var(--slate); margin-top: .5rem; }
+.big { font: 700 clamp(1.6rem, 4vw, 2.4rem)/1.1 "Rubik", system-ui, sans-serif; letter-spacing: -0.02em; color: var(--navy); text-decoration-color: var(--mustard); text-decoration-thickness: 4px; text-underline-offset: 8px; display: inline-block; margin-top: .3rem; }
+.k { font: 500 1rem/1.3 "Rubik", system-ui, sans-serif; color: var(--slate); margin-top: 1.75rem; }
+
+/* Footer */
+footer { background: var(--ink); color: #aebbc5; font: 400 .95rem/1.55 "Rubik", system-ui, sans-serif; padding: 3rem 0 6rem; }
+main > :last-child:not(.call) { margin-bottom: clamp(3.5rem, 8vw, 6rem); }
+footer .cols { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; }
+footer h2 { font-size: 1.4rem; color: #fff; }
+footer address { font-style: normal; margin-top: .5rem; }
+footer ul { list-style: none; padding: 0; display: grid; gap: .3rem; align-content: start; }
+footer a { color: #fff; text-decoration-color: #5d6b76; text-underline-offset: 3px; }
+footer a:hover { text-decoration-color: var(--mustard); }
+footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid #34434f; font-size: .875rem; max-width: none; }
+
+/* Sticky call bar on phones, after the first screen */
+.dock { position: fixed; left: .75rem; right: .75rem; bottom: .75rem; z-index: 15; display: none; gap: .5rem; transform: translateY(150%); transition: transform .25s; }
+.dock.on { transform: none; }
+.dock .btn { flex: 1; padding: .95rem .5rem; }
+.dock .btn.ghost { background: #fff; }
+
+@media (max-width: 960px) {
+  .nav > a { display: none; }
+  .menu { display: block; }
+  .hero .intro, .rooms, .door, .call .g, .split, .room, .story, .room.noimg > div { grid-template-columns: minmax(0, 1fr); }
+  .room.noimg > div > p { grid-column: 1; grid-row: auto; margin-top: 1rem; }
+  .door figure { order: 2; }
+  footer .cols { grid-template-columns: minmax(0, 1fr); }
+  .dock { display: flex; }
+}
+@media (max-width: 640px) {
+  body { font-size: 1.0625rem; }
+  .brand img { height: 2.5rem; }
+  .nav .btn { display: none; }
+  .hero .lede { font-size: 1.1rem; margin-bottom: 1rem; }
+  .hero figure img { aspect-ratio: 4 / 3; border-radius: .9rem; }
+  .actions .btn { flex: 1 1 100%; }
+  .pcgrid, .acts, .ways, .names, .pair { grid-template-columns: minmax(0, 1fr); columns: 1; }
+  .stats { grid-template-columns: minmax(0, 1fr); }
+  .back { grid-template-columns: minmax(0, 1fr) 1px 3.4rem; gap: 0 .7rem; padding: .7rem .75rem .7rem .85rem; }
+  .back .msg { font-size: .84rem; line-height: 1.28; }
+  .stamp { width: 3.3rem; height: 3.9rem; font-size: .9rem; }
+  .lines { display: none; }
+  .hikes thead { display: none; }
+  .hikes tr { display: grid; grid-template-columns: 1fr 1fr; padding: .8rem 0; border-bottom: 1px solid #c9d3d9; }
+  .hikes th, .hikes td { border: 0; padding: .15rem 0; }
+  .hikes tbody th { grid-column: 1 / -1; }
+  .hikes td:last-child { grid-column: 1 / -1; color: var(--slate); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card .in { transition: none; }
+  .dock { transition: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Sugarloaf Inn. Not affiliated with or endorsed by Sugarloaf Inn.</div>
+<header class="wrap top">
+  <a class="brand" href="index.html" aria-label="Sugarloaf Inn, home"><img src="img/logo.webp" width="360" height="207" alt="Sugarloaf Inn"></a>
+  <nav class="nav" aria-label="Main">
+    <a href="lodging.html" aria-current="page">Lodging</a><a href="history.html">History</a><a href="mountain.html">The Mountain</a><a href="contact.html">Contact</a>
+    <a class="btn" href="tel:+12073879711"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span class="num">207-387-9711</span></a>
+    <details class="menu">
+      <summary>Menu</summary>
+      <div class="panel">
+        <a href="index.html">Home</a>
+        <a href="lodging.html" aria-current="page">Lodging</a><a href="history.html">History</a><a href="mountain.html">The Mountain</a><a href="contact.html">Contact</a>
+        <a href="tel:+12073879711">Call <span class="num">207-387-9711</span></a>
+      </div>
+    </details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Our lodging</h1>
+    <p>Ski-in/ski-out rooms for couples, families and groups, with mountain views, private ski lockers and the slopes outside. Check in 3pm, check out 11am.</p>
+  </div>
+</section>
+<section class="wrap roomgrid" aria-label="Room types">
+<article class="room noimg">
+    <div>
+      <h2>Queen Room</h2>
+      <dl><dt>Sleeps</dt><dd>2</dd><dt>Floor</dt><dd>2nd floor, stairs only</dd><dt>Beds</dt><dd>One queen bed</dd></dl>
+      <p>Comfortable, spacious, and well lit, with large windows that offer stunning views of Sugarloaf and the Bigelow Mountain Range. Private bathroom, slope-side ski locker or secure bike storage, housekeeping on request.</p>
+    </div>
+    
+  </article>
+<article class="room noimg">
+    <div>
+      <h2>Double Queen Room</h2>
+      <dl><dt>Sleeps</dt><dd>4</dd><dt>Floor</dt><dd>3rd floor, stairs only</dd><dt>Beds</dt><dd>Two queen beds</dd></dl>
+      <p>Two queen beds and large windows with great views of the Bigelow Mountain Range. Private bathroom, slope-side ski locker or secure bike storage, housekeeping on request.</p>
+    </div>
+    
+  </article>
+<article class="room noimg">
+    <div>
+      <h2>King Room</h2>
+      <dl><dt>Sleeps</dt><dd>2</dd><dt>Floor</dt><dd>2nd floor, stairs only</dd><dt>Beds</dt><dd>One king bed</dd></dl>
+      <p>Spacious and cozy, with one king bed and great views of the Bigelow Mountain Range. Private bathroom, slope-side ski locker or secure bike storage, housekeeping on request.</p>
+    </div>
+    
+  </article>
+<article class="room">
+    <div>
+      <h2>Loft Rooms</h2>
+      <dl><dt>Sleeps</dt><dd>5</dd><dt>Floor</dt><dd>3rd floor, stairs only</dd><dt>Beds</dt><dd>Queen bed loft, plus a full/twin trundle, queen sofa bed or couch downstairs</dd></dl>
+      <p>An upstairs loft and a downstairs sleeping and living area. Both floors have large windows looking out to Sugarloaf Mountain. Private bathroom, slope-side ski locker or secure bike storage, housekeeping on request.</p>
+    </div>
+    <figure><img src="img/room-loft-960.webp" srcset="img/room-loft-600.webp 600w, img/room-loft-960.webp 960w" sizes="(max-width: 960px) calc(100vw - 2rem), 584px" width="960" height="612" alt="A loft room with a sofa downstairs and stairs up to the loft" loading="lazy"><figcaption class="cap">A loft room: living area below, the loft up the stairs.</figcaption></figure>
+  </article>
+</section>
+<section class="sec" aria-labelledby="in-h">
+  <div class="wrap">
+    <h2 id="in-h">Inside the rooms</h2>
+    <div class="pair">
+      <figure><img src="img/room-a-960.webp" srcset="img/room-a-600.webp 600w, img/room-a-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 2rem), 588px" width="960" height="612" alt="An Inn room with a bed, nightstand and lamp, and a big window onto snowy trees" loading="lazy"></figure>
+      <figure><img src="img/room-b-960.webp" srcset="img/room-b-600.webp 600w, img/room-b-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 2rem), 588px" width="960" height="612" alt="An Inn room with a bed under a framed winter print" loading="lazy"></figure>
+    </div>
+    <p class="cap">Two of the Inn’s rooms.</p>
+  </div>
+</section>
+<section class="sec" aria-labelledby="also-h">
+  <div class="wrap split">
+    <div>
+      <h2 id="also-h">More ways to stay</h2>
+      <p class="k">The Inn also lists these options. Call for details and availability.</p>
+      <ul class="names">
+        <li>Village Condo</li><li>Queen Suite</li><li>Adjoining Queen Rooms</li><li>Queen &amp; Bunk Family Room</li><li>Deluxe King Room</li><li>Queen Loft with Full/Twin Beds</li><li>Queen Loft with Queen Sofa Bed</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Good to know</h3>
+      <ul class="faq" style="list-style:none;padding:0;border:0">
+        <li class="every">Inn rooms are not pet-friendly, but the townhouse option allows dogs.</li>
+        <li class="every">One ADA-compliant room, Room 103, is on the 1st floor, beneath the bar.</li>
+        <li class="every">Air mattresses are not allowed (fire marshal rules). Cots are $35 per night.</li>
+        <li class="every">Breakfast is not included; the Brew Haus serves breakfast in season.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="call" aria-labelledby="call-h">
+  <div class="wrap g">
+    <div>
+      <h2 id="call-h">Pick a room, then call</h2>
+      <p>The front desk books every room type, including the townhouse and condo.</p>
+      <address>5000 Commons Circle, Carrabassett Valley, ME 04947</address>
+    </div>
+    <div class="actions">
+      <a class="btn" href="tel:+12073879711"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call <span class="num">207-387-9711</span></a>
+      <a class="btn ghost" href="mailto:stay@sugarloafinn.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Stay@SugarloafInn.com</a>
+    </div>
+  </div>
+</section>
+</main>
+<div class="dock" aria-hidden="true">
+  <a class="btn" href="tel:+12073879711" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call the Inn</a>
+  <a class="btn ghost" href="mailto:stay@sugarloafinn.com" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+</div>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2>Sugarloaf Inn</h2>
+        <address>5000 Commons Circle<br>Carrabassett Valley, ME 04947</address>
+        <p style="margin-top:.6rem">Slopeside lodging since 1962. An independent hotel.</p>
+      </div>
+      <ul>
+        <li><a href="tel:+12073879711" class="num">207-387-9711</a></li>
+        <li><a href="mailto:stay@sugarloafinn.com">Stay@SugarloafInn.com</a></li>
+        <li>Check in 3pm, check out 11am</li>
+      </ul>
+      <nav aria-label="Footer"><ul><li><a href="index.html">Home</a></li><li><a href="lodging.html">Lodging</a></li><li><a href="history.html">History</a></li><li><a href="mountain.html">The Mountain</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Sugarloaf Inn. Text, photos and postcards come from Sugarloaf Inn’s public website; online booking is not part of this demo. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </div>
+</footer>
+<script>
+  const dock = document.querySelector('.dock'), head = document.querySelector('.hero, .page-head')
+  if (dock && head) new IntersectionObserver(([e]) => { const on = !e.isIntersecting; dock.classList.toggle('on', on); dock.setAttribute('aria-hidden', String(!on)); dock.querySelectorAll('a').forEach((a) => { a.tabIndex = on ? 0 : -1 }) }).observe(head)
+  const menu = document.querySelector('.menu')
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus() } })
+  document.addEventListener('click', (e) => { if (menu.open && !menu.contains(e.target)) menu.open = false })
+</script>
+</body>
+</html>
