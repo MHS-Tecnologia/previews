@@ -35,7 +35,7 @@ a{color:inherit}
 .marca::before{content:"";position:absolute;left:9px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--vinho);box-shadow:inset 0 0 0 2px #fff, 0 0 0 1px var(--kraft)}
 .marca img{width:150px;height:auto}
 .nav{display:flex;gap:1.75rem;margin-left:auto}
-.nav a{text-decoration:none;font-weight:600;font-size:.95rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav a{text-decoration:none;font-weight:600;font-size:.95rem;padding:.6rem 0;border-bottom:2px solid transparent}
 .nav a:hover,.nav a[aria-current=page]{border-bottom-color:var(--kraft)}
 .menu{display:none;margin-left:auto;position:relative}
 .menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.6rem .9rem;border:1.5px solid rgba(255,255,255,.6);border-radius:999px}
@@ -58,7 +58,7 @@ a{color:inherit}
 .btn-linha:hover{background:rgba(255,255,255,.08)}
 .btn-vinho{background:var(--vinho);color:#fff}
 .btn-vinho:hover{background:var(--vinho-esc)}
-.btn-peq{min-height:42px;padding:.55rem 1.1rem;font-size:.92rem}
+.btn-peq{min-height:44px;padding:.55rem 1.1rem;font-size:.92rem}
 @media(max-width:860px){.cab .btn-cab{display:none}}
 
 /* herói */
@@ -114,7 +114,8 @@ a{color:inherit}
 .loja-sec{background:var(--vinho-esc);color:#fbf3f1}
 .loja-sec .intro{color:#efd9d5}
 .trio{display:grid;gap:1rem;margin-top:2rem}
-@media(min-width:760px){.trio{grid-template-columns:repeat(3,1fr)}}
+.trio{grid-template-columns:1fr 1fr;gap:.75rem}
+@media(min-width:760px){.trio{gap:1.25rem;max-width:900px}}
 .zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;color:inherit;text-align:left;font:inherit}
 .zoom img{width:100%;border-radius:3px}
 .zoom figcaption,.zoom .leg{display:block;margin-top:.5rem;font:italic 400 1.25rem/1.2 "Instrument Serif",Georgia,serif}
@@ -125,7 +126,10 @@ a{color:inherit}
 .estilo h3{margin:0;font:400 2.2rem/1 "Instrument Serif",Georgia,serif}
 .estilo p{margin:0;color:var(--suave);max-width:52ch}
 .estilo a{font-weight:700;color:var(--vinho);text-underline-offset:3px}
-@media(min-width:800px){.estilo{grid-template-columns:14rem 1fr auto;align-items:baseline;gap:2rem}}
+.estilo{grid-template-columns:56px 1fr;column-gap:1rem;align-items:center}
+.estilo .ic{grid-row:span 3;width:56px;height:56px;padding:8px;color:var(--vinho);background:var(--kraft);border-radius:4px 12px 12px 4px;align-self:start}
+.estilo p,.estilo a{grid-column:2}
+@media(min-width:800px){.estilo{grid-template-columns:56px 12rem 1fr auto;align-items:center;gap:2rem}.estilo .ic{grid-row:auto}.estilo p,.estilo a{grid-column:auto}}
 .destaques{margin:1.75rem 0 0;color:var(--suave);max-width:62ch}
 
 /* endereço: a placa do 397 */
@@ -169,3 +173,13 @@ dialog.caixa::backdrop{background:rgba(36,26,27,.8)}
 .barra .btn-tel{flex:0 0 auto;border:1.5px solid var(--vinho);color:var(--vinho);background:#fff}
 @media(min-width:900px){.barra{display:none}}
 @media(prefers-reduced-motion:reduce){.barra{transition:none}}
+
+/* alvos de toque ≥44px */
+.pede,.cabide .pede,.grade .pede,.estilo a,a.tel{display:inline-flex;align-items:center;min-height:44px}
+.cabide .pede{display:flex;margin-top:.2rem}
+@media(min-width:900px){
+  .loja-sec .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);column-gap:3.5rem;align-content:center}
+  .loja-sec h2,.loja-sec .intro{grid-column:1;align-self:end}
+  .loja-sec .intro{align-self:start}
+  .loja-sec .trio{grid-column:2;grid-row:1 / span 2;margin-top:0;max-width:none}
+}
