@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Copper Harbor · North Port Motel</title>
+<meta name="description" content="Copper Harbor, at the tip of Michigan’s Keweenaw, surrounded by Lake Superior. North Port Motel is 2 blocks from the Isle Royale Boat Dock.">
+<meta name="theme-color" content="#0f2436">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/youngserif.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Young Serif";font-weight:400;font-display:swap;src:url(fonts/youngserif.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Next";font-weight:400 700;font-display:swap;src:url(fonts/atkinson.woff2) format("woff2")}
+/* From their sign: the deep lake behind it, the royal blue field, the lit
+   lighthouse lamp, and the cold birch light of a Keweenaw morning. */
+:root{--lake:#0f2436;--sign:#2c3d93;--lamp:#e7ad3f;--birch:#eef2f1;--slate:#4c5e6c;--line:#cdd6d6;--white:#fff;
+--serif:"Young Serif",Georgia,serif;--sans:"Atkinson Next",system-ui,sans-serif;--w:1120px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--birch);color:var(--lake);font:1.0625rem/1.6 var(--sans)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--sign)}
+:focus-visible{outline:3px solid var(--lamp);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--lake);color:#fff;padding:.6rem 1rem;z-index:20}
+.skip:focus{left:8px}
+.demo{background:var(--lake);color:#c9d4dc;font-size:.8125rem;line-height:1.4;text-align:center;padding:.5rem 16px;margin:0}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0 0 1rem}
+
+/* header */
+.top{border-bottom:1px solid var(--line);background:var(--birch)}
+.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:76px}
+.brand{display:block;margin-right:auto}
+.brand img{width:118px;height:auto}
+.nav{display:flex;align-items:center;gap:1.75rem}
+.nav > a{color:var(--lake);text-decoration:none;font-weight:600;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a:hover{border-color:var(--lamp)}
+.nav > a[aria-current]{border-color:var(--sign)}
+.call{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--sign);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:.8rem 1.35rem;min-height:48px;line-height:1.2}
+.call:hover{background:#22317a}
+.call svg{width:18px;height:18px;flex:none}
+.ghost{display:inline-flex;align-items:center;min-height:48px;padding:.8rem 0;font-weight:700;color:var(--sign)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.7rem 1rem;border:1px solid var(--line);border-radius:999px;background:#fff}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid var(--line);border-radius:12px;padding:.5rem;min-width:220px;z-index:10;box-shadow:0 12px 30px rgba(15,36,54,.15)}
+.menu nav a{display:block;padding:.75rem 1rem;color:var(--lake);text-decoration:none;font-weight:600;border-radius:8px}
+.menu nav a:hover{background:var(--birch)}
+@media (max-width:760px){
+  .nav > a,.top .call{display:none}
+  .menu{display:block}
+  .brand img{width:104px}
+}
+
+/* the season board: the motel is only open May to October */
+.board{background:var(--lake);color:#fff;border-radius:14px;padding:1.1rem 1.1rem 1rem;margin:0}
+.board .status{font-family:var(--serif);font-size:1.25rem;line-height:1.25;margin:0 0 .85rem}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;list-style:none;margin:0;padding:0 0 1.35rem;position:relative}
+.months li{position:relative;text-align:center;font-weight:700;font-size:.8125rem;line-height:1;padding:.7rem 0;border-radius:5px;border:1px solid rgba(255,255,255,.2);color:#9fb2c2}
+.months li.on{background:var(--lamp);border-color:var(--lamp);color:var(--lake)}
+.months .s{display:none}
+.months li.now::after{content:"";position:absolute;left:50%;bottom:-13px;width:0;height:0;margin-left:-6px;border:6px solid transparent;border-bottom-color:#fff}
+.board .legend{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-size:.875rem;color:#c9d4dc;margin:0}
+.legend span::before{content:"";display:inline-block;width:.8em;height:.8em;border-radius:2px;margin-right:.4em;vertical-align:-.05em}
+.legend .lo::before{background:var(--lamp)}
+.legend .lc::before{border:1px solid rgba(255,255,255,.45)}
+.legend .ln{display:none}
+.legend .ln::before{content:"";width:0;height:0;border:5px solid transparent;border-bottom-color:#fff;border-radius:0;vertical-align:.1em}
+.has-now .legend .ln{display:inline}
+.board-c{container-type:inline-size}
+@container (max-width:600px){.months .f{display:none}.months .s{display:inline}.months li{padding:.65rem 0}}
+@media (prefers-reduced-motion:no-preference){
+  .months li.on{animation:lamp .5s both;animation-delay:calc(.25s + var(--i) * 90ms)}
+  @keyframes lamp{from{background:transparent;color:#9fb2c2;border-color:rgba(255,255,255,.2)}}
+}
+
+/* home hero */
+.hero{padding:2.75rem 0 3.75rem}
+.hero .wrap{display:grid;grid-template-columns:5fr 6fr;grid-template-areas:'t p' 'b b';column-gap:3.5rem;row-gap:2.5rem;align-items:center}
+.ht{grid-area:t}.hb{grid-area:b}.hp{grid-area:p}
+@media (min-width:761px){.hb .board{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:2rem;padding:1.4rem 1.6rem 1.2rem}.hb .status{font-size:1.5rem;margin:0}.hb .legend{justify-content:flex-end;grid-column:2;grid-row:1}.hb .months{grid-column:1/-1;margin-top:1rem}.hb .months li{padding:.95rem 0;font-size:.9375rem}}
+.hero h1{font-size:clamp(2.25rem,4vw,3.3rem);margin:0 0 1.1rem;letter-spacing:-.01em}
+.lede{font-size:1.1875rem;color:var(--slate);max-width:34em;margin-bottom:1.5rem}
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;margin-bottom:1.75rem}
+.photo{margin:0}
+.photo img{border-radius:6px;width:100%}
+.photo figcaption{font-size:.875rem;color:var(--slate);margin-top:.6rem}
+@media (max-width:760px){
+  .hero{padding:1.5rem 0 2.5rem}
+  .hero .wrap{grid-template-columns:1fr;grid-template-areas:'t' 'b' 'p';row-gap:1.25rem}
+  .hb .board{padding:.85rem .85rem .75rem}.hb .status{font-size:1.0625rem;margin-bottom:.6rem}.hb .months{padding-bottom:1.1rem}.hb .legend{font-size:.8125rem}
+  .hero h1{font-size:2.1rem;margin-bottom:.75rem}
+  .lede{font-size:1rem;line-height:1.55;margin-bottom:1rem}
+  .acts .ghost{min-height:44px;padding:.5rem 0}
+  .acts{margin-bottom:0;gap:.25rem 1.5rem}
+  .acts .call{flex:1 1 100%}
+}
+
+/* the walk: ordered by distance */
+.sec{padding:3.75rem 0;border-top:1px solid var(--line)}
+.sec h2{font-size:clamp(1.75rem,3vw,2.4rem);margin-bottom:1rem}
+.walk{display:grid;grid-template-columns:5fr 7fr;gap:3.5rem;align-items:start}
+.walk p{color:var(--slate);max-width:30em}
+.route{list-style:none;margin:0;padding:0;position:relative}
+.route::before{content:"";position:absolute;left:9px;top:14px;bottom:14px;width:2px;background:repeating-linear-gradient(var(--sign) 0 8px,transparent 8px 14px)}
+.route li{position:relative;display:grid;grid-template-columns:12.5rem 1fr;gap:1rem;padding:.9rem 0 .9rem 2.5rem;border-bottom:1px solid var(--line)}
+.route li:last-child{border-bottom:0}
+.route li::before{content:"";position:absolute;left:2px;top:1.25rem;width:16px;height:16px;border-radius:50%;background:var(--birch);border:3px solid var(--sign)}
+.route li:first-child::before{background:var(--lamp);border-color:var(--lake)}
+.route b{font-family:var(--serif);font-weight:400;font-size:1.3rem;line-height:1.2}
+.route span{align-self:center}
+@media (max-width:760px){
+  .walk{grid-template-columns:1fr;gap:1.5rem}
+  .route li{grid-template-columns:1fr;gap:.15rem}
+}
+
+/* rooms + rates */
+.rooms{display:grid;grid-template-columns:7fr 5fr;gap:3.5rem;align-items:start}
+.facts{list-style:none;margin:0 0 1.5rem;padding:0}
+.facts li{padding:.7rem 0;border-bottom:1px solid var(--line)}
+.rates{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.rates caption{text-align:left;font-family:var(--serif);font-size:1.4rem;padding:0 0 .75rem}
+.rates th,.rates td{padding:.85rem 1rem;text-align:left;border-bottom:1px solid var(--line)}
+.rates thead th{font-size:.875rem;color:var(--slate);font-weight:700}
+.rates td{font-family:var(--serif);font-size:1.35rem}
+.rates tr:last-child>*{border-bottom:0}
+.note{font-size:.875rem;color:var(--slate);margin-top:.75rem}
+@media (max-width:760px){.rooms{grid-template-columns:1fr;gap:2rem}.rates th,.rates td{padding:.75rem .7rem}}
+
+.harbor{display:grid;grid-template-columns:7fr 5fr;gap:3.5rem;align-items:center}
+@media (max-width:760px){.harbor{grid-template-columns:1fr;gap:1.5rem}}
+
+/* inner pages */
+.page{padding:2.75rem 0 1rem}
+.page h1{font-size:clamp(2.1rem,4vw,3.2rem);margin-bottom:.9rem}
+.page .lede{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.grid2.tall{grid-template-rows:auto auto}
+.grid2 .span{grid-row:span 2}
+.grid2 .span img{height:100%;object-fit:cover}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}.grid2 .span{grid-row:auto}}
+.sub{display:grid;grid-template-columns:4fr 8fr;gap:3rem;align-items:baseline;margin-bottom:1.5rem}
+.sub p{color:var(--slate)}
+@media (max-width:760px){.sub{grid-template-columns:1fr;gap:1.25rem}}
+.things{list-style:none;margin:0;padding:0;font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.3}
+.things li{display:inline}.things li:not(:last-child)::after{content:", "}
+.contact{display:grid;grid-template-columns:7fr 5fr;gap:3.5rem;align-items:start}
+.big{font-family:var(--serif);font-size:clamp(2rem,5vw,3.25rem);line-height:1.1;color:var(--sign);text-decoration:none;display:inline-block;margin:.25rem 0 1rem}
+.big:hover{text-decoration:underline;text-decoration-thickness:2px}
+address{font-style:normal;font-size:1.1875rem;line-height:1.5}
+.sign{display:flex;gap:1.25rem;align-items:flex-end;margin-top:2rem}
+.sign img{border-radius:6px;width:241px}
+@media (max-width:760px){.contact{grid-template-columns:1fr;gap:2rem}}
+
+/* footer */
+.foot{background:var(--lake);color:#c9d4dc;margin-top:3.75rem;padding:3rem 0 6rem;font-size:.9375rem}
+.foot .wrap{display:grid;grid-template-columns:auto 1fr 1fr;gap:2.5rem;align-items:start}
+.foot img{width:150px}
+.foot a{color:#fff}
+.foot p{margin:0 0 .5rem}
+.foot .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.18);padding-top:1.25rem;font-size:.8125rem}
+.foot{padding-bottom:3rem}
+@media (max-width:760px){.foot{padding-bottom:6rem}.foot .wrap{grid-template-columns:1fr;gap:1.5rem}}
+
+/* sticky call bar, phones only, after the hero call button scrolls away */
+.bar{display:none}
+@media (max-width:760px){
+  .bar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:15;transform:translateY(140%);transition:transform .25s}
+  .bar.show{transform:none}
+  .bar .call{flex:1;box-shadow:0 8px 24px rgba(15,36,54,.3)}
+}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for North Port Motel. Not affiliated with or endorsed by North Port Motel.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo-200.webp" srcset="img/logo-200.webp 200w, img/logo-320.webp 320w" sizes="118px" width="200" height="107" alt="North Port Motel, home"></a>
+    <nav class="nav" aria-label="Main"><a href="rooms.html">Rooms & rates</a><a href="harbor.html" aria-current="page">Copper Harbor</a><a href="contact.html">Contact</a></nav>
+    <a class="call" href="tel:+19062894477"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (906) 289-4477</a>
+    <details class="menu"><summary>Menu</summary><nav aria-label="Main, mobile"><a href="index.html">Home</a><a href="rooms.html">Rooms & rates</a><a href="harbor.html" aria-current="page">Copper Harbor</a><a href="contact.html">Contact</a><a href="tel:+19062894477">Call (906) 289-4477</a></nav></details>
+  </div>
+</header>
+<main id="main">
+<section class="page">
+  <div class="wrap">
+    <h1>Copper Harbor, at the tip of the Keweenaw</h1>
+    <p class="lede">Surrounded by beautiful Lake Superior, pristine forests and mountains.</p>
+  </div>
+</section>
+<section class="sec" style="border-top:0">
+  <div class="wrap harbor">
+    <figure class="photo"><img src="img/water-800.webp" srcset="img/water-480.webp 480w, img/water-800.webp 800w" sizes="(max-width: 760px) calc(100vw - 32px), 620px" width="800" height="600" alt="A sailboat on open water under a cloudy sky" loading="lazy" decoding="async"></figure>
+    <div>
+      <h2>What people come for</h2>
+      <ul class="things">
+        <li>Sightseeing</li><li>rock hounding</li><li>birding</li><li>fishing</li><li>boating</li><li>hiking</li><li>biking</li><li>swimming</li><li>or just plain kicking back and relaxing.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap walk">
+    <div>
+      <h2>From the motel</h2>
+      <p>North Port Motel is centrally located, within a short walk of shops and restaurants.</p>
+    </div>
+    <ol class="route">
+  <li><b>Across the street</b><span>Beach access, with a scenic view of the harbor</span></li>
+  <li><b>2 blocks</b><span>The Isle Royale Boat Dock</span></li>
+  <li><b>A short walk</b><span>Shops and restaurants</span></li>
+  <li><b>A short distance</b><span>The lighthouse ferry dock, at the Marina</span></li>
+</ol>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <img src="img/logo-200.webp" width="200" height="107" alt="North Port Motel" loading="lazy">
+    <div>
+      <p><strong>North Port Motel</strong></p>
+      <address>284 Brockway<br>Copper Harbor, MI 49918</address>
+    </div>
+    <div>
+      <p>Open May through the end of October.</p>
+      <p>Reservations: <a href="tel:+19062894477">(906) 289-4477</a></p>
+      <p>Availability: <a href="mailto:jtulppo@pasty.com">jtulppo@pasty.com</a></p>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for North Port Motel. Not affiliated with or endorsed by North Port Motel. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="bar" data-bar><a class="call" href="tel:+19062894477" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call (906) 289-4477</a></div>
+<script>
+(function(){
+  var m=new Date().getMonth(),b=document.querySelectorAll('[data-board]');
+  for(var i=0;i<b.length;i++){
+    var li=b[i].querySelector('[data-m="'+m+'"]');if(li){li.classList.add('now');b[i].classList.add('has-now')}
+    var s=b[i].querySelector('[data-status]');
+    if(s)s.textContent=(m>=4&&m<=9)?'Open now, through the end of October.':'Closed for the winter. Open again in May.';
+  }
+  var bar=document.querySelector('[data-bar]'),anchor=document.querySelector('[data-anchor]');
+  if(bar&&anchor&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){var show=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;bar.classList.toggle('show',show);bar.firstElementChild.tabIndex=show?0:-1}).observe(anchor);
+  }
+})();
+</script>
+</body>
+</html>
