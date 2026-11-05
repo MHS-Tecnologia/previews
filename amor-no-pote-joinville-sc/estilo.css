@@ -185,3 +185,5 @@ dialog.caixa-foto::backdrop{background:rgba(20,34,45,.88)}
 .pilulas a:hover{background:var(--ardosia);color:#fff}
 .pilulas svg{width:18px;height:18px}
 @media (max-width:860px){.fundo-espiral{width:150vw;left:-25vw;top:auto;bottom:-30vw;transform:none}}
+.grade-2{grid-template-columns:1fr 1fr;max-width:900px;margin-top:clamp(24px,3vw,40px);margin-bottom:clamp(24px,3vw,40px)}
+@media (max-width:860px){.acab-fotos figcaption{position:relative;background:var(--chantilly);margin-top:4px;padding-bottom:4px}}
