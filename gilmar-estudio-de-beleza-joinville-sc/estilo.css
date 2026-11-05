@@ -220,3 +220,33 @@ h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.04;margin:0;le
 .lista-serv h3 a::after{content:"";position:absolute;inset:0}
 .lista-serv li{position:relative}
 .lista-serv li:has(a):hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+/* rodada 2 */
+.fotos.uma{grid-template-columns:repeat(2,1fr)}
+.pedir{background:var(--tinta);color:#ece8e2;border-radius:4px;padding:36px 32px;display:flex;flex-direction:column;justify-content:flex-end;gap:26px;aspect-ratio:3/4}
+.pedir img{width:64px;aspect-ratio:120/420;object-fit:cover;border-radius:6px 6px 46% 46% / 6px 6px 12% 12%;margin-bottom:auto}
+.pedir .pedir-t{font-family:var(--display);font-size:clamp(1.8rem,2.8vw,2.4rem);line-height:1.08;color:#fff;margin:0 0 12px}
+.pedir p{margin:0 0 22px}
+.btn-claro{background:#fff;color:var(--tinta)}
+.btn-claro:hover{background:var(--loiro)}
+.pedir-tel{display:block;margin-top:14px;color:#fff;font-size:.95rem}
+.onde .ig{font-weight:600}
+@media (max-width:860px){
+  .fotos.uma{grid-template-columns:1fr}
+  .pedir{aspect-ratio:auto;padding:28px 24px}
+  .pedir img{display:none}
+  .mecha .nome{hyphens:manual;overflow-wrap:normal;word-break:normal;font-size:.74rem;letter-spacing:-.01em}
+  .mechas{gap:8px}
+  .aviso{font-size:.72rem;padding:6px 14px}
+  .topo-in{min-height:58px}
+  .hero{padding-top:18px}
+  .hero .lead{margin:10px 0 16px}
+  .hero-texto{padding-bottom:20px}
+  .acoes{flex-wrap:nowrap}
+  .btn-tel{width:52px;padding:0;flex:none}
+  .btn-tel .tel-num{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .hero .acoes .btn-wa{flex:1}
+}
+@media (max-width:860px){.mecha .nome{margin:10px -5px 0;white-space:nowrap}.mecha:nth-child(2) .nome{white-space:normal}}
+.fotos.uma{align-items:stretch}
+.fotos.uma > img{height:100%}
+.pedir{aspect-ratio:auto;justify-content:flex-end}
