@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Native plants — Gardens of the Blue Ridge</title>
+<meta name="description" content="Wildflowers, ferns, native orchids and trilliums from the Gardens of the Blue Ridge list, by botanical name.">
+<meta name="theme-color" content="#1e3326">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/crimson.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/karla.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Crimson Pro";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/crimson.woff2) format("woff2")}
+@font-face{font-family:"Crimson Pro";font-style:italic;font-weight:400 700;font-display:swap;src:url(fonts/crimson-italic.woff2) format("woff2")}
+@font-face{font-family:Karla;font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/karla.woff2) format("woff2")}
+:root{
+  --paper:#f7f8f3; --ink:#1e3326; --soft:#4d5e52; --blue:#233f8c; --leaf:#3f6b34;
+  --shade:#16261c; --shade2:#21362a; --line:#d5dccf; --tint:#eaf0e2;
+  --serif:"Crimson Pro",Georgia,serif; --sans:Karla,system-ui,sans-serif;
+  --w:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 1rem}
+@media(min-width:700px){.wrap{padding:0 2rem}}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0;letter-spacing:-.005em;text-wrap:balance}
+p{margin:0 0 1em}
+em.lat,.lat{font-family:var(--serif);font-style:italic;font-weight:500}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:30}
+.skip:focus{left:.5rem}
+
+.demo{background:var(--ink);color:#e3ebde;font-size:.75rem;line-height:1.4;padding:.45rem 0;text-align:center}
+.demo p{margin:0}
+
+header.site{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand{display:flex;align-items:center;gap:.7rem;color:var(--ink);text-decoration:none}
+.brand img{width:52px;height:52px;mix-blend-mode:multiply}
+.brand span{font-family:var(--serif);font-size:1.3rem;font-weight:600;line-height:1.05}
+.nav{display:flex;align-items:center;gap:1.6rem}
+.nav > a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a:hover{border-bottom-color:var(--line)}
+.nav > a[aria-current=page]{border-bottom-color:var(--leaf)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.6rem .9rem;border:1px solid var(--ink);border-radius:999px;font-size:.95rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu .sheet{position:absolute;right:0;top:calc(100% + .5rem);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 30px rgba(22,38,28,.16);padding:.4rem;min-width:15rem;display:grid}
+.menu .sheet a{color:var(--ink);text-decoration:none;padding:.75rem .9rem;border-radius:6px;font-weight:500}
+.menu .sheet a:hover{background:var(--tint)}
+@media(max-width:860px){.nav > a{display:none}.menu{display:block}.brand span{font-size:1.12rem}.brand img{width:44px;height:44px}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.7rem 1.35rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;line-height:1.2}
+.btn.main{background:var(--leaf);color:#fff}
+.btn.main:hover{background:#335a2a}
+.btn.alt{color:var(--ink);border:1.5px solid var(--ink)}
+.btn.alt:hover{background:var(--tint)}
+
+/* hero */
+.hero{padding:2.2rem 0 2.5rem}
+.hero .wrap{display:grid;gap:1.6rem}
+.hero h1{font-size:clamp(2.6rem,7.4vw,5.9rem);font-weight:600;letter-spacing:-.015em}
+.hero .sub{font-size:1.15rem;color:var(--soft);max-width:34rem;margin:1rem 0 1.4rem}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero figure{margin:0}
+.hero figure img{width:100%;border-radius:4px}
+.hero figcaption{font-size:.875rem;color:var(--soft);margin-top:.5rem}
+.update{background:var(--tint);border-radius:6px;padding:1.1rem 1.25rem;margin-top:1.8rem;max-width:36rem}
+.update h2{font-family:var(--sans);font-size:1rem;font-weight:700;margin-bottom:.35rem;letter-spacing:0}
+.update p{font-size:.97rem;margin:0}
+@media(min-width:900px){
+  .hero{padding:3rem 0 3.5rem}
+  .hero .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3.5rem;align-items:center}
+  .hero figure img{max-height:calc(100vh - 11rem);object-fit:cover;object-position:50% 40%}
+}
+@media(max-width:899px){
+  .hero .text{display:contents}
+  .hero .wrap > *{min-width:0}
+  .hero .intro{order:1}.hero figure{order:2}.hero .update{order:3;margin-top:0}
+}
+
+/* the garden year */
+.year{background:var(--shade);color:#e8efe4;padding:3.5rem 0 3.8rem}
+.year h2{font-size:clamp(2rem,5vw,3.2rem);color:#fff}
+.year .lede{max-width:40rem;color:#c9d6c4;margin:.9rem 0 2.2rem;font-size:1.08rem}
+.year .lede q{font-style:italic}
+.cal{--name:15.5rem}
+.cal .row{display:grid;grid-template-columns:var(--name) minmax(0,1fr);align-items:center}
+.cal .track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;min-height:3.1rem;background:repeating-linear-gradient(to right,#33493b 0 1px,transparent 1px calc(100% / 6))}
+.cal .head .track{min-height:0;background:none}
+.cal .head .track span{font-size:.82rem;color:#a9bba5;padding:0 .4rem .7rem;border-left:1px solid #33493b;line-height:1.2;align-self:end;height:100%}
+.cal .row a{color:#fff;text-decoration:none;padding:.4rem 1rem .4rem 0;line-height:1.15}
+.cal .row a:hover .com{text-decoration:underline}
+.cal .row a .lat{display:block;font-size:1.12rem}
+.cal .row a .com{display:block;font-size:.84rem;color:#b9c9b5}
+.cal .bar{grid-row:1;height:1.05rem;border-radius:999px;margin:0 .35rem;transform-origin:left center}
+.cal .bar.leaf{background-image:repeating-linear-gradient(135deg,#6b8d57 0 6px,#4d6b3f 6px 12px)!important}
+.cal .note{font-size:.84rem;color:#a9bba5;margin-top:1.4rem;max-width:40rem}
+.js .cal .bar{transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .cal.on .bar{transform:scaleX(1)}
+@media(prefers-reduced-motion:reduce){.js .cal .bar{transform:none;transition:none}}
+@media(max-width:760px){
+  .cal .row{display:block}
+  .cal .head .blank{display:none}
+  .cal .head .track span{padding:0 .25rem .5rem;font-size:.72rem}
+  .cal .row a{display:block;padding:.85rem 0 .3rem}
+  .cal .row a .lat,.cal .row a .com{display:inline}
+  .cal .row a .com::before{content:" · "}
+  .cal .track{min-height:1.5rem}
+  .cal .bar{margin:0 .15rem;height:.9rem}
+}
+
+/* sections */
+.sec{padding:4rem 0}
+.sec h2{font-size:clamp(1.9rem,4.4vw,2.8rem)}
+.two{display:grid;gap:2rem}
+@media(min-width:900px){.two{grid-template-columns:1fr 1fr;gap:4rem;align-items:start}}
+.index{list-style:none;margin:1.4rem 0 0;padding:0}
+.index li{border-top:1px solid var(--line);padding:1rem 0}
+.index h3{font-size:1.5rem}
+.index h3 a{color:var(--ink);text-decoration:none}
+.index h3 a:hover{color:var(--blue)}
+.index p{margin:.3rem 0 0;color:var(--soft);font-size:.98rem}
+.index .lat{color:var(--ink)}
+.photo{margin:0}
+.photo img{width:100%;border-radius:4px}
+.photo figcaption{font-size:.875rem;color:var(--soft);margin-top:.5rem}
+.prose{max-width:38rem}
+.prose p{font-size:1.06rem}
+.family{background:var(--tint)}
+.gens{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:0}
+.gens li{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:.8rem 0;border-top:1px solid #cdd8c3}
+.gens b{font-family:var(--serif);font-size:1.25rem;font-weight:600}
+.gens span{color:var(--soft);font-size:.95rem;align-self:center}
+
+/* page head */
+.phead{padding:2.6rem 0 1.4rem}
+.phead h1{font-size:clamp(2.3rem,6vw,3.8rem)}
+.phead p{max-width:40rem;color:var(--soft);font-size:1.12rem;margin-top:.9rem}
+
+/* catalog */
+.jump{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0 0;padding:0;list-style:none}
+.jump a{display:inline-block;padding:.5rem .95rem;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:500;background:#fff}
+.jump a:hover{border-color:var(--leaf)}
+.group{padding:2.6rem 0 1rem}
+.grp > summary{list-style:none;cursor:default;margin-bottom:1.6rem}
+.grp > summary::-webkit-details-marker{display:none}
+.grp h2{font-size:clamp(1.9rem,4.4vw,2.6rem)}
+.grp summary p{color:var(--soft);max-width:40rem;margin:.5rem 0 0}
+.grp .count{display:none}
+@media(max-width:819px){
+  .group{padding:0}
+  .grp{border-top:1px solid var(--line)}
+  .grp > summary{cursor:pointer;margin:0;padding:1.3rem 2.6rem 1.3rem 0;position:relative}
+  .grp > summary::after{content:"";position:absolute;right:.4rem;top:1.75rem;width:.7rem;height:.7rem;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg)}
+  .grp[open] > summary::after{transform:rotate(-135deg);top:2.1rem}
+  .grp .count{display:inline;color:var(--leaf);font-weight:700;font-size:.95rem}
+  .grp[open] > summary{margin-bottom:.4rem}
+  .grp > .plants:last-child{padding-bottom:2.4rem}
+}
+.plants{display:grid;gap:2.4rem 2.5rem}
+@media(min-width:820px){.plants{grid-template-columns:1fr 1fr}}
+.plant{border-top:1px solid var(--line);padding-top:1.1rem}
+.plant .ph{margin:0 0 1rem;aspect-ratio:4/3;overflow:hidden;border-radius:4px;background:#1b1f1a}
+.plant .ph img{width:100%;height:100%;object-fit:cover}
+.plant .ph.fit img{object-fit:contain}
+#wild-ginger .ph img{object-position:50% 12%}
+.plant h3{font-size:1.55rem;font-style:italic;font-weight:500}
+.plant .com{font-weight:700;margin:.15rem 0 .6rem}
+.plant p{color:var(--soft);margin:0 0 .7rem;max-width:34rem}
+.plant .meta{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;font-size:.92rem;color:var(--ink)}
+.plant .meta .out{color:#8a3b1c;font-weight:700}
+.plant.small{display:block}
+.textlist{display:grid;gap:0 2.5rem}
+@media(min-width:820px){.textlist{grid-template-columns:1fr 1fr}}
+.colls{columns:2 12rem;padding:0;margin:1rem 0 0;list-style:none}
+.colls li{padding:.3rem 0;break-inside:avoid}
+
+/* info pages */
+.steps{counter-reset:s;list-style:none;padding:0;margin:1.2rem 0 0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.4rem 1fr;gap:.8rem;padding:.9rem 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:1.6rem;line-height:1;color:var(--leaf)}
+.seasons{display:grid;gap:1.2rem;margin-top:1.4rem}
+@media(min-width:820px){.seasons{grid-template-columns:repeat(3,1fr)}}
+.seasons div{border-top:3px solid var(--leaf);padding-top:.8rem}
+.seasons h3{font-size:1.5rem;margin-bottom:.4rem}
+.seasons p{color:var(--soft);font-size:.98rem}
+.seasons .off{border-top-color:var(--line)}
+.faq dt{font-family:var(--serif);font-size:1.35rem;font-weight:600;margin-top:1.6rem;line-height:1.2}
+.faq dd{margin:.45rem 0 0;color:var(--soft);max-width:40rem}
+.cards{display:grid;gap:1rem;margin-top:1.4rem}
+@media(min-width:820px){.cards{grid-template-columns:repeat(3,1fr)}}
+.cards > div{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1.2rem}
+.cards h3{font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--soft);margin-bottom:.4rem}
+.cards p{margin:0;font-size:1.15rem}
+.cards a{font-weight:700}
+
+footer.site{background:var(--ink);color:#d6e0d1;padding:3rem 0 2rem;font-size:.95rem}
+footer.site .cols{display:grid;gap:2rem}
+@media(min-width:820px){footer.site .cols{grid-template-columns:1.3fr 1fr 1fr}}
+footer.site h2{font-family:var(--sans);font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+footer.site a{color:#fff}
+footer.site ul{list-style:none;padding:0;margin:0}
+footer.site li{padding:.2rem 0}
+footer.site .legal{border-top:1px solid #3a5242;margin-top:2.4rem;padding-top:1.2rem;font-size:.84rem;color:#b6c4b0}
+footer.site .legal p{margin:0 0 .3rem}
+
+.dock{display:none}
+@media(max-width:760px){
+  .dock{display:flex;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:25;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(247,248,243,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}
+  .dock.on{transform:none}
+  .dock .btn{flex:1;min-height:2.9rem;white-space:nowrap;padding:.6rem .8rem}
+  .dock .btn.main{flex:.7}
+  body{padding-bottom:4.6rem}
+}
+@media(prefers-reduced-motion:reduce){.dock{transition:none}}
+</style>
+<script>
+document.documentElement.classList.add('js');
+addEventListener('DOMContentLoaded',function(){
+  var cal=document.querySelector('.cal');
+  if(cal){
+    if(!('IntersectionObserver' in window)){cal.classList.add('on')}else{
+      var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){cal.classList.add('on');o.disconnect()}},{threshold:.25});o.observe(cal)}
+  }
+  var dock=document.querySelector('.dock'),t=document.querySelector('[data-dock-after]')||document.querySelector('.phead');
+  if(dock&&t&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){dock.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)
+  }
+  var grps=document.querySelectorAll('.grp');
+  if(grps.length){
+    var mq=matchMedia('(max-width: 819px)');
+    var openFor=function(){var h=location.hash&&document.getElementById(location.hash.slice(1));grps.forEach(function(d){d.open=!mq.matches||(h&&d.contains(h))});if(h&&mq.matches)h.scrollIntoView()};
+    openFor();addEventListener('hashchange',openFor);
+    grps.forEach(function(d){d.querySelector('summary').addEventListener('click',function(e){if(!mq.matches)e.preventDefault()})});
+  }
+  document.querySelectorAll('.menu .sheet a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').open=false})});
+});
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note"><p>Unofficial demo built by MHS Tecnologia for Gardens of the Blue Ridge. Not affiliated with or endorsed by Gardens of the Blue Ridge.</p></div>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo-180.webp" srcset="img/logo-180.webp 180w, img/logo-360.webp 360w" sizes="52px" width="180" height="180" alt=""><span>Gardens of the<br>Blue Ridge</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="plants.html" aria-current=page>Native plants</a><a href="bareroot.html">Bareroot & seasons</a><a href="about.html">Our story</a><a href="ordering.html">Ordering & contact</a>
+      <details class="menu"><summary>Menu</summary><div class="sheet"><a href="index.html">Home</a><a href="plants.html" aria-current=page>Native plants</a><a href="bareroot.html">Bareroot & seasons</a><a href="about.html">Our story</a><a href="ordering.html">Ordering & contact</a></div></details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="phead">
+  <div class="wrap">
+    <h1>Native plants</h1>
+    <p>A selection from the nursery’s list, by botanical name. Prices are the ranges on their online store in November 2026; the range depends on the size you choose. Orders are placed in their online store, where you also pick a ship date.</p>
+    <ul class="jump"><li><a href="#wild">Wildflowers</a></li><li><a href="#fern">Ferns</a></li><li><a href="#orchid">Native orchids</a></li><li><a href="#trillium">Trilliums</a></li></ul>
+  </div>
+</section>
+<section class="group" id="wild" aria-labelledby="g-wild"><div class="wrap"><details class="grp" open><summary><h2 id="g-wild">Wildflowers</h2><p>Woodland and meadow wildflowers, from the first hepatica of spring to late-summer cohosh. <span class="count">9 plants</span></p></summary><div class="plants"><article class="plant" id="hepatica"><figure class="ph"><img src="img/hepatica-600.webp" srcset="img/hepatica-600.webp 600w, img/hepatica-692.webp 692w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="692" height="514" alt="Sharp-lobed Hepatica (Hepatica nobilis acuta), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Hepatica nobilis acuta</h3><p class="com">Sharp-lobed Hepatica</p><p>A very early spring bloomer, one of the first of the woodland wildflowers to bloom. Has pretty white flowers.</p><div class="meta"><span>$6.95 – $9.40</span></div></article><article class="plant" id="shooting-star"><figure class="ph"><img src="img/shooting-star-600.webp" srcset="img/shooting-star-600.webp 600w, img/shooting-star-1076.webp 1076w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="1076" height="1434" alt="Shooting Star (Dodecatheon meadia), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Dodecatheon meadia</h3><p class="com">Shooting Star</p><p>One of our best sellers, has beautiful pure white flowers that appear in the spring.</p><div class="meta"><span>$6.95 – $9.40</span></div></article><article class="plant" id="columbine"><figure class="ph fit"><img src="img/columbine-600.webp" width="600" height="754" alt="American Columbine (Aquilegia canadensis), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Aquilegia canadensis</h3><p class="com">American Columbine</p><p>The most common Columbine in our area. Has a reddish orange flower with a yellow center. Blooms spring and summer. Will reach a height of 2-3 ft.</p><div class="meta"><span>$9.40</span></div></article><article class="plant" id="coneflower"><figure class="ph"><img src="img/coneflower-600.webp" srcset="img/coneflower-600.webp 600w, img/coneflower-1100.webp 1100w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="1100" height="825" alt="Purple Coneflower (Echinacea purpurea), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Echinacea purpurea</h3><p class="com">Purple Coneflower</p><p>This is the best known coneflower and is hard to beat for its beautiful purple flowers in the summer.</p><div class="meta"><span>$9.40</span></div></article><article class="plant" id="fly-poison"><figure class="ph"><img src="img/fly-poison-500.webp" width="500" height="774" alt="Fly Poison (Amianthium muscaetoxicum), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Amianthium muscaetoxicum</h3><p class="com">Fly Poison</p><p>The basal foliage on this plant is grass like except wider than grass. Has a showy white flower in the summer, really stands out in a shade garden.</p><div class="meta"><span>$14.95 – $19.95</span></div></article><article class="plant" id="black-cohosh"><figure class="ph"><img src="img/black-cohosh-600.webp" srcset="img/black-cohosh-600.webp 600w, img/black-cohosh-1044.webp 1044w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="1044" height="674" alt="Black Cohosh (Actaea racemosa), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Actaea racemosa</h3><p class="com">Black Cohosh</p><p>This tall, white spike flower blooms in late summer and grows up to 4-6 feet tall with foliage reaching 3-4 feet tall.</p><div class="meta"><span>$6.95 – $12.55</span></div></article><article class="plant" id="jack"><figure class="ph"><img src="img/jack-600.webp" srcset="img/jack-600.webp 600w, img/jack-1100.webp 1100w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="1100" height="1467" alt="Jack-in-the-Pulpit (Arisaema triphyllum), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Arisaema triphyllum</h3><p class="com">Jack-in-the-Pulpit, Indian Turnip</p><p>A must for every woodland garden. Growing to heights of 2 feet or more in a moist shady location. Has 2 leaves generally divided into 3 parts.</p><div class="meta"><span>$6.95 – $12.55</span></div></article><article class="plant" id="wild-ginger"><figure class="ph"><img src="img/wild-ginger-496.webp" width="496" height="866" alt="Canada Wild Ginger (Asarum canadense), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Asarum canadense</h3><p class="com">Canada Wild Ginger</p><p>This ginger has kidney shaped leaves with purplish flowers just below the leaves right on the ground.</p><div class="meta"><span>$6.95 – $9.40</span></div></article></div><div class="textlist plants" style="margin-top:2.4rem"><article class="plant" id="butterfly-weed"><h3>Asclepias tuberosa</h3><p class="com">Butterfly Weed</p><p>As the name suggests this flower attracts the Butterflies with its bright orange flower during the summer months.</p><div class="meta"><span>$10.45</span></div></article></div></details></div></section><section class="group" id="fern" aria-labelledby="g-fern"><div class="wrap"><details class="grp" open><summary><h2 id="g-fern">Ferns</h2><p>Woodland ferns for shade, several of them evergreen. <span class="count">4 plants</span></p></summary><div class="textlist plants" style="margin-top:2.4rem"><article class="plant" id="lady-fern"><h3>Athyrium asplenioides</h3><p class="com">Lady Fern, Red Stem Fern</p><p>This fern has a feathery texture frond with a red stem. Grows to a height of 18-30 inches. Prefers filtered sun to shade with moist rich soil.</p><div class="meta"><span>$7.30 – $15.70</span></div></article><article class="plant" id="woodfern"><h3>Dryopteris australis</h3><p class="com">Woodfern</p><p>A lush and vibrant fern that can add a touch of nature to any space.</p><div class="meta"><span>$9.95 – $15.70</span></div></article><article class="plant" id="fancy-fern"><h3>Dryopteris intermedia</h3><p class="com">Fancy Fern, Toothed Woodfern</p><p>This fern is usually evergreen except in real cold climates. Its fronds are finely cut giving it a lacy delicate look and they are a dark green.</p><div class="meta"><span>$7.30 – $12.55</span></div></article><article class="plant" id="leather-woodfern"><h3>Dryopteris marginalis</h3><p class="com">Leather Woodfern</p><p>A dark green leathery looking fern that is evergreen. The fronds come out of the root crown in a circle and then lay out somewhat.</p><div class="meta"><span>$7.30 – $12.55</span></div></article></div></details></div></section><section class="group" id="orchid" aria-labelledby="g-orchid"><div class="wrap"><details class="grp" open><summary><h2 id="g-orchid">Native orchids</h2><p>Native orchids, some of them rare. <span class="count">4 plants</span></p></summary><div class="plants"><article class="plant" id="showy-orchid"><figure class="ph"><img src="img/showy-orchid-600.webp" srcset="img/showy-orchid-600.webp 600w, img/showy-orchid-960.webp 960w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="960" height="1280" alt="Showy Orchid (Galearis spectabilis), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Galearis spectabilis</h3><p class="com">Showy Orchid</p><p>A native woodland orchid prized for its striking two-toned flowers.</p><div class="meta"><span>$16.50 – $21.20</span><span class=out>Sold out for now</span></div></article></div><div class="textlist plants" style="margin-top:2.4rem"><article class="plant" id="fringed-orchid"><h3>Platanthera ciliaris</h3><p class="com">Yellow Fringed Orchid</p><p>Called the yellow-fringed orchid although the flowers are orange with fringed tips. Blooms late summer to fall reaching a height of 12-18 in.</p><div class="meta"><span>$24.00</span></div></article><article class="plant" id="puttyroot"><h3>Aplectrum hyemale</h3><p class="com">Puttyroot</p><p>A very unusual plant in that the solitary leaf appears in fall and lasts throughout the winter. Leaf is dark green with maroon on the backside.</p><div class="meta"><span>$8.95 – $14.95</span><span class=out>Sold out for now</span></div></article><article class="plant" id="ladys-slipper"><h3>Cypripedium pubescens</h3><p class="com">Yellow Lady’s Slipper</p><p>A rare and captivating orchid that brings a touch of wild elegance to shaded gardens.</p><div class="meta"><span>$75.00 – $145.00</span><span class=out>Sold out for now</span></div></article></div></details></div></section><section class="group" id="trillium" aria-labelledby="g-trillium"><div class="wrap"><details class="grp" open><summary><h2 id="g-trillium">Trilliums</h2><p>Woodland trilliums. From seed, they take about 4 to 6 years to bloom. <span class="count">4 plants</span></p></summary><div class="plants"><article class="plant" id="snow-trillium"><figure class="ph"><img src="img/snow-trillium-600.webp" srcset="img/snow-trillium-600.webp 600w, img/snow-trillium-1024.webp 1024w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="1024" height="768" alt="Snow Trillium (Trillium grandiflorum), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Trillium grandiflorum</h3><p class="com">Snow Trillium</p><p>One of the showiest and best known varieties. Has large white flowers in the spring, that turn to a light pink color during late spring.</p><div class="meta"><span>$9.95 – $13.95</span></div></article><article class="plant" id="purple-trillium"><figure class="ph"><img src="img/purple-trillium-600.webp" srcset="img/purple-trillium-600.webp 600w, img/purple-trillium-900.webp 900w" sizes="(min-width: 1180px) 545px, (min-width: 820px) 45vw, calc(100vw - 2rem)" width="900" height="600" alt="Purple Trillium (Trillium erectum), photographed by the nursery" loading="lazy" decoding="async"></figure><h3>Trillium erectum</h3><p class="com">Purple Trillium, Wake Robin</p><p>The flower stands up above the leaves on this Trillium. The flower is usually maroon in color although it will vary one way or the other sometimes.</p><div class="meta"><span>$9.95 – $13.95</span></div></article></div><div class="textlist plants" style="margin-top:2.4rem"><article class="plant" id="toadshade"><h3>Trillium sessile</h3><p class="com">Toadshade Trillium</p><p>A charming native wildflower prized for its distinctive maroon flowers.</p><div class="meta"><span>$9.95 – $13.95</span></div></article><article class="plant" id="yellow-trillium"><h3>Trillium luteum</h3><p class="com">Yellow Trillium</p><p>The light yellow flower sits right on top of the slightly variegated leaves. The leaves on this one can get quite large.</p><div class="meta"><span>$9.95 – $13.95</span></div></article></div></details></div></section>
+<section class="sec" aria-labelledby="more">
+  <div class="wrap">
+    <h2 id="more">More in the full store</h2>
+    <p class="prose" style="margin-top:.8rem">Their online store also groups plants into collections, including:</p>
+    <ul class="colls">
+      <li>Complete native plant list</li><li>Best selling plants</li><li>Bareroot plants</li><li>Full sun</li>
+      <li>Seed mixes</li><li>Carex and grasses</li><li>Cutting flowers</li><li>Deer resistant</li>
+      <li>Hummingbird attractors</li><li>Monarch and butterfly attractors</li><li>Trees and shrubs</li><li>Gift cards, $10 to $150, delivered by email</li>
+    </ul>
+    <p style="margin-top:1.6rem"><a class="btn main" href="mailto:contact@gardensoftheblueridge.com?subject=Question%20about%20a%20native%20plant">Ask about a plant</a></p>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h2>Gardens of the Blue Ridge</h2>
+        <p>Wildflowers, ferns, native orchids, trees and shrubs since 1892. Mail order only for now, shipped by UPS to any location in the USA.</p>
+      </div>
+      <div>
+        <h2>Reach the nursery</h2>
+        <ul>
+          <li><a href="mailto:contact@gardensoftheblueridge.com">contact@gardensoftheblueridge.com</a></li>
+          <li><a href="tel:+14702081070">470-208-1070</a></li>
+          <li>Mailing address: 3630 Thompson Bridge Rd, Suite 21-330, Gainesville, GA 30506</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul><li><a href="index.html">Home</a></li><li><a href="plants.html">Native plants</a></li><li><a href="bareroot.html">Bareroot & seasons</a></li><li><a href="about.html">Our story</a></li><li><a href="ordering.html">Ordering & contact</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Unofficial demo built by MHS Tecnologia for Gardens of the Blue Ridge. Not affiliated with or endorsed by Gardens of the Blue Ridge. Plant text, prices and photos come from their public website.</p>
+      <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+    </div>
+  </div>
+</footer>
+<div class="dock" aria-label="Contact the nursery">
+  <a class="btn main" href="mailto:contact@gardensoftheblueridge.com?subject=Native%20plants">Email</a>
+  <a class="btn alt" href="tel:+14702081070">Call 470-208-1070</a>
+</div>
+</body>
+</html>
