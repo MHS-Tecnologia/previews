@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reservations · Magic View Motel</title>
+<meta name="description" content="Check-in 2:00 pm, check-out 11:00 am, and the deposit and cancellation policy.">
+<meta name="theme-color" content="#33241a">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/grenze-gotisch-400-900.woff2" crossorigin>
+<style>
+  @font-face { font-family: "Grenze Gotisch"; font-weight: 400 900; font-display: swap; src: url(fonts/grenze-gotisch-400-900.woff2) format("woff2"); }
+  @font-face { font-family: "Alegreya Sans"; font-weight: 400; font-display: swap; src: url(fonts/alegreya-sans-400.woff2) format("woff2"); }
+  @font-face { font-family: "Alegreya Sans"; font-weight: 500; font-display: swap; src: url(fonts/alegreya-sans-500.woff2) format("woff2"); }
+  @font-face { font-family: "Alegreya Sans"; font-weight: 700; font-display: swap; src: url(fonts/alegreya-sans-700.woff2) format("woff2"); }
+
+  /* Taken from the place itself: the blue of their road sign, the red of the
+     trim and fence rails, the dark timber of the chalet, and snow. */
+  :root {
+    --snow: #f3f6f9;
+    --frost: #e2e9f0;
+    --meadow: #e8eedf;
+    --timber: #33241a;
+    --timber-2: #4a3628;
+    --ink: #1f1a17;
+    --muted: #5b524c;
+    --sign: #1b5aa6;
+    --rail: #b81d2e;
+    --rail-deep: #971625;
+    --pad: clamp(1rem, 4vw, 3rem);
+    --max: 76rem;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--snow); color: var(--ink); font: 400 1.125rem/1.6 "Alegreya Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--sign); outline-offset: 3px; }
+  h1, h2, .word { font-family: "Grenze Gotisch", "Times New Roman", serif; font-weight: 700; line-height: 1; letter-spacing: .005em; }
+  h2 { font-size: clamp(2.3rem, 4.6vw, 3.4rem); text-wrap: balance; margin-bottom: .9rem; }
+  h3 { font-size: 1.2rem; font-weight: 700; line-height: 1.25; }
+  p { max-width: 36em; }
+  .wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+  .skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+  .skip:focus { left: .5rem; }
+  .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .demo { max-width: none; background: var(--ink); color: #d9d2cc; font-size: .875rem; line-height: 1.4; text-align: center; padding: .45rem 1rem; }
+
+  /* Header: dark timber like the chalet's upper storey, their sign, and the rail. */
+  .top { background: var(--timber); color: #fff; }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.25rem; }
+  .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+  .brand img { height: 3.1rem; width: auto; }
+  .brand .word { font-size: 1.7rem; font-weight: 600; }
+  .nav { display: flex; align-items: center; gap: 1.6rem; font-weight: 500; }
+  .nav > a { text-decoration: none; color: #efe7e0; }
+  .nav > a:hover, .nav > a[aria-current] { color: #fff; text-decoration: underline; text-underline-offset: .3em; text-decoration-thickness: 2px; }
+  .nav > a.call { background: var(--rail); color: #fff; padding: .5rem .9rem; border-radius: .3rem; text-decoration: none; }
+  .nav > a.call:hover { background: var(--rail-deep); }
+  .rail { height: .5rem; background: repeating-linear-gradient(90deg, var(--rail) 0 3.5rem, #fff 3.5rem 7rem); }
+  .menu { display: none; position: relative; }
+  .menu summary { list-style: none; cursor: pointer; padding: .55rem .9rem; border: 1px solid #8a7466; border-radius: .3rem; font-weight: 500; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { background: var(--timber-2); }
+  .menu div { position: absolute; right: 0; top: calc(100% + .5rem); z-index: 15; background: var(--timber); border: 1px solid var(--timber-2); border-radius: .4rem; padding: .4rem; display: grid; min-width: 13rem; box-shadow: 0 .6rem 1.4rem rgb(31 26 23 / .3); }
+  .menu div a { padding: .75rem .9rem; text-decoration: none; color: #fff; border-radius: .25rem; }
+  .menu div a:hover, .menu div a[aria-current] { background: var(--timber-2); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .6rem 1.25rem; border-radius: .35rem; font-weight: 700; font-size: 1.0625rem; text-decoration: none; border: 2px solid var(--rail); }
+  .btn.red { background: var(--rail); color: #fff; }
+  .btn.red:hover { background: var(--rail-deep); border-color: var(--rail-deep); }
+  .btn.ghost { color: var(--rail-deep); background: transparent; }
+  .btn.ghost:hover { background: #fff; }
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+  /* Home hero: the same chalet in both seasons. */
+  .hero { background: var(--frost); transition: background-color .6s ease; padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2rem, 5vw, 4rem); }
+  body[data-season="summer"] .hero { background: var(--meadow); }
+  .hero .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+  .hero h1 { font-size: clamp(3.4rem, 7.6vw, 6.6rem); font-weight: 800; line-height: .9; color: var(--timber); }
+  .hero .where { margin: 1rem 0 .4rem; font-size: 1.25rem; font-weight: 500; }
+  .hero .line { color: var(--muted); min-height: 3.2em; margin-bottom: 1.4rem; }
+  .season { display: grid; }
+  .season picture { grid-area: 1 / 1; transition: opacity .6s ease; }
+  .season picture img { width: 100%; border-radius: .4rem; }
+  .season picture[hidden] { display: block; opacity: 0; visibility: hidden; }
+  .switch { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .8rem; flex-wrap: wrap; }
+  .switch .toggle { display: inline-flex; padding: .25rem; gap: .25rem; background: #fff; border-radius: 2rem; border: 1px solid #c9d2db; }
+  .switch button { font: inherit; font-weight: 700; font-size: 1rem; border: 0; background: transparent; color: var(--ink); padding: .55rem 1.1rem; min-height: 2.75rem; border-radius: 2rem; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: var(--sign); color: #fff; }
+  body[data-season="summer"] .switch button[aria-pressed="true"] { background: #3d5a2a; }
+  .switch figcaption { color: var(--muted); font-size: 1rem; }
+
+  section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+  .lead { font-size: 1.25rem; }
+
+  /* Every room: one strong photo and their list. */
+  .rooms .wrap { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+  .rooms img { border-radius: .4rem; }
+  .has { list-style: none; padding: 0; margin: 1.2rem 0 1.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: .1rem 1.5rem; }
+  .has li { padding: .6rem 0 .6rem 1.4rem; border-bottom: 1px solid #d3dbe2; position: relative; font-weight: 500; }
+  .has li::before { content: ""; position: absolute; left: 0; top: 1.05rem; width: .6rem; height: .6rem; background: var(--rail); border-radius: 50%; }
+  .facts { display: grid; gap: .35rem; margin-bottom: 1.5rem; }
+  .textlink { font-weight: 700; color: var(--rail-deep); text-underline-offset: .25em; }
+
+  /* Evening: the lit cabin on the timber colour. */
+  .evening { background: var(--timber); color: #f1ebe5; }
+  .evening .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+  .evening img { border-radius: .4rem; }
+  .eve-photo { max-width: 600px; justify-self: end; width: 100%; }
+  .eve-photo figcaption { margin-top: .6rem; color: #cdbfb3; }
+  .evening h2 { color: #fff; }
+  .times { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1.2rem; margin: 1.3rem 0 1.6rem; font-size: 1.2rem; }
+  .times dt { color: #cdbfb3; }
+  .times dd { font-weight: 700; }
+  .evening .textlink { color: #fff; }
+
+  .reach .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
+  .reach address { font-style: normal; font-size: 1.25rem; line-height: 1.5; }
+  .reach .actions { justify-content: flex-end; }
+
+  /* Inner pages. */
+  .page-head { background: var(--frost); padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(1.5rem, 4vw, 2.5rem); }
+  .page-head h1 { font-size: clamp(3rem, 6.5vw, 5rem); font-weight: 800; color: var(--timber); margin-bottom: .8rem; }
+  .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem 2rem; }
+  .gallery figure img { border-radius: .4rem; width: 100%; }
+  .gallery figcaption { margin-top: .6rem; color: var(--muted); }
+  .two { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+  .two img { border-radius: .4rem; }
+  .policy { display: grid; gap: 1.1rem; max-width: 40rem; }
+  .policy h2 { margin-top: 1.4rem; }
+  .policy h2:first-child { margin-top: 0; }
+  .note { background: #fff; border-left: 4px solid var(--sign); padding: 1rem 1.2rem; border-radius: 0 .3rem .3rem 0; }
+  .card { background: #fff; border-radius: .4rem; padding: 1.5rem; display: grid; gap: 1rem; }
+  .card dl { display: grid; grid-template-columns: auto 1fr; gap: .5rem 1.2rem; }
+  .card dt { color: var(--muted); }
+  .card dd { font-weight: 500; }
+
+  footer { background: var(--ink); color: #cfc7c0; padding: 2.5rem 0 2rem; font-size: 1rem; }
+  footer .wrap { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem 2rem; }
+  footer .word { font-size: 1.8rem; color: #fff; font-weight: 600; margin-bottom: .4rem; }
+  footer .legal { grid-column: 1 / -1; border-top: 1px solid #3d3530; padding-top: 1.2rem; font-size: .9rem; }
+  footer nav { display: grid; gap: .3rem; align-content: start; }
+
+  .dock { display: none; }
+
+  @media (max-width: 900px) {
+    .nav > a { display: none; }
+    .menu { display: block; }
+    .brand .word { font-size: 1.45rem; }
+    .brand img { height: 2.7rem; }
+    .hero .wrap, .rooms .wrap, .evening .wrap, .reach .wrap, .two { grid-template-columns: 1fr; }
+    .hero { padding-top: 1.25rem; }
+    .hero h1 { font-size: clamp(3.1rem, 14.5vw, 4.4rem); }
+    .hero .where { margin-top: .6rem; font-size: 1.15rem; }
+    .hero .line { min-height: 0; margin-bottom: 1.1rem; }
+    .actions .btn { flex: 1 1 0; padding-inline: .8rem; }
+    .reach .actions { justify-content: flex-start; }
+    .gallery { grid-template-columns: 1fr; gap: 2rem; }
+    footer .wrap { grid-template-columns: 1fr; }
+    .dock { display: flex; gap: .6rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 12; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom)); background: var(--timber); transform: translateY(110%); transition: transform .3s ease; }
+    .dock.on { transform: none; }
+    .dock .btn { flex: 1 1 0; min-height: 2.9rem; }
+    .dock .btn.ghost { color: #fff; border-color: #fff; }
+    footer { padding-bottom: 6rem; }
+  }
+  @media (max-width: 420px) {
+    .has { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body data-season="winter">
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Magic View Motel. Not affiliated with or endorsed by Magic View Motel.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/sign.webp" width="149" height="210" alt=""><span class="word">Magic View Motel</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="reservations.html" aria-current="page">Reservations</a><a href="contact.html">Contact</a>
+      <a class="call" href="tel:+18028243793">Call <span class="num">(802) 824-3793</span></a>
+      <details class="menu"><summary>Menu</summary><div><a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="reservations.html" aria-current="page">Reservations</a><a href="contact.html">Contact</a><a href="tel:+18028243793">Call (802) 824-3793</a></div></details>
+    </nav>
+  </div>
+</header>
+<div class="rail" aria-hidden="true"></div>
+<main id="main">
+
+<div class="page-head" data-dock-after>
+  <div class="wrap">
+    <h1>Reservations</h1>
+    <p class="lead">Check-in is at 2:00 pm and check-out is at 11:00 am. Here is how deposits and cancellations work, as Magic View Motel states them.</p>
+  </div>
+</div>
+<section>
+  <div class="wrap two">
+    <div class="policy">
+      <h2>Deposit</h2>
+      <p>All reservations need a deposit of one night's lodging per room, including tax. It must arrive within 14 business days of making the reservation.</p>
+      <p>The deposit holds the room for the entire period you requested.</p>
+      <h2>Cancelling</h2>
+      <p>Deposits are refunded when notice of cancellation arrives at least 14 days before your arrival date.</p>
+      <p>A $10 (plus tax) processing charge per room applies to all refunds, whatever the reason or the notice given.</p>
+      <p>Deposits are forfeited if you arrive after the date specified. There are no refunds for early departure, and deposits can't be moved to future dates.</p>
+      <h2>Booking close to your dates</h2>
+      <p>For a reservation made less than 14 days before arrival, MasterCard or Visa is accepted but is not refundable.</p>
+      <p class="note">On the live site, online reservation requests go through the motel's booking service. This demo only shows phone and email.</p>
+    </div>
+    <div class="card">
+      <img src="img/chalet-sun-600.webp" srcset="img/chalet-sun-600.webp 600w, img/chalet-sun-900.webp 900w" sizes="(min-width: 1312px) 436px, (min-width: 901px) 33vw, calc(100vw - 2rem)" width="900" height="676" alt="The Magic View chalet in snow under a blue sky" loading="lazy" decoding="async">
+      <dl>
+        <dt>Check-in</dt><dd class="num">2:00 pm</dd>
+        <dt>Check-out</dt><dd class="num">11:00 am</dd>
+        <dt>Rooms</dt><dd>18 units, non-smoking</dd>
+      </dl>
+      <div class="actions">
+        <a class="btn red" href="tel:+18028243793"><span class="num">Call (802) 824-3793</span></a>
+        <a class="btn ghost" href="mailto:Stay@MagicViewMotel.com?subject=Reservation">Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="word">Magic View Motel</p>
+      <p>3806 Vt Route 11, Londonderry, VT 05148<br>Phone <a href="tel:+18028243793" class="num">(802) 824-3793</a> · Fax <span class="num">(802) 824-3794</span><br><a href="mailto:Stay@MagicViewMotel.com?subject=Room%20request">Stay@MagicViewMotel.com</a></p>
+    </div>
+    <nav aria-label="Footer"><a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="reservations.html">Reservations</a><a href="contact.html">Contact</a></nav>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Magic View Motel. Not affiliated with or endorsed by Magic View Motel. Text and photos come from magicviewmotel.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="dock" aria-label="Contact"><a class="btn red" href="tel:+18028243793">Call</a><a class="btn ghost" href="mailto:Stay@MagicViewMotel.com?subject=Room%20request">Email</a></div>
+
+<script>
+(() => {
+  const d = document.querySelector('.dock'), s = document.querySelector('[data-dock-after]');
+  if (!d || !s || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => d.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(s);
+})();
+</script>
+
+</body>
+</html>
