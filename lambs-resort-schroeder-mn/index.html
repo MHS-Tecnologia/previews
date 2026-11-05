@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lamb's Resort: cabins and camping on Lake Superior, Schroeder, MN</title>
+<meta name="description" content="Log cabins and lakeside campsites on 60 acres and half a mile of private Lake Superior beach in Schroeder, Minnesota.">
+<meta name="theme-color" content="#f8faf9">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rokkitt.woff2" crossorigin>
+<link rel="preload" as="image" media="(max-width: 860px)" imagesrcset="img/hero-m.webp 800w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 861px)" imagesrcset="img/hero-800.webp 800w, img/hero-1400.webp 1400w" imagesizes="min(calc((100vw - 6rem) * 0.6), 700px)" fetchpriority="high">
+<style>
+@font-face{font-family:"Rokkitt";src:url(fonts/rokkitt.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Literata";src:url(fonts/literata.woff2) format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Literata";src:url(fonts/literata-italic.woff2) format("woff2");font-weight:200 900;font-style:italic;font-display:swap}
+/* Lake fog, deep Superior water, the red stain on the log cabins, spruce,
+   and the campground's own site colors: blue, green, red, uncolored. */
+:root{
+  --fog:#e6ecec; --paper:#f8faf9; --lake:#1b3743; --lake-2:#27495a; --ink:#1b2a30; --muted:#4d5f66;
+  --cabin:#8b2a20; --cabin-2:#a5382b; --spruce:#2c4a3b; --line:#c5d0d1;
+  --k-blue:#3f7fb8; --k-green:#4f9a55; --k-red:#c8473a;
+  --pad:clamp(1rem,4vw,3rem); --max:75rem;
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--fog);color:var(--ink);font:400 1.0625rem/1.65 "Literata",Georgia,serif;font-optical-sizing:auto;touch-action:manipulation}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--cabin);outline-offset:3px}
+h1,h2,h3,.num{font-family:"Rokkitt",Georgia,serif;font-weight:700;line-height:1;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem);color:var(--lake)}
+h3{font-size:1.65rem;line-height:1.05}
+p{max-width:38em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{max-width:none;background:var(--lake);color:#d6e2e4;font:400 .8125rem/1.4 system-ui,sans-serif;text-align:center;padding:.5rem 1rem}
+
+/* Header */
+.top{background:var(--paper);border-bottom:1px solid var(--line);position:relative;z-index:5}
+.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:4.25rem}
+.brand{display:block;flex:none;line-height:0}
+.brand img{width:176px;height:auto}
+.nav{display:flex;align-items:center;gap:1.75rem;margin-left:auto;font:600 1.0625rem/1 "Rokkitt",serif}
+.nav > a{text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-color:var(--cabin)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.7rem 1.35rem;border-radius:3px;font:700 1.125rem/1 "Rokkitt",serif;letter-spacing:.01em;text-decoration:none;border:2px solid var(--cabin);transition:background-color .15s,color .15s}
+.btn.solid{background:var(--cabin);color:#fff}
+.btn.solid:hover{background:var(--cabin-2);border-color:var(--cabin-2)}
+.btn.line{color:var(--cabin);background:transparent}
+.btn.line:hover{background:var(--cabin);color:#fff}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+.nav .btn{min-height:2.6rem;padding:.55rem 1rem;font-size:1.0625rem}
+.menu{display:none;margin-left:auto;position:relative}
+.menu summary{list-style:none;cursor:pointer;font:700 1.0625rem/1 "Rokkitt",serif;padding:.75rem .9rem;border:2px solid var(--lake);border-radius:3px}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--lake);color:#fff}
+.menu .panel{position:absolute;right:0;top:calc(100% + .5rem);background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 30px rgba(27,55,67,.18);min-width:15rem;padding:.5rem;display:grid}
+.menu .panel a{display:block;padding:.8rem 1rem;text-decoration:none;font:600 1.15rem/1.2 "Rokkitt",serif;border-radius:2px}
+.menu .panel a:hover{background:var(--fog)}
+.menu .panel a[aria-current]{color:var(--cabin)}
+@media (max-width:860px){.nav > a,.nav > .btn{display:none}.nav{display:none}.menu{display:block}.brand img{width:150px}}
+
+/* Home hero: the headline beside one big photo of a tent on their shore */
+.hero{padding:clamp(1.5rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4.5rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,4.6fr) minmax(0,7.4fr);gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.hero h1{font-size:clamp(2.6rem,4.4vw,4rem);color:var(--lake);font-weight:700}
+.hero .lede{margin-top:1.1rem;font-size:1.125rem;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+.note{margin-top:1rem;font-size:.9375rem;color:var(--muted)}
+.hero figure{margin:0}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.hero figcaption,.cap{font-size:.875rem;color:var(--muted);margin-top:.5rem}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:1.25rem}
+  .hero h1{font-size:clamp(2.35rem,10.5vw,3rem)}
+  .hero .lede{font-size:1.0625rem;margin-top:.8rem}
+  .actions{margin-top:1.1rem}
+  .hero .actions{flex-wrap:nowrap;gap:.5rem}
+  .hero .actions .btn{flex:1 1 auto;padding:.7rem .8rem}
+  .hero figure img{aspect-ratio:4/3}
+}
+
+/* The signature: their campground goes by color and number */
+.key{background:var(--lake);color:#e9f0f1;padding:clamp(3rem,6vw,5.5rem) 0}
+.key h2{color:#fff}
+.key .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:end;margin-bottom:2.25rem}
+.key .intro p{color:#c9d8db}
+.key table{width:100%;border-collapse:collapse}
+.key caption{text-align:left;color:#c9d8db;font-size:.9375rem;padding-bottom:.75rem}
+.key th,.key td{text-align:left;vertical-align:top;padding:1.15rem 1rem 1.15rem 0;border-top:1px solid rgba(255,255,255,.18)}
+.key thead th{font:600 1rem/1.2 "Rokkitt",serif;color:#c9d8db;border-top:0;padding-top:0}
+.key tbody th{width:30%}
+.kind{display:flex;gap:.85rem;align-items:flex-start}
+.chip{flex:none;width:1.6rem;height:1.6rem;border-radius:50%;margin-top:.15rem;border:2px solid #fff}
+.chip.blue{background:var(--k-blue)}.chip.green{background:var(--k-green)}.chip.red{background:var(--k-red)}.chip.none{background:transparent;border-style:dashed}
+.kind strong{display:block;font:700 1.375rem/1.1 "Rokkitt",serif;color:#fff}
+.kind span{display:block;font-weight:400;font-size:.9375rem;color:#c9d8db;margin-top:.2rem}
+.sites{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;padding:0}
+.sites li{font:700 1.0625rem/1 "Rokkitt",serif;color:#fff;font-variant-numeric:tabular-nums;padding:.32rem .45rem .26rem;border-radius:2px;min-width:1.9rem;text-align:center}
+.blue .sites li{background:#2f6c9e}.green .sites li{background:#3f8446}.red .sites li{background:#b63c30}.none .sites li{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.75)}
+.rate{margin-top:.55rem!important}
+.rate{display:block;font:400 .9375rem/1.4 "Literata",serif;color:#c9d8db;margin-top:.3rem}
+.rate b{font:700 1.375rem/1 "Rokkitt",serif;color:#fff}
+.key .after{margin-top:1.5rem;color:#c9d8db;font-size:.9375rem}
+.key a{color:#fff}
+@media (max-width:760px){
+  .key .intro{grid-template-columns:1fr;gap:1rem}
+  .key thead{display:none}
+  .key table,.key tbody,.key tr,.key th,.key td{display:block;width:auto}
+  .key tr{border-top:1px solid rgba(255,255,255,.18);padding:1.1rem 0}
+  .key th,.key td{border:0;padding:0}
+  .key tbody th{width:auto;margin-bottom:.75rem}
+  .key td{padding-left:2.45rem;margin-top:.6rem}
+  .key td::before{content:attr(data-l);display:block;font:600 .9375rem/1.2 "Rokkitt",serif;color:#c9d8db;margin-bottom:.15rem}
+}
+
+/* Cabins, by number */
+.sec{padding:clamp(3rem,6vw,5.5rem) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:end;margin-bottom:2rem}
+.sec-head p{color:var(--muted)}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:.75rem}}
+.row{display:grid;grid-template-columns:14rem minmax(0,1fr) 26rem;gap:clamp(1.25rem,3vw,2.5rem);padding:2rem 0;border-top:1px solid var(--line);align-items:start}
+.row:last-child{border-bottom:1px solid var(--line)}
+.num{white-space:nowrap;font-size:clamp(2.6rem,4.4vw,3.6rem);color:var(--cabin);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:.9;word-spacing:.05em}
+.row h3{color:var(--lake);margin-bottom:.5rem}
+.row .facts{margin-top:.9rem;font-size:.9375rem;color:var(--muted)}
+.row .facts b{color:var(--ink);font-weight:600}
+.row .more{display:inline-block;margin-top:1rem;font:700 1.0625rem/1 "Rokkitt",serif;color:var(--cabin)}
+.row img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+@media (max-width:1000px){.row{grid-template-columns:9rem minmax(0,1fr)}.row figure{grid-column:1/-1}}
+@media (max-width:560px){.row{grid-template-columns:1fr;gap:.75rem}.num{font-size:3rem}}
+
+/* Then and now */
+.then{background:var(--paper);border-block:1px solid var(--line)}
+.then .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.then figure{margin:0}
+.then img{width:100%;border-radius:2px}
+.then .big{font:700 clamp(2.2rem,4.6vw,3.6rem)/1 "Rokkitt",serif;color:var(--lake)}
+.then p{margin-top:1rem}
+@media (max-width:860px){.then .wrap{grid-template-columns:1fr}}
+
+.saying{padding:clamp(3rem,6vw,5rem) 0;text-align:center}
+.saying blockquote{font:600 clamp(1.9rem,4.4vw,3.4rem)/1.08 "Rokkitt",serif;color:var(--spruce);max-width:22ch;margin:0 auto;text-wrap:balance}
+.saying p{margin:1rem auto 0;color:var(--muted);font-size:.9375rem}
+
+.call{background:var(--cabin);color:#fff;padding:clamp(2.75rem,5vw,4.5rem) 0}
+.call .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center}
+.call h2{color:#fff}
+.call p{color:#f6dcd7;margin-top:.75rem}
+.call .btn{border-color:#fff}
+.call .btn.solid{background:#fff;color:var(--cabin)}
+.call .btn.solid:hover{background:var(--fog);border-color:var(--fog)}
+.call .btn.line{color:#fff}
+.call .btn.line:hover{background:#fff;color:var(--cabin)}
+.call .actions{margin-top:0}
+@media (max-width:760px){.call .wrap{grid-template-columns:1fr}}
+
+/* Inner pages */
+.page-head{padding:clamp(2rem,5vw,4rem) 0 clamp(1.5rem,3vw,2.5rem)}
+.page-head h1{font-size:clamp(2.6rem,6vw,4.75rem);color:var(--lake)}
+.page-head p{margin-top:1rem;font-size:1.125rem}
+.group{padding:clamp(2.5rem,5vw,4rem) 0;border-top:1px solid var(--line)}
+.group .head{display:grid;grid-template-columns:14rem minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);margin-bottom:1.75rem}
+.group .head p+p{margin-top:.85rem}
+@media (max-width:760px){.group .head{grid-template-columns:1fr;gap:.75rem}}
+.prices{display:flex;flex-wrap:wrap;gap:0;margin-top:1.25rem;border:1px solid var(--line);background:var(--paper);width:fit-content;max-width:100%}
+.prices div{padding:.75rem 1.25rem;border-right:1px solid var(--line)}
+.prices div:last-child{border-right:0}
+.prices dt{font-size:.875rem;color:var(--muted)}
+.prices dd{font:700 1.5rem/1.1 "Rokkitt",serif;color:var(--lake);font-variant-numeric:tabular-nums}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+.trio{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+.trio figure:first-child{grid-row:1/3}
+.trio figure{display:flex}
+.trio figure img{height:100%;aspect-ratio:auto}
+@media (max-width:700px){.trio figure:first-child{grid-row:auto}.trio figure img{height:auto;aspect-ratio:4/3}}
+@media (max-width:700px){.photos{grid-template-columns:1fr}}
+.info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 3rem}
+.info h3{color:var(--lake);margin-bottom:.4rem}
+.info p+p{margin-top:.6rem}
+@media (max-width:760px){.info{grid-template-columns:1fr}}
+.panel-paper{background:var(--paper);border:1px solid var(--line);padding:clamp(1.25rem,3vw,2rem)}
+ul.plain{padding-left:1.1rem}
+ul.plain li+li{margin-top:.4rem}
+.cols{columns:2 22rem;column-gap:3rem}
+.cols > div{break-inside:avoid;margin-bottom:2rem}
+.cols h3{color:var(--lake);margin-bottom:.45rem}
+.cols p+p{margin-top:.55rem}
+.wide-photo{margin:0}
+.wide-photo img{width:100%;border-radius:2px}
+
+/* Footer */
+footer{background:var(--ink);color:#c9d3d6;padding:3rem 0 6rem;font-size:.9375rem}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:2rem}
+footer .logo-ink{background:var(--paper);display:inline-block;padding:.5rem .75rem;border-radius:2px;line-height:0}
+footer .logo-ink img{width:150px}
+footer h2{font:700 1.125rem/1.2 "Rokkitt",serif;color:#fff;margin-bottom:.5rem}
+footer a{color:#fff}
+footer nav a{display:block;padding:.25rem 0}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:1.25rem;font-size:.8125rem;color:#a9b6ba}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* Phone bar on small screens once the hero buttons scroll away */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:10;display:none;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(248,250,249,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .2s}
+.bar .btn{flex:1}
+.bar.on{transform:none}
+@media (max-width:860px){.bar{display:flex}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lamb's Resort: cabins and camping on Lake Superior, Schroeder, MN">
+<meta property="og:description" content="Log cabins and lakeside campsites on 60 acres and half a mile of private Lake Superior beach in Schroeder, Minnesota.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/lambs-resort-schroeder-mn/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/lambs-resort-schroeder-mn/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Lamb's Resort. Not affiliated with or endorsed by Lamb's Resort.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Lamb's Resort, home"><img src="img/logo.png" width="264" height="80" alt="Lamb's Resort on Lake Superior, est. 1922"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="cabins.html">Cabins</a>
+      <a href="camping.html">Camping</a>
+      <a href="explore.html">Explore</a>
+      <a href="reserve.html">Reserve</a>
+      <a class="btn solid" href="tel:+12186637292"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>218-663-7292</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav class="panel" aria-label="Main, mobile">
+        <a href="index.html" aria-current="page">Home</a>
+      <a href="cabins.html">Cabins</a>
+      <a href="camping.html">Camping</a>
+      <a href="explore.html">Explore</a>
+      <a href="reserve.html">Reserve</a>
+        <a href="tel:+12186637292">Call 218-663-7292</a>
+        <a href="mailto:lr@boreal.org">Email lr@boreal.org</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Cabins and campsites on the shore of Lake Superior</h1>
+      <p class="lede">A quiet, family owned and managed resort on 60 acres, with more than half a mile of private beach, in Schroeder on Minnesota's North Shore.</p>
+      <div class="actions" data-bar-after>
+        <a class="btn solid" href="tel:+12186637292"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 218-663-7292</a>
+        <a class="btn line" href="mailto:lr@boreal.org"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>Email us</a>
+      </div>
+      <p class="note">Reservations are by phone. New guests can call for 2027 from Tuesday, January 5, at 9 am.</p>
+    </div>
+    <figure>
+      <picture>
+        <source media="(max-width: 860px)" srcset="img/hero-m.webp 800w" sizes="calc(100vw - 2rem)">
+        <img src="img/hero-800.webp" srcset="img/hero-800.webp 800w, img/hero-1400.webp 1400w" sizes="min(calc((100vw - 6rem) * 0.6), 700px)" width="1400" height="1050" alt="A blue tent pitched among birches on a lake site, Lake Superior behind it" fetchpriority="high">
+      </picture>
+      <figcaption>A tent site right on the lake.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="key" aria-labelledby="key-h">
+  <div class="wrap">
+    <div class="intro">
+      <h2 id="key-h">Every campsite has a color and a number</h2>
+      <p>Lamb's has the only campground on Minnesota's North Shore of Lake Superior with sites right on the lake. Pick a color for your rig or tent, then a lake site or one tucked in the woods. Lake sites have a three-night minimum.</p>
+    </div>
+    <table>
+<caption>2027 nightly rates, before tax. One sleeping tent or camper per site, five people at most.</caption>
+<thead><tr><th scope="col">Color on the resort map</th><th scope="col">Lake sites</th><th scope="col">Off-lake sites</th></tr></thead>
+<tbody>
+<tr class="blue">
+  <th scope="row"><div class="kind"><span class="chip blue" aria-hidden="true"></span><div><strong>Blue</strong><span>RV sites with full hook-up: water, sewer and electric</span></div></div></th>
+  <td data-l="Lake sites"><ul class="sites"><li>12C</li><li>12D</li><li>12E</li></ul><span class="rate"><b>$72</b> a night</span></td>
+  <td data-l="Off-lake sites"><ul class="sites"><li>12A</li><li>12B</li><li>39</li><li>40</li><li>41</li><li>Lupe</li></ul><span class="rate"><b>$61</b> a night</span></td>
+</tr>
+<tr class="green">
+  <th scope="row"><div class="kind"><span class="chip green" aria-hidden="true"></span><div><strong>Green</strong><span>RV sites with water and electric hook-ups</span></div></div></th>
+  <td data-l="Lake sites"><ul class="sites"><li>1</li><li>2</li><li>3</li><li>4</li></ul><span class="rate"><b>$70</b> a night</span></td>
+  <td data-l="Off-lake sites"><ul class="sites"><li>9–11</li><li>13–22</li><li>24–26</li><li>C–G</li><li>I–M</li></ul><span class="rate"><b>$55</b> a night</span></td>
+</tr>
+<tr class="red">
+  <th scope="row"><div class="kind"><span class="chip red" aria-hidden="true"></span><div><strong>Red</strong><span>Tent sites with room for only one tent</span></div></div></th>
+  <td data-l="Lake sites"><ul class="sites"><li>51</li><li>51A</li><li>52A</li><li>53</li><li>55</li><li>56</li></ul><span class="rate"><b>$56</b> a night</span></td>
+  <td data-l="Off-lake sites"><ul class="sites"><li>23</li><li>29–31</li><li>34</li><li>47A</li><li>48A</li><li>48B</li><li>60</li><li>65</li></ul><span class="rate"><b>$39</b> a night</span></td>
+</tr>
+<tr class="none">
+  <th scope="row"><div class="kind"><span class="chip none" aria-hidden="true"></span><div><strong>No color</strong><span>Tent sites big enough for two medium-sized tents</span></div></div></th>
+  <td data-l="Lake sites"><ul class="sites"><li>5–8</li><li>50</li><li>52</li><li>54</li><li>57</li><li>58</li><li>59</li><li>59A</li></ul><span class="rate"><b>$56</b> a night</span></td>
+  <td data-l="Off-lake sites"><ul class="sites"><li>8A</li><li>27</li><li>28</li><li>33</li><li>35</li><li>42–45</li><li>47–49</li><li>61–64</li><li>66–69</li></ul><span class="rate"><b>$39</b> a night</span></td>
+</tr>
+</tbody>
+</table>
+    <p class="after">Plus a group site, popular with church groups, Scouts and big families: ask about rates. Stay seven nights and get 15% off. <a href="camping.html">Everything about camping</a></p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="cab-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="cab-h">Twelve cabins, known by their numbers</h2>
+      <p>All are full housekeeping: kitchen, bathroom with shower, bedding and towels, new pillow-top queen mattresses, and a fire ring and charcoal grill outside. Check-in 3 pm, check-out 11 am.</p>
+    </div>
+    <article class="row">
+  <p class="num" aria-hidden="true">1 2 3</p>
+  <div>
+    <h3>Log cabins on the Cross River</h3>
+    <p>The smallest spaces, and the first cabins built on the property, in the 1920s. Often called the Honeymoon Cabins: the sound of the Cross River Falls surrounds you.</p>
+    <p class="facts"><b>Sleep 4.</b> On the Cross River. 2027: $189 to $255 a night.</p>
+    <a class="more" href="cabins.html#c123">Cabins 1, 2 and 3: photos and rates</a>
+  </div>
+  <figure><img src="img/c123-a-800.webp" srcset="img/c123-a-600.webp 600w, img/c123-a-800.webp 800w, img/c123-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="Inside one of the log cabins on the Cross River: queen bed, table and futon" loading="lazy" decoding="async"></figure>
+</article>
+<article class="row">
+  <p class="num" aria-hidden="true">4 5 6 8</p>
+  <div>
+    <h3>Log cabins on Lake Superior</h3>
+    <p>Two bedrooms with queen beds and a sleeper futon in cabins 4, 5 and 6. Cabin 8 trades the second bedroom for a bigger common room, which families with children seem to like.</p>
+    <p class="facts"><b>Sleep 6.</b> On Lake Superior. 2027: $219 to $296 a night.</p>
+    <a class="more" href="cabins.html#c4568">Cabins 4, 5, 6 and 8: photos and rates</a>
+  </div>
+  <figure><img src="img/c4568-a-800.webp" srcset="img/c4568-a-600.webp 600w, img/c4568-a-800.webp 800w, img/c4568-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="A red log cabin with a deck on Lake Superior" loading="lazy" decoding="async"></figure>
+</article>
+<article class="row">
+  <p class="num" aria-hidden="true">7</p>
+  <div>
+    <h3>Log cabin 7, with a loft</h3>
+    <p>On Lake Superior, with two queen bedrooms on the main floor, a double bed in the loft up a rather steep set of stairs, and a sleeper futon.</p>
+    <p class="facts"><b>Sleeps 8.</b> On Lake Superior. 2027: $239 to $317 a night.</p>
+    <a class="more" href="cabins.html#c7">Cabin 7: photos and rates</a>
+  </div>
+  <figure><img src="img/c7-a-800.webp" srcset="img/c7-a-600.webp 600w, img/c7-a-800.webp 800w, img/c7-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="Lawn with picnic table and fire ring, Lake Superior beyond the spruce" loading="lazy" decoding="async"></figure>
+</article>
+<article class="row">
+  <p class="num" aria-hidden="true">11 12 14</p>
+  <div>
+    <h3>Frame cabins on Lake Superior</h3>
+    <p>Slightly newer than the log cabins. Two bedrooms, each with a queen bed, plus a sleeper futon.</p>
+    <p class="facts"><b>Sleep 6.</b> On Lake Superior. 2027: $209 to $286 a night.</p>
+    <a class="more" href="cabins.html#cframe">Cabins 11, 12 and 14: photos and rates</a>
+  </div>
+  <figure><img src="img/cf-a-800.webp" srcset="img/cf-a-600.webp 600w, img/cf-a-800.webp 800w, img/cf-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="A red frame cabin among the trees" loading="lazy" decoding="async"></figure>
+</article>
+<article class="row">
+  <p class="num" aria-hidden="true">18</p>
+  <div>
+    <h3>Cabin 18, the largest</h3>
+    <p>Tucked in the woods near the Cross River, a bit below the coffee shop. Three bedrooms with queen beds, two sleeper futons, and a full kitchen with a microwave.</p>
+    <p class="facts"><b>Sleeps 8.</b> In the woods by the Cross River. 2027: $209 to $286 a night.</p>
+    <a class="more" href="cabins.html#c18">Cabin 18: photos and rates</a>
+  </div>
+  <figure><img src="img/c18-a-800.webp" srcset="img/c18-a-600.webp 600w, img/c18-a-800.webp 800w, img/c18-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="Cabin 18 among the pines, with its deck and picnic table" loading="lazy" decoding="async"></figure>
+</article>
+  </div>
+</section>
+
+<section class="then sec" aria-labelledby="then-h">
+  <div class="wrap">
+    <figure>
+      <img src="img/1955-800.webp" srcset="img/1955-800.webp 800w, img/1955-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 680px" width="1400" height="851" alt="Black and white photo of log cabins in a clearing, circa 1955" loading="lazy" decoding="async">
+      <figcaption class="cap">Cabins 7, 6, 5, and a glimpse of 4, circa 1955.</figcaption>
+    </figure>
+    <div>
+      <p class="big" id="then-h">Est. 1922</p>
+      <p>The log cabins on the Cross River were the first built on the property, in the 1920s. Lamb's is still family owned and managed: 60 acres on Lake Superior, cut through by the Cross River, in which kids and fish often swim.</p>
+      <p><a href="cabins.html">See the cabins</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="saying">
+  <div class="wrap">
+    <blockquote>We won't charge for sunshine and don't refund for rain.</blockquote>
+    <p>From Lamb's cancellation policy.</p>
+  </div>
+</section>
+
+<section class="call" aria-labelledby="call-h">
+  <div class="wrap">
+    <div>
+      <h2 id="call-h">Booking 2027</h2>
+      <p>New guests can start calling on Tuesday, January 5, 2027, at 9 am. Reservations are prepaid and accepted for three nights or longer.</p>
+    </div>
+    <div class="actions">
+      <a class="btn solid" href="tel:+12186637292"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 218-663-7292</a>
+      <a class="btn line" href="reserve.html">How booking works</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>
+      <span class="logo-ink"><img src="img/logo.png" width="264" height="80" alt="Lamb's Resort" loading="lazy"></span>
+      <p style="margin-top:1rem">Cabins and camping on Minnesota's North Shore of Lake Superior. Family owned and managed.</p>
+    </div>
+    <div>
+      <h2>Reach us</h2>
+      <p><a href="tel:+12186637292">218-663-7292</a><br><a href="mailto:lr@boreal.org">lr@boreal.org</a></p>
+      <p style="margin-top:.75rem">4 Lamb's Way, Hwy 61, Schroeder, MN 55613</p>
+      <p style="margin-top:.75rem">Summer office hours: 9 am to 9 pm</p>
+    </div>
+    <nav aria-label="Footer">
+      <h2>Pages</h2>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="cabins.html">Cabins</a>
+      <a href="camping.html">Camping</a>
+      <a href="explore.html">Explore</a>
+      <a href="reserve.html">Reserve</a>
+    </nav>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Lamb's Resort. Not affiliated with or endorsed by Lamb's Resort. Text and photos are from Lamb's Resort's public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="bar" id="bar"><a class="btn solid" href="tel:+12186637292"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>Call 218-663-7292</a></div>
+<script>
+(function(){var bar=document.getElementById('bar'),t=document.querySelector('[data-bar-after]');
+if(!bar)return;if(!t||!('IntersectionObserver' in window)){bar.classList.add('on');return}
+new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)})();
+</script>
+</body>
+</html>
