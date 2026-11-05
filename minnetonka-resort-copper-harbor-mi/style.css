@@ -62,8 +62,11 @@ p{margin:0 0 1em;max-width:66ch}
 .btn.line:hover{background:var(--trim);color:#fff}
 
 /* home hero */
-.hero{padding:44px 0 52px}
+.hero{padding:22px 0 26px;overflow-x:clip}
 .hero .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.bleed{position:relative;margin:0 calc(-1 * (max(0px, (100vw - 1200px) / 2) + var(--gut))) 0 0}
+.bleed img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 62%;border-radius:2px 0 0 2px}
+.bleed figcaption{position:absolute;left:0;bottom:0;background:var(--trim);color:#F2EDE6;font-size:.875rem;font-weight:600;padding:6px 12px}
 .hero .where{font-weight:600;color:var(--muted);margin-bottom:14px}
 .hero h1{margin-bottom:20px}
 .hero .lede{font-size:1.15rem;color:#3b2d25}
@@ -73,8 +76,9 @@ p{margin:0 0 1em;max-width:66ch}
 .frame figcaption{color:#E9E1D8;font-size:.875rem;padding:9px 4px 1px}
 
 /* the key rail */
-.keys{padding:8px 0 64px}
-.keys .intro{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:26px}
+.keys{padding:0 0 64px}
+.keys .intro{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:16px}
+.keys h2{font-size:2.1rem}
 .keys .intro p{margin:0;color:var(--muted)}
 .rail{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(11,1fr)}
 .rail li{position:relative;padding-top:54px;text-align:center}
@@ -113,6 +117,7 @@ a.fob:hover::before{background:linear-gradient(155deg,#BF4A33,#9C2F1E 52%,var(--
 .wide figcaption{font-size:.875rem;color:var(--muted);margin-top:8px}
 .wide.full{max-width:none}
 .wide.full img{aspect-ratio:1000/369;object-fit:cover}
+.wide.gc figcaption{margin-top:10px}
 .wide.side{max-width:none;display:grid;grid-template-columns:minmax(0,1000px) 1fr;gap:24px;align-items:end}
 .wide.side figcaption{margin:0}
 .textlink{font-weight:700}
@@ -155,6 +160,18 @@ a.fob:hover::before{background:linear-gradient(155deg,#BF4A33,#9C2F1E 52%,var(--
 .unit .shot img{width:100%;border-radius:2px}
 .more{margin-top:10px;font:inherit;font-weight:700;background:none;border:2px solid var(--trim);color:var(--trim);border-radius:3px;min-height:44px;padding:0 16px;cursor:pointer}
 .more:hover{background:var(--trim);color:#fff}
+.keypanel{position:relative;background:var(--paper);border:1px solid var(--line);padding:0 28px 26px;display:flex;align-items:flex-end;gap:28px;min-height:260px}
+.keypanel::before{content:"";position:absolute;left:0;right:0;top:0;height:34px;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(0,0,0,0) 40%,rgba(0,0,0,.22)),var(--pine)}
+.keypanel .peg{position:absolute;top:11px;left:82px;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#F3DD9C,var(--brass) 55%,#7d6024);box-shadow:0 2px 2px rgba(0,0,0,.35);z-index:1}
+.keypanel .fob{width:120px;height:188px;padding-top:50px;margin-top:66px;animation:none;transform-origin:50% -36px}
+.keypanel .fob .ring{top:-37px;height:48px}
+.keypanel .fob .no{font-size:3.3rem;height:3.6rem}
+.keypanel .fob .no.sm{font-size:2.1rem}
+.keypanel .fob .kind{font-size:.8125rem}
+.keypanel p{margin:0 0 6px;font-size:1rem;color:var(--muted)}
+.keypanel p b{display:block;font-family:Rokkitt,Georgia,serif;font-size:2rem;line-height:1.1;color:var(--trim)}
+.keypanel p span{display:block;font-family:Rokkitt,Georgia,serif;font-size:1.6rem;font-weight:700;color:var(--bird)}
+.unit.np .tag{visibility:hidden}
 .nophoto{font-size:.9375rem;color:var(--muted);border:1px dashed var(--line);padding:18px;margin:0}
 dialog.album{border:0;padding:0;margin:auto;width:min(1000px,94vw);max-height:92vh;background:var(--trim);color:#fff;border-radius:3px}
 dialog.album::backdrop{background:rgba(20,14,10,.82)}
@@ -214,7 +231,20 @@ dialog.album::backdrop{background:rgba(20,14,10,.82)}
   .menu{display:block}
   .top .wrap{min-height:70px}
   .brand img{width:150px;height:52px}
-  .hero{padding:26px 0 40px}
+  .hero{padding:20px 0 34px}
+  .bleed{margin:0 calc(-1 * var(--gut))}
+  .bleed img{aspect-ratio:780/676;border-radius:0}
+  .demo{font-size:.78rem;letter-spacing:-.005em}
+  .demo p{padding:0 10px}
+  .wide.gc{margin-left:calc(-1 * var(--gut));margin-right:calc(-1 * var(--gut))}
+  .wide.gc img{aspect-ratio:16/10;object-position:62% 50%;border-radius:0}
+  .wide.gc figcaption{padding:0 var(--gut)}
+  .unit.np{grid-template-columns:1fr}
+  .unit.np .tag{display:none}
+  .keypanel{min-height:0;padding:0 18px 20px;gap:20px}
+  .keypanel .peg{left:62px}
+  .keypanel .fob{width:100px;height:158px;padding-top:42px}
+  .keypanel .fob .no{font-size:2.7rem;height:3rem}
   .hero .wrap{grid-template-columns:1fr;gap:22px}
   .hero h1{font-size:2.3rem;margin-bottom:12px}
   .hero .where{margin-bottom:8px;font-size:.95rem}
@@ -224,7 +254,8 @@ dialog.album::backdrop{background:rgba(20,14,10,.82)}
   .frame{padding:6px}
   .keys .intro{display:block}
   .keys .intro p{margin-top:10px}
-  .rail{grid-template-columns:repeat(4,1fr)}
+  .rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * var(--gut));padding:0 var(--gut) 8px;scroll-padding:0 var(--gut);scrollbar-width:thin;overscroll-behavior-x:contain}
+  .rail li{flex:0 0 104px;scroll-snap-align:start}
   .rail .info{font-size:.75rem}
   .grounds .cols,.light .wrap,.twocol,.lists,.policies{grid-template-columns:1fr;gap:32px}
   .unit{grid-template-columns:84px 1fr;gap:18px 18px}
@@ -242,13 +273,7 @@ dialog.album::backdrop{background:rgba(20,14,10,.82)}
   body.has-dock{padding-bottom:72px}
   .dock{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,251,248,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
   .dock.on{transform:none}
-  .dock .btn{flex:1;min-height:48px}
-}
-@media (max-width:440px){
-  .fob{width:76px;height:120px;padding-top:30px}
-  .fob .no{font-size:2.05rem;height:2.4rem}
-  .fob .no.sm{font-size:1.3rem}
-  .fob .kind{font-size:.625rem}
+  .dock .btn{flex:1;min-height:48px;white-space:nowrap;padding:0 12px}
 }
 @media (prefers-reduced-motion:reduce){
   .dock{transition:none}
