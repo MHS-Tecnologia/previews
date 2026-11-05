@@ -210,12 +210,16 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
   .menu-panel .btn { margin-top: .9rem; }
 
   .hero { grid-template-columns: 1fr; gap: 1.6rem; padding-top: .6rem; }
-  .hero-photo img { aspect-ratio: auto; }
+  .hero-photo img { aspect-ratio: 800 / 637; width: 100%; height: auto; object-fit: cover; }
+  .hero-photo picture { display: block; aspect-ratio: 800 / 637; }
+  .hero .lede .more-m { display: none; }
   .cta-row .btn.ghost { flex: 1 1 0; padding-inline: .8rem; }
   .hero h1 { font-size: clamp(2.6rem, 11.5vw, 4.4rem); }
   .hero .lede { font-size: 1.05rem; line-height: 1.55; }
   .hero .note { margin-top: .6rem; }
-  .hero { gap: 1.1rem; }
+  .hero { gap: .9rem; }
+  .hero .cta-row { margin-top: .9rem; gap: .6rem; }
+  .hero .cta-row .btn.ghost { min-height: 2.7rem; }
   .lede { margin-top: .8rem; }
   .cta-row { margin-top: 1.2rem; }
   .cta-row .btn:first-child { flex: 1 1 100%; }
@@ -277,7 +281,7 @@ blockquote footer { margin-top: .5rem; font-size: .9rem; color: var(--plum-soft)
 <section class="hero wrap" data-hero>
   <div class="hero-text">
     <h1>Relax.<br>Unplug.<br>Unwind.</h1>
-    <p class="lede">A farmstay bed and breakfast near Lynchburg, Tennessee, on the historic 1865 farm that was the home of Jack Daniel’s brother Wiley. Stay on a working farm with lots of animals all around you.</p>
+    <p class="lede">A farmstay bed and breakfast near Lynchburg, Tennessee, on the historic 1865 farm that was the home of Jack Daniel’s brother Wiley. <span class="more-m">Stay on a working farm with lots of animals all around you.</span></p>
     <div class="cta-row">
       <a class="btn" href="tel:+19316322919">Call or text (931) 632-2919</a>
       <a class="btn ghost" href="stay.html">See the rooms</a>
