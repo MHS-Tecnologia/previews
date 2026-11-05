@@ -1,0 +1,228 @@
+@font-face { font-family: "Corben"; font-weight: 700; font-display: swap; src: url(fonts/corben.woff2) format("woff2"); }
+@font-face { font-family: "Cabin"; font-weight: 400 700; font-display: swap; src: url(fonts/cabin.woff2) format("woff2"); }
+
+/* The spruce green and khaki of their current site, the dark stained siding of the lodge,
+   the knotty pine inside it, and Boulder Lake. */
+:root {
+  --mist: #eceee8;
+  --mist-2: #dfe3da;
+  --ink: #1b211d;
+  --muted: #4a524c;
+  --spruce: #183a2a;
+  --spruce-2: #22503a;
+  --siding: #33302c;
+  --pine: #dcb378;
+  --pine-2: #ecd2a6;
+  --khaki: #d4cc96;
+  --lake: #2d4f63;
+  --pad: clamp(1rem, 4vw, 3rem);
+  --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--mist); color: var(--ink); font: 400 1.0625rem/1.6 "Cabin", system-ui, sans-serif; -webkit-font-smoothing: antialiased; touch-action: manipulation; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--lake); outline-offset: 3px; }
+h1, h2, h3 { font-family: "Corben", Georgia, serif; font-weight: 700; line-height: 1.08; color: var(--spruce); text-wrap: balance; }
+h1 { font-size: clamp(2.05rem, 4.4vw, 3.6rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.35rem); }
+h3 { font-size: 1.25rem; }
+p { max-width: 68ch; }
+[id] { scroll-margin-top: 1rem; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.lede { font-size: clamp(1.08rem, 1.5vw, 1.25rem); line-height: 1.55; color: var(--muted); }
+
+.demo { background: var(--siding); color: #e4dfd2; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .45rem 1rem; }
+
+/* header */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: .9rem var(--pad); position: relative; }
+.brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1.1; }
+.brand-name { font-family: "Corben", Georgia, serif; font-weight: 700; font-size: 1.35rem; color: var(--spruce); }
+.brand-place { font-size: .85rem; color: var(--muted); letter-spacing: .02em; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-weight: 600; font-size: .98rem; }
+.nav > a:not(.btn) { text-decoration: none; padding: .3rem 0; }
+.nav > a:not(.btn):hover, .nav > a[aria-current] { text-decoration: underline; text-decoration-thickness: 3px; text-decoration-color: var(--pine); text-underline-offset: 7px; }
+.menu { display: none; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .75rem 1.35rem; background: var(--spruce); color: #fff; border-radius: .4rem; font-weight: 700; text-decoration: none; transition: background-color .15s ease; }
+.btn:hover { background: var(--spruce-2); }
+.btn.small { min-height: 2.6rem; padding: .5rem 1rem; }
+.btn.ghost { background: transparent; color: var(--spruce); box-shadow: inset 0 0 0 2px var(--spruce); }
+.btn.ghost:hover { background: var(--spruce); color: #fff; }
+.btn.ghost-light { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.7); }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+/* hero: the H1 first, then one photo of the beach and the lake */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; padding-top: clamp(1.2rem, 3vw, 2.5rem); padding-bottom: clamp(2rem, 5vw, 4rem); }
+.hero-text { display: grid; gap: 1.25rem; }
+.hero-photo img { width: 100%; border-radius: .5rem; }
+
+/* the signature: the lodge drawn in section, lake in front, woods behind */
+.cut { padding-bottom: clamp(2.5rem, 6vw, 5rem); }
+.cut-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 1rem 3rem; align-items: end; margin-bottom: calc(clamp(3rem, 7vw, 5.5rem) + 1.5rem); }
+.cut-head p { color: var(--muted); }
+.section-draw { display: grid; grid-template-columns: clamp(1.6rem, 9vw, 8rem) minmax(0, 1fr) clamp(1.6rem, 9vw, 8rem); align-items: end; }
+.shore { align-self: stretch; min-height: 9rem; position: relative; display: flex; align-items: center; justify-content: center; margin-top: 5.5rem; }
+.shore span { writing-mode: vertical-rl; transform: rotate(180deg); font-family: "Corben", Georgia, serif; font-size: clamp(.8rem, 1.6vw, 1.15rem); color: #fff; letter-spacing: .04em; }
+.shore.woods span { transform: none; }
+.lake { background: var(--lake) repeating-linear-gradient(180deg, transparent 0 14px, rgba(255,255,255,.12) 14px 16px); border-radius: .5rem 0 0 .5rem; align-self: end; height: 48%; }
+.woods { background: var(--spruce) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='56' viewBox='0 0 40 56'%3E%3Cpath d='M20 4 L30 22 H25 L33 36 H26 L35 50 H5 L14 36 H7 L15 22 H10 Z' fill='%23295a40'/%3E%3C/svg%3E") 50% 0 / 40px 56px; border-radius: 0 .5rem .5rem 0; }
+.house { background: var(--siding); padding: 0 clamp(.5rem, 1.5vw, 1.25rem) clamp(.5rem, 1.5vw, 1.25rem); position: relative; }
+.roof { height: clamp(3rem, 7vw, 5.5rem); margin: 0 calc(-1 * clamp(.5rem, 1.5vw, 1.25rem)); background: var(--siding); clip-path: polygon(0 100%, 50% 0, 100% 100%); transform: translateY(-99%); position: absolute; left: 0; right: 0; top: 0; }
+.sides { display: grid; grid-template-columns: var(--fl, 7.5rem) minmax(0, 1fr) minmax(0, 1.55fr); gap: .5rem; padding: .9rem 0 .5rem; color: var(--khaki); font-size: .82rem; font-weight: 600; }
+.sides span:first-child { grid-column: 2; }
+.floor { display: grid; grid-template-columns: var(--fl, 7.5rem) minmax(0, 1fr) minmax(0, 1.55fr); gap: .5rem; padding: .5rem 0; border-top: 2px solid #4a4540; }
+.floor-name { color: var(--khaki); font-weight: 700; font-size: .95rem; align-self: center; }
+.half { display: grid; gap: .5rem; align-content: start; }
+.front { grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); border-right: 2px dashed #5d5650; padding-right: .5rem; }
+.back { grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); }
+.room { display: flex; flex-direction: column; justify-content: center; gap: .15rem; min-height: 4.6rem; padding: .6rem .75rem; background: var(--pine); color: var(--ink); text-decoration: none; border-radius: .3rem; box-shadow: inset 0 -3px 0 rgba(0,0,0,.14); transition: background-color .15s ease; }
+.room:hover { background: var(--pine-2); }
+.room.bath { background: #c8cdbf; }
+.room.bath:hover { background: #dde1d6; }
+.room-name { font-weight: 700; line-height: 1.2; }
+.room-beds { font-size: .85rem; color: #3d3a33; line-height: 1.3; }
+.cut-note { margin-top: 1.1rem; color: var(--muted); }
+
+/* room dialog */
+.room-dialog { margin: auto; width: min(46rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); padding: 0; border: 0; border-radius: .6rem; background: var(--mist); color: var(--ink); overflow: auto; }
+.room-dialog::backdrop { background: rgba(20, 24, 21, .72); }
+.dlg-img { width: 100%; max-height: 62dvh; object-fit: contain; background: var(--siding); }
+.dlg-body { padding: 1.1rem 1.35rem 1.4rem; display: grid; gap: .55rem; }
+.dlg-more { font-weight: 600; }
+.close { position: absolute; top: .6rem; right: .6rem; width: 2.75rem; height: 2.75rem; border: 0; border-radius: 50%; background: rgba(255,255,255,.92); color: var(--ink); font-size: 1.6rem; line-height: 1; cursor: pointer; z-index: 1; }
+.room-dialog .close-wrap { position: sticky; top: 0; height: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .room-dialog[open] { animation: rise .22s ease-out; }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+}
+
+/* seasons */
+.seasons { background: var(--spruce); color: #e9ece4; padding: clamp(2.5rem, 6vw, 5rem) 0; }
+.seasons-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.seasons-photo img { width: 100%; border-radius: .5rem; }
+.seasons h2 { color: var(--khaki); margin-bottom: 1rem; }
+.gear { margin-top: 1.1rem; padding: 0; list-style: none; display: grid; gap: .55rem; }
+.gear li { padding-left: 1.4rem; position: relative; }
+.gear li::before { content: ""; position: absolute; left: 0; top: .62em; width: .6rem; height: .6rem; border-radius: 50%; background: var(--pine); }
+
+/* rates */
+.rates-strip { padding-top: clamp(2.5rem, 6vw, 4.5rem); padding-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+.rates-strip h2 { margin-bottom: 1rem; }
+.rates { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.rates th, .rates td { text-align: left; vertical-align: top; padding: 1rem .75rem 1rem 0; border-top: 2px solid var(--mist-2); font-size: 1.15rem; }
+.rates th { font-weight: 700; width: 40%; }
+.rates td { font-weight: 600; }
+.rates span { display: block; font-size: .9rem; font-weight: 400; color: var(--muted); }
+.rates-foot { margin-top: 1rem; color: var(--muted); }
+.rates-foot a { color: var(--spruce); font-weight: 700; }
+
+/* inner pages */
+.page { padding-top: clamp(1.5rem, 4vw, 3rem); padding-bottom: clamp(2.5rem, 6vw, 5rem); }
+.page.narrow { max-width: calc(48rem + 2 * var(--pad)); }
+.page-head { display: grid; gap: .9rem; margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+.jump { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-weight: 600; }
+.jump a { color: var(--spruce); }
+.floor-sec { padding: clamp(1.5rem, 4vw, 2.5rem) 0; border-top: 3px solid var(--spruce); }
+.floor-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: .6rem 3rem; margin-bottom: 1.5rem; }
+.floor-head p { color: var(--muted); }
+.room-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 2rem; }
+.room-card { display: grid; gap: .4rem; align-content: start; }
+.room-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .4rem; background: var(--siding); margin-bottom: .5rem; }
+.room-meta { font-weight: 600; color: var(--lake); }
+.cta-band { margin-top: clamp(2rem, 5vw, 3.5rem); background: var(--siding); color: #e9e5da; border-radius: .6rem; padding: clamp(1.5rem, 4vw, 2.75rem); display: grid; gap: .8rem; justify-items: start; }
+.cta-band h2 { color: var(--khaki); }
+.cta-band .btn { background: var(--pine); color: var(--ink); }
+.cta-band .btn:hover { background: var(--pine-2); }
+.cta-band .btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.75); }
+.cta-band .btn.ghost:hover { background: rgba(255,255,255,.12); }
+
+.block { padding: 1.5rem 0; border-top: 2px solid var(--mist-2); display: grid; gap: .6rem; }
+.when { color: var(--muted); }
+.price { display: flex; flex-wrap: wrap; gap: 1rem 3rem; margin-top: .3rem; }
+.price dt { font-weight: 600; color: var(--muted); }
+.price dd { font-family: "Corben", Georgia, serif; font-size: 2.2rem; color: var(--spruce); line-height: 1.15; font-variant-numeric: tabular-nums; }
+.price dd span { display: block; font-family: "Cabin", system-ui, sans-serif; font-size: .95rem; color: var(--muted); }
+.facts { padding-left: 1.2rem; display: grid; gap: .45rem; }
+
+.owners { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.owners-text { display: grid; gap: 1rem; }
+.owners-photo img { width: 100%; border-radius: .5rem; }
+.sign { font-family: "Corben", Georgia, serif; font-size: 1.25rem; color: var(--spruce); }
+.sign span { font-family: "Cabin", system-ui, sans-serif; font-size: 1rem; color: var(--muted); }
+.since { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
+.since h2 { margin-bottom: 1.25rem; }
+.timeline { list-style: none; padding: 0; border-left: 3px solid var(--spruce); margin-left: .4rem; }
+.timeline li { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem; padding: .75rem 0 .75rem 1.25rem; position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -.55rem; top: 1.15rem; width: .8rem; height: .8rem; border-radius: 50%; background: var(--pine); box-shadow: 0 0 0 3px var(--mist); }
+.yr { font-family: "Corben", Georgia, serif; font-size: 1.3rem; color: var(--spruce); font-variant-numeric: tabular-nums; }
+
+.find { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.addr { font-style: normal; font-family: "Corben", Georgia, serif; font-size: 1.5rem; color: var(--spruce); margin: 1rem 0 .6rem; line-height: 1.3; }
+.note { color: var(--muted); margin-bottom: 1.75rem; }
+.find h2 { margin-bottom: .9rem; }
+.steps { padding-left: 1.4rem; display: grid; gap: .55rem; }
+.steps li::marker { font-weight: 700; color: var(--spruce); }
+.find-side { display: grid; gap: 1.25rem; }
+.find-side img { width: 100%; border-radius: .5rem; }
+.contact-card { background: var(--spruce); color: #e9ece4; padding: 1.5rem; border-radius: .5rem; display: grid; gap: .6rem; }
+.contact-card h2 { color: var(--khaki); margin: 0; }
+.contact-card .big { font-family: "Corben", Georgia, serif; font-size: 1.6rem; }
+.contact-card a { color: #fff; }
+
+/* footer */
+.foot { background: var(--siding); color: #d9d4c7; padding: 2.5rem 0 1.5rem; margin-top: 0; }
+.foot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.foot-name { font-family: "Corben", Georgia, serif; font-size: 1.25rem; color: var(--khaki); margin-bottom: .3rem; }
+.foot nav { display: grid; gap: .3rem; justify-items: start; }
+.foot a { color: #fff; }
+.legal { margin-top: 2rem; font-size: .82rem; color: #b9b3a5; max-width: none; }
+
+.callbar { display: none; }
+
+@media (max-width: 960px) {
+  .cut-head, .floor-head { grid-template-columns: 1fr; }
+  .section-draw { --fl: 0; }
+  .sides { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+  .sides span:first-child { grid-column: 1; }
+  .floor { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); }
+  .floor-name { grid-column: 1 / -1; }
+}
+
+@media (max-width: 760px) {
+  .nav > a { display: none; }
+  .menu { display: block; }
+  .menu summary { list-style: none; width: 2.9rem; height: 2.9rem; display: grid; align-content: center; justify-items: center; gap: 5px; cursor: pointer; border-radius: .4rem; background: var(--spruce); }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu summary span { width: 1.25rem; height: 2px; background: #fff; }
+  .menu-panel { position: absolute; right: var(--pad); left: var(--pad); top: 100%; z-index: 30; background: #fff; border-radius: .5rem; box-shadow: 0 12px 30px rgba(0,0,0,.18); padding: .5rem; display: grid; }
+  .menu-panel a { padding: .85rem 1rem; text-decoration: none; font-weight: 600; border-radius: .3rem; }
+  .menu-panel a:hover { background: var(--mist); }
+
+  .hero { grid-template-columns: 1fr; padding-bottom: 0; padding-top: 1rem; gap: 1.25rem; }
+  .hero-text { gap: 1rem; }
+  .hero .actions { flex-direction: column; }
+  .hero .btn { width: 100%; }
+  .hero-photo { margin: 0 calc(-1 * var(--pad)); }
+  .hero-photo img { border-radius: 0; }
+  .cut { padding-top: 2.5rem; }
+  .front, .back { grid-template-columns: 1fr; }
+  .room { min-height: 3.9rem; padding: .5rem .6rem; }
+  .shore { margin-top: 0; }
+  .lake { height: 38%; }
+  .seasons-grid, .owners, .find, .room-grid, .foot-grid { grid-template-columns: 1fr; }
+  .rates, .rates tbody, .rates tr { display: block; }
+  .rates tr { border-top: 2px solid var(--mist-2); padding: .85rem 0; }
+  .rates th, .rates td { display: block; border: 0; padding: .15rem 0; width: auto; }
+  .rates td:empty { display: none; }
+  .timeline li { grid-template-columns: 1fr; gap: .1rem; }
+  .callbar:not([hidden]) { display: flex; gap: .5rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: var(--siding); }
+  .callbar .btn { flex: 1; min-height: 2.9rem; }
+  .callbar .btn:first-child { background: var(--pine); color: var(--ink); }
+  body.has-bar .foot { padding-bottom: 5rem; }
+}
+.owners h1 { font-size: clamp(2rem, 3.3vw, 3rem); }
