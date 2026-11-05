@@ -60,14 +60,14 @@ p{margin:0}
 .botao-linha:hover{border-color:var(--kin)}
 
 /* hero: three hanging scrolls on a wall, the headline above them */
-.heroi{position:relative;padding:36px 0 0;overflow:hidden;overflow:clip}
+.heroi{position:relative;padding:24px 0 0;overflow:hidden;overflow:clip}
 .heroi-texto{text-align:center}
 .heroi h1{font-size:clamp(2.1rem,4.4vw,3.9rem);max-width:19ch;margin:0 auto}
 .heroi-texto > p{color:var(--kasumi);font-size:clamp(1.0625rem,1.5vw,1.2rem);max-width:38rem;margin:18px auto 0}
 .heroi-texto > p strong{color:var(--washi);font-weight:700}
 .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .heroi .acoes{justify-content:center}
-.tokonoma{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:clamp(14px,4.5vw,64px);padding:60px 0 72px;margin-top:8px}
+.tokonoma{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:clamp(14px,4.5vw,64px);padding:30px 0 72px;margin-top:0}
 .tokonoma::after{content:"";position:absolute;left:0;right:0;bottom:0;height:170px;background:var(--onda);background-size:40px 20px;border-top:1px solid rgba(220,171,79,.3);z-index:0}
 
 /* the hanging scroll */
