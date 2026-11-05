@@ -1,0 +1,171 @@
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:Manrope;src:url(fonts/manrope.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+
+:root{
+  --vinho:#7a1520;      /* o vermelho do selo da loja */
+  --vinho-esc:#5c0f18;
+  --vitrine:#e7e4e1;    /* o fundo cinza claro das fotos de look */
+  --papel:#f7f5f3;
+  --tinta:#241a1b;
+  --kraft:#d2b48c;      /* etiqueta de papel */
+  --ouro:#b08d4a;       /* arara e cabides */
+  --suave:#5b4f4f;
+  --larg:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:1rem}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 1.0625rem/1.6 Manrope,system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:3px}
+.wrap{width:100%;max-width:var(--larg);margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+.pular{position:absolute;left:-9999px}
+.pular:focus{left:16px;top:8px;z-index:20;background:#fff;padding:.5rem 1rem}
+
+/* aviso */
+.aviso{background:var(--tinta);color:#ece6e3;font-size:.8125rem;line-height:1.45;padding:.5rem 16px;text-align:center}
+.aviso a{color:#fff}
+
+/* fachada: cabeçalho + herói em vinho */
+.fachada{background:var(--vinho);color:#fbf3f1}
+.cab .wrap{display:flex;align-items:center;gap:1rem;min-height:84px}
+.marca{position:relative;display:block;background:#fff;padding:9px 12px 7px 26px;border-radius:3px 10px 10px 3px;transform:rotate(-2deg);box-shadow:0 2px 0 var(--vinho-esc);margin-top:6px}
+.marca::before{content:"";position:absolute;left:9px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--vinho);box-shadow:inset 0 0 0 2px #fff, 0 0 0 1px var(--kraft)}
+.marca img{width:150px;height:auto}
+.nav{display:flex;gap:1.75rem;margin-left:auto}
+.nav a{text-decoration:none;font-weight:600;font-size:.95rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a[aria-current=page]{border-bottom-color:var(--kraft)}
+.menu{display:none;margin-left:auto;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.6rem .9rem;border:1.5px solid rgba(255,255,255,.6);border-radius:999px}
+.menu summary::-webkit-details-marker{display:none}
+.menu .nav{position:absolute;right:0;top:calc(100% + 8px);flex-direction:column;gap:0;background:#fff;color:var(--tinta);min-width:220px;padding:.5rem;border-radius:8px;box-shadow:0 10px 30px rgba(36,26,27,.25);z-index:10}
+.menu .nav a{padding:.75rem .9rem;border:0}
+.btn-cab{margin-left:1rem}
+@media(max-width:860px){
+  .cab .nav > a{display:none}
+  .menu{display:block}
+  .menu .nav > a{display:block}
+}
+
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:50px;padding:.8rem 1.4rem;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;line-height:1.2}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-claro{background:#fbf3f1;color:var(--vinho-esc)}
+.btn-claro:hover{background:#fff}
+.btn-linha{border:1.5px solid rgba(251,243,241,.75);color:#fbf3f1}
+.btn-linha:hover{background:rgba(255,255,255,.08)}
+.btn-vinho{background:var(--vinho);color:#fff}
+.btn-vinho:hover{background:var(--vinho-esc)}
+.btn-peq{min-height:42px;padding:.55rem 1.1rem;font-size:.92rem}
+@media(max-width:860px){.cab .btn-cab{display:none}}
+
+/* herói */
+.heroi{padding:1.25rem 0 0}
+.heroi .wrap{display:grid;gap:1.25rem}
+.heroi h1{font:400 clamp(2.6rem,10.5vw,5.6rem)/.98 "Instrument Serif",Georgia,serif;margin:0;letter-spacing:-.01em;max-width:11ch}
+.heroi .lead{margin:.9rem 0 0;font-size:1.06rem;max-width:36ch;color:#f3e3e0}
+.acoes{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.25rem}
+.vitrine{position:relative;background:var(--vitrine);border:10px solid var(--vinho-esc);border-bottom:0;border-radius:4px 4px 0 0}
+.vitrine img{width:100%}
+.etq{position:absolute;background:var(--kraft);color:var(--tinta);font:italic 400 1.15rem/1.15 "Instrument Serif",Georgia,serif;padding:.55rem .8rem .5rem 1.4rem;border-radius:2px 8px 8px 2px;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.etq::before{content:"";position:absolute;left:.5rem;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--papel)}
+.vitrine .etq{right:14px;top:16px;transform:rotate(3deg)}
+.heroi-cel{display:block}
+.heroi-desk{display:none}
+@media(min-width:900px){
+  .heroi{padding-top:2.5rem}
+  .heroi .wrap{grid-template-columns:1.05fr .95fr;align-items:end;gap:3rem}
+  .heroi .texto{padding-bottom:4.5rem}
+  .heroi .lead{font-size:1.15rem}
+  .heroi-cel{display:none}
+  .heroi-desk{display:block}
+  .vitrine{border-width:14px;border-bottom:0}
+  .heroi-desk img{height:min(640px,calc(100vh - 230px));min-height:460px;object-fit:cover;object-position:50% 15%}
+}
+
+/* arara: a assinatura */
+.secao{padding:4rem 0}
+.secao h2{font:400 clamp(2.1rem,6vw,3.4rem)/1.02 "Instrument Serif",Georgia,serif;margin:0 0 .6rem;max-width:20ch}
+.secao .intro{margin:0;max-width:56ch;color:var(--suave)}
+.arara-sec{background:var(--vitrine)}
+.arara{list-style:none;margin:2.25rem 0 0;padding:0 16px 1.25rem;display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--ouro) transparent;scroll-padding-left:16px;
+  background:linear-gradient(#cfae6d,#8d6c33) 0 13px/100% 7px no-repeat local}
+@media(min-width:720px){.arara{padding:0 32px 1.25rem;scroll-padding-left:32px}}
+@media(min-width:1244px){.arara{padding-left:calc((100vw - var(--larg))/2 + 32px);scroll-padding-left:calc((100vw - var(--larg))/2 + 32px)}}
+.arara li{flex:0 0 min(72vw,260px);scroll-snap-align:start}
+.cabide{display:block;text-decoration:none;transform-origin:50% 14px;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.cabide:hover,.cabide:focus-visible{transform:rotate(2.5deg)}
+.gancho{display:block;width:120px;height:44px;margin:0 auto -2px;color:var(--ouro)}
+.cabide .foto{display:block;background:#fff;padding:6px;border-radius:3px;box-shadow:0 12px 24px -14px rgba(36,26,27,.45)}
+.cabide img{aspect-ratio:3/4;object-fit:cover;object-position:50% 30%;width:100%}
+.cabide .etq{position:relative;display:inline-block;margin:-1.4rem 0 0 .8rem;transform:rotate(-2deg)}
+.cabide .pede{display:block;margin:.55rem .2rem 0;font-size:.88rem;font-weight:700;color:var(--vinho);text-decoration:underline;text-underline-offset:3px}
+.pe-arara{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-top:.4rem}
+.arraste{margin:0;font-size:.88rem;color:var(--suave)}
+.setas{display:none;gap:.5rem}
+.setas button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--tinta);background:transparent;color:var(--tinta);font-size:1.3rem;cursor:pointer}
+.setas button:hover{background:var(--tinta);color:#fff}
+@media(hover:hover) and (pointer:fine){.setas{display:flex}.arraste{display:none}}
+@media(prefers-reduced-motion:reduce){.cabide{transition:none}.cabide:hover,.cabide:focus-visible{transform:none}}
+
+/* sapatos e bolsas: o tapete vermelho da loja */
+.loja-sec{background:var(--vinho-esc);color:#fbf3f1}
+.loja-sec .intro{color:#efd9d5}
+.trio{display:grid;gap:1rem;margin-top:2rem}
+@media(min-width:760px){.trio{grid-template-columns:repeat(3,1fr)}}
+.zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;color:inherit;text-align:left;font:inherit}
+.zoom img{width:100%;border-radius:3px}
+.zoom figcaption,.zoom .leg{display:block;margin-top:.5rem;font:italic 400 1.25rem/1.2 "Instrument Serif",Georgia,serif}
+
+/* para todos os estilos */
+.estilos{display:grid;gap:0;margin-top:2rem;border-top:1.5px solid var(--tinta)}
+.estilo{display:grid;gap:.4rem;padding:1.4rem 0;border-bottom:1.5px solid var(--tinta)}
+.estilo h3{margin:0;font:400 2.2rem/1 "Instrument Serif",Georgia,serif}
+.estilo p{margin:0;color:var(--suave);max-width:52ch}
+.estilo a{font-weight:700;color:var(--vinho);text-underline-offset:3px}
+@media(min-width:800px){.estilo{grid-template-columns:14rem 1fr auto;align-items:baseline;gap:2rem}}
+.destaques{margin:1.75rem 0 0;color:var(--suave);max-width:62ch}
+
+/* endereço: a placa do 397 */
+.visite{display:grid;gap:2rem;align-items:center}
+@media(min-width:800px){.visite{grid-template-columns:auto 1fr;gap:3.5rem}}
+.placa{justify-self:start;background:var(--vinho);color:#fff;border:4px solid #fff;outline:2px solid var(--vinho);border-radius:10px;padding:.7rem 1.6rem .9rem;text-align:center;box-shadow:0 14px 30px -18px rgba(36,26,27,.6)}
+.placa b{display:block;font:400 clamp(4.5rem,16vw,7.5rem)/.9 "Instrument Serif",Georgia,serif}
+.placa span{display:block;font-weight:700;font-size:.95rem;margin-top:.25rem}
+.visite h2{margin-bottom:.4rem}
+.visite address{font-style:normal;font-size:1.1rem}
+.visite .acoes{margin-top:1.4rem}
+.tel{font-weight:700;color:var(--vinho)}
+
+/* páginas internas */
+.topo-int{padding:2.2rem 0 2.6rem}
+.topo-int h1{font:400 clamp(2.6rem,9vw,4.6rem)/1 "Instrument Serif",Georgia,serif;margin:0;max-width:16ch}
+.topo-int p{margin:.8rem 0 0;max-width:52ch;color:#f3e3e0}
+.grade{display:grid;gap:1.6rem 1.1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));margin-top:2rem}
+.grade .zoom img{aspect-ratio:3/4;object-fit:cover;object-position:50% 30%;background:var(--vitrine)}
+.grade .pede{display:inline-block;margin-top:.2rem;font-size:.9rem;font-weight:700;color:var(--vinho);text-underline-offset:3px}
+
+/* lightbox */
+dialog.caixa{border:0;padding:0;max-width:min(92vw,560px);width:100%;background:var(--papel);border-radius:6px;color:var(--tinta)}
+dialog.caixa::backdrop{background:rgba(36,26,27,.8)}
+.caixa img{width:100%;max-height:72vh;object-fit:contain;background:var(--vitrine)}
+.caixa .rodape-cx{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.7rem;padding:.9rem 1rem 1rem}
+.caixa .rodape-cx p{margin:0;font:italic 400 1.35rem/1.15 "Instrument Serif",Georgia,serif}
+.fechar{position:absolute;right:10px;top:10px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--tinta);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+
+/* rodapé */
+.rodape{background:var(--tinta);color:#d9d1cf;padding:2.5rem 0 6rem;font-size:.92rem}
+.rodape .wrap{display:grid;gap:1rem}
+.rodape p{margin:0}
+.rodape strong{color:#fff;font-weight:700}
+@media(min-width:900px){.rodape{padding-bottom:2.5rem}}
+
+/* barra fixa no celular */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:15;display:flex;gap:.5rem;padding:.6rem 16px calc(.6rem + env(safe-area-inset-bottom));background:rgba(247,245,243,.97);box-shadow:0 -6px 18px rgba(36,26,27,.15);transform:translateY(110%);transition:transform .25s}
+.barra.ver{transform:none}
+.barra .btn{flex:1;min-height:48px}
+.barra .btn-tel{flex:0 0 auto;border:1.5px solid var(--vinho);color:var(--vinho);background:#fff}
+@media(min-width:900px){.barra{display:none}}
+@media(prefers-reduced-motion:reduce){.barra{transition:none}}
