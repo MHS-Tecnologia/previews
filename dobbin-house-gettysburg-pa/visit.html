@@ -106,7 +106,7 @@ p { max-width: 38em; text-wrap: pretty; }
 .dark { background: var(--walnut); color: #ece3d3; }
 .dark a { color: var(--candle); }
 .dark .cap { color: #c9bba5; }
-.rooms6 .wrap { display: grid; grid-template-columns: 343px 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; padding-top: clamp(2.5rem, 6vw, 5rem); padding-bottom: clamp(2.5rem, 6vw, 5rem); }
+.rooms6 .wrap { display: grid; grid-template-columns: 343px 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: center; padding-top: clamp(2.5rem, 6vw, 5rem); padding-bottom: clamp(2.5rem, 6vw, 5rem); }
 .rooms6 figure img { border: 6px solid var(--walnut-2); }
 .six { list-style: none; padding: 0; margin: 1.4rem 0; columns: 2; column-gap: 2rem; font-family: "Fell", Georgia, serif; font-size: 1.45rem; }
 .six li { padding: .35rem 0; border-bottom: 1px solid #4a3a2d; break-inside: avoid; }
@@ -141,6 +141,15 @@ p { max-width: 38em; text-wrap: pretty; }
 .facts { list-style: none; padding: 0; margin: 1.2rem 0 0; border-top: 1px solid var(--stone); }
 .facts li { padding: .6rem 0; border-bottom: 1px solid var(--stone); }
 .facts b { font-weight: 600; }
+.strip { background: var(--walnut); color: #ece3d3; padding: 1.1rem 0; }
+.strip .wrap { display: flex; flex-wrap: wrap; gap: .4rem 2.5rem; }
+.strip p { max-width: none; }
+.strip b { font: 400 1.2rem "Fell", Georgia, serif; color: var(--candle); margin-right: .4rem; }
+.prints-band { background: var(--stone); }
+.row3 { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6rem; }
+.row3 figure { background: #fff; border: 8px solid #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .18); }
+.row3 img { height: 247px; width: auto; }
+.row3 figcaption { font: italic .95rem/1.4 "Fell", Georgia, serif; color: var(--muted); padding: .4rem .1rem 0; }
 .prints { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: flex-start; }
 .prints figure { border: 6px solid #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .18); background: #fff; }
 .prints figure img { width: auto; }
@@ -188,12 +197,12 @@ footer .legal { max-width: none; grid-column: 1 / -1; border-top: 1px solid #4a3
   .doors .grid, .also, .split, .visitbar .wrap, footer .wrap { grid-template-columns: 1fr; }
   .callbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; gap: .5rem; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: var(--walnut); border-top: 1px solid #4a3a2d; transform: translateY(110%); visibility: hidden; transition: transform .2s ease, visibility .2s; }
   .callbar.on { transform: none; visibility: visible; }
-  .callbar .btn { flex: 1; min-height: 2.9rem; }
+  .callbar .btn { flex: 1; min-height: 2.9rem; white-space: nowrap; padding: .6rem .8rem; }
+  .row3 img { height: auto; width: 100%; max-width: 343px; }
+  .row3 figure { max-width: 359px; }
   .callbar .btn.line { color: var(--paper); }
   body { padding-bottom: 4.4rem; }
 }
-/* Below-the-fold sections render (and fetch their fonts) only when near the viewport. */
-.notice, .rooms6, .doors, .visitbar, .sec + .sec, footer { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
@@ -207,9 +216,14 @@ footer .legal { max-width: none; grid-column: 1 / -1; border-top: 1px solid #4a3
 </div></header>
 <main id="main">
 <section class="page-head" data-callbar><div class="wrap">
+<div class="split" style="align-items:center">
+<div>
 <h1>Visit the Dobbin House</h1>
 <p class="lede">89 Steinwehr Avenue, Gettysburg, PA 17325, on Business Route 15 South. Open daily, 10 a.m. to 9 p.m., for the gift store, food and cocktails.</p>
 <div class="actions"><a class="btn red" href="tel:+17173342100">Call (717) 334-2100</a><a class="btn line" href="mailto:info@dobbinhouse.com">Email info@dobbinhouse.com</a></div>
+</div>
+<figure><img src="img/house-1400.webp" srcset="img/house-720.webp 720w, img/house-1400.webp 1400w" sizes="(max-width: 860px) calc(100vw - 2rem), 560px" width="1400" height="890" alt="The Dobbin House, a two-storey fieldstone house with a red door and white fence" fetchpriority="high"><figcaption class="cap">89 Steinwehr Avenue, on Business Route 15 South.</figcaption></figure>
+</div>
 </div></section>
 
 <section class="sec"><div class="wrap split">
@@ -254,7 +268,7 @@ footer .legal { max-width: none; grid-column: 1 / -1; border-top: 1px solid #4a3
 <p class="legal">National Register of Historic Places (U.S.A.) · Registered Historic Landmark (PA).<br>
 Unofficial demo built by MHS Tecnologia for Dobbin House Tavern. Not affiliated with or endorsed by Dobbin House Tavern. Every fact and photo comes from dobbinhouse.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
 </div></footer>
-<div class="callbar" id="callbar"><a class="btn red" href="tel:+17173342100">Call (717) 334-2100</a><a class="btn line" href="visit.html">Directions</a></div>
+<div class="callbar" id="callbar"><a class="btn red" href="tel:+17173342100" aria-label="Call (717) 334-2100">Call now</a><a class="btn line" href="visit.html">Visit</a></div>
 <script>
 (function(){var b=document.getElementById('callbar'),t=document.querySelector('[data-callbar]');if(!b||!t||!('IntersectionObserver' in window))return;
 new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t);
