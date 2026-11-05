@@ -107,6 +107,7 @@ p { max-width: 64ch; }
 .plan-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 3rem; align-items: end; }
 .plan-head p { margin-top: .8rem; color: #33434b; }
 .key { display: flex; gap: .4rem; flex-wrap: wrap; }
+.key b { font-weight: 600; }
 .key span { display: inline-flex; align-items: center; gap: .45rem; font-size: .9rem; font-weight: 600; padding: .35rem .7rem .35rem .45rem; border-radius: 999px; background: var(--fog); }
 .key i { width: .95rem; height: .95rem; border-radius: 3px; display: block; }
 .rooms-pick { display: flex; flex-wrap: wrap; gap: .5rem; margin: 2rem 0 1.5rem; border: 0; padding: 0; }
@@ -140,6 +141,7 @@ p { max-width: 64ch; }
 .sum p { font-size: .95rem; margin-top: .6rem; color: #cfdbdf; }
 .sum dl { margin-top: 1rem; display: grid; grid-template-columns: 1fr auto; gap: .35rem 1rem; font-size: .98rem; }
 .sum dt { color: #cfdbdf; } .sum dd { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.sum dt.note { grid-column: 1 / -1; font-size: .85rem; color: #a9bcc4; }
 .sum dd.total, .sum dt.total { border-top: 1px solid #4f6c7a; padding-top: .55rem; margin-top: .25rem; font-size: 1.15rem; color: #fff; }
 .sum .warn { background: #f6ebbb; color: #3b2f00; padding: .6rem .75rem; border-radius: 4px; margin-top: 1rem; font-size: .9rem; }
 .sum .acts { display: grid; gap: .6rem; margin-top: 1.25rem; }
@@ -149,6 +151,7 @@ p { max-width: 64ch; }
 .sum .btn.line:hover { background: var(--lake-2); }
 .sum .fine { font-size: .8rem; color: #a9bcc4; margin-top: 1rem; }
 .plan .nojs { margin-top: 1.5rem; }
+.plan .ny { margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid #d3dadc; font-weight: 500; }
 @media (max-width: 1000px) { .board { grid-template-columns: 1fr; } .sum { position: static; } }
 @media (max-width: 860px) { .plan-head { grid-template-columns: 1fr; } .day { min-height: 3.1rem; } }
 
@@ -208,7 +211,7 @@ table.rates { width: 100%; border-collapse: collapse; margin-top: 1.5rem; backgr
 .rates thead i { display: block; height: .55rem; border-radius: 2px; margin: 0 0 .35rem auto; width: 100%; }
 .scroll-x { overflow-x: auto; }
 @media (max-width: 520px) { .rates { font-size: .86rem; } .rates th, .rates td { padding: .55rem .4rem; } .rates tbody th { font-weight: 600; } }
-@media (max-width: 700px) { .rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 3rem; margin-top: 1.5rem; }
+.rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 3rem; margin-top: 1.5rem; }
 .rules div { border-top: 3px solid var(--ink); padding-top: .8rem; }
 .rules h3 { font-size: 1.3rem; }
 .rules p { margin-top: .5rem; font-size: 1rem; }
@@ -309,7 +312,7 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #3a4a52; padding-top:
         <h2 id="plan-h">What your nights cost, date by date</h2>
         <p>The Outpost prices the year in four colors. Pick a room, tap your nights, and the 2026 calendar adds it up, with the 5 and 7 night discounts.</p>
       </div>
-      <div class="key" aria-label="Queen Room rate for each calendar color"><span><i style="background:var(--g)"></i>$75</span><span><i style="background:var(--y)"></i>$85</span><span><i style="background:var(--r)"></i>$90</span><span><i style="background:var(--p)"></i>$95</span></div>
+      <div class="key" aria-label="Queen Room rate for each calendar color" data-key><span><i style="background:var(--g)"></i><b data-k="0">$75</b></span><span><i style="background:var(--y)"></i><b data-k="1">$85</b></span><span><i style="background:var(--r)"></i><b data-k="2">$90</b></span><span><i style="background:var(--p)"></i><b data-k="3">$95</b></span></div>
     </div>
     <div id="planner" hidden>
       <fieldset class="rooms-pick">
@@ -344,6 +347,7 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #3a4a52; padding-top:
         </aside>
       </div>
     </div>
+    <p class="ny">2027 rates aren't posted yet. <a href="tel:+12183871833">Call 218-387-1833</a> or <a href="mailto:info@outpostmotel.com">email info@outpostmotel.com</a>.</p>
     <p class="nojs" id="plan-nojs">See every rate on the <a href="rooms.html">Rooms &amp; rates</a> page.</p>
   </div>
 </section>
@@ -479,6 +483,9 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #3a4a52; padding-top:
   const money = (v) => '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   function render() {
+    const key = document.querySelector('[data-key]');
+    key.setAttribute('aria-label', room.name + ' rate for each calendar color');
+    key.querySelectorAll('[data-k]').forEach((b) => { b.textContent = '$' + room.p[+b.dataset.k]; });
     const n = count();
     if (start > 12 - n) start = 12 - n;
     if (start < 0) start = 0;
@@ -541,7 +548,7 @@ footer .legal { grid-column: 1 / -1; border-top: 1px solid #3a4a52; padding-top:
     p.textContent = 'Check in ' + label(lo) + ', check out ' + out + '.' + (last === null ? ' Tap another date to make it longer.' : '');
     let rows = Object.keys(per).sort((a, b) => a - b).map((v) => '<dt>' + per[v] + ' × $' + v + '</dt><dd>' + money(per[v] * v) + '</dd>').join('');
     if (pct) rows += '<dt>' + pct + '% off, ' + (pct === 20 ? '7 nights or more' : '5 or 6 nights') + '</dt><dd>−' + money(off) + '</dd>';
-    rows += '<dt class="total">Before tax</dt><dd class="total">' + money(sub - off) + '</dd>';
+    rows += '<dt class="total">Estimate before tax</dt><dd class="total">' + money(sub - off) + '</dd><dt class="note">Rates as posted on outpostmotel.com. Todd and Holly confirm the price.</dt>';
     dl.innerHTML = rows;
     if (nights < room.min) { w.hidden = false; w.textContent = 'The ' + room.name + ' has a two night minimum. Tap one more night.'; }
     else if (nights === 4) { w.hidden = false; w.textContent = 'Stay one more night and the whole stay is 15% off.'; }
