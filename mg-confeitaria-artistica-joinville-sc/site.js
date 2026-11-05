@@ -32,9 +32,10 @@
     lb.addEventListener('close', () => fotos[atual].focus())
   }
 
-  // Hide the sticky button while the hero CTA or the footer is on screen.
+  // Hide the sticky button while any inline WhatsApp/phone link or the page header is on screen,
+  // so it never covers one.
   const fixo = document.querySelector('.fixo')
-  const alvos = document.querySelectorAll('.heroi .btn, .pag-cab, .rodape, .faixa')
+  const alvos = document.querySelectorAll('main a[href^="https://wa.me"], main a[href^="tel:"], .pag-cab, .rodape')
   if (fixo && 'IntersectionObserver' in window) {
     const vis = new Set()
     const io = new IntersectionObserver((es) => {

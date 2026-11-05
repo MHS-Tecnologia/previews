@@ -97,18 +97,12 @@ figure{margin:0}
 
 /* weddings */
 .casamentos{padding:var(--sec) 0}
-.cas-grade{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,28px);align-items:start}
-.cas-larga{grid-column:1 / span 8}
-.cas-larga img{width:100%;aspect-ratio:3/2;object-fit:cover}
-.cas-txt{grid-column:9 / span 4;align-self:center}
-.cas-txt h2{font-size:clamp(2.4rem,4.6vw,4rem);margin-bottom:18px}
-.cas-txt p{color:var(--tinta-2);margin-bottom:28px;max-width:40ch}
-.cas-grade figure:nth-of-type(2){grid-column:1 / span 5}
-.cas-grade figure:nth-of-type(3){grid-column:6 / span 4;margin-top:clamp(20px,5vw,72px)}
-.cas-grade figure:nth-of-type(4){grid-column:10 / span 3;margin-top:clamp(40px,9vw,140px)}
-.cas-grade figure:nth-of-type(2) img{aspect-ratio:3/2;object-fit:cover;width:100%}
-.cas-grade figure:nth-of-type(3) img,.cas-grade figure:nth-of-type(4) img{aspect-ratio:3/4;object-fit:cover;width:100%}
-
+.cas-cab{display:grid;grid-template-columns:auto minmax(0,46ch) auto;align-items:end;gap:16px 48px;margin-bottom:clamp(28px,4vw,48px)}
+.cas-cab h2{font-size:clamp(2.4rem,4.6vw,4rem)}
+.cas-cab p{color:var(--tinta-2)}
+.cas-grade{display:grid;grid-template-columns:1fr 2fr 1fr;gap:clamp(12px,1.6vw,22px);height:clamp(360px,40vw,540px)}
+.cas-grade figure{height:100%;overflow:hidden}
+.cas-grade img{width:100%;height:100%;object-fit:cover}
 /* reception menu card */
 .cardapio{padding:0 0 var(--sec)}
 .menu-cartao{max-width:560px;margin:0 auto;background:var(--papel);padding:clamp(36px,5vw,60px) clamp(22px,5vw,64px);text-align:center;position:relative;box-shadow:0 1px 0 rgba(28,42,36,.06),0 24px 50px rgba(28,42,36,.12)}
@@ -136,10 +130,9 @@ figure{margin:0}
 .pag-cab h1{font-size:clamp(2.5rem,6vw,4.8rem)}
 .pag-cab p{margin-top:16px;color:#d5ddd6;max-width:56ch}
 .sec-galeria{padding-top:clamp(32px,5vw,64px);padding-bottom:var(--sec)}
-.galeria{list-style:none;margin:0;padding:0;columns:3 300px;column-gap:clamp(12px,2vw,24px)}
-.galeria li{break-inside:avoid;margin-bottom:clamp(12px,2vw,24px)}
+.galeria{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,24px)}
 .foto{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;position:relative}
-.foto img{width:100%}
+.foto img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .foto::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 0 var(--ouro);transition:box-shadow .2s}
 .foto:hover::after{box-shadow:inset 0 0 0 3px var(--ouro)}
 .faixa{background:var(--eucalipto-2);color:var(--papel);padding:clamp(40px,6vw,72px) 0}
@@ -183,26 +176,29 @@ figure{margin:0}
   .legal{grid-column:1 / -1}
 }
 @media (max-width:860px){
-  .heroi-in{grid-template-columns:1fr;padding-top:26px;gap:26px}
-  .heroi-sobre{margin-bottom:10px;font-size:.95rem}
+  .heroi-in{grid-template-columns:1fr;padding-top:18px;gap:18px}
+  .heroi-sobre{margin-bottom:8px;font-size:.95rem}
+  .heroi-txt .link-claro{display:none}
   .heroi h1{font-size:clamp(2.45rem,10.5vw,3.4rem)}
   .lema{margin-top:10px}
-  .heroi-acoes{margin-top:20px}
-  .heroi-foto{justify-self:center;width:100%}
+  .heroi-acoes{margin-top:16px}
+  .heroi-foto{justify-self:center;width:78%}
   .mesa-cab{grid-template-columns:1fr}
   .mesa-setas{grid-column:1;grid-row:auto}
   .mesa-fila{margin-top:32px}
   .lugar{flex-basis:72vw}
-  .cas-grade{grid-template-columns:1fr 1fr}
-  .cas-larga,.cas-txt,.cas-grade figure:nth-of-type(2){grid-column:1 / -1}
-  .cas-grade figure:nth-of-type(3),.cas-grade figure:nth-of-type(4){grid-column:auto;margin-top:0}
+  .cas-cab{grid-template-columns:1fr;gap:14px}
+  .cas-cab .btn{justify-self:start}
+  .cas-grade{grid-template-columns:1fr 1fr;height:auto}
+  .cas-grade .cas-larga{grid-column:1 / -1;grid-row:1}
+  .cas-grade img{aspect-ratio:4/5}
+  .cas-grade .cas-larga img{aspect-ratio:1/1}
   .final-in{grid-template-columns:1fr}
   .final figure{width:min(300px,80%);margin:0 auto}
   .final-in{grid-template-columns:1fr}
   .encomenda{grid-template-columns:1fr}
   .enc-foto{max-width:420px}
-  .galeria{columns:2;column-gap:10px}
-  .galeria li{margin-bottom:10px}
+  .galeria{grid-template-columns:1fr 1fr;gap:10px}
   .fixo{display:flex}
   .fixo.oculto{display:none}
 }
