@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rooms | Plantation Getaway</title>
+<meta name="description" content="Themed rooms at the Plantation, each with a private bathroom, A/C, DISH TV and wireless internet. $110 a night.">
+<meta name="theme-color" content="#2f4d3e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Cpath%20d%3D%27M32%204%2060%2026H4z%27%20fill%3D%27%234a5552%27/%3E%3Crect%20x%3D%278%27%20y%3D%2726%27%20width%3D%2748%27%20height%3D%2734%27%20fill%3D%27%238a3a2c%27/%3E%3Crect%20x%3D%2722%27%20y%3D%2734%27%20width%3D%2720%27%20height%3D%2722%27%20fill%3D%27%23f0c25e%27%20stroke%3D%27%23f4f4ef%27%20stroke-width%3D%273%27/%3E%3Cpath%20d%3D%27M32%2034v22M22%2045h20%27%20stroke%3D%27%23f4f4ef%27%20stroke-width%3D%272%27/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/gloock.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/librefranklin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Gloock";src:url(fonts/gloock.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Libre Franklin";src:url(fonts/librefranklin.woff2) format("woff2");font-weight:300 700;font-display:swap}
+:root{--linen:#f4f4ef;--paper:#fbfbf8;--ink:#1f2a24;--muted:#4c5650;--green:#2f4d3e;--green-d:#243c30;--sage:#c9d4c4;
+--brick:#8a3a2c;--brick-d:#6e2c21;--lamp:#f0c25e;--slate:#4a5552;--dusk:#56677a;
+--serif:"Gloock",Georgia,serif;--sans:"Libre Franklin",system-ui,sans-serif;--w:1200px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--linen);color:var(--ink);font:400 1.0625rem/1.62 var(--sans)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brick-d)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--brick);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0;letter-spacing:-.005em}
+h1{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+h2{font-size:clamp(1.75rem,3.2vw,2.6rem)}
+h3{font-size:1.5rem}
+p{margin:0 0 1em;max-width:62ch}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 16px}
+@media(min-width:700px){.wrap{padding:0 32px}}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;z-index:20;background:#fff;padding:8px 12px}
+.demo{background:var(--ink);color:#e8ebe6;font-size:.75rem;line-height:1.4;padding:7px 16px;text-align:center}
+/* header */
+.top{background:var(--paper);border-bottom:1px solid #dfe2d9;position:relative;z-index:10}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{text-decoration:none;color:var(--ink);display:flex;flex-direction:column;line-height:1.05}
+.brand b{font:400 1.45rem/1 var(--serif)}
+.brand span{font-size:.8125rem;color:var(--muted);margin-top:4px}
+.nav{display:flex;align-items:center;gap:22px}
+.nav > a{color:var(--ink);text-decoration:none;font-size:.9375rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-bottom-color:var(--brick)}
+.nav > a.call{background:var(--brick);color:#fff;padding:9px 16px;border-radius:3px;border:0;font-weight:600}
+.nav > a.call:hover{background:var(--brick-d)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:10px 14px;border:1.5px solid var(--ink);border-radius:3px}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--ink);color:#fff}
+.menu div{position:absolute;right:0;top:calc(100% + 8px);background:var(--paper);border:1px solid #d6dacf;box-shadow:0 12px 30px rgba(31,42,36,.18);min-width:240px;padding:8px 0}
+.menu div a{display:block;padding:12px 20px;color:var(--ink);text-decoration:none;font-size:1.0625rem}
+.menu div a:hover{background:var(--linen)}
+@media(max-width:899px){.nav > a{display:none}.menu{display:block}}
+/* buttons */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 22px;border-radius:3px;font-weight:600;text-decoration:none;font-size:1.0625rem}
+.cta.primary{background:var(--brick);color:#fff}.cta.primary:hover{background:var(--brick-d)}
+.cta.ghost{border:1.5px solid var(--ink);color:var(--ink)}.cta.ghost:hover{background:var(--ink);color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+/* hero */
+.hero{padding:28px 0 40px}
+.hero .wrap{display:grid;gap:24px}
+.hero .lead{font-size:1.125rem;color:var(--muted);margin-top:16px}
+.status{margin-top:18px;font-size:.9375rem;color:var(--brick-d);font-weight:600;max-width:40ch}
+.hero figure{margin:0}.status.m{display:none;margin-top:0}@media(max-width:899px){.status.d{display:none}.status.m{display:block}}
+.hero figure img{width:100%;border-radius:2px}
+.hero figcaption{font-size:.875rem;color:var(--muted);margin-top:8px}
+@media(max-width:899px){.hero h1{font-size:2.15rem}.hero .lead{font-size:1.0625rem;margin-top:12px}.hero .actions{margin-top:18px}.hero .actions .cta{flex:1 1 100%}}
+@media(min-width:900px){.hero{padding:56px 0 72px}.hero .wrap{grid-template-columns:1fr 1.18fr;gap:56px;align-items:center}}
+/* the house */
+.house-sec{padding:64px 0;background:var(--paper);border-top:1px solid #e3e6dd;border-bottom:1px solid #e3e6dd}
+.house-sec .intro{max-width:640px;margin:0 auto 36px;text-align:center}
+.house-sec .intro p{margin:12px auto 0}
+.house{max-width:780px;margin:0 auto;position:relative}
+.gable{position:relative;padding:118px 0 22px;text-align:center;isolation:isolate}
+.gable::before{content:"";position:absolute;inset:0 -14px;background:var(--slate);clip-path:polygon(50% 0,100% 100%,0 100%);z-index:0}
+.gable::after{content:"";position:absolute;right:21%;top:30%;width:30px;height:32%;background:var(--brick-d);z-index:-1}
+.gable > *{position:relative;z-index:1}
+.gable .row{display:flex;justify-content:center;align-items:flex-end;gap:22px}
+.attic{color:#dfe5df;font-size:.875rem;font-style:italic;max-width:9em;text-align:left;line-height:1.3;padding-bottom:30px}@media(max-width:699px){.gable{padding-top:96px}.gable .row{flex-direction:column;align-items:center;gap:8px}.attic{padding:0;max-width:none;text-align:center}}
+.floor{background-color:var(--brick);background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.09) 0 2px,transparent 2px 22px);padding:16px 18px 22px;position:relative}
+.floor + .floor{border-top:6px solid #f1efe8}
+.floor h3{font:600 .8125rem/1 var(--sans);color:#f6e7df;margin:0 0 14px;letter-spacing:.01em}
+.wins{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 12px}
+@media(min-width:700px){.up .wins{grid-template-columns:repeat(5,1fr)}}
+.ground .wins{grid-template-columns:repeat(3,1fr)}
+.win{display:flex;flex-direction:column;align-items:center;text-align:center;color:#fff;text-decoration:none;line-height:1.25}
+.sash{display:block;width:100%;max-width:96px;aspect-ratio:3/4;border:5px solid #f4f2ec;border-bottom-width:9px;background:var(--dusk);position:relative;margin-bottom:9px;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.sash::after{content:"";position:absolute;inset:0;background:linear-gradient(#f4f2ec,#f4f2ec) 50% 0/3px 100% no-repeat,linear-gradient(#f4f2ec,#f4f2ec) 0 50%/100% 3px no-repeat}
+.win .sash{background:radial-gradient(circle at 50% 70%,#ffe3a1 0,var(--lamp) 38%,#c98a2c 100%);animation:lamp .7s ease-out both;animation-delay:calc(var(--i,0) * 140ms + 300ms)}
+@keyframes lamp{from{background:var(--dusk);filter:brightness(.8)}to{filter:none}}
+.win .wn{font:400 1.0625rem/1.15 var(--serif)}
+.win .wd{font-size:.8125rem;color:#f6e3da;margin-top:3px}
+.win:hover .wn,.win:focus-visible .wn{text-decoration:underline;text-underline-offset:3px}
+.win:hover .sash{box-shadow:0 0 0 3px var(--lamp),0 0 26px rgba(240,194,94,.7)}
+.plain{display:flex;flex-direction:column;align-items:center;text-align:center;color:#f6e3da;font-size:.875rem;line-height:1.3}
+.door{display:block;width:62px;height:118px;background:var(--green);border:5px solid #f4f2ec;border-bottom:0;margin-bottom:9px;border-radius:30px 30px 0 0}
+.plain.door-wrap{justify-content:flex-end}
+.porch{display:block;text-decoration:none;color:#fff;background:var(--green);position:relative;padding:12px 18px 14px;text-align:center}
+.porch::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px;background:#3d5e4d}
+.porch b{font:400 1.25rem/1.2 var(--serif)}
+.porch span{display:block;font-size:.875rem;color:#d9e5dc}
+.porch:hover b{text-decoration:underline;text-underline-offset:3px}
+.lawn{height:14px;background:#5c7a4f;margin:0 -14px}
+.house-note{text-align:center;color:var(--muted);font-size:.9375rem;margin:18px auto 0}
+@media(prefers-reduced-motion:reduce){.win .sash{animation:none}}
+/* sections */
+.sec{padding:72px 0}
+.sec h2 + p,.sec h2 + .sub{margin-top:14px}
+.morning{background:var(--green);color:#eef2ec}
+.morning a{color:#fff}
+.morning .wrap{display:grid;gap:36px}
+@media(min-width:900px){.morning .wrap{grid-template-columns:1fr 1fr;gap:64px;align-items:center}}
+.morning figure{margin:0}
+.morning figcaption{font-size:.875rem;color:#c3d1c7;margin-top:8px}
+.bill{list-style:none;padding:0;margin:22px 0 22px;columns:2;column-gap:28px}
+.bill li{font:400 1.1875rem/1.3 var(--serif);padding:7px 0;border-bottom:1px solid rgba(238,242,236,.22);break-inside:avoid}
+@media(max-width:480px){.bill{column-gap:16px}.bill li{font-size:1rem}}
+.morning .small{font-size:.9375rem;color:#d3ddd6}
+.gt{display:grid;gap:24px 48px;align-items:end}@media(min-width:900px){.gt{grid-template-columns:7fr 5fr}}.grounds-teaser figure{margin:0}
+.grounds-teaser figcaption{font-size:.875rem;color:var(--muted);margin-top:8px}
+.split{display:grid;gap:20px 56px}
+@media(min-width:900px){.split{grid-template-columns:5fr 7fr}}
+.more{font-weight:600}
+.ghd{background:var(--paper);border-top:1px solid #e3e6dd}
+.ghd .box{border-left:6px solid var(--brick);padding:4px 0 4px 22px}
+.ghd ul{padding-left:1.1em;margin:14px 0 0;max-width:62ch}
+.ghd li{margin:6px 0}
+/* page heads */
+.phead{padding:44px 0 28px}
+.phead p{font-size:1.125rem;color:var(--muted);margin-top:14px}
+/* rooms */
+.floorsec{padding:40px 0 24px}
+.floorsec > .wrap > h2{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--brick);padding-bottom:10px;margin-bottom:28px}
+.floorsec > .wrap > h2 small{font:400 .9375rem var(--sans);color:var(--muted)}
+.rooms{display:grid;gap:44px 32px}
+@media(min-width:900px){.rooms{grid-template-columns:1fr 1fr}}
+.room{scroll-margin-top:20px}
+.room img{width:100%;border-radius:2px;aspect-ratio:3/2;object-fit:cover}
+.room h3{margin:16px 0 6px;font-size:1.75rem}
+.room p{margin:0 0 .6em}
+.room .facts{color:var(--muted)}
+.medgrid{display:grid;gap:12px}@media(max-width:899px){.medgrid img:nth-child(n+3){display:none}}
+@media(min-width:900px){.medgrid{grid-template-columns:1fr 1fr}}
+.rate{background:var(--green);color:#eef2ec;padding:64px 0}
+.rate .big{font:400 clamp(2.6rem,6vw,4.2rem)/1 var(--serif);margin:10px 0 14px}
+.rate a{color:#fff}
+.rate .wrap{display:grid;gap:32px}
+@media(min-width:900px){.rate .wrap{grid-template-columns:1fr 1fr;gap:64px}}
+.ticks{padding-left:1.1em;margin:0}
+.ticks li{margin:6px 0}
+/* photo pairs */
+.pair{display:grid;gap:14px;margin:28px 0 0}
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+.pair figure,.solo{margin:0}.pair img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pair figcaption,.solo figcaption{font-size:.875rem;color:var(--muted);margin-top:6px}
+.band{padding:56px 0;border-top:1px solid #dfe2d9}
+.band .split{align-items:start}
+blockquote{margin:0;font:400 clamp(1.4rem,2.4vw,1.85rem)/1.35 var(--serif);max-width:34ch}
+blockquote + p{margin-top:12px;color:var(--muted);font-size:.9375rem}
+/* timeline */
+.tl{list-style:none;margin:28px 0 0;padding:0;border-left:3px solid var(--brick);max-width:680px}
+.tl li{padding:0 0 26px 24px;position:relative}
+.tl li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;background:var(--linen);border:3px solid var(--brick);border-radius:50%}
+.tl b{font:400 1.5rem/1.1 var(--serif);display:block;margin-bottom:4px}
+/* nearby */
+.places{display:grid;gap:0 48px;margin-top:8px}
+@media(min-width:900px){.places{grid-template-columns:1fr 1fr}}
+.place{padding:18px 0;border-bottom:1px solid #d9ddd3}
+.place h3{font-size:1.375rem;margin-bottom:6px}
+.place p{margin:0;color:var(--muted)}
+/* contact */
+.contact{display:grid;gap:36px}
+@media(min-width:900px){.contact{grid-template-columns:6fr 5fr;gap:64px}}
+.card{background:var(--paper);border:1px solid #dfe2d9;padding:28px}
+.card .tel{font:400 clamp(2rem,4vw,2.8rem)/1.05 var(--serif);color:var(--brick-d);text-decoration:none;display:inline-block;margin:6px 0 4px}
+.card dl{margin:18px 0 0}
+.card dt{font-weight:600;margin-top:12px}
+.card dd{margin:2px 0 0}
+.policies h3{margin:28px 0 8px;font-size:1.375rem}
+/* footer */
+.foot{background:var(--ink);color:#d7ddd8;padding:48px 0 110px;font-size:.9375rem}
+@media(min-width:900px){.foot{padding-bottom:48px}}
+.foot a{color:#fff}
+.foot .wrap{display:grid;gap:28px}
+@media(min-width:900px){.foot .wrap{grid-template-columns:1.2fr 1fr 1.3fr}}
+.foot b{font:400 1.375rem/1.1 var(--serif);color:#fff;display:block;margin-bottom:8px}
+.foot nav a{display:block;padding:4px 0;text-decoration:none}
+.foot nav a:hover{text-decoration:underline}
+.legal{font-size:.8125rem;color:#b8c0ba;line-height:1.5}
+/* mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(251,251,248,.97);border-top:1px solid #d6dacf;transform:translateY(110%);transition:transform .25s ease}
+.callbar.on{transform:none}
+.callbar a{flex:1;min-height:48px;font-size:1rem}
+@media(min-width:900px){.callbar{display:none}}
+@media(prefers-reduced-motion:reduce){.callbar{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Plantation Getaway Bed & Breakfast. Not affiliated with or endorsed by Plantation Getaway Bed & Breakfast.</div>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><b>Plantation Getaway</b><span>Bed &amp; Breakfast in Punxsutawney, PA</span></a>
+<nav class="nav" aria-label="Main"><a href="rooms.html" aria-current=page>Rooms</a><a href="grounds.html">Grounds</a><a href="about.html">Julie & the house</a><a href="nearby.html">Nearby</a><a href="stay.html">Rates & booking</a><a class="call" href="tel:+18149397371">Call (814) 939-7371</a>
+<details class="menu"><summary>Menu</summary><div><a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="grounds.html">Grounds</a><a href="about.html">Julie & the house</a><a href="nearby.html">Nearby</a><a href="stay.html">Rates & booking</a><a href="tel:+18149397371">Call (814) 939-7371</a></div></details>
+</nav></div></header>
+<main id="main">
+<section class="phead"><div class="wrap">
+<h1>Rooms</h1>
+<p>Old World decor, antiques, warm earthy colors and softly draped fabrics, a bit like the old movies about safaris and adventures in other lands. Every room has a private bathroom, A/C, DISH TV, wireless internet and a hairdryer.</p>
+</div></section>
+<section class="house-sec" aria-label="Where each room is"><div class="wrap"><div class="house">
+<div class="gable"><div class="row"><a class="win" href="rooms.html#mediterranean" style="--i:0"><span class="sash" aria-hidden="true"></span><span class="wn">Mediterranean Room</span><span class="wd">Queen bed, window seat</span></a><span class="attic">and a small library up under the roof</span></div></div>
+<div class="floor up"><h3>Upstairs, in the guest wing</h3><div class="wins"><a class="win" href="rooms.html#african" style="--i:1"><span class="sash" aria-hidden="true"></span><span class="wn">African Room</span><span class="wd">Queen bed</span></a><a class="win" href="rooms.html#english" style="--i:2"><span class="sash" aria-hidden="true"></span><span class="wn">English Room</span><span class="wd">King bed</span></a><a class="win" href="rooms.html#victorian" style="--i:3"><span class="sash" aria-hidden="true"></span><span class="wn">Victorian Room</span><span class="wd">Queen bed, gas fireplace</span></a><a class="win" href="rooms.html#australian" style="--i:4"><span class="sash" aria-hidden="true"></span><span class="wn">Australian Room</span><span class="wd">Queen and single bed</span></a><a class="win" href="rooms.html#groundhog" style="--i:5"><span class="sash" aria-hidden="true"></span><span class="wn">Groundhog Suite</span><span class="wd">Two rooms, canopy queen</span></a></div></div>
+<div class="floor ground"><h3>Ground floor</h3><div class="wins"><a class="win" href="rooms.html#colonial" style="--i:6"><span class="sash" aria-hidden="true"></span><span class="wn">Colonial American Room</span><span class="wd">No stairs, gas fireplace</span></a>
+<span class="plain door-wrap"><span class="door" aria-hidden="true"></span>Front door and foyer</span>
+<a class="win" href="index.html#breakfast" style="--i:7"><span class="sash" aria-hidden="true"></span><span class="wn">Parlor</span><span class="wd">Breakfast, fireplace</span></a></div></div>
+<a class="porch" href="grounds.html#verandah"><b>The verandah</b><span>Wide, shady, white wicker chairs</span></a>
+<div class="lawn" aria-hidden="true"></div>
+</div><p class="house-note">Pick a window to jump to that room.</p></div></section>
+
+<section class="floorsec" aria-labelledby="f-top"><div class="wrap">
+<h2 id="f-top">Top of the house</h2>
+<article class="room" id="mediterranean"><div class="medgrid"><img src="img/r-mediterranean.webp" srcset="img/r-mediterranean-s.webp 600w, img/r-mediterranean.webp 800w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="800" height="533" alt="Mediterranean Room: a queen bed under a white canopy, terracotta walls and garden windows" loading="lazy" decoding="async"><img src="img/r-med18.webp" srcset="img/r-med18-s.webp 600w, img/r-med18.webp 800w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="800" height="533" alt="Mediterranean Room: the window seat with cushions below two garden windows" loading="lazy" decoding="async"><img src="img/r-med19.webp" srcset="img/r-med19-s.webp 600w, img/r-med19.webp 800w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="800" height="548" alt="Mediterranean Room bathroom: a wooden washstand and oval mirror under the slanted ceiling" loading="lazy" decoding="async"><img src="img/r-med20.webp" srcset="img/r-med20-s.webp 600w, img/r-med20.webp 800w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="800" height="551" alt="Mediterranean Room: carved wooden door and a reading lamp beside the bed" loading="lazy" decoding="async"></div>
+<h3>Mediterranean Room</h3><p class="facts">A large room at the top of the house, newly remodeled. Queen-size bed, a wide window seat overlooking the gardens, and a bathroom tucked in under a slanted ceiling with a tiled shower.</p></article>
+</div></section>
+
+<section class="floorsec" aria-labelledby="f-up"><div class="wrap">
+<h2 id="f-up">Upstairs <small>in the separate guest wing</small></h2>
+<div class="rooms">
+<article class="room" id="african"><img src="img/r-african.webp" srcset="img/r-african-s.webp 600w, img/r-african.webp 900w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="900" height="600" alt="African Room: a queen bed under a mosquito-net canopy, warm lamps and framed prints" loading="lazy" decoding="async"><h3>African Room</h3><p class="facts">Queen-size bed, large bathroom.</p></article>
+<article class="room" id="english"><img src="img/r-english.webp" width="600" height="449" alt="English Room: an antique vanity, green patterned wallpaper and a carved bed" loading="lazy" decoding="async"><h3>English Room</h3><p class="facts">King-size bed, step-down bathroom with tub and shower.</p></article>
+<article class="room" id="victorian"><img src="img/r-victorian.webp" srcset="img/r-victorian-s.webp 600w, img/r-victorian.webp 900w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="900" height="600" alt="Victorian Room: a four-poster bed with white drapes and a writing desk" loading="lazy" decoding="async"><h3>Victorian Room</h3><p class="facts">Gas fireplace, queen bed with a firm mattress, small bathroom with shower.</p></article>
+<article class="room" id="australian"><img src="img/r-australian.webp" srcset="img/r-australian-s.webp 600w, img/r-australian.webp 900w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="900" height="506" alt="Australian Room: a queen bed with a striped quilt below a window with red swags" loading="lazy" decoding="async"><h3>Australian Room</h3><p class="facts">A large room with a queen bed and a single bed, walk-in closet, spacious bathroom with tub and shower.</p></article>
+<article class="room" id="groundhog"><img src="img/r-groundhog.webp" width="543" height="376" alt="Groundhog Suite sitting room: a sofa, coffee table and framed prints" loading="lazy" decoding="async"><h3>Groundhog Suite</h3><p class="facts">Two very quiet, spacious rooms: a draped canopy queen-size bed, a sitting room with a large-screen TV and a desk, and a bathroom with tub and shower.</p><p>It can be set up as a honeymoon or anniversary suite, with sparkling wine, chocolate-covered strawberries and flowers. Call Julie to plan it; extra fees apply depending on what you ask for.</p></article>
+</div></div></section>
+
+<section class="floorsec" aria-labelledby="f-ground"><div class="wrap">
+<h2 id="f-ground">Ground floor</h2>
+<div class="rooms">
+<article class="room" id="colonial"><img src="img/r-colonial.webp" srcset="img/r-colonial-s.webp 600w, img/r-colonial.webp 1000w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="1000" height="562" alt="Colonial American Room: a quilted bed, gas fireplace and white-framed windows" loading="lazy" decoding="async"><h3>Colonial American Room</h3><p class="facts">Gas fireplace, roomy bathroom with tub and shower. No stairs or steps, and it adjoins the downstairs parlor, so it suits guests who find stairs difficult.</p></article>
+<article class="room" id="parlor"><img src="img/lounge.webp" srcset="img/lounge-s.webp 600w, img/lounge.webp 900w" sizes="(min-width: 1240px) 552px, (min-width: 900px) calc(50vw - 48px), calc(100vw - 32px)" width="900" height="600" alt="The lounge: armchairs, a fireplace, a chandelier and a tea service on the table" loading="lazy" decoding="async"><h3>The parlor and lounge</h3><p class="facts">Breakfast is served here. There is a fireplace for the colder months, a laptop for guests, wireless internet, and a guest phone in the foyer.</p></article>
+</div></div></section>
+
+<section class="rate" aria-labelledby="h-rate"><div class="wrap">
+<div><h2 id="h-rate">Room rate</h2>
+<p class="big">$110 a night</p>
+<p>All rooms, including the Groundhog Suite, are $110.00 a night (without breakfast). Queen or king beds are available in some rooms. Julie has specials all through the year, and monthly rates for extended stays, so <a href="tel:+18149397371">phone her for prices</a>. These rates do not apply over Groundhog Day.</p></div>
+<div><h3>Good to know</h3>
+<ul class="ticks"><li>Check-in after 3:00 PM; call if you will be later than 9:00 PM.</li><li>A credit card number holds your reservation. Major credit cards accepted.</li><li>Smoking only on the verandah.</li><li>The house is old and has steps at the entrance. Please phone before booking if you need easier access.</li></ul>
+<p style="margin-top:18px"><a href="stay.html">Full booking and cancellation policy</a></p></div>
+</div></section>
+
+</main>
+<footer class="foot"><div class="wrap">
+<div><b>Plantation Getaway</b>20652 Route 119<br>Punxsutawney, PA 15767<br><a href="tel:+18149397371">(814) 939-7371</a><br><a href="mailto:jules8877@gmail.com">jules8877@gmail.com</a><br>24-hour answering service available.<br>Reservations preferred but not required.</div>
+<nav aria-label="Footer"><a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="grounds.html">Grounds</a><a href="about.html">Julie & the house</a><a href="nearby.html">Nearby</a><a href="stay.html">Rates & booking</a></nav>
+<div class="legal">Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Plantation Getaway Bed & Breakfast. Text and photos come from the Plantation's public website; their reservation form is not recreated here, so email or phone Julie directly.<br><br>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></div>
+</div></footer>
+<div class="callbar" id="callbar"><a class="cta primary" href="tel:+18149397371">Call Julie</a><a class="cta ghost" href="mailto:jules8877@gmail.com?subject=Availability%20inquiry">Email</a></div>
+<script>
+(function(){var b=document.getElementById('callbar'),h=document.querySelector('[data-hero]');
+if(h&&'IntersectionObserver' in window){new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting)}).observe(h)}
+else{addEventListener('scroll',function(){b.classList.toggle('on',scrollY>320)},{passive:true})}})();
+</script>
+</body>
+</html>
