@@ -110,6 +110,7 @@ p{max-width:38em}
 @media (max-width:760px){
   .key .intro{grid-template-columns:1fr;gap:1rem}
   .key thead{display:none}
+  .key caption{display:block;width:100%}
   .key table,.key tbody,.key tr,.key th,.key td{display:block;width:auto}
   .key tr{border-top:1px solid rgba(255,255,255,.18);padding:1.1rem 0}
   .key th,.key td{border:0;padding:0}
@@ -127,7 +128,7 @@ p{max-width:38em}
 .row:last-child{border-bottom:1px solid var(--line)}
 .num{white-space:nowrap;font-size:clamp(2.6rem,4.4vw,3.6rem);color:var(--cabin);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:.9;word-spacing:.05em}
 .row h3{color:var(--lake);margin-bottom:.5rem}
-.row .facts{margin-top:.9rem;font-size:.9375rem;color:var(--muted)}
+.row .facts{margin-top:1rem;font-size:.9375rem;line-height:1.5;color:var(--muted);padding-top:.9rem;border-top:2px solid var(--cabin);max-width:14rem}
 .row .facts b{color:var(--ink);font-weight:600}
 .row .more{display:inline-block;margin-top:1rem;font:700 1.0625rem/1 "Rokkitt",serif;color:var(--cabin)}
 .row img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
@@ -313,51 +314,61 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);paddin
       <p>All are full housekeeping: kitchen, bathroom with shower, bedding and towels, new pillow-top queen mattresses, and a fire ring and charcoal grill outside. Check-in 3 pm, check-out 11 am.</p>
     </div>
     <article class="row">
-  <p class="num" aria-hidden="true">1 2 3</p>
+  <div class="tag">
+    <p class="num" aria-hidden="true">1 2 3</p>
+    <p class="facts"><b>Sleep 4</b><br>On the Cross River<br>2027: $189 to $255 a night</p>
+  </div>
   <div>
     <h3>Log cabins on the Cross River</h3>
     <p>The smallest spaces, and the first cabins built on the property, in the 1920s. Often called the Honeymoon Cabins: the sound of the Cross River Falls surrounds you.</p>
-    <p class="facts"><b>Sleep 4.</b> On the Cross River. 2027: $189 to $255 a night.</p>
     <a class="more" href="cabins.html#c123">Cabins 1, 2 and 3: photos and rates</a>
   </div>
   <figure><img src="img/c123-a-800.webp" srcset="img/c123-a-600.webp 600w, img/c123-a-800.webp 800w, img/c123-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="Inside one of the log cabins on the Cross River: queen bed, table and futon" loading="lazy" decoding="async"></figure>
 </article>
 <article class="row">
-  <p class="num" aria-hidden="true">4 5 6 8</p>
+  <div class="tag">
+    <p class="num" aria-hidden="true">4 5 6 8</p>
+    <p class="facts"><b>Sleep 6</b><br>On Lake Superior<br>2027: $219 to $296 a night</p>
+  </div>
   <div>
     <h3>Log cabins on Lake Superior</h3>
     <p>Two bedrooms with queen beds and a sleeper futon in cabins 4, 5 and 6. Cabin 8 trades the second bedroom for a bigger common room, which families with children seem to like.</p>
-    <p class="facts"><b>Sleep 6.</b> On Lake Superior. 2027: $219 to $296 a night.</p>
     <a class="more" href="cabins.html#c4568">Cabins 4, 5, 6 and 8: photos and rates</a>
   </div>
   <figure><img src="img/c4568-a-800.webp" srcset="img/c4568-a-600.webp 600w, img/c4568-a-800.webp 800w, img/c4568-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="A red log cabin with a deck on Lake Superior" loading="lazy" decoding="async"></figure>
 </article>
 <article class="row">
-  <p class="num" aria-hidden="true">7</p>
+  <div class="tag">
+    <p class="num" aria-hidden="true">7</p>
+    <p class="facts"><b>Sleeps 8</b><br>On Lake Superior<br>2027: $239 to $317 a night</p>
+  </div>
   <div>
     <h3>Log cabin 7, with a loft</h3>
     <p>On Lake Superior, with two queen bedrooms on the main floor, a double bed in the loft up a rather steep set of stairs, and a sleeper futon.</p>
-    <p class="facts"><b>Sleeps 8.</b> On Lake Superior. 2027: $239 to $317 a night.</p>
     <a class="more" href="cabins.html#c7">Cabin 7: photos and rates</a>
   </div>
-  <figure><img src="img/c7-a-800.webp" srcset="img/c7-a-600.webp 600w, img/c7-a-800.webp 800w, img/c7-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="Lawn with picnic table and fire ring, Lake Superior beyond the spruce" loading="lazy" decoding="async"></figure>
+  <figure><img src="img/c7-loft-800.webp" srcset="img/c7-loft-600.webp 600w, img/c7-loft-800.webp 800w, img/c7-loft-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="The log stair up to cabin 7's loft" loading="lazy" decoding="async"></figure>
 </article>
 <article class="row">
-  <p class="num" aria-hidden="true">11 12 14</p>
+  <div class="tag">
+    <p class="num" aria-hidden="true">11 12 14</p>
+    <p class="facts"><b>Sleep 6</b><br>On Lake Superior<br>2027: $209 to $286 a night</p>
+  </div>
   <div>
     <h3>Frame cabins on Lake Superior</h3>
     <p>Slightly newer than the log cabins. Two bedrooms, each with a queen bed, plus a sleeper futon.</p>
-    <p class="facts"><b>Sleep 6.</b> On Lake Superior. 2027: $209 to $286 a night.</p>
     <a class="more" href="cabins.html#cframe">Cabins 11, 12 and 14: photos and rates</a>
   </div>
   <figure><img src="img/cf-a-800.webp" srcset="img/cf-a-600.webp 600w, img/cf-a-800.webp 800w, img/cf-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="A red frame cabin among the trees" loading="lazy" decoding="async"></figure>
 </article>
 <article class="row">
-  <p class="num" aria-hidden="true">18</p>
+  <div class="tag">
+    <p class="num" aria-hidden="true">18</p>
+    <p class="facts"><b>Sleeps 8</b><br>In the woods by the Cross River<br>2027: $209 to $286 a night</p>
+  </div>
   <div>
     <h3>Cabin 18, the largest</h3>
     <p>Tucked in the woods near the Cross River, a bit below the coffee shop. Three bedrooms with queen beds, two sleeper futons, and a full kitchen with a microwave.</p>
-    <p class="facts"><b>Sleeps 8.</b> In the woods by the Cross River. 2027: $209 to $286 a night.</p>
     <a class="more" href="cabins.html#c18">Cabin 18: photos and rates</a>
   </div>
   <figure><img src="img/c18-a-800.webp" srcset="img/c18-a-600.webp 600w, img/c18-a-800.webp 800w, img/c18-a-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 2rem), (max-width: 1000px) calc(100vw - 6rem), 416px" width="800" height="600" alt="Cabin 18 among the pines, with its deck and picnic table" loading="lazy" decoding="async"></figure>
@@ -381,7 +392,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);paddin
 
 <section class="saying">
   <div class="wrap">
-    <blockquote>We won't charge for sunshine and don't refund for rain.</blockquote>
+    <blockquote>We won’t charge for sunshine and don’t refund for rain.</blockquote>
     <p>From Lamb's cancellation policy.</p>
   </div>
 </section>
@@ -408,7 +419,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);paddin
     <div>
       <h2>Reach us</h2>
       <p><a href="tel:+12186637292">218-663-7292</a><br><a href="mailto:lr@boreal.org">lr@boreal.org</a></p>
-      <p style="margin-top:.75rem">4 Lamb's Way, Hwy 61, Schroeder, MN 55613</p>
+      <p style="margin-top:.75rem">Lamb's Way, Hwy 61, Schroeder, MN 55613</p>
       <p style="margin-top:.75rem">Summer office hours: 9 am to 9 pm</p>
     </div>
     <nav aria-label="Footer">
