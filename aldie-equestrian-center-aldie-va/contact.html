@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact | Aldie Equestrian Center</title>
+<meta name="description" content="Call Sue Fox about boarding at 703-304-6249, or Lindsay Fox about lessons, training and sales at 703-887-4622. 24291 James Monroe Highway, Aldie, VA 20105.">
+<meta name="theme-color" content="#edf0ea">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rufina.woff2" crossorigin>
+<style>
+@font-face { font-family: "Rufina"; font-weight: 700; font-display: swap; src: url(fonts/rufina.woff2) format("woff2"); }
+@font-face { font-family: "Mulish"; font-weight: 400 800; font-display: swap; src: url(fonts/mulish.woff2) format("woff2"); }
+/* Morning mist over Loudoun pasture, their sage green deepened to hunter, the black four-board fence, arena sand. */
+:root {
+  --mist: #edf0ea; --paper: #f8f9f6; --ink: #1e211c; --soft: #4a5246;
+  --hunter: #27412e; --hunter-2: #1d3223; --sage: #6f8a6c; --board: #2b2622; --sand: #c39a6b;
+  --pad: clamp(1rem, 4vw, 3rem); --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--mist); color: var(--ink); font: 400 1.0625rem/1.65 "Mulish", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: .2em; }
+a[href^="tel:"] { white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+h1, h2, h3, .serif { font-family: "Rufina", Georgia, serif; font-weight: 700; line-height: 1.08; letter-spacing: -.01em; }
+h1 { font-size: clamp(2.45rem, 5.4vw, 4.4rem); text-wrap: balance; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); text-wrap: balance; }
+h3 { font-size: 1.35rem; }
+p { max-width: 38rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.demo { background: var(--ink); color: #d4d8cf; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .45rem 1rem; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .9rem; padding-bottom: .9rem; }
+.brand { text-decoration: none; font-family: "Rufina", Georgia, serif; font-weight: 700; font-size: 1.3rem; line-height: 1.05; color: var(--hunter); }
+.brand small { display: block; font: 600 .78rem/1.3 "Mulish", sans-serif; color: var(--soft); letter-spacing: .01em; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-weight: 600; font-size: .97rem; }
+.nav > a { text-decoration: none; padding: .3rem 0; border-bottom: 2px solid transparent; }
+.nav > a:hover, .nav > a[aria-current] { border-bottom-color: var(--hunter); }
+.nav > a.call { border: 0; background: var(--hunter); color: #fff; padding: .6rem 1rem; border-radius: 2rem; }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; font-weight: 700; padding: .55rem .95rem; border: 2px solid var(--hunter); border-radius: 2rem; color: var(--hunter); }
+.menu summary::-webkit-details-marker { display: none; }
+.menu nav { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--paper); border: 1px solid #cfd6c9; border-radius: .6rem; padding: .5rem; min-width: 14rem; z-index: 15; box-shadow: 0 14px 30px -12px rgba(30,33,28,.35); }
+.menu nav a { display: block; padding: .7rem .9rem; text-decoration: none; font-weight: 600; border-radius: .4rem; }
+.menu nav a:hover { background: var(--mist); }
+@media (max-width: 860px) { .nav > a { display: none; } .menu { display: block; } }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3.1rem; padding: .8rem 1.4rem; border-radius: 2rem; background: var(--hunter); color: #fff; font-weight: 700; text-decoration: none; transition: background-color .15s ease; }
+.btn:hover { background: var(--hunter-2); }
+.btn.line { background: transparent; color: var(--hunter); box-shadow: inset 0 0 0 2px var(--hunter); }
+.btn.line:hover { background: rgba(39,65,46,.08); }
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+
+/* Home hero: words first, then the one strong photo. */
+.hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; padding-top: clamp(1rem, 3vw, 2.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.hero .lede { font-size: 1.15rem; color: var(--soft); margin-top: 1.1rem; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.hero .alt { margin-top: 1rem; font-size: .95rem; color: var(--soft); }
+.hero figure img { border-radius: .5rem; width: 100%; }
+.hero figcaption, .cap { font-size: .88rem; color: var(--soft); margin-top: .6rem; }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 1.25rem; padding-top: .4rem; }
+  .hero .lede { font-size: 1.05rem; margin-top: .75rem; }
+  .hero .actions { margin-top: 1.1rem; }
+  .hero .actions .btn { flex: 1 1 100%; }
+}
+
+/* The signature: their four "no"s, set on a four-board fence. */
+.fence { background: var(--hunter); color: #eef2ea; padding: clamp(3rem, 6vw, 5.5rem) 0; }
+.fence .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.fence h2 { font-size: clamp(2.2rem, 4.4vw, 3.5rem); }
+.fence .src { margin-top: 1rem; color: #c9d4c4; }
+.fence .yes { margin-top: 1.4rem; color: #eef2ea; }
+.boards { position: relative; list-style: none; padding: 0 1.4rem; display: grid; gap: 1.35rem; }
+.boards::before, .boards::after { content: ""; position: absolute; top: -1.4rem; bottom: -1.4rem; width: .9rem; background: var(--board); border-radius: 2px; box-shadow: inset -3px 0 0 rgba(255,255,255,.06); }
+.boards::before { left: 0; } .boards::after { right: 0; }
+.boards li { position: relative; background: var(--board); color: #f1ede6; font-family: "Rufina", Georgia, serif; font-weight: 700; font-size: clamp(1.25rem, 2.3vw, 1.75rem); line-height: 1.2; padding: .75rem 1.3rem; box-shadow: inset 0 2px 0 rgba(255,255,255,.07), inset 0 -3px 0 rgba(0,0,0,.25); }
+.fence .note { grid-column: 2; font-size: .95rem; color: #c9d4c4; margin-top: .4rem; }
+@media (max-width: 860px) { .fence .wrap { grid-template-columns: 1fr; } .fence .note { grid-column: 1; } }
+
+/* The grounds: one wide photo, then two. Captions are the facts from their boarding page. */
+.grounds { padding-block: clamp(3rem, 6vw, 5rem); }
+.grounds .head { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+.grounds .head p { color: var(--soft); }
+.wide img, .pair img { border-radius: .5rem; width: 100%; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+figure h3 { margin-top: .9rem; }
+figure p { color: var(--soft); margin-top: .3rem; font-size: 1rem; }
+.night { background: #10141b; border-radius: .5rem; }
+@media (max-width: 700px) { .pair { grid-template-columns: 1fr; } }
+
+/* Who to call: two people, two numbers. */
+.callers { padding-block: clamp(2rem, 4vw, 3.5rem) clamp(3rem, 6vw, 4.5rem); }
+.callers::before, .block::before { content: ""; display: block; border-top: 1px solid #cdd5c7; margin-top: calc(-1 * clamp(2rem, 4vw, 3.5rem)); margin-bottom: clamp(2rem, 4vw, 3.5rem); grid-column: 1 / -1; }
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 3vw, 2.5rem); margin-top: 1.6rem; }
+.person { background: var(--paper); border: 1px solid #d5dccf; border-radius: .6rem; padding: 1.5rem 1.6rem; }
+.person .for { color: var(--soft); font-weight: 600; }
+.person .name { font-family: "Rufina", Georgia, serif; font-size: 1.6rem; line-height: 1.15; margin-top: .2rem; }
+.person .btn { margin-top: 1rem; }
+.where { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2.5rem; margin-top: 2rem; color: var(--soft); }
+.where strong { color: var(--ink); display: block; }
+@media (max-width: 700px) { .people, .where { grid-template-columns: 1fr; } }
+
+/* Inner pages */
+.page-head { padding-top: clamp(1rem, 3vw, 2.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.page-head p { font-size: 1.12rem; color: var(--soft); margin-top: .9rem; }
+.page-head .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; }
+.block { padding-block: clamp(2rem, 4vw, 3.5rem); }
+.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.split img { border-radius: .5rem; width: 100%; }
+.list { list-style: none; padding: 0; margin-top: 1rem; display: grid; gap: .55rem; }
+.list li { padding-left: 1.4rem; position: relative; }
+.list li::before { content: ""; position: absolute; left: 0; top: .72em; width: .7rem; height: 3px; background: var(--sage); }
+.board-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.4rem; }
+.board-types article { background: var(--paper); border: 1px solid #d5dccf; border-radius: .6rem; padding: 1.4rem; }
+.board-types p { font-size: .98rem; color: var(--soft); margin-top: .5rem; }
+.board-types .price { color: var(--ink); font-weight: 700; }
+@media (max-width: 860px) { .split, .board-types { grid-template-columns: 1fr; } }
+.plan { background: var(--paper); border: 1px solid #d5dccf; border-radius: .6rem; padding: 1.25rem; }
+.plan svg { width: 100%; height: auto; display: block; }
+.riders { display: grid; grid-template-columns: repeat(3, minmax(0, 15rem)); gap: 1rem; margin-top: 1.5rem; }
+.riders img { border-radius: .4rem; aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+@media (max-width: 700px) { .riders { grid-template-columns: repeat(2, 1fr); } }
+.steps { list-style: none; padding: 0; counter-reset: s; display: grid; gap: 1rem; margin-top: 1.2rem; max-width: 40rem; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2.4rem 1fr; gap: .9rem; align-items: start; }
+.steps li::before { content: counter(s); font-family: "Rufina", Georgia, serif; font-size: 1.3rem; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--hunter); color: #fff; display: grid; place-items: center; }
+
+/* Photos page */
+.gal-group { padding: 1.5rem 0 2rem; }
+.gal { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 1rem; }
+.gal.three { grid-template-columns: repeat(3, 1fr); }
+.gal button { all: unset; cursor: zoom-in; display: block; border-radius: .45rem; overflow: hidden; }
+.gal button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.gal img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform .25s ease; }
+.gal button:hover img { transform: scale(1.02); }
+@media (max-width: 860px) { .gal, .gal.three { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .gal, .gal.three { grid-template-columns: 1fr; } }
+dialog.lb { margin: auto; padding: 0; border: 0; background: transparent; max-width: min(94vw, 1200px); max-height: 92vh; }
+dialog.lb::backdrop { background: rgba(14,18,13,.86); }
+dialog.lb img { max-width: 100%; max-height: 82vh; width: auto; margin: 0 auto; border-radius: .4rem; }
+dialog.lb p { color: #e7ece3; text-align: center; margin: .7rem auto 0; font-size: .95rem; }
+dialog.lb .x { position: fixed; top: 1rem; right: 1rem; background: var(--paper); color: var(--ink); border: 0; border-radius: 2rem; padding: .6rem 1rem; font: 700 .95rem "Mulish", sans-serif; cursor: pointer; }
+
+footer { background: var(--ink); color: #c9cfc3; padding: 2.5rem 0 6rem; font-size: .92rem; margin-top: 0; }
+footer .cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.5rem 2rem; }
+footer .name { font-family: "Rufina", Georgia, serif; color: #fff; font-size: 1.25rem; }
+footer a { color: #fff; }
+footer nav a { display: block; text-decoration: none; padding: .15rem 0; }
+footer nav a:hover { text-decoration: underline; }
+footer .legal { border-top: 1px solid #3a4036; margin-top: 2rem; padding-top: 1.2rem; color: #a9b1a3; }
+@media (max-width: 700px) { footer .cols { grid-template-columns: 1fr 1fr; } footer .cols > div:first-child { grid-column: 1 / -1; } }
+@media (min-width: 861px) { footer { padding-bottom: 2.5rem; } }
+
+/* Sticky call bar on phones, after the first screen. */
+.sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 12; display: none; gap: .6rem; padding: .65rem 1rem calc(.65rem + env(safe-area-inset-bottom)); background: rgba(248,249,246,.97); border-top: 1px solid #cdd5c7; transform: translateY(110%); transition: transform .25s ease; }
+.sticky .btn { flex: 1; min-height: 2.9rem; padding: .6rem .8rem; font-size: .95rem; }
+.sticky.on { transform: none; }
+@media (max-width: 860px) { .sticky { display: flex; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Aldie Equestrian Center. Not affiliated with or endorsed by Aldie Equestrian Center.</div>
+<header class="wrap top">
+  <a class="brand" href="index.html">Aldie Equestrian Center<small>Aldie, Virginia</small></a>
+  <div class="nav">
+    <a href="boarding.html">Boarding</a><a href="training.html">Training and lessons</a><a href="photos.html">Photos</a><a href="contact.html" aria-current="page">Contact</a>
+    <a class="call" href="tel:+17033046249">Call 703-304-6249</a>
+    <details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html">Home</a><a href="boarding.html">Boarding</a><a href="training.html">Training and lessons</a><a href="photos.html">Photos</a><a href="contact.html" aria-current="page">Contact</a><a href="tel:+17033046249">Call Sue: 703-304-6249</a></nav></details>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap page-head" aria-labelledby="h1">
+  <h1 id="h1">Contact</h1>
+  <p>Call the person who handles what you need.</p>
+  <div class="people">
+    <div class="person"><p class="for">Boarding</p><p class="name">Sue Fox</p><a class="btn" href="tel:+17033046249"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>703-304-6249</a></div>
+    <div class="person"><p class="for">Lessons, training and sales</p><p class="name">Lindsay Fox</p><a class="btn" href="tel:+17038874622"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>703-887-4622</a></div>
+  </div>
+  <p style="margin-top:1.5rem">Or email <a href="mailto:aldieequestrian@aol.com">aldieequestrian@aol.com</a></p>
+</section>
+<span data-sticky-after></span>
+
+<section class="wrap block split" aria-labelledby="addr">
+  <div>
+    <h2 id="addr">Where it is</h2>
+    <p style="margin-top:.8rem"><strong>24291 James Monroe Highway<br>Aldie, VA 20105</strong></p>
+    <p style="margin-top:.6rem">In Loudoun County, just off Route 15 in Aldie, with easy access to Route 50 and Route 66.</p>
+    <p style="margin-top:1.2rem"><strong>Mailing address</strong><br>PO Box 174<br>Aldie, VA 20105</p>
+  </div>
+  <div id="gate">
+    <h2>Getting in the gate</h2>
+    <p style="margin-top:.8rem">The facility is secured by a gated entrance.</p>
+    <ol class="steps">
+      <li>As you approach the gate, look for a post with a gate opener on your left.</li>
+      <li>Open the cover and press the button.</li>
+      <li>The gate opens, and closes again once you have pulled forward.</li>
+    </ol>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="name">Aldie Equestrian Center LLC</p>
+        <p>24291 James Monroe Highway, Aldie, VA 20105<br>Loudoun County, just off Route 15</p>
+        <p style="margin-top:.6rem">Boarding: Sue Fox, <a href="tel:+17033046249">703-304-6249</a><br>Lessons, training and sales: Lindsay Fox, <a href="tel:+17038874622">703-887-4622</a><br><a href="mailto:aldieequestrian@aol.com">aldieequestrian@aol.com</a></p>
+      </div>
+      <nav aria-label="Footer"><a href="index.html">Home</a><a href="boarding.html">Boarding</a><a href="training.html">Training and lessons</a><a href="photos.html">Photos</a><a href="contact.html">Contact</a></nav>
+      <div><p>Mailing address<br>PO Box 174<br>Aldie, VA 20105</p></div>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Aldie Equestrian Center. Not affiliated with or endorsed by Aldie Equestrian Center. Photos and text are theirs, from their public website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="sticky" id="sticky" aria-hidden="true">
+  <a class="btn" href="tel:+17033046249" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call Sue</a>
+  <a class="btn line" href="mailto:aldieequestrian@aol.com" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+</div>
+<script>
+(() => {
+  const bar = document.getElementById('sticky'), mark = document.querySelector('[data-sticky-after]');
+  if (!bar || !mark || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([e]) => {
+    const on = !e.isIntersecting && e.boundingClientRect.top < 0;
+    bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', String(!on));
+    bar.querySelectorAll('a').forEach((a) => a.tabIndex = on ? 0 : -1);
+  }).observe(mark);
+})();
+</script>
+</body>
+</html>
