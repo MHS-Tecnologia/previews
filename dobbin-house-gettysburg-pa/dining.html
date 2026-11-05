@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Dining · Dobbin House Tavern</title>
+<meta name="description" content="The Springhouse Tavern and the Alexander Dobbin Dining Rooms: hours, reservations, the six dining rooms and banquets for up to 130.">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="icon" href="favicon.png" type="image/png">
+<style>
+@font-face { font-family: "Fell"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/fell.woff2) format("woff2"); }
+@font-face { font-family: "Fell"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/fell-italic.woff2) format("woff2"); }
+@font-face { font-family: "Fell SC"; font-weight: 400; font-display: swap; src: url(fonts/fell-sc.woff2) format("woff2"); }
+@font-face { font-family: "Source Serif"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/sourceserif.woff2) format("woff2"); }
+
+/* Whitewashed trim and plaster, the fieldstone, walnut by candlelight, the red front door,
+   and the parchment of their own logo — kept for the broadside only. */
+:root {
+  --wash: #f3f2ee;
+  --stone: #d8d2c6;
+  --ink: #2b211a;
+  --muted: #5c5045;
+  --walnut: #241a14;
+  --walnut-2: #33261d;
+  --door: #8b2b1f;
+  --door-deep: #6f2017;
+  --paper: #efe4c8;
+  --candle: #e3c27a;
+  --pad: clamp(1rem, 4vw, 2.5rem);
+  --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+body { background: var(--wash); color: var(--ink); font: 400 1.0625rem/1.65 "Source Serif", Georgia, serif; font-optical-sizing: auto; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--door); text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--door-deep); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--door); outline-offset: 3px; }
+.dark :focus-visible { outline-color: var(--candle); }
+.skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff; padding: .6rem 1rem; z-index: 50; }
+.skip:focus { left: 1rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+h1, h2, h3 { font-family: "Fell", Georgia, serif; font-weight: 400; line-height: 1.08; letter-spacing: -.005em; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 6.2vw, 4.6rem); }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+h3 { font-size: 1.55rem; }
+p { max-width: 38em; text-wrap: pretty; }
+.sc { font-family: "Fell SC", Georgia, serif; letter-spacing: .02em; }
+
+/* Notice + header */
+.demo { max-width: none; background: var(--walnut); color: #e9dfcc; font-size: .8125rem; line-height: 1.4; padding: .5rem var(--pad); text-align: center; }
+.top { border-bottom: 1px solid var(--stone); background: var(--wash); position: relative; z-index: 20; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.5rem; }
+.brand { display: block; padding: .35rem 0; }
+.brand img { width: 176px; height: auto; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-size: 1rem; }
+.nav > a { color: var(--ink); text-decoration: none; padding: .4rem 0; border-bottom: 1px solid transparent; }
+.nav > a:hover, .nav > a[aria-current] { border-bottom-color: var(--door); color: var(--ink); }
+.nav > a.call { background: var(--door); color: #fff; padding: .55rem 1rem; border: 0; border-radius: 2px; font-weight: 600; }
+.nav > a.call:hover { background: var(--door-deep); color: #fff; }
+.more { display: none; position: relative; }
+.more summary { list-style: none; cursor: pointer; border: 1px solid var(--ink); padding: .5rem .9rem; border-radius: 2px; font-weight: 600; }
+.more summary::-webkit-details-marker { display: none; }
+.more[open] summary { background: var(--ink); color: var(--wash); }
+.more .menu { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--wash); border: 1px solid var(--ink); min-width: 15rem; padding: .5rem 0; box-shadow: 0 12px 30px rgb(36 26 20 / .18); }
+.more .menu a { display: block; padding: .75rem 1.1rem; color: var(--ink); text-decoration: none; font-size: 1.05rem; }
+.more .menu a[aria-current] { color: var(--door); }
+.more .menu a:hover { background: #e9e6df; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .7rem 1.4rem; border-radius: 2px; font-weight: 600; text-decoration: none; font-size: 1.05rem; }
+.btn.red { background: var(--door); color: #fff; }
+.btn.red:hover { background: var(--door-deep); color: #fff; }
+.btn.line { border: 1px solid currentColor; color: var(--ink); }
+.btn.line:hover { background: var(--ink); color: var(--wash); }
+.dark .btn.line { color: var(--paper); }
+.dark .btn.line:hover { background: var(--paper); color: var(--walnut); }
+
+/* Home hero */
+.hero .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; padding-top: clamp(1.5rem, 4vw, 3.5rem); padding-bottom: clamp(2rem, 4vw, 3.5rem); }
+.hero .lede { font-size: 1.2rem; margin-top: 1.1rem; color: var(--muted); }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.hero figure img { width: 100%; }
+.hero figcaption, .cap { font: italic 1rem/1.4 "Fell", Georgia, serif; color: var(--muted); margin-top: .5rem; }
+
+/* The broadside */
+.notice { padding: clamp(2.5rem, 6vw, 5rem) 0; background: var(--stone); }
+.sheet { max-width: 54rem; margin: 0 auto; background: var(--paper); color: #2a1d12; padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1.1rem, 5vw, 4rem); text-align: center;
+  box-shadow: 0 1px 0 rgb(0 0 0 / .08), 0 24px 50px -24px rgb(43 33 26 / .45); border: 1px solid #d9caa3; }
+.sheet .rule { border: 0; border-top: 4px solid #2a1d12; border-bottom: 1px solid #2a1d12; height: 7px; margin: 1.1rem auto; }
+.sheet h2 { font-family: "Fell SC", Georgia, serif; font-size: clamp(3.4rem, 11vw, 6.5rem); line-height: .95; letter-spacing: .04em; }
+.sheet .to { font-family: "Fell", Georgia, serif; font-style: italic; font-size: clamp(1.25rem, 2.6vw, 1.6rem); margin: .4rem auto 0; max-width: none; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: .4rem; }
+.cols > div { padding: .4rem clamp(.5rem, 3vw, 2.2rem); }
+.cols > div + div { border-left: 1px solid #2a1d12; }
+.cols h3 { font-size: clamp(1.45rem, 2.6vw, 1.9rem); }
+.cols .kind { font-family: "Fell", Georgia, serif; font-style: italic; font-size: 1.1rem; margin-top: .2rem; }
+.cols .hours { font-family: "Fell SC", Georgia, serif; font-size: 1.35rem; margin: .8rem 0 .3rem; line-height: 1.3; }
+.cols p { margin: .55rem auto 0; font-size: 1rem; }
+.sheet .foot { font-family: "Fell", Georgia, serif; font-size: 1.2rem; margin: 0 auto; max-width: 34em; }
+.sheet .foot a { color: #2a1d12; font-weight: 400; }
+.sheet .imprint { font-family: "Fell", Georgia, serif; font-style: italic; font-size: .95rem; margin: 1rem auto 0; color: #5a4632; }
+.sheet .sheet-cta { margin-top: 1.3rem; }
+
+/* Dark band: dining by candlelight */
+.dark { background: var(--walnut); color: #ece3d3; }
+.dark a { color: var(--candle); }
+.dark .cap { color: #c9bba5; }
+.rooms6 .wrap { display: grid; grid-template-columns: 343px 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; padding-top: clamp(2.5rem, 6vw, 5rem); padding-bottom: clamp(2.5rem, 6vw, 5rem); }
+.rooms6 figure img { border: 6px solid var(--walnut-2); }
+.six { list-style: none; padding: 0; margin: 1.4rem 0; columns: 2; column-gap: 2rem; font-family: "Fell", Georgia, serif; font-size: 1.45rem; }
+.six li { padding: .35rem 0; border-bottom: 1px solid #4a3a2d; break-inside: avoid; }
+.six li.bed { font-style: italic; color: var(--candle); }
+.quote { font-family: "Fell", Georgia, serif; font-style: italic; font-size: 1.3rem; color: #f3e9d6; }
+
+/* Home: the other doors */
+.doors { padding: clamp(2.5rem, 6vw, 5rem) 0; }
+.doors .grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); margin-top: 1.6rem; }
+.door img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.door h3 { margin-top: 1rem; }
+.door p { margin-top: .4rem; }
+.door .go { display: inline-block; margin-top: .6rem; font-weight: 600; }
+.also { margin-top: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--stone); padding-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.also h3 { font-size: 1.35rem; }
+.also p { margin-top: .3rem; }
+
+.visitbar { border-top: 1px solid var(--stone); padding: clamp(2rem, 5vw, 3.5rem) 0; }
+.visitbar .wrap { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2rem; }
+.visitbar h2 { font-size: 2rem; }
+.visitbar dt { font-weight: 600; }
+.visitbar dd { margin: 0 0 .7rem; }
+
+/* Inner pages */
+.page-head { padding: clamp(1.8rem, 5vw, 3.5rem) 0 clamp(1.2rem, 3vw, 2rem); border-bottom: 1px solid var(--stone); }
+.page-head .lede { font-size: 1.2rem; color: var(--muted); margin-top: .9rem; }
+.page-head .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.4rem; }
+.sec { padding: clamp(2rem, 5vw, 4rem) 0; }
+.sec + .sec { border-top: 1px solid var(--stone); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+.split p + p, .sec .wrap > p + p { margin-top: .9rem; }
+.facts { list-style: none; padding: 0; margin: 1.2rem 0 0; border-top: 1px solid var(--stone); }
+.facts li { padding: .6rem 0; border-bottom: 1px solid var(--stone); }
+.facts b { font-weight: 600; }
+.prints { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: flex-start; }
+.prints figure { border: 6px solid #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .18); background: #fff; }
+.prints figure img { width: auto; }
+.prints figcaption { font: italic .95rem/1.4 "Fell", Georgia, serif; color: var(--muted); padding: .35rem .2rem .1rem; }
+.note { font: italic 1.05rem/1.5 "Fell", Georgia, serif; color: var(--muted); margin-top: 1rem; }
+
+.house { margin-top: 2.2rem; }
+.house h3 { font-size: 1.9rem; border-bottom: 1px solid var(--ink); padding-bottom: .4rem; }
+.roomgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr)); gap: 1.6rem 1.4rem; margin-top: 1.2rem; }
+.roomgrid figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.roomgrid figcaption { font-family: "Fell", Georgia, serif; font-size: 1.35rem; margin-top: .45rem; }
+
+.timeline { list-style: none; padding: 0; margin: 1.5rem 0 0; border-left: 2px solid var(--door); }
+.timeline li { padding: 0 0 1.4rem 1.4rem; position: relative; max-width: 40em; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: .55rem; width: 12px; height: 12px; background: var(--wash); border: 2px solid var(--door); border-radius: 50%; }
+.timeline .when { font-family: "Fell SC", Georgia, serif; font-size: 1.3rem; display: block; color: var(--door); }
+.see { padding-left: 1.2rem; margin-top: 1rem; }
+.see li { padding: .3rem 0; max-width: 40em; }
+
+/* Footer + mobile call bar */
+footer { background: var(--walnut); color: #d9cdb8; padding: 2.6rem 0 2rem; font-size: .95rem; }
+footer .wrap { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 2rem; }
+footer img { width: 170px; }
+footer a { color: var(--candle); }
+footer nav a { display: block; padding: .2rem 0; }
+footer .legal { max-width: none; grid-column: 1 / -1; border-top: 1px solid #4a3a2d; padding-top: 1.2rem; font-size: .85rem; color: #bfb19b; }
+.callbar { display: none; }
+
+@media (max-width: 860px) {
+  .nav > a { display: none; }
+  .more { display: block; }
+  .brand img { width: 128px; }
+  .top .wrap { min-height: 4rem; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 1.2rem; padding-top: 1.1rem; }
+  .hero .lede { font-size: 1.05rem; margin-top: .7rem; }
+  .hero .actions { margin-top: 1.1rem; }
+  .hero .actions .btn { flex: 1 1 100%; }
+  .cols { grid-template-columns: 1fr; }
+  .cols > div + div { border-left: 0; border-top: 1px solid #2a1d12; margin-top: 1rem; padding-top: 1.2rem; }
+  .rooms6 .wrap { grid-template-columns: 1fr; }
+  .rooms6 figure { max-width: 343px; }
+  .six { columns: 1; }
+  .roomgrid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; gap: .9rem; padding-bottom: .8rem; margin-right: calc(var(--pad) * -1); padding-right: var(--pad); }
+  .roomgrid figure { scroll-snap-align: start; }
+  .doors .grid, .also, .split, .visitbar .wrap, footer .wrap { grid-template-columns: 1fr; }
+  .callbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; gap: .5rem; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: var(--walnut); border-top: 1px solid #4a3a2d; transform: translateY(110%); visibility: hidden; transition: transform .2s ease, visibility .2s; }
+  .callbar.on { transform: none; visibility: visible; }
+  .callbar .btn { flex: 1; min-height: 2.9rem; }
+  .callbar .btn.line { color: var(--paper); }
+  body { padding-bottom: 4.4rem; }
+}
+/* Below-the-fold sections render (and fetch their fonts) only when near the viewport. */
+.notice, .rooms6, .doors, .visitbar, .sec + .sec, footer { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Dobbin House Tavern. Not affiliated with or endorsed by Dobbin House Tavern.</p>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html" aria-label="Dobbin House Tavern, home"><img src="img/logo.webp" width="360" height="180" alt="1776 Dobbin House Tavern"></a>
+<nav class="nav" aria-label="Main"><a href="dining.html" aria-current="page">Dining</a><a href="inn.html">The Inn</a><a href="tours.html">House tours</a><a href="visit.html">Visit</a><a class="call" href="tel:+17173342100">Call (717) 334-2100</a>
+<details class="more"><summary>Pages</summary><div class="menu"><a href="index.html">Home</a><a href="dining.html" aria-current="page">Dining</a><a href="inn.html">The Inn</a><a href="tours.html">House tours</a><a href="visit.html">Visit</a><a href="tel:+17173342100">Call (717) 334-2100</a></div></details></nav>
+</div></header>
+<main id="main">
+<section class="page-head" data-callbar><div class="wrap">
+<h1>Two ways to dine</h1>
+<p class="lede">A walk-in tavern for lunch and dinner every day, and candlelit dining rooms in the colonial manner each evening.</p>
+<div class="actions"><a class="btn red" href="tel:+17173342100">Reserve a table (717) 334-2100</a></div>
+</div></section>
+<section class="notice" aria-labelledby="notice-h"><div class="wrap"><div class="sheet">
+<h2 id="notice-h">Notice</h2>
+<p class="to">to all who would dine at the Dobbin House</p>
+<hr class="rule">
+<div class="cols">
+<div><h3>The Springhouse Tavern</h3><p class="kind">For casual dining</p>
+<p class="hours">Every day<br>11 a.m. to 9 p.m.</p>
+<p>No reservations. Seating is first come, first served. Arrive early at busy lunch and dinner hours.</p></div>
+<div><h3>The Alexander Dobbin Dining Rooms</h3><p class="kind">Fine dining in the colonial manner</p>
+<p class="hours">Mon–Fri 5 to 9 p.m.<br>Sat &amp; Sun 4 to 9 p.m.</p>
+<p>Reservations accepted, and walk-ins welcome. Reserve about a week ahead: tables fill quickly.</p></div>
+</div>
+<hr class="rule">
+<p class="foot">A full array of cocktails, wine and beer in all dining rooms. The house is open daily, 10 a.m. to 9 p.m., for gift store, food and cocktails.</p>
+<p class="sheet-cta"><a class="btn red" href="tel:+17173342100">Reserve a table: (717) 334-2100</a></p>
+<p class="imprint">Posted at 89 Steinwehr Avenue, Gettysburg, in the 250th year of the house.</p>
+</div></div></section>
+
+<section class="sec"><div class="wrap split">
+<div>
+<h2>The Springhouse Tavern</h2>
+<p style="margin-top:.8rem">For casual dining: a wide selection of dinners, sandwiches, salads and popular cocktails, served from 11 a.m. to 9 p.m. every day.</p>
+<p>The tavern takes no reservations. Seating is first come, first served, and like most area restaurants it sees waits at lunch and dinner, so arrive early.</p>
+</div>
+<div class="prints"><figure><img src="img/tavern.webp" width="284" height="247" alt="Guests at a wooden table in the tavern, under a flag and shelves of pewter" loading="lazy" decoding="async"><figcaption>The tavern.</figcaption></figure></div>
+</div></section>
+
+<section class="sec"><div class="wrap split">
+<div>
+<h2>The Alexander Dobbin Dining Rooms</h2>
+<p style="margin-top:.8rem">Where candlelit elegance, superior food in abundance and gracious service bring back the sights, sounds and tastes of two centuries ago.</p>
+<p>Colonial and Continental cuisine, prepared from the finest and freshest ingredients, with homemade breads and desserts from the house’s own bakery. There is a children’s menu.</p>
+<ul class="facts">
+<li><b>Rooms:</b> the Dining Room, Library, Parlor, Study, Spinning Room, and the Bedroom, where one can actually dine in bed.</li>
+</ul>
+</div>
+<div class="prints">
+<figure><img src="img/dine-bed.webp" width="343" height="275" alt="Guests dining inside a lace-canopied bed" loading="lazy" decoding="async"><figcaption>The Bedroom.</figcaption></figure>
+<figure><img src="img/dining-room.webp" width="336" height="215" alt="A dining room set with red napkins and a Christmas tree, a server in colonial dress" loading="lazy" decoding="async"><figcaption>A dining room, set for the holidays.</figcaption></figure>
+</div>
+</div></section>
+
+<section class="sec"><div class="wrap split">
+<div>
+<h2>Banquets and meetings</h2>
+<p style="margin-top:.8rem">The house’s country charm suits banquets, meetings and special occasions for up to 130 guests, with Adams County style entrees, fresh vegetables, a salad bar and homemade desserts.</p>
+<p>A free Banquet Planning Kit is available. <a href="mailto:info@dobbinhouse.com?subject=Banquet%20Planning%20Kit">Email for the kit</a> or call <a href="tel:+17173342100">(717) 334-2100</a>.</p>
+</div>
+<div>
+<h2>Why book a week ahead</h2>
+<p style="margin-top:.8rem">With more visitors and fewer staff, the house limits how many guests it serves each day to keep the service its guests expect after 48 years. Dining room reservations fill quickly, and same-day calls often can’t be seated. Calling ahead is the best way to get a table.</p>
+<p class="note">The full menus are kept on the current dobbinhouse.com and are not reproduced in this demo.</p>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div><img src="img/logo-light.webp" width="360" height="180" alt="1776 Dobbin House Tavern" loading="lazy">
+<p style="margin-top:.8rem">89 Steinwehr Avenue, Gettysburg, PA 17325<br>Business Route 15 South</p></div>
+<div><p>Phone <a href="tel:+17173342100">(717) 334-2100</a><br>Fax (717) 334-6905<br><a href="mailto:info@dobbinhouse.com">info@dobbinhouse.com</a></p>
+<p style="margin-top:.8rem">Open daily, 10 a.m. to 9 p.m.</p></div>
+<nav aria-label="Footer"><a href="index.html">Home</a><a href="dining.html">Dining</a><a href="inn.html">The Inn</a><a href="tours.html">House tours</a><a href="visit.html">Visit</a></nav>
+<p class="legal">National Register of Historic Places (U.S.A.) · Registered Historic Landmark (PA).<br>
+Unofficial demo built by MHS Tecnologia for Dobbin House Tavern. Not affiliated with or endorsed by Dobbin House Tavern. Every fact and photo comes from dobbinhouse.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div></footer>
+<div class="callbar" id="callbar"><a class="btn red" href="tel:+17173342100">Call (717) 334-2100</a><a class="btn line" href="visit.html">Directions</a></div>
+<script>
+(function(){var b=document.getElementById('callbar'),t=document.querySelector('[data-callbar]');if(!b||!t||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t);
+document.addEventListener('click',function(e){document.querySelectorAll('details.more[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});})();
+</script>
+</body>
+</html>
