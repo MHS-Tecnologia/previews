@@ -87,7 +87,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 .balcony .head p { color: var(--soft); max-width: 58ch; margin: 0; }
 .pano { position: relative; }
 .pano .strip { overflow-x: auto; border-radius: 18px; background: var(--foam); scrollbar-width: thin; }
-.pano .strip img { width: 100%; max-width: none; aspect-ratio: 2251 / 1000; }
+.pano .strip img { width: 100%; max-width: none; aspect-ratio: 2251 / 850; }
 .pano .hint { display: none; }
 .sights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 28px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .sights li { padding: 16px 18px 0 0; font-size: 15px; color: var(--soft); }
@@ -113,6 +113,15 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 .quotes blockquote p { font: 400 21px/1.4 Gloock, Georgia, serif; }
 .quotes blockquote:first-child p { font-size: 26px; }
 .quotes cite { font-style: normal; font-size: 14px; color: var(--soft); }
+
+/* Sunset reel: their own sunset photos */
+.dusk { background: var(--deep); color: #e8f1f0; padding: 76px 0 80px; margin-bottom: 84px; }
+.dusk .head { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; margin-bottom: 30px; }
+.dusk h2 { color: #fff; }
+.dusk .head p { color: #c9dbd9; max-width: 56ch; margin: 0; }
+.reel { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 14px; scroll-snap-type: x mandatory; scrollbar-color: #4b6570 transparent; }
+.reel figure { margin: 0; flex: 0 0 420px; scroll-snap-align: start; }
+.reel img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; }
 
 /* Resort teaser */
 .resort { padding: 0 0 84px; }
@@ -158,7 +167,8 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 .eats b { display: block; font-weight: 600; }
 .eats span { color: var(--soft); font-size: 15px; }
 .seasons { list-style: none; padding: 0; margin: 0 0 18px; columns: 2; column-gap: 40px; }
-.seasons li { padding: 10px 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+.seasons li { padding: 10px 0; border-bottom: 1px solid var(--line); break-inside: avoid; display: flex; justify-content: space-between; gap: 16px; }
+.seasons li b { font-weight: 600; text-align: right; }
 .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 22px; }
 .contact a { display: block; text-decoration: none; background: var(--foam); border-radius: 14px; padding: 20px 22px; color: var(--deep); }
 .contact a:hover { background: #d7ebe7; }
@@ -181,7 +191,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 @media (max-width: 1000px) {
   .nav > a { display: none; }
   .menu { display: block; }
-  .hero .grid, .balcony .head, .inside .grid, .room .head, .book .grid, .resort .grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero .grid, .balcony .head, .dusk .head, .inside .grid, .room .head, .book .grid, .resort .grid { grid-template-columns: 1fr; gap: 24px; }
   .quotes { grid-template-columns: 1fr; gap: 28px; }
   .sights { grid-template-columns: 1fr 1fr; }
   .book .txt { padding: 52px 0 40px; }
@@ -206,6 +216,9 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
   .hero figcaption { padding: 0 16px; }
   .balcony { padding: 60px 0 52px; }
   .pano { margin: 0 -16px; }
+  .dusk { padding: 56px 0 60px; margin-bottom: 56px; }
+  .reel { margin: 0 -16px; padding: 0 16px 12px; scroll-padding: 0 16px; }
+  .reel figure { flex-basis: 300px; }
   .pano .strip { border-radius: 0; }
   .pano .strip img { width: auto; height: 300px; }
   .pano .hint { display: block; font-size: 14px; color: var(--soft); padding: 10px 16px 0; }
@@ -250,13 +263,13 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 <a href="tel:+12252292242"><small>Call Tina</small><b>225.229.2242</b></a>
 <a href="mailto:tina@ti612.com"><small>Email Tina</small><b>tina@ti612.com</b></a>
 </div>
-<p class="note">&#8220;We always enjoy speaking with our guests.&#8221; Visa accepted.</p>
+<p class="note">&#8220;We always enjoy speaking with our guests.&#8221;</p>
 </div></section>
 
 <section class="room" aria-labelledby="s-h"><div class="wrap">
 <div class="head"><h2 id="s-h">Weekly rates, by season</h2><div>
-<p style="margin-bottom:18px">Rates change with the season. Ask Tina for this year&#8217;s weekly rate in any of them. Until confirmed, rates are subject to change without notice.</p>
-<ul class="seasons"><li>High Spring</li><li>Low Spring</li><li>Early Summer</li><li>Peak Summer</li><li>July 4 week</li><li>Late Summer</li><li>Fall</li><li>Late Fall</li><li>Winter (monthly rates by phone)</li></ul>
+<p style="margin-bottom:18px">Weekly rates as listed on ti612.com (2021 rates). Confirm this year&#8217;s rate with Tina. Until confirmed, rates are subject to change without notice.</p>
+<ul class="seasons"><li><span>High Spring</span><b>$1,895 to $2,495</b></li><li><span>Low Spring</span><b>$1,295 to $2,095</b></li><li><span>Early Summer</span><b>$1,995 to $2,995</b></li><li><span>Peak Summer</span><b>$2,195 to $2,995</b></li><li><span>July 4 week</span><b>$3,495</b></li><li><span>Late Summer</span><b>$1,995 to $2,995</b></li><li><span>Fall</span><b>$1,595 to $2,195</b></li><li><span>Late Fall</span><b>$1,495 to $1,895</b></li><li><span>Winter</span><b>$995 to $1,595 (call for monthly winter rates)</b></li></ul>
 </div></div>
 </div></section>
 

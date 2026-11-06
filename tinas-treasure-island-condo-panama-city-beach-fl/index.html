@@ -89,7 +89,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 .balcony .head p { color: var(--soft); max-width: 58ch; margin: 0; }
 .pano { position: relative; }
 .pano .strip { overflow-x: auto; border-radius: 18px; background: var(--foam); scrollbar-width: thin; }
-.pano .strip img { width: 100%; max-width: none; aspect-ratio: 2251 / 1000; }
+.pano .strip img { width: 100%; max-width: none; aspect-ratio: 2251 / 850; }
 .pano .hint { display: none; }
 .sights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 28px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .sights li { padding: 16px 18px 0 0; font-size: 15px; color: var(--soft); }
@@ -115,6 +115,15 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 .quotes blockquote p { font: 400 21px/1.4 Gloock, Georgia, serif; }
 .quotes blockquote:first-child p { font-size: 26px; }
 .quotes cite { font-style: normal; font-size: 14px; color: var(--soft); }
+
+/* Sunset reel: their own sunset photos */
+.dusk { background: var(--deep); color: #e8f1f0; padding: 76px 0 80px; margin-bottom: 84px; }
+.dusk .head { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; margin-bottom: 30px; }
+.dusk h2 { color: #fff; }
+.dusk .head p { color: #c9dbd9; max-width: 56ch; margin: 0; }
+.reel { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 14px; scroll-snap-type: x mandatory; scrollbar-color: #4b6570 transparent; }
+.reel figure { margin: 0; flex: 0 0 420px; scroll-snap-align: start; }
+.reel img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 12px; }
 
 /* Resort teaser */
 .resort { padding: 0 0 84px; }
@@ -160,7 +169,8 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 .eats b { display: block; font-weight: 600; }
 .eats span { color: var(--soft); font-size: 15px; }
 .seasons { list-style: none; padding: 0; margin: 0 0 18px; columns: 2; column-gap: 40px; }
-.seasons li { padding: 10px 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+.seasons li { padding: 10px 0; border-bottom: 1px solid var(--line); break-inside: avoid; display: flex; justify-content: space-between; gap: 16px; }
+.seasons li b { font-weight: 600; text-align: right; }
 .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 22px; }
 .contact a { display: block; text-decoration: none; background: var(--foam); border-radius: 14px; padding: 20px 22px; color: var(--deep); }
 .contact a:hover { background: #d7ebe7; }
@@ -183,7 +193,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 @media (max-width: 1000px) {
   .nav > a { display: none; }
   .menu { display: block; }
-  .hero .grid, .balcony .head, .inside .grid, .room .head, .book .grid, .resort .grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero .grid, .balcony .head, .dusk .head, .inside .grid, .room .head, .book .grid, .resort .grid { grid-template-columns: 1fr; gap: 24px; }
   .quotes { grid-template-columns: 1fr; gap: 28px; }
   .sights { grid-template-columns: 1fr 1fr; }
   .book .txt { padding: 52px 0 40px; }
@@ -208,6 +218,9 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
   .hero figcaption { padding: 0 16px; }
   .balcony { padding: 60px 0 52px; }
   .pano { margin: 0 -16px; }
+  .dusk { padding: 56px 0 60px; margin-bottom: 56px; }
+  .reel { margin: 0 -16px; padding: 0 16px 12px; scroll-padding: 0 16px; }
+  .reel figure { flex-basis: 300px; }
   .pano .strip { border-radius: 0; }
   .pano .strip img { width: auto; height: 300px; }
   .pano .hint { display: block; font-size: 14px; color: var(--soft); padding: 10px 16px 0; }
@@ -265,7 +278,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 <source media="(max-width: 719px)" srcset="img/hero-m-800.webp 800w" sizes="100vw" width="800" height="600">
 <img src="img/hero-1400.webp" srcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" sizes="(min-width: 1240px) 1192px, calc(100vw - 48px)" width="1400" height="493" alt="Sunset over the Gulf of Mexico, seen from the balcony of unit 612, with the pool deck and white beach below" fetchpriority="high">
 </picture>
-<figcaption>Sunset from the balcony of 612. &#8220;Experience the most amazing sunsets from our balcony everyday.&#8221;</figcaption>
+<figcaption>Sunset from the balcony of 612.</figcaption>
 </figure>
 </div></section>
 
@@ -276,7 +289,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 </div>
 <div class="pano">
 <div class="strip" tabindex="0" role="region" aria-label="Panorama from the balcony. Scroll sideways to look along the beach.">
-<img src="img/pano-1400.webp" width="1400" height="622" alt="Daytime panorama from the wrap-around balcony: the railing, an American flag, the white beach with blue umbrellas and the emerald Gulf" loading="lazy" decoding="async" sizes="(max-width: 719px) 675px, (min-width: 1240px) 1192px, calc(100vw - 48px)" srcset="img/pano-1400.webp 1400w">
+<img src="img/pano-1400.webp" width="1400" height="529" alt="Daytime panorama from the wrap-around balcony: the railing, an American flag, the white beach with blue umbrellas and the emerald Gulf" loading="lazy" decoding="async" sizes="(max-width: 719px) 675px, (min-width: 1240px) 1192px, calc(100vw - 48px)" srcset="img/pano-1400.webp 1400w">
 </div>
 <p class="hint">Swipe sideways to look along the beach.</p>
 </div>
@@ -308,6 +321,13 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 </div>
 </div></section>
 
+<section class="dusk" aria-labelledby="d-h"><div class="wrap">
+<div class="head"><h2 id="d-h">Every evening, from the balcony.</h2><p>&#8220;Experience the most amazing sunsets from our balcony everyday.&#8221; Photos from Tina&#8217;s own sunset page.</p></div>
+<div class="reel" tabindex="0" role="region" aria-label="Tina&#8217;s sunset photos from the balcony. Scroll sideways for more.">
+<figure><img src="img/s-sun14-780.webp" srcset="img/s-sun14-480.webp 480w, img/s-sun14-780.webp 780w" sizes="(max-width: 719px) 300px, 420px" width="780" height="520" alt="Pink and orange clouds over the Gulf after sundown" loading="lazy" decoding="async"></figure><figure><img src="img/s-sun9-780.webp" srcset="img/s-sun9-480.webp 480w, img/s-sun9-780.webp 780w" sizes="(max-width: 719px) 300px, 420px" width="780" height="520" alt="A violet sky with the sun dropping into the Gulf" loading="lazy" decoding="async"></figure><figure><img src="img/s-sunset5-900.webp" srcset="img/s-sunset5-480.webp 480w, img/s-sunset5-900.webp 900w" sizes="(max-width: 719px) 300px, 420px" width="900" height="600" alt="Sun breaking through storm clouds over the water and the beach" loading="lazy" decoding="async"></figure><figure><img src="img/s-sun12-780.webp" srcset="img/s-sun12-480.webp 480w, img/s-sun12-780.webp 780w" sizes="(max-width: 719px) 300px, 420px" width="780" height="520" alt="The sun just above the horizon behind a breaking wave" loading="lazy" decoding="async"></figure><figure><img src="img/s-balcony8-900.webp" srcset="img/s-balcony8-480.webp 480w, img/s-balcony8-900.webp 900w" sizes="(max-width: 719px) 300px, 420px" width="900" height="600" alt="The last light on the horizon under a dark sky" loading="lazy" decoding="async"></figure><figure><img src="img/s-sun8-780.webp" srcset="img/s-sun8-480.webp 480w, img/s-sun8-780.webp 780w" sizes="(max-width: 719px) 300px, 420px" width="780" height="520" alt="Clouds lit pink over the shoreline at dusk" loading="lazy" decoding="async"></figure>
+</div>
+</div></section>
+
 <section class="resort" aria-labelledby="r-h"><div class="wrap"><div class="grid">
 <figure><img src="img/pool-beach-900.webp" srcset="img/pool-beach-480.webp 480w, img/pool-beach-900.webp 900w, img/pool-beach-1380.webp 1380w" sizes="(min-width: 1240px) 596px, (min-width: 1001px) 50vw, 100vw" width="1380" height="920" alt="The curved pool, deck chairs and rows of blue beach umbrellas on white sand, seen from the balcony" loading="lazy" decoding="async"></figure>
 <div class="txt">
@@ -328,7 +348,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 <p>Call or email for open dates, seasonal rates and last-minute specials. &#8220;We always enjoy speaking with our guests.&#8221;</p>
 <div class="actions"><a class="btn btn-sun" href="tel:+12252292242"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 225.229.2242</a><a class="btn btn-line" href="mailto:tina@ti612.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email Tina</a></div>
 </div>
-<figure><img src="img/sun13-900.webp" srcset="img/sun13-480.webp 480w, img/sun13-900.webp 900w, img/sun13-1400.webp 1400w" sizes="(min-width: 1001px) 50vw, 100vw" width="1400" height="933" alt="A boat crossing the path of the setting sun on the Gulf" loading="lazy" decoding="async"></figure>
+<figure><img src="img/sun13-900.webp" srcset="img/sun13-480.webp 480w, img/sun13-900.webp 900w, img/sun13-1245.webp 1245w" sizes="(min-width: 1001px) 50vw, 100vw" width="1245" height="830" alt="A boat crossing the path of the setting sun on the Gulf" loading="lazy" decoding="async"></figure>
 </div></section>
 
 </main>
