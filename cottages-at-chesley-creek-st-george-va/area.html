@@ -105,6 +105,18 @@ figure figcaption{font-size:.9375rem;color:var(--slate-d);margin-top:.55rem;font
 .price{margin-top:1rem;font-size:1.0625rem}
 .price a{color:var(--ink);text-decoration-color:var(--cedar);text-underline-offset:4px}
 .price b{color:var(--cedar);font-weight:600}
+.lot{display:grid;grid-template-columns:3fr 2fr;margin-top:2rem;border-radius:.375rem;overflow:hidden}
+.lot > div{padding:1.1rem 1.25rem 1.25rem}
+.lot .own{background:var(--cedar);color:#fff}
+.lot .shr{background:#c3d3d4;color:var(--ink)}
+.lot h3{font-size:1.15rem;margin-bottom:.4rem}
+.lot ul{list-style:none;padding:0}
+.lot li{padding:.2rem 0;line-height:1.4;font-size:1rem}
+.ask{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;margin-top:1.5rem;padding-top:1.25rem;border-top:2px solid var(--ink)}
+.ask p{font-size:1.125rem}
+.ask b{color:var(--cedar);font-size:1.5rem;font-weight:600}
+.ask .actions{margin-top:0}
+@media (max-width:700px){.lot{grid-template-columns:1fr}}
 /* features band */
 .band{background:var(--slate);color:var(--ink)}
 .band .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(2rem,5vw,4.5rem)}
@@ -209,7 +221,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
  <div class="kate">
   <div>
    <h2>Come stay in a place purpose-built to commune with nature and unwind!</h2>
-   <p style="margin-top:1rem">To check availability and book your stay, call or email Kate. Please contact us regarding availability for single-night or longer-term stays.</p>
+   <p style="margin-top:1rem">Please contact us regarding availability for single-night or longer-term stays.</p>
    <dl>
     <dt>Hospitality Manager</dt><dd>Kate Daniels</dd>
     <dt>Phone</dt><dd><a href="tel:+15408509508">(540) 850-9508</a></dd>

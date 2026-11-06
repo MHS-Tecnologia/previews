@@ -105,6 +105,18 @@ figure figcaption{font-size:.9375rem;color:var(--slate-d);margin-top:.55rem;font
 .price{margin-top:1rem;font-size:1.0625rem}
 .price a{color:var(--ink);text-decoration-color:var(--cedar);text-underline-offset:4px}
 .price b{color:var(--cedar);font-weight:600}
+.lot{display:grid;grid-template-columns:3fr 2fr;margin-top:2rem;border-radius:.375rem;overflow:hidden}
+.lot > div{padding:1.1rem 1.25rem 1.25rem}
+.lot .own{background:var(--cedar);color:#fff}
+.lot .shr{background:#c3d3d4;color:var(--ink)}
+.lot h3{font-size:1.15rem;margin-bottom:.4rem}
+.lot ul{list-style:none;padding:0}
+.lot li{padding:.2rem 0;line-height:1.4;font-size:1rem}
+.ask{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;margin-top:1.5rem;padding-top:1.25rem;border-top:2px solid var(--ink)}
+.ask p{font-size:1.125rem}
+.ask b{color:var(--cedar);font-size:1.5rem;font-weight:600}
+.ask .actions{margin-top:0}
+@media (max-width:700px){.lot{grid-template-columns:1fr}}
 /* features band */
 .band{background:var(--slate);color:var(--ink)}
 .band .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(2rem,5vw,4.5rem)}
@@ -195,6 +207,14 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
    <div><p>Tucked into the woods beside the water, The Creek House at Chesley Creek is a private romantic retreat for two in Virginia’s Blue Ridge Mountains. Surrounded by trees and the peaceful sounds of the creek, this cozy cottage is made for couples looking to unplug, unwind, and spend a few quiet days together in nature.</p><p>Start the morning with coffee on the sitting porch, spend the afternoon hiking our private mountain trails or exploring nearby Shenandoah National Park, then come home to soak in your couples air-jet spa tub. As evening settles in, light the gas fireplace, grill dinner on the porch, or build a fire outside and enjoy the quiet of the mountains.</p><p class="close">The Creek House gives you permission to do something increasingly rare: nothing at all.</p></div>
    <details class="am"><summary>Amenities (13)</summary><ul><li>WiFi</li><li>Couples air-jet spa tub</li><li>Queen bed</li><li>Towels, bathrobes and linens</li><li>Heating &amp; air conditioning</li><li>Gas fireplace</li><li>Ceiling fan</li><li>Full kitchen with coffee maker, appliances and tableware</li><li>Private sitting porch with grill</li><li>Outdoor hammock</li><li>Private fire pit with firewood</li><li>Seasonal shared saltwater pool</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></details>
   </div>
+  <div class="lot" aria-label="The Creek House: on its own private lot, and shared">
+   <div class="own"><h3>On its own private lot</h3><ul><li>Private sitting porch with grill</li><li>Outdoor hammock</li><li>Private fire pit with firewood</li></ul></div>
+   <div class="shr"><h3>Shared</h3><ul><li>Seasonal shared saltwater pool</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></div>
+  </div>
+  <div class="ask">
+   <p><b>$225 per night</b> + cleaning fee + tax. Two night minimum stay.</p>
+   <div class="actions"><a class="btn solid" href="tel:+15408509508">Call (540) 850-9508</a><a class="btn line" href="mailto:katedaniels1@icloud.com">Email Kate</a></div>
+  </div>
  </div>
 </section>
 <section class="cot" id="pines">
@@ -205,6 +225,14 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
   <div class="body">
    <div><p>Tucked beneath the trees at The Cottages at Chesley Creek, The Pines is a peaceful, private mountain cottage designed for two. Surrounded by woods and set apart on its own private lot, it’s the kind of place where mornings start slowly, evenings end around the fire, and there’s absolutely no reason to be in a hurry.</p><p>Bring your coffee out to the porch, settle into the hammock with a book, or head out to explore miles of private hiking and mountain biking trails right from the property. After a day in the mountains, come home to a soak in the couples air-jet spa tub, light the gas fireplace, and settle in for a quiet evening together.</p><p class="close">The Pines is less about what you have to do, and more about finally having nowhere you have to be.</p></div>
    <details class="am"><summary>Amenities (13)</summary><ul><li>WiFi</li><li>Couples air-jet spa tub</li><li>Queen bed</li><li>Towels, bathrobes and linens</li><li>Heating &amp; air conditioning</li><li>Gas fireplace</li><li>Ceiling fan</li><li>Full kitchen with coffee maker, appliances and tableware</li><li>Private sitting porch with grill</li><li>Outdoor hammock</li><li>Private fire pit with firewood</li><li>Seasonal shared saltwater pool</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></details>
+  </div>
+  <div class="lot" aria-label="Pines: on its own private lot, and shared">
+   <div class="own"><h3>On its own private lot</h3><ul><li>Private sitting porch with grill</li><li>Outdoor hammock</li><li>Private fire pit with firewood</li></ul></div>
+   <div class="shr"><h3>Shared</h3><ul><li>Seasonal shared saltwater pool</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></div>
+  </div>
+  <div class="ask">
+   <p><b>$225 per night</b> + cleaning fee + tax. Two night minimum stay.</p>
+   <div class="actions"><a class="btn solid" href="tel:+15408509508">Call (540) 850-9508</a><a class="btn line" href="mailto:katedaniels1@icloud.com">Email Kate</a></div>
   </div>
  </div>
 </section>
@@ -217,6 +245,14 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
    <div><p>Perched in a peaceful setting at The Cottages at Chesley Creek, The Ridge is a cozy mountain cottage designed for two. With beautiful Blue Ridge views from the sitting porch, it’s an inviting place to slow down, reconnect, and enjoy the quiet beauty of Virginia’s mountains.</p><p>Begin the morning with coffee on the porch and take in the scenery from the hammock, or spend the day exploring the surrounding mountains. When you return, unwind in the couples air-jet spa tub, cozy up beside the gas fireplace, and prepare dinner together in the full kitchen.</p><p class="close">The Ridge is a place to slow down, savor the scenery, and make time for each other.</p></div>
    <details class="am"><summary>Amenities (12)</summary><ul><li>Newly installed WiFi</li><li>Couples air-jet spa tub</li><li>Queen bed</li><li>Towels, bathrobes and linens</li><li>Heating and air conditioning</li><li>Gas fireplace</li><li>Ceiling fan</li><li>Full kitchen with coffee maker, appliances and tableware</li><li>Sitting porch with grill and a beautiful view</li><li>Outdoor hammock</li><li>Outdoor fire pit with wood provided</li><li>Seasonal shared saltwater pool</li></ul></details>
   </div>
+  <div class="lot" aria-label="Ridge: on its own private lot, and shared">
+   <div class="own"><h3>On its own private lot</h3><ul><li>Sitting porch with grill and a beautiful view</li><li>Outdoor hammock</li><li>Outdoor fire pit with wood provided</li></ul></div>
+   <div class="shr"><h3>Shared</h3><ul><li>Seasonal shared saltwater pool</li></ul></div>
+  </div>
+  <div class="ask">
+   <p><b>$225 per night</b> + cleaning fee + tax. Two night minimum stay.</p>
+   <div class="actions"><a class="btn solid" href="tel:+15408509508">Call (540) 850-9508</a><a class="btn line" href="mailto:katedaniels1@icloud.com">Email Kate</a></div>
+  </div>
  </div>
 </section>
 <section class="cot" id="laurelwood">
@@ -227,6 +263,14 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
   <div class="body">
    <div><p>There’s a story behind the name Laurelwood. When the second cottage at Chesley Creek was built, a large patch of mountain laurel was carefully cleared to make a place for it among the trees. The name stuck, and today Laurelwood remains a wonderfully private retreat tucked into the woods of Virginia’s Blue Ridge Mountains.</p><p>Designed as a romantic getaway for two, Laurelwood invites you to slow down and settle into the rhythm of the mountains. Start your morning with coffee on the sitting porch, spend an afternoon hiking the private trails or exploring nearby Shenandoah National Park, then return for a long soak in the couples air-jet spa tub.</p><p class="close">Laurelwood was carved out of the mountain landscape for a cottage, and became a little world of its own.</p></div>
    <details class="am"><summary>Amenities (13)</summary><ul><li>WiFi</li><li>Couples air-jet spa tub</li><li>Queen bed</li><li>Towels, bathrobes and linens</li><li>Heating and air conditioning</li><li>Gas fireplace, double sided</li><li>Ceiling fan</li><li>Full kitchen with coffee maker, appliances and tableware</li><li>Private sitting porch with grill</li><li>Outdoor hammock</li><li>Private fire pit with firewood provided</li><li>Seasonal shared saltwater pool</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></details>
+  </div>
+  <div class="lot" aria-label="Laurelwood: on its own private lot, and shared">
+   <div class="own"><h3>On its own private lot</h3><ul><li>Private sitting porch with grill</li><li>Outdoor hammock</li><li>Private fire pit with firewood provided</li></ul></div>
+   <div class="shr"><h3>Shared</h3><ul><li>Seasonal shared saltwater pool</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></div>
+  </div>
+  <div class="ask">
+   <p><b>$225 per night</b> + cleaning fee + tax. Two night minimum stay.</p>
+   <div class="actions"><a class="btn solid" href="tel:+15408509508">Call (540) 850-9508</a><a class="btn line" href="mailto:katedaniels1@icloud.com">Email Kate</a></div>
   </div>
  </div>
 </section>
@@ -239,6 +283,14 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
    <div><p>Some getaways are better shared. The Log House at Chesley Creek combines the privacy and peaceful mountain setting of our cottages with enough space for up to four guests to relax, dine, and spend time together.</p><p>Each upstairs suite is its own private retreat, featuring a queen bed, couples air-jet spa tub, private shower, and individual heating and cooling unit. Downstairs, an additional full bathroom makes sharing the house especially comfortable. Gather around the large dining table with seating for six, or settle into the living room beside the gas fireplace.</p><p class="close">The Log House is where the Chesley Creek experience becomes something you can share.</p></div>
    <details class="am"><summary>Amenities (24)</summary><ul><li>Sleeps up to four guests</li><li>Two independent upstairs suites</li><li>Queen bed in each suite</li><li>Couples air-jet spa tub in each suite</li><li>Private shower in each suite</li><li>Individual heating and cooling in each suite</li><li>Three full bathrooms</li><li>WiFi</li><li>Gas fireplace</li><li>Full kitchen</li><li>Full-size gas range with electric oven</li><li>Large refrigerator and freezer</li><li>Dishwasher</li><li>Coffee maker</li><li>Granite countertops</li><li>Tableware, cookware and utensils</li><li>Large dining table with seating for six</li><li>Books, games and puzzles</li><li>Spacious sitting porch with rocking chairs for relaxing</li><li>Gas grill and outdoor dining table</li><li>Outdoor hammock</li><li>Outdoor fire pit with firewood provided</li><li>Seasonal shared saltwater pool with the other four cottages in the lower yard</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></details>
   </div>
+  <div class="lot" aria-label="The Log House: on its own private lot, and shared">
+   <div class="own"><h3>On its own private lot</h3><ul><li>Spacious sitting porch with rocking chairs for relaxing</li><li>Gas grill and outdoor dining table</li><li>Outdoor hammock</li><li>Outdoor fire pit with firewood provided</li></ul></div>
+   <div class="shr"><h3>Shared</h3><ul><li>Seasonal shared saltwater pool with the other four cottages in the lower yard</li><li>Access to approximately 20 miles of private hiking and mountain biking trails</li></ul></div>
+  </div>
+  <div class="ask">
+   <p><b>$290 per night</b> + cleaning fee + tax. Two night minimum stay.</p>
+   <div class="actions"><a class="btn solid" href="tel:+15408509508">Call (540) 850-9508</a><a class="btn line" href="mailto:katedaniels1@icloud.com">Email Kate</a></div>
+  </div>
  </div>
 </section>
 
@@ -246,7 +298,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
  <div class="kate">
   <div>
    <h2>Come stay in a place purpose-built to commune with nature and unwind!</h2>
-   <p style="margin-top:1rem">To check availability and book your stay, call or email Kate. Please contact us regarding availability for single-night or longer-term stays.</p>
+   <p style="margin-top:1rem">Please contact us regarding availability for single-night or longer-term stays.</p>
    <dl>
     <dt>Hospitality Manager</dt><dd>Kate Daniels</dd>
     <dt>Phone</dt><dd><a href="tel:+15408509508">(540) 850-9508</a></dd>
