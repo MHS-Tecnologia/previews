@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Outer Banks Motel | Oceanfront on Hatteras Island, Buxton NC</title>
+<meta name="description" content="Oceanfront motel and cottages in Buxton on Hatteras Island, established in 1955, plus Village Cottages a mile down the road.">
+<meta name="theme-color" content="#f4f6f5">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" href="fonts/overpass.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m.webp" imagesrcset="img/hero-m.webp 800w" imagesizes="(max-width: 600px) calc(100vw - 2rem)" media="(max-width: 600px)">
+<link rel="preload" as="image" href="img/hero-1400.webp" imagesrcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" imagesizes="(max-width: 1240px) calc(100vw - 5rem), 1160px" media="(min-width: 601px)">
+<style>
+@font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
+@font-face{font-family:"Literata";font-weight:200 900;font-display:swap;src:url(fonts/literata.woff2) format("woff2")}
+/* Whitewashed deck rail, cedar shingle, the sound's teal, dune sand, the red base of the lighthouse in their logo, and the green of an NC 12 mile marker. */
+:root{--rail:#f4f6f5;--ink:#1d2629;--shake:#55504a;--sound:#0d5663;--sound-2:#0a4550;--dune:#e9dfca;--red:#ad2229;--red-2:#8f1a20;--sign:#1d6a46;--line:#cfd6d4;--pad:clamp(1rem,4vw,2.5rem);--max:75rem}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:5rem}
+body{background:var(--rail);color:var(--ink);font:400 1.0625rem/1.65 Literata,Georgia,serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--sound)}
+:focus-visible{outline:3px solid var(--sound);outline-offset:3px}
+h1,h2,h3,.btn,.nav,summary,.sans{font-family:Overpass,"Arial Narrow",sans-serif}
+h1,h2,h3{line-height:1.02;letter-spacing:-.015em;font-weight:800;color:var(--ink)}
+h1{font-size:clamp(2.35rem,6vw,4.4rem);max-width:19ch}
+h2{font-size:clamp(1.75rem,3.6vw,2.6rem);max-width:22ch}
+h3{font-size:1.3rem}
+p{max-width:64ch}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:9}
+.demo{max-width:none;background:var(--ink);color:#e9eeee;font:500 .8125rem/1.4 Overpass,sans-serif;text-align:center;padding:.45rem var(--pad)}
+header.top{background:var(--rail);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:4.25rem}
+.brand img{width:132px;height:auto}
+.nav{margin-left:auto;display:flex;align-items:center;gap:1.4rem;font-weight:600;font-size:1rem}
+.nav > a{color:var(--ink);text-decoration:none;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.7rem 1.25rem;border-radius:.4rem;font-weight:700;font-size:1.0625rem;text-decoration:none;border:2px solid transparent;transition:background .15s}
+.btn.call{background:var(--red);color:#fff}.btn.call:hover{background:var(--red-2)}
+.btn.ghost{border-color:var(--sound);color:var(--sound);background:transparent}.btn.ghost:hover{background:#e3ecec}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.55rem .9rem;border:2px solid var(--ink);border-radius:.4rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + .5rem);background:#fff;border:1px solid var(--line);border-radius:.4rem;box-shadow:0 10px 30px rgba(13,40,46,.18);padding:.5rem;min-width:15rem;display:grid}
+.menu nav a{padding:.75rem .9rem;color:var(--ink);text-decoration:none;font:600 1.0625rem Overpass,sans-serif;border-radius:.3rem}
+.menu nav a:hover{background:var(--rail)}
+.top .call-sm{padding:.55rem 1rem;min-height:2.6rem;font-size:1rem}
+/* hero */
+.hero{padding:clamp(1.5rem,4vw,3.25rem) 0 0}
+.hero-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1rem 3rem;align-items:end}
+.lede{font-size:1.125rem;color:#2e3a3d;margin-top:.9rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
+.mp{display:flex;align-items:center;gap:.85rem;margin-top:1.2rem;font:500 .98rem/1.35 Overpass,sans-serif;color:var(--shake)}
+.plate{flex:none;display:grid;place-items:center;width:3.4rem;height:4rem;background:var(--sign);color:#fff;border:2px solid #fff;outline:2px solid var(--sign);border-radius:.35rem;font:800 .72rem/1 Overpass,sans-serif;text-align:center;padding-top:.2rem}
+.plate b{font-size:1.45rem;display:block;margin-top:.15rem}
+.hero-photo{margin-top:clamp(1.25rem,3vw,2rem)}
+.hero-photo img{width:100%;border-radius:.5rem}
+/* sticky call bar on mobile */
+.stick{display:none}
+/* sections */
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+.intro{margin-top:.9rem;color:#2e3a3d}
+.band{background:var(--dune)}
+.finder{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:2rem;margin-top:2rem;align-items:start}
+.map{position:sticky;top:5.5rem;border-radius:.5rem;overflow:hidden;background:#3b3a35}
+.rings{position:absolute;inset:0}
+.xs{display:grid;grid-template-columns:1.1fr .9fr .8fr 1.1fr;margin-top:2rem;border-radius:.5rem;overflow:hidden}
+.xs div{padding:1.4rem 1.2rem 1.5rem;font-size:1rem;line-height:1.5}
+.xs h3{font-size:1.15rem;margin-bottom:.4rem;color:inherit}
+.xs .o{background:#0d5663;color:#fff}.xs .s{background:#e9dfca}.xs .r{background:#3d4245;color:#fff;border-top:6px dashed #f2c230}
+.xs .w{background:#6ea8ad;color:#0b1d20}
+.xs small{display:block;font:600 .85rem Overpass,sans-serif;margin-bottom:.3rem}
+.ring{position:absolute;border:4px solid #ffd23f;border-radius:999px;box-shadow:0 0 0 3px rgba(0,0,0,.55),0 0 0 9999px rgba(0,0,0,0);opacity:0;transform:scale(1.6);transition:opacity .25s,transform .35s cubic-bezier(.2,.9,.3,1.3)}
+.ring.on{opacity:1;transform:none}
+.map.lit img{filter:brightness(.62) saturate(.8);transition:filter .3s}
+.units h3{font-size:1.45rem}
+.units .sub{font-size:.98rem;color:var(--shake);margin:.35rem 0 1rem}
+.grp{border-top:1px solid #cbbd9e}
+.grp:last-of-type{border-bottom:1px solid #cbbd9e}
+.grp summary{cursor:pointer;font-weight:800;font-size:1.0625rem;padding:.8rem 0;display:flex;justify-content:space-between;align-items:baseline}
+.grp summary small{font-weight:500;color:var(--shake);font-size:.875rem}
+.grp ul{list-style:none;padding:0 0 .7rem;display:grid;gap:.15rem}
+.unit{all:unset;box-sizing:border-box;display:grid;grid-template-columns:5.2rem 1fr;gap:.6rem;width:100%;padding:.5rem .55rem;border-radius:.35rem;cursor:pointer;font:400 .95rem/1.35 Literata,serif}
+.unit b{font:800 1rem/1.3 Overpass,sans-serif;color:var(--sound-2)}
+.unit:hover{background:rgba(255,255,255,.55)}
+.unit:focus-visible{outline:3px solid var(--sound)}
+.unit[aria-pressed=true]{background:var(--ink);color:#fff}.unit[aria-pressed=true] b{color:#ffd23f}
+.pick{margin-top:1rem;font:500 .98rem/1.45 Overpass,sans-serif;color:var(--shake);min-height:2.9em}
+.pick a{color:var(--red-2);font-weight:800}
+.tabs{display:flex;gap:.4rem;margin-top:1.6rem;flex-wrap:wrap}
+.tabs button{font:700 1rem Overpass,sans-serif;padding:.6rem 1rem;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:#fff}
+.panel[hidden]{display:none}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.two img{border-radius:.5rem;width:100%}
+.amen{list-style:none;padding:0;margin-top:1.2rem;columns:2;column-gap:2rem}
+.amen li{padding:.5rem 0;border-bottom:1px solid var(--line);break-inside:avoid;font-size:1rem}
+.note{margin-top:1.4rem;padding:1rem 1.15rem;border-left:4px solid var(--red);background:#fff;font-size:1rem}
+.cta-end{background:var(--sound);color:#fff}
+.cta-end h2{color:#fff}
+.cta-end p{color:#d8e8ea}
+.cta-end .btn.ghost{border-color:#fff;color:#fff}.cta-end .btn.ghost:hover{background:rgba(255,255,255,.12)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.grid figure img{border-radius:.4rem;width:100%}
+figcaption{font:500 .9rem/1.4 Overpass,sans-serif;color:var(--shake);margin-top:.45rem}
+.pagehead{padding:clamp(2rem,5vw,3.5rem) 0 clamp(1.5rem,3vw,2.5rem)}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 3rem;margin-top:2rem}
+.cols h3,.cols .h3{margin-bottom:.4rem}
+h2.h3{font-size:1.3rem}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:2rem}
+.facts .h3{font-size:1.1rem;margin-bottom:.35rem}
+.facts p,.facts a{font-size:1.0625rem}
+.static{display:inline-block;margin-top:.6rem;padding:.55rem .9rem;border:1px dashed var(--shake);border-radius:.35rem;font:600 .95rem Overpass,sans-serif;color:var(--shake)}
+footer{background:var(--ink);color:#d9e1e2;padding:3rem 0 6rem;font:400 .98rem/1.6 Overpass,sans-serif}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+footer a{color:#fff}
+footer h2{color:#fff;font-size:1.1rem;margin-bottom:.4rem}
+footer nav{display:grid;gap:.2rem}
+.legal{grid-column:1/-1;border-top:1px solid #3a4649;padding-top:1.2rem;font-size:.9rem;color:#b9c4c6}
+@media (max-width:900px){
+  .nav > a:not(.call-sm){display:none}
+  .menu{display:block}
+  .brand img{width:112px}
+  .hero-head,.finder,.two,.cols,.facts,.xs{grid-template-columns:1fr}
+  .map{position:relative;top:0}
+  .finder{gap:1.25rem}
+  .grid{grid-template-columns:1fr}
+  .amen{columns:1}
+  footer .wrap{grid-template-columns:1fr}
+  .stick{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:6;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(244,246,245,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}
+  .stick.show{transform:none}
+  .stick .btn{flex:1;min-height:2.9rem;padding:.6rem .7rem;white-space:nowrap;font-size:1rem}
+  .stick .btn.call{flex:1.7}
+}
+@media (max-width:600px){.hero .mp{display:none}}
+@media (max-width:420px){
+  header.top .wrap{gap:.6rem}
+  .top .call-sm{padding:.5rem .7rem}
+  h1{font-size:2.2rem}
+  .lede{font-size:1.0625rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Outer Banks Motel | Oceanfront on Hatteras Island, Buxton NC">
+<meta property="og:description" content="Oceanfront motel and cottages in Buxton on Hatteras Island, established in 1955, plus Village Cottages a mile down the road.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/outer-banks-motel-buxton-nc/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/outer-banks-motel-buxton-nc/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Outer Banks Motel. Not affiliated with or endorsed by Outer Banks Motel.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Outer Banks Motel, home"><img src="img/logo.webp" width="318" height="149" alt="Outer Banks Motel, beach front motel and village cottages"></a>
+    <div class="nav">
+      <a href="beach.html">Beach rooms &amp; cottages</a><a href="village.html">Village cottages</a><a href="hatteras.html">Hatteras Island</a><a href="contact.html">Contact &amp; policies</a>
+      <details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html" aria-current="page">Home</a><a href="beach.html">Beach rooms &amp; cottages</a><a href="village.html">Village cottages</a><a href="hatteras.html">Hatteras Island</a><a href="contact.html">Contact &amp; policies</a></nav></details>
+      <a class="btn call call-sm" href="tel:+12529955601">Call</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-head">
+      <div>
+        <h1>Oceanfront on Hatteras Island since 1955</h1>
+        <p class="lede">Beach rooms and cottages steps from the sand in Buxton, and more than a dozen Village Cottages a mile down the road. Established by the Dillons, a family with generations of ties to the area.</p>
+      </div>
+      <div>
+        <div class="actions" data-hero-cta><a class="btn call" href="tel:+12529955601">Call (252) 995-5601</a><a class="btn ghost" href="mailto:obmotel@aol.com">Email obmotel@aol.com</a></div>
+        <p class="mp"><span class="plate" aria-hidden="true">MP<b>61</b></span><span>46577 Highway 12, Buxton, NC 27920. Just before the bend on your way into Buxton.</span></p>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <picture>
+        <source media="(max-width: 600px)" srcset="img/hero-m.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="700">
+        <img src="img/hero-1400.webp" srcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" sizes="(max-width: 1240px) calc(100vw - 5rem), 1160px" width="1400" height="510" alt="A covered motel deck with white chairs looking over the dunes to the ocean, oceanfront cottages along the beach" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+</div>
+
+<section class="band" id="units">
+  <div class="wrap">
+    <h2>Pick your door from the air</h2>
+    <p class="intro">On the motel's own drone photos, every unit is labelled on its roof. Choose the one you want, then call: online reservations go to the next available unit of a type, and a specific unit is booked by phone.</p>
+    <div class="tabs" role="tablist" aria-label="Property">
+      <button type="button" role="tab" id="t-beach" aria-controls="pn-beach" aria-selected="true">Beach grounds</button>
+      <button type="button" role="tab" id="t-village" aria-controls="pn-village" aria-selected="false" tabindex="-1">Village Cottages</button>
+    </div>
+    <div class="panel" id="pn-beach" role="tabpanel" aria-labelledby="t-beach">
+<div class="finder" data-finder="beach">
+  <div class="map">
+    <img src="img/map-beach-800.webp" srcset="img/map-beach-800.webp 800w, img/map-beach-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 700px" width="1400" height="933" alt="Drone photo of the motel&#x27;s beach grounds with every unit number labelled on its roof, the ocean on the left and Highway 12 on the right" loading="lazy" decoding="async">
+    <div class="rings" aria-hidden="true"><span class="ring" data-u="3A" style="left:66.70%;top:4.20%;width:8.10%;height:9.30%"></span><span class="ring" data-u="3" style="left:71.95%;top:3.98%;width:5.80%;height:9.30%"></span><span class="ring" data-u="4A" style="left:66.70%;top:9.98%;width:8.10%;height:9.30%"></span><span class="ring" data-u="4" style="left:72.10%;top:9.83%;width:5.80%;height:9.30%"></span><span class="ring" data-u="5A" style="left:66.85%;top:15.98%;width:8.10%;height:9.30%"></span><span class="ring" data-u="5" style="left:72.25%;top:15.98%;width:5.80%;height:9.30%"></span><span class="ring" data-u="2" style="left:83.45%;top:10.73%;width:5.80%;height:9.30%"></span><span class="ring" data-u="1" style="left:88.60%;top:9.98%;width:5.80%;height:9.30%"></span><span class="ring" data-u="2A" style="left:82.35%;top:17.25%;width:8.10%;height:9.30%"></span><span class="ring" data-u="1A" style="left:87.60%;top:16.58%;width:8.10%;height:9.30%"></span><span class="ring" data-u="9" style="left:52.45%;top:11.10%;width:5.80%;height:9.30%"></span><span class="ring" data-u="8" style="left:52.50%;top:17.85%;width:5.80%;height:9.30%"></span><span class="ring" data-u="7" style="left:52.60%;top:24.98%;width:5.80%;height:9.30%"></span><span class="ring" data-u="6" style="left:52.90%;top:32.26%;width:5.80%;height:9.30%"></span><span class="ring" data-u="110" style="left:38.30%;top:39.83%;width:10.40%;height:9.30%"></span><span class="ring" data-u="109" style="left:38.65%;top:47.34%;width:10.40%;height:9.30%"></span><span class="ring" data-u="14" style="left:69.70%;top:45.46%;width:8.10%;height:9.30%"></span><span class="ring" data-u="15" style="left:75.20%;top:45.46%;width:8.10%;height:9.30%"></span><span class="ring" data-u="107" style="left:24.05%;top:82.37%;width:10.40%;height:9.30%"></span><span class="ring" data-u="105" style="left:37.40%;top:74.72%;width:10.40%;height:9.30%"></span><span class="ring" data-u="103" style="left:46.30%;top:74.49%;width:10.40%;height:9.30%"></span><span class="ring" data-u="101" style="left:55.20%;top:74.12%;width:10.40%;height:9.30%"></span><span class="ring" data-u="106" style="left:36.60%;top:80.50%;width:10.40%;height:9.30%"></span><span class="ring" data-u="104" style="left:45.60%;top:80.12%;width:10.40%;height:9.30%"></span><span class="ring" data-u="102" style="left:54.40%;top:79.74%;width:10.40%;height:9.30%"></span><span class="ring" data-u="100" style="left:65.20%;top:72.62%;width:10.40%;height:9.30%"></span><span class="ring" data-u="B" style="left:73.00%;top:74.12%;width:5.80%;height:9.30%"></span></div>
+  </div>
+  <div class="units">
+    <h3>Beach grounds</h3>
+    <p class="sub">Rooms, efficiencies and oceanfront cottages, by bedrooms.</p>
+    <details class="grp" open><summary>1-bedroom units <small>11 types</small></summary><ul><li><button type="button" class="unit" data-units="B" data-name="B" data-desc="Standard Room w/ Kitchen &amp; 2 Doubles" aria-pressed="false"><b>B</b><span>Standard Room w/ Kitchen &amp; 2 Doubles</span></button></li><li><button type="button" class="unit" data-units="1A 2A" data-name="1A, 2A" data-desc="Standard Room w/ 2 Queens" aria-pressed="false"><b>1A, 2A</b><span>Standard Room w/ 2 Queens</span></button></li><li><button type="button" class="unit" data-units="3A 4A 7 8" data-name="3A, 4A, 7, 8" data-desc="Oceanview Room w/ 2 Queens" aria-pressed="false"><b>3A, 4A, 7, 8</b><span>Oceanview Room w/ 2 Queens</span></button></li><li><button type="button" class="unit" data-units="5A" data-name="5A" data-desc="Oceanview Room w/ 1 King &amp; Pullout Couch" aria-pressed="false"><b>5A</b><span>Oceanview Room w/ 1 King &amp; Pullout Couch</span></button></li><li><button type="button" class="unit" data-units="6 103" data-name="6, 103" data-desc="Oceanview Room w/ Kitchen, 1 King &amp; 1 Twin" aria-pressed="false"><b>6, 103</b><span>Oceanview Room w/ Kitchen, 1 King &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="14" data-name="14" data-desc="Cottage w/ Kitchen, 1 Queen &amp; 1 Twin" aria-pressed="false"><b>14</b><span>Cottage w/ Kitchen, 1 Queen &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="15" data-name="15" data-desc="Standard Room w/ 1 Queen &amp; 1 Twin" aria-pressed="false"><b>15</b><span>Standard Room w/ 1 Queen &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="101" data-name="101" data-desc="Oceanview Room w/ 1 King" aria-pressed="false"><b>101</b><span>Oceanview Room w/ 1 King</span></button></li><li><button type="button" class="unit" data-units="102 104 105" data-name="102, 104, 105" data-desc="Oceanview Room w/ Kitchen, 2 Doubles" aria-pressed="false"><b>102, 104, 105</b><span>Oceanview Room w/ Kitchen, 2 Doubles</span></button></li><li><button type="button" class="unit" data-units="106" data-name="106" data-desc="Oceanview Room w/ 2 Queens" aria-pressed="false"><b>106</b><span>Oceanview Room w/ 2 Queens</span></button></li><li><button type="button" class="unit" data-units="109" data-name="109" data-desc="Oceanfront Room w/ 2 Queens" aria-pressed="false"><b>109</b><span>Oceanfront Room w/ 2 Queens</span></button></li></ul></details><details class="grp"><summary>2-bedroom units <small>3 types</small></summary><ul><li><button type="button" class="unit" data-units="1 2" data-name="1, 2" data-desc="Cottage w/ 1 Queen &amp; 1 Twin in Each Room" aria-pressed="false"><b>1, 2</b><span>Cottage w/ 1 Queen &amp; 1 Twin in Each Room</span></button></li><li><button type="button" class="unit" data-units="3 4 5 9 14 15" data-name="3, 4, 5, 9, 14+15" data-desc="Oceanview Cottage for Up to 6 Guests" aria-pressed="false"><b>3, 4, 5, 9, 14+15</b><span>Oceanview Cottage for Up to 6 Guests</span></button></li><li><button type="button" class="unit" data-units="107" data-name="107" data-desc="Oceanfront Beach House w/ 1 Queen &amp; 1 Twin in Each Room" aria-pressed="false"><b>107</b><span>Oceanfront Beach House w/ 1 Queen &amp; 1 Twin in Each Room</span></button></li></ul></details><details class="grp"><summary>3-bedroom units <small>3 types</small></summary><ul><li><button type="button" class="unit" data-units="1 1A 2 2A" data-name="1+1A, 2+2A" data-desc="Cottage w/ 4 Queens &amp; 2 Twins" aria-pressed="false"><b>1+1A, 2+2A</b><span>Cottage w/ 4 Queens &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="100" data-name="100" data-desc="Cottage w/ 3 Doubles, 3 Twins &amp; 2 Baths" aria-pressed="false"><b>100</b><span>Cottage w/ 3 Doubles, 3 Twins &amp; 2 Baths</span></button></li><li><button type="button" class="unit" data-units="109 110" data-name="109, 110" data-desc="Oceanview Beach House" aria-pressed="false"><b>109, 110</b><span>Oceanview Beach House</span></button></li></ul></details>
+    <p class="pick" aria-live="polite">Tap a unit to see where it sits.</p>
+  </div>
+</div></div>
+    <div class="panel" id="pn-village" role="tabpanel" aria-labelledby="t-village" hidden>
+<div class="finder" data-finder="village">
+  <div class="map">
+    <img src="img/map-village-800.webp" srcset="img/map-village-800.webp 800w, img/map-village-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 700px" width="1400" height="933" alt="Drone photo of the Village Cottages in Buxton with each cottage&#x27;s name labelled on its roof, along the road and the canal" loading="lazy" decoding="async">
+    <div class="rings" aria-hidden="true"><span class="ring" data-u="ME1" style="left:12.05%;top:26.33%;width:10.40%;height:9.30%"></span><span class="ring" data-u="ME2" style="left:16.20%;top:31.96%;width:10.40%;height:9.30%"></span><span class="ring" data-u="JA1" style="left:35.80%;top:25.51%;width:10.40%;height:9.30%"></span><span class="ring" data-u="JA2" style="left:39.65%;top:30.98%;width:10.40%;height:9.30%"></span><span class="ring" data-u="KM" style="left:4.10%;top:64.97%;width:8.10%;height:9.30%"></span><span class="ring" data-u="M1" style="left:16.95%;top:61.37%;width:8.10%;height:9.30%"></span><span class="ring" data-u="M2" style="left:20.95%;top:67.22%;width:8.10%;height:9.30%"></span><span class="ring" data-u="WH" style="left:25.45%;top:59.26%;width:8.10%;height:9.30%"></span><span class="ring" data-u="WO" style="left:33.05%;top:64.74%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G1" style="left:47.70%;top:62.64%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G2" style="left:52.45%;top:64.37%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G3" style="left:57.70%;top:61.37%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G4" style="left:63.05%;top:63.24%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G5" style="left:66.20%;top:58.36%;width:8.10%;height:9.30%"></span><span class="ring" data-u="H" style="left:79.75%;top:74.27%;width:5.80%;height:9.30%"></span><span class="ring" data-u="G6" style="left:85.35%;top:78.39%;width:8.10%;height:9.30%"></span><span class="ring" data-u="D" style="left:82.70%;top:86.27%;width:5.80%;height:9.30%"></span><span class="ring" data-u="F" style="left:89.20%;top:86.72%;width:5.80%;height:9.30%"></span></div>
+  </div>
+  <div class="units">
+    <h3>Village Cottages</h3>
+    <p class="sub">About a mile down the road, in Buxton village.</p>
+    <details class="grp" open><summary>1-bedroom units <small>7 types</small></summary><ul><li><button type="button" class="unit" data-units="F" data-name="F" data-desc="Cottage for Three w/ 1 Queen &amp; 1 Twin" aria-pressed="false"><b>F</b><span>Cottage for Three w/ 1 Queen &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="G1" data-name="G1" data-desc="Studio Room w/ 2 Doubles" aria-pressed="false"><b>G1</b><span>Studio Room w/ 2 Doubles</span></button></li><li><button type="button" class="unit" data-units="G2" data-name="G2" data-desc="Large Cottage w/ 1 Double &amp; 1 Twin" aria-pressed="false"><b>G2</b><span>Large Cottage w/ 1 Double &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="G5" data-name="G5" data-desc="Cottage w/ 1 Double &amp; 2 Twins" aria-pressed="false"><b>G5</b><span>Cottage w/ 1 Double &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="H JA1" data-name="H, JA1" data-desc="Cottage for Four" aria-pressed="false"><b>H, JA1</b><span>Cottage for Four</span></button></li><li><button type="button" class="unit" data-units="M1" data-name="M1" data-desc="Large Cottage w/ 2 Queens" aria-pressed="false"><b>M1</b><span>Large Cottage w/ 2 Queens</span></button></li><li><button type="button" class="unit" data-units="M2" data-name="M2" data-desc="Studio Room w/ 2 Queens" aria-pressed="false"><b>M2</b><span>Studio Room w/ 2 Queens</span></button></li></ul></details><details class="grp"><summary>2-bedroom units <small>4 types</small></summary><ul><li><button type="button" class="unit" data-units="G1 G2" data-name="G1+G2" data-desc="Cottage Combo w/ 3 Doubles &amp; 1 Twin" aria-pressed="false"><b>G1+G2</b><span>Cottage Combo w/ 3 Doubles &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="G3" data-name="G3" data-desc="Cottage w/ 2 Doubles &amp; 2 Twins" aria-pressed="false"><b>G3</b><span>Cottage w/ 2 Doubles &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="G4 G6" data-name="G4, G6" data-desc="Cottage for Four" aria-pressed="false"><b>G4, G6</b><span>Cottage for Four</span></button></li><li><button type="button" class="unit" data-units="WH" data-name="WH" data-desc="Cottage w/ 1 Queen &amp; 2 Doubles" aria-pressed="false"><b>WH</b><span>Cottage w/ 1 Queen &amp; 2 Doubles</span></button></li></ul></details><details class="grp"><summary>3-bedroom units <small>6 types</small></summary><ul><li><button type="button" class="unit" data-units="D" data-name="D" data-desc="Cottage w/ 1 King, 1 Queen &amp; 4 Twins" aria-pressed="false"><b>D</b><span>Cottage w/ 1 King, 1 Queen &amp; 4 Twins</span></button></li><li><button type="button" class="unit" data-units="JA2" data-name="JA2" data-desc="Cottage w/ 1 King, 2 Queens &amp; 3 Twins" aria-pressed="false"><b>JA2</b><span>Cottage w/ 1 King, 2 Queens &amp; 3 Twins</span></button></li><li><button type="button" class="unit" data-units="KM" data-name="KM" data-desc="Cottage w/ 1 King, 1 Queen &amp; 4 Twins" aria-pressed="false"><b>KM</b><span>Cottage w/ 1 King, 1 Queen &amp; 4 Twins</span></button></li><li><button type="button" class="unit" data-units="ME1" data-name="ME1" data-desc="Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins" aria-pressed="false"><b>ME1</b><span>Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="ME2" data-name="ME2" data-desc="Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins" aria-pressed="false"><b>ME2</b><span>Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="WO" data-name="WO" data-desc="Cottage w/ 1 Queen, 3 Doubles &amp; 1 Twin" aria-pressed="false"><b>WO</b><span>Cottage w/ 1 Queen, 3 Doubles &amp; 1 Twin</span></button></li></ul></details>
+    <p class="pick" aria-live="polite">Tap a unit to see where it sits.</p>
+  </div>
+</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The ocean out front, the sound across the street</h2>
+    <p class="intro">Hatteras Island is a strip of sand between two waters. The motel sits on the ocean side of Highway 12, so you get both.</p>
+    <div class="xs">
+      <div class="o"><small>East</small><h3>The ocean</h3><p>Steps from the beautiful sandy beach, for swimming, sunbathing, fishing and surfing.</p></div>
+      <div class="s"><small>MP 61</small><h3>The motel</h3><p>Beach rooms, oceanfront cottages, the saltwater pool and hot tub.</p></div>
+      <div class="r"><small>Highway 12</small><h3>Across the road</h3><p>Dillon's Corner, owned by the same family, for tackle. Restaurants, shops and groceries within walking distance.</p></div>
+      <div class="w"><small>West</small><h3>Pamlico Sound</h3><p>Serene water to boat or crab, and for little ones not quite ready for the ocean waves.</p></div>
+    </div>
+    <p class="intro"><a href="hatteras.html">What Hatteras Island has to offer</a></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap two">
+    <div>
+      <h2>Everything at the motel, for every guest</h2>
+      <p class="intro">Guests in every unit, beach or village, share the amenities at the motel.</p>
+      <ul class="amen">
+        <li>Saltwater pool</li><li>Hot tub</li><li>Library with books and puzzles</li><li>Fish-cleaning station</li>
+        <li>Coin laundry</li><li>Free WiFi in the motel lobby</li><li>Linens and towels provided</li><li>All rooms non-smoking</li>
+      </ul>
+      <p class="note"><strong class="sans">Bringing a pet?</strong> Not every unit is pet-friendly. Give us a call so we can help you land the right one.</p>
+    </div>
+    <img src="img/p-pool-600.webp" srcset="img/p-pool-600.webp 600w, img/p-pool-1000.webp 1000w" sizes="(max-width: 900px) calc(100vw - 2rem), 560px" width="1000" height="667" alt="The saltwater pool and hot tub between the motel buildings, the ocean behind" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<section class="cta-end">
+  <div class="wrap">
+    <h2>Come experience a true Hatteras Island oceanfront vacation</h2>
+    <p class="intro">Call to pick a specific unit, or ask about pets, groups and dates.</p>
+    <div class="actions"><a class="btn call" href="tel:+12529955601">Call (252) 995-5601</a><a class="btn ghost" href="mailto:obmotel@aol.com">Email obmotel@aol.com</a></div>
+  </div>
+</section>
+
+</main>
+<div class="stick"><a class="btn call" href="tel:+12529955601">Call (252) 995-5601</a><a class="btn ghost" href="mailto:obmotel@aol.com">Email</a></div>
+<footer>
+  <div class="wrap">
+    <div>
+      <h2>Outer Banks Motel</h2>
+      <p>46577 Highway 12 (MP 61)<br>Buxton, NC 27920</p>
+      <p><a href="tel:+12529955601">(252) 995-5601</a><br><a href="mailto:obmotel@aol.com">obmotel@aol.com</a></p>
+    </div>
+    <div>
+      <h2>Stay</h2>
+      <nav aria-label="Footer"><a href="index.html" aria-current="page">Home</a><a href="beach.html">Beach rooms &amp; cottages</a><a href="village.html">Village cottages</a><a href="hatteras.html">Hatteras Island</a><a href="contact.html">Contact &amp; policies</a></nav>
+    </div>
+    <div>
+      <h2>Good to know</h2>
+      <p>Cancellations must be made at least two weeks in advance to be eligible for a refund.</p>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Outer Banks Motel. Not affiliated with or endorsed by Outer Banks Motel. Photos and text from Outer Banks Motel's own website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<script>
+if(matchMedia('(min-width:901px)').matches)document.querySelectorAll('.grp').forEach(d=>d.open=true);
+document.querySelectorAll('[data-finder]').forEach(f=>{
+  const map=f.querySelector('.map'),pick=f.querySelector('.pick'),btns=f.querySelectorAll('.unit');
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    const on=b.getAttribute('aria-pressed')!=='true';
+    btns.forEach(x=>x.setAttribute('aria-pressed','false'));
+    f.querySelectorAll('.ring').forEach(r=>r.classList.remove('on'));
+    map.classList.toggle('lit',on);
+    if(!on){pick.textContent='Tap a unit to see where it sits.';return}
+    b.setAttribute('aria-pressed','true');
+    const us=b.dataset.units.split(' ');
+    us.forEach(u=>{const r=f.querySelector('.ring[data-u="'+u+'"]');if(r)r.classList.add('on')});
+    const many=b.dataset.name.match(/[,+]/);
+    pick.innerHTML='';
+    pick.append((many?'Units ':'Unit ')+b.dataset.name+', '+b.dataset.desc+'. To book this exact '+(many?'one':'unit')+', call ');
+    const a=document.createElement('a');a.href='tel:+12529955601';a.textContent='(252) 995-5601';pick.append(a,'.');
+    if(matchMedia('(max-width:900px)').matches){const r=map.getBoundingClientRect();if(r.bottom<80||r.top>innerHeight*.5)map.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}
+  }));
+});
+document.querySelectorAll('[role=tablist]').forEach(tl=>{
+  const tabs=[...tl.querySelectorAll('[role=tab]')];
+  const sel=t=>{tabs.forEach(x=>{const s=x===t;x.setAttribute('aria-selected',s);x.tabIndex=s?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!s});};
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{const d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){const n=tabs[(i+d+tabs.length)%tabs.length];sel(n);n.focus()}})});
+});
+const cta=document.querySelector('[data-hero-cta]'),stick=document.querySelector('.stick');
+if(cta&&stick&&'IntersectionObserver' in window){new IntersectionObserver(([e])=>stick.classList.toggle('show',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(cta)}
+</script>
+</body>
+</html>
