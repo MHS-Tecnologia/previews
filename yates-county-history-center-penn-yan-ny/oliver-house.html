@@ -64,40 +64,46 @@ p + p{margin-top:.9em}
 .menu .panel a[aria-current]{color:var(--brick);font-weight:600}
 @media (max-width:900px){.nav{display:none}.menu{display:block}.brand img{width:40px;height:40px}.brand span{font-size:.98rem}}
 
-/* Home: the broadside beside the house it advertises */
-.hero{padding:clamp(1rem,3vw,2.75rem) 0 clamp(2.5rem,5vw,4.5rem)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,13fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:stretch}
-.sheet{background:var(--sheet);color:var(--ink);text-align:center;padding:clamp(1.25rem,3vw,2.5rem) clamp(1rem,2.5vw,2.25rem);border:1px solid #cdbf9f;box-shadow:inset 0 0 0 7px var(--sheet),inset 0 0 0 9px var(--ink),inset 0 0 0 12px var(--sheet),inset 0 0 0 13px var(--ink);display:flex;flex-direction:column;justify-content:center;gap:.9rem}
-.sheet .who{font:italic 500 1.0625rem/1.3 Newsreader,serif}
-.sheet h1{font-size:clamp(2.2rem,3.6vw,3.3rem);line-height:1.02;letter-spacing:-.005em}
-.sheet .bar{height:0;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding-top:3px;width:60%;margin:.15rem auto}
-.sheet .open{font:400 clamp(1.45rem,2.2vw,1.85rem)/1.05 "Alfa Slab One",serif;color:var(--brick)}
-.sheet .times{font:italic 500 clamp(1.2rem,1.7vw,1.4rem)/1.2 Newsreader,serif;margin-top:-.45rem}
-.sheet .fee{font-size:1.0625rem;line-height:1.4;max-width:24em;margin:0 auto}
-.sheet .where{font-size:1rem;letter-spacing:.02em}
-.sheet .actions{justify-content:center;margin-top:.35rem}
+/* Home hero: the Oliver House itself, with the headline set on it like a
+   wood-type notice. On phones the headline comes first on buff stock. */
+.hero{padding:clamp(1rem,2.5vw,2rem) 0 clamp(2.5rem,5vw,4rem)}
+.stage{position:relative;display:grid;border:1px solid var(--ink);overflow:hidden}
+.stage > *{grid-area:1/1}
+.stage picture{display:block;position:relative;min-height:clamp(520px,calc(100vh - 13rem),640px)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 40%}
+.stage::after{content:"";grid-area:1/1;z-index:1;background:linear-gradient(90deg,rgba(18,22,26,.86) 0%,rgba(18,22,26,.74) 40%,rgba(18,22,26,.15) 66%,rgba(18,22,26,0) 78%);pointer-events:none}
+.copy{position:relative;z-index:2;align-self:end;max-width:40rem;padding:clamp(1.5rem,3.5vw,3rem);color:#fff}
+.copy .who{font:italic 500 1.125rem/1.3 Newsreader,serif;color:#e9e1cc}
+.copy h1{font-size:clamp(2.3rem,3.7vw,3.4rem);line-height:1.02;margin-top:.5rem;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.copy .open{font:400 clamp(1.3rem,1.9vw,1.6rem)/1.15 "Alfa Slab One",serif;color:#f3c9a8;margin-top:1.1rem}
+.copy .fee{font-size:1.0625rem;line-height:1.45;margin-top:.45rem;color:#eceee9}
+.copy .actions{margin-top:1.35rem}
+.copy .btn.line{color:#fff;border-color:#fff}
+.copy .btn.line:hover{background:#fff;color:var(--ink)}
+.hero .cap{margin-top:.6rem}
 .actions{display:flex;flex-wrap:wrap;gap:.65rem}
-.house{margin:0;display:flex;flex-direction:column;min-height:0}
-.house picture{display:block;flex:1;min-height:0;position:relative}
-.house img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:1px solid var(--ink)}
 .house figcaption,.cap{font:italic 400 .98rem/1.4 Newsreader,serif;color:var(--muted);margin-top:.55rem}
 @media (prefers-reduced-motion:no-preference){
-  .sheet .press{animation:press .55s cubic-bezier(.2,.7,.2,1) both}
-  .sheet .press:nth-of-type(2){animation-delay:.08s}
-  .sheet .d1{animation-delay:.12s}.sheet .d2{animation-delay:.22s}.sheet .d3{animation-delay:.32s}.sheet .d4{animation-delay:.42s}
-  @keyframes press{from{opacity:0;filter:blur(2px);transform:scale(1.025)}to{opacity:1;filter:none;transform:none}}
+  .copy .press{animation:press .55s cubic-bezier(.2,.7,.2,1) both}
+  .copy .d1{animation-delay:.12s}.copy .d2{animation-delay:.22s}.copy .d3{animation-delay:.32s}
+  @keyframes press{from{opacity:0;filter:blur(2px);transform:scale(1.02)}to{opacity:1;filter:none;transform:none}}
 }
 @media (max-width:900px){
   .hero{padding-top:.75rem}
-  .hero .wrap{grid-template-columns:1fr;gap:1rem}
-  .sheet{gap:.6rem;padding:1.35rem 1rem 1.25rem}
-  .sheet h1{font-size:clamp(2rem,9vw,2.6rem)}
-  .sheet .times{margin-top:-.3rem}
-  .sheet .fee{font-size:1rem}
-  .sheet .btn{flex:1 1 9rem}
-  .house picture{flex:none}.house img{position:static;aspect-ratio:8/5;height:auto}
+  .stage{display:block;border:0;overflow:visible}
+  .stage::after{display:none}
+  .copy{max-width:none;padding:1rem 1rem 1.1rem;background:var(--sheet);color:var(--ink);border:1px solid #cdbf9f;text-align:center}
+  .copy .who{display:none}
+  .copy h1{font-size:clamp(1.95rem,8.6vw,2.5rem);margin-top:0;text-shadow:none}
+  .copy .open{color:var(--brick);font-size:1.25rem;margin-top:.7rem}
+  .copy .fee{color:var(--ink);font-size:1rem;margin-top:.3rem}
+  .copy .actions{justify-content:center;margin-top:.85rem}
+  .copy .btn{flex:1 1 9rem;min-height:2.85rem}
+  .copy .btn.line{color:var(--brick);border-color:var(--brick)}
+  .copy .btn.line:hover{background:var(--brick);color:#fff}
+  .stage picture{margin-top:.75rem}
+  .stage picture{min-height:0}.stage img{position:static;height:auto;aspect-ratio:8/5;border:1px solid var(--ink)}
 }
-
 /* Sections */
 .band{padding:clamp(3rem,6vw,5.5rem) 0}
 .band.paper{background:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
@@ -118,7 +124,7 @@ p + p{margin-top:.9em}
 @media (max-width:700px){.doors{grid-template-columns:1fr}}
 
 .split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(1.5rem,4vw,4rem);align-items:center}
-.split.top{align-items:start}
+.split.start{align-items:start}
 .split figure{margin:0}
 .split figure img{width:100%;border:1px solid var(--ink)}
 .split .noframe img{border:0}
@@ -186,6 +192,7 @@ details.more summary{cursor:pointer;font-weight:600;color:var(--brick);padding:.
 .foot .name img{width:52px;height:52px}
 .foot p{margin-top:.6rem}
 .foot a{color:#fff}
+.foot .tap a{display:inline-flex;align-items:center;min-height:44px}
 .foot nav{display:grid;gap:.35rem;align-content:start}
 .foot .tag{font-style:italic}
 .foot .legal{max-width:none;grid-column:1/-1;border-top:1px solid #3b4046;padding-top:1.25rem;font:400 .875rem/1.5 system-ui,sans-serif;color:#b9bdb8}
@@ -205,7 +212,7 @@ details.more summary{cursor:pointer;font-weight:600;color:var(--brick);padding:.
 <main id="main">
 
 <section class="page-head" data-hero>
-  <div class="wrap split top">
+  <div class="wrap split start">
     <div>
       <h1>The Oliver House Museum</h1>
       <p class="lede">In 1852, Dr. Andrew Oliver built a large brick Italianate style house on Main Street in Penn Yan, an 18 room home given as a wedding gift to his son, William.</p>
@@ -268,7 +275,7 @@ details.more summary{cursor:pointer;font-weight:600;color:var(--brick);padding:.
     <div>
       <div class="name"><img src="img/logo.webp" width="160" height="160" alt="" loading="lazy">Yates County History Center</div>
       <p>107 Chapel Street, Penn Yan, NY 14527<br>Open Tuesday to Friday, 9:00 am to 4:00 pm</p>
-      <p><a href="tel:+13155367318">315.536.7318</a><br><a href="mailto:ycghs@yatespast.org">ycghs@yatespast.org</a></p>
+      <p class="tap"><a href="tel:+13155367318">315.536.7318</a><br><a href="mailto:ycghs@yatespast.org">ycghs@yatespast.org</a></p>
       <p class="tag">A community museum where every story matters!</p>
     </div>
     <nav aria-label="Pages"><a href="visit.html">Plan your visit</a><a href="oliver-house.html">Oliver House Museum</a><a href="underwood.html">L. Caroline Underwood Museum</a><a href="carriage-house.html">Scherer Carriage House</a><a href="annex.html">Bailey Family Annex</a><a href="research.html">Research and genealogy</a><a href="membership.html">Membership and volunteering</a><a href="about.html">About the History Center</a></nav>
