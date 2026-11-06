@@ -36,14 +36,14 @@
     seats.forEach(function (s) { s.setAttribute('aria-pressed', String(+s.dataset.n === current)); });
     var fits = 0;
     units.forEach(function (u) {
-      var ok = !current || current > 12 || +u.dataset.sleeps >= current;
+      var ok = !current || +u.dataset.sleeps >= Math.min(current, 12);
       u.classList.toggle('no', !ok);
       u.classList.toggle('fit', ok && !!current);
       if (ok) fits++;
     });
-    big.hidden = current < 12;
+    big.hidden = current <= 12;
     if (!current) status.textContent = 'Every cabin and condo, largest first.';
-    else if (current > 12) status.textContent = 'More than 12: book several units together.';
+    else if (current > 12) status.textContent = 'More than 12: start with the Cherokee or The Stuart, then add a unit.';
     else status.textContent = fits + (fits === 1 ? ' unit sleeps ' : ' units sleep ') + current + (current === 1 ? ' guest.' : ' or more.');
   }
   seats.forEach(function (s) { s.addEventListener('click', function () { pick(+s.dataset.n); }); });
