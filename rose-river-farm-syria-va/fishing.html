@@ -65,9 +65,8 @@ p{margin:0 0 1em;max-width:66ch}
 .hero .lede{color:#cbd6d2;font-size:1.0625rem;margin-bottom:1.1em;max-width:44ch}
 .actions{display:flex;flex-wrap:wrap;gap:10px}
 .hero figure{margin:0}
-.hero figure img{width:100%;border-radius:6px;aspect-ratio:5/4;object-fit:cover}
+.hero figure img{width:100%;max-width:640px;border-radius:6px}
 .hero figcaption{font-family:Petrona,Georgia,serif;font-style:italic;color:#aebdb8;font-size:.95rem;margin-top:8px}
-@media(min-width:700px){.hero figure img{aspect-ratio:3/2}}
 @media(min-width:900px){
  .hero .wrap{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:56px;padding-top:56px;padding-bottom:64px}
  .hero .lede{font-size:1.15rem}
@@ -76,6 +75,10 @@ p{margin:0 0 1em;max-width:66ch}
 .phead{background:var(--dusk);color:#eef2ee;padding:34px 0 30px}
 .phead h1{font-size:clamp(2rem,1.4rem + 2.4vw,3.1rem);font-weight:600;max-width:22ch}
 .phead p{color:#cbd6d2;font-size:1.1rem;max-width:58ch;margin:0}
+/* photo band under inner page heads */
+.band-ph{padding:28px 0 0}
+.band-ph + .sec{padding-top:44px}
+@media(min-width:900px){.band-ph{padding-top:44px}.band-ph + .sec{padding-top:64px}}
 /* sections */
 .sec{padding:56px 0}
 .sec:not(.dark) + .sec:not(.dark){padding-top:8px}
@@ -154,6 +157,8 @@ details.dir p{margin:0 0 18px}
 .stick.on{transform:none}
 @media(min-width:900px){.stick{display:none}}
 @media(prefers-reduced-motion:reduce){.stick{transition:none}}
+.ph img[width="500"]{max-width:500px}
+.dark .ph figcaption{color:#aebdb8}
 </style>
 </head>
 <body>
@@ -170,6 +175,7 @@ details.dir p{margin:0 0 18px}
 <main id="main">
 
 <section class="phead" data-stick-after><div class="wrap"><h1>Fishing the farm</h1><p>Dry fly and nymph fishing on cold, crystal-clear, spring-fed private water. Come for a day, or add a night or two in the cabins.</p></div></section>
+<section class="band-ph"><div class="wrap grid2"><figure class="ph"><img src="img/p26-500.webp" srcset="img/p26-500.webp 500w" sizes="(min-width: 760px) 500px, calc(100vw - 32px)" width="500" height="332" alt="A trout lying in a landing net beside a fly rod" fetchpriority="high"><figcaption>Catch and gentle release, every fish.</figcaption></figure><figure class="ph"><img src="img/pbb12-1280.webp" srcset="img/pbb12-640.webp 640w, img/pbb12-800.webp 800w, img/pbb12-1280.webp 1280w" sizes="(min-width: 1184px) 532px, (min-width: 760px) calc(50vw - 44px), calc(100vw - 32px)" width="1280" height="602" alt="Finished split-cane bamboo fly rod sections with a cork grip" loading="lazy" decoding="async"><figcaption>A finished rod from the bamboo rod building class.</figcaption></figure></div></section>
 
 <section class="sec">
  <div class="wrap two">
@@ -183,7 +189,11 @@ details.dir p{margin:0 0 18px}
    </ul>
    <p class="note-plain" style="margin-top:20px">Open dates are on the farm’s own online reservation calendar. For a guided trip or a school, check stream availability first, then email <a href="mailto:roseriverfarm@gmail.com">roseriverfarm@gmail.com</a>.</p>
   </div>
-  <figure class="ph"><img src="img/p26-500.webp" srcset="img/p26-500.webp 500w" sizes="(min-width: 900px) 500px, calc(100vw - 32px)" width="500" height="332" alt="A trout lying in a landing net beside a fly rod" loading="lazy" decoding="async"><figcaption>Catch and gentle release keeps the trout population strong year round.</figcaption></figure>
+  <div>
+   <h2>Fish more than the farm</h2>
+   <p>Some of the best public trout water is minutes from the cabins: the Rapidan, White Oak Canyon, the Conway and the Upper Rose, all native brook trout streams. The farm offers full and half day guide services on them.</p>
+   <p>Their stretch of the Rose is regularly tested for water quality and aquatic insects, and strict catch and gentle release keeps the trout population strong year round.</p>
+  </div>
  </div>
 </section>
 
@@ -199,7 +209,7 @@ details.dir p{margin:0 0 18px}
   <div>
    <h2>Guides and lessons</h2>
    <p>Full and half day guide services, and group and private fly fishing schools, under Head Guide Alan Edmunds. Alan began fly fishing and tying at 15 and ran guided trips on the Battenkill in Vermont before coming home to Virginia.</p>
-   <p>The team includes Head Guide Emeritus Gary Burwell, Jen Goodale, Bryant Robinson and John Shipstedt. The farm also guides the native brook trout streams nearby: the Rapidan, the Upper Rose, the Robinson and others a few minutes from the cabins.</p>
+   <p>The team includes Head Guide Emeritus Gary Burwell, Jen Goodale, Bryant Robinson and John Shipstedt.</p>
   </div>
  </div>
 </section>
@@ -218,7 +228,7 @@ details.dir p{margin:0 0 18px}
  <div class="wrap two">
   <div>
    <h2>Corporate days and groups</h2>
-   <p>The cabins sleep eight anglers. The farm can arrange the details from catering to meeting space in the large barn, any level of instruction, and even a fly fishing celebrity to fish with your group or a fly-tying demonstration.</p>
+   <p>Using all three cabins, the farm sleeps 12 adults comfortably. Besides fly fishing there are sporting clays and preserve bird hunting nearby, and the farm can arrange a Virginia wine tasting, a well-tested group of caterers, meeting space in the large barn, any level of instruction, and even a fly fishing celebrity to fish with your group or a fly-tying demonstration.</p>
   </div>
   <div>
    <h2>Build a bamboo rod</h2>

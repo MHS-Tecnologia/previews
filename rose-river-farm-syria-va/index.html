@@ -10,8 +10,7 @@
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preload" href="fonts/petrona.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/commissioner.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" media="(max-width: 699px)" imagesrcset="img/hero-m-800.webp 800w" imagesizes="calc(100vw - 32px)" fetchpriority="high">
-<link rel="preload" as="image" media="(min-width: 700px)" imagesrcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" imagesizes="(min-width: 1184px) 590px, (min-width: 900px) 52vw, calc(100vw - 64px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/trout-640.webp" imagesrcset="img/trout-640.webp 640w" imagesizes="(min-width: 1184px) 590px, (min-width: 900px) 52vw, calc(100vw - 32px)" fetchpriority="high">
 <style>@font-face{font-family:Petrona;src:url(fonts/petrona.woff2) format("woff2");font-weight:400 800;font-style:normal;font-display:swap}
 @font-face{font-family:Petrona;src:url(fonts/petrona-italic.woff2) format("woff2");font-weight:400 800;font-style:italic;font-display:swap}
 @font-face{font-family:Commissioner;src:url(fonts/commissioner.woff2) format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
@@ -67,9 +66,8 @@ p{margin:0 0 1em;max-width:66ch}
 .hero .lede{color:#cbd6d2;font-size:1.0625rem;margin-bottom:1.1em;max-width:44ch}
 .actions{display:flex;flex-wrap:wrap;gap:10px}
 .hero figure{margin:0}
-.hero figure img{width:100%;border-radius:6px;aspect-ratio:5/4;object-fit:cover}
+.hero figure img{width:100%;max-width:640px;border-radius:6px}
 .hero figcaption{font-family:Petrona,Georgia,serif;font-style:italic;color:#aebdb8;font-size:.95rem;margin-top:8px}
-@media(min-width:700px){.hero figure img{aspect-ratio:3/2}}
 @media(min-width:900px){
  .hero .wrap{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:56px;padding-top:56px;padding-bottom:64px}
  .hero .lede{font-size:1.15rem}
@@ -78,6 +76,10 @@ p{margin:0 0 1em;max-width:66ch}
 .phead{background:var(--dusk);color:#eef2ee;padding:34px 0 30px}
 .phead h1{font-size:clamp(2rem,1.4rem + 2.4vw,3.1rem);font-weight:600;max-width:22ch}
 .phead p{color:#cbd6d2;font-size:1.1rem;max-width:58ch;margin:0}
+/* photo band under inner page heads */
+.band-ph{padding:28px 0 0}
+.band-ph + .sec{padding-top:44px}
+@media(min-width:900px){.band-ph{padding-top:44px}.band-ph + .sec{padding-top:64px}}
 /* sections */
 .sec{padding:56px 0}
 .sec:not(.dark) + .sec:not(.dark){padding-top:8px}
@@ -156,6 +158,8 @@ details.dir p{margin:0 0 18px}
 .stick.on{transform:none}
 @media(min-width:900px){.stick{display:none}}
 @media(prefers-reduced-motion:reduce){.stick{transition:none}}
+.ph img[width="500"]{max-width:500px}
+.dark .ph figcaption{color:#aebdb8}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rose River Farm · Private fly fishing in Syria, Virginia">
@@ -186,11 +190,8 @@ details.dir p{margin:0 0 18px}
    <div class="actions"><a class="btn btn-peach" href="mailto:roseriverfarm@gmail.com?subject=Booking%20a%20day%20at%20Rose%20River%20Farm">Email to book</a><a class="btn btn-line" href="tel:+17039308229">Call 703.930.8229</a></div>
   </div>
   <figure>
-   <picture>
-    <source media="(max-width: 699px)" srcset="img/hero-m-800.webp 800w" sizes="calc(100vw - 32px)" width="800" height="640">
-    <img src="img/hero-1400.webp" srcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" sizes="(min-width: 1184px) 590px, (min-width: 900px) 52vw, calc(100vw - 64px)" width="1400" height="933" alt="Waders hanging from the porch of a round cedar cabin at dusk, lit windows and a fire pit burning beside it" fetchpriority="high">
-   </picture>
-   <figcaption>Pond View Cabin, after a long day on the water.</figcaption>
+   <img src="img/trout-640.webp" srcset="img/trout-640.webp 640w" sizes="(min-width: 1184px) 590px, (min-width: 900px) 52vw, calc(100vw - 32px)" width="640" height="300" alt="A large spotted rainbow trout held just under the surface of clear river water" fetchpriority="high">
+   <figcaption>A Rose River beauty, 17-plus inches, back in the water.</figcaption>
   </figure>
  </div>
 </section>
@@ -214,18 +215,20 @@ details.dir p{margin:0 0 18px}
 </section>
 
 <section class="sec dark">
- <div class="wrap">
-<div class="flyhead"><div><h2 id="flybox">What’s in the fly box</h2>
- <p class="lead" style="margin:0">The patterns the farm fishes on its own water, season by season, as they write them up for guests.</p></div>
- <div class="tabs" role="tablist" aria-label="Season"><button role="tab" id="t-spring" aria-controls="p-spring" aria-selected="false" tabindex=-1>Spring</button><button role="tab" id="t-fall" aria-controls="p-fall" aria-selected="true">Fall</button><button role="tab" id="t-winter" aria-controls="p-winter" aria-selected="false" tabindex=-1>Winter</button><button role="tab" id="t-year" aria-controls="p-year" aria-selected="false" tabindex=-1>All year</button></div></div>
-<div class="box"><div class="foam"><div class="panel-s" role="tabpanel" id="p-spring" aria-labelledby="t-spring" tabindex="0"><div class="fly"><i>Stimulators</i></div><div class="fly"><i>Caddis</i></div><div class="fly"><i>Hoppers, crickets and ants</i><small>small sizes</small></div><p class="note">In spring, stimulators and caddis are good bets, along with the same terrestrials used in the fall, usually in small sizes.</p></div><div class="panel-s" role="tabpanel" id="p-fall" aria-labelledby="t-fall" tabindex="0"><div class="fly"><i>Hoppers</i><small>#12–16</small></div><div class="fly"><i>Crickets</i><small>#12–16</small></div><div class="fly"><i>Ants</i><small>#12–16</small></div><div class="fly"><i>Orange stimulator</i><small>#12–16</small></div><div class="fly"><i>Yellow stimulator</i><small>#12–16</small></div><p class="note">In the fall, hoppers, crickets and ants are all effective, as well as orange or yellow stimulators. Sizes 12–16 are typical.</p></div><div class="panel-s" role="tabpanel" id="p-winter" aria-labelledby="t-winter" tabindex="0"><div class="fly"><i>Black stoneflies</i><small>#16–22</small></div><div class="fly"><i>Trico patterns</i><small>#16–22</small></div><div class="fly"><i>Griffith’s Gnat</i><small>#18</small></div><div class="fly"><i>Winged stonefly</i></div><div class="fly"><i>Zebra Midge</i></div><div class="fly"><i>Orange caddis</i><small>#16</small></div><div class="fly"><i>Yellow caddis</i></div><div class="fly"><i>Parachute Adams</i></div><div class="fly"><i>Small black Woolly Bugger</i></div><div class="fly"><i>Rose River Special</i></div><p class="note">From the farm’s winter report: little black stoneflies come off most every day, and these patterns produced.</p></div><div class="panel-s" role="tabpanel" id="p-year" aria-labelledby="t-year" tabindex="0"><div class="fly"><i>Zebra Midge</i><small>nymph</small></div><div class="fly"><i>San Juan Worm</i><small>nymph</small></div><div class="fly"><i>Small Copper John</i><small>nymph</small></div><div class="fly"><i>Rainbow Warrior</i><small>nymph</small></div><div class="fly"><i>Prince Nymph</i><small>nymph</small></div><div class="fly"><i>Mop fly</i><small>nymph</small></div><div class="fly"><i>Woolly Bugger: black, olive, peach, white</i><small>streamer</small></div><p class="note">Nymphs can be very effective all year, often fished as a dry-dropper: the nymph on 1–2 feet of 5X tippet under an attractor dry fly.</p></div></div></div>
-<p class="tackle">Their tackle: a 4 or 5 weight rod, 7 to 9 foot leaders, 5X tippet. The Farm Fly Shop, in the big white barn with the green roof up the hill from the fishing gazebo, stocks guide Alan’s own proven ties.</p>
+<div class="wrap two">
+  <div>
+   <h2>What’s in the fly box</h2>
+   <p class="lead">The farm writes up what works on its water, season by season. In the fall: hoppers, crickets and ants, plus orange or yellow stimulators, sizes 12–16. In winter, little black stoneflies come off most every day.</p>
+   <p>Spring, winter and year-round patterns, nymph rigs and their tackle are in the full fly box.</p>
+   <p><a class="btn btn-peach" href="fishing.html#flybox">Open the full fly box</a></p>
+  </div>
+  <figure class="ph"><img src="img/pbb12-1280.webp" srcset="img/pbb12-640.webp 640w, img/pbb12-800.webp 800w, img/pbb12-1280.webp 1280w" sizes="(min-width: 1184px) 532px, (min-width: 900px) calc(50vw - 60px), calc(100vw - 32px)" width="1280" height="602" alt="Finished split-cane bamboo fly rod sections with a cork grip and figured wood reel seat" loading="lazy" decoding="async"><figcaption>A finished rod from the farm’s bamboo rod building class.</figcaption></figure>
  </div>
 </section>
 
 <section class="sec">
  <div class="wrap two">
-  <figure class="ph"><img src="img/p33-1200.webp" srcset="img/p33-640.webp 640w, img/p33-800.webp 800w, img/p33-1200.webp 1200w" sizes="(min-width: 1184px) 532px, (min-width: 900px) calc(50vw - 60px), calc(100vw - 32px)" width="1200" height="797" alt="Round living room under a domed wooden ceiling, with leather club chairs and a wall of windows" loading="lazy" decoding="async"><figcaption>The living room: a domed 17-foot ceiling and leather club furniture.</figcaption></figure>
+  <figure class="ph"><img src="img/hero-1400.webp" srcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" sizes="(min-width: 1184px) 532px, (min-width: 900px) calc(50vw - 60px), calc(100vw - 32px)" width="1400" height="933" alt="Waders hanging from the porch of a round cedar cabin at dusk, lit windows and a fire pit burning beside it" loading="lazy" decoding="async"><figcaption>Pond View Cabin, after a long day on the water.</figcaption></figure>
   <div>
    <h2>Stay the night in a yurt</h2>
    <p class="lead">Three cabins, Hill Top, Pond View and Mountain View, built as modern takes on the Mongolian yurt in cedar, glass and steel. They sit on a private 20-acre parcel catty-corner to the farm.</p>
