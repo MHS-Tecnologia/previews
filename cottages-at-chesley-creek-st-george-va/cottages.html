@@ -83,24 +83,28 @@ figure figcaption{font-size:.9375rem;color:var(--slate-d);margin-top:.55rem;font
 @media (max-width:860px){.land .grid{grid-template-columns:1fr}}
 @media (max-width:560px){.strip{height:auto;flex-direction:column}.strip > div{padding:.6rem .8rem}.strip .p1500{flex:none;height:7.5rem}.strip .ours{flex:none;height:2.6rem;align-items:center}.strip .ours b{display:inline;font-size:1.1rem;margin-right:.4rem}.strip .p1000{flex:none;height:5rem}.dist{grid-template-columns:1fr}}
 /* cottage index with one photo frame */
-.idx{position:relative;display:grid;grid-template-columns:1fr;gap:0}
-.idx h2{margin-bottom:.5rem}
-.idx ol{list-style:none;padding:0;margin-top:1.5rem;border-top:1px solid #b9cbcc}
-.idx li{border-bottom:1px solid #b9cbcc}
-.idx li a{display:block;padding:1.1rem 0;text-decoration:none;color:var(--ink)}
-.idx .nm{display:block;font-size:clamp(1.75rem,3.4vw,2.6rem);font-weight:600;line-height:1.1}
-.idx .hl{display:block;font-style:italic;color:var(--slate-d);font-size:1.0625rem;margin-top:.2rem}
-.idx .go{display:block;color:var(--cedar);font-size:1rem;margin-top:.35rem;text-decoration:underline;text-underline-offset:3px}
-.idx figure{margin-top:1rem}
-.idx figure img{width:100%;border-radius:.375rem}
-@media (min-width:900px){
- .idx{grid-template-columns:1fr 1fr;column-gap:clamp(2rem,5vw,4.5rem)}
- .idx .list{grid-column:1}
- .idx li figure{position:absolute;margin:0;right:0;top:var(--ft,0);width:calc(50% - clamp(1rem,2.5vw,2.25rem));opacity:0;transition:opacity .45s ease;pointer-events:none}
- .idx li.on figure{opacity:1}
- .idx li a:hover .nm,.idx li a:focus-visible .nm,.idx li.on .nm{color:var(--cedar)}
- .idx .go{display:none}
-}
+.idx ol{list-style:none;padding:0;margin-top:2rem}
+.idx li{padding:1.75rem 0;border-top:1px solid #b9cbcc}
+.idx .row{display:grid;grid-template-columns:1fr;gap:1rem}
+.idx .row > a{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:1.25rem}
+.idx .row > a{text-decoration:none;color:var(--ink)}
+.idx .row > a:hover .nm{color:var(--cedar)}
+.idx .nm{display:block;font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:600;line-height:1.1}
+.idx .hl{display:block;font-style:italic;color:var(--slate-d);font-size:1.0625rem}
+.idx .go{display:inline-block;color:var(--cedar);font-size:1rem;margin-left:auto;text-decoration:underline;text-underline-offset:3px}
+.idx .duo{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.idx .duo img{width:100%;border-radius:.375rem}
+@media (max-width:560px){.idx .duo{grid-template-columns:1fr}.idx .duo figure+figure{display:none}}
+/* reviews */
+.reviews{background:var(--paper)}
+.reviews ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.5vw,2rem);margin-top:1.75rem}
+.reviews li{border-top:3px solid var(--cedar);padding-top:1rem;font-style:italic;font-size:1.15rem;line-height:1.5}
+.reviews .src{margin-top:1.5rem;font-size:.9375rem;color:var(--slate-d)}
+@media (max-width:900px){.reviews ul{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.reviews ul{grid-template-columns:1fr}}
+.price{margin-top:1rem;font-size:1.0625rem}
+.price a{color:var(--ink);text-decoration-color:var(--cedar);text-underline-offset:4px}
+.price b{color:var(--cedar);font-weight:600}
 /* features band */
 .band{background:var(--slate);color:var(--ink)}
 .band .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(2rem,5vw,4.5rem)}
@@ -242,6 +246,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
  <div class="kate">
   <div>
    <h2>Come stay in a place purpose-built to commune with nature and unwind!</h2>
+   <p style="margin-top:1rem">To check availability and book your stay, call or email Kate. Please contact us regarding availability for single-night or longer-term stays.</p>
    <dl>
     <dt>Hospitality Manager</dt><dd>Kate Daniels</dd>
     <dt>Phone</dt><dd><a href="tel:+15408509508">(540) 850-9508</a></dd>
@@ -272,13 +277,6 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
  if(d&&h&&'IntersectionObserver'in window){new IntersectionObserver(function(e){d.classList.toggle('show',!e[0].isIntersecting)}).observe(h)}
  var mq=matchMedia('(min-width: 900px)');
  document.querySelectorAll('details.am').forEach(function(x){if(mq.matches)x.open=true});
- var idx=document.querySelector('.idx');
- if(idx){var lis=idx.querySelectorAll('li'),fr=idx.querySelector('ol');
-  function place(){var t=fr?fr.offsetTop:0;lis.forEach(function(l){var f=l.querySelector('figure');if(f)f.style.top=t+'px'})}
-  function on(l){lis.forEach(function(x){x.classList.toggle('on',x===l)})}
-  lis.forEach(function(l){l.addEventListener('mouseenter',function(){on(l)});l.addEventListener('focusin',function(){on(l)})});
-  place();addEventListener('resize',place);
- }
 })();
 </script>
 </body>

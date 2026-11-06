@@ -85,24 +85,28 @@ figure figcaption{font-size:.9375rem;color:var(--slate-d);margin-top:.55rem;font
 @media (max-width:860px){.land .grid{grid-template-columns:1fr}}
 @media (max-width:560px){.strip{height:auto;flex-direction:column}.strip > div{padding:.6rem .8rem}.strip .p1500{flex:none;height:7.5rem}.strip .ours{flex:none;height:2.6rem;align-items:center}.strip .ours b{display:inline;font-size:1.1rem;margin-right:.4rem}.strip .p1000{flex:none;height:5rem}.dist{grid-template-columns:1fr}}
 /* cottage index with one photo frame */
-.idx{position:relative;display:grid;grid-template-columns:1fr;gap:0}
-.idx h2{margin-bottom:.5rem}
-.idx ol{list-style:none;padding:0;margin-top:1.5rem;border-top:1px solid #b9cbcc}
-.idx li{border-bottom:1px solid #b9cbcc}
-.idx li a{display:block;padding:1.1rem 0;text-decoration:none;color:var(--ink)}
-.idx .nm{display:block;font-size:clamp(1.75rem,3.4vw,2.6rem);font-weight:600;line-height:1.1}
-.idx .hl{display:block;font-style:italic;color:var(--slate-d);font-size:1.0625rem;margin-top:.2rem}
-.idx .go{display:block;color:var(--cedar);font-size:1rem;margin-top:.35rem;text-decoration:underline;text-underline-offset:3px}
-.idx figure{margin-top:1rem}
-.idx figure img{width:100%;border-radius:.375rem}
-@media (min-width:900px){
- .idx{grid-template-columns:1fr 1fr;column-gap:clamp(2rem,5vw,4.5rem)}
- .idx .list{grid-column:1}
- .idx li figure{position:absolute;margin:0;right:0;top:var(--ft,0);width:calc(50% - clamp(1rem,2.5vw,2.25rem));opacity:0;transition:opacity .45s ease;pointer-events:none}
- .idx li.on figure{opacity:1}
- .idx li a:hover .nm,.idx li a:focus-visible .nm,.idx li.on .nm{color:var(--cedar)}
- .idx .go{display:none}
-}
+.idx ol{list-style:none;padding:0;margin-top:2rem}
+.idx li{padding:1.75rem 0;border-top:1px solid #b9cbcc}
+.idx .row{display:grid;grid-template-columns:1fr;gap:1rem}
+.idx .row > a{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:1.25rem}
+.idx .row > a{text-decoration:none;color:var(--ink)}
+.idx .row > a:hover .nm{color:var(--cedar)}
+.idx .nm{display:block;font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:600;line-height:1.1}
+.idx .hl{display:block;font-style:italic;color:var(--slate-d);font-size:1.0625rem}
+.idx .go{display:inline-block;color:var(--cedar);font-size:1rem;margin-left:auto;text-decoration:underline;text-underline-offset:3px}
+.idx .duo{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.idx .duo img{width:100%;border-radius:.375rem}
+@media (max-width:560px){.idx .duo{grid-template-columns:1fr}.idx .duo figure+figure{display:none}}
+/* reviews */
+.reviews{background:var(--paper)}
+.reviews ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.5vw,2rem);margin-top:1.75rem}
+.reviews li{border-top:3px solid var(--cedar);padding-top:1rem;font-style:italic;font-size:1.15rem;line-height:1.5}
+.reviews .src{margin-top:1.5rem;font-size:.9375rem;color:var(--slate-d)}
+@media (max-width:900px){.reviews ul{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.reviews ul{grid-template-columns:1fr}}
+.price{margin-top:1rem;font-size:1.0625rem}
+.price a{color:var(--ink);text-decoration-color:var(--cedar);text-underline-offset:4px}
+.price b{color:var(--cedar);font-weight:600}
 /* features band */
 .band{background:var(--slate);color:var(--ink)}
 .band .grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(2rem,5vw,4.5rem)}
@@ -192,6 +196,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
    <div class="side">
     <p class="lede">Our five cottages each sit on their own private lot and provide a secluded mountain getaway.</p>
     <div class="actions"><a class="btn solid" href="tel:+15408509508">Call (540) 850-9508</a><a class="btn line" href="mailto:katedaniels1@icloud.com">Email Kate</a></div>
+    <p class="price"><a href="stay.html">From <b>$225 per night</b> + cleaning fee + tax. Two night minimum stay.</a></p>
    </div>
   </div>
   <figure>
@@ -234,18 +239,31 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
    <h2>Five cottages</h2>
    <p>The CREEK HOUSE, PINES, RIDGE, LAURELWOOD and The LOG HOUSE: each sits on its own private lot.</p>
    <ol>
-   <li class="on"><a href="cottages.html#creek"><span class="nm">The Creek House</span><span class="hl">A Romantic Creekside Cottage in Virginia’s Blue Ridge Mountains</span><span class="go">See The Creek House</span></a>
-    <figure><img src="img/creek-ext-780.webp" srcset="img/creek-ext-480.webp 480w, img/creek-ext-640.webp 640w, img/creek-ext-780.webp 780w" sizes="(min-width: 900px) min(31rem, 44vw), calc(100vw - 2rem)" width="780" height="585" alt="The Creek House among green shrubs and trees" loading=lazy decoding=async></figure></li>
-   <li><a href="cottages.html#pines"><span class="nm">Pines</span><span class="hl">A Secluded Woodland Cottage for Two in Virginia’s Blue Ridge Mountains</span><span class="go">See Pines</span></a>
-    <figure><img src="img/pines-ext-780.webp" srcset="img/pines-ext-480.webp 480w, img/pines-ext-640.webp 640w, img/pines-ext-780.webp 780w" sizes="(min-width: 900px) min(31rem, 44vw), calc(100vw - 2rem)" width="780" height="585" alt="Pines cottage seen through the trees, with a hammock on the path" loading=lazy decoding=async></figure></li>
-   <li><a href="cottages.html#ridge"><span class="nm">Ridge</span><span class="hl">A Romantic Mountain Cottage with Beautiful Blue Ridge Views</span><span class="go">See Ridge</span></a>
-    <figure><img src="img/ridge-ext-780.webp" srcset="img/ridge-ext-480.webp 480w, img/ridge-ext-640.webp 640w, img/ridge-ext-780.webp 780w" sizes="(min-width: 900px) min(31rem, 44vw), calc(100vw - 2rem)" width="780" height="585" alt="Ridge cottage with its raised deck and a hammock between the trees" loading=lazy decoding=async></figure></li>
-   <li><a href="cottages.html#laurelwood"><span class="nm">Laurelwood</span><span class="hl">A Romantic Woodland Cottage Surrounded by Mountain Laurel</span><span class="go">See Laurelwood</span></a>
-    <figure><img src="img/laurel-ext-780.webp" srcset="img/laurel-ext-480.webp 480w, img/laurel-ext-640.webp 640w, img/laurel-ext-780.webp 780w" sizes="(min-width: 900px) min(31rem, 44vw), calc(100vw - 2rem)" width="780" height="585" alt="Laurelwood cottage at the end of a flagstone path" loading=lazy decoding=async></figure></li>
-   <li><a href="cottages.html#log-house"><span class="nm">The Log House</span><span class="hl">A Blue Ridge Mountain Retreat for Two Couples, Friends &amp; Small Groups</span><span class="go">See The Log House</span></a>
-    <figure><img src="img/log-ext-780.webp" srcset="img/log-ext-480.webp 480w, img/log-ext-640.webp 640w, img/log-ext-780.webp 780w" sizes="(min-width: 900px) min(31rem, 44vw), calc(100vw - 2rem)" width="780" height="585" alt="The Log House in the trees" loading=lazy decoding=async></figure></li>
+   <li><div class="row"><a href="cottages.html#creek"><span class="nm">The Creek House</span><span class="hl">A Romantic Creekside Cottage in Virginia’s Blue Ridge Mountains</span><span class="go">See The Creek House</span></a>
+    <div class="duo"><figure><img src="img/creek-ext-780.webp" srcset="img/creek-ext-480.webp 480w, img/creek-ext-640.webp 640w, img/creek-ext-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="The Creek House among green shrubs and trees" loading=lazy decoding=async></figure><figure><img src="img/creek-tub-780.webp" srcset="img/creek-tub-480.webp 480w, img/creek-tub-640.webp 640w, img/creek-tub-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Corner air-jet spa tub under three windows in The Creek House" loading=lazy decoding=async></figure></div></div></li>
+   <li><div class="row"><a href="cottages.html#pines"><span class="nm">Pines</span><span class="hl">A Secluded Woodland Cottage for Two in Virginia’s Blue Ridge Mountains</span><span class="go">See Pines</span></a>
+    <div class="duo"><figure><img src="img/pines-ext-780.webp" srcset="img/pines-ext-480.webp 480w, img/pines-ext-640.webp 640w, img/pines-ext-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Pines cottage seen through the trees, with a hammock on the path" loading=lazy decoding=async></figure><figure><img src="img/pines-living-780.webp" srcset="img/pines-living-480.webp 480w, img/pines-living-640.webp 640w, img/pines-living-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Living room in Pines with sofa, armchairs and dining table" loading=lazy decoding=async></figure></div></div></li>
+   <li><div class="row"><a href="cottages.html#ridge"><span class="nm">Ridge</span><span class="hl">A Romantic Mountain Cottage with Beautiful Blue Ridge Views</span><span class="go">See Ridge</span></a>
+    <div class="duo"><figure><img src="img/ridge-ext-780.webp" srcset="img/ridge-ext-480.webp 480w, img/ridge-ext-640.webp 640w, img/ridge-ext-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Ridge cottage with its raised deck and a hammock between the trees" loading=lazy decoding=async></figure><figure><img src="img/ridge-porch-780.webp" srcset="img/ridge-porch-480.webp 480w, img/ridge-porch-640.webp 640w, img/ridge-porch-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Rocking chair on the covered porch of Ridge, looking into the woods" loading=lazy decoding=async></figure></div></div></li>
+   <li><div class="row"><a href="cottages.html#laurelwood"><span class="nm">Laurelwood</span><span class="hl">A Romantic Woodland Cottage Surrounded by Mountain Laurel</span><span class="go">See Laurelwood</span></a>
+    <div class="duo"><figure><img src="img/laurel-ext-780.webp" srcset="img/laurel-ext-480.webp 480w, img/laurel-ext-640.webp 640w, img/laurel-ext-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Laurelwood cottage at the end of a flagstone path" loading=lazy decoding=async></figure><figure><img src="img/laurel-living-780.webp" srcset="img/laurel-living-480.webp 480w, img/laurel-living-640.webp 640w, img/laurel-living-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Living room in Laurelwood with fireplace and checked armchairs" loading=lazy decoding=async></figure></div></div></li>
+   <li><div class="row"><a href="cottages.html#log-house"><span class="nm">The Log House</span><span class="hl">A Blue Ridge Mountain Retreat for Two Couples, Friends &amp; Small Groups</span><span class="go">See The Log House</span></a>
+    <div class="duo"><figure><img src="img/log-ext-780.webp" srcset="img/log-ext-480.webp 480w, img/log-ext-640.webp 640w, img/log-ext-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="The Log House in the trees" loading=lazy decoding=async></figure><figure><img src="img/log-living-780.webp" srcset="img/log-living-480.webp 480w, img/log-living-640.webp 640w, img/log-living-780.webp 780w" sizes="(min-width: 561px) min(32.6rem, 50vw - 2.5rem), calc(100vw - 2rem)" width="780" height="585" alt="Living room of The Log House with log walls, beams and a red sofa" loading=lazy decoding=async></figure></div></div></li>
    </ol>
   </div>
+ </div>
+</section>
+
+<section class="reviews">
+ <div class="wrap">
+  <h2>Recent Traveler Reviews</h2>
+  <ul>
+   <li>“Based on online reviews I booked a short stay at the Creek House at Chesley Creek...”</li>
+   <li>“We have been going to Chesley Creek for 11 years. It offers us the chance to...”</li>
+   <li>“I found the Cottages at Chelsey Creek when they only had two cabins (they now have...”</li>
+   <li>“We stayed in the Ridge cabin at Chesley Creek Farm and it was the perfect weekend...”</li>
+  </ul>
+  <p class="src">Review excerpts as shown in the TripAdvisor box on their About Our Property page.</p>
  </div>
 </section>
 
@@ -272,6 +290,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
  <div class="kate">
   <div>
    <h2>Come stay in a place purpose-built to commune with nature and unwind!</h2>
+   <p style="margin-top:1rem">To check availability and book your stay, call or email Kate. Please contact us regarding availability for single-night or longer-term stays.</p>
    <dl>
     <dt>Hospitality Manager</dt><dd>Kate Daniels</dd>
     <dt>Phone</dt><dd><a href="tel:+15408509508">(540) 850-9508</a></dd>
@@ -302,13 +321,6 @@ footer .legal{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(25
  if(d&&h&&'IntersectionObserver'in window){new IntersectionObserver(function(e){d.classList.toggle('show',!e[0].isIntersecting)}).observe(h)}
  var mq=matchMedia('(min-width: 900px)');
  document.querySelectorAll('details.am').forEach(function(x){if(mq.matches)x.open=true});
- var idx=document.querySelector('.idx');
- if(idx){var lis=idx.querySelectorAll('li'),fr=idx.querySelector('ol');
-  function place(){var t=fr?fr.offsetTop:0;lis.forEach(function(l){var f=l.querySelector('figure');if(f)f.style.top=t+'px'})}
-  function on(l){lis.forEach(function(x){x.classList.toggle('on',x===l)})}
-  lis.forEach(function(l){l.addEventListener('mouseenter',function(){on(l)});l.addEventListener('focusin',function(){on(l)})});
-  place();addEventListener('resize',place);
- }
 })();
 </script>
 </body>
