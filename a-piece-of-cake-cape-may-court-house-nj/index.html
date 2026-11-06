@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A Piece of Cake, custom cakes in Cape May Court House, NJ</title>
+<meta name="description" content="Custom cakes for weddings, anniversaries, birthdays, graduations, showers and more, at 709 Rt. 9 South, Cape May Court House, NJ.">
+<meta name="theme-color" content="#2b1712">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/caprasimo.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-400.webp 400w, img/hero-m-800.webp 800w" imagesizes="calc(100vw - 2rem)" media="(max-width: 859px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-900.webp" imagesrcset="img/hero-600.webp 600w, img/hero-900.webp 900w, img/hero-1200.webp 1200w" imagesizes="32rem" media="(min-width: 860px)" fetchpriority="high">
+<style>
+@font-face{font-family:Caprasimo;font-weight:400;font-display:swap;src:url(fonts/caprasimo.woff2) format("woff2")}
+@font-face{font-family:Karla;font-weight:300 800;font-display:swap;src:url(fonts/karla.woff2) format("woff2")}
+@font-face{font-family:Damion;font-weight:400;font-display:swap;src:url(fonts/damion.woff2) format("woff2")}
+/* Buttercream pink from the shop's windows, cocoa for type, the near-black their cakes are photographed on,
+   and the fuchsia of the storefront curtains and sign. */
+:root{--sugar:#fbeef2;--sugar-2:#f5dde5;--cocoa:#2b1712;--case:#120a08;--fuchsia:#b3195c;--fuchsia-2:#951249;--rose:#ff9cc2;
+--pad:clamp(1rem,4vw,3rem);--max:72rem}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--sugar);color:var(--cocoa);font:400 1.0625rem/1.65 Karla,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--fuchsia);outline-offset:3px}
+h1,h2,h3,.display{font-family:Caprasimo,Georgia,serif;font-weight:400;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{background:var(--case);color:#e9d9de;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem}
+
+/* Header: their embossed white logo needs the dark band it was drawn for. */
+.top{background:var(--cocoa);color:#fbeef2}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand img{height:2.5rem;width:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;font-weight:600;font-size:.98rem}
+.nav > a{text-decoration:none;padding:.3rem 0}
+.nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:3px;text-underline-offset:7px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.1rem;padding:.8rem 1.35rem;border-radius:999px;
+background:var(--fuchsia);color:#fff;font-weight:700;text-decoration:none;line-height:1.2;transition:background-color .15s}
+.btn:hover{background:var(--fuchsia-2)}
+.btn.line{background:transparent;color:var(--cocoa);box-shadow:inset 0 0 0 2px var(--cocoa)}
+.btn.line:hover{background:var(--cocoa);color:#fff}
+.nav .btn{min-height:2.6rem;padding:.5rem 1.1rem;font-size:.92rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.55rem 1rem;border-radius:999px;box-shadow:inset 0 0 0 2px #fbeef2}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + .6rem);background:var(--cocoa);border-radius:1rem;padding:.6rem;min-width:13rem;z-index:30;box-shadow:0 18px 40px rgb(18 10 8/.35)}
+.menu nav a{display:block;padding:.75rem 1rem;text-decoration:none;font-weight:600;border-radius:.6rem}
+.menu nav a:hover,.menu nav a[aria-current]{background:#4a2a21}
+
+/* Footer */
+.foot{background:var(--cocoa);color:#f0dfe5;margin-top:5rem;padding:3rem 0 2rem;font-size:.95rem}
+.foot .wrap{display:grid;gap:2rem;grid-template-columns:1.2fr 1fr 1fr}
+.foot img{height:2.4rem;width:auto;margin-bottom:.8rem}
+.foot h2{font-family:Karla,sans-serif;font-weight:700;font-size:1rem;margin-bottom:.5rem}
+.foot ul{list-style:none;padding:0}
+.foot li{margin:.2rem 0}
+.foot .legal{grid-column:1/-1;border-top:1px solid #4a2a21;padding-top:1.2rem;color:#cdb6be;font-size:.85rem}
+
+/* Lightbox */
+.tile{margin:0}
+.zoom{display:block;width:100%;padding:0;border:0;background:var(--case);border-radius:.9rem;overflow:hidden;cursor:zoom-in}
+.zoom img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .35s ease}
+.zoom:hover img{transform:scale(1.03)}
+dialog.lb{margin:auto;padding:0;border:0;background:var(--case);border-radius:1rem;max-width:min(94vw,62rem);max-height:92vh;overflow:hidden}
+dialog.lb::backdrop{background:rgb(18 10 8/.82)}
+dialog.lb img{max-height:calc(92vh - 4rem);width:auto;max-width:100%;margin:0 auto}
+dialog.lb p{color:#f0dfe5;font-size:.95rem;padding:.75rem 4.5rem .9rem 1.1rem;min-height:3.4rem}
+dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;color:var(--cocoa);border:0;border-radius:999px;font:700 .9rem Karla,sans-serif;padding:.55rem 1rem;cursor:pointer}
+
+/* Sticky phone bar, after the first screen, on phones */
+.dock{display:none}
+
+@media (max-width:859px){
+  .nav > a{display:none}
+  .nav > .btn{display:none}
+  .menu{display:block}
+  .brand img{height:2.1rem}
+  .foot .wrap{grid-template-columns:1fr}
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));
+    background:var(--cocoa);transform:translateY(110%);transition:transform .25s ease}
+  .dock.on{transform:none}
+  .dock .btn{min-height:2.9rem}
+  .dock .btn.line{color:#fbeef2;box-shadow:inset 0 0 0 2px #fbeef2}
+  body.has-dock{padding-bottom:4.4rem}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Hero: the line from their logo, and one cake standing in the dark case it was photographed in. */
+.hero .wrap{display:grid;grid-template-columns:1fr 32rem;gap:clamp(2rem,5vw,4.5rem);align-items:center;padding-top:2.5rem;padding-bottom:3rem}
+.hero h1{font-size:clamp(2.55rem,6.2vw,5.4rem);line-height:.98;letter-spacing:-.01em}
+.hero .lede{font-size:clamp(1.08rem,1.6vw,1.25rem);max-width:34rem;margin:1.3rem 0 1.7rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.note{margin-top:1.1rem;font-size:.95rem;color:#5b3d34}
+.case{background:var(--case);border-radius:1.4rem;overflow:hidden}
+.case img{width:100%}
+.hero .case{aspect-ratio:3/4}
+.hero .case img{height:100%;object-fit:cover}
+
+/* The signature: their own call-and-response, the answer written in piping script. */
+.bake{background:var(--case);color:#fbeef2;padding:clamp(3.5rem,8vw,6.5rem) 0}
+.bake .wrap{display:grid;grid-template-columns:1fr 26rem;gap:clamp(2rem,6vw,5rem);align-items:center}
+.ask{font-family:Karla,system-ui,sans-serif;font-weight:400;text-wrap:pretty;font-size:clamp(1.25rem,2.1vw,1.6rem);line-height:1.4;max-width:36rem;color:#f3e2e8}
+.answer{display:block;font-family:Damion,cursive;color:var(--rose);font-size:clamp(2.6rem,5.2vw,4.2rem);line-height:1.15;margin:.35rem 0 2.6rem;transform:rotate(-3deg);transform-origin:left center;width:max-content;max-width:100%}
+.js .answer{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.6,.05,.3,1)}
+.js .answer.on{clip-path:inset(0 -5% 0 0)}
+.bake .end{font-family:Caprasimo,Georgia,serif;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.1;margin-bottom:1.5rem;max-width:30rem}
+.bake figure{margin:0}
+.bake figcaption{font-size:.9rem;color:#cdb6be;margin-top:.7rem}
+
+/* We serve: their own list of occasions, set big, each one a door into Our cakes. */
+.serve{padding:clamp(3.5rem,8vw,6rem) 0 1rem}
+.serve h2{margin-bottom:1.6rem}
+.occasions{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.2rem 0;font-family:Caprasimo,Georgia,serif;font-size:clamp(1.6rem,3.6vw,2.9rem);line-height:1.25}
+.occasions li:not(:last-child)::after{content:"/";color:var(--fuchsia);margin:0 .45em;font-family:Karla,sans-serif;font-weight:300}
+.occasions a{text-decoration:none;background-image:linear-gradient(var(--rose),var(--rose));background-size:100% .18em;background-position:0 88%;background-repeat:no-repeat}
+.occasions a:hover{color:var(--fuchsia)}
+.serve .also{margin-top:1.4rem;font-size:1.1rem;max-width:40rem}
+
+/* Ordering: the shop on Route 9 and the one rule that matters, two weeks. */
+.order{padding:clamp(3rem,7vw,5rem) 0 0}
+.order .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.ticket{background:#fff;border-radius:1.2rem;padding:clamp(1.5rem,3.5vw,2.4rem);box-shadow:0 0 0 2px var(--sugar-2),0 24px 50px -30px rgb(43 23 18/.45)}
+.ticket h2{margin-bottom:1rem}
+.ticket .weeks{font-size:1.2rem;font-weight:700;margin-bottom:1rem}
+.ticket dl{display:grid;grid-template-columns:auto 1fr;gap:.45rem 1.1rem;margin:1.2rem 0 1.5rem}
+.ticket dt{font-weight:700}
+.ticket dd a{color:var(--fuchsia);font-weight:700}
+.shop img{border-radius:1.2rem;width:100%}
+.shop figcaption{font-size:.92rem;margin-top:.6rem;color:#5b3d34}
+
+@media (max-width:859px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:1.4rem;gap:1.6rem}
+  .hero .lede{margin:.9rem 0 1.2rem}
+  .hero .case{aspect-ratio:4/3}
+  .ctas .btn{flex:1 1 100%}
+  .bake .wrap,.order .wrap{grid-template-columns:1fr}
+  .bake figure{max-width:22rem}
+  .answer{margin-bottom:2rem}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="A Piece of Cake, custom cakes in Cape May Court House, NJ">
+<meta property="og:description" content="Custom cakes for weddings, anniversaries, birthdays, graduations, showers and more, at 709 Rt. 9 South, Cape May Court House, NJ.">
+<meta property="og:url" content="https://previa.mhstecnologia.com/a-piece-of-cake-cape-may-court-house-nj/">
+<meta property="og:image" content="https://previa.mhstecnologia.com/a-piece-of-cake-cape-may-court-house-nj/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for A Piece of Cake. Not affiliated with or endorsed by A Piece of Cake.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.png" width="420" height="86" alt="A Piece of Cake, if you can think it we can bake it"></a>
+    <div class="nav">
+      <a href="index.html" aria-current="page">Home</a><a href="cakes.html">Our cakes</a><a href="gallery.html">Gallery</a><a href="about.html">About us</a><a href="contact.html">Contact us</a>
+      <a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a>
+      <details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html" aria-current="page">Home</a><a href="cakes.html">Our cakes</a><a href="gallery.html">Gallery</a><a href="about.html">About us</a><a href="contact.html">Contact us</a><a href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a><a href="tel:+16098467748">Call 609-846-7748</a></nav></details>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>If you can think it, we can bake it.</h1>
+      <p class="lede">Custom cakes for weddings, anniversaries, birthdays, graduations, showers and more. Bring us your ideas or photos and we will create something delicious and beautiful just for you.</p>
+      <div class="ctas" id="first-cta"><a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your cake idea</a><a class="btn line" href="tel:+16098467748">Call 609-846-7748</a></div>
+      <p class="note">Custom orders need 2 weeks advance notice.</p>
+    </div>
+    <div class="case">
+      <picture>
+        <source media="(max-width: 859px)" srcset="img/hero-m-400.webp 400w, img/hero-m-800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="600">
+        <img src="img/hero-900.webp" srcset="img/hero-600.webp 600w, img/hero-900.webp 900w, img/hero-1200.webp 1200w" sizes="32rem" width="900" height="1207" alt="Three-tier cake with buttercream swags and pink and violet sugar roses" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section class="bake" aria-labelledby="bake-h">
+  <div class="wrap">
+    <div>
+      <h2 id="bake-h" class="ask">Want a cake that looks like a seashore, complete with sandcastle?</h2>
+      <span class="answer">We can bake it.</span>
+      <p class="ask">How about a box of popcorn and a team hat from your favorite team, so real you can almost smell the butter on the popcorn and you may be tempted to put the hat on?</p>
+      <span class="answer">We can bake it.</span>
+      <p class="end">There is no end to the imagination.</p>
+      <a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Send us your idea or photo</a>
+    </div>
+    <figure>
+      <div class="case"><img src="img/shore-500.webp" srcset="img/shore-500.webp 500w, img/shore-784.webp 784w" sizes="(min-width: 860px) 26rem, 22rem" width="500" height="765" alt="Three-tier cake with sugar starfish, shells, coral and sea grass under a heart topper" loading="lazy" decoding="async"></div>
+      <figcaption>A seaside cake from our wedding gallery.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="serve" aria-labelledby="serve-h">
+  <div class="wrap">
+    <h2 id="serve-h">We serve</h2>
+    <ul class="occasions">
+      <li><a href="cakes.html#weddings">Weddings</a></li>
+      <li><a href="cakes.html#anniversaries">Anniversaries</a></li>
+      <li><a href="cakes.html#birthdays">Birthdays</a></li>
+      <li><a href="cakes.html#bridal-showers">Bridal showers</a></li>
+      <li><a href="cakes.html#baby-showers">Baby showers</a></li>
+      <li><a href="cakes.html#holidays">Holidays</a></li>
+      <li><a href="cakes.html#cupcakes">Cupcakes</a></li>
+      <li><a href="cakes.html#brownie-bites">Brownie bites</a></li>
+      <li><a href="cakes.html#muffins">Muffins</a></li>
+    </ul>
+    <p class="also">Graduations, too. Cupcakes and butter cakes, pies, sticky buns, muffins, brownies, and much more.</p>
+  </div>
+</section>
+
+<section class="order" aria-labelledby="order-h">
+  <div class="wrap">
+    <div class="ticket">
+      <h2 id="order-h">Ordering a custom cake</h2>
+      <p class="weeks">Custom orders need 2 weeks advance notice.</p>
+      <p>Bring us your ideas or photos and let us create a delicious and beautiful creation just for you.</p>
+      <dl>
+        <dt>Email</dt><dd><a href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">orders@apieceofcake11.com</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+16098467748">609-846-7748</a></dd>
+        <dt>Shop</dt><dd>709 Rt. 9 South, Cape May Court House, NJ 08210</dd>
+        <dt>Paying</dt><dd>We accept credit cards.</dd>
+      </dl>
+      <a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your cake idea</a>
+    </div>
+    <figure class="shop">
+      <img src="img/storefront-587.webp" srcset="img/storefront-587.webp 587w" sizes="(min-width: 860px) 32rem, calc(100vw - 2rem)" width="587" height="324" alt="The A Piece of Cake shop, with its pink sign and pink curtains in the windows" loading="lazy" decoding="async">
+      <figcaption>709 Rt. 9 South, Cape May Court House.</figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <img src="img/logo.png" width="420" height="86" alt="A Piece of Cake" loading="lazy">
+      <p>709 Rt. 9 South<br>Cape May Court House, NJ 08210</p>
+    </div>
+    <div>
+      <h2>Order</h2>
+      <ul>
+        <li><a href="tel:+16098467748">Tel. 609-846-7748</a></li>
+        <li><a href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">orders@apieceofcake11.com</a></li>
+        <li>Custom orders need 2 weeks advance notice.</li>
+        <li>We accept credit cards.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Pages</h2>
+      <ul><li><a href="index.html">Home</a></li><li><a href="cakes.html">Our cakes</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact us</a></li></ul>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for A Piece of Cake. Not affiliated with or endorsed by A Piece of Cake. Photos and text from apieceofcake11.com. Removed on request: contato@mhstecnologia.com.br</p>
+  </div>
+</footer>
+<div class="dock" aria-label="Order"><a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a><a class="btn line" href="tel:+16098467748">Call</a></div>
+<dialog class="lb" id="lb" aria-label="Photo"><img src="data:," alt=""><p></p><button type="button">Close</button></dialog>
+
+<script>
+(function(){
+  var d=document;
+  // Lightbox: one centred dialog for every enlargeable photo.
+  var lb=d.getElementById('lb');
+  if(lb){
+    var im=lb.querySelector('img'),cap=lb.querySelector('p');
+    d.addEventListener('click',function(e){
+      var b=e.target.closest('.zoom');if(!b)return;
+      var t=b.querySelector('img');im.src=b.dataset.full;im.alt=t.alt;cap.textContent=t.alt;lb.showModal();
+    });
+    lb.addEventListener('click',function(e){if(e.target===lb||e.target.closest('button'))lb.close();});
+  }
+  // Piping: each "We can bake it." writes itself once, when it comes into view.
+  var pipes=d.querySelectorAll('.bake .answer');
+  if(pipes.length&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.6});
+    pipes.forEach(function(p){io.observe(p);});
+  }else{pipes.forEach(function(p){p.classList.add('on');});}
+  // Phone bar: shows once the first call to action has scrolled away.
+  var dock=d.querySelector('.dock'),cta=d.getElementById('first-cta');
+  if(dock&&cta&&'IntersectionObserver' in window){
+    d.body.classList.add('has-dock');
+    new IntersectionObserver(function(es){dock.classList.toggle('on',!es[0].isIntersecting&&es[0].boundingClientRect.top<0);}).observe(cta);
+  }
+})();
+</script>
+
+</body>
+</html>

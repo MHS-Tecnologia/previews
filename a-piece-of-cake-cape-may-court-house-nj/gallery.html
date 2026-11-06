@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gallery · A Piece of Cake</title>
+<meta name="description" content="Cakes from the A Piece of Cake albums.">
+<meta name="theme-color" content="#2b1712">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/caprasimo.woff2" crossorigin>
+<style>
+@font-face{font-family:Caprasimo;font-weight:400;font-display:swap;src:url(fonts/caprasimo.woff2) format("woff2")}
+@font-face{font-family:Karla;font-weight:300 800;font-display:swap;src:url(fonts/karla.woff2) format("woff2")}
+@font-face{font-family:Damion;font-weight:400;font-display:swap;src:url(fonts/damion.woff2) format("woff2")}
+/* Buttercream pink from the shop's windows, cocoa for type, the near-black their cakes are photographed on,
+   and the fuchsia of the storefront curtains and sign. */
+:root{--sugar:#fbeef2;--sugar-2:#f5dde5;--cocoa:#2b1712;--case:#120a08;--fuchsia:#b3195c;--fuchsia-2:#951249;--rose:#ff9cc2;
+--pad:clamp(1rem,4vw,3rem);--max:72rem}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--sugar);color:var(--cocoa);font:400 1.0625rem/1.65 Karla,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--fuchsia);outline-offset:3px}
+h1,h2,h3,.display{font-family:Caprasimo,Georgia,serif;font-weight:400;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{background:var(--case);color:#e9d9de;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem}
+
+/* Header: their embossed white logo needs the dark band it was drawn for. */
+.top{background:var(--cocoa);color:#fbeef2}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand img{height:2.5rem;width:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;font-weight:600;font-size:.98rem}
+.nav > a{text-decoration:none;padding:.3rem 0}
+.nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:3px;text-underline-offset:7px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.1rem;padding:.8rem 1.35rem;border-radius:999px;
+background:var(--fuchsia);color:#fff;font-weight:700;text-decoration:none;line-height:1.2;transition:background-color .15s}
+.btn:hover{background:var(--fuchsia-2)}
+.btn.line{background:transparent;color:var(--cocoa);box-shadow:inset 0 0 0 2px var(--cocoa)}
+.btn.line:hover{background:var(--cocoa);color:#fff}
+.nav .btn{min-height:2.6rem;padding:.5rem 1.1rem;font-size:.92rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.55rem 1rem;border-radius:999px;box-shadow:inset 0 0 0 2px #fbeef2}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + .6rem);background:var(--cocoa);border-radius:1rem;padding:.6rem;min-width:13rem;z-index:30;box-shadow:0 18px 40px rgb(18 10 8/.35)}
+.menu nav a{display:block;padding:.75rem 1rem;text-decoration:none;font-weight:600;border-radius:.6rem}
+.menu nav a:hover,.menu nav a[aria-current]{background:#4a2a21}
+
+/* Footer */
+.foot{background:var(--cocoa);color:#f0dfe5;margin-top:5rem;padding:3rem 0 2rem;font-size:.95rem}
+.foot .wrap{display:grid;gap:2rem;grid-template-columns:1.2fr 1fr 1fr}
+.foot img{height:2.4rem;width:auto;margin-bottom:.8rem}
+.foot h2{font-family:Karla,sans-serif;font-weight:700;font-size:1rem;margin-bottom:.5rem}
+.foot ul{list-style:none;padding:0}
+.foot li{margin:.2rem 0}
+.foot .legal{grid-column:1/-1;border-top:1px solid #4a2a21;padding-top:1.2rem;color:#cdb6be;font-size:.85rem}
+
+/* Lightbox */
+.tile{margin:0}
+.zoom{display:block;width:100%;padding:0;border:0;background:var(--case);border-radius:.9rem;overflow:hidden;cursor:zoom-in}
+.zoom img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .35s ease}
+.zoom:hover img{transform:scale(1.03)}
+dialog.lb{margin:auto;padding:0;border:0;background:var(--case);border-radius:1rem;max-width:min(94vw,62rem);max-height:92vh;overflow:hidden}
+dialog.lb::backdrop{background:rgb(18 10 8/.82)}
+dialog.lb img{max-height:calc(92vh - 4rem);width:auto;max-width:100%;margin:0 auto}
+dialog.lb p{color:#f0dfe5;font-size:.95rem;padding:.75rem 4.5rem .9rem 1.1rem;min-height:3.4rem}
+dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;color:var(--cocoa);border:0;border-radius:999px;font:700 .9rem Karla,sans-serif;padding:.55rem 1rem;cursor:pointer}
+
+/* Sticky phone bar, after the first screen, on phones */
+.dock{display:none}
+
+@media (max-width:859px){
+  .nav > a{display:none}
+  .nav > .btn{display:none}
+  .menu{display:block}
+  .brand img{height:2.1rem}
+  .foot .wrap{grid-template-columns:1fr}
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));
+    background:var(--cocoa);transform:translateY(110%);transition:transform .25s ease}
+  .dock.on{transform:none}
+  .dock .btn{min-height:2.9rem}
+  .dock .btn.line{color:#fbeef2;box-shadow:inset 0 0 0 2px #fbeef2}
+  body.has-dock{padding-bottom:4.4rem}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+.head{padding-block:clamp(2.2rem,6vw,4rem) clamp(1.5rem,4vw,2.5rem)}
+.head h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1}
+.head p{font-size:clamp(1.08rem,1.6vw,1.25rem);max-width:40rem;margin-top:1rem}
+.occ{display:grid;grid-template-columns:18rem 1fr;gap:3rem;padding-block:2.2rem;border-top:2px solid var(--sugar-2)}
+.occ h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:.8rem}
+.occ .side{position:sticky;top:1.5rem;align-self:start}
+.occ .side a{color:var(--fuchsia);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.wall{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.album{padding-block:2rem;border-top:2px solid var(--sugar-2)}
+.grid > .tile:last-child:nth-child(odd) .zoom img{aspect-ratio:2/1}
+.grid > .tile:last-child:nth-child(odd){grid-column:1/-1}
+.album h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:1.1rem}
+.prose{max-width:38rem}
+.prose p{margin-bottom:1.1rem;font-size:1.1rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.lines{list-style:none;padding:0;margin:1.5rem 0}
+.lines li{font-size:1.15rem;padding:1rem 0;border-top:2px solid var(--sugar-2)}
+.lines .answer{font-family:Damion,cursive;color:var(--fuchsia);font-size:2rem;display:block;line-height:1.2}
+.photo{margin:0}
+.photo img{border-radius:1.2rem;width:100%}
+.photo figcaption{font-size:.92rem;margin-top:.6rem;color:#5b3d34}
+.darkphoto{background:var(--case);border-radius:1.2rem;overflow:hidden}
+.card{background:#fff;border-radius:1.2rem;padding:clamp(1.4rem,3.5vw,2.2rem);box-shadow:0 0 0 2px var(--sugar-2)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1.2rem;margin:0 0 1.5rem}
+.card dt{font-weight:700}
+.card dd a{color:var(--fuchsia);font-weight:700}
+.big{font-family:Caprasimo,Georgia,serif;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.15;margin-bottom:1rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+@media (max-width:859px){
+  .occ{grid-template-columns:1fr;gap:1.1rem}
+  .occ .side{position:static}
+  .grid{gap:.6rem}
+  .wall{grid-template-columns:repeat(2,1fr);gap:.6rem}
+  .wall > .tile:last-child:nth-child(odd){grid-column:1/-1}
+  .wall > .tile:last-child:nth-child(odd) .zoom img{aspect-ratio:2/1}
+  .split{grid-template-columns:1fr}
+  .ctas .btn{flex:1 1 100%}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for A Piece of Cake. Not affiliated with or endorsed by A Piece of Cake.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.png" width="420" height="86" alt="A Piece of Cake, if you can think it we can bake it"></a>
+    <div class="nav">
+      <a href="index.html">Home</a><a href="cakes.html">Our cakes</a><a href="gallery.html" aria-current="page">Gallery</a><a href="about.html">About us</a><a href="contact.html">Contact us</a>
+      <a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a>
+      <details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html">Home</a><a href="cakes.html">Our cakes</a><a href="gallery.html" aria-current="page">Gallery</a><a href="about.html">About us</a><a href="contact.html">Contact us</a><a href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a><a href="tel:+16098467748">Call 609-846-7748</a></nav></details>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<div class="head wrap">
+  <h1>Gallery</h1>
+  <p>Do you want to see what we did so far? A few cakes from each of our albums. Tap any photo to see it larger.</p>
+</div>
+
+<section class="album wrap" aria-labelledby="a-wedding">
+  <h2 id="a-wedding">Wedding</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/shore-784.webp" aria-label="Enlarge: Three-tier cake with sugar starfish, shells, coral and sea grass under a heart topper"><img src="img/shore-500.webp" srcset="img/shore-500.webp 500w, img/shore-784.webp 784w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="765" alt="Three-tier cake with sugar starfish, shells, coral and sea grass under a heart topper" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/blackwhite-659.webp" aria-label="Enlarge: Two-tier white cake with black scrollwork and red sugar roses"><img src="img/blackwhite-500.webp" srcset="img/blackwhite-500.webp 500w, img/blackwhite-659.webp 659w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="493" alt="Two-tier white cake with black scrollwork and red sugar roses" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/nautical-880.webp" aria-label="Enlarge: Navy-striped tiers with a rope border, a red sugar flower and an anchor on top"><img src="img/nautical-500.webp" srcset="img/nautical-500.webp 500w, img/nautical-800.webp 800w, img/nautical-880.webp 880w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="682" alt="Navy-striped tiers with a rope border, a red sugar flower and an anchor on top" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-anniversaries">
+  <h2 id="a-anniversaries">Anniversaries</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/hero-1200.webp" aria-label="Enlarge: Three-tier cake with buttercream swags and pink and violet sugar roses"><img src="img/hero-600.webp" srcset="img/hero-600.webp 600w, img/hero-900.webp 900w, img/hero-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="600" height="804" alt="Three-tier cake with buttercream swags and pink and violet sugar roses" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/berry-1200.webp" aria-label="Enlarge: Layer cake with cream filling, dressed with fresh berries"><img src="img/berry-500.webp" srcset="img/berry-500.webp 500w, img/berry-800.webp 800w, img/berry-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="670" alt="Layer cake with cream filling, dressed with fresh berries" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/sugarflowers-1200.webp" aria-label="Enlarge: Close-up of white sugar flowers with silver centers"><img src="img/sugarflowers-500.webp" srcset="img/sugarflowers-500.webp 500w, img/sugarflowers-800.webp 800w, img/sugarflowers-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="670" alt="Close-up of white sugar flowers with silver centers" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-birthdays">
+  <h2 id="a-birthdays">Birthdays</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/floralhappy-1200.webp" aria-label="Enlarge: Yellow cake crowned with pink, white and green sugar flowers"><img src="img/floralhappy-500.webp" srcset="img/floralhappy-500.webp 500w, img/floralhappy-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="373" alt="Yellow cake crowned with pink, white and green sugar flowers" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/first-720.webp" aria-label="Enlarge: Small cake piped in blue and green rosettes with a big green number 1"><img src="img/first-500.webp" srcset="img/first-500.webp 500w, img/first-720.webp 720w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="667" alt="Small cake piped in blue and green rosettes with a big green number 1" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/doghouse-601.webp" aria-label="Enlarge: Two-tier green and blue cake with a dog house and puppies"><img src="img/doghouse-500.webp" srcset="img/doghouse-500.webp 500w, img/doghouse-601.webp 601w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="499" alt="Two-tier green and blue cake with a dog house and puppies" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-bridal-shower">
+  <h2 id="a-bridal-shower">Bridal shower</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/love-960.webp" aria-label="Enlarge: Green cake with pink Love lettering and sugar daisies"><img src="img/love-500.webp" srcset="img/love-500.webp 500w, img/love-960.webp 960w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="466" alt="Green cake with pink Love lettering and sugar daisies" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/dress-720.webp" aria-label="Enlarge: Dress-shaped cake beside a teal cupcake bouquet"><img src="img/dress-500.webp" srcset="img/dress-500.webp 500w, img/dress-720.webp 720w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="667" alt="Dress-shaped cake beside a teal cupcake bouquet" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/bouquet-1200.webp" aria-label="Enlarge: Cupcake bouquet of teal rosettes in a white pot"><img src="img/bouquet-500.webp" srcset="img/bouquet-500.webp 500w, img/bouquet-800.webp 800w, img/bouquet-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="669" alt="Cupcake bouquet of teal rosettes in a white pot" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-baby-shower">
+  <h2 id="a-baby-shower">Baby shower</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/topsy-656.webp" aria-label="Enlarge: Topsy-turvy baby shower cake with a bow on top and letter blocks around the base"><img src="img/topsy-500.webp" srcset="img/topsy-500.webp 500w, img/topsy-656.webp 656w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="457" alt="Topsy-turvy baby shower cake with a bow on top and letter blocks around the base" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/babycups-959.webp" aria-label="Enlarge: Rows of baby-face cupcakes in blue"><img src="img/babycups-500.webp" srcset="img/babycups-500.webp 500w, img/babycups-959.webp 959w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="304" alt="Rows of baby-face cupcakes in blue" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/babyshower-900.webp" aria-label="Enlarge: Cupcakes with babies in pea pods, on a plate that reads Boy or Girl, what will I be?"><img src="img/babyshower-500.webp" srcset="img/babyshower-500.webp 500w, img/babyshower-900.webp 900w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="239" alt="Cupcakes with babies in pea pods, on a plate that reads Boy or Girl, what will I be?" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-holidays">
+  <h2 id="a-holidays">Holidays</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/pumpkin-1200.webp" aria-label="Enlarge: Round cake with an orange piped border and sugar pumpkins"><img src="img/pumpkin-500.webp" srcset="img/pumpkin-500.webp 500w, img/pumpkin-800.webp 800w, img/pumpkin-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="500" alt="Round cake with an orange piped border and sugar pumpkins" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/snowman-1200.webp" aria-label="Enlarge: Snowman cake with a top hat and a carrot nose"><img src="img/snowman-500.webp" srcset="img/snowman-500.webp 500w, img/snowman-800.webp 800w, img/snowman-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="670" alt="Snowman cake with a top hat and a carrot nose" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/valentine-597.webp" aria-label="Enlarge: Heart-shaped cake with red roses and Happy Valentine&#x27;s Day in red icing"><img src="img/valentine-500.webp" srcset="img/valentine-500.webp 500w, img/valentine-597.webp 597w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="544" alt="Heart-shaped cake with red roses and Happy Valentine&#x27;s Day in red icing" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-cupcakes">
+  <h2 id="a-cupcakes">Cupcakes</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/daisies-1200.webp" aria-label="Enlarge: Cupcakes in yellow and white frosting with sugar daisies"><img src="img/daisies-500.webp" srcset="img/daisies-500.webp 500w, img/daisies-800.webp 800w, img/daisies-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="513" alt="Cupcakes in yellow and white frosting with sugar daisies" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/toppers-1200.webp" aria-label="Enlarge: Cupcakes with colorful sugar toppers"><img src="img/toppers-500.webp" srcset="img/toppers-500.webp 500w, img/toppers-800.webp 800w, img/toppers-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="682" alt="Cupcakes with colorful sugar toppers" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/tower-716.webp" aria-label="Enlarge: Cupcake tower of red cupcakes"><img src="img/tower-500.webp" srcset="img/tower-500.webp 500w, img/tower-716.webp 716w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="670" alt="Cupcake tower of red cupcakes" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-brownie-bites-and-muffins">
+  <h2 id="a-brownie-bites-and-muffins">Brownie bites and muffins</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/bouquets-1200.webp" aria-label="Enlarge: Lime and pink rosette bouquets on white stands, from the brownie bites album"><img src="img/bouquets-500.webp" srcset="img/bouquets-500.webp 500w, img/bouquets-800.webp 800w, img/bouquets-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="667" alt="Lime and pink rosette bouquets on white stands, from the brownie bites album" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/muffins-1200.webp" aria-label="Enlarge: Two muffins on a painted plate"><img src="img/muffins-500.webp" srcset="img/muffins-500.webp 500w, img/muffins-800.webp 800w, img/muffins-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="375" alt="Two muffins on a painted plate" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/stickybuns-448.webp" aria-label="Enlarge: Muffins and iced sticky buns in the case"><img src="img/stickybuns-448.webp" srcset="img/stickybuns-448.webp 448w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="448" height="600" alt="Muffins and iced sticky buns in the case" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-specialty-cakes">
+  <h2 id="a-specialty-cakes">Specialty cakes</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/bee-1200.webp" aria-label="Enlarge: A smiling bee sitting on a pink sugar clam shell"><img src="img/bee-500.webp" srcset="img/bee-500.webp 500w, img/bee-800.webp 800w, img/bee-1200.webp 1200w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="373" alt="A smiling bee sitting on a pink sugar clam shell" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/clam-733.webp" aria-label="Enlarge: Blue sheet cake that reads It&#x27;s about time!, with a bee on a sugar clam shell"><img src="img/clam-500.webp" srcset="img/clam-500.webp 500w, img/clam-733.webp 733w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="409" alt="Blue sheet cake that reads It&#x27;s about time!, with a bee on a sugar clam shell" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/justbecause-960.webp" aria-label="Enlarge: Sheet cake that reads Just Because, with a red and yellow flower border"><img src="img/justbecause-500.webp" srcset="img/justbecause-500.webp 500w, img/justbecause-960.webp 960w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="373" alt="Sheet cake that reads Just Because, with a red and yellow flower border" loading="lazy" decoding="async"></button></figure></div>
+</section>
+<section class="album wrap" aria-labelledby="a-from-our-front-page">
+  <h2 id="a-from-our-front-page">From our front page</h2>
+  <div class="wall"><figure class="tile"><button type="button" class="zoom" data-full="img/redroses-900.webp" aria-label="Enlarge: Tiered white cake with cascading red roses, set among candles"><img src="img/redroses-500.webp" srcset="img/redroses-500.webp 500w, img/redroses-900.webp 900w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="239" alt="Tiered white cake with cascading red roses, set among candles" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/steampunk-900.webp" aria-label="Enlarge: Cake covered in gears, wings, a pocket watch and dark sugar roses"><img src="img/steampunk-500.webp" srcset="img/steampunk-500.webp 500w, img/steampunk-900.webp 900w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="239" alt="Cake covered in gears, wings, a pocket watch and dark sugar roses" loading="lazy" decoding="async"></button></figure><figure class="tile"><button type="button" class="zoom" data-full="img/flowercup-900.webp" aria-label="Enlarge: Close-up of a cupcake with a pink and green sugar flower"><img src="img/flowercup-500.webp" srcset="img/flowercup-500.webp 500w, img/flowercup-900.webp 900w" sizes="(min-width: 860px) 25.5rem, calc(50vw - 1.3rem)" width="500" height="239" alt="Close-up of a cupcake with a pink and green sugar flower" loading="lazy" decoding="async"></button></figure></div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <img src="img/logo.png" width="420" height="86" alt="A Piece of Cake" loading="lazy">
+      <p>709 Rt. 9 South<br>Cape May Court House, NJ 08210</p>
+    </div>
+    <div>
+      <h2>Order</h2>
+      <ul>
+        <li><a href="tel:+16098467748">Tel. 609-846-7748</a></li>
+        <li><a href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">orders@apieceofcake11.com</a></li>
+        <li>Custom orders need 2 weeks advance notice.</li>
+        <li>We accept credit cards.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Pages</h2>
+      <ul><li><a href="index.html">Home</a></li><li><a href="cakes.html">Our cakes</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact us</a></li></ul>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for A Piece of Cake. Not affiliated with or endorsed by A Piece of Cake. Photos and text from apieceofcake11.com. Removed on request: contato@mhstecnologia.com.br</p>
+  </div>
+</footer>
+<div class="dock" aria-label="Order"><a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a><a class="btn line" href="tel:+16098467748">Call</a></div>
+<dialog class="lb" id="lb" aria-label="Photo"><img src="data:," alt=""><p></p><button type="button">Close</button></dialog>
+
+<script>
+(function(){
+  var d=document;
+  // Lightbox: one centred dialog for every enlargeable photo.
+  var lb=d.getElementById('lb');
+  if(lb){
+    var im=lb.querySelector('img'),cap=lb.querySelector('p');
+    d.addEventListener('click',function(e){
+      var b=e.target.closest('.zoom');if(!b)return;
+      var t=b.querySelector('img');im.src=b.dataset.full;im.alt=t.alt;cap.textContent=t.alt;lb.showModal();
+    });
+    lb.addEventListener('click',function(e){if(e.target===lb||e.target.closest('button'))lb.close();});
+  }
+  // Piping: each "We can bake it." writes itself once, when it comes into view.
+  var pipes=d.querySelectorAll('.bake .answer');
+  if(pipes.length&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.6});
+    pipes.forEach(function(p){io.observe(p);});
+  }else{pipes.forEach(function(p){p.classList.add('on');});}
+  // Phone bar: shows once the first call to action has scrolled away.
+  var dock=d.querySelector('.dock'),cta=d.getElementById('first-cta');
+  if(dock&&cta&&'IntersectionObserver' in window){
+    d.body.classList.add('has-dock');
+    new IntersectionObserver(function(es){dock.classList.toggle('on',!es[0].isIntersecting&&es[0].boundingClientRect.top<0);}).observe(cta);
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>About us · A Piece of Cake</title>
+<meta name="description" content="Our company is based on the belief that our customers needs are of the utmost importance.">
+<meta name="theme-color" content="#2b1712">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/caprasimo.woff2" crossorigin>
+<style>
+@font-face{font-family:Caprasimo;font-weight:400;font-display:swap;src:url(fonts/caprasimo.woff2) format("woff2")}
+@font-face{font-family:Karla;font-weight:300 800;font-display:swap;src:url(fonts/karla.woff2) format("woff2")}
+@font-face{font-family:Damion;font-weight:400;font-display:swap;src:url(fonts/damion.woff2) format("woff2")}
+/* Buttercream pink from the shop's windows, cocoa for type, the near-black their cakes are photographed on,
+   and the fuchsia of the storefront curtains and sign. */
+:root{--sugar:#fbeef2;--sugar-2:#f5dde5;--cocoa:#2b1712;--case:#120a08;--fuchsia:#b3195c;--fuchsia-2:#951249;--rose:#ff9cc2;
+--pad:clamp(1rem,4vw,3rem);--max:72rem}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--sugar);color:var(--cocoa);font:400 1.0625rem/1.65 Karla,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--fuchsia);outline-offset:3px}
+h1,h2,h3,.display{font-family:Caprasimo,Georgia,serif;font-weight:400;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{background:var(--case);color:#e9d9de;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem}
+
+/* Header: their embossed white logo needs the dark band it was drawn for. */
+.top{background:var(--cocoa);color:#fbeef2}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand img{height:2.5rem;width:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;font-weight:600;font-size:.98rem}
+.nav > a{text-decoration:none;padding:.3rem 0}
+.nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:3px;text-underline-offset:7px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.1rem;padding:.8rem 1.35rem;border-radius:999px;
+background:var(--fuchsia);color:#fff;font-weight:700;text-decoration:none;line-height:1.2;transition:background-color .15s}
+.btn:hover{background:var(--fuchsia-2)}
+.btn.line{background:transparent;color:var(--cocoa);box-shadow:inset 0 0 0 2px var(--cocoa)}
+.btn.line:hover{background:var(--cocoa);color:#fff}
+.nav .btn{min-height:2.6rem;padding:.5rem 1.1rem;font-size:.92rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.55rem 1rem;border-radius:999px;box-shadow:inset 0 0 0 2px #fbeef2}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + .6rem);background:var(--cocoa);border-radius:1rem;padding:.6rem;min-width:13rem;z-index:30;box-shadow:0 18px 40px rgb(18 10 8/.35)}
+.menu nav a{display:block;padding:.75rem 1rem;text-decoration:none;font-weight:600;border-radius:.6rem}
+.menu nav a:hover,.menu nav a[aria-current]{background:#4a2a21}
+
+/* Footer */
+.foot{background:var(--cocoa);color:#f0dfe5;margin-top:5rem;padding:3rem 0 2rem;font-size:.95rem}
+.foot .wrap{display:grid;gap:2rem;grid-template-columns:1.2fr 1fr 1fr}
+.foot img{height:2.4rem;width:auto;margin-bottom:.8rem}
+.foot h2{font-family:Karla,sans-serif;font-weight:700;font-size:1rem;margin-bottom:.5rem}
+.foot ul{list-style:none;padding:0}
+.foot li{margin:.2rem 0}
+.foot .legal{grid-column:1/-1;border-top:1px solid #4a2a21;padding-top:1.2rem;color:#cdb6be;font-size:.85rem}
+
+/* Lightbox */
+.tile{margin:0}
+.zoom{display:block;width:100%;padding:0;border:0;background:var(--case);border-radius:.9rem;overflow:hidden;cursor:zoom-in}
+.zoom img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .35s ease}
+.zoom:hover img{transform:scale(1.03)}
+dialog.lb{margin:auto;padding:0;border:0;background:var(--case);border-radius:1rem;max-width:min(94vw,62rem);max-height:92vh;overflow:hidden}
+dialog.lb::backdrop{background:rgb(18 10 8/.82)}
+dialog.lb img{max-height:calc(92vh - 4rem);width:auto;max-width:100%;margin:0 auto}
+dialog.lb p{color:#f0dfe5;font-size:.95rem;padding:.75rem 4.5rem .9rem 1.1rem;min-height:3.4rem}
+dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;color:var(--cocoa);border:0;border-radius:999px;font:700 .9rem Karla,sans-serif;padding:.55rem 1rem;cursor:pointer}
+
+/* Sticky phone bar, after the first screen, on phones */
+.dock{display:none}
+
+@media (max-width:859px){
+  .nav > a{display:none}
+  .nav > .btn{display:none}
+  .menu{display:block}
+  .brand img{height:2.1rem}
+  .foot .wrap{grid-template-columns:1fr}
+  .dock{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));
+    background:var(--cocoa);transform:translateY(110%);transition:transform .25s ease}
+  .dock.on{transform:none}
+  .dock .btn{min-height:2.9rem}
+  .dock .btn.line{color:#fbeef2;box-shadow:inset 0 0 0 2px #fbeef2}
+  body.has-dock{padding-bottom:4.4rem}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+.head{padding-block:clamp(2.2rem,6vw,4rem) clamp(1.5rem,4vw,2.5rem)}
+.head h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1}
+.head p{font-size:clamp(1.08rem,1.6vw,1.25rem);max-width:40rem;margin-top:1rem}
+.occ{display:grid;grid-template-columns:18rem 1fr;gap:3rem;padding-block:2.2rem;border-top:2px solid var(--sugar-2)}
+.occ h2{font-size:clamp(1.8rem,3.2vw,2.5rem);margin-bottom:.8rem}
+.occ .side{position:sticky;top:1.5rem;align-self:start}
+.occ .side a{color:var(--fuchsia);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.wall{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.album{padding-block:2rem;border-top:2px solid var(--sugar-2)}
+.grid > .tile:last-child:nth-child(odd) .zoom img{aspect-ratio:2/1}
+.grid > .tile:last-child:nth-child(odd){grid-column:1/-1}
+.album h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:1.1rem}
+.prose{max-width:38rem}
+.prose p{margin-bottom:1.1rem;font-size:1.1rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.lines{list-style:none;padding:0;margin:1.5rem 0}
+.lines li{font-size:1.15rem;padding:1rem 0;border-top:2px solid var(--sugar-2)}
+.lines .answer{font-family:Damion,cursive;color:var(--fuchsia);font-size:2rem;display:block;line-height:1.2}
+.photo{margin:0}
+.photo img{border-radius:1.2rem;width:100%}
+.photo figcaption{font-size:.92rem;margin-top:.6rem;color:#5b3d34}
+.darkphoto{background:var(--case);border-radius:1.2rem;overflow:hidden}
+.card{background:#fff;border-radius:1.2rem;padding:clamp(1.4rem,3.5vw,2.2rem);box-shadow:0 0 0 2px var(--sugar-2)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1.2rem;margin:0 0 1.5rem}
+.card dt{font-weight:700}
+.card dd a{color:var(--fuchsia);font-weight:700}
+.big{font-family:Caprasimo,Georgia,serif;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.15;margin-bottom:1rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+@media (max-width:859px){
+  .occ{grid-template-columns:1fr;gap:1.1rem}
+  .occ .side{position:static}
+  .grid{gap:.6rem}
+  .wall{grid-template-columns:repeat(2,1fr);gap:.6rem}
+  .wall > .tile:last-child:nth-child(odd){grid-column:1/-1}
+  .wall > .tile:last-child:nth-child(odd) .zoom img{aspect-ratio:2/1}
+  .split{grid-template-columns:1fr}
+  .ctas .btn{flex:1 1 100%}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for A Piece of Cake. Not affiliated with or endorsed by A Piece of Cake.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.png" width="420" height="86" alt="A Piece of Cake, if you can think it we can bake it"></a>
+    <div class="nav">
+      <a href="index.html">Home</a><a href="cakes.html">Our cakes</a><a href="gallery.html">Gallery</a><a href="about.html" aria-current="page">About us</a><a href="contact.html">Contact us</a>
+      <a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a>
+      <details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html">Home</a><a href="cakes.html">Our cakes</a><a href="gallery.html">Gallery</a><a href="about.html" aria-current="page">About us</a><a href="contact.html">Contact us</a><a href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a><a href="tel:+16098467748">Call 609-846-7748</a></nav></details>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<div class="head wrap">
+  <h1>About us</h1>
+</div>
+<div class="wrap split">
+  <div class="prose">
+    <p class="big">Our company is based on the belief that our customers needs are of the utmost importance.</p>
+    <p>Our entire team is committed to meeting those needs. As a result, a high percentage of our business is from repeat customers and referrals.</p>
+    <p>We serve weddings, anniversaries, birthdays, graduations, showers and more!</p>
+    <ul class="lines">
+      <li>Want a cake that looks like a seashore complete with sandcastle? <span class="answer">We can bake it.</span></li>
+      <li>How about a box of popcorn and a team hat from your favorite team, so real you can almost smell the butter on the popcorn and you may be tempted to put the hat on? <span class="answer">We can bake it.</span></li>
+      <li>There is no end to the imagination, so bring us your ideas or photos and let us create a delicious and beautiful creation just for you.</li>
+    </ul>
+    <div class="ctas"><a class="btn" id="first-cta" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your cake idea</a><a class="btn line" href="tel:+16098467748">Call 609-846-7748</a></div>
+  </div>
+  <div>
+    <figure class="photo">
+      <img src="img/storefront-587.webp" srcset="img/storefront-587.webp 587w" sizes="(min-width: 860px) 32rem, calc(100vw - 2rem)" width="587" height="324" alt="The A Piece of Cake shop, with its pink sign and pink curtains in the windows" loading="lazy" decoding="async">
+      <figcaption>Our shop at 709 Rt. 9 South, Cape May Court House, NJ.</figcaption>
+    </figure>
+  </div>
+</div>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <img src="img/logo.png" width="420" height="86" alt="A Piece of Cake" loading="lazy">
+      <p>709 Rt. 9 South<br>Cape May Court House, NJ 08210</p>
+    </div>
+    <div>
+      <h2>Order</h2>
+      <ul>
+        <li><a href="tel:+16098467748">Tel. 609-846-7748</a></li>
+        <li><a href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">orders@apieceofcake11.com</a></li>
+        <li>Custom orders need 2 weeks advance notice.</li>
+        <li>We accept credit cards.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Pages</h2>
+      <ul><li><a href="index.html">Home</a></li><li><a href="cakes.html">Our cakes</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact us</a></li></ul>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for A Piece of Cake. Not affiliated with or endorsed by A Piece of Cake. Photos and text from apieceofcake11.com. Removed on request: contato@mhstecnologia.com.br</p>
+  </div>
+</footer>
+<div class="dock" aria-label="Order"><a class="btn" href="mailto:orders@apieceofcake11.com?subject=Custom%20cake%20idea">Email your idea</a><a class="btn line" href="tel:+16098467748">Call</a></div>
+<dialog class="lb" id="lb" aria-label="Photo"><img src="data:," alt=""><p></p><button type="button">Close</button></dialog>
+
+<script>
+(function(){
+  var d=document;
+  // Lightbox: one centred dialog for every enlargeable photo.
+  var lb=d.getElementById('lb');
+  if(lb){
+    var im=lb.querySelector('img'),cap=lb.querySelector('p');
+    d.addEventListener('click',function(e){
+      var b=e.target.closest('.zoom');if(!b)return;
+      var t=b.querySelector('img');im.src=b.dataset.full;im.alt=t.alt;cap.textContent=t.alt;lb.showModal();
+    });
+    lb.addEventListener('click',function(e){if(e.target===lb||e.target.closest('button'))lb.close();});
+  }
+  // Piping: each "We can bake it." writes itself once, when it comes into view.
+  var pipes=d.querySelectorAll('.bake .answer');
+  if(pipes.length&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.6});
+    pipes.forEach(function(p){io.observe(p);});
+  }else{pipes.forEach(function(p){p.classList.add('on');});}
+  // Phone bar: shows once the first call to action has scrolled away.
+  var dock=d.querySelector('.dock'),cta=d.getElementById('first-cta');
+  if(dock&&cta&&'IntersectionObserver' in window){
+    d.body.classList.add('has-dock');
+    new IntersectionObserver(function(es){dock.classList.toggle('on',!es[0].isIntersecting&&es[0].boundingClientRect.top<0);}).observe(cta);
+  }
+})();
+</script>
+
+</body>
+</html>
