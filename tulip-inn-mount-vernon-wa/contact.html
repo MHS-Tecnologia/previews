@@ -168,13 +168,13 @@ figure{margin:0}
 .amen-list li{break-inside:avoid;padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative}
 .amen-list li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
 .tale{padding:clamp(40px,6vw,80px) 0}
-.tale-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(28px,5vw,64px);align-items:center}
+.tale-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
 .tale-photo img{border-radius:4px;width:100%}
 .tale-copy p{margin-top:1rem;color:var(--ink-2)}
 .harmony img{width:100%;height:clamp(240px,36vw,520px);object-fit:cover}
 .harmony figcaption{max-width:calc(var(--wrap) + 2*var(--gut));margin:8px auto 0;padding:0 var(--gut);font-size:.875rem;color:var(--ink-2)}
 .near{padding:clamp(44px,6vw,80px) 0}
-.near-in{margin-top:1.5rem;max-width:760px}
+.near-in{margin-top:1.5rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(28px,5vw,72px);align-items:start}
 .near-list{list-style:none;margin:0;padding:0;border-top:2px solid var(--gold)}
 .near-list{columns:2;column-gap:40px}
 .near-list li{break-inside:avoid;font-family:var(--serif);font-weight:700;font-size:1.1875rem;padding:12px 0;border-bottom:1px solid var(--line)}
@@ -257,6 +257,15 @@ figure{margin:0}
 @media (prefers-reduced-motion:no-preference) and (max-width:760px){
   .route-hero .rail-a,.route-hero .rail-b{animation-name:draw}
 }
+
+/* drawn tulips, in the logo's blue and gold */
+.tulip-band{overflow:hidden;line-height:0;margin-top:-8px}
+.tulip-band svg{display:block;width:100%;height:58px}
+.tulip-field{margin:0 0 clamp(28px,4vw,48px)}
+.tulip-field svg{display:block;width:100%;height:auto;background:var(--sky);border-radius:6px;padding:18px 0 0}
+.tulip-field figcaption{margin-top:8px;font-size:.8125rem;color:var(--ink-2)}
+.tale-pull{font-family:var(--serif);font-weight:700;font-size:clamp(1.35rem,1.1rem + 1vw,1.85rem);line-height:1.3;color:var(--blue);border-left:4px solid var(--gold);padding-left:20px;margin:0;align-self:center}
+@media (max-width:900px){.tale-in{grid-template-columns:minmax(0,1fr)}.tale-pull{margin-top:.5rem}}
 </style>
 </head>
 <body>
