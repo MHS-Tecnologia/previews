@@ -107,18 +107,15 @@ p{margin:0 0 1em}
 .vitrine{padding:64px 0 40px}
 .grupo{margin:38px 0 10px}
 .grupo-cab{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-bottom:20px}
-.pecas{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
-.peca{scroll-snap-align:start;display:flex;flex-direction:column}
+.pecas{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:28px}
+.peca{display:flex;flex-direction:column}
 .abre{display:block;padding:0;border:0;background:#fff;cursor:zoom-in;border-radius:6px;overflow:hidden;aspect-ratio:3/4;width:100%}
 .abre img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .abre:hover img{transform:scale(1.03)}
 .peca-nome{font-weight:600;margin:.7em 0 .15em}
 .lk-wa{display:inline-flex;align-items:center;gap:.4em;font-weight:500;color:var(--tinta-2);text-underline-offset:3px;padding:.35em 0;align-self:flex-start}
 .lk-wa:hover{color:var(--tinta)}
-@media (min-width:700px){
-  .pecas{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible}
-}
-@media (min-width:1100px){.pag-cab ~ .caixa .pecas{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:700px){.pecas{grid-template-columns:repeat(2,1fr);gap:24px}}
 .mais{margin-top:36px}
 
 /* faixa da loja */

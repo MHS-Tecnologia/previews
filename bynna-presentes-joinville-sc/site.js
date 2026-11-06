@@ -26,7 +26,7 @@
         im.src = 'img/' + f + '-1200.webp'
         im.alt = b.dataset.alt
         tit.textContent = b.dataset.titulo
-        wa.href = base + '?text=' + encodeURIComponent('Oi, Bynna! Vi no site “' + b.dataset.titulo + '” e queria uma parecida.')
+        wa.href = base + '?text=' + encodeURIComponent('Oi, Bynna! Vi no site ' + b.dataset.pedido + ' e queria um presente parecido.')
         dlg.showModal()
       })
     })
@@ -35,7 +35,7 @@
   }
 
   var fixo = document.querySelector('.fixo')
-  var alvo = document.querySelector('#cta') || document.querySelector('.pag-cab')
+  var alvo = document.querySelector('.heroi') || document.querySelector('.pag-cab')
   if (fixo && alvo && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (es) {
       var v = !es[0].isIntersecting && es[0].boundingClientRect.top < 0
