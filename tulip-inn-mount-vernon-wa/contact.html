@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Reservations, Tulip INN</title>
+<meta name="description" content="Call 360.428.5969 or toll free 800.599.5969, or email tulipinn@hotmail.com. 2200 Freeway Drive, Mt Vernon, WA.">
+<meta name="theme-color" content="#14233b">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/besley.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Besley";font-weight:400 900;font-display:swap;src:url(fonts/besley.woff2) format("woff2")}
+@font-face{font-family:"Public Sans";font-weight:100 900;font-display:swap;src:url(fonts/publicsans.woff2) format("woff2")}
+:root{
+  --blue:#1d5ca9;--blue-d:#164a8a;--ink:#14233b;--ink-2:#3a4a63;
+  --gold:#e2b13a;--sky:#eef3f9;--line:#cdd8e8;--paper:#fff;
+  --serif:"Besley",Georgia,serif;--sans:"Public Sans",system-ui,sans-serif;
+  --wrap:1200px;--gut:clamp(16px,4vw,40px)
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--blue)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);margin:0;font-weight:700;letter-spacing:-.01em}
+h2{font-size:clamp(1.75rem,1.2rem + 1.8vw,2.5rem);line-height:1.15}
+p{margin:0 0 1rem}
+figure{margin:0}
+.wrap{max-width:calc(var(--wrap) + 2*var(--gut));margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:8px;z-index:50;background:var(--paper);padding:8px 12px}
+.demo{margin:0;background:var(--ink);color:#dfe7f2;font-size:.8125rem;line-height:1.4;text-align:center;padding:7px var(--gut)}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand img{width:132px;height:auto}
+.nav{display:flex;align-items:center;gap:28px}
+.nav > a{color:var(--ink);text-decoration:none;font-weight:600;font-size:1rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-bottom-color:var(--gold)}
+.nav > a.nav-call{background:var(--blue);color:#fff;padding:10px 16px;border-radius:6px;border:0}
+.nav > a.nav-call:hover{background:var(--blue-d)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:10px 14px;border:2px solid var(--ink);border-radius:6px}
+.menu summary::-webkit-details-marker{display:none}
+.menu-panel{position:absolute;right:0;top:calc(100% + 10px);background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 30px rgba(20,35,59,.18);padding:8px;min-width:260px;display:flex;flex-direction:column}
+.menu-panel a{color:var(--ink);text-decoration:none;font-weight:600;padding:12px 12px;border-radius:6px}
+.menu-panel a:hover{background:var(--sky)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 22px;border-radius:6px;font-weight:700;font-size:1.0625rem;text-decoration:none;line-height:1.2}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-d)}
+.btn-line{border:2px solid var(--blue);color:var(--blue);background:transparent}
+.btn-line:hover{background:var(--sky)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-line-light{border:2px solid #fff;color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.5rem}
+.lede{font-size:1.1875rem;line-height:1.55;color:var(--ink-2);max-width:36em}
+.kicker{font-weight:600;color:var(--blue);margin-bottom:.75rem}
+
+/* signature: the route line between the two cities */
+.route{display:flex;align-items:center;gap:12px;color:var(--ink-2);font-size:.9375rem;font-weight:600}
+.rail{position:relative;flex:1;display:flex;align-items:center;min-width:80px}
+.rail-a,.rail-b{flex:1;height:2px;background:var(--blue)}
+.rail-a{transform-origin:left}
+.rail-b{transform-origin:right}
+.pin{width:18px;height:18px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #fff,0 0 0 6px var(--blue);flex:none;margin:0 6px}
+.route-line{margin-bottom:1.75rem;max-width:560px}
+.route-line .city-n{order:3}
+.route-line .city-s{order:1}
+.route-line .rail{order:2}
+
+/* hero */
+.hero{padding:clamp(28px,5vw,64px) 0 clamp(40px,6vw,80px)}
+.hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:clamp(32px,5vw,72px);align-items:center}
+.hero-text{display:grid;grid-template-columns:auto 1fr;gap:28px}
+.route-hero{flex-direction:column;align-items:center;gap:10px;writing-mode:horizontal-tb}
+.route-hero .rail{flex-direction:column;width:2px;min-width:0}
+.route-hero .rail-a,.route-hero .rail-b{width:2px;height:auto;min-height:60px}
+.route-hero .rail-a{transform-origin:top}
+.route-hero .rail-b{transform-origin:bottom}
+.route-hero .pin{margin:6px 0}
+.route-hero .city{writing-mode:vertical-rl;transform:rotate(180deg);font-size:.875rem;white-space:nowrap}
+.hero h1{font-size:clamp(2.1rem,1.2rem + 2.6vw,3.4rem);line-height:1.06;font-weight:800;letter-spacing:-.02em;max-width:11em}
+.hero .lede{margin-top:1.25rem}
+.toll{margin:.9rem 0 0;color:var(--ink-2);font-size:.9375rem}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;border-radius:4px;aspect-ratio:4/3;object-fit:cover}
+.hero-photo figcaption,.reach-photo figcaption{margin-top:8px;font-size:.875rem;color:var(--ink-2)}
+
+/* front desk */
+.desk{background:var(--ink);color:#e6edf6;padding:clamp(44px,6vw,80px) 0}
+.desk h2{color:#fff}
+.desk-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);align-items:start}
+.desk-say p{margin-top:1rem;font-size:1.125rem;max-width:34em;color:#d5deeb}
+.ledger{display:grid;grid-template-columns:1fr 1fr;margin:0;border-top:2px solid var(--gold)}
+.ledger div{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.ledger div.wide{grid-column:1/-1}
+.ledger dt{font-size:.9375rem;color:#b9c6d9;font-weight:600}
+.ledger dd{margin:2px 0 0;font-family:var(--serif);font-size:clamp(1.5rem,1.1rem + 1.4vw,2.25rem);font-weight:700;color:#fff;line-height:1.15}
+.ledger div.wide dd{font-size:clamp(1.15rem,1rem + .6vw,1.4rem);font-weight:600}
+
+/* rooms teaser */
+.rooms-teaser{padding:clamp(48px,7vw,104px) 0}
+.rooms-in{display:grid;grid-template-columns:minmax(0,700px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.rooms-photo img{border-radius:4px;width:100%}
+.rooms-copy p{margin-top:1rem;color:var(--ink-2)}
+.room-types{list-style:none;padding:0;margin:1.25rem 0 1.75rem;border-top:1px solid var(--line)}
+.room-types a{display:block;padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink);font-weight:600;text-decoration:none;font-family:var(--serif);font-size:1.1875rem}
+.room-types a:hover{color:var(--blue)}
+
+/* valley */
+.valley{background:var(--sky);padding-bottom:clamp(48px,7vw,96px)}
+.valley-photo img{width:100%;height:clamp(260px,38vw,560px);object-fit:cover}
+.valley-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(28px,5vw,72px);align-items:center;padding-top:clamp(36px,5vw,64px)}
+.valley-copy p{margin-top:1rem;color:var(--ink-2);max-width:34em}
+.valley-copy .btn{margin-top:.5rem}
+
+/* compass diagram */
+.compass{margin:0}
+.cx{position:relative;display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto auto;align-items:center;justify-items:center;gap:22px 10px;padding:26px 8px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font-weight:600;color:var(--ink-2);text-align:center;font-size:.9375rem}
+.cx::before,.cx::after{content:"";position:absolute;background:var(--line);z-index:0}
+.cx::before{left:50%;top:44px;bottom:44px;width:2px;transform:translateX(-1px)}
+.cx::after{top:50%;left:22%;right:22%;height:2px;transform:translateY(-1px)}
+.cx span{position:relative;z-index:1;background:var(--paper);padding:2px 6px}
+.cx-n{grid-column:2;grid-row:1}
+.cx-w{grid-column:1;grid-row:2;justify-self:end}
+.cx-c{grid-column:2;grid-row:2;display:flex;flex-direction:column;align-items:center;color:var(--ink-2);font-weight:400}
+.cx-c img{width:56px;height:56px;margin-bottom:6px}
+.cx-c b{font-family:var(--serif);color:var(--ink);font-size:1.125rem}
+.cx-e{grid-column:3;grid-row:2;justify-self:start}
+.cx-s{grid-column:2;grid-row:3}
+.compass figcaption{margin-top:8px;font-size:.8125rem;color:var(--ink-2)}
+
+/* find */
+.find{padding:clamp(48px,7vw,104px) 0}
+.find-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:clamp(28px,5vw,72px);align-items:center}
+.addr{font-family:var(--serif);font-size:clamp(1.4rem,1.1rem + 1vw,1.85rem);font-weight:700;line-height:1.25;margin:1rem 0 1.25rem}
+.find-copy p:not(.addr){color:var(--ink-2);max-width:34em}
+.find-photo img,.reach-photo img{border-radius:4px;width:100%}
+
+/* inner pages */
+.page-head{padding:clamp(32px,5vw,64px) 0 clamp(28px,4vw,48px);border-bottom:1px solid var(--line)}
+.page-head h1{font-size:clamp(2.1rem,1.3rem + 2.6vw,3.25rem);line-height:1.08;font-weight:800;letter-spacing:-.02em}
+.page-head .lede{margin-top:1rem}
+.room-list{padding:clamp(32px,5vw,56px) 0}
+.room-jump{display:flex;flex-wrap:wrap;gap:8px 10px;margin-bottom:clamp(28px,4vw,44px)}
+.room-jump a{padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:600;font-size:.9375rem}
+.room-jump a:hover{border-color:var(--blue);color:var(--blue)}
+.room{padding:0 0 clamp(32px,5vw,56px)}
+.room h2{font-size:clamp(1.4rem,1.1rem + 1vw,1.9rem);margin-bottom:14px}
+.room-pics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.room:not(.room-2) .room-pics{grid-template-columns:minmax(0,1fr)}
+.room-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;align-items:start}
+.room-2{grid-column:1/-1}
+.room-grid .room-note{align-self:center}
+.room-pics img{border-radius:4px;width:100%}
+.room-note{font-weight:600;border-left:4px solid var(--gold);padding:6px 0 6px 14px;margin:0}
+.amen{background:var(--sky);padding:clamp(44px,6vw,80px) 0}
+.amen-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);align-items:start}
+.amen-in p{margin-top:1rem;color:var(--ink-2)}
+.amen-list summary{cursor:pointer;font-weight:700;color:var(--blue);padding:10px 0}
+.amen-list ul{columns:2;column-gap:32px;margin:0;padding:0;list-style:none}
+.amen-list li{break-inside:avoid;padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative}
+.amen-list li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.tale{padding:clamp(40px,6vw,80px) 0}
+.tale-in{display:grid;grid-template-columns:minmax(0,700px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.tale-photo img{border-radius:4px;width:100%}
+.tale-copy p{margin-top:1rem;color:var(--ink-2)}
+.harmony img{width:100%;height:clamp(240px,36vw,520px);object-fit:cover}
+.harmony figcaption{max-width:calc(var(--wrap) + 2*var(--gut));margin:8px auto 0;padding:0 var(--gut);font-size:.875rem;color:var(--ink-2)}
+.near{padding:clamp(44px,6vw,80px) 0}
+.near-in{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:clamp(28px,5vw,64px);align-items:start;margin-top:1.5rem}
+.near-list{list-style:none;margin:0;padding:0;border-top:2px solid var(--gold)}
+.near-list li{font-family:var(--serif);font-weight:700;font-size:clamp(1.25rem,1rem + .9vw,1.6rem);padding:16px 0;border-bottom:1px solid var(--line)}
+.near-photo img{border-radius:4px;width:100%}
+.near-ask{margin-top:1.75rem;font-weight:600}
+.reach{padding:clamp(36px,5vw,64px) 0}
+.reach-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:clamp(28px,5vw,72px);align-items:start}
+.reach-list{margin:0;border-top:2px solid var(--gold)}
+.reach-list div{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.reach-list dt{color:var(--ink-2);font-weight:600}
+.reach-list dd{margin:0;font-family:var(--serif);font-weight:700;font-size:1.25rem}
+.reach-list a{text-decoration:none}
+.reach-map{padding:0 0 clamp(44px,6vw,80px)}
+.reach-map .compass{max-width:560px}
+
+/* footer */
+.foot{background:var(--ink);color:#d5deeb;padding:48px 0 0;font-size:.9375rem}
+.foot a{color:#fff}
+.foot-in{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+.foot-logo{width:150px;background:#fff;padding:10px 12px;border-radius:6px;margin-bottom:14px;box-sizing:content-box}
+.foot-desk{margin:0}
+.foot-desk div{display:flex;gap:10px;padding:6px 0}
+.foot-desk dt{min-width:84px;color:#b9c6d9}
+.foot-desk dd{margin:0}
+.foot-legal{border-top:1px solid rgba(255,255,255,.16);margin-top:36px;padding-top:18px;padding-bottom:96px;font-size:.8125rem;color:#b9c6d9}
+
+/* mobile dock (after the hero) */
+.dock{display:none}
+
+@media (max-width:900px){
+  .rooms-in,.valley-in,.find-in,.tale-in,.amen-in,.reach-in,.desk-in,.near-in{grid-template-columns:minmax(0,1fr)}
+  .near-photo{max-width:400px}
+  .foot-in{grid-template-columns:1fr 1fr}
+  .foot-in > div:first-child{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .hero{padding-top:20px}
+  .hero-in{grid-template-columns:minmax(0,1fr);gap:22px}
+  .hero-text{grid-template-columns:minmax(0,1fr);gap:16px}
+  .route-hero{flex-direction:row;gap:10px}
+  .route-hero .rail{flex-direction:row;width:auto;flex:1}
+  .route-hero .rail-a,.route-hero .rail-b{height:2px;width:auto;min-height:0}
+  .route-hero .rail-a{transform-origin:left}
+  .route-hero .rail-b{transform-origin:right}
+  .route-hero .pin{margin:0 6px}
+  .route-hero .city{writing-mode:horizontal-tb;transform:none}
+  .route-hero .city-n{order:3}
+  .route-hero .city-s{order:1}
+  .route-hero .rail{order:2}
+  .kicker{display:none}
+  .hero h1{font-size:2.05rem;line-height:1.08}
+  .hero .lede{font-size:1.0625rem;margin-top:.8rem}
+  .actions{margin-top:1.1rem}
+  .actions .btn{flex:1 1 auto}
+  .toll{display:none}
+  .hero-photo img{aspect-ratio:3/2}
+  .room-pics{grid-template-columns:minmax(0,1fr)}
+  .room-grid{grid-template-columns:minmax(0,1fr)}
+  .amen-list ul{columns:1}
+  .reach-list div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .foot-in{grid-template-columns:minmax(0,1fr)}
+  .dock{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--ink);transform:translateY(110%);transition:transform .25s ease}
+  .dock .btn{flex:1 1 auto;min-height:48px;white-space:nowrap;font-size:1rem;padding:10px 14px}
+  .dock .btn-gold{flex:2 1 auto}
+  .dock.on{transform:none}
+  .cx{font-size:.8125rem;gap:18px 4px}
+}
+
+/* the one moment of motion: the line draws in from both cities to the inn */
+@media (prefers-reduced-motion:no-preference){
+  .route .rail-a,.route .rail-b{animation:draw .9s cubic-bezier(.2,.7,.2,1) both}
+  .route-hero .rail-a,.route-hero .rail-b{animation-name:drawv}
+  .route .pin{animation:pin .45s .8s cubic-bezier(.3,1.6,.5,1) both}
+  @keyframes draw{from{transform:scaleX(0)}to{transform:none}}
+  @keyframes drawv{from{transform:scaleY(0)}to{transform:none}}
+  @keyframes pin{from{transform:scale(0)}to{transform:none}}
+}
+@media (prefers-reduced-motion:no-preference) and (max-width:760px){
+  .route-hero .rail-a,.route-hero .rail-b{animation-name:draw}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Tulip INN. Not affiliated with or endorsed by Tulip INN.</p>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html" aria-label="Tulip INN, home"><img src="img/logo-190.webp" srcset="img/logo-190.webp 190w, img/logo-380.webp 380w" sizes="132px" width="577" height="236" alt="Tulip INN"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="rooms.html">Rooms</a><a href="valley.html">Skagit Valley</a><a href="contact.html" aria-current=page>Contact</a>
+      <a class="nav-call" href="tel:+13604285969">Call 360.428.5969</a>
+      <details class="menu">
+        <summary>Menu</summary>
+        <div class="menu-panel">
+          <a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="valley.html">Skagit Valley</a><a href="contact.html" aria-current=page>Contact</a>
+          <a href="tel:+13604285969">Call 360.428.5969</a>
+          <a href="mailto:tulipinn@hotmail.com?subject=Room%20request">Email tulipinn@hotmail.com</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="route route-line" aria-hidden="true">
+  <span class="city city-n">Vancouver, B.C.</span>
+  <span class="rail"><span class="rail-a"></span><span class="pin"></span><span class="rail-b"></span></span>
+  <span class="city city-s">Seattle</span>
+</div>
+    <h1>Reservations</h1>
+    <p class="lede">To make a reservation or ask about rates, call the front desk or send an email.</p>
+  </div>
+</section>
+<section class="reach">
+  <div class="wrap reach-in">
+    <dl class="reach-list">
+      <div><dt>Phone</dt><dd><a href="tel:+13604285969">360.428.5969</a></dd></div>
+      <div><dt>Toll-free reservations</dt><dd><a href="tel:+18005995969">1.800.599.5969</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:tulipinn@hotmail.com?subject=Room%20request">tulipinn@hotmail.com</a></dd></div>
+      <div><dt>Fax</dt><dd>360.424.6069</dd></div>
+      <div><dt>Address</dt><dd>2200 Freeway Drive<br>Mt Vernon, WA 98273</dd></div>
+      <div><dt>Check-in / check-out</dt><dd>3 PM / 11 AM</dd></div>
+    </dl>
+    <figure class="reach-photo"><img src="img/entrance-900.webp" srcset="img/entrance-600.webp 600w, img/entrance-900.webp 900w, img/entrance-1400.webp 1400w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, 100vw" width="1400" height="1104" alt="The Tulip INN sign and building from the driveway on Freeway Drive" loading="lazy" decoding="async">
+      <figcaption>The entrance on Freeway Drive</figcaption></figure>
+  </div>
+</section>
+<section class="reach-map">
+  <div class="wrap"><figure class="compass">
+  <div class="cx" role="img" aria-label="Tulip INN in Mount Vernon, with Vancouver, British Columbia to the north, Seattle to the south, the San Juan Islands to the west and the North Cascade Mountains to the east">
+    <span class="cx-n">Vancouver, B.C.</span>
+    <span class="cx-w">San Juan Islands</span>
+    <span class="cx-c"><img src="favicon.png" width="64" height="64" alt="" loading="lazy"><b>Tulip INN</b>Mount Vernon</span>
+    <span class="cx-e">North Cascade Mountains</span>
+    <span class="cx-s">Seattle</span>
+  </div>
+  <figcaption>Not to scale. The places the inn&rsquo;s own site names around it.</figcaption>
+</figure></div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <img class="foot-logo" src="img/logo-190.webp" srcset="img/logo-190.webp 190w, img/logo-380.webp 380w" sizes="150px" width="577" height="236" alt="Tulip INN" loading="lazy">
+      <p>2200 Freeway Drive<br>Mt Vernon, WA 98273</p>
+    </div>
+    <dl class="foot-desk">
+      <div><dt>Phone</dt><dd><a href="tel:+13604285969">360.428.5969</a></dd></div>
+      <div><dt>Toll free</dt><dd><a href="tel:+18005995969">800.599.5969</a></dd></div>
+      <div><dt>Fax</dt><dd>360.424.6069</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:tulipinn@hotmail.com?subject=Room%20request">tulipinn@hotmail.com</a></dd></div>
+    </dl>
+    <dl class="foot-desk">
+      <div><dt>Check-in</dt><dd>3 PM</dd></div>
+      <div><dt>Check-out</dt><dd>11 AM</dd></div>
+    </dl>
+  </div>
+  <div class="wrap foot-legal">
+    <p>Unofficial demo built by MHS Tecnologia for Tulip INN. Not affiliated with or endorsed by Tulip INN. Every fact and photo comes from tulipinn.net.</p>
+    <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="dock" id="dock" aria-label="Contact the front desk">
+  <a class="btn btn-gold" href="tel:+13604285969">Call 360.428.5969</a>
+  <a class="btn btn-line-light" href="mailto:tulipinn@hotmail.com?subject=Room%20request">Email</a>
+</div>
+<script>(function(){
+  var dock=document.getElementById('dock');
+  var hero=document.querySelector('.hero, .page-head');
+  if(dock&&hero&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(e){dock.classList.toggle('on',!e[0].isIntersecting)}).observe(hero);
+  }
+  var wide=matchMedia('(min-width: 761px)');
+  document.querySelectorAll('details[data-open-wide]').forEach(function(d){if(wide.matches)d.open=true});
+  document.querySelectorAll('.menu-panel a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').open=false})});
+})();
+</script>
+</body>
+</html>
