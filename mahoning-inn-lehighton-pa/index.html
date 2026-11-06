@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mahoning Inn | Lehighton, PA, gateway to the Poconos</title>
+<meta name="description" content="34 non-smoking rooms in Lehighton, PA, with a mountain view out back. 2.5 miles from Turnpike Exit 74, 4 miles from Jim Thorpe.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/besley.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-800.webp" media="(max-width: 640px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1000.webp" media="(min-width: 641px)" imagesrcset="img/hero-1400.webp 1400w, img/hero-1000.webp 1000w" imagesizes="(max-width: 960px) calc(100vw - 2rem), (max-width: 1184px) calc(100vw - 25rem - 9rem), 720px" fetchpriority="high">
+<style>
+@font-face { font-family: "Besley"; font-weight: 400 900; font-display: swap; src: url(fonts/besley.woff2) format("woff2"); }
+@font-face { font-family: "Archivo"; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; src: url(fonts/archivo.woff2) format("woff2"); }
+
+/* The roadside sign out front (white face, red frame, blue lettering, black
+   changeable letters) and the sage walls and door-frame green of the rooms. */
+:root {
+  --wall: #e9ece4;
+  --wall-2: #dde2d6;
+  --ink: #1d2520;
+  --soft: #4a554d;
+  --door: #24513e;
+  --blue: #2b4b91;
+  --red: #bf3129;
+  --red-deep: #9e2620;
+  --face: #ffffff;
+  --rail: #c9ccc4;
+  --pad: clamp(1rem, 4vw, 2.5rem);
+  --max: 74rem;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--wall); color: var(--ink); font: 400 1.0625rem/1.6 "Archivo", system-ui, sans-serif; font-stretch: 100%; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+h1, h2, h3 { font-family: "Besley", Georgia, serif; font-weight: 700; line-height: 1.08; color: var(--ink); text-wrap: balance; }
+h2 { font-size: clamp(1.9rem, 4.2vw, 2.9rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.35rem; }
+p { max-width: 64ch; }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Demo notice */
+.demo { background: var(--ink); color: #e8ece6; font-size: .8125rem; line-height: 1.35; padding: .45rem var(--pad); text-align: center; }
+
+/* Header */
+.top { background: var(--face); border-bottom: 1px solid var(--rail); }
+.top .wrap { display: flex; align-items: center; gap: 1.25rem; min-height: 4rem; }
+.mark { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border: 3px solid var(--red); padding: .15rem .6rem .2rem; font: 700 1.3rem/1.1 "Besley", Georgia, serif; color: var(--blue); background: var(--face); white-space: nowrap; }
+.nav { display: flex; align-items: center; gap: .25rem; margin-left: auto; }
+.nav > a { text-decoration: none; font-weight: 600; font-size: .98rem; padding: .7rem .75rem; border-radius: .3rem; }
+.nav > a:hover { background: var(--wall); }
+.nav > a[aria-current="page"] { color: var(--red-deep); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .35em; }
+.nav .call { margin-left: .5rem; }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .55rem; font-weight: 700; padding: .65rem .9rem; border: 2px solid var(--ink); border-radius: .3rem; min-height: 44px; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary::after { content: ""; width: .9rem; height: 2px; background: currentColor; box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor; }
+.menu[open] summary { background: var(--ink); color: #fff; }
+.menu .panel { position: absolute; right: 0; top: calc(100% + .5rem); background: var(--face); border: 1px solid var(--rail); border-radius: .4rem; box-shadow: 0 14px 30px rgba(29, 37, 32, .18); padding: .5rem; min-width: 14rem; z-index: 30; display: grid; }
+.menu .panel a { text-decoration: none; font-weight: 600; padding: .8rem .9rem; border-radius: .3rem; }
+.menu .panel a:hover { background: var(--wall); }
+.menu .panel a[aria-current="page"] { color: var(--red-deep); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: .75rem 1.3rem; border-radius: .35rem; font-weight: 700; font-size: 1.02rem; text-decoration: none; border: 2px solid transparent; line-height: 1.2; }
+.btn-red { background: var(--red); color: #fff; }
+.btn-red:hover { background: var(--red-deep); }
+.btn-line { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn-line:hover { background: var(--ink); color: #fff; }
+.btn svg { width: 1.1em; height: 1.1em; flex: none; }
+.nav .btn { min-height: 44px; padding: .55rem 1rem; font-size: .95rem; }
+
+/* The roadside sign */
+.sign { width: min(100%, 25rem); }
+.sign-name { display: block; background: var(--face); border: 6px solid var(--red); padding: .35rem .5rem .45rem; text-align: center; font: 700 clamp(2.5rem, 7vw, 3.6rem)/1 "Besley", Georgia, serif; color: var(--blue); letter-spacing: -0.005em; box-shadow: 0 2px 0 rgba(0, 0, 0, .06); }
+.sign-name small { display: block; font: 600 .95rem/1.3 "Archivo", sans-serif; color: var(--soft); letter-spacing: .01em; margin-top: .25rem; }
+.board { width: 82%; margin: .4rem auto 0; background: var(--face); border: 5px solid var(--red); padding: .35rem .5rem; display: grid; gap: 0; }
+.row { display: flex; justify-content: center; gap: .08em; font: 800 clamp(1.15rem, 3.4vw, 1.45rem)/1 "Archivo", sans-serif; font-stretch: 75%; color: #141414; padding: .28rem 0 .3rem; border-bottom: 2px solid var(--rail); }
+.row:last-child { border-bottom: 0; }
+.row span { display: inline-block; min-width: .52em; text-align: center; }
+.row .gap { min-width: .45em; }
+.post { width: .7rem; height: 2.4rem; margin: 0 auto; background: var(--blue); }
+@media (prefers-reduced-motion: no-preference) {
+  .row span { animation: slot .42s cubic-bezier(.2, .8, .3, 1.2) both; animation-delay: calc(var(--i) * 38ms + 250ms); }
+  @keyframes slot { from { transform: translateY(-.55em); opacity: 0; } to { transform: none; opacity: 1; } }
+}
+
+/* Home hero */
+.hero { padding: clamp(1.25rem, 3vw, 2.75rem) 0 clamp(2rem, 4vw, 3.5rem); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 25rem) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.hero-copy { display: grid; gap: 1.1rem; }
+.lead { font-size: 1.1rem; color: var(--ink); }
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.hero figure { margin: 0; }
+.hero figure img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: .25rem; }
+.hero figcaption, .cap { font-size: .9rem; color: var(--soft); margin-top: .5rem; }
+
+/* Sections */
+.sec { padding: clamp(2.75rem, 6vw, 5rem) 0; }
+.sec-white { background: var(--face); }
+.sec-door { background: var(--door); color: #eef3ee; }
+.sec-door h2, .sec-door h3 { color: #fff; }
+.sec-head { display: grid; gap: .75rem; margin-bottom: 1.75rem; max-width: 46rem; }
+.sec-head p { color: var(--soft); }
+.sec-door .sec-head p { color: #cfdcd2; }
+
+/* Mountain view by season */
+.view { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 36rem); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.view blockquote { font: 500 clamp(1.35rem, 2.6vw, 1.7rem)/1.35 "Besley", Georgia, serif; margin: 0 0 1.25rem; max-width: 30ch; }
+.view blockquote footer { font: 500 .95rem/1.4 "Archivo", sans-serif; color: var(--soft); margin-top: .6rem; }
+.seasons { display: flex; gap: .4rem; margin-bottom: .9rem; flex-wrap: wrap; }
+.seasons button { font: 600 .98rem/1 "Archivo", sans-serif; min-height: 44px; padding: .6rem 1.1rem; border: 2px solid var(--ink); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; }
+.seasons button[aria-selected="true"] { background: var(--ink); color: #fff; }
+.pane { margin: 0; }
+.pane[hidden] { display: none; }
+.pane img { width: 100%; max-width: var(--w); border-radius: .25rem; }
+.note { font-size: .95rem; color: var(--soft); margin-top: 1rem; }
+
+/* Room numbers on the doors */
+.doors { display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr)); gap: .6rem; list-style: none; padding: 0; }
+.doors li { display: grid; }
+.doors a { display: grid; align-content: start; height: 100%; gap: .2rem; text-decoration: none; background: #f6f3ea; color: var(--ink); border: 1px solid #d9d3c2; border-radius: .25rem; padding: .7rem .8rem .75rem; min-height: 44px; }
+.doors a:hover { border-color: var(--door); box-shadow: inset 0 0 0 1px var(--door); }
+.doors b { font: 700 2.1rem/1 "Besley", Georgia, serif; color: var(--door); }
+.doors span { font-size: .88rem; line-height: 1.3; color: var(--soft); }
+.doors .mt { color: var(--door); font-weight: 600; }
+
+/* Manager */
+.gm { display: grid; grid-template-columns: minmax(0, 24rem) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.gm img { border-radius: .25rem; width: 100%; }
+.gm blockquote { font: 500 clamp(1.3rem, 2.4vw, 1.6rem)/1.4 "Besley", Georgia, serif; margin: 1rem 0; max-width: 34ch; }
+.gm .who { font-weight: 600; }
+
+/* Lobby */
+.lobby img { width: 100%; border-radius: .25rem; }
+.lobby-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.ticks { list-style: none; padding: 0; display: grid; gap: .55rem; }
+.ticks li { padding-left: 1.6rem; position: relative; }
+.ticks li::before { content: ""; position: absolute; left: .1rem; top: .5em; width: .75rem; height: .4rem; border-left: 2.5px solid var(--red); border-bottom: 2.5px solid var(--red); transform: rotate(-45deg); }
+.sec-door .ticks li::before { border-color: #9fd0b2; }
+
+/* Contact block */
+.reach { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem 2.5rem; }
+.reach h3 { font-size: 1.15rem; margin-bottom: .35rem; }
+.reach p { color: inherit; }
+.big { font: 700 clamp(1.5rem, 3vw, 2rem)/1.2 "Besley", Georgia, serif; text-decoration: none; color: var(--red-deep); }
+.big:hover { text-decoration: underline; }
+
+/* Page head (inner pages) */
+.phead { padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(1.5rem, 3vw, 2.25rem); }
+.phead h1 { font-size: clamp(2.3rem, 6vw, 3.8rem); letter-spacing: -0.015em; }
+.phead p { margin-top: .9rem; font-size: 1.1rem; color: var(--soft); }
+.phead .actions { margin-top: 1.25rem; }
+
+/* Rooms */
+.filter { display: flex; gap: .4rem; flex-wrap: wrap; margin: 0 0 1.5rem; }
+.filter button { font: 600 .98rem/1 "Archivo", sans-serif; min-height: 44px; padding: .6rem 1.1rem; border: 2px solid var(--ink); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer; }
+.filter button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.type { padding: 1.75rem 0 1rem; border-top: 1px solid var(--rail); }
+.type:first-of-type { border-top: 0; }
+.type > h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+.type > p { color: var(--soft); margin: .4rem 0 1.4rem; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.75rem; list-style: none; padding: 0; }
+.room { display: grid; gap: .75rem; scroll-margin-top: 1rem; }
+.room img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: .25rem; background: var(--wall-2); }
+.room-h { display: flex; align-items: baseline; gap: .9rem; }
+.room-h b { font: 700 2.6rem/1 "Besley", Georgia, serif; color: var(--door); }
+.room-h span { font-weight: 600; }
+.face { display: inline-block; font-size: .9rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; background: var(--wall-2); color: var(--ink); justify-self: start; }
+.face.mt { background: #d6e7da; color: var(--door); }
+.room ul { padding-left: 1.1rem; color: var(--soft); font-size: .98rem; columns: 2; column-gap: 1.5rem; }
+.room li { break-inside: avoid; }
+.room[hidden] { display: none; }
+
+/* Lists of places */
+.places { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: 0 2.5rem; }
+.places li { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--rail); }
+.places li span:last-child { white-space: nowrap; color: var(--soft); font-variant-numeric: tabular-nums; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 2rem 2.5rem; }
+.facts h2 { font-size: 1.5rem; margin-bottom: .6rem; }
+.facts p + p { margin-top: .6rem; }
+.inert { color: var(--soft); font-style: italic; }
+
+/* Directions */
+.routes details { border-bottom: 1px solid var(--rail); }
+.routes summary { cursor: pointer; padding: .9rem 0; font-weight: 700; display: flex; justify-content: space-between; gap: 1rem; min-height: 44px; }
+.routes summary span { font-weight: 500; color: var(--soft); white-space: nowrap; }
+.routes ol { padding: 0 0 1rem 1.3rem; display: grid; gap: .35rem; }
+
+/* Footer */
+.foot { background: var(--ink); color: #dfe5df; padding: 2.75rem 0 6rem; font-size: .95rem; }
+.foot .wrap { display: grid; gap: 1.5rem; }
+.foot-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.25rem 2rem; align-items: start; }
+.foot .mark { font-size: 1.15rem; }
+.foot nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.foot nav a { text-decoration: none; padding: .6rem 0; display: inline-block; }
+.foot nav a:hover { text-decoration: underline; }
+.foot small { font-size: .85rem; color: #b9c3bb; display: block; max-width: none; }
+
+/* Sticky mobile call bar */
+.dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; display: none; gap: .5rem; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: var(--face); border-top: 1px solid var(--rail); box-shadow: 0 -8px 20px rgba(29, 37, 32, .12); transform: translateY(110%); transition: transform .25s ease; }
+.dock .btn { flex: 1; }
+.dock.on { transform: none; }
+
+@media (max-width: 960px) {
+  .nav > a, .nav .call { display: none; }
+  .menu { display: block; }
+  .hero .wrap, .view, .gm, .lobby-grid, .two { grid-template-columns: minmax(0, 1fr); }
+  .gm img { max-width: 26rem; }
+  .dock { display: flex; }
+}
+@media (max-width: 640px) {
+  .top .wrap { min-height: 3.6rem; }
+  .mark { font-size: 1.15rem; }
+  .hero { padding-top: 1rem; }
+  .hero-copy { gap: .9rem; }
+  .sign { margin: 0 auto; }
+  .sign-name { font-size: 2.45rem; border-width: 5px; }
+  .post { height: .9rem; }
+  .lead { font-size: 1.02rem; }
+  .actions .btn { flex: 1 1 auto; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+  .doors { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .doors b { font-size: 1.8rem; }
+  .doors a { padding: .6rem .6rem .65rem; }
+  .places li { font-size: .98rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .dock { transition: none; } }
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mahoning Inn | Lehighton, PA, gateway to the Poconos">
+<meta property="og:description" content="34 non-smoking rooms in Lehighton, PA, with a mountain view out back. 2.5 miles from Turnpike Exit 74, 4 miles from Jim Thorpe.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/mahoning-inn-lehighton-pa/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/mahoning-inn-lehighton-pa/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Mahoning Inn. Not affiliated with or endorsed by Mahoning Inn.</div>
+<header class="top"><div class="wrap">
+  <a class="mark" href="index.html" aria-current="page">Mahoning Inn</a>
+  <nav class="nav" aria-label="Main"><a href="rooms.html">Rooms</a><a href="stay.html">Your stay</a><a href="area.html">The area</a><a href="directions.html">Directions</a><a class="btn btn-red call" href="tel:+16103771600"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 610-377-1600</a>
+    <details class="menu"><summary>Menu</summary><div class="panel"><a href="index.html" aria-current="page">Home</a><a href="rooms.html">Rooms</a><a href="stay.html">Your stay</a><a href="area.html">The area</a><a href="directions.html">Directions</a><a href="tel:+16103771600">Call 610-377-1600</a></div></details>
+  </nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div class="hero-copy">
+    <div class="sign">
+  <h1 class="sign-name">Mahoning Inn<small>Lehighton, Pennsylvania</small></h1>
+  <div class="board" role="img" aria-label="The sign out front reads: Welcome. Free HBO, WiFi. 610 377 1600."><div class="row" aria-hidden="true"><span style="--i:0">W</span><span style="--i:1">E</span><span style="--i:2">L</span><span style="--i:3">C</span><span style="--i:4">O</span><span style="--i:5">M</span><span style="--i:6">E</span></div><div class="row" aria-hidden="true"><span style="--i:7">F</span><span style="--i:8">R</span><span style="--i:9">E</span><span style="--i:10">E</span><span class="gap"></span><span style="--i:11">H</span><span style="--i:12">B</span><span style="--i:13">O</span><span class="gap"></span><span class="gap"></span><span style="--i:14">W</span><span style="--i:15">I</span><span style="--i:16">F</span><span style="--i:17">I</span></div><div class="row" aria-hidden="true"><span style="--i:18">6</span><span style="--i:19">1</span><span style="--i:20">0</span><span class="gap"></span><span style="--i:21">3</span><span style="--i:22">7</span><span style="--i:23">7</span><span class="gap"></span><span style="--i:24">1</span><span style="--i:25">6</span><span style="--i:26">0</span><span style="--i:27">0</span></div></div>
+  <div class="post" aria-hidden="true"></div>
+</div>
+    <p class="lead">34 non-smoking rooms in Lehighton, with the mountain right behind the inn. 2.5 miles from Turnpike Exit 74 and 4 miles from historic Jim Thorpe.</p>
+    <div class="actions"><a class="btn btn-red" href="tel:+16103771600" data-dock><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 610-377-1600</a><a class="btn btn-line" href="mailto:mahoninginn@yahoo.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email us</a></div>
+  </div>
+  <figure><picture>
+  <source media="(max-width: 640px)" srcset="img/hero-m-800.webp" width="800" height="624">
+  <img src="img/hero-1000.webp" srcset="img/hero-1400.webp 1400w, img/hero-1000.webp 1000w" sizes="(max-width: 960px) calc(100vw - 2rem), (max-width: 1184px) calc(100vw - 25rem - 9rem), 720px" width="1400" height="934" alt="The open door of Room 14 on the covered balcony walkway, with chairs and trees beyond the railing" fetchpriority="high">
+</picture><figcaption>Room 14, a double room on the balcony walkway.</figcaption></figure>
+</div></section>
+
+<section class="sec sec-white" aria-labelledby="h-view"><div class="wrap view">
+  <div>
+    <h2 id="h-view" style="margin-bottom:1rem">The view out back</h2>
+    <blockquote>“Our most appealing feature: the Mountain View in the back which will charm you in every season.”<footer>Bill Singh, General Manager</footer></blockquote>
+    <p>Rooms with a mountain view are very popular and usually require an advanced reservation, so ask for one when you call.</p>
+  </div>
+  <div>
+    <div class="seasons" role="tablist" aria-label="The mountain by season">
+      <button type="button" role="tab" id="t-su" aria-controls="p-su" aria-selected="true">Summer</button>
+      <button type="button" role="tab" id="t-au" aria-controls="p-au" aria-selected="false" tabindex="-1">Autumn</button>
+      <button type="button" role="tab" id="t-wi" aria-controls="p-wi" aria-selected="false" tabindex="-1">Winter</button>
+    </div>
+    <figure class="pane" id="p-su" role="tabpanel" aria-labelledby="t-su" style="--w:490px"><img src="img/view-summer-490.webp" width="490" height="367" alt="Green wooded mountainside behind the inn in summer" loading="lazy" decoding="async"><figcaption class="cap">The green mountains of summer.</figcaption></figure>
+    <figure class="pane" id="p-au" role="tabpanel" aria-labelledby="t-au" style="--w:481px" hidden><img src="img/view-autumn-481.webp" width="481" height="340" alt="The mountain ridge in autumn colors" loading="lazy" decoding="async"><figcaption class="cap">Autumn's mountain splendor.</figcaption></figure>
+    <figure class="pane" id="p-wi" role="tabpanel" aria-labelledby="t-wi" style="--w:568px" hidden><img src="img/view-winter-568.webp" width="568" height="363" alt="Snow covered hills and valley under a blue winter sky" loading="lazy" decoding="async"><figcaption class="cap">Snow covered winter mountains.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="sec" aria-labelledby="h-doors"><div class="wrap">
+  <div class="sec-head"><h2 id="h-doors">Pick your room by its door</h2><p>King, Queen, Double and Suites. Each number opens that room's photo and what is in it.</p></div>
+  <ul class="doors"><li><a href="rooms.html#r11"><b>11</b><span>King room</span></a></li><li><a href="rooms.html#r14"><b>14</b><span>Double room</span><span class="mt">Mountain view</span></a></li><li><a href="rooms.html#r15"><b>15</b><span>Double room</span><span class="mt">Mountain view</span></a></li><li><a href="rooms.html#r16"><b>16</b><span>Double room</span><span class="mt">Mountain view</span></a></li><li><a href="rooms.html#r17"><b>17</b><span>Double room</span><span class="mt">Mountain view</span></a></li><li><a href="rooms.html#r18"><b>18</b><span>Suite with two full beds</span><span class="mt">Large mountain view</span></a></li><li><a href="rooms.html#r26"><b>26</b><span>King suite</span></a></li><li><a href="rooms.html#r28"><b>28</b><span>Queen room</span><span class="mt">Mountain view</span></a></li><li><a href="rooms.html#r30"><b>30</b><span>King room</span><span class="mt">Mountain view</span></a></li><li><a href="rooms.html#r33"><b>33</b><span>King room</span></a></li><li><a href="rooms.html#r34"><b>34</b><span>King room</span></a></li><li><a href="rooms.html#r36"><b>36</b><span>King room</span></a></li><li><a href="rooms.html#r37"><b>37</b><span>Double room</span></a></li><li><a href="rooms.html#r39"><b>39</b><span>Double room</span></a></li><li><a href="rooms.html#r43"><b>43</b><span>King suite</span><span class="mt">Large mountain view</span></a></li><li><a href="rooms.html#r44"><b>44</b><span>Queen room</span><span class="mt">Partial mountain view</span></a></li><li><a href="rooms.html#r45"><b>45</b><span>Queen room</span><span class="mt">Mountain view</span></a></li></ul>
+  <p style="margin-top:1.5rem"><a class="btn btn-line" href="rooms.html">See every room</a></p>
+</div></section>
+
+<section class="sec sec-door" aria-labelledby="h-gm"><div class="wrap gm">
+  <img src="img/bill-500.webp" srcset="img/bill-900.webp 900w, img/bill-500.webp 500w" sizes="(max-width: 960px) min(26rem, calc(100vw - 2rem)), 384px" width="900" height="827" alt="Bill Singh, General Manager, at the front desk" loading="lazy" decoding="async">
+  <div>
+    <h2 id="h-gm">You are welcome at Mahoning Inn</h2>
+    <blockquote>“My goal is to provide you with excellent customer service and neat, clean, comfortable and affordable accommodations.”</blockquote>
+    <p class="who">Bill Singh, General Manager</p>
+    <p style="margin-top:1rem;color:#cfdcd2">Mahoning Inn, formerly known as Mahoning Court Motel, has been under this management since January 2000, with renovations and many improvements since.</p>
+  </div>
+</div></section>
+
+<section class="sec lobby" aria-labelledby="h-lobby"><div class="wrap">
+  <div class="lobby-grid">
+    <figure><img src="img/lobby-800.webp" srcset="img/lobby-1400.webp 1400w, img/lobby-800.webp 800w" sizes="(max-width: 960px) calc(100vw - 2rem), 680px" width="1400" height="934" alt="The lobby and check-in area, with tables and the front desk" loading="lazy" decoding="async"><figcaption class="cap">The lobby and check-in area.</figcaption></figure>
+    <div>
+      <h2 id="h-lobby" style="margin-bottom:1rem">Included with every stay</h2>
+      <ul class="ticks">
+        <li>Continental breakfast and coffee in the lobby</li>
+        <li>Free Wi-Fi internet</li>
+        <li>Free HBO</li>
+        <li>Free local calls</li>
+        <li>Free ice machine in the lobby</li>
+        <li>Serta bedding in every room</li>
+      </ul>
+      <p style="margin-top:1.25rem">Check in at 2:00 PM, check out at 11:00 AM. Early check-in at 11:30 AM is available.</p>
+      <p style="margin-top:1rem"><a href="stay.html">Everything about your stay</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec sec-white" aria-labelledby="h-reach"><div class="wrap">
+  <div class="sec-head"><h2 id="h-reach">Reserve by phone</h2><p>Our pleasant experienced staff will answer all of your questions.</p></div>
+  <div class="reach">
+    <div><h3>Call</h3><a class="big" href="tel:+16103771600">610-377-1600</a></div>
+    <div><h3>Email</h3><a class="big" style="font-size:clamp(1.2rem,2.4vw,1.5rem)" href="mailto:mahoninginn@yahoo.com">mahoninginn@yahoo.com</a></div>
+    <div><h3>Find us</h3><p>71 Blakeslee Blvd. East, Lehighton, PA 18235</p><p style="margin-top:.4rem"><a href="directions.html">Directions</a></p></div>
+  </div>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="foot-top">
+    <div>
+      <a class="mark" href="index.html">Mahoning Inn</a>
+      <p style="margin-top:.9rem">71 Blakeslee Blvd. East, Lehighton, PA 18235<br>Phone <a href="tel:+16103771600">610-377-1600</a>, fax 610-379-0194<br><a href="mailto:mahoninginn@yahoo.com">mahoninginn@yahoo.com</a></p>
+    </div>
+    <nav aria-label="Footer"><a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="stay.html">Your stay</a><a href="area.html">The area</a><a href="directions.html">Directions</a></nav>
+  </div>
+  <small>Unofficial demo built by MHS Tecnologia for Mahoning Inn. Not affiliated with or endorsed by Mahoning Inn. Text and photos come from mahoninginn.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></small>
+</div></footer>
+<div class="dock" id="dock"><a class="btn btn-red" href="tel:+16103771600"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call</a><a class="btn btn-line" href="mailto:mahoninginn@yahoo.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email</a></div>
+<script>
+(() => {
+  const menu = document.querySelector('.menu');
+  if (menu) {
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); } });
+    document.addEventListener('click', (e) => { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  }
+  const dock = document.getElementById('dock');
+  const mark = document.querySelector('[data-dock]');
+  if (dock && mark && 'IntersectionObserver' in window) new IntersectionObserver(([e]) => dock.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(mark);
+  const tabs = [...document.querySelectorAll('.seasons [role=tab]')];
+  const pick = (t) => { tabs.forEach((b) => { const on = b === t; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; document.getElementById(b.getAttribute('aria-controls')).hidden = !on; }); };
+  tabs.forEach((b, i) => {
+    b.addEventListener('click', () => pick(b));
+    b.addEventListener('keydown', (e) => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); } });
+  });
+  const fb = [...document.querySelectorAll('.filter button')];
+  fb.forEach((b) => b.addEventListener('click', () => {
+    fb.forEach((x) => x.setAttribute('aria-pressed', x === b));
+    const mt = b.dataset.f === 'mt';
+    document.querySelectorAll('.room').forEach((r) => { r.hidden = mt && !r.dataset.mt; });
+    document.querySelectorAll('.type').forEach((t) => { t.hidden = ![...t.querySelectorAll('.room')].some((r) => !r.hidden); });
+    const out = document.getElementById('shown');
+    if (out) out.textContent = mt ? 'Showing rooms with a mountain view.' : 'Showing all rooms.';
+  }));
+})();
+</script>
+</body>
+</html>
