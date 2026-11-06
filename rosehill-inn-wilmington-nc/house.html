@@ -202,7 +202,7 @@ p { max-width: 38em; }
 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
 .two p + p { margin-top: 1rem; }
 .two figure img { width: 100%; border-radius: .2rem; }
-.two.narrow { grid-template-columns: minmax(0, 1fr) minmax(0, 413px); }
+.two figure img.parlor { width: 100%; }
 @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
 .addons { list-style: none; padding: 0; margin-top: 1rem; }
 .addons li { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px dotted #d6b6ae; }
@@ -255,15 +255,15 @@ p { max-width: 38em; }
       <p>This house was built in 1848 by Henry Russell Savage, a prominent Wilmington businessman and banker. It was also the home of Henry Bacon Jr., architect of the Lincoln Memorial in Washington, D.C.</p>
       <p>Rosehill Inn has been restored with an eclectic mix of antiques, sumptuous fabrics, fine linens and beautiful gardens. The Regency Room was once the original master bedroom and bath when the home was renovated in 1909.</p>
     </div>
-    <figure><img src="img/spire-692.webp" width="692" height="614" loading="lazy" decoding="async" alt="The side of Rosehill Inn with its upper porches, and a church spire behind it"><figcaption>The house from the side.</figcaption></figure>
+    <figure><img src="img/house-800.webp" srcset="img/house-560.webp 560w, img/house-800.webp 800w" sizes="(max-width: 760px) calc(100vw - 2rem), 560px" width="800" height="530" loading="lazy" decoding="async" alt="Rosehill Inn from South Third Street, with its wide wrap-around porch"><figcaption>114 South Third Street.</figcaption></figure>
   </section>
-  <section class="section two narrow">
+  <section class="section two">
     <div>
       <h2>The foyer and parlors</h2>
       <p>Step through the front entry of this Victorian mansion and see the unique Italian marble fireplace, ten foot tall oak pocket doors, and a magnificent pulpit staircase in quarter-sawn white oak.</p>
       <p>Sink into one of the comfortable wing-back chairs in the red gentlemen’s parlor, stocked with books and a variety of magazines. A game table awaits for a game of chess or cards.</p>
     </div>
-    <figure><img src="img/parlor-413.webp" width="413" height="310" loading="lazy" decoding="async" alt="The red parlor at Rosehill Inn, with a white fireplace and wing-back chairs"><figcaption>The red gentlemen’s parlor.</figcaption></figure>
+    <figure><img class="parlor" src="img/parlor-413.webp" width="413" height="310" loading="lazy" decoding="async" alt="The red parlor at Rosehill Inn, with a white fireplace and wing-back chairs"><figcaption>The red gentlemen’s parlor.</figcaption></figure>
   </section>
   <section class="section two">
     <div>
@@ -282,7 +282,7 @@ p { max-width: 38em; }
       <p>The wide wrap-around porch overlooks the original terraced gardens, which feature a fluted column pergola. From here you can catch the breezes blowing up the hill from the Cape Fear River or watch the sunsets.</p>
       <p>There are old fashioned porch swings and plenty of wicker chairs to relax.</p>
     </div>
-    <figure><img src="img/porch-630.webp" srcset="img/porch-420.webp 420w, img/porch-630.webp 630w" sizes="(max-width: 760px) calc(100vw - 2rem), 560px" width="630" height="630" loading="lazy" decoding="async" alt="The front porch of Rosehill Inn, with white columns and a hanging fern"><figcaption>The front porch.</figcaption></figure>
+    <figure><img src="img/spire-692.webp" width="692" height="614" loading="lazy" decoding="async" alt="The side of Rosehill Inn with its upper porches, and a church spire behind it"><figcaption>The house from the side, with its upper porches. The inn’s directions call it the large pink house.</figcaption></figure>
   </section>
 </div>
 </main>
