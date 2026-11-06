@@ -10,8 +10,8 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" href="fonts/besley.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/overpass.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-560.webp 560w, img/hero-m-800.webp 800w" imagesizes="calc(100vw - 32px)" media="(max-width: 860px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-1280.webp" imagesrcset="img/hero-960.webp 960w, img/hero-1280.webp 1280w" imagesizes="min(672px, 53vw)" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-560.webp 560w, img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1280.webp" imagesrcset="img/hero-960.webp 960w, img/hero-1280.webp 1280w" imagesizes="100vw" media="(min-width: 861px)" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Smoketree Lodge · Banner Elk, NC">
@@ -36,7 +36,7 @@
 </header>
 <main id="main">
 
-<section class="hero wrap" id="hero">
+<section class="hero" id="hero">
   <div class="hero-text">
     <p class="where">Banner Elk, North Carolina</p>
     <h1>A mountain lodge on Highway 105, between Boone and Banner Elk</h1>
@@ -45,8 +45,8 @@
   </div>
   <figure class="hero-photo">
     <picture>
-      <source media="(max-width: 860px)" srcset="img/hero-m-560.webp 560w, img/hero-m-800.webp 800w" sizes="calc(100vw - 32px)" width="800" height="535">
-      <img src="img/hero-960.webp" srcset="img/hero-1280.webp 1280w, img/hero-960.webp 960w" sizes="min(672px, 53vw)" width="1280" height="700" alt="Smoketree Lodge: the blue three-story lodge and its orange-roofed pool house against a forested mountainside" decoding="async" fetchpriority="high">
+      <source media="(max-width: 860px)" srcset="img/hero-m-560.webp 560w, img/hero-m-800.webp 800w" sizes="100vw" width="800" height="535">
+      <img src="img/hero-960.webp" srcset="img/hero-1280.webp 1280w, img/hero-960.webp 960w" sizes="100vw" width="1280" height="700" alt="Smoketree Lodge: the blue three-story lodge and its orange-roofed pool house against a forested mountainside" decoding="async" fetchpriority="high">
     </picture>
   </figure>
 </section>
@@ -81,16 +81,17 @@
   <h2 id="units-h">Four kinds of units, all with a kitchenette</h2>
   <ul class="unit-list">
     <li><a href="rooms.html#studio">
-      <img src="img/studio-400.webp" srcset="img/studio-640.webp 640w, img/studio-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1100px) calc(50vw - 40px), 285px" width="640" height="407" alt="Studio with a queen bed, lamps and a partial kitchenette" loading="lazy" decoding="async">
-      <span class="u-txt"><span class="u-name">Studio</span><span class="u-meta">Sleeps 2<br>One queen bed</span></span></a></li><li><a href="rooms.html#large">
-      <img src="img/large-400.webp" srcset="img/large-640.webp 640w, img/large-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1100px) calc(50vw - 40px), 285px" width="640" height="407" alt="Large studio with two full beds, a dining table and a kitchenette" loading="lazy" decoding="async">
-      <span class="u-txt"><span class="u-name">Large Studio</span><span class="u-meta">Sleeps 4<br>Two full beds</span></span></a></li><li><a href="rooms.html#one">
-      <img src="img/one-400.webp" srcset="img/one-640.webp 640w, img/one-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1100px) calc(50vw - 40px), 285px" width="640" height="407" alt="One bedroom living room with sofa, table and pine walls" loading="lazy" decoding="async">
-      <span class="u-txt"><span class="u-name">One Bedroom</span><span class="u-meta">Sleeps 4<br>Queen bed, queen sofa bed</span></span></a></li><li><a href="rooms.html#two">
-      <img src="img/two-400.webp" srcset="img/two-640.webp 640w, img/two-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1100px) calc(50vw - 40px), 285px" width="640" height="407" alt="Two bedroom living room with sofa and table" loading="lazy" decoding="async">
-      <span class="u-txt"><span class="u-name">Two Bedroom</span><span class="u-meta">Sleeps 6<br>Queen, twins or full, queen sofa bed</span></span></a></li>
+      <img src="img/studio-400.webp" srcset="img/studio-640.webp 640w, img/studio-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1240px) calc(50vw - 44px), 588px" width="640" height="407" alt="Studio with a queen bed, lamps and a partial kitchenette" loading="lazy" decoding="async">
+      <span class="u-txt"><span class="u-name">Studio</span><span class="u-meta">Sleeps 2<br>One queen bed</span><span class="u-price">From $74 a night*</span></span></a></li><li><a href="rooms.html#large">
+      <img src="img/large-400.webp" srcset="img/large-640.webp 640w, img/large-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1240px) calc(50vw - 44px), 588px" width="640" height="407" alt="Large studio with two full beds, a dining table and a kitchenette" loading="lazy" decoding="async">
+      <span class="u-txt"><span class="u-name">Large Studio</span><span class="u-meta">Sleeps 4<br>Two full beds</span><span class="u-price">From $79 a night*</span></span></a></li><li><a href="rooms.html#one">
+      <img src="img/one-400.webp" srcset="img/one-640.webp 640w, img/one-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1240px) calc(50vw - 44px), 588px" width="640" height="407" alt="One bedroom living room with sofa, table and pine walls" loading="lazy" decoding="async">
+      <span class="u-txt"><span class="u-name">One Bedroom</span><span class="u-meta">Sleeps 4<br>Queen bed, queen sofa bed</span><span class="u-price">From $94 a night*</span></span></a></li><li><a href="rooms.html#two">
+      <img src="img/two-400.webp" srcset="img/two-640.webp 640w, img/two-400.webp 400w" sizes="(max-width: 860px) 132px, (max-width: 1240px) calc(50vw - 44px), 588px" width="640" height="407" alt="Two bedroom living room with sofa and table" loading="lazy" decoding="async">
+      <span class="u-txt"><span class="u-name">Two Bedroom</span><span class="u-meta">Sleeps 6<br>Queen, twins or full, queen sofa bed</span><span class="u-price">From $104 a night*</span></span></a></li>
   </ul>
   <p class="units-note">Every unit has a phone with free local calls and cable TV with ESPN and Nickelodeon.</p>
+  <p class="small">* Rates as listed on the lodge’s rates page (last updated January 2017). Call to confirm current rates. Taxes not included. <a href="rates.html">All rates by season</a></p>
 </section>
 
 <section class="visit wrap" aria-labelledby="visit-h">
