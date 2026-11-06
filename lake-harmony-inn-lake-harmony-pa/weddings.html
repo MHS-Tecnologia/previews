@@ -42,28 +42,33 @@ p{max-width:38em}
 .nav > a.btn{color:#fff;padding:.6rem 1.05rem;font-size:.95rem;text-decoration:none}
 .menu{display:none}
 
-.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding-top:clamp(1rem,3vw,2.5rem);padding-bottom:clamp(2rem,4vw,3.5rem)}
+.hero{--side:max(var(--pad),calc((100vw - var(--max))/2));display:grid;padding-left:var(--side);grid-template-columns:minmax(0,26rem) minmax(0,1fr);grid-template-areas:"h fig" "t fig";column-gap:clamp(2rem,4vw,3.5rem);padding-top:1rem;padding-bottom:clamp(2rem,4vw,3.5rem)}
+.hero-h{grid-area:h;align-self:end}
+.hero-t{grid-area:t;align-self:start}
+.hero-fig{grid-area:fig}
+.hero-fig img{width:100%;height:clamp(440px,64vh,640px);object-fit:cover;border-radius:.6rem 0 0 .6rem}
 .hero .lede{font-size:1.2rem;color:var(--muted);margin:1.1rem 0 1.6rem}
 .ctas{display:flex;flex-wrap:wrap;gap:.75rem}
-.hero figure{position:relative}
-.hero img{border-radius:.5rem;width:100%}
-.hero figcaption,.cap{font-size:.9rem;color:var(--muted);margin-top:.55rem}
+.cap{font-size:.9rem;color:var(--muted);margin-top:.55rem}
 .slogan{font-size:1rem;color:var(--teal);font-weight:500;margin-bottom:.9rem}
 
 /* The inn's map: buttons sit at percentages of the image box, so they stay on the drawing at any width. */
 .grounds{background:var(--paper-2);padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .grounds-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .grounds-head p{color:var(--muted)}
-.mapgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:start}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:1rem clamp(1.25rem,3vw,2.5rem);align-items:start}
 .map{position:relative;border-radius:.5rem;overflow:hidden;box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(18,48,57,.45)}
 .map img{width:100%}
-.pin{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:3px solid #fff;background:var(--roof);cursor:pointer;padding:0;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .2s}
-.pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#fff;opacity:.9}
-.pin:hover{transform:scale(1.12)}
-.pin[aria-pressed=true]{background:var(--teal);transform:scale(1.2)}
-.pin[aria-pressed=true]::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid #fff;animation:ring 1.6s ease-out infinite}
-@keyframes ring{from{opacity:1;transform:scale(.7)}to{opacity:0;transform:scale(1.35)}}
-.places{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0 0;padding:0;list-style:none}
+.mapgrid{grid-template-areas:"map card" "chips card"}
+.mapcol{grid-area:map}.card{grid-area:card}.places{grid-area:chips}
+.hint{display:none}
+.pin{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border:0;background:none;padding:0;cursor:pointer;border-radius:50%}
+.pin::before{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--roof);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .2s}
+.pin::after{content:"";position:absolute;inset:13px;border-radius:50%;background:#fff}
+.pin:hover::before{transform:scale(1.12)}
+.pin[aria-pressed=true]::before{background:var(--teal);animation:ring 1.6s ease-out infinite}
+@keyframes ring{from{box-shadow:0 0 0 0 rgba(255,255,255,.95),0 2px 6px rgba(0,0,0,.35)}to{box-shadow:0 0 0 13px rgba(255,255,255,0),0 2px 6px rgba(0,0,0,.35)}}
+.places{display:flex;flex-wrap:wrap;gap:.45rem;margin:0;align-self:start;padding:0;list-style:none}
 .places button{font:500 .95rem Jost,sans-serif;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:.45rem .85rem;cursor:pointer}
 .places button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
 .card{background:var(--paper);border-radius:.5rem;overflow:hidden;border:1px solid var(--line)}
@@ -77,6 +82,7 @@ p{max-width:38em}
 .section{padding:clamp(2.5rem,6vw,4.5rem) 0}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
 .facts{list-style:none;padding:0;margin:1rem 0 0;columns:2;column-gap:2rem}
+@media (max-width:860px){.facts[style]{columns:2!important}}
 .facts li{padding:.35rem 0;border-bottom:1px solid var(--line);break-inside:avoid}
 .plain{list-style:none;padding:0;margin:1rem 0 0}
 .plain li{padding:.5rem 0;border-bottom:1px solid var(--line)}
@@ -86,6 +92,21 @@ p{max-width:38em}
 
 /* Rooms */
 .unit{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3rem);padding:clamp(2rem,5vw,3.5rem) 0;border-top:1px solid var(--line)}
+.book{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.4rem;padding:1rem 1.2rem;background:var(--paper-2);border-radius:.5rem}
+.book strong{font-size:1.5rem;font-weight:400}
+.guests{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1.8rem;padding:0;list-style:none}
+.guests a{display:block;text-decoration:none;color:var(--ink);border-top:3px solid var(--teal-hi);padding:.8rem 0 .2rem}
+.guests b{display:block;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1}
+.guests span{font-size:.98rem;color:var(--muted)}
+.guests a:hover b{color:var(--teal)}
+.bleed{position:relative}
+.bleed img{width:100%;height:clamp(300px,52vw,640px);object-fit:cover}
+.bleed figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.5rem var(--pad) 1.2rem;color:#fff;font-size:1.05rem;background:linear-gradient(transparent,rgba(10,28,34,.7))}
+.bleed figcaption span{display:block;max-width:var(--max);margin:0 auto}
+.addr{position:absolute;transform:translate(-50%,-100%);margin-top:-14px;background:var(--ink);color:#fff;padding:.45rem .8rem;border-radius:.4rem;font-size:.95rem;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.addr::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:0;border-top-color:var(--ink)}
+.dot{position:absolute;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--teal);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.bigmap{max-width:1035px;margin:1.8rem auto 0}
 .unit .sleeps{font-size:1.05rem;color:var(--teal);font-weight:500;margin:.3rem 0 .9rem}
 img.lead{border-radius:.5rem;width:100%}
 .unit .lead{border-radius:.5rem;width:100%;aspect-ratio:3/2;object-fit:cover}
@@ -138,14 +159,24 @@ footer a{color:#fff}
   .menu li + li a{border-top:1px solid #2c4a52}
   .nav > .btn{display:none}
   .brand img{height:3rem}
-  .hero{grid-template-columns:1fr;gap:1.1rem}
+  .hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"h" "fig" "t";row-gap:1rem;padding-top:.6rem}
+  .hero{padding-left:0}
+  .hero-h,.hero-t{padding:0 var(--pad)}
+  .hero-fig img{height:auto;aspect-ratio:16/9;border-radius:0}
   .hero .lede{font-size:1.08rem;margin:.75rem 0 1.1rem}
   .slogan{margin-bottom:.5rem}
-  .mapgrid,.split,.unit{grid-template-columns:1fr}
-  .pin{display:none;width:24px;height:24px;margin:-12px 0 0 -12px;border-width:2px}
-  .pin[aria-pressed=true]{display:block}
-  .pin::after{inset:3px}
-  .pin[aria-pressed=true]::before{inset:-7px}
+  .mapgrid,.split,.unit{grid-template-columns:minmax(0,1fr)}
+  .mapgrid{grid-template-areas:"map" "card" "chips"}
+  .mapscroll{overflow:auto;max-height:320px;border-radius:.5rem;overscroll-behavior:contain;box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(18,48,57,.45)}
+  .mapscroll .map{width:900px;border-radius:0;box-shadow:none}
+  .hint{display:block;font-size:.9rem;color:var(--muted);margin-top:.45rem}
+  .card img{aspect-ratio:16/10}
+  .card .body{padding:.9rem 1.1rem 1.1rem}
+  .guests{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .addr{font-size:.8rem;padding:.3rem .55rem}
+  .pin{width:44px;height:44px;margin:-22px 0 0 -22px}
+  .pin::before{inset:9px}
+  .pin::after{inset:18px}
   .contact-grid{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr}
   .season{grid-template-columns:1fr}
@@ -176,8 +207,12 @@ footer a{color:#fff}
   <p>Perfect for your unique lake front wedding, catered exclusively for your special day. Also great for other special events and parties.</p>
   <div class="ctas" style="margin-top:1.3rem"><a class="btn" href="tel:+15707220522" data-cta>Call about your date</a><a class="btn line" href="mailto:lakeharmonyinn@gmail.com">Email the inn</a></div>
 </section>
-<section class="wrap" style="padding-bottom:3.5rem">
-  <div style="max-width:1100px"><img class="lead" src="img/wed-lawn-480.webp" srcset="img/wed-lawn-480.webp 480w, img/wed-lawn-800.webp 800w, img/wed-lawn-1100.webp 1100w" sizes="(max-width: 860px) calc(100vw - 2rem), 1100px" width="1100" height="619" alt="Wedding ceremony on the lakefront lawn" loading="lazy" decoding="async"></div>
+<figure class="bleed">
+  <img src="img/wed-hd-800.webp" srcset="img/wed-hd-800.webp 800w, img/wed-hd-1600.webp 1600w, img/wed-hd-2200.webp 2200w" sizes="100vw" width="2200" height="1238" alt="Chairs set for a wedding ceremony on the lakefront lawn, an arch by the water" loading="lazy" decoding="async">
+  <figcaption><span>A ceremony set on the lakefront lawn.</span></figcaption>
+</figure>
+<section class="wrap" style="padding:2.5rem var(--pad) 3.5rem">
+  <h2>Ceremony, reception and the party after</h2>
   <div class="photos">
     <figure><img src="img/wed-fireplace-480.webp" srcset="img/wed-fireplace-480.webp 480w, img/wed-fireplace-800.webp 800w, img/wed-fireplace-1067.webp 1067w" sizes="(max-width: 520px) calc(100vw - 2rem), (max-width: 860px) 46vw, 590px" width="1067" height="800" alt="Benches set before the stone fireplace, string lights over the lake" loading="lazy" decoding="async"></figure>
     <figure><img src="img/wed-tent-480.webp" srcset="img/wed-tent-480.webp 480w, img/wed-tent-800.webp 800w, img/wed-tent-1067.webp 1067w" sizes="(max-width: 520px) calc(100vw - 2rem), (max-width: 860px) 46vw, 590px" width="1067" height="800" alt="Reception tables under a tent with string lights" loading="lazy" decoding="async"></figure>

@@ -42,28 +42,33 @@ p{max-width:38em}
 .nav > a.btn{color:#fff;padding:.6rem 1.05rem;font-size:.95rem;text-decoration:none}
 .menu{display:none}
 
-.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding-top:clamp(1rem,3vw,2.5rem);padding-bottom:clamp(2rem,4vw,3.5rem)}
+.hero{--side:max(var(--pad),calc((100vw - var(--max))/2));display:grid;padding-left:var(--side);grid-template-columns:minmax(0,26rem) minmax(0,1fr);grid-template-areas:"h fig" "t fig";column-gap:clamp(2rem,4vw,3.5rem);padding-top:1rem;padding-bottom:clamp(2rem,4vw,3.5rem)}
+.hero-h{grid-area:h;align-self:end}
+.hero-t{grid-area:t;align-self:start}
+.hero-fig{grid-area:fig}
+.hero-fig img{width:100%;height:clamp(440px,64vh,640px);object-fit:cover;border-radius:.6rem 0 0 .6rem}
 .hero .lede{font-size:1.2rem;color:var(--muted);margin:1.1rem 0 1.6rem}
 .ctas{display:flex;flex-wrap:wrap;gap:.75rem}
-.hero figure{position:relative}
-.hero img{border-radius:.5rem;width:100%}
-.hero figcaption,.cap{font-size:.9rem;color:var(--muted);margin-top:.55rem}
+.cap{font-size:.9rem;color:var(--muted);margin-top:.55rem}
 .slogan{font-size:1rem;color:var(--teal);font-weight:500;margin-bottom:.9rem}
 
 /* The inn's map: buttons sit at percentages of the image box, so they stay on the drawing at any width. */
 .grounds{background:var(--paper-2);padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .grounds-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .grounds-head p{color:var(--muted)}
-.mapgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:start}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:1rem clamp(1.25rem,3vw,2.5rem);align-items:start}
 .map{position:relative;border-radius:.5rem;overflow:hidden;box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(18,48,57,.45)}
 .map img{width:100%}
-.pin{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:3px solid #fff;background:var(--roof);cursor:pointer;padding:0;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .2s}
-.pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#fff;opacity:.9}
-.pin:hover{transform:scale(1.12)}
-.pin[aria-pressed=true]{background:var(--teal);transform:scale(1.2)}
-.pin[aria-pressed=true]::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid #fff;animation:ring 1.6s ease-out infinite}
-@keyframes ring{from{opacity:1;transform:scale(.7)}to{opacity:0;transform:scale(1.35)}}
-.places{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0 0;padding:0;list-style:none}
+.mapgrid{grid-template-areas:"map card" "chips card"}
+.mapcol{grid-area:map}.card{grid-area:card}.places{grid-area:chips}
+.hint{display:none}
+.pin{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border:0;background:none;padding:0;cursor:pointer;border-radius:50%}
+.pin::before{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--roof);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .2s}
+.pin::after{content:"";position:absolute;inset:13px;border-radius:50%;background:#fff}
+.pin:hover::before{transform:scale(1.12)}
+.pin[aria-pressed=true]::before{background:var(--teal);animation:ring 1.6s ease-out infinite}
+@keyframes ring{from{box-shadow:0 0 0 0 rgba(255,255,255,.95),0 2px 6px rgba(0,0,0,.35)}to{box-shadow:0 0 0 13px rgba(255,255,255,0),0 2px 6px rgba(0,0,0,.35)}}
+.places{display:flex;flex-wrap:wrap;gap:.45rem;margin:0;align-self:start;padding:0;list-style:none}
 .places button{font:500 .95rem Jost,sans-serif;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:.45rem .85rem;cursor:pointer}
 .places button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
 .card{background:var(--paper);border-radius:.5rem;overflow:hidden;border:1px solid var(--line)}
@@ -77,6 +82,7 @@ p{max-width:38em}
 .section{padding:clamp(2.5rem,6vw,4.5rem) 0}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
 .facts{list-style:none;padding:0;margin:1rem 0 0;columns:2;column-gap:2rem}
+@media (max-width:860px){.facts[style]{columns:2!important}}
 .facts li{padding:.35rem 0;border-bottom:1px solid var(--line);break-inside:avoid}
 .plain{list-style:none;padding:0;margin:1rem 0 0}
 .plain li{padding:.5rem 0;border-bottom:1px solid var(--line)}
@@ -86,6 +92,21 @@ p{max-width:38em}
 
 /* Rooms */
 .unit{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3rem);padding:clamp(2rem,5vw,3.5rem) 0;border-top:1px solid var(--line)}
+.book{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.4rem;padding:1rem 1.2rem;background:var(--paper-2);border-radius:.5rem}
+.book strong{font-size:1.5rem;font-weight:400}
+.guests{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1.8rem;padding:0;list-style:none}
+.guests a{display:block;text-decoration:none;color:var(--ink);border-top:3px solid var(--teal-hi);padding:.8rem 0 .2rem}
+.guests b{display:block;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1}
+.guests span{font-size:.98rem;color:var(--muted)}
+.guests a:hover b{color:var(--teal)}
+.bleed{position:relative}
+.bleed img{width:100%;height:clamp(300px,52vw,640px);object-fit:cover}
+.bleed figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.5rem var(--pad) 1.2rem;color:#fff;font-size:1.05rem;background:linear-gradient(transparent,rgba(10,28,34,.7))}
+.bleed figcaption span{display:block;max-width:var(--max);margin:0 auto}
+.addr{position:absolute;transform:translate(-50%,-100%);margin-top:-14px;background:var(--ink);color:#fff;padding:.45rem .8rem;border-radius:.4rem;font-size:.95rem;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.addr::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;border-bottom:0;border-top-color:var(--ink)}
+.dot{position:absolute;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--teal);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.bigmap{max-width:1035px;margin:1.8rem auto 0}
 .unit .sleeps{font-size:1.05rem;color:var(--teal);font-weight:500;margin:.3rem 0 .9rem}
 img.lead{border-radius:.5rem;width:100%}
 .unit .lead{border-radius:.5rem;width:100%;aspect-ratio:3/2;object-fit:cover}
@@ -138,14 +159,24 @@ footer a{color:#fff}
   .menu li + li a{border-top:1px solid #2c4a52}
   .nav > .btn{display:none}
   .brand img{height:3rem}
-  .hero{grid-template-columns:1fr;gap:1.1rem}
+  .hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"h" "fig" "t";row-gap:1rem;padding-top:.6rem}
+  .hero{padding-left:0}
+  .hero-h,.hero-t{padding:0 var(--pad)}
+  .hero-fig img{height:auto;aspect-ratio:16/9;border-radius:0}
   .hero .lede{font-size:1.08rem;margin:.75rem 0 1.1rem}
   .slogan{margin-bottom:.5rem}
-  .mapgrid,.split,.unit{grid-template-columns:1fr}
-  .pin{display:none;width:24px;height:24px;margin:-12px 0 0 -12px;border-width:2px}
-  .pin[aria-pressed=true]{display:block}
-  .pin::after{inset:3px}
-  .pin[aria-pressed=true]::before{inset:-7px}
+  .mapgrid,.split,.unit{grid-template-columns:minmax(0,1fr)}
+  .mapgrid{grid-template-areas:"map" "card" "chips"}
+  .mapscroll{overflow:auto;max-height:320px;border-radius:.5rem;overscroll-behavior:contain;box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(18,48,57,.45)}
+  .mapscroll .map{width:900px;border-radius:0;box-shadow:none}
+  .hint{display:block;font-size:.9rem;color:var(--muted);margin-top:.45rem}
+  .card img{aspect-ratio:16/10}
+  .card .body{padding:.9rem 1.1rem 1.1rem}
+  .guests{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .addr{font-size:.8rem;padding:.3rem .55rem}
+  .pin{width:44px;height:44px;margin:-22px 0 0 -22px}
+  .pin::before{inset:9px}
+  .pin::after{inset:18px}
   .contact-grid{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr}
   .season{grid-template-columns:1fr}
@@ -172,9 +203,15 @@ footer a{color:#fff}
 </header>
 <main id="main">
 <section class="wrap page-head" data-hero>
-  <h1>Rooms, a suite and two houses</h1>
+  <h1>How many of you are coming?</h1>
   <p>Clean and comfortable waterfront lodging, from a room for two to a house for sixteen. The inn is still renovating the property.</p>
   <div class="ctas" style="margin-top:1.3rem"><a class="btn" href="tel:+15707220522" data-cta>Call to book: (570) 722-0522</a><a class="btn line" href="mailto:lakeharmonyinn@gmail.com">Email the inn</a></div>
+  <ul class="guests" aria-label="Jump to a stay by group size">
+    <li><a href="#single"><b>2&ndash;3</b><span>Single rooms</span></a></li>
+    <li><a href="#cottage"><b>4</b><span>Linda Cottage</span></a></li>
+    <li><a href="#suite"><b>10</b><span>3 bedroom suite</span></a></li>
+    <li><a href="#house"><b>16</b><span>6 bedroom house</span></a></li>
+  </ul>
 </section>
 <div class="wrap">
   <section class="unit" id="single" aria-labelledby="single-h">
@@ -186,17 +223,7 @@ footer a{color:#fff}
       <h2 id="single-h">Single rooms</h2>
       <p class="sleeps">Queen bed, or a full and a twin. Sleeps 2 to 3.</p>
       <ul class="facts"><li>Adjoining rooms</li><li>Air conditioner</li><li>Flat screen TV</li><li>Dish TV</li><li>Daily cleaning, if requested</li><li>Free parking</li><li>Coffee maker and mini fridge</li><li>Blow dryer</li><li>24 hour assistance available</li><li>Sheets and toiletries provided</li><li>Free WiFi</li></ul>
-    </div>
-  </section>
-  <section class="unit" id="suite" aria-labelledby="suite-h">
-    <div>
-      <img class="lead" src="img/suite-living-480.webp" srcset="img/suite-living-480.webp 480w, img/suite-living-800.webp 800w, img/suite-living-1100.webp 1100w" sizes="(max-width: 860px) calc(100vw - 2rem), 680px" width="1100" height="733" alt="Living room of the 3 bedroom suite" loading="lazy" decoding="async">
-      <ul class="thumbs"><li><button type="button" data-full="img/suite-kitchen-1100.webp" data-alt="Suite kitchen" aria-label="Open photo: Suite kitchen"><img src="img/suite-kitchen-480.webp" width="480" height="320" alt="" loading="lazy" decoding="async"></button></li><li><button type="button" data-full="img/suite-dining-1066.webp" data-alt="Suite dining table" aria-label="Open photo: Suite dining table"><img src="img/suite-dining-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async"></button></li><li><button type="button" data-full="img/suite-master-1067.webp" data-alt="Suite bedroom" aria-label="Open photo: Suite bedroom"><img src="img/suite-master-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async"></button></li><li><button type="button" data-full="img/suite-2beds-1067.webp" data-alt="Suite bedroom with two beds" aria-label="Open photo: Suite bedroom with two beds"><img src="img/suite-2beds-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async"></button></li></ul>
-    </div>
-    <div>
-      <h2 id="suite-h">3 bedroom, 3 bath suite</h2>
-      <p class="sleeps">Sleeps 10.</p>
-      <ul class="facts"><li>Full kitchen, dishwasher, microwave</li><li>Washer and dryer</li><li>8 person dining table</li><li>Upstairs and downstairs sitting rooms with pull out couch</li><li>Flat screen TV&#x27;s</li><li>Bedroom 1: king bed</li><li>Bedroom 2: 1 queen, 1 twin</li><li>Bedroom 3: queen bed</li><li>Linens and towels provided</li></ul>
+      <div class="book"><strong>Sleeps 2 to 3</strong><a class="btn" href="tel:+15707220522">Call to book</a></div>
     </div>
   </section>
   <section class="unit" id="cottage" aria-labelledby="cottage-h">
@@ -208,6 +235,19 @@ footer a{color:#fff}
       <h2 id="cottage-h">Linda Cottage, 2 bedrooms, 2 baths</h2>
       <p class="sleeps">A single standing house. Sleeps 4.</p>
       <ul class="facts"><li>Full kitchen, dishwasher, microwave</li><li>Washer and dryer</li><li>Bedroom 1: 1 queen</li><li>Bedroom 2: 1 queen</li><li>Linens and towels provided</li></ul>
+      <div class="book"><strong>Sleeps 4</strong><a class="btn" href="tel:+15707220522">Call to book</a></div>
+    </div>
+  </section>
+  <section class="unit" id="suite" aria-labelledby="suite-h">
+    <div>
+      <img class="lead" src="img/suite-living-480.webp" srcset="img/suite-living-480.webp 480w, img/suite-living-800.webp 800w, img/suite-living-1100.webp 1100w" sizes="(max-width: 860px) calc(100vw - 2rem), 680px" width="1100" height="733" alt="Living room of the 3 bedroom suite" loading="lazy" decoding="async">
+      <ul class="thumbs"><li><button type="button" data-full="img/suite-kitchen-1100.webp" data-alt="Suite kitchen" aria-label="Open photo: Suite kitchen"><img src="img/suite-kitchen-480.webp" width="480" height="320" alt="" loading="lazy" decoding="async"></button></li><li><button type="button" data-full="img/suite-dining-1066.webp" data-alt="Suite dining table" aria-label="Open photo: Suite dining table"><img src="img/suite-dining-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async"></button></li><li><button type="button" data-full="img/suite-master-1067.webp" data-alt="Suite bedroom" aria-label="Open photo: Suite bedroom"><img src="img/suite-master-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async"></button></li><li><button type="button" data-full="img/suite-2beds-1067.webp" data-alt="Suite bedroom with two beds" aria-label="Open photo: Suite bedroom with two beds"><img src="img/suite-2beds-480.webp" width="480" height="360" alt="" loading="lazy" decoding="async"></button></li></ul>
+    </div>
+    <div>
+      <h2 id="suite-h">3 bedroom, 3 bath suite</h2>
+      <p class="sleeps">Sleeps 10.</p>
+      <ul class="facts"><li>Full kitchen, dishwasher, microwave</li><li>Washer and dryer</li><li>8 person dining table</li><li>Upstairs and downstairs sitting rooms with pull out couch</li><li>Flat screen TV&#x27;s</li><li>Bedroom 1: king bed</li><li>Bedroom 2: 1 queen, 1 twin</li><li>Bedroom 3: queen bed</li><li>Linens and towels provided</li></ul>
+      <div class="book"><strong>Sleeps 10</strong><a class="btn" href="tel:+15707220522">Call to book</a></div>
     </div>
   </section>
   <section class="unit" id="house" aria-labelledby="house-h">
@@ -219,6 +259,7 @@ footer a{color:#fff}
       <h2 id="house-h">6 bedroom, 5 bath house</h2>
       <p class="sleeps">A single standing house. Sleeps 16.</p>
       <ul class="facts"><li>Full kitchen, dishwasher, microwave</li><li>Bedroom 1: 1 king</li><li>Bedroom 2: 2 queens</li><li>Bedroom 3: 2 queens</li><li>Bedroom 4: 1 king</li><li>Bedroom 5: 1 queen</li><li>Bedroom 6: 1 queen</li><li>Linens and towels provided</li></ul>
+      <div class="book"><strong>Sleeps 16</strong><a class="btn" href="tel:+15707220522">Call to book</a></div>
     </div>
   </section>
   <p class="note" style="padding-bottom:3rem">The inn also takes bookings online through its own booking page. This demo does not link to it: call or email to check dates.</p>
