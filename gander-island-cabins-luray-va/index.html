@@ -8,8 +8,8 @@
 <meta name="description" content="Four cabins with hot tubs on a 5th generation family farm along the Shenandoah River, 5 minutes from Luray, Virginia.">
 <meta name="theme-color" content="#f3f4ef">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preload" as="image" media="(max-width: 900px)" imagesrcset="img/hero-m-800.webp 800w" imagesizes="calc(100vw - 2.5rem)" fetchpriority="high">
-<link rel="preload" as="image" media="(min-width: 900.02px)" imagesrcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" imagesizes="(min-width: 72rem) 664px, 56vw" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 900px)" imagesrcset="img/hero-m-800.webp 800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 900.02px)" imagesrcset="img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" imagesizes="100vw" fetchpriority="high">
 <style>
 @font-face { font-family: "Literata"; font-weight: 400 700; font-display: swap; src: url(fonts/literata.woff2) format("woff2"); }
 @font-face { font-family: "Figtree"; font-weight: 400 700; font-display: swap; src: url(fonts/figtree.woff2) format("woff2"); }
@@ -66,15 +66,14 @@ p + p { margin-top: .9em; }
 .btn-line:hover { background: #fff; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
 
-/* Home hero: words left, one photo right */
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: center; padding-block: clamp(2.5rem, 5vw, 4rem); }
+/* Home hero: words on top, the meadow full-bleed beneath */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: end; padding-block: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.25rem); }
+.hero .lede { margin-top: 0; }
+.hero figure { margin: 0; }
+.hero figure img { width: 100%; height: clamp(18rem, calc(100svh - 26rem), 40rem); object-fit: cover; object-position: 50% 78%; }
+.hero figcaption { padding-inline: var(--pad); max-width: calc(var(--max) + 2 * var(--pad)); margin-inline: auto; }
 .hero p.where { color: var(--roof); font-weight: 600; margin-bottom: 1rem; }
-.hero .lede { margin-top: 1.25rem; }
-.hero figure img { border-radius: .5rem; width: 100%; }
-@media (min-width: 900.02px) {
-  .hero .wrap { min-height: calc(100svh - 6.5rem); padding-block: 2rem; }
-  .hero figure img { height: min(calc(100svh - 12rem), 46rem); min-height: 30rem; object-fit: cover; }
-}
+
 .hero figcaption, .cap { font-size: .88rem; color: var(--muted); margin-top: .55rem; }
 
 section { padding-block: clamp(3.5rem, 7vw, 6rem); }
@@ -91,11 +90,13 @@ section { padding-block: clamp(3.5rem, 7vw, 6rem); }
 .drive { background: var(--navy); color: #eef1ec; }
 .drive h2 { color: #fff; max-width: 40rem; }
 .drive .intro { color: #c9d3e2; max-width: 38rem; margin-top: 1rem; }
-.drive .meadow { margin-top: 2.5rem; border-radius: .5rem; width: 100%; }
-.road { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 3.5rem minmax(0, 1fr); gap: 0 1.5rem; margin-top: 3rem; padding-top: 2.6rem; }
-.road::before { content: ""; position: absolute; top: 0; left: 0; right: calc(20% + 3rem); height: .55rem; border-radius: 99px; background: var(--gravel); background-image: radial-gradient(#a9a79b 1px, transparent 1.3px); background-size: 7px 7px; }
-.road::after { content: ""; position: absolute; top: .2rem; right: 0; width: calc(20% - .5rem); height: .15rem; background: repeating-linear-gradient(90deg, var(--gravel) 0 .5rem, transparent .5rem .9rem); }
-.road .gap { align-self: start; margin-top: -2.35rem; font-size: .8rem; color: #c9d3e2; line-height: 1.3; text-align: center; }
+.road { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 1.5rem; margin-top: 3rem; padding-top: 2.6rem; }
+.road-2 { margin-top: 3.5rem; }
+.road-2::before { background: repeating-linear-gradient(90deg, var(--gravel) 0 .7rem, transparent .7rem 1.2rem) !important; height: .25rem !important; top: .15rem !important; }
+.stop img { transition: opacity .2s ease; }
+.stop:hover img { opacity: .88; }
+.road::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: .55rem; border-radius: 99px; background: var(--gravel); background-image: radial-gradient(#a9a79b 1px, transparent 1.3px); background-size: 7px 7px; }
+.road .gap { align-self: center; grid-column: span 2; max-width: 26rem; color: #c9d3e2; font-size: 1.05rem; }
 .stop { position: relative; text-decoration: none; color: inherit; display: block; }
 .stop::before { content: ""; position: absolute; left: 1.4rem; top: -2.6rem; width: 3px; height: 2.6rem; background: var(--gravel); }
 .plate { display: inline-block; position: relative; background: #fff; color: var(--navy); font-family: "Literata", Georgia, serif; font-weight: 700; font-size: 2.3rem; line-height: 1; padding: .35rem .7rem .4rem; border-radius: .35rem; box-shadow: inset 0 0 0 3px var(--navy), inset 0 0 0 5px #fff, inset 0 0 0 6px #b9c3d3; font-variant-numeric: lining-nums; letter-spacing: .01em; }
@@ -211,7 +212,8 @@ details.more[open] > summary { display: none; }
 
 @media (max-width: 980px) {
   .road { grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; padding-top: 0; }
-  .road::before, .road::after, .stop::before, .road .gap { display: none; }
+  .road-2 { margin-top: 2.5rem; }
+  .road::before, .stop::before, .road .gap { display: none; }
 }
 @media (max-width: 900px) {
   .nav > a { display: none; }
@@ -226,7 +228,8 @@ details.more[open] > summary { display: none; }
   .menu li + li a { border-top: 1px solid #2a4675; }
   .call { display: none; }
   .hero .wrap, .land, .river, .hosts, .cabin { grid-template-columns: 1fr; }
-  .hero .wrap { padding-block: 1.6rem 2.5rem; gap: 1.5rem; }
+  .hero .wrap { padding-block: 1.4rem 1.25rem; gap: .9rem; }
+  .hero figure img { height: auto; }
   .river figure { order: 2; }
   .quotes, .rates, .routes { grid-template-columns: 1fr; }
   .addr { grid-template-columns: 1fr 1fr; }
@@ -290,20 +293,22 @@ details.more[open] > summary { display: none; }
     <div>
       <p class="where">Shenandoah Valley, Virginia</p>
       <h1>Cabins along the beautiful Shenandoah River</h1>
+    </div>
+    <div>
       <p class="lede">Hike, fish and paddle all day, then unwind in a hot tub and gather around a fire. Just 5 minutes from the town of Luray, and only 1 hr and 45 min from Northern VA.</p>
       <div class="actions" data-bar>
         <a class="btn btn-main" href="mailto:rentals@ganderislandcabins.com?subject=Cabin%20Inquiry">Email about your dates</a>
         <a class="btn btn-line" href="tel:+15402449180">Call (540) 244-9180</a>
       </div>
     </div>
-    <figure>
-      <picture>
-        <source media="(max-width: 900px)" srcset="img/hero-m-800.webp 800w" sizes="calc(100vw - 2.5rem)" width="800" height="552">
-        <img src="img/hero-900.webp" srcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" sizes="(min-width: 72rem) 664px, 56vw" width="1400" height="1186" alt="The Mother Goose deck with its hot tub and table, above the Shenandoah River" fetchpriority="high">
-      </picture>
-      <figcaption>The deck and hot tub at the Mother Goose, over the river.</figcaption>
-    </figure>
   </div>
+  <figure>
+    <picture>
+      <source media="(max-width: 900px)" srcset="img/hero-m-800.webp 800w" sizes="100vw" width="800" height="571">
+      <img src="img/hero-1600.webp" srcset="img/hero-1600.webp 1600w, img/hero-2000.webp 2000w" sizes="100vw" width="2000" height="833" alt="The meadow on Ganders Drive, with three cabins on posts beyond a big shade tree" fetchpriority="high">
+    </picture>
+    <figcaption>The meadow on Ganders Drive, with three of the cabins.</figcaption>
+  </figure>
 </div>
 
 <section>
@@ -318,25 +323,21 @@ details.more[open] > summary { display: none; }
       </dl>
     </div>
     <figure>
-      <img src="img/kayak-700.webp" srcset="img/kayak-700.webp 700w, img/kayak-1200.webp 1200w" sizes="(min-width: 72rem) 564px, (min-width: 760px) calc(50vw - 2.75rem), calc(100vw - 2.5rem)" width="1200" height="800" alt="A kayak on the Shenandoah River, with wooded hills ahead" loading="lazy" decoding="async">
-      <figcaption class="cap">Kayaking the Shenandoah.</figcaption>
+      <img src="img/deck-700.webp" srcset="img/deck-700.webp 700w, img/deck-1200.webp 1200w" sizes="(min-width: 72rem) 564px, (min-width: 760px) calc(50vw - 2.75rem), calc(100vw - 2.5rem)" width="1200" height="1017" alt="The Mother Goose deck with its hot tub and table, above the Shenandoah River" loading="lazy" decoding="async">
+      <figcaption class="cap">The deck and hot tub at the Mother Goose, over the river.</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="drive" id="cabins">
   <div class="wrap">
-    <h2>Four cabins, and their mailboxes</h2>
+    <h2>Four cabins, four addresses</h2>
     <p class="intro">Three cabins share the riverfront meadow on Ganders Drive. The Outpost sits on its own property nearby. Every cabin sleeps up to 4 guests and has a hot tub, a fire ring and a charcoal grill.</p>
-    <picture>
-      <source media="(max-width: 600px)" srcset="img/meadow-m-800.webp 800w" sizes="calc(100vw - 2.5rem)" width="800" height="615">
-      <img class="meadow" src="img/meadow-1600.webp" sizes="(min-width: 72rem) 1152px, calc(100vw - 2.5rem)" srcset="img/meadow-1600.webp 1600w" width="1600" height="727" alt="The meadow on Ganders Drive with the cabins in a row under the trees" loading="lazy" decoding="async">
-    </picture>
     <div class="road">
     <a class="stop" href="goose-and-gander.html">
       <span class="plate">782</span>
       <span class="street">Ganders Dr</span>
-      <img src="img/c-gander-480.webp" srcset="img/c-gander-480.webp 480w, img/c-gander-800.webp 800w" sizes="(min-width: 72rem) 230px, (min-width: 981px) calc((100vw - 13rem) / 4.4), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Gander cabin" loading="lazy" decoding="async">
+      <img src="img/c-gander-480.webp" srcset="img/c-gander-480.webp 480w, img/c-gander-800.webp 800w" sizes="(min-width: 72rem) 368px, (min-width: 981px) calc((100vw - 8rem) / 3), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Gander cabin" loading="lazy" decoding="async">
       <h3>The Gander</h3>
       <p>Twin cabin, hot tub under the deck, queen bedroom with a propane fireplace.</p>
       <p><span class="rate">From $175 a night</span> midweek</p>
@@ -344,7 +345,7 @@ details.more[open] > summary { display: none; }
     <a class="stop" href="goose-and-gander.html">
       <span class="plate">784</span>
       <span class="street">Ganders Dr</span>
-      <img src="img/c-goose-480.webp" srcset="img/c-goose-480.webp 480w, img/c-goose-800.webp 800w" sizes="(min-width: 72rem) 230px, (min-width: 981px) calc((100vw - 13rem) / 4.4), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Goose cabin" loading="lazy" decoding="async">
+      <img src="img/c-goose-480.webp" srcset="img/c-goose-480.webp 480w, img/c-goose-800.webp 800w" sizes="(min-width: 72rem) 368px, (min-width: 981px) calc((100vw - 8rem) / 3), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Goose cabin" loading="lazy" decoding="async">
       <h3>The Goose</h3>
       <p>The Gander’s twin, identical in design, on the same riverfront property.</p>
       <p><span class="rate">From $175 a night</span> midweek</p>
@@ -352,20 +353,22 @@ details.more[open] > summary { display: none; }
     <a class="stop" href="mother-goose.html">
       <span class="plate">800</span>
       <span class="street">Ganders Dr</span>
-      <img src="img/c-mothergoose-480.webp" srcset="img/c-mothergoose-480.webp 480w, img/c-mothergoose-800.webp 800w" sizes="(min-width: 72rem) 230px, (min-width: 981px) calc((100vw - 13rem) / 4.4), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Mother Goose cabin" loading="lazy" decoding="async">
+      <img src="img/c-mothergoose-480.webp" srcset="img/c-mothergoose-480.webp 480w, img/c-mothergoose-800.webp 800w" sizes="(min-width: 72rem) 368px, (min-width: 981px) calc((100vw - 8rem) / 3), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Mother Goose cabin" loading="lazy" decoding="async">
       <h3>The Mother Goose</h3>
       <p>Three levels, built in 2016. 6 person hot tub on a deck overlooking the river.</p>
       <p><span class="rate">From $215 a night</span> midweek</p>
     </a>
-    <p class="gap">a different property</p>
+    </div>
+    <div class="road road-2">
     <a class="stop" href="outpost.html">
       <span class="plate">51</span>
       <span class="street">Michaels Rd</span>
-      <img src="img/c-outpost-480.webp" srcset="img/c-outpost-480.webp 480w, img/c-outpost-800.webp 800w" sizes="(min-width: 72rem) 230px, (min-width: 981px) calc((100vw - 13rem) / 4.4), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Outpost cabin" loading="lazy" decoding="async">
+      <img src="img/c-outpost-480.webp" srcset="img/c-outpost-480.webp 480w, img/c-outpost-800.webp 800w" sizes="(min-width: 72rem) 368px, (min-width: 981px) calc((100vw - 8rem) / 3), (min-width: 601px) calc(50vw - 2.75rem), 9.5rem" width="800" height="600" alt="The Outpost cabin" loading="lazy" decoding="async">
       <h3>The Outpost</h3>
       <p>Stand-alone cabin on a wooded lot, near river access points and hiking trails.</p>
       <p><span class="rate">From $215 a night</span> midweek</p>
     </a>
+    <p class="gap">The Outpost is on a different property: a wooded lot close to river access points, hiking trails and Shenandoah River Outfitters.</p>
     </div>
   </div>
 </section>
@@ -373,8 +376,8 @@ details.more[open] > summary { display: none; }
 <section>
   <div class="wrap river">
     <figure>
-      <img src="img/ramp-700.webp" srcset="img/ramp-700.webp 700w, img/ramp-1200.webp 1200w" sizes="(min-width: 72rem) 660px, (min-width: 901px) 56vw, calc(100vw - 2.5rem)" width="1200" height="800" alt="The private boat launch, a gravel ramp down to the river under the trees" loading="lazy" decoding="async">
-      <figcaption class="cap">The private boat launch.</figcaption>
+      <img src="img/kayak-700.webp" srcset="img/kayak-700.webp 700w, img/kayak-1200.webp 1200w" sizes="(min-width: 72rem) 660px, (min-width: 901px) 56vw, calc(100vw - 2.5rem)" width="1200" height="800" alt="A kayak on the Shenandoah River, with wooded hills ahead" loading="lazy" decoding="async">
+      <figcaption class="cap">Kayaking the Shenandoah.</figcaption>
     </figure>
     <div>
       <h2>A canoe and two kayaks at the river cabins</h2>
