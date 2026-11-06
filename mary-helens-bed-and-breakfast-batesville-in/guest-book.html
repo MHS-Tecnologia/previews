@@ -41,8 +41,8 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--violet);outline-of
 .btn-v:hover{background:var(--violet-d);border-color:var(--violet-d);color:#fff}
 .btn-o{color:var(--violet);background:transparent}
 .btn-o:hover{background:var(--violet);border-color:var(--violet);color:#fff}
-.btn-l{background:var(--lamp);border-color:var(--lamp);color:var(--dusk)}
-.btn-l:hover{background:var(--lamp-d);border-color:var(--lamp-d);color:var(--dusk)}
+.btn-l{background:var(--violet);border-color:var(--violet);color:#fff}
+.btn-l:hover{background:var(--violet-d);border-color:var(--violet-d);color:#fff}
 .btn-d{color:var(--onDusk);background:transparent}
 .btn-d:hover{background:var(--onDusk);border-color:var(--onDusk);color:var(--dusk)}
 .nav > a.btn{min-height:42px;padding:0 18px;border-bottom:2px solid var(--violet);color:#fff}
@@ -89,6 +89,7 @@ section{padding:92px 0}
 .name{display:flex;flex-direction:column;align-items:center;text-align:center}
 .oval{width:220px;aspect-ratio:4/5;border-radius:50%;overflow:hidden;border:6px solid var(--card);box-shadow:0 0 0 1px var(--rule),0 18px 36px -18px rgba(27,34,54,.45);margin-bottom:26px}
 .oval img{width:100%;height:100%;object-fit:cover}
+.oval.room{border-radius:6px}
 .oval .mural{object-position:88% 45%}
 .name h3{font-style:italic;font-weight:600;font-size:clamp(2rem,2.8vw,2.6rem);color:var(--cypress);margin-bottom:10px}
 .name .who{font:700 1rem/1.3 var(--sans);color:var(--ink);margin:0 0 12px}
@@ -147,8 +148,9 @@ section{padding:92px 0}
 .portraits{display:flex;gap:44px;flex-wrap:wrap;justify-content:center}
 .portraits figure{display:flex;flex-direction:column;align-items:center;text-align:center}
 .portraits .oval{margin-bottom:12px}
-.entries{columns:2 22rem;column-gap:48px}
-.entry{break-inside:avoid;background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:28px 30px;margin:0 0 28px}
+.entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;align-items:start}
+.entries .entry:last-child{grid-column:1/-1;max-width:46rem;justify-self:center}
+.entry{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:28px 30px;margin:0}
 .entry p{font-style:italic;margin:0 0 12px}
 .entry .src{font:500 1rem/1.4 var(--sans);color:var(--muted);font-style:normal;margin:0}
 table.rates{border-collapse:collapse;width:100%;font:500 1.08rem/1.4 var(--sans)}
@@ -199,7 +201,7 @@ section{padding:64px 0}
 .facts.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px}
 .facts.cols2 li:nth-child(2){border-top:1px solid var(--rule)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.grid2{grid-template-columns:minmax(0,1fr);gap:18px}
+.grid2,.entries{grid-template-columns:minmax(0,1fr);gap:18px}
 .facts.cols2{grid-template-columns:minmax(0,1fr)}
 .facts.cols2 li:nth-child(2){border-top:0}
 .namedfor{grid-template-columns:96px minmax(0,1fr);gap:18px}
@@ -228,7 +230,7 @@ section{padding:64px 0}
 <h1>From the guest book</h1>
 <p class="lede">Comments guests have left after their stay. More reviews are posted on Tripadvisor, iLoveInns and Google.</p>
 </div></div>
-<section style="padding-top:56px"><div class="wrap"><div class="entries"><blockquote class="entry"><p>What a blessing to be able to be included in this book of “memories”. Tonya &amp; I appreciate your gifts of Spirit; we have felt all of them with our 2 night stay within your home. Love, Joy, Peace, Patience, Kindness, Goodness, Faithfulness, Gentleness and Self Control. We look forward to our next visit.</p><p class="src">Dale &amp; Tonya, LaPorte, Indiana</p></blockquote><blockquote class="entry"><p>Melissa &amp; I have stayed at many Bed &amp; Breakfasts. None can compare to yours! We have never seen such a level of planning of decor and I have never seen such quality of workmanship. Breakfasts were just wonderful and you made us feel so welcome. We will be back when the leaves are green.</p><p class="src">A guest</p></blockquote><blockquote class="entry"><p>We were seeking a quiet, special place to celebrate our 25th wedding anniversary. Your B &amp; B met our expectations and more! We enjoyed sitting on the patio watching the goldfish and enjoying the flowers, and the calming pond. As we pulled up the driveway, I was reminded of a Thomas Kincade painting. Cindy made us feel extremely special with an anniversary fruit &amp; cheese tray, and their waffles were the best we’ve ever had.</p><p class="src">A guest</p></blockquote><blockquote class="entry"><p>Thank you for a wonderful, relaxing, peaceful, beautiful weekend at your bed &amp; breakfast. What a great place to rejuvenate! The fall in this area is beautiful, especially in your little slice of heaven. Your hospitality is second to none and your omelets are worth coming back for!</p><p class="src">A guest</p></blockquote><blockquote class="entry"><p>This was our first experience at a B &amp; B, and we enjoyed every minute of it! From the gorgeous “WOW” factor view coming down the drive, the warm welcome from Cindy, the peaceful serene, well groomed grounds to the excellent breakfast. We were in awe of this place! Thank you Jim &amp; Cindy, for opening your home to share this with us.</p><p class="src">A guest</p></blockquote></div></div></section>
+<section style="padding-top:56px"><div class="wrap"><div class="entries"><blockquote class="entry"><p>What a blessing to be able to be included in this book of “memories”. Tonya &amp; I appreciate your gifts of Spirit- we have felt all of them with our 2 night stay within your home. Love, Joy, Peace, Patience, Kindness, Goodness, Faithfulness, Gentleness and Self Control. We look forward to our next visit.</p><p class="src">Dale &amp; Tonya LaPorte, In</p></blockquote><blockquote class="entry"><p>Melissa &amp; I have stayed at many Bed &amp; Breakfasts. None can compare to yours! We have never seen such a level of planning of decor and I have never seen such quality of workmanship. Breakfasts were just wonderful and you made us feel so welcome. We will be back when the leaves are green.</p></blockquote><blockquote class="entry"><p>We were seeking a quiet, special place to celebrate our 25 th wedding anniversary. Your B &amp; B met our expectations and more! We enjoyed sitting on the patio watching the goldfish and enjoying the flowers, and the calming pond. As we pulled up the driveway, I was reminded of a Thomas Kincade painting. Cindy made us feel extremely special with an “anniversary fruit &amp; cheese tray and their waffles were the best we’ve ever had. It was comforting &amp; encouraging to have Christian and inspirational materials in the room and throughout the home. Thank you for a lovely time and making our 25 th Anniversary memorable and special. God’s blessings.</p></blockquote><blockquote class="entry"><p>Thank you for a wonderful, relaxing, peaceful, beautiful weekend at your bed &amp; breakfast. What a great place to rejuvenate! The fall in this area is beautiful, especially in your little slice of heaven. Your hospitality is second to none and your omelets are worth coming back for!</p></blockquote><blockquote class="entry"><p>This was our first experience at a B &amp; B, and we enjoyed every minute of it! From the gorgeous “WOW” factor view coming down the drive. The warm welcome from Cindy, the peaceful serene, well groomed grounds to the excellent breakfast. We were in awe of this place! The comfort and beauty we experienced at this B &amp; B sets the bar high for any others we may visit in the future. We are making plans to come back, SOON. Thank you Jim &amp; Cindy, for opening your home to share this with us. Above &amp; beyond our expectations! God bless you both.</p></blockquote></div></div></section>
 <section class="book"><div class="wrap two">
 <div><h2>Write your own page</h2><p>There are two rooms, Leona Jo’s and Dewey’s Outpost. Reserve by phone or email.</p></div>
 <div><div class="actions"><a class="btn btn-v" href="tel:+18129343468">Call (812) 934-3468</a><a class="btn btn-o" href="mailto:maryhelensplace@gmail.com">Email us</a></div></div>
