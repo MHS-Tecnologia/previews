@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lodges and loft | Pepacton Cabins</title>
+<meta name="description" content="Pakatakan Lodge, Waconia Lodge and Onteora Loft at Pepacton Cabins, Downsville NY.">
+<meta name="theme-color" content="#e6edea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232d5c5b'/%3E%3Cpath d='M5 17 16 7l11 10' fill='none' stroke='%23f6f8f6' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M9 16v9h14v-9' fill='%23990000'/%3E%3Cpath d='M4 28c4-2 8 2 12 0s8-2 12 0' fill='none' stroke='%23f2c94c' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rokkitt.woff2" crossorigin>
+<style>
+@font-face{font-family:Rokkitt;src:url(fonts/rokkitt.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:Hanken;src:url(fonts/hanken.woff2) format("woff2");font-weight:100 900;font-display:swap}
+/* Their old site: teal-grey ground (#669999) and the deep red of the wordmark (#990000).
+   The yellow is the fisherman's tape in their trout photo. */
+:root{--mist:#e6edea;--paper:#f6f8f6;--ink:#1c2a29;--soft:#43524f;--river:#2d5c5b;--teal:#669999;--red:#990000;--red-2:#7a0000;--tape:#f2c94c;--line:#c5d3cf;--pad:clamp(1rem,4vw,3rem);--max:74rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--mist);color:var(--ink);font:400 1.0625rem/1.6 Hanken,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3,.mark{font-family:Rokkitt,Georgia,serif;font-weight:800;line-height:1;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,6.2vw,4.75rem);text-wrap:balance}
+h2{font-size:clamp(2rem,4vw,3rem);text-wrap:balance}
+h3{font-size:1.6rem;line-height:1.05}
+p{max-width:38em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{background:var(--ink);color:#d5dedb;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem}
+.num{font-variant-numeric:tabular-nums}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:var(--max);margin:0 auto;padding:.8rem var(--pad);position:relative}
+.mark{display:block;text-decoration:none;color:var(--red);font-size:1.7rem;line-height:.95}
+.mark small{display:block;font:600 .78rem/1.3 Hanken,sans-serif;color:var(--river);letter-spacing:.01em;margin-top:.2rem}
+.nav{display:flex;align-items:center;gap:1.4rem;font-weight:600;font-size:.95rem}
+.nav > a{text-decoration:none}
+.nav > a:not(.btn):hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--tape);text-underline-offset:6px}
+.menu{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.75rem 1.3rem;border-radius:.4rem;background:var(--red);color:#fff;text-decoration:none;font-weight:700;transition:background-color .15s}
+.btn:hover{background:var(--red-2)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.nav .btn{min-height:2.6rem;padding:.5rem 1rem}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+
+@media (max-width:900px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.6rem 1rem;border-radius:.4rem;box-shadow:inset 0 0 0 2px var(--ink)}
+  .menu summary::-webkit-details-marker{display:none}
+  .menu[open] summary{background:var(--ink);color:#fff}
+  .menu div{position:absolute;right:var(--pad);left:var(--pad);top:100%;z-index:15;background:var(--paper);border:2px solid var(--ink);border-radius:.5rem;padding:.5rem;display:grid;box-shadow:0 12px 30px rgba(28,42,41,.25)}
+  .menu div a{display:block;padding:.8rem .9rem;text-decoration:none;font-weight:600;border-radius:.3rem}
+  .menu div a:hover,.menu div a[aria-current]{background:var(--mist)}
+}
+
+main{display:block}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+.lead{font-size:1.2rem;color:var(--soft)}
+.cap{font-size:.875rem;color:var(--soft);margin-top:.55rem}
+
+/* Home hero */
+.hero{padding:clamp(1rem,3vw,2.5rem) 0 clamp(2.5rem,5vw,4rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);grid-template-areas:"h h" "f t";gap:clamp(1.25rem,2.5vw,2.25rem) clamp(1.5rem,3vw,2.75rem);align-items:start}
+.hero h1{grid-area:h;color:var(--ink);max-width:19ch;font-size:clamp(2.5rem,5vw,4.3rem)}
+.hero .txt{grid-area:t;padding-top:.2rem}
+.hero figure{grid-area:f}
+.hero .lead{margin-top:0}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.btn{white-space:nowrap}
+.note{font-size:.95rem;color:var(--soft);margin-top:.9rem}
+.hero figure{margin:0}
+.hero figure img{width:100%;border-radius:.5rem;aspect-ratio:16/10;object-fit:cover;object-position:60% 70%}
+@media (max-width:760px){.hero figure img{aspect-ratio:4/3}}
+@media (max-width:760px){
+  .hero{padding-top:.9rem}
+  .hero .wrap{grid-template-columns:1fr;grid-template-areas:"h" "t" "f";gap:.8rem}
+  .long{display:none}
+  .hero h1{font-size:2.45rem}
+  .hero .lead{font-size:1.05rem;margin-top:.7rem}
+  .cta{margin-top:1rem}
+  .cta .btn{flex:1 1 auto}
+  .hero .note{display:none}
+}
+
+/* The tape: distances the site itself gives, measured from the cabins. */
+.tape-sec{background:var(--river);color:#eef4f2}
+.tape-sec h2{color:#fff}
+.tape-sec p{color:#d4e2df}
+.tape{position:relative;list-style:none;padding:0;margin:3rem 0 0}
+.tape::before{content:"";position:absolute;background:var(--tape) repeating-linear-gradient(90deg,#1c2a29 0 2px,transparent 2px 100%);background-size:calc(100% / 20) 38%;background-repeat:repeat-x;background-position:0 0}
+.tape li{position:absolute}
+.tape b{display:block;font:800 1.5rem/1 Rokkitt,serif;color:var(--tape)}
+.tape span{display:block;font-size:.9rem;line-height:1.35;color:#eef4f2}
+@media (min-width:901px){
+  .tape{height:15rem}
+  .tape::before{left:0;right:0;top:6.5rem;height:2.2rem;border-radius:.2rem}
+  .tape li{left:calc(var(--m) / 10 * 100%);width:11.5rem;transform:translateX(-.15rem);padding-left:.6rem;border-left:2px solid var(--tape)}
+  .tape li:nth-child(odd){top:0;height:6.5rem;display:flex;flex-direction:column;justify-content:flex-start}
+  .tape li:nth-child(even){top:8.7rem;height:6.3rem;display:flex;flex-direction:column;justify-content:flex-end}
+  .tape li:last-child{transform:translateX(calc(-100% + 2px));border-left:0;border-right:2px solid var(--tape);padding:0 .6rem 0 0;text-align:right}
+}
+@media (max-width:900px){
+  .tape{height:calc(10 * 3.4rem + 3rem);margin-top:2rem}
+  .tape::before{top:0;bottom:0;left:0;width:2rem;background-image:repeating-linear-gradient(180deg,#1c2a29 0 2px,transparent 2px 100%);background-size:38% calc(100% / 20);background-repeat:repeat-y}
+  .tape li{left:2.6rem;right:0;top:calc(var(--m) * 3.4rem);transform:translateY(-.15rem);border-top:2px solid var(--tape);padding-top:.3rem}
+  .tape li::before{content:"";position:absolute;left:-.6rem;top:-2px;width:.6rem;border-top:2px solid var(--tape)}
+  .tape b{display:inline;margin-right:.4rem}
+  .tape span{display:inline}
+}
+@media (prefers-reduced-motion:no-preference){
+  .js .tape::before{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.3,.7,.2,1)}
+  .js .tape li{opacity:0;transition:opacity .4s ease}
+  .js .tape.on::before{clip-path:inset(0 0 0 0)}
+  .js .tape.on li{opacity:1;transition-delay:calc(var(--m) * 90ms + 200ms)}
+}
+@media (prefers-reduced-motion:no-preference) and (max-width:900px){
+  .js .tape::before{clip-path:inset(0 0 100% 0)}
+}
+
+/* Places to stay */
+.stays{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,3vw,2.5rem);margin-top:2.2rem}
+.stay img{width:100%;border-radius:.5rem}
+.stay h3{margin-top:1rem}
+.stay p{margin-top:.45rem;color:var(--soft)}
+.stay .rate{font-weight:700;color:var(--ink);margin-top:.6rem}
+.stay .go{display:inline-block;margin-top:.7rem;font-weight:700;color:var(--red);text-underline-offset:4px}
+.stay.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0 clamp(1.5rem,3vw,2.5rem);align-items:end}
+.stay.wide h3{margin-top:0;font-size:2rem}
+.side{display:contents}
+@media (max-width:760px){.stay.wide{grid-template-columns:1fr}.stay.wide h3{margin-top:1rem;font-size:1.6rem}}
+@media (max-width:760px){.stays{grid-template-columns:1fr}}
+
+/* Aerial */
+.aerial{background:var(--paper)}
+.aerial .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,20rem);gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.aerial img{width:100%;border-radius:.5rem}
+.key{list-style:none;padding:0;margin-top:1.2rem;display:grid;gap:.15rem}
+.key li{padding:.45rem 0;border-bottom:1px solid var(--line)}
+@media (max-width:760px){.aerial .wrap{grid-template-columns:1fr}}
+
+/* Closing call */
+.call{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.call img{border-radius:.4rem;width:14rem}
+.big-phone{font:800 clamp(2.2rem,6vw,3.6rem)/1 Rokkitt,serif;color:var(--red);text-decoration:none;display:inline-block;margin-top:.8rem}
+.big-phone:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:6px}
+@media (max-width:620px){.call{grid-template-columns:1fr}.call img{width:12rem}}
+
+/* Inner pages */
+.page-head{padding:clamp(1.5rem,4vw,3rem) 0 clamp(1.5rem,3vw,2.5rem)}
+.page-head .lead{margin-top:1rem}
+.block{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.block.flip > :first-child{order:2}
+.block img{width:100%;border-radius:.5rem}
+.block img.narrow{max-width:22rem}
+.block img[src*=eagle]{max-width:320px}
+.block h2{margin-bottom:.8rem}
+.block p + p,.block p + ul,.block ul + p{margin-top:.8rem}
+.facts{padding-left:1.1rem;margin-top:.8rem}
+.facts li{margin:.25rem 0}
+.facts li::marker{color:var(--red)}
+.rates{margin-top:1.2rem;background:var(--paper);border-left:5px solid var(--tape);padding:1rem 1.2rem;border-radius:.3rem}
+.rates p{margin:0}
+.rates p + p{margin-top:.4rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.pair img{border-radius:.4rem}
+.band{background:var(--paper)}
+.names{display:flex;flex-wrap:wrap;gap:.2rem 1.4rem;list-style:none;padding:0;margin-top:1rem}
+.names li{font:800 1.6rem/1.1 Rokkitt,serif;color:var(--river)}
+@media (max-width:760px){.block{grid-template-columns:1fr}.block.flip > :first-child{order:0}}
+.waters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 2.5rem;margin-top:2rem}
+.waters h3{font-size:1.45rem;margin-bottom:.4rem}
+.waters p{color:var(--soft)}
+@media (max-width:760px){.waters{grid-template-columns:1fr}}
+table{border-collapse:collapse;width:100%;margin-top:1.4rem;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:.75rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:.9rem;color:var(--soft);font-weight:600}
+tbody th{font-family:Rokkitt,serif;font-size:1.3rem;font-weight:800}
+.table-scroll{overflow-x:auto}
+@media (max-width:620px){
+  table,thead,tbody,tr,th,td{display:block}
+  thead{position:absolute;left:-9999px}
+  tbody tr{padding:.9rem 0;border-bottom:1px solid var(--line)}
+  tbody th,tbody td{border:0;padding:.15rem 0}
+  tbody td::before{content:attr(data-l) ": ";color:var(--soft);font-size:.9rem}
+}
+.faq{margin-top:1.5rem;display:grid;gap:.6rem}
+.faq details{background:var(--paper);border-radius:.4rem;padding:0 1.1rem}
+.faq summary{cursor:pointer;font-weight:700;padding:1rem 0}
+.faq details p{padding-bottom:1rem;color:var(--soft)}
+
+/* Sticky phone bar on small screens, after the hero */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:12;display:none;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(28,42,41,.12)}
+.bar .btn{flex:1}
+@media (max-width:760px){
+  .bar{display:flex;transform:translateY(110%);transition:transform .25s ease}
+  .bar.show{transform:none}
+  body{padding-bottom:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){.bar{transition:none}}
+
+footer{background:var(--ink);color:#d5dedb;padding:2.5rem 0 3rem;font-size:.95rem}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem}
+footer .mark{color:#fff}
+footer .mark small{color:var(--teal)}
+footer a{color:#fff}
+footer .legal{grid-column:1/-1;border-top:1px solid #3a4a48;padding-top:1.2rem;font-size:.85rem;color:#b5c2bf}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Pepacton Cabins. Not affiliated with or endorsed by Pepacton Cabins.</div>
+<header class="top">
+  <a class="mark" href="index.html">Pepacton Cabins<small>East Branch, Delaware River</small></a>
+  <nav class="nav" aria-label="Main">
+    <a href="cabins.html">Log cabins</a><a href="lodges.html" aria-current="page">Lodges & loft</a><a href="outdoors.html">Fishing & outdoors</a><a href="rates.html">Rates & booking</a><a href="contact.html">Contact</a>
+    <a class="btn" href="tel:+16073632094"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="num">607-363-2094</span></a>
+    <details class="menu"><summary>Menu</summary><div><a href="index.html">Home</a><a href="cabins.html">Log cabins</a><a href="lodges.html" aria-current="page">Lodges & loft</a><a href="outdoors.html">Fishing & outdoors</a><a href="rates.html">Rates & booking</a><a href="contact.html">Contact</a><a href="tel:+16073632094">Call 607-363-2094</a></div></details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="page-head" data-hero>
+  <div class="wrap">
+    <h1>Two lodges and a loft</h1>
+    <p class="lead">For bigger groups: Pakatakan and Waconia sleep up to 9 guests each, and Onteora Loft is great for 3 to 4. All on our private road, Hood Lane.</p>
+    <div class="cta"><a class="btn" href="tel:+16073632094"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Call <span class="num">607-363-2094</span></span></a><a class="btn ghost" href="mailto:pepacton@catskill.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3z M3 6l9 7 9-7"/></svg><span>Email<span class="long"> for availability</span></span></a></div>
+  </div>
+</section>
+
+<section id="pakatakan" style="padding-top:0">
+  <div class="wrap block">
+    <div>
+      <img src="img/lodge-rainbow-1280.webp" srcset="img/lodge-rainbow-640.webp 640w, img/lodge-rainbow-1280.webp 1280w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1184px) 52vw, 620px" width="1280" height="964" alt="Pakatakan Lodge, front side, under a double rainbow" fetchpriority="high">
+      <p class="cap">Pakatakan Lodge, front side.</p>
+      <div class="pair">
+        <img src="img/lodge-fall-1280.webp" srcset="img/lodge-fall-640.webp 640w, img/lodge-fall-1280.webp 1280w" sizes="(max-width: 760px) calc(50vw - 1.5rem), 300px" width="1280" height="960" alt="Pakatakan Lodge with its screened porch, on a sunny fall day" loading="lazy" decoding="async">
+        <img src="img/lodge-living-1280.webp" srcset="img/lodge-living-640.webp 640w, img/lodge-living-1280.webp 1280w" sizes="(max-width: 760px) calc(50vw - 1.5rem), 300px" width="1280" height="964" alt="Living room with a stone fireplace and log walls" loading="lazy" decoding="async">
+      </div>
+      <p class="cap">Fall 2010, and the living room with a view of the river.</p>
+    </div>
+    <div>
+      <h2>Pakatakan Lodge</h2>
+      <p>A riverside log cabin lodge, 24 by 38 feet, with 2 bedrooms on a peaceful and serene acre, surrounded by the Catskill Mountains on our private road.</p>
+      <ul class="facts">
+        <li>Kitchen with stove, refrigerator, dishwasher, pots, pans and dishes</li>
+        <li>Dining room with table and chairs, and a futon that makes into a double bed</li>
+        <li>Living room with sleeper sofa, couch and satellite TV</li>
+        <li>Creel bedroom and bedroom 2, each with a double bed and a rollaway bed</li>
+        <li>Bathroom with tub and shower, towels, soap and paper products</li>
+        <li>Screened in porch and covered porch with chairs</li>
+        <li>Picnic table, BBQ grill and fire-pit</li>
+        <li>Up to 9 guests. Pet friendly.</li>
+      </ul>
+      <div class="rates">
+        <p class="num"><strong>$225 a night</strong> for 2 guests. Each additional guest $50. Plus 10% tax.</p>
+        <p class="num"><strong>Six night special: $1,200</strong> for 2 guests. Each additional guest $300. Plus 10% tax. Check-in Mondays to Thursdays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="waconia" class="band">
+  <div class="wrap block flip">
+    <div>
+      <img class="narrow" src="img/waconia-480.webp" srcset="img/waconia-480.webp 480w" sizes="(max-width: 760px) calc(100vw - 2rem), 420px" width="480" height="640" alt="Waconia Lodge, a wooded log cabin with a red roof among the trees" loading="lazy" decoding="async">
+      <p class="cap">Waconia Lodge, 95 Hood Lane.</p>
+    </div>
+    <div>
+      <h2>Waconia Lodge</h2>
+      <p>A wooded cabin that overlooks the pond, with a great view of the mountains, a large deck and a screened back porch.</p>
+      <ul class="facts">
+        <li>3 bedrooms: a king size bed in the loft bedroom, a queen and a full downstairs</li>
+        <li>Kitchen with stove, refrigerator, dishwasher, microwave, coffee maker and toaster</li>
+        <li>Living room with a gas log fireplace and a full size pullout sofa bed</li>
+        <li>Bathroom with a large shower</li>
+        <li>Deck with table, benches and chairs. Picnic table, charcoal BBQ and fire pit.</li>
+        <li>Up to 9 guests. Pet friendly.</li>
+      </ul>
+      <div class="rates">
+        <p class="num"><strong>$225 a night</strong> for up to 2 guests. Each additional guest $50. Plus 10% tax.</p>
+        <p class="num"><strong>Six night special: $1,200</strong> for up to 2 guests. Each additional guest $300. Plus 10% tax. Check-in Mondays to Thursdays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="onteora">
+  <div class="wrap block">
+    <div>
+      <img src="img/loft-deck-1280.webp" srcset="img/loft-deck-640.webp 640w, img/loft-deck-1280.webp 1280w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1184px) 52vw, 620px" width="1280" height="960" alt="The loft deck with a table, umbrella and green chairs, looking across the meadow to the mountains" loading="lazy" decoding="async">
+      <p class="cap">The loft has wrap-around decks.</p>
+      <div class="pair">
+        <img src="img/loft-winter-1200.webp" srcset="img/loft-winter-640.webp 640w, img/loft-winter-1200.webp 1200w" sizes="(max-width: 760px) calc(50vw - 1.5rem), 300px" width="1200" height="900" alt="Onteora Loft in winter, snow on the roof and deck" loading="lazy" decoding="async">
+        <img src="img/loft-fall-1280.webp" srcset="img/loft-fall-800.webp 800w, img/loft-fall-1280.webp 1280w" sizes="(max-width: 760px) calc(50vw - 1.5rem), 300px" width="1280" height="960" alt="Onteora Loft above the pond in fall" loading="lazy" decoding="async">
+      </div>
+      <p class="cap">Winter, and fall over the pond.</p>
+    </div>
+    <div>
+      <h2>Onteora Loft</h2>
+      <p>“Land in the Sky” is our loft in the barn: log siding and a knotty pine interior, with antique stippled glass church windows and hand hewn hooks.</p>
+      <ul class="facts">
+        <li>3 separate sleeping areas with all the bedding and quilts, great for 3 to 4 guests</li>
+        <li>Downstairs bedroom with a double bed and sliding doors to the deck</li>
+        <li>Circular stairs to the loft bedroom, with a double bed</li>
+        <li>Living room with a convertible sofa double bed and a green enamel gas log stove, thermostatically controlled</li>
+        <li>Kitchen with island, stove, refrigerator, dishwasher, microwave, toaster oven, toaster and coffee maker</li>
+        <li>Bathroom with a large shower. Satellite TV and ceiling fans.</li>
+        <li>Covered porch with swing and chairs, and a large deck with a view of the pond and the mountains</li>
+      </ul>
+      <div class="rates">
+        <p class="num"><strong>$175 a night</strong> for 2 guests. Each additional guest $50.</p>
+        <p class="num"><strong>Six night special: $900</strong> for 2 guests. Each additional guest $225. Additional nights at the single night rate. Check-ins Monday to Friday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Lodge guests and pets</h2>
+    <ul class="facts">
+      <li>Daily guest fee $20. You must have permission.</li>
+      <li>We do not charge for children under the age of 3.</li>
+      <li>Dogs $20, $10 for each additional dog. Cats $10, $5 for each additional cat.</li>
+    </ul>
+    <div class="cta"><a class="btn" href="tel:+16073632094"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Call <span class="num">607-363-2094</span></span></a><a class="btn ghost" href="mailto:pepacton@catskill.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3z M3 6l9 7 9-7"/></svg><span>Email Anne and Jeff</span></a></div>
+  </div>
+</section>
+
+</main>
+<div class="bar"><a class="btn" href="tel:+16073632094"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call</a><a class="btn ghost" href="mailto:pepacton@catskill.net"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18v12H3z M3 6l9 7 9-7"/></svg>Email</a></div>
+<footer>
+  <div class="wrap">
+    <div><span class="mark">Pepacton Cabins<small>East Branch, Delaware River</small></span></div>
+    <div><p>348 Hood Lane, Downsville, NY 13755</p><p>Anne and Jeff</p></div>
+    <div><p><a href="tel:+16073632094" class="num">607-363-2094</a></p><p><a href="mailto:pepacton@catskill.net">pepacton@catskill.net</a></p></div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Pepacton Cabins. Not affiliated with or endorsed by Pepacton Cabins. Text and photos from pepactoncabins.com. Removed on request: contato@mhstecnologia.com.br</p>
+  </div>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var t=document.querySelector('.tape');
+  if(t){if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){t.classList.add('on');o.disconnect();}},{threshold:.35});o.observe(t);}else{t.classList.add('on');}}
+  var b=document.querySelector('.bar'),h=document.querySelector('[data-hero]');
+  if(b&&h&&'IntersectionObserver' in window){new IntersectionObserver(function(e){b.classList.toggle('show',!e[0].isIntersecting);}).observe(h);}
+})();
+</script>
+</body>
+</html>
