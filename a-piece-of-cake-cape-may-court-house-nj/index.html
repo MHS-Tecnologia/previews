@@ -9,8 +9,8 @@
 <meta name="theme-color" content="#2b1712">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="fonts/caprasimo.woff2" crossorigin>
-<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-400.webp 400w, img/hero-m-800.webp 800w" imagesizes="calc(100vw - 2rem)" media="(max-width: 859px)" fetchpriority="high">
-<link rel="preload" as="image" href="img/hero-900.webp" imagesrcset="img/hero-600.webp 600w, img/hero-900.webp 900w, img/hero-1200.webp 1200w" imagesizes="32rem" media="(min-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-m-659.webp" imagesrcset="img/hero-m-400.webp 400w, img/hero-m-659.webp 659w" imagesizes="calc(100vw - 2rem)" media="(max-width: 859px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/blackwhite-659.webp" imagesrcset="img/blackwhite-500.webp 500w, img/blackwhite-659.webp 659w" imagesizes="32rem" media="(min-width: 860px)" fetchpriority="high">
 <style>
 @font-face{font-family:Caprasimo;font-weight:400;font-display:swap;src:url(fonts/caprasimo.woff2) format("woff2")}
 @font-face{font-family:Karla;font-weight:300 800;font-display:swap;src:url(fonts/karla.woff2) format("woff2")}
@@ -34,8 +34,8 @@ h2{font-size:clamp(2rem,4.2vw,3.2rem)}
 
 /* Header: their embossed white logo needs the dark band it was drawn for. */
 .top{background:var(--cocoa);color:#fbeef2}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
-.brand img{height:2.5rem;width:auto}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:5.25rem}
+.brand img{height:4rem;width:auto}
 .nav{display:flex;align-items:center;gap:1.6rem;font-weight:600;font-size:.98rem}
 .nav > a{text-decoration:none;padding:.3rem 0}
 .nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:3px;text-underline-offset:7px}
@@ -55,7 +55,7 @@ background:var(--fuchsia);color:#fff;font-weight:700;text-decoration:none;line-h
 /* Footer */
 .foot{background:var(--cocoa);color:#f0dfe5;margin-top:5rem;padding:3rem 0 2rem;font-size:.95rem}
 .foot .wrap{display:grid;gap:2rem;grid-template-columns:1.2fr 1fr 1fr}
-.foot img{height:2.4rem;width:auto;margin-bottom:.8rem}
+.foot img{width:min(100%,420px);height:auto;margin-bottom:.8rem}
 .foot h2{font-family:Karla,sans-serif;font-weight:700;font-size:1rem;margin-bottom:.5rem}
 .foot ul{list-style:none;padding:0}
 .foot li{margin:.2rem 0}
@@ -79,7 +79,9 @@ dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;
   .nav > a{display:none}
   .nav > .btn{display:none}
   .menu{display:block}
-  .brand img{height:2.1rem}
+  .brand img{height:3.2rem}
+  .top .wrap{gap:.5rem;min-height:4.6rem}
+  .menu summary{padding:.5rem .85rem}
   .foot .wrap{grid-template-columns:1fr}
   .dock{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));
     background:var(--cocoa);transform:translateY(110%);transition:transform .25s ease}
@@ -98,7 +100,7 @@ dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;
 .note{margin-top:1.1rem;font-size:.95rem;color:#5b3d34}
 .case{background:var(--case);border-radius:1.4rem;overflow:hidden}
 .case img{width:100%}
-.hero .case{aspect-ratio:3/4}
+.hero .case{aspect-ratio:659/650}
 .hero .case img{height:100%;object-fit:cover}
 
 /* The signature: their own call-and-response, the answer written in piping script. */
@@ -106,8 +108,7 @@ dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;
 .bake .wrap{display:grid;grid-template-columns:1fr 26rem;gap:clamp(2rem,6vw,5rem);align-items:center}
 .ask{font-family:Karla,system-ui,sans-serif;font-weight:400;text-wrap:pretty;font-size:clamp(1.25rem,2.1vw,1.6rem);line-height:1.4;max-width:36rem;color:#f3e2e8}
 .answer{display:block;font-family:Damion,cursive;color:var(--rose);font-size:clamp(2.6rem,5.2vw,4.2rem);line-height:1.15;margin:.35rem 0 2.6rem;transform:rotate(-3deg);transform-origin:left center;width:max-content;max-width:100%}
-.js .answer{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.6,.05,.3,1)}
-.js .answer.on{clip-path:inset(0 -5% 0 0)}
+@media (prefers-reduced-motion:no-preference){.js .answer{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.6,.05,.3,1)}.js .answer.on{clip-path:inset(0 -5% 0 0)}}
 .bake .end{font-family:Caprasimo,Georgia,serif;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.1;margin-bottom:1.5rem;max-width:30rem}
 .bake figure{margin:0}
 .bake figcaption{font-size:.9rem;color:#cdb6be;margin-top:.7rem}
@@ -115,6 +116,12 @@ dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;
 /* We serve: their own list of occasions, set big, each one a door into Our cakes. */
 .serve{padding:clamp(3.5rem,8vw,6rem) 0 1rem}
 .serve h2{margin-bottom:1.6rem}
+.strip{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.strip a{display:block;text-decoration:none;font-weight:700;font-size:1.05rem}
+.strip img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:.9rem;background:var(--case);transition:transform .3s ease}
+.strip a:hover img{transform:translateY(-3px)}
+.strip span{display:block;margin-top:.55rem;text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:3px;text-underline-offset:5px}
+@media (max-width:859px){.strip{grid-template-columns:repeat(2,1fr);gap:.8rem}}
 .occasions{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.2rem 0;font-family:Caprasimo,Georgia,serif;font-size:clamp(1.6rem,3.6vw,2.9rem);line-height:1.25}
 .occasions li:not(:last-child)::after{content:"/";color:var(--fuchsia);margin:0 .45em;font-family:Karla,sans-serif;font-weight:300}
 .occasions a{text-decoration:none;background-image:linear-gradient(var(--rose),var(--rose));background-size:100% .18em;background-position:0 88%;background-repeat:no-repeat}
@@ -177,8 +184,8 @@ dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;
     </div>
     <div class="case">
       <picture>
-        <source media="(max-width: 859px)" srcset="img/hero-m-400.webp 400w, img/hero-m-800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="600">
-        <img src="img/hero-900.webp" srcset="img/hero-600.webp 600w, img/hero-900.webp 900w, img/hero-1200.webp 1200w" sizes="32rem" width="900" height="1207" alt="Three-tier cake with buttercream swags and pink and violet sugar roses" fetchpriority="high">
+        <source media="(max-width: 859px)" srcset="img/hero-m-400.webp 400w, img/hero-m-659.webp 659w" sizes="calc(100vw - 2rem)" width="659" height="494">
+        <img src="img/blackwhite-659.webp" srcset="img/blackwhite-500.webp 500w, img/blackwhite-659.webp 659w" sizes="32rem" width="659" height="650" alt="Two-tier white wedding cake with black scrollwork and red sugar roses" fetchpriority="high">
       </picture>
     </div>
   </div>
@@ -203,6 +210,12 @@ dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;
 
 <section class="serve" aria-labelledby="serve-h">
   <div class="wrap">
+    <ul class="strip">
+      <li><a href="cakes.html#weddings"><img src="img/nautical-500.webp" srcset="img/nautical-500.webp 500w, img/nautical-800.webp 800w, img/nautical-880.webp 880w" sizes="(min-width: 860px) 16.5rem, calc(50vw - 1.4rem)" width="500" height="682" alt="Navy-striped wedding cake with a rope border and an anchor on top" loading="lazy" decoding="async"><span>Weddings</span></a></li>
+      <li><a href="cakes.html#birthdays"><img src="img/first-500.webp" srcset="img/first-500.webp 500w, img/first-720.webp 720w" sizes="(min-width: 860px) 16.5rem, calc(50vw - 1.4rem)" width="500" height="667" alt="Small birthday cake piped in blue and green rosettes with a big green number 1" loading="lazy" decoding="async"><span>Birthdays</span></a></li>
+      <li><a href="cakes.html#cupcakes"><img src="img/bouquet-500.webp" srcset="img/bouquet-500.webp 500w, img/bouquet-800.webp 800w, img/bouquet-1200.webp 1200w" sizes="(min-width: 860px) 16.5rem, calc(50vw - 1.4rem)" width="500" height="669" alt="Cupcake bouquet of teal rosettes in a white pot" loading="lazy" decoding="async"><span>Cupcakes</span></a></li>
+      <li><a href="cakes.html#holidays"><img src="img/pumpkin-500.webp" srcset="img/pumpkin-500.webp 500w, img/pumpkin-800.webp 800w, img/pumpkin-1200.webp 1200w" sizes="(min-width: 860px) 16.5rem, calc(50vw - 1.4rem)" width="500" height="500" alt="Round cake with an orange piped border and sugar pumpkins" loading="lazy" decoding="async"><span>Holidays</span></a></li>
+    </ul>
     <h2 id="serve-h">We serve</h2>
     <ul class="occasions">
       <li><a href="cakes.html#weddings">Weddings</a></li>

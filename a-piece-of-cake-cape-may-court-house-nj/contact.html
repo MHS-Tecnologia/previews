@@ -32,8 +32,8 @@ h2{font-size:clamp(2rem,4.2vw,3.2rem)}
 
 /* Header: their embossed white logo needs the dark band it was drawn for. */
 .top{background:var(--cocoa);color:#fbeef2}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
-.brand img{height:2.5rem;width:auto}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:5.25rem}
+.brand img{height:4rem;width:auto}
 .nav{display:flex;align-items:center;gap:1.6rem;font-weight:600;font-size:.98rem}
 .nav > a{text-decoration:none;padding:.3rem 0}
 .nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-color:var(--rose);text-decoration-thickness:3px;text-underline-offset:7px}
@@ -53,7 +53,7 @@ background:var(--fuchsia);color:#fff;font-weight:700;text-decoration:none;line-h
 /* Footer */
 .foot{background:var(--cocoa);color:#f0dfe5;margin-top:5rem;padding:3rem 0 2rem;font-size:.95rem}
 .foot .wrap{display:grid;gap:2rem;grid-template-columns:1.2fr 1fr 1fr}
-.foot img{height:2.4rem;width:auto;margin-bottom:.8rem}
+.foot img{width:min(100%,420px);height:auto;margin-bottom:.8rem}
 .foot h2{font-family:Karla,sans-serif;font-weight:700;font-size:1rem;margin-bottom:.5rem}
 .foot ul{list-style:none;padding:0}
 .foot li{margin:.2rem 0}
@@ -77,7 +77,9 @@ dialog.lb button{position:absolute;right:.6rem;bottom:.55rem;background:#fbeef2;
   .nav > a{display:none}
   .nav > .btn{display:none}
   .menu{display:block}
-  .brand img{height:2.1rem}
+  .brand img{height:3.2rem}
+  .top .wrap{gap:.5rem;min-height:4.6rem}
+  .menu summary{padding:.5rem .85rem}
   .foot .wrap{grid-template-columns:1fr}
   .dock{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));
     background:var(--cocoa);transform:translateY(110%);transition:transform .25s ease}
