@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Books &amp; records · Lewis County Historical Society</title>
+<meta name="description" content="Cemetery books, marriage books, federal census books and local history from the Lewis County Historical Society, with prices and how to order by mail.">
+<meta name="theme-color" content="#edeeea">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/besley.woff2" crossorigin>
+<style>
+@font-face{font-family:Besley;src:url(fonts/besley.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Atkinson Next";src:url(fonts/atkinson.woff2) format("woff2");font-weight:400 700;font-display:swap}
+/* Limestone paper, the Ohio River blue their own site uses, the brown-grey ring of their seal. */
+:root{--paper:#edeeea;--paper-2:#e0e2dc;--ink:#1d2329;--river:#1f4466;--river-2:#163452;--ring:#574d44;--sky:#3d7bc4;--mark:#f2df8f;--line:#c9ccc4;--pad:clamp(1rem,4vw,2.5rem);--max:72rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 "Atkinson Next",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--river)}
+a:hover{color:var(--river-2)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+h1,h2,h3{font-family:Besley,Georgia,serif;font-weight:700;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(1.75rem,3.6vw,2.6rem);margin-bottom:.8rem}
+h3{font-size:1.3rem;line-height:1.2}
+p{max-width:38em}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{background:var(--ink);color:#d6d8d2;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem}
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem var(--pad);max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;position:relative}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
+.brand img{width:52px;height:52px}
+.brand span{font-family:Besley,Georgia,serif;font-weight:700;font-size:1.05rem;line-height:1.1}
+.brand small{display:block;font-family:"Atkinson Next",sans-serif;font-weight:400;font-size:.8rem;color:var(--ring)}
+.nav{display:flex;align-items:center;gap:1.4rem;font-size:.95rem}
+.nav > a:not(.btn){text-decoration:none;color:var(--ink)}
+.nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--sky)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.55rem .9rem;border:2px solid var(--ink);border-radius:.3rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu div{position:absolute;right:0;top:calc(100% + .5rem);background:#fff;border:1px solid var(--line);border-radius:.4rem;box-shadow:0 10px 30px rgba(29,35,41,.18);padding:.5rem;min-width:15rem;z-index:15}
+.menu div a{display:block;padding:.7rem .8rem;text-decoration:none;color:var(--ink);border-radius:.25rem}
+.menu div a[aria-current]{background:var(--paper-2);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.75rem 1.3rem;border-radius:.35rem;font-weight:700;text-decoration:none;background:var(--river);color:#fff;border:2px solid var(--river)}
+.btn:hover{background:var(--river-2);border-color:var(--river-2);color:#fff}
+.btn.ghost{background:transparent;color:var(--river)}
+.btn.ghost:hover{background:var(--river);color:#fff}
+.nav .btn{min-height:2.5rem;padding:.45rem .95rem;font-size:.9rem}
+.lead{font-size:1.15rem}
+.muted{color:var(--ring)}
+.sec{padding-top:clamp(3rem,7vw,5rem);padding-bottom:clamp(3rem,7vw,5rem)}
+.sec + .sec{padding-top:0}
+.price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
+.foot{background:var(--river-2);color:#dfe5ec;margin-top:2rem;padding:2.5rem 0 3rem;font-size:.95rem}
+.foot a{color:#fff}
+.foot .cols{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.foot h2{font-size:1.1rem;color:#fff;margin-bottom:.4rem}
+.foot .legal{max-width:none;margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.2);font-size:.85rem;color:#c3ccd6}
+.stick{display:none}
+@media (max-width:859px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .brand span{font-size:.98rem}
+  .brand small{display:none}
+  .brand img{width:44px;height:44px}
+  .stick{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:12;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(237,238,234,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
+  .stick.on{transform:none}
+  .stick .btn{flex:1}
+  body{padding-bottom:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.ph{padding-top:clamp(1.5rem,4vw,3rem);padding-bottom:1.5rem}
+.ph h1{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:.8rem}
+.mail{border:2px solid var(--ink);border-radius:.5rem;padding:1.1rem 1.3rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between;margin-top:1.4rem;background:#f7f7f3}
+.mail p{max-width:44em}
+.feature{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.feature figure img{border-radius:.4rem;background:#2a2a28}
+.list{list-style:none;padding:0;border-top:2px solid var(--ink)}
+.list li{display:flex;justify-content:space-between;gap:1rem 2rem;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.list li > span:first-child{max-width:36em}
+.list .note{display:block;font-size:.92rem;color:var(--ring)}
+.sec h2{margin-bottom:.9rem}
+.sec > p,.sec .intro{margin-bottom:1.2rem}
+.volumes{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:0 2rem;border-top:2px solid var(--ink)}
+.volumes details{border-bottom:1px solid var(--line)}
+.volumes summary{cursor:pointer;padding:.75rem 0;font-weight:700;display:flex;justify-content:space-between;gap:1rem}
+.volumes summary span{font-weight:400;color:var(--ring)}
+.volumes details p{padding:0 0 1rem;font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0}
+.chips li{border:1px solid var(--ring);border-radius:2rem;padding:.25rem .8rem;font-size:.95rem}
+@media (max-width:859px){.feature{grid-template-columns:1fr}.feature figure{max-width:20rem}.list li{flex-direction:column;gap:.15rem}}
+
+.finder{background:var(--river);color:#fff;border-radius:.6rem;padding:clamp(1.4rem,4vw,2.6rem);display:grid;gap:1.5rem 3rem;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}
+.finder h2{color:#fff}
+.finder p{color:#dbe4ee}
+.finder label{display:block;font-weight:700;margin:1.1rem 0 .4rem}
+.finder input{width:100%;font:600 1.35rem/1.2 Besley,Georgia,serif;padding:.8rem .95rem;border-radius:.35rem;border:2px solid #fff;background:#fff;color:var(--ink)}
+.finder input:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.finder .hint{font-size:.9rem;margin-top:.55rem}
+.finder .hint button{font:inherit;color:#fff;background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.ledger{background:#f7f7f3;color:var(--ink);border-radius:.4rem;min-height:18rem;max-height:26rem;overflow:auto;overscroll-behavior:contain}
+.finder .ledger .count{color:var(--ink);position:sticky;top:0;background:#f7f7f3;border-bottom:2px solid var(--ink);padding:.75rem 1rem;font-weight:700;font-size:.95rem}
+.ledger ol{list-style:none;padding:0}
+.ledger li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;padding:.6rem 1rem;border-bottom:1px solid var(--line);font-size:1rem}
+.ledger li span:last-child{font-family:Besley,Georgia,serif;font-weight:600;color:var(--river);text-align:right}
+.ledger mark{background:var(--mark);color:inherit;padding:0 .1em}
+.ledger .none{padding:1rem}
+.finder .order{font-size:.95rem;border-top:1px solid rgba(255,255,255,.25);padding-top:1rem}
+.finder .order a{color:#fff}
+@media (max-width:859px){.finder{grid-template-columns:1fr}.ledger{max-height:22rem;min-height:12rem}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for the Lewis County Historical Society. Not affiliated with or endorsed by the Lewis County Historical Society.</div>
+<header class="top">
+  <a class="brand" href="index.html"><img src="img/logo-96.webp" width="52" height="52" alt=""><span>Lewis County Historical Society<small>Vanceburg, Kentucky · founded 1976</small></span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="books.html" aria-current="page">Books & records</a><a href="photographs.html">Old photographs</a><a href="about.html">About & membership</a><a href="visit.html">Visit</a><a class="btn" href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Email us</a>
+    <details class="menu"><summary>Menu</summary><div><a href="index.html">Home</a><a href="books.html" aria-current="page">Books & records</a><a href="photographs.html">Old photographs</a><a href="about.html">About & membership</a><a href="visit.html">Visit</a><a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Email the society</a></div></details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="wrap ph">
+  <h1>Books and records for sale</h1>
+  <p class="lead">Historical and genealogical books on Lewis County, Kentucky. Every sale helps keep the doors open: the society receives no federal funding.</p>
+  <div class="mail" data-stick-after>
+    <p><strong>To order,</strong> send a check or money order to The Lewis County Historical Society, P. O. Box 362, Vanceburg, KY 41179. Prices are the book plus postage and handling (p&amp;h).</p>
+    <a class="btn cta-main" href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Ask about a book</a>
+  </div>
+</section>
+
+<section class="sec wrap" aria-labelledby="new-h">
+  <div class="feature">
+    <figure><img src="img/maddy-600.webp" width="600" height="733" loading="lazy" sizes="(min-width: 860px) 360px, 20rem" alt="Old portrait of a bearded man seated beside a woman in a dark dress"><figcaption>Pioneer Dr. Charles N. Maddy and his wife Mary. Their story is in <em>Lewis County Kentucky Medical Pioneers</em>.</figcaption></figure>
+    <div>
+      <h2 id="new-h">New and featured</h2>
+      <ul class="list">
+        <li><span>The Esham Family Genealogy Book (new)</span><span class="price">$35.00 + $8.00 p&amp;h</span></li>
+        <li><span>Lewis County Kentucky Medical Pioneers</span><span class="price">$30.00 + $6.00 p&amp;h</span></li>
+        <li><span>&quot;Lewis County History&quot; by Regan, on CD</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="cemeteries" aria-labelledby="cem-h">
+  <h2 id="cem-h">Lewis County Cemetery Books</h2>
+  <p class="intro">A collection of 25 books, <span class="price">$12.00 each + $4.00 p&amp;h</span>. Search for a cemetery, or open a book to see what it holds.</p>
+  
+<section class="finder" id="finder2" aria-labelledby="finder2-h">
+  <div>
+    <h2 id="finder2-h">Which book has your family's cemetery?</h2>
+    <p>The society has recorded 225 cemeteries across 25 Lewis County Cemetery Books. Each book gives the name of the cemetery and, where the stones can be read, each person's name, birth date and death date.</p>
+    <label for="finder2-q">Cemetery name</label>
+    <input id="finder2-q" type="search" autocomplete="off" spellcheck="false" placeholder="Try Woodland" aria-controls="finder2-list">
+    <p class="hint">Or try: <button type="button" data-try="Mt. Zion">Mt. Zion</button>, <button type="button" data-try="Esham">Esham</button>, <button type="button" data-try="Quincy">Quincy</button></p>
+    <p class="order">Cemetery books are $12.00 each + $4.00 postage and handling. To order, mail a check or money order to the Lewis County Historical Society, P. O. Box 362, Vanceburg, KY 41179, or <a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">email the society</a>.</p>
+  </div>
+  <div class="ledger" aria-live="polite">
+    <p class="count" id="finder2-count">All 229 entries</p>
+    <ol id="finder2-list"></ol>
+  </div>
+</section>
+  <div class="volumes" style="margin-top:2rem">
+    <details><summary>Book One<span>13 cemeteries</span></summary><p>Free Firebrick Cemetery, W.M. Bentley Heirs Cemetery, Thompson Cemetery, Ford Cemetery, Unknown Cemetery (maybe Smith Cemetery), Greene Cemetery, Black-Steele-Bruce Cemetery, Wright Family Plot, Steele Cemetery, Mars Hill Cemetery, Davis or Carver Cemetery, Unknown (Yeager) Cemetery, Bagby Cemetery and Bivens Cemetery</p></details>
+    <details><summary>Book Two<span>5 cemeteries</span></summary><p>Sunset Cemetery, Quincy Cemetery (Beside Jack Lowder house), Morse Cemetery, Berry Cemetery, Quincy Methodist Cemetery</p></details>
+    <details><summary>Book Three<span>17 cemeteries</span></summary><p>Zornes Cemetery, Harr-Johnson Cemetery, Veach Family Cemetery, Wright Family Cemetery, Howland Cemetery, Truitt-Woodworth Cemetery, Bassett Cemetery, Soldier Cemetery, Jamison Cemetery, Granny Thomas Cemetery, Greenbriar-Garland Cemetery, Skidmore Family Cemetery, Mayfield Cemetery, Hook Farm Cemetery, Logan-Smith Cemetery (Greenup County), Horsley Cemetery (Greenup County), Bruce Cemetery</p></details>
+    <details><summary>Book Four<span>16 cemeteries</span></summary><p>Spy Run Cemetery, Skidmore (Greenbriar) Cemetery, Hubbard Cemetery, Witten Cemetery, Skidmore (Christy) Cemetery, McGinnis-McDowell Cemetery, Newberry Cemetery, Sullivan Cemetery, Cooper-Willis Cemetery, Clure Cemetery, Maddy-Lewis Cemetery, Old Tannery Church Cemetery, Jordan Cemetery, Zornes-Carver Cemetery, Howard Cemetery, Hannibal Cemetery</p></details>
+    <details><summary>Book Five<span>9 cemeteries</span></summary><p>Richardson Cemetery, Kelly Cemetery, Stafford Hill Cemetery, Horsley or McCally Cemetery, Armstrong Cemetery, Liles Cemetery, Stone Cemetery, Blankenship Cemetery, Hamilton or Valley-view Cemetery</p></details>
+    <details><summary>Book Six<span>1 cemetery</span></summary><p>BlackOak Cemetery</p></details>
+    <details><summary>Book Seven<span>5 cemeteries</span></summary><p>Evans Cemetery, Abbot Cemetery, Silvey Cemetery, Rhoden Cemetery, Clarksburg Cemetery</p></details>
+    <details><summary>Book Eight<span>1 cemetery</span></summary><p>Woodland (or Woodlawn as some folks call it) Cemetery</p></details>
+    <details><summary>Book Nine<span>25 cemeteries</span></summary><p>Stallcup Cemetery, Flinders Cemetery, Allis Cemetery, Bivens Cemetery, Fairmont Cemetery, Kissick Cemetery, Doyle Cemetery, Gilbert Cemetery, Muses Cemetery, Carrs Methodist Cemetery, Bedinger Cemetery, Corns Cemetery, Stevenson Cemetery, Moore Family Cemetery (graveyard), McClurg Cemetery, Vance-Ruark Cemetery, Pine Grove Cemetery, Shelton-Himes Cemetery, Collins Cemetery, Lane-Lang Cemetery, Meyers Cemetery, Hendrickson Cemetery, Ellis Cemetery, Wilson Cemetery, Nash Cemetery</p></details>
+    <details><summary>Book Ten<span>10 cemeteries</span></summary><p>Cedar Grove Cemetery, Conley Cemetery (On Holly Creek), William Hardy Family Cemetery, McEldowney Cemetery, Esham Cemetery, Crawford Cemetery, Sargent Branch Cemetery, Meadows Cemetery, Stidham Cemetery, Aldridge Cemetery</p></details>
+    <details><summary>Book Eleven<span>15 cemeteries</span></summary><p>Mt. Zion Cemetery, Ackley or Mineer Cemetery, Indian Creek Cemetery, Gulley Cemetery, Stamm Cemetery, Thomas Perry McCleese Cemetery, Crawford Cemetery, Kinder or Brown Cemetery, Rose Cemetery, Stamper Cemetery, Oak Ridge Baptist Church Cemetery, Donaldson Grove Cemetery, County Cemetery, Smith-Burton Cemetery, Holland Cemetery</p></details>
+    <details><summary>Book Twelve<span>17 cemeteries</span></summary><p>Pleasant Ridge Cemetery, Valley Cemetery, Mefford Farm Cemetery, Middleton Cemetery, Tancray Cemetery, McDaniel Cemetery, Riggs Cemetery, McCoy Cemetery, William-Esham Family Cemetery, Hackworth Cemetery, Toller Cemetery, Our Lady (or Lourdes) Cemetery, Kilfillin Cemetery, Million Cemetery, Jones Cemetery, Happy Hollow Cemetery, Webster Cemetery</p></details>
+    <details><summary>Book Thirteen<span>19 cemeteries</span></summary><p>Teager Cemetery, Tollesboro Cemetery, Debell-Singleton Cemetery, Galilee Christian Church Cemetery, Carr Cemetery, Thropp Cemetery, Kelty Cemetery, Davis Cemetery, Hamrick Cemetery, Grigsby Cemetery, Pollitt Cemetery, Hinton Cemetery, Burtonville Cemetery, Gillespie Cemetery, Applegate Cemetery, Trussell Cemetery, Ruggles Cemetery, Plummer Cemetery, Canaan Cemetery</p></details>
+    <details><summary>Book Fourteen<span>8 cemeteries</span></summary><p>Pell Cemetery, Pierce Cemetery, Vergne Cemetery, Arkanall Cemetery, Old Mawk Family Cemetery, Morgan Cemetery, Nolen Cemetery, Laurel Point Cemetery</p></details>
+    <details><summary>Book Fifteen<span>12 cemeteries</span></summary><p>Hamilton Cemetery, Springer Cemetery, Everett Cemetery, Davis Cemetery, Hord Cemetery, Poole and Everett Cemetery, Unknown (near Trinity) Cemetery, Stamper Family Cemetery (near Route 59), Stamper (at Emerson) Cemetery, Sandy Springs Cemetery, Walnut Grove Cemetery, Gilliam Cemetery</p></details>
+    <details><summary>Book Sixteen<span>15 cemeteries</span></summary><p>Ellis Cemetery, Shelton Cemetery, Gilbert Cemetery, Doyal Cemetery, Benjamin Bayliss Cemetery, Unkown Cemetery, Hampton Cemetery, Wilson-Nash Cemetery, Wilson Cemetery, Wilson-Morrison Cemetery, Wilson Family Cemetery, Hord-Dunaway Cemetery, Sullivan Cemetery, Tolle Cemetery, Bethany Cemetery</p></details>
+    <details><summary>Book Seventeen<span>2 cemeteries</span></summary><p>Waring Cemetery, Potter Cemetery</p></details>
+    <details><summary>Book Eighteen<span>1 cemetery</span></summary><p>Lewis County Memory Gardens Cemetery</p></details>
+    <details><summary>Book Nineteen<span>4 cemeteries</span></summary><p>Evans (old Evans) Cemetery - sometimes known as Slate Point Cemetery as well, Bethel Cemetery, Mt. Gilead Cemetery (located in Mason County, KY), Pine Valley Cemetery</p></details>
+    <details><summary>Book Twenty<span>1 cemetery</span></summary><p>Mt. Tabor Cemetery</p></details>
+    <details><summary>Book Twenty One<span>2 cemeteries</span></summary><p>East Fork Cemetery, Fearisville Cemetery</p></details>
+    <details><summary>Book Twenty Two<span>4 cemeteries</span></summary><p>Concord Cemetery, Ebenezer Church Cemetery, Ebenezer Cemetery, Salem Church Cemetery</p></details>
+    <details><summary>Book Twenty Three<span>8 cemeteries</span></summary><p>Dummitt Cemetery, Delphine Cemetery, Roy Werline Farm Cemetery (Sandhill), Heath Cemetery, Bloomfield Cemetery, Lewis Cemetery (Scotts Branch), Mt. Carmel Cemetery, Thomas Cemetery</p></details>
+    <details><summary>Book Twenty Four<span>4 cemeteries</span></summary><p>Collier Cemetery, Hillcrest Cemetery, Maysville Cemetery, Olivet Cemetery</p></details>
+    <details><summary>Book Twenty Five<span>11 cemeteries</span></summary><p>Davis Cemetery (Ben and Lorraine Rice Farm), Hord Family Cemetery (located KY 1443 Eastern Mason County), Wilson Family Cemetery (located KY 1443 Eastern Mason County), Stubblefield Cemetery (located #546), Flat Fork Cemetery, Stander Cemetery, Bald Point Cemetery, Jordan Cemetery (Route 1068), Sunset Cemetery (Edward Cemetery), Wilson Family Cemetery (located in Quincy), Horsley Cemetery (located at Tar Fork)</p></details>
+  </div>
+  <h3 style="margin:2.2rem 0 .8rem">Cemetery CDs and photo collections</h3>
+  <ul class="list">
+    <li><span>Mt. Zion Cemetery CD: pictures of the stones, with names and information</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+    <li><span>Hackworth-Ginn Cemetery CD (at Heselton): documentation and photos of the stones<span class="note">Made available through the hard work of Carolyn and David Hilliard.</span></span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+    <li><span>Evans Cemetery Photo Collection (Town Branch Hill): a picture of every tombstone<span class="note">Made available through the hard work of Billy Bond.</span></span><span class="price">$20.00 + $6.00 p&amp;h</span></li>
+  </ul>
+</section>
+
+<section class="sec wrap" id="marriages" aria-labelledby="mar-h">
+  <h2 id="mar-h">Lewis County Marriage Books</h2>
+  <p class="intro">Marriage information about couples married in Lewis County, Kentucky.</p>
+  <ul class="list">
+    <li><span>1806–1900, three books<span class="note">Book One: 1806–1851 · Book Two: 1852–1880 · Book Three: 1881–1900</span></span><span class="price">$25.00 each + $5.00 p&amp;h</span></li>
+    <li><span>1900–1962, eight books by surname<span class="note">A–B · C–D · E–G · H–K · L, P, Q, U, Y, Z · R, V, W · M, O · S, T</span></span><span class="price">$10.00 each + $4.00 p&amp;h</span></li>
+  </ul>
+</section>
+
+<section class="sec wrap" id="census" aria-labelledby="cen-h">
+  <h2 id="cen-h">Federal Census Books</h2>
+  <ul class="list">
+    <li><span>1850, 1860 and 1870 Census, three books</span><span class="price">$25.00 each + $4.00 p&amp;h</span></li>
+    <li><span>1880 to 1930 Census, nineteen books<span class="note">1880: four books · 1900–1910: five books · 1920: five books · 1930: five books</span></span><span class="price">$10.00 each + $4.00 p&amp;h</span></li>
+  </ul>
+</section>
+
+<section class="sec wrap" id="more" aria-labelledby="more-h">
+  <h2 id="more-h">Local history, stories and cookbooks</h2>
+  <ul class="list">
+    <li><span>Civil War Stories (five-book collection)</span><span class="price">$10.00 each + $4.00 p&amp;h</span></li>
+    <li><span>Precinct #5 Hunnewell Furnace, Greenup County, Kentucky, July 1870 Census</span><span class="price">$10.00 + $6.00 p&amp;h</span></li>
+    <li><span>Precinct #6 Bellefonte Furnace, Greenup County, Kentucky, August 2, 1870 Census</span><span class="price">$10.00 + $6.00 p&amp;h</span></li>
+    <li><span>Kentucky Vital Birth Records</span><span class="price">$30.00 + $6.00 p&amp;h</span></li>
+    <li><span>Kentucky Vital Marriage Records</span><span class="price">$15.00 + $6.00 p&amp;h</span></li>
+    <li><span>Kentucky Vital Death Records</span><span class="price">$15.00 + $6.00 p&amp;h</span></li>
+    <li><span>Vanceburg, Kentucky 200 Years, 1797–1997</span><span class="price">$20.00 + $4.00 p&amp;h</span></li>
+    <li><span>Vanceburg 1937 Flood Views</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+    <li><span>Old Remedies and Old Sayings</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+    <li><span>Stories Of and About Lewis County</span><span class="price">$20.00 + $4.00 p&amp;h</span></li>
+    <li><span>History of Muses Chapel Church, 1894–1994</span><span class="price">$6.00 + $4.00 p&amp;h</span></li>
+    <li><span>The Circuit Riders Legacy</span><span class="price">$25.00 + $6.00 p&amp;h</span></li>
+    <li><span>Family History Stories</span><span class="price">$15.00 + $6.00 p&amp;h</span></li>
+    <li><span>Canning Book</span><span class="price">$12.00 + $4.00 p&amp;h</span></li>
+    <li><span>Uses for Salt, Vinegar &amp; Baking Soda</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+    <li><span>Cook book: What's Cooking in Lewis County, Kentucky, With a Dab of History on the Side</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+    <li><span>Cook book: Lewis County, Kentucky, Celebrating 200 Years, 1806–2006</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+    <li><span>Cooking Up Some History: A Pinch of This and a Dab of That, State Cookie Book</span><span class="price">$5.00 + $4.00 p&amp;h</span></li>
+  </ul>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><h2>Lewis County Historical Society</h2><p>39 Market Street, Vanceburg, KY 41179<br>Mail: P. O. Box 362, Vanceburg, KY 41179</p></div>
+      <div><h2>Open</h2><p>Friday and Saturday, 11 a.m. to 3 p.m.<br>In winter the society may be closed any or all days due to bad weather.</p></div>
+      <div><h2>Write to us</h2><p><a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">lewiscountykyhistoricalsociety@yahoo.com</a><br>Research queries: <a href="mailto:janeyclark@windstream.net">janeyclark@windstream.net</a></p></div>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for the Lewis County Historical Society, using text and photos from the society's own website. Not affiliated with or endorsed by the Lewis County Historical Society. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="stick" id="stick"><a class="btn" href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Email the society</a></div>
+<script>
+(function(){var s=document.getElementById('stick'),t=document.querySelector('[data-stick-after]');if(!s||!t||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){s.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)})();
+document.addEventListener('click',function(e){document.querySelectorAll('details.menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+
+(function(){var D=[["Free Firebrick Cemetery","Book One"],["W.M. Bentley Heirs Cemetery","Book One"],["Thompson Cemetery","Book One"],["Ford Cemetery","Book One"],["Unknown Cemetery (maybe Smith Cemetery)","Book One"],["Greene Cemetery","Book One"],["Black-Steele-Bruce Cemetery","Book One"],["Wright Family Plot","Book One"],["Steele Cemetery","Book One"],["Mars Hill Cemetery","Book One"],["Davis or Carver Cemetery","Book One"],["Unknown (Yeager) Cemetery","Book One"],["Bagby Cemetery and Bivens Cemetery","Book One"],["Sunset Cemetery","Book Two"],["Quincy Cemetery (Beside Jack Lowder house)","Book Two"],["Morse Cemetery","Book Two"],["Berry Cemetery","Book Two"],["Quincy Methodist Cemetery","Book Two"],["Zornes Cemetery","Book Three"],["Harr-Johnson Cemetery","Book Three"],["Veach Family Cemetery","Book Three"],["Wright Family Cemetery","Book Three"],["Howland Cemetery","Book Three"],["Truitt-Woodworth Cemetery","Book Three"],["Bassett Cemetery","Book Three"],["Soldier Cemetery","Book Three"],["Jamison Cemetery","Book Three"],["Granny Thomas Cemetery","Book Three"],["Greenbriar-Garland Cemetery","Book Three"],["Skidmore Family Cemetery","Book Three"],["Mayfield Cemetery","Book Three"],["Hook Farm Cemetery","Book Three"],["Logan-Smith Cemetery (Greenup County)","Book Three"],["Horsley Cemetery (Greenup County)","Book Three"],["Bruce Cemetery","Book Three"],["Spy Run Cemetery","Book Four"],["Skidmore (Greenbriar) Cemetery","Book Four"],["Hubbard Cemetery","Book Four"],["Witten Cemetery","Book Four"],["Skidmore (Christy) Cemetery","Book Four"],["McGinnis-McDowell Cemetery","Book Four"],["Newberry Cemetery","Book Four"],["Sullivan Cemetery","Book Four"],["Cooper-Willis Cemetery","Book Four"],["Clure Cemetery","Book Four"],["Maddy-Lewis Cemetery","Book Four"],["Old Tannery Church Cemetery","Book Four"],["Jordan Cemetery","Book Four"],["Zornes-Carver Cemetery","Book Four"],["Howard Cemetery","Book Four"],["Hannibal Cemetery","Book Four"],["Richardson Cemetery","Book Five"],["Kelly Cemetery","Book Five"],["Stafford Hill Cemetery","Book Five"],["Horsley or McCally Cemetery","Book Five"],["Armstrong Cemetery","Book Five"],["Liles Cemetery","Book Five"],["Stone Cemetery","Book Five"],["Blankenship Cemetery","Book Five"],["Hamilton or Valley-view Cemetery","Book Five"],["BlackOak Cemetery","Book Six"],["Evans Cemetery","Book Seven"],["Abbot Cemetery","Book Seven"],["Silvey Cemetery","Book Seven"],["Rhoden Cemetery","Book Seven"],["Clarksburg Cemetery","Book Seven"],["Woodland (or Woodlawn as some folks call it) Cemetery","Book Eight"],["Stallcup Cemetery","Book Nine"],["Flinders Cemetery","Book Nine"],["Allis Cemetery","Book Nine"],["Bivens Cemetery","Book Nine"],["Fairmont Cemetery","Book Nine"],["Kissick Cemetery","Book Nine"],["Doyle Cemetery","Book Nine"],["Gilbert Cemetery","Book Nine"],["Muses Cemetery","Book Nine"],["Carrs Methodist Cemetery","Book Nine"],["Bedinger Cemetery","Book Nine"],["Corns Cemetery","Book Nine"],["Stevenson Cemetery","Book Nine"],["Moore Family Cemetery (graveyard)","Book Nine"],["McClurg Cemetery","Book Nine"],["Vance-Ruark Cemetery","Book Nine"],["Pine Grove Cemetery","Book Nine"],["Shelton-Himes Cemetery","Book Nine"],["Collins Cemetery","Book Nine"],["Lane-Lang Cemetery","Book Nine"],["Meyers Cemetery","Book Nine"],["Hendrickson Cemetery","Book Nine"],["Ellis Cemetery","Book Nine"],["Wilson Cemetery","Book Nine"],["Nash Cemetery","Book Nine"],["Cedar Grove Cemetery","Book Ten"],["Conley Cemetery (On Holly Creek)","Book Ten"],["William Hardy Family Cemetery","Book Ten"],["McEldowney Cemetery","Book Ten"],["Esham Cemetery","Book Ten"],["Crawford Cemetery","Book Ten"],["Sargent Branch Cemetery","Book Ten"],["Meadows Cemetery","Book Ten"],["Stidham Cemetery","Book Ten"],["Aldridge Cemetery","Book Ten"],["Mt. Zion Cemetery","Book Eleven"],["Ackley or Mineer Cemetery","Book Eleven"],["Indian Creek Cemetery","Book Eleven"],["Gulley Cemetery","Book Eleven"],["Stamm Cemetery","Book Eleven"],["Thomas Perry McCleese Cemetery","Book Eleven"],["Crawford Cemetery","Book Eleven"],["Kinder or Brown Cemetery","Book Eleven"],["Rose Cemetery","Book Eleven"],["Stamper Cemetery","Book Eleven"],["Oak Ridge Baptist Church Cemetery","Book Eleven"],["Donaldson Grove Cemetery","Book Eleven"],["County Cemetery","Book Eleven"],["Smith-Burton Cemetery","Book Eleven"],["Holland Cemetery","Book Eleven"],["Pleasant Ridge Cemetery","Book Twelve"],["Valley Cemetery","Book Twelve"],["Mefford Farm Cemetery","Book Twelve"],["Middleton Cemetery","Book Twelve"],["Tancray Cemetery","Book Twelve"],["McDaniel Cemetery","Book Twelve"],["Riggs Cemetery","Book Twelve"],["McCoy Cemetery","Book Twelve"],["William-Esham Family Cemetery","Book Twelve"],["Hackworth Cemetery","Book Twelve"],["Toller Cemetery","Book Twelve"],["Our Lady (or Lourdes) Cemetery","Book Twelve"],["Kilfillin Cemetery","Book Twelve"],["Million Cemetery","Book Twelve"],["Jones Cemetery","Book Twelve"],["Happy Hollow Cemetery","Book Twelve"],["Webster Cemetery","Book Twelve"],["Teager Cemetery","Book Thirteen"],["Tollesboro Cemetery","Book Thirteen"],["Debell-Singleton Cemetery","Book Thirteen"],["Galilee Christian Church Cemetery","Book Thirteen"],["Carr Cemetery","Book Thirteen"],["Thropp Cemetery","Book Thirteen"],["Kelty Cemetery","Book Thirteen"],["Davis Cemetery","Book Thirteen"],["Hamrick Cemetery","Book Thirteen"],["Grigsby Cemetery","Book Thirteen"],["Pollitt Cemetery","Book Thirteen"],["Hinton Cemetery","Book Thirteen"],["Burtonville Cemetery","Book Thirteen"],["Gillespie Cemetery","Book Thirteen"],["Applegate Cemetery","Book Thirteen"],["Trussell Cemetery","Book Thirteen"],["Ruggles Cemetery","Book Thirteen"],["Plummer Cemetery","Book Thirteen"],["Canaan Cemetery","Book Thirteen"],["Pell Cemetery","Book Fourteen"],["Pierce Cemetery","Book Fourteen"],["Vergne Cemetery","Book Fourteen"],["Arkanall Cemetery","Book Fourteen"],["Old Mawk Family Cemetery","Book Fourteen"],["Morgan Cemetery","Book Fourteen"],["Nolen Cemetery","Book Fourteen"],["Laurel Point Cemetery","Book Fourteen"],["Hamilton Cemetery","Book Fifteen"],["Springer Cemetery","Book Fifteen"],["Everett Cemetery","Book Fifteen"],["Davis Cemetery","Book Fifteen"],["Hord Cemetery","Book Fifteen"],["Poole and Everett Cemetery","Book Fifteen"],["Unknown (near Trinity) Cemetery","Book Fifteen"],["Stamper Family Cemetery (near Route 59)","Book Fifteen"],["Stamper (at Emerson) Cemetery","Book Fifteen"],["Sandy Springs Cemetery","Book Fifteen"],["Walnut Grove Cemetery","Book Fifteen"],["Gilliam Cemetery","Book Fifteen"],["Ellis Cemetery","Book Sixteen"],["Shelton Cemetery","Book Sixteen"],["Gilbert Cemetery","Book Sixteen"],["Doyal Cemetery","Book Sixteen"],["Benjamin Bayliss Cemetery","Book Sixteen"],["Unkown Cemetery","Book Sixteen"],["Hampton Cemetery","Book Sixteen"],["Wilson-Nash Cemetery","Book Sixteen"],["Wilson Cemetery","Book Sixteen"],["Wilson-Morrison Cemetery","Book Sixteen"],["Wilson Family Cemetery","Book Sixteen"],["Hord-Dunaway Cemetery","Book Sixteen"],["Sullivan Cemetery","Book Sixteen"],["Tolle Cemetery","Book Sixteen"],["Bethany Cemetery","Book Sixteen"],["Waring Cemetery","Book Seventeen"],["Potter Cemetery","Book Seventeen"],["Lewis County Memory Gardens Cemetery","Book Eighteen"],["Evans (old Evans) Cemetery - sometimes known as Slate Point Cemetery as well","Book Nineteen"],["Bethel Cemetery","Book Nineteen"],["Mt. Gilead Cemetery (located in Mason County, KY)","Book Nineteen"],["Pine Valley Cemetery","Book Nineteen"],["Mt. Tabor Cemetery","Book Twenty"],["East Fork Cemetery","Book Twenty One"],["Fearisville Cemetery","Book Twenty One"],["Concord Cemetery","Book Twenty Two"],["Ebenezer Church Cemetery","Book Twenty Two"],["Ebenezer Cemetery","Book Twenty Two"],["Salem Church Cemetery","Book Twenty Two"],["Dummitt Cemetery","Book Twenty Three"],["Delphine Cemetery","Book Twenty Three"],["Roy Werline Farm Cemetery (Sandhill)","Book Twenty Three"],["Heath Cemetery","Book Twenty Three"],["Bloomfield Cemetery","Book Twenty Three"],["Lewis Cemetery (Scotts Branch)","Book Twenty Three"],["Mt. Carmel Cemetery","Book Twenty Three"],["Thomas Cemetery","Book Twenty Three"],["Collier Cemetery","Book Twenty Four"],["Hillcrest Cemetery","Book Twenty Four"],["Maysville Cemetery","Book Twenty Four"],["Olivet Cemetery","Book Twenty Four"],["Davis Cemetery (Ben and Lorraine Rice Farm)","Book Twenty Five"],["Hord Family Cemetery (located KY 1443 Eastern Mason County)","Book Twenty Five"],["Wilson Family Cemetery (located KY 1443 Eastern Mason County)","Book Twenty Five"],["Stubblefield Cemetery (located #546)","Book Twenty Five"],["Flat Fork Cemetery","Book Twenty Five"],["Stander Cemetery","Book Twenty Five"],["Bald Point Cemetery","Book Twenty Five"],["Jordan Cemetery (Route 1068)","Book Twenty Five"],["Sunset Cemetery (Edward Cemetery)","Book Twenty Five"],["Wilson Family Cemetery (located in Quincy)","Book Twenty Five"],["Horsley Cemetery (located at Tar Fork)","Book Twenty Five"],["Mt. Zion Cemetery","CD of stone pictures, names and information"],["Hackworth-Ginn Cemetery (at Heselton)","CD with documentation and stone photos"],["Evans Cemetery (Town Branch Hill)","Photo book of every tombstone"],["Cedarleaf and Doyle Cemeteries","Tombstone pictures, listed after Book Twenty Five"]];
+var N=function(s){return s.toLowerCase().replace(/\bmount\b/g,'mt').replace(/[^a-z0-9 ]/g,' ').replace(/\b(cemetery|cemeteries)\b/g,' ').replace(/\s+/g,' ').trim()};
+var E=function(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})};
+document.querySelectorAll('.finder').forEach(function(f){var q=f.querySelector('input'),l=f.querySelector('ol'),c=f.querySelector('.count');
+function draw(){var v=N(q.value),r=v?D.filter(function(d){return N(d[0]).indexOf(v)>-1}):D;
+c.textContent=v?(r.length?r.length+(r.length>1?' matches':' match'):'No match'):'All '+D.length+' entries';
+if(!r.length){l.innerHTML='<li class="none">No cemetery by that name appears in the book list. Send a query to Janey Clark at janeyclark@windstream.net: the society posts queries in its quarterly newsletter, Shakin\' &amp; Diggin\'.</li>';return}
+var w=q.value.trim().replace(/^mount\b/i,'mt').replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/\s+/g,'\\W+'),re=w?new RegExp('('+w+')','i'):null;
+l.innerHTML=r.map(function(d){var n=E(d[0]);if(re)n=n.replace(re,'<mark>$1</mark>');return '<li><span>'+n+'</span><span>'+E(d[1])+'</span></li>'}).join('')}
+q.addEventListener('input',draw);f.querySelectorAll('[data-try]').forEach(function(b){b.addEventListener('click',function(){q.value=b.getAttribute('data-try');draw();q.focus()})});draw()})})();
+</script>
+</body>
+</html>

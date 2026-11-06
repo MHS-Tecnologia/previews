@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Old photographs · Lewis County Historical Society</title>
+<meta name="description" content="Old photographs of Vanceburg and Garrison, Kentucky, from the Lewis County Historical Society: Cox Grocery 1893, the depots, the St. Charles Hotel and the Garrison Bridge.">
+<meta name="theme-color" content="#edeeea">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/besley.woff2" crossorigin>
+<style>
+@font-face{font-family:Besley;src:url(fonts/besley.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Atkinson Next";src:url(fonts/atkinson.woff2) format("woff2");font-weight:400 700;font-display:swap}
+/* Limestone paper, the Ohio River blue their own site uses, the brown-grey ring of their seal. */
+:root{--paper:#edeeea;--paper-2:#e0e2dc;--ink:#1d2329;--river:#1f4466;--river-2:#163452;--ring:#574d44;--sky:#3d7bc4;--mark:#f2df8f;--line:#c9ccc4;--pad:clamp(1rem,4vw,2.5rem);--max:72rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 "Atkinson Next",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--river)}
+a:hover{color:var(--river-2)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+h1,h2,h3{font-family:Besley,Georgia,serif;font-weight:700;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(1.75rem,3.6vw,2.6rem);margin-bottom:.8rem}
+h3{font-size:1.3rem;line-height:1.2}
+p{max-width:38em}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{background:var(--ink);color:#d6d8d2;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem}
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem var(--pad);max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;position:relative}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
+.brand img{width:52px;height:52px}
+.brand span{font-family:Besley,Georgia,serif;font-weight:700;font-size:1.05rem;line-height:1.1}
+.brand small{display:block;font-family:"Atkinson Next",sans-serif;font-weight:400;font-size:.8rem;color:var(--ring)}
+.nav{display:flex;align-items:center;gap:1.4rem;font-size:.95rem}
+.nav > a:not(.btn){text-decoration:none;color:var(--ink)}
+.nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--sky)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:.55rem .9rem;border:2px solid var(--ink);border-radius:.3rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu div{position:absolute;right:0;top:calc(100% + .5rem);background:#fff;border:1px solid var(--line);border-radius:.4rem;box-shadow:0 10px 30px rgba(29,35,41,.18);padding:.5rem;min-width:15rem;z-index:15}
+.menu div a{display:block;padding:.7rem .8rem;text-decoration:none;color:var(--ink);border-radius:.25rem}
+.menu div a[aria-current]{background:var(--paper-2);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.75rem 1.3rem;border-radius:.35rem;font-weight:700;text-decoration:none;background:var(--river);color:#fff;border:2px solid var(--river)}
+.btn:hover{background:var(--river-2);border-color:var(--river-2);color:#fff}
+.btn.ghost{background:transparent;color:var(--river)}
+.btn.ghost:hover{background:var(--river);color:#fff}
+.nav .btn{min-height:2.5rem;padding:.45rem .95rem;font-size:.9rem}
+.lead{font-size:1.15rem}
+.muted{color:var(--ring)}
+.sec{padding-top:clamp(3rem,7vw,5rem);padding-bottom:clamp(3rem,7vw,5rem)}
+.sec + .sec{padding-top:0}
+.price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
+.foot{background:var(--river-2);color:#dfe5ec;margin-top:2rem;padding:2.5rem 0 3rem;font-size:.95rem}
+.foot a{color:#fff}
+.foot .cols{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.foot h2{font-size:1.1rem;color:#fff;margin-bottom:.4rem}
+.foot .legal{max-width:none;margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.2);font-size:.85rem;color:#c3ccd6}
+.stick{display:none}
+@media (max-width:859px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .brand span{font-size:.98rem}
+  .brand small{display:none}
+  .brand img{width:44px;height:44px}
+  .stick{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:12;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(237,238,234,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
+  .stick.on{transform:none}
+  .stick .btn{flex:1}
+  body{padding-bottom:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.ph{padding-top:clamp(1.5rem,4vw,3rem);padding-bottom:1rem}
+.ph h1{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:.8rem}
+.tl{list-style:none;padding:0;margin-top:1.5rem}
+.tl li > *{min-width:0}
+.tl .yr.nd{font-size:1.5rem;color:var(--ring)}
+.tl li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2rem;padding:2rem 0;border-top:1px solid var(--line)}
+.tl .yr{font-family:Besley,Georgia,serif;font-weight:800;font-size:clamp(2rem,3vw,2.6rem);line-height:1;color:var(--river)}
+.tl figure{background:#2b2b29;border-radius:.4rem;padding:clamp(.75rem,2vw,1.5rem);max-width:44rem}
+.tl figure img{margin:0 auto}
+.tl figcaption{color:#e3e3dd;font-size:1rem;margin-top:.75rem}
+.give{margin-top:2.5rem;border:2px solid var(--ink);border-radius:.5rem;padding:1.3rem;background:#f7f7f3}
+.give h2{font-size:1.5rem;margin-bottom:.5rem}
+.give p{margin-bottom:1rem}
+@media (max-width:859px){.tl li{grid-template-columns:minmax(0,1fr);gap:.6rem;padding:1.4rem 0}.tl figure{margin:0 calc(-1*var(--pad));border-radius:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for the Lewis County Historical Society. Not affiliated with or endorsed by the Lewis County Historical Society.</div>
+<header class="top">
+  <a class="brand" href="index.html"><img src="img/logo-96.webp" width="52" height="52" alt=""><span>Lewis County Historical Society<small>Vanceburg, Kentucky · founded 1976</small></span></a>
+  <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="books.html">Books & records</a><a href="photographs.html" aria-current="page">Old photographs</a><a href="about.html">About & membership</a><a href="visit.html">Visit</a><a class="btn" href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Email us</a>
+    <details class="menu"><summary>Menu</summary><div><a href="index.html">Home</a><a href="books.html">Books & records</a><a href="photographs.html" aria-current="page">Old photographs</a><a href="about.html">About & membership</a><a href="visit.html">Visit</a><a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Email the society</a></div></details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="wrap ph">
+  <h1>Old photographs of Lewis County</h1>
+  <p class="lead">From the society's collection, oldest first.</p>
+  <p data-stick-after style="margin-top:1rem"><a class="btn cta-main" href="#give">Share an old photo</a></p>
+  <ol class="tl">
+    <li><p class="yr">1893</p><figure><img src="img/cox-grocery-1893-604.webp" width="604" height="478" fetchpriority="high" alt="Men and a woman standing in front of the J. W. Cox Groceries storefront"><figcaption>Cox Grocery, 1893.</figcaption></figure></li>
+    <li><p class="yr">1907</p><figure><img src="img/vanceburg-depot-1907-604.webp" width="604" height="403" loading="lazy" alt="A steam locomotive at the Vanceburg depot, on a postcard dated August 1907"><figcaption>Vanceburg Depot, August 1907.</figcaption></figure></li>
+    <li><p class="yr">1926</p><figure><img src="img/st-charles-1926-356.webp" width="356" height="293" loading="lazy" alt="The two-story St. Charles Hotel with its long balcony"><figcaption>The St. Charles Hotel, destroyed along with several other buildings on March 2, 1926.</figcaption></figure></li>
+    <li><p class="yr">1927</p><figure><img src="img/garrison-depot-1927-960.webp" width="960" height="720" loading="lazy" alt="A steam train beside the wooden Garrison depot"><figcaption>Garrison Depot, 1927.</figcaption></figure></li>
+    <li><p class="yr">1930–32</p><figure><img src="img/garrison-bridge-1930-960.webp" width="960" height="720" loading="lazy" alt="Steel framework and a crane during construction of the Garrison bridge"><figcaption>Garrison Bridge under construction, 1930–32.</figcaption></figure></li>
+    <li><p class="yr nd">Undated</p><figure><img src="img/high-school-604.webp" width="604" height="392" loading="lazy" alt="Postcard of the old Lewis County High School, a large brick building on a hill in Vanceburg"><figcaption>The old Lewis County High School.</figcaption></figure></li>
+  </ol>
+  <div class="give" id="give">
+    <h2>Have an old photo or story?</h2>
+    <p>The society accepts old photos, old stories, old newspaper clippings (prior to 1944), or anything you think may be of historical value. Please include your name, email address and a brief description of the photo, because the society may show it on its website for others to see, with your permission.</p>
+    <a class="btn" href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Email the society</a>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div><h2>Lewis County Historical Society</h2><p>39 Market Street, Vanceburg, KY 41179<br>Mail: P. O. Box 362, Vanceburg, KY 41179</p></div>
+      <div><h2>Open</h2><p>Friday and Saturday, 11 a.m. to 3 p.m.<br>In winter the society may be closed any or all days due to bad weather.</p></div>
+      <div><h2>Write to us</h2><p><a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">lewiscountykyhistoricalsociety@yahoo.com</a><br>Research queries: <a href="mailto:janeyclark@windstream.net">janeyclark@windstream.net</a></p></div>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for the Lewis County Historical Society, using text and photos from the society's own website. Not affiliated with or endorsed by the Lewis County Historical Society. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="stick" id="stick"><a class="btn" href="mailto:lewiscountykyhistoricalsociety@yahoo.com">Email the society</a></div>
+<script>
+(function(){var s=document.getElementById('stick'),t=document.querySelector('[data-stick-after]');if(!s||!t||!('IntersectionObserver' in window))return;new IntersectionObserver(function(e){s.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)})();
+document.addEventListener('click',function(e){document.querySelectorAll('details.menu[open]').forEach(function(d){if(!d.contains(e.target))d.removeAttribute('open')})});
+
+</script>
+</body>
+</html>
