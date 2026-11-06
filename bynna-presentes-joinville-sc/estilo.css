@@ -31,7 +31,8 @@ p{margin:0 0 1em}
 .topo{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--max);margin:0 auto;padding:14px var(--pad)}
 .marca{display:flex;flex-direction:column;text-decoration:none;line-height:1}
 .marca-nome{font-family:"Imbue",Georgia,serif;font-size:2.1rem;font-weight:600;letter-spacing:.01em}
-.marca-sub{font-size:.8rem;color:var(--tinta-2);margin-top:2px}
+.marca-sub{font-size:.8rem;color:var(--tinta-2);margin-top:2px;white-space:nowrap}
+@media (max-width:399px){.marca-sub{display:none}}
 .nav{display:flex;align-items:center;gap:22px}
 .nav > a:not(.nav-wa){text-decoration:none;font-weight:500;padding:.4em 0;border-bottom:2px solid transparent}
 .nav > a[aria-current]{border-bottom-color:var(--fita)}
@@ -115,7 +116,14 @@ p{margin:0 0 1em}
 .peca-nome{font-weight:600;margin:.7em 0 .15em}
 .lk-wa{display:inline-flex;align-items:center;gap:.4em;font-weight:500;color:var(--tinta-2);text-underline-offset:3px;padding:.35em 0;align-self:flex-start}
 .lk-wa:hover{color:var(--tinta)}
-@media (min-width:700px){.pecas{grid-template-columns:repeat(2,1fr);gap:24px}}
+@media (min-width:700px){.pecas{grid-template-columns:repeat(2,1fr);gap:24px}.pecas-3{grid-template-columns:repeat(3,1fr)}}
+.vitrine .pecas-3{margin-top:30px}
+.grade-cestas{margin:26px 0 10px}
+.peca{position:relative}
+.peca-cat{position:absolute;z-index:2;left:-6px;top:14px;pointer-events:none}
+.ocasioes{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.ocasioes a{display:inline-flex;align-items:center;gap:.45em;font-weight:600;text-decoration:none;padding:.7em 1.1em;border:1.5px solid var(--tinta);border-radius:999px}
+.ocasioes a:hover{background:var(--papel)}
 .mais{margin-top:36px}
 
 /* faixa da loja */
