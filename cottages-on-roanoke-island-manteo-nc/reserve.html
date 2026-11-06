@@ -96,10 +96,10 @@
   if (matchMedia('(min-width: 861px)').matches) document.querySelectorAll('[data-open-wide]').forEach((d) => (d.open = true));
   const lb = document.querySelector('dialog.lb');
   if (lb) {
-    const btns = [...document.querySelectorAll('.photos button')];
+    const btns = [...document.querySelectorAll('.photos button, .band-grid button')];
     const img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
     let i = 0;
-    const show = (n) => { i = (n + btns.length) % btns.length; const b = btns[i]; img.src = b.dataset.full; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap || ''; };
+    const show = (n) => { i = (n + btns.length) % btns.length; const b = btns[i]; img.src = b.dataset.full; img.hidden = false; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap || ''; };
     btns.forEach((b, n) => b.addEventListener('click', () => { show(n); lb.showModal(); }));
     lb.querySelector('.prev').addEventListener('click', () => show(i - 1));
     lb.querySelector('.next').addEventListener('click', () => show(i + 1));

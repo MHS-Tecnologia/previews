@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/brygada-normal.woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="img/lighthouse-s.webp 640w, img/lighthouse.webp 1178w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 460px" fetchpriority="high">
+<link rel="preload" as="image" imagesrcset="img/lighthouse-s.webp 640w, img/lighthouse-720.webp 720w, img/lighthouse.webp 1178w" imagesizes="(max-width: 860px) calc(100vw - 2rem), 460px" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,7 +37,7 @@
       <p class="lede">The island experience: laid back but with a refined side, part of a welcoming community but with just the right amount of privacy.</p>
     </div>
     <figure class="lead-photo">
-      <img src="img/lighthouse-s.webp" srcset="img/lighthouse-s.webp 640w, img/lighthouse.webp 1178w" sizes="(max-width: 860px) calc(100vw - 2rem), 460px"
+      <img src="img/lighthouse-s.webp" srcset="img/lighthouse-s.webp 640w, img/lighthouse-720.webp 720w, img/lighthouse.webp 1178w" sizes="(max-width: 860px) calc(100vw - 2rem), 460px"
         width="640" height="480" fetchpriority="high" alt="The Roanoke Island Marshes Lighthouse, white with a red roof, on its pier over the water">
       <figcaption class="cap">The Roanoke Island Marshes Lighthouse</figcaption>
     </figure>
@@ -95,10 +95,10 @@
   if (matchMedia('(min-width: 861px)').matches) document.querySelectorAll('[data-open-wide]').forEach((d) => (d.open = true));
   const lb = document.querySelector('dialog.lb');
   if (lb) {
-    const btns = [...document.querySelectorAll('.photos button')];
+    const btns = [...document.querySelectorAll('.photos button, .band-grid button')];
     const img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
     let i = 0;
-    const show = (n) => { i = (n + btns.length) % btns.length; const b = btns[i]; img.src = b.dataset.full; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap || ''; };
+    const show = (n) => { i = (n + btns.length) % btns.length; const b = btns[i]; img.src = b.dataset.full; img.hidden = false; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap || ''; };
     btns.forEach((b, n) => b.addEventListener('click', () => { show(n); lb.showModal(); }));
     lb.querySelector('.prev').addEventListener('click', () => show(i - 1));
     lb.querySelector('.next').addEventListener('click', () => show(i + 1));

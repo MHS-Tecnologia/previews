@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/brygada-normal.woff2" crossorigin>
-<link rel="preload" as="image" media="(max-width: 860px)" imagesrcset="img/hero-m.webp 800w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 860px)" imagesrcset="img/hero-m720.webp 720w, img/hero-m.webp 800w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
 <link rel="preload" as="image" media="(min-width: 861px)" imagesrcset="img/hero-1000.webp 1000w" imagesizes="560px" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <meta property="og:type" content="website">
@@ -47,7 +47,7 @@
     </div>
     <figure class="hero-photo">
       <picture>
-        <source media="(max-width: 860px)" srcset="img/hero-m.webp 800w" sizes="calc(100vw - 2rem)">
+        <source media="(max-width: 860px)" srcset="img/hero-m720.webp 720w, img/hero-m.webp 800w" sizes="calc(100vw - 2rem)">
         <img src="img/hero-1000.webp" srcset="img/hero-1000.webp 1000w" sizes="560px" width="1000" height="700" fetchpriority="high"
           alt="Clemons Cottage: a small white clapboard house behind a vine-covered arbor, with a flag, a deck and two chairs">
       </picture>
@@ -68,6 +68,12 @@
   </div>
 </section>
 
+<section class="band" aria-label="Inside and around the cottages">
+  <div class="wrap">
+    <ul class="band-grid"><li><button type="button" data-full="img/band-garden.webp" data-cap="A garden in the collection" aria-label="Open photo: A back garden with blue and green umbrellas, Adirondack chairs, a stone path and a deck"><img src="img/band-garden-720.webp" srcset="img/band-garden-720.webp 720w, img/band-garden.webp 960w" sizes="(max-width: 700px) calc(100vw - 2rem), 470px" width="720" height="525" alt="A back garden with blue and green umbrellas, Adirondack chairs, a stone path and a deck" loading="lazy"></button><p class="cap">A garden in the collection</p></li><li><button type="button" data-full="img/g-king.webp" data-cap="A bedroom with a king bed" aria-label="Open photo: A bedroom with a king bed under a crystal chandelier, with a striped curtain behind the headboard"><img src="img/g-king-720.webp" srcset="img/g-king-720.webp 720w, img/g-king.webp 1100w" sizes="(max-width: 700px) calc(50vw - 1.4rem), 295px" width="720" height="540" alt="A bedroom with a king bed under a crystal chandelier, with a striped curtain behind the headboard" loading="lazy"></button><p class="cap">A bedroom with a king bed</p></li><li><button type="button" data-full="img/loft.webp" data-cap="The Island Loft" aria-label="Open photo: A sitting room in the Island Loft, with a white sofa, a lamp and a stained-glass door"><img src="img/loft-720.webp" srcset="img/loft-720.webp 720w, img/loft.webp 1100w" sizes="(max-width: 700px) calc(50vw - 1.4rem), 295px" width="720" height="393" alt="A sitting room in the Island Loft, with a white sofa, a lamp and a stained-glass door" loading="lazy"></button><p class="cap">The Island Loft</p></li></ul>
+  </div>
+</section>
+
 <section class="shore" aria-labelledby="shore-h">
   <div class="wrap">
     <div>
@@ -79,7 +85,7 @@
       <p class="src">From our welcome. <a href="manteo.html">More about Manteo and the island</a></p>
     </div>
     <figure>
-      <img src="img/lighthouse-s.webp" srcset="img/lighthouse-s.webp 640w, img/lighthouse.webp 1178w" sizes="(max-width: 860px) calc(100vw - 2rem), 460px"
+      <img src="img/lighthouse-s.webp" srcset="img/lighthouse-s.webp 640w, img/lighthouse-720.webp 720w, img/lighthouse.webp 1178w" sizes="(max-width: 860px) calc(100vw - 2rem), 460px"
         width="640" height="480" loading="lazy" alt="The Roanoke Island Marshes Lighthouse, white with a red roof, on its pier over the water">
       <figcaption class="cap">The Roanoke Island Marshes Lighthouse</figcaption>
     </figure>
@@ -114,7 +120,10 @@
   </div>
 </footer>
 <div class="dock" aria-label="Contact"><a class="btn btn-red" href="tel:+18046404440"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call</a><a class="btn btn-line" href="mailto:sharon@cottagesonroanokeisland.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email Sharon</a></div>
-
+<dialog class="lb" aria-label="Photo viewer">
+  <figure><img alt="" hidden><figcaption></figcaption></figure>
+  <div class="bar"><button type="button" class="prev">Previous</button><button type="button" class="close">Close</button><button type="button" class="next">Next</button></div>
+</dialog>
 <script>
 (() => {
   const dock = document.querySelector('.dock'), first = document.querySelector('.hero, .page-head');
@@ -129,10 +138,10 @@
   if (matchMedia('(min-width: 861px)').matches) document.querySelectorAll('[data-open-wide]').forEach((d) => (d.open = true));
   const lb = document.querySelector('dialog.lb');
   if (lb) {
-    const btns = [...document.querySelectorAll('.photos button')];
+    const btns = [...document.querySelectorAll('.photos button, .band-grid button')];
     const img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
     let i = 0;
-    const show = (n) => { i = (n + btns.length) % btns.length; const b = btns[i]; img.src = b.dataset.full; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap || ''; };
+    const show = (n) => { i = (n + btns.length) % btns.length; const b = btns[i]; img.src = b.dataset.full; img.hidden = false; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap || ''; };
     btns.forEach((b, n) => b.addEventListener('click', () => { show(n); lb.showModal(); }));
     lb.querySelector('.prev').addEventListener('click', () => show(i - 1));
     lb.querySelector('.next').addEventListener('click', () => show(i + 1));
