@@ -47,8 +47,9 @@ header.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:4.25rem}
 .top .call-sm{padding:.55rem 1rem;min-height:2.6rem;font-size:1rem}
 /* hero */
 .hero{padding:clamp(1.5rem,4vw,3.25rem) 0 0}
-.hero-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1rem 3rem;align-items:end}
+.hero-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1rem 3rem;align-items:start}
 .lede{font-size:1.125rem;color:#2e3a3d;margin-top:.9rem}
+.hero-head .actions{margin-top:.6rem}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
 .mp{display:flex;align-items:center;gap:.85rem;margin-top:1.2rem;font:500 .98rem/1.35 Overpass,sans-serif;color:var(--shake)}
 .plate{flex:none;display:grid;place-items:center;width:3.4rem;height:4rem;background:var(--sign);color:#fff;border:2px solid #fff;outline:2px solid var(--sign);border-radius:.35rem;font:800 .72rem/1 Overpass,sans-serif;text-align:center;padding-top:.2rem}
@@ -62,7 +63,8 @@ section{padding:clamp(3rem,7vw,5.5rem) 0}
 .intro{margin-top:.9rem;color:#2e3a3d}
 .band{background:var(--dune)}
 .finder{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:2rem;margin-top:2rem;align-items:start}
-.map{position:sticky;top:5.5rem;border-radius:.5rem;overflow:hidden;background:#3b3a35}
+.mapcol{position:sticky;top:5.6rem;scroll-margin-top:5rem}
+.map{position:relative;border-radius:.5rem;overflow:hidden;background:#3b3a35}
 .rings{position:absolute;inset:0}
 .xs{display:grid;grid-template-columns:1.1fr .9fr .8fr 1.1fr;margin-top:2rem;border-radius:.5rem;overflow:hidden}
 .xs div{padding:1.4rem 1.2rem 1.5rem;font-size:1rem;line-height:1.5}
@@ -85,7 +87,7 @@ section{padding:clamp(3rem,7vw,5.5rem) 0}
 .unit:hover{background:rgba(255,255,255,.55)}
 .unit:focus-visible{outline:3px solid var(--sound)}
 .unit[aria-pressed=true]{background:var(--ink);color:#fff}.unit[aria-pressed=true] b{color:#ffd23f}
-.pick{margin-top:1rem;font:500 .98rem/1.45 Overpass,sans-serif;color:var(--shake);min-height:2.9em}
+.pick{margin-top:.75rem;font:500 .98rem/1.45 Overpass,sans-serif;color:var(--shake);min-height:2.9em}
 .pick a{color:var(--red-2);font-weight:800}
 .tabs{display:flex;gap:.4rem;margin-top:1.6rem;flex-wrap:wrap}
 .tabs button{font:700 1rem Overpass,sans-serif;padding:.6rem 1rem;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;cursor:pointer}
@@ -122,7 +124,7 @@ footer nav{display:grid;gap:.2rem}
   .menu{display:block}
   .brand img{width:112px}
   .hero-head,.finder,.two,.cols,.facts,.xs{grid-template-columns:1fr}
-  .map{position:relative;top:0}
+  .mapcol{position:relative;top:0}
   .finder{gap:1.25rem}
   .grid{grid-template-columns:1fr}
   .amen{columns:1}
@@ -186,15 +188,17 @@ footer nav{display:grid;gap:.2rem}
     <p class="intro">All village units are about a mile from the beach: too far to walk for most people, but a quick drive to the beach access at the motel complex. To book a specific cottage, call (252) 995-5601.</p>
     
 <div class="finder" data-finder="village">
+  <div class="mapcol">
   <div class="map">
     <img src="img/map-village-800.webp" srcset="img/map-village-800.webp 800w, img/map-village-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 2rem), 700px" width="1400" height="933" alt="Drone photo of the Village Cottages in Buxton with each cottage&#x27;s name labelled on its roof, along the road and the canal" loading="lazy" decoding="async">
     <div class="rings" aria-hidden="true"><span class="ring" data-u="ME1" style="left:12.05%;top:26.33%;width:10.40%;height:9.30%"></span><span class="ring" data-u="ME2" style="left:16.20%;top:31.96%;width:10.40%;height:9.30%"></span><span class="ring" data-u="JA1" style="left:35.80%;top:25.51%;width:10.40%;height:9.30%"></span><span class="ring" data-u="JA2" style="left:39.65%;top:30.98%;width:10.40%;height:9.30%"></span><span class="ring" data-u="KM" style="left:4.10%;top:64.97%;width:8.10%;height:9.30%"></span><span class="ring" data-u="M1" style="left:16.95%;top:61.37%;width:8.10%;height:9.30%"></span><span class="ring" data-u="M2" style="left:20.95%;top:67.22%;width:8.10%;height:9.30%"></span><span class="ring" data-u="WH" style="left:25.45%;top:59.26%;width:8.10%;height:9.30%"></span><span class="ring" data-u="WO" style="left:33.05%;top:64.74%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G1" style="left:47.70%;top:62.64%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G2" style="left:52.45%;top:64.37%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G3" style="left:57.70%;top:61.37%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G4" style="left:63.05%;top:63.24%;width:8.10%;height:9.30%"></span><span class="ring" data-u="G5" style="left:66.20%;top:58.36%;width:8.10%;height:9.30%"></span><span class="ring" data-u="H" style="left:79.75%;top:74.27%;width:5.80%;height:9.30%"></span><span class="ring" data-u="G6" style="left:85.35%;top:78.39%;width:8.10%;height:9.30%"></span><span class="ring" data-u="D" style="left:82.70%;top:86.27%;width:5.80%;height:9.30%"></span><span class="ring" data-u="F" style="left:89.20%;top:86.72%;width:5.80%;height:9.30%"></span></div>
+  </div>
+  <p class="pick" aria-live="polite">Tap a unit to see where it sits.</p>
   </div>
   <div class="units">
     <h3>Village Cottages</h3>
     <p class="sub">About a mile down the road, in Buxton village.</p>
     <details class="grp" open><summary>1-bedroom units <small>7 types</small></summary><ul><li><button type="button" class="unit" data-units="F" data-name="F" data-desc="Cottage for Three w/ 1 Queen &amp; 1 Twin" aria-pressed="false"><b>F</b><span>Cottage for Three w/ 1 Queen &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="G1" data-name="G1" data-desc="Studio Room w/ 2 Doubles" aria-pressed="false"><b>G1</b><span>Studio Room w/ 2 Doubles</span></button></li><li><button type="button" class="unit" data-units="G2" data-name="G2" data-desc="Large Cottage w/ 1 Double &amp; 1 Twin" aria-pressed="false"><b>G2</b><span>Large Cottage w/ 1 Double &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="G5" data-name="G5" data-desc="Cottage w/ 1 Double &amp; 2 Twins" aria-pressed="false"><b>G5</b><span>Cottage w/ 1 Double &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="H JA1" data-name="H, JA1" data-desc="Cottage for Four" aria-pressed="false"><b>H, JA1</b><span>Cottage for Four</span></button></li><li><button type="button" class="unit" data-units="M1" data-name="M1" data-desc="Large Cottage w/ 2 Queens" aria-pressed="false"><b>M1</b><span>Large Cottage w/ 2 Queens</span></button></li><li><button type="button" class="unit" data-units="M2" data-name="M2" data-desc="Studio Room w/ 2 Queens" aria-pressed="false"><b>M2</b><span>Studio Room w/ 2 Queens</span></button></li></ul></details><details class="grp"><summary>2-bedroom units <small>4 types</small></summary><ul><li><button type="button" class="unit" data-units="G1 G2" data-name="G1+G2" data-desc="Cottage Combo w/ 3 Doubles &amp; 1 Twin" aria-pressed="false"><b>G1+G2</b><span>Cottage Combo w/ 3 Doubles &amp; 1 Twin</span></button></li><li><button type="button" class="unit" data-units="G3" data-name="G3" data-desc="Cottage w/ 2 Doubles &amp; 2 Twins" aria-pressed="false"><b>G3</b><span>Cottage w/ 2 Doubles &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="G4 G6" data-name="G4, G6" data-desc="Cottage for Four" aria-pressed="false"><b>G4, G6</b><span>Cottage for Four</span></button></li><li><button type="button" class="unit" data-units="WH" data-name="WH" data-desc="Cottage w/ 1 Queen &amp; 2 Doubles" aria-pressed="false"><b>WH</b><span>Cottage w/ 1 Queen &amp; 2 Doubles</span></button></li></ul></details><details class="grp"><summary>3-bedroom units <small>6 types</small></summary><ul><li><button type="button" class="unit" data-units="D" data-name="D" data-desc="Cottage w/ 1 King, 1 Queen &amp; 4 Twins" aria-pressed="false"><b>D</b><span>Cottage w/ 1 King, 1 Queen &amp; 4 Twins</span></button></li><li><button type="button" class="unit" data-units="JA2" data-name="JA2" data-desc="Cottage w/ 1 King, 2 Queens &amp; 3 Twins" aria-pressed="false"><b>JA2</b><span>Cottage w/ 1 King, 2 Queens &amp; 3 Twins</span></button></li><li><button type="button" class="unit" data-units="KM" data-name="KM" data-desc="Cottage w/ 1 King, 1 Queen &amp; 4 Twins" aria-pressed="false"><b>KM</b><span>Cottage w/ 1 King, 1 Queen &amp; 4 Twins</span></button></li><li><button type="button" class="unit" data-units="ME1" data-name="ME1" data-desc="Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins" aria-pressed="false"><b>ME1</b><span>Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="ME2" data-name="ME2" data-desc="Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins" aria-pressed="false"><b>ME2</b><span>Duplex w/ 2 Kings, 2 Queens &amp; 2 Twins</span></button></li><li><button type="button" class="unit" data-units="WO" data-name="WO" data-desc="Cottage w/ 1 Queen, 3 Doubles &amp; 1 Twin" aria-pressed="false"><b>WO</b><span>Cottage w/ 1 Queen, 3 Doubles &amp; 1 Twin</span></button></li></ul></details>
-    <p class="pick" aria-live="polite">Tap a unit to see where it sits.</p>
   </div>
 </div>
   </div>
@@ -258,7 +262,7 @@ document.querySelectorAll('[data-finder]').forEach(f=>{
     pick.innerHTML='';
     pick.append((many?'Units ':'Unit ')+b.dataset.name+', '+b.dataset.desc+'. To book this exact '+(many?'one':'unit')+', call ');
     const a=document.createElement('a');a.href='tel:+12529955601';a.textContent='(252) 995-5601';pick.append(a,'.');
-    if(matchMedia('(max-width:900px)').matches){const r=map.getBoundingClientRect();if(r.bottom<80||r.top>innerHeight*.5)map.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}
+    if(matchMedia('(max-width:900px)').matches){const mc=map.parentElement,r=mc.getBoundingClientRect();if(r.top<70||r.bottom>innerHeight)mc.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})}
   }));
 });
 document.querySelectorAll('[role=tablist]').forEach(tl=>{
