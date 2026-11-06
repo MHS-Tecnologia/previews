@@ -1,0 +1,242 @@
+/* Smoketree Lodge preview. Besley (a Clarendon revival: the face of US park and trail signs)
+   for headings and the signpost; Overpass (drawn from Highway Gothic, the US road-sign face)
+   for text. Red is their own #890e0e. */
+@font-face{font-family:"Besley";font-weight:400 900;font-display:swap;src:url(fonts/besley.woff2) format("woff2")}
+@font-face{font-family:"Overpass";font-weight:300 900;font-display:swap;src:url(fonts/overpass.woff2) format("woff2")}
+
+:root{
+  --red:#890e0e;--red-deep:#650303;
+  --spruce:#1e3b30;--spruce-deep:#15291f;
+  --plank:#6e4424;--plank-hi:#8a5a30;--letter:#f4e7c9;
+  --fog:#eceee8;--paper:#f7f8f4;--ink:#1b231f;--muted:#4a5751;--rule:#cfd5cd;
+  --wrap:1200px;--gut:32px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fog);color:var(--ink);font:400 1.0625rem/1.6 "Overpass",system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:"Besley",Georgia,serif;font-weight:650;line-height:1.12;color:var(--spruce);margin:0 0 .5em;text-wrap:balance}
+h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em}
+a{color:var(--red)}
+a:hover{color:var(--red-deep)}
+:focus-visible{outline:3px solid #d9822b;outline-offset:3px}
+.wrap{width:min(var(--wrap),100% - var(--gut)*2);margin-inline:auto}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;z-index:50;background:#fff;padding:8px 12px}
+figure{margin:0}
+
+.demo{margin:0;background:var(--spruce-deep);color:#dfe6e0;font-size:.8125rem;line-height:1.4;text-align:center;padding:7px 16px}
+
+/* Header: their red bar, with the logo tile hanging below it like a sign. */
+.top{position:sticky;top:0;z-index:20;background:var(--red)}
+.bar{width:min(var(--wrap),100% - var(--gut)*2);margin-inline:auto;height:62px;display:flex;align-items:center;gap:28px;position:relative}
+.brand{position:relative;align-self:flex-start;background:var(--red);padding:12px 14px 14px;border-radius:0 0 6px 6px;box-shadow:0 6px 14px rgb(40 0 0 / .25);margin-right:auto;z-index:2}
+.brand img{height:92px;width:auto}
+.nav{display:flex;align-items:center;gap:22px}
+.nav > a{color:#fff;text-decoration:none;font-weight:600;font-size:.9688rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover{border-color:rgb(255 255 255 / .5);color:#fff}
+.nav > a[aria-current]{border-color:var(--letter)}
+.call{background:var(--letter);color:var(--red-deep);text-decoration:none;font-weight:800;padding:9px 14px;border-radius:4px;white-space:nowrap;font-size:.9375rem}
+.call:hover{background:#fff;color:var(--red-deep)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;color:#fff;font-weight:700;padding:9px 12px;border:2px solid rgb(255 255 255 / .6);border-radius:4px}
+.menu summary::-webkit-details-marker{display:none}
+.menu-list{position:absolute;right:0;top:calc(100% + 10px);background:var(--red-deep);min-width:240px;padding:8px;border-radius:6px;display:flex;flex-direction:column;box-shadow:0 12px 30px rgb(0 0 0 / .3)}
+.menu-list a{color:#fff;text-decoration:none;padding:12px 14px;font-weight:600;border-radius:4px}
+.menu-list a:hover,.menu-list a[aria-current]{background:rgb(255 255 255 / .1);color:#fff}
+
+/* Buttons */
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 22px;background:var(--red);color:#fff;font:700 1rem/1.2 "Overpass",sans-serif;text-decoration:none;border:2px solid var(--red);border-radius:4px;cursor:pointer}
+.btn:hover{background:var(--red-deep);border-color:var(--red-deep);color:#fff}
+.btn.ghost{background:transparent;color:var(--red)}
+.btn.ghost:hover{background:var(--red);color:#fff}
+.text-link{font-weight:700;text-underline-offset:4px}
+
+/* Home hero */
+.hero{display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center;padding:72px 0 80px}
+.where{color:var(--red);font-weight:700;margin-bottom:.6em}
+.hero h1{font-size:clamp(2.1rem,3.1vw,2.9rem);font-weight:700}
+.lede{font-size:1.1875rem;color:var(--muted);max-width:38ch}
+.hero-photo img{width:100%;border-radius:6px;aspect-ratio:1280/700;object-fit:cover}
+
+/* The signpost: their own list of distances, routed into planks. */
+.miles{background:var(--spruce);color:#e3eae4;padding:88px 0}
+.miles h2{color:#fff}
+.miles a{color:var(--letter)}
+.miles-grid{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+.miles-text{max-width:44ch}
+.post{position:relative;padding:0 0 4px;--pole:24px}
+.post::before{content:"";position:absolute;left:calc(50% - var(--pole)/2);top:8px;bottom:0;width:var(--pole);background:linear-gradient(90deg,#4a2f19,#7a5030 45%,#5a3a20);border-radius:2px}
+.cap{position:relative;width:34px;height:20px;margin:0 auto;background:#4a2f19;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.planks{list-style:none;margin:0;padding:0;display:grid;gap:10px;position:relative}
+.plank{position:relative;width:min(400px,80%);height:54px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:repeating-linear-gradient(178deg,rgb(255 255 255 / .04) 0 3px,transparent 3px 9px),linear-gradient(180deg,var(--plank-hi),var(--plank));
+  color:var(--letter);font-family:"Besley",Georgia,serif;font-weight:700;font-size:1.25rem;line-height:1;
+  text-shadow:0 1px 0 rgb(255 255 255 / .18),0 -1px 0 rgb(0 0 0 / .55);box-shadow:0 3px 0 rgb(0 0 0 / .25)}
+.plank.l{justify-self:center;transform:translateX(-14%);padding:0 22px 0 40px;clip-path:polygon(26px 0,100% 0,100% 100%,26px 100%,0 50%)}
+.plank.r{justify-self:center;transform:translateX(14%);padding:0 40px 0 22px;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 50%,calc(100% - 26px) 100%,0 100%)}
+.mi{font-weight:500;font-size:1.0625rem;white-space:nowrap}
+.foot{position:relative;width:120px;height:14px;margin:0 auto;background:var(--spruce-deep);border-radius:8px 8px 0 0}
+.more{position:relative;margin-top:10px}
+.more summary{position:relative;z-index:1;width:max-content;margin:0 auto 10px;cursor:pointer;background:var(--spruce-deep);color:var(--letter);font-weight:700;padding:8px 16px;border-radius:4px;border:1px solid rgb(244 231 201 / .4)}
+.more[open] summary{margin-bottom:10px}
+/* One orchestrated moment: the planks swing level as the post comes into view. */
+.anim .post .plank{transition:transform .7s cubic-bezier(.3,1.5,.5,1),opacity .4s;transition-delay:calc(var(--i) * 70ms)}
+.anim .post:not(.in) .plank.l{transform:translateX(-14%) rotate(-7deg);opacity:0}
+.anim .post:not(.in) .plank.r{transform:translateX(14%) rotate(7deg);opacity:0}
+.plank.l{transform-origin:100% 50%}
+.plank.r{transform-origin:0 50%}
+
+/* Lodge hall */
+.hall{padding:96px 0 40px}
+.hall-photo img{width:100%;aspect-ratio:2/1;object-fit:cover;object-position:50% 38%;border-radius:6px}
+.hall-text{display:grid;grid-template-columns:5fr 7fr;gap:48px;padding-top:32px;align-items:start}
+.hall-text h2{margin:0}
+.hall-text p{max-width:60ch}
+.hall-text .text-link{grid-column:2}
+
+/* Units */
+.units{padding:72px 0 40px}
+.unit-list{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.unit-list a{display:block;text-decoration:none;color:var(--ink)}
+.unit-list img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px;margin-bottom:12px}
+.u-name{display:block;font-family:"Besley",Georgia,serif;font-weight:700;font-size:1.35rem;color:var(--spruce)}
+.u-meta{display:block;color:var(--muted);font-size:.9688rem}
+.unit-list a:hover .u-name{color:var(--red)}
+.units-note{margin-top:24px;color:var(--muted)}
+
+/* Booking block */
+.visit{display:grid;grid-template-columns:7fr 5fr;gap:48px;padding:56px 0 96px;border-top:1px solid var(--rule);margin-top:40px}
+.visit address{font-style:normal;background:var(--paper);padding:24px 26px;border-left:6px solid var(--red);line-height:1.8;align-self:start}
+
+/* Inner pages */
+.inner-head{padding:64px 0 28px}
+.inner-head h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:700}
+.room{display:grid;grid-template-columns:minmax(0,640px) 1fr;gap:48px;align-items:center;padding:40px 0;border-top:1px solid var(--rule)}
+.room.flip{grid-template-columns:1fr minmax(0,640px)}
+.room.flip .room-photo{order:2}
+.room-photo img{width:100%;border-radius:4px}
+.sleeps{font-family:"Besley",Georgia,serif;font-weight:700;color:var(--red);font-size:1.25rem}
+.room-text p{max-width:52ch}
+.amen-grid{list-style:none;margin:0;padding:0 0 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px}
+.amen-grid img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:4px;margin-bottom:12px}
+.amen-grid p{color:var(--muted)}
+.lists{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding:48px 0 96px;border-top:1px solid var(--rule)}
+.lists h2{font-size:1.5rem}
+.ticks{list-style:none;margin:0;padding:0}
+.ticks li{padding:6px 0 6px 20px;position:relative;border-bottom:1px solid var(--rule)}
+.ticks li::before{content:"";position:absolute;left:0;top:.95em;width:8px;height:8px;background:var(--red)}
+.inv{background:var(--paper);padding:14px 16px;border-radius:4px}
+.miles-full{margin-bottom:64px}
+.area-photos{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-bottom:56px}
+.area-photos img{width:100%;border-radius:4px;aspect-ratio:3/2;object-fit:cover}
+figcaption{color:var(--muted);font-size:.9375rem;padding-top:8px}
+.eat{padding:24px 0 96px;border-top:1px solid var(--rule)}
+.eat-list{columns:3;column-gap:32px;padding:0;list-style:none;margin:0}
+.eat-list li{padding:8px 0;border-bottom:1px solid var(--rule);break-inside:avoid}
+.ph-group{padding:24px 0}
+.ph-group:last-of-type{padding-bottom:96px}
+.ph-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ph{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:4px;overflow:hidden}
+.ph img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .3s}
+.ph:hover img{transform:scale(1.03)}
+.season-list{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.season-list li{background:var(--paper);padding:20px;border-top:5px solid var(--spruce)}
+.season-list li:first-child{border-color:var(--red)}
+.s-dates{display:block;font-family:"Besley",Georgia,serif;font-weight:700;font-size:1.2rem;color:var(--spruce);margin-bottom:6px}
+.s-note{color:var(--muted);font-size:.9688rem}
+.small{font-size:.9375rem;color:var(--muted)}
+.seasons{padding:40px 0}
+.policies{padding:24px 0 96px}
+.policies dl{margin:0;border-top:1px solid var(--rule)}
+.policies dl div{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.policies dt{font-weight:800}
+.policies dd{margin:0}
+.contact{display:grid;grid-template-columns:1fr minmax(0,560px);gap:48px;padding:16px 0 96px;align-items:start}
+.c-cards{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.c-cards li{background:var(--paper);padding:22px 24px;border-left:6px solid var(--red)}
+.c-cards h2{font-size:1.15rem;color:var(--muted);margin-bottom:4px}
+.c-cards address{font-style:normal;font-size:1.15rem}
+.big{font-family:"Besley",Georgia,serif;font-weight:700;font-size:1.7rem;text-decoration:none;display:inline-block;margin-bottom:4px}
+.big.mail{font-size:1.2rem;overflow-wrap:anywhere}
+.c-photo img{width:100%;border-radius:4px}
+
+/* Footer */
+.foot-site{background:var(--spruce-deep);color:#d6ded8;padding:48px 0 24px}
+.foot-site a{color:var(--letter)}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:32px}
+.f-name{font-family:"Besley",Georgia,serif;font-weight:700;font-size:1.3rem;color:#fff;margin-bottom:.3em}
+.f-nav{display:flex;flex-wrap:wrap;gap:6px 18px;align-content:start}
+.legal{font-size:.8125rem;color:#aebbb3;border-top:1px solid rgb(255 255 255 / .12);padding-top:18px;margin-top:32px}
+
+/* Sticky call bar (home, mobile, after the hero) */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--red);box-shadow:0 -6px 18px rgb(0 0 0 / .2)}
+.sticky[hidden]{display:none}
+.sticky a{flex:1;text-align:center;padding:12px;font-weight:800;color:var(--red-deep);background:var(--letter);border-radius:4px;text-decoration:none}
+.sticky a + a{flex:0 0 34%;background:transparent;color:#fff;border:2px solid rgb(255 255 255 / .6)}
+
+/* Lightbox */
+.lb{margin:auto;padding:12px;border:0;border-radius:8px;background:#101814;color:#e3eae4;width:min(1100px,94vw);max-height:94vh}
+.lb::backdrop{background:rgb(8 12 10 / .82)}
+.lb img{width:100%;height:auto;max-height:76vh;object-fit:contain;background:#000;border-radius:4px}
+.lb figcaption{color:#c9d3cc}
+.lb-ctl{display:flex;gap:8px;align-items:center;padding-top:10px}
+.lb-ctl span{margin-right:auto;font-size:.9375rem;color:#aebbb3}
+.lb-ctl button{font:700 .9375rem "Overpass",sans-serif;background:#26352e;color:#fff;border:0;border-radius:4px;padding:10px 14px;cursor:pointer}
+.lb-ctl button:hover{background:#344a40}
+#lb-prev{order:-2}#lb-next{order:-1}
+
+@media (max-width:1100px){
+  .unit-list{grid-template-columns:repeat(2,1fr)}
+  .amen-grid{grid-template-columns:repeat(2,1fr)}
+  .ph-grid{grid-template-columns:repeat(3,1fr)}
+  .season-list{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:1060px){
+  .nav > a{display:none}
+  .menu{display:block}
+}
+@media (max-width:860px){
+  :root{--gut:16px}
+  .bar{height:56px;gap:10px}
+  .brand{padding:8px 10px 10px}
+  .brand img{height:68px}
+  .call{padding:8px 10px;font-size:.875rem}
+  .hero{grid-template-columns:1fr;gap:20px;padding:44px 0 40px}
+  .hero h1{font-size:2rem}
+  .lede{font-size:1.0625rem}
+  .hero .lede{margin-bottom:.6em}
+  .ctas .btn{flex:1 1 auto}
+  .hero-photo img{aspect-ratio:800/535}
+  .miles{padding:56px 0}
+  .miles-grid,.hall-text,.visit,.room,.lists,.area-photos,.contact,.foot-grid{grid-template-columns:1fr;gap:24px}
+  .hall-text .text-link{grid-column:auto}
+  .plank{width:86%;height:50px;font-size:1.0625rem}
+  .plank.l{transform:translateX(-6%);padding-left:34px}
+  .plank.r{transform:translateX(6%);padding-right:34px}
+  .anim .post:not(.in) .plank.l{transform:translateX(-6%) rotate(-7deg)}
+  .anim .post:not(.in) .plank.r{transform:translateX(6%) rotate(7deg)}
+  .mi{font-size:.9688rem}
+  .hall{padding:56px 0 24px}
+  .hall-photo img{aspect-ratio:4/3}
+  .unit-list{grid-template-columns:1fr;gap:14px}
+  .unit-list a{display:grid;grid-template-columns:132px 1fr;gap:14px;align-items:center}
+  .unit-list img{margin:0}
+  .room.flip{grid-template-columns:1fr}
+  .room.flip .room-photo{order:0}
+  .amen-grid{grid-template-columns:1fr}
+  .eat-list{columns:1}
+  .ph-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .season-list{grid-template-columns:1fr}
+  .policies dl div{grid-template-columns:1fr;gap:2px}
+  body:has(.sticky){padding-bottom:68px}
+}
+@media (min-width:861px){.sticky{display:none !important}}
+@media (prefers-reduced-motion:reduce){
+  .anim .post .plank{transition:none}
+  .anim .post:not(.in) .plank.l,.anim .post:not(.in) .plank.r{opacity:1;rotate:0deg}
+  .ph img{transition:none}
+}
