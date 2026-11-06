@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Contact | Ozark Country Campground</title>
+<meta name="description" content="Call (417) 334-4681 to reserve. 679 Quebec Dr, Branson, MO 65616.">
+<meta name="theme-color" content="#1d4a2b">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" href="fonts/caprasimo.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Caprasimo';src:url(fonts/caprasimo.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Atkinson';src:url(fonts/atkinson-next.woff2) format('woff2');font-weight:200 800;font-display:swap}
+:root{--pine:#1d4a2b;--pine2:#2c6a3e;--leaf:#dfe9d3;--gold:#f2c14e;--rust:#7a2116;--paper:#f6f8f2;--ink:#17241a;--mute:#4a5a4d;--line:#cfd9c6;--sign:#11603a}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 Atkinson,system-ui,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--pine2)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:Caprasimo,Georgia,serif;font-weight:400;line-height:1.08;color:var(--pine);margin:0;letter-spacing:-.005em;text-wrap:balance}
+h1{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+h2{font-size:clamp(1.7rem,3vw,2.4rem)}
+h3{font-size:1.35rem}
+p{margin:0 0 1em;max-width:62ch}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;z-index:50;background:#fff;padding:8px 12px}
+.demo{background:var(--ink);color:#e9efe4;font-size:.8125rem;line-height:1.4;padding:7px 16px;text-align:center}
+header.top{background:#fff;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:24px;min-height:76px}
+.brand img{width:150px;height:auto}
+.nav{display:flex;align-items:center;gap:22px;margin-left:auto}
+.nav > a:not(.btn){color:var(--ink);text-decoration:none;font-weight:600;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:not(.btn):hover,.nav > a[aria-current]{border-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:1.0625rem;line-height:1.2}
+.btn-call{background:var(--pine);color:#fff}
+.btn-call:hover{background:var(--pine2)}
+.btn-line{border:2px solid var(--pine);color:var(--pine);background:transparent}
+.btn-line:hover{background:var(--leaf)}
+.btn svg{width:18px;height:18px;flex:none}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:10px 14px;border:2px solid var(--pine);border-radius:999px;color:var(--pine)}
+.menu summary::-webkit-details-marker{display:none}
+.menu .panel{position:absolute;right:0;top:calc(100% + 8px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(23,36,26,.16);padding:8px;min-width:220px;z-index:30}
+.menu .panel a{display:block;padding:12px 14px;color:var(--ink);text-decoration:none;font-weight:600;border-radius:8px}
+.menu .panel a:hover{background:var(--leaf)}
+.menu .panel a.call{background:var(--pine);color:#fff;margin-top:6px;text-align:center}
+@media (max-width:900px){.nav > a{display:none}.menu{display:block}.bar{min-height:64px}.brand img{width:118px}}
+main{display:block}
+.page-head{padding:44px 0 28px}
+.page-head p{font-size:1.15rem;color:var(--mute)}
+section{padding:56px 0}
+.lede{font-size:1.2rem}
+footer{background:var(--pine);color:#e6eee0;padding:48px 0 calc(28px + var(--cb,0px));margin-top:40px}
+footer a{color:#fff}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+.fgrid h2{color:#fff;font-size:1.5rem;margin-bottom:10px}
+.fgrid ul{list-style:none;margin:0;padding:0}
+.fgrid li{margin:4px 0}
+.fine{border-top:1px solid rgba(255,255,255,.2);margin-top:32px;padding-top:18px;font-size:.875rem;color:#c9d6c2}
+.fine p{max-width:none;margin:0 0 4px}
+@media (max-width:760px){.fgrid{grid-template-columns:1fr}}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:none}
+.callbar .btn{width:100%}
+@media (max-width:760px){.callbar{display:block;transform:translateY(110%);transition:transform .25s ease}.callbar.on{transform:none}body{--cb:76px}}
+figure{margin:0}
+figcaption{font-size:.9rem;color:var(--mute);margin-top:8px}
+.ph{border-radius:12px;overflow:hidden;background:var(--leaf)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.split{display:grid;grid-template-columns:6fr 6fr;gap:48px;align-items:start}
+.split + .split{margin-top:56px}
+.split .ph img{width:100%;height:auto}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:20px}.page-head{padding:28px 0 12px}}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.facts{list-style:none;padding:0;margin:0 0 1em}
+.facts li{padding:10px 0 10px 30px;border-top:1px solid var(--line);position:relative}
+.facts li::before{content:"";position:absolute;left:4px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 2px var(--pine)}
+.panel-w{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 28px}
+
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h2{font-size:1.3rem;margin-bottom:8px}
+.card p{margin:0}
+.card .big{font-family:Caprasimo,Georgia,serif;font-size:1.6rem;color:var(--pine);text-decoration:none}
+.card a{overflow-wrap:anywhere}
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Ozark Country Campground. Not affiliated with or endorsed by Ozark Country Campground.</div>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Ozark Country Campground, home"><img src="img/logo-300.webp" width="300" height="145" alt="Ozark Country Campground"></a>
+<nav class="nav" aria-label="Main"><a href="sites.html">Campsites</a><a href="facilities.html">Facilities</a><a href="rates.html">Rates</a><a href="photos.html">Photos</a><a href="contact.html" aria-current="page">Contact</a><a class="btn btn-call" href="tel:+14173344681"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>(417) 334-4681</a>
+<details class="menu"><summary aria-label="Open menu">Menu</summary><div class="panel"><a href="index.html">Home</a><a href="sites.html">Campsites</a><a href="facilities.html">Facilities</a><a href="rates.html">Rates</a><a href="photos.html">Photos</a><a href="contact.html">Contact</a><a class="call" href="tel:+14173344681">Call (417) 334-4681</a></div></details>
+</nav></div></header>
+<main id="main">
+<div class="wrap page-head" data-cb-after><h1>Contact and reservations</h1><p>Reservations are made by phone. The same number answers general questions.</p></div>
+<section style="padding-top:8px"><div class="wrap">
+<div class="cards">
+<div class="card"><h2>Call to reserve</h2><p><a class="big" href="tel:+14173344681">(417) 334-4681</a></p></div>
+<div class="card"><h2>Email</h2><p><a href="mailto:brncampground@workforcehousingllc.com">brncampground@workforcehousingllc.com</a></p></div>
+<div class="card"><h2>Mailing address</h2><p>679 Quebec Dr<br>Branson, MO 65616</p></div>
+</div>
+<div class="split" style="margin-top:48px">
+<div class="ph"><img src="img/entrance-800.webp" srcset="img/entrance-800.webp 800w, img/entrance-1400.webp 1400w" sizes="(min-width: 1264px) 576px, (min-width: 901px) 46vw, calc(100vw - 32px)" width="1400" height="933" alt="The flower bed at the campground's entrance loop, with rigs parked beyond" loading="lazy" decoding="async"></div>
+<div><h2>Finding us</h2>
+<p>The campground is on Quebec Dr, only 2.5 miles from Hwy 76, where the theaters are, and 2.5 miles from Table Rock Lake. The Fish Hatchery and the trout run at Table Rock Dam are closer still.</p>
+<p>The entrance and exit are on Quebec Dr, by the office and club house. Mind the 5 mph speed limit and the one-way loop inside the park.</p>
+<p><a class="btn btn-line" href="index.html#map">See the park map</a></p></div>
+</div>
+</div></section>
+</main><footer><div class="wrap">
+<div class="fgrid">
+<div><h2>Ozark Country Campground</h2><p>679 Quebec Dr<br>Branson, MO 65616</p><p>Reservations: <a href="tel:+14173344681">(417) 334-4681</a><br><a href="mailto:brncampground@workforcehousingllc.com">brncampground@workforcehousingllc.com</a></p></div>
+<div><h2>Visit</h2><ul><li><a href="index.html">Home</a></li><li><a href="sites.html">Campsites</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="rates.html">Rates</a></li><li><a href="photos.html">Photos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><h2>Good to know</h2><p>Open year round. Full hook-up RV sites only: no tent sites, and no tents on any site.</p></div>
+</div>
+<div class="fine"><p>Unofficial demo built by MHS Tecnologia for Ozark Country Campground. Not affiliated with or endorsed by Ozark Country Campground. Content and photos come from Ozark Country Campground's public website.</p>
+<p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p></div>
+</div></footer>
+<div class="callbar" id="callbar"><a class="btn btn-call" href="tel:+14173344681"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call to reserve (417) 334-4681</a></div>
+<script>
+(function(){var cb=document.getElementById('callbar'),t=document.querySelector('[data-cb-after]');
+if(!t||!('IntersectionObserver' in window)){cb.classList.add('on');return}
+new IntersectionObserver(function(e){cb.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(t)})();
+document.querySelectorAll('.menu .panel a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').open=false})});
+</script>
+</body>
+</html>
