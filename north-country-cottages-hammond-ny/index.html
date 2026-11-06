@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>North Country Cottages and Campgrounds | Black Lake, Hammond, NY</title>
+<meta name="description" content="Cottages, a mobile home and RV and tent sites on the shores of Black Lake in Hammond, New York, with deep water docking for private boats.">
+<meta name="theme-color" content="#1f3b4d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20d%3D%22M16%201%2029%207v18l-13%206L3%2025V7z%22%20fill%3D%22%232f6b45%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%227%22%20r%3D%222.6%22%20fill%3D%22%23f2f4f1%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2225%22%20font-family%3D%22Georgia%2Cserif%22%20font-weight%3D%22700%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%20fill%3D%22%23f2f4f1%22%3ENC%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/alfaslab.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-780.webp" imagesrcset="img/hero-780.webp 780w" imagesizes="100vw" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/c3-lake-950.webp" imagesrcset="img/c3-lake-480.webp 480w, img/c3-lake-950.webp 950w" imagesizes="(max-width: 1240px) 52vw, 620px" media="(min-width: 861px)" fetchpriority="high">
+<style>
+@font-face{font-family:"Alfa Slab One";font-weight:400;font-display:swap;src:url(fonts/alfaslab.woff2) format("woff2")}
+@font-face{font-family:"Figtree";font-weight:300 900;font-display:swap;src:url(fonts/figtree.woff2) format("woff2")}
+/* Lake slate, knotty pine, cottage trim green, deck-rail red, the brown of their carved wordmark, birch paper. */
+:root{--lake:#1f3b4d;--lake-2:#2b5268;--pine:#c08a50;--pine-2:#a8723c;--pine-dk:#7a4c22;--trim:#2f6b45;--rail:#8e3326;--bark:#6a3b17;--birch:#f2f4f1;--paper:#fff;--ink:#18211d;--muted:#4a5651;--line:#cfd6d1;--max:74rem;--pad:clamp(1rem,4vw,2.5rem)}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:5rem}
+body{background:var(--birch);color:var(--ink);font:400 1.0625rem/1.6 "Figtree",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--rail);outline-offset:3px}
+h1,h2,h3,.slab{font-family:"Alfa Slab One",Rockwell,Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:.005em}
+h2{font-size:clamp(1.9rem,4.2vw,3rem);text-wrap:balance}
+h3{font-size:1.45rem}
+p{max-width:64ch}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;z-index:50;background:#fff;padding:.5rem 1rem}
+.demo{max-width:none;background:var(--ink);color:#e9eeea;font-size:.8125rem;line-height:1.4;padding:.45rem var(--pad);text-align:center}
+/* header */
+.top{background:var(--paper);border-bottom:4px solid var(--bark);position:sticky;top:0;z-index:20}
+.top .wrap{display:flex;align-items:center;gap:1.25rem;min-height:4.5rem}
+.brand{display:block;flex:none}
+.brand img{width:12.5rem;height:auto}
+.nav{display:flex;align-items:center;gap:1.4rem;margin-left:auto;font-weight:600}
+.nav > a:not(.btn){text-decoration:none;padding:.3rem 0;border-bottom:2px solid transparent}
+.nav > a:not(.btn):hover,.nav > a[aria-current]{border-color:var(--pine)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.7rem 1.3rem;border-radius:.35rem;font-weight:700;text-decoration:none;line-height:1.15;white-space:nowrap}
+.btn-call{background:var(--rail);color:#fff}
+.btn-call:hover{background:#74281d}
+.btn-line{border:2px solid var(--lake);color:var(--lake)}
+.btn-line:hover{background:var(--lake);color:#fff}
+.btn svg{width:1.1rem;height:1.1rem;flex:none}
+.menu{display:none;margin-left:auto;position:relative}
+.menu summary{list-style:none;cursor:pointer;min-height:2.75rem;padding:.55rem .9rem;border:2px solid var(--lake);border-radius:.35rem;font-weight:700;color:var(--lake)}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--lake);color:#fff}
+.menu-panel{position:absolute;right:0;top:calc(100% + .5rem);width:min(18rem,calc(100vw - 2rem));background:var(--paper);border:1px solid var(--line);border-radius:.4rem;box-shadow:0 12px 30px rgba(24,33,29,.18);padding:.5rem;display:grid}
+.menu-panel a{display:block;padding:.7rem .8rem;text-decoration:none;font-weight:600;border-radius:.3rem}
+.menu-panel a:hover{background:var(--birch)}
+.menu-panel a.btn{margin-top:.4rem;color:#fff}
+@media (max-width:960px){.nav{display:none}.menu{display:block}.brand img{width:10.5rem}}
+/* hero */
+.hero{padding:clamp(1.5rem,4vw,3.5rem) 0 clamp(2rem,5vw,4rem)}
+.hero .wrap{display:grid;grid-template-columns:6fr 7fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{font-size:clamp(2.5rem,4.4vw,3.9rem);color:var(--lake);text-wrap:balance}
+.where{font-weight:600;color:var(--bark);margin-bottom:.8rem}
+.lede{font-size:1.15rem;margin:1rem 0 1.5rem;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-photo{margin:0}
+.hero-photo img{width:100%;border-radius:.4rem;box-shadow:0 1px 0 var(--line)}
+.hero-photo figcaption,.ph figcaption{font-size:.9rem;color:var(--muted);margin-top:.5rem}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:1.1rem}.hero h1{font-size:2.45rem}.lede{font-size:1.05rem;margin:.7rem 0 1.1rem}.where{margin-bottom:.4rem;font-size:.95rem}.hero-photo{margin-inline:calc(var(--pad) * -1)}.hero-photo img{border-radius:0}.hero-photo figcaption{padding-inline:var(--pad)}}
+/* key board: the signature */
+.board{background:
+  repeating-linear-gradient(90deg,rgba(122,76,34,.0) 0 7px,rgba(122,76,34,.10) 7px 8px,rgba(122,76,34,0) 8px 23px),
+  linear-gradient(180deg,var(--pine) 0 24.6%,var(--pine-dk) 24.6% 25%,var(--pine-2) 25% 49.6%,var(--pine-dk) 49.6% 50%,var(--pine) 50% 74.6%,var(--pine-dk) 74.6% 75%,var(--pine-2) 75%);
+  padding:clamp(2.5rem,6vw,4.5rem) 0;color:var(--ink)}
+.board-head{background:var(--paper);display:inline-block;padding:1rem 1.4rem 1.1rem;border-radius:.3rem;box-shadow:0 3px 0 var(--pine-dk);margin-bottom:2rem;max-width:38rem}
+.board-head h2{color:var(--lake)}
+.board-head p{margin-top:.4rem;color:var(--muted)}
+.hooks{list-style:none;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(.6rem,2vw,1.6rem)}
+.hook{display:flex;flex-direction:column;align-items:center}
+.peg{width:1.1rem;height:1.1rem;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e5e2dc,#6b6b6b 70%);box-shadow:0 2px 2px rgba(0,0,0,.35);position:relative;z-index:2}
+.fob{display:flex;flex-direction:column;align-items:center;text-decoration:none;transform-origin:50% 0;margin-top:-.55rem;width:100%;max-width:10rem}
+.ring{width:2.2rem;height:2.2rem;border-radius:50%;border:3px solid #9da3a6;margin-bottom:-.9rem;position:relative;z-index:1}
+.tag{width:100%;aspect-ratio:5/8;clip-path:polygon(50% 0,100% 16%,100% 84%,50% 100%,0 84%,0 16%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;padding:1.4rem .5rem;position:relative}
+.tag::before{content:"";position:absolute;top:9%;left:50%;width:.9rem;height:.9rem;margin-left:-.45rem;border-radius:50%;background:var(--pine-2);box-shadow:inset 0 2px 2px rgba(0,0,0,.35)}
+.tag .n{font-family:"Alfa Slab One",Georgia,serif;font-size:clamp(2.6rem,5vw,4rem);line-height:1}
+.tag .n.w{font-size:clamp(1.25rem,2.4vw,1.9rem);line-height:1.05}
+.tag .k{font-weight:700;font-size:clamp(.85rem,1.3vw,1.05rem);margin-top:.35rem}
+.tag .s{font-size:clamp(.75rem,1.1vw,.9rem);opacity:.92;margin-top:.15rem;line-height:1.25}
+.f-trim .tag{background:var(--trim)}.f-rail .tag{background:var(--rail)}.f-lake .tag{background:var(--lake-2)}.f-bark .tag{background:var(--bark)}
+.fob:hover .tag,.fob:focus-visible .tag{filter:brightness(1.1)}
+.fob:focus-visible{outline:none}.fob:focus-visible .tag{outline:3px solid #fff}
+@media (prefers-reduced-motion:no-preference){.fob:hover,.fob:focus-visible{animation:swing .9s ease-out}}
+@keyframes swing{0%{transform:rotate(0)}25%{transform:rotate(7deg)}50%{transform:rotate(-4deg)}75%{transform:rotate(2deg)}100%{transform:rotate(0)}}
+.board-note{margin-top:1.8rem;background:var(--paper);display:inline-block;padding:.6rem 1rem;border-radius:.3rem;font-size:.95rem}
+.board-note a{font-weight:700;color:var(--lake)}
+@media (max-width:760px){.hooks{grid-template-columns:repeat(3,1fr);row-gap:1.6rem}}
+.board.mini{padding:1.6rem 0 2rem}.board.mini .tag{aspect-ratio:5/7}.board.mini .tag .n{font-size:clamp(2rem,4vw,3rem)}.board.mini .tag .n.w{font-size:clamp(1.05rem,1.9vw,1.5rem)}
+/* lake */
+.sec{padding:clamp(3rem,7vw,5.5rem) 0}
+.lake-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.lake-grid h2{color:var(--lake)}
+.lake-grid p{margin-top:1rem}
+.fish{margin-top:1.6rem;background:var(--paper);border-left:6px solid var(--trim);padding:1.2rem 1.4rem;border-radius:0 .35rem .35rem 0}
+.fish h3{font-size:1.2rem;color:var(--trim)}
+.fish ul{columns:2;column-gap:2rem;padding-left:1.1rem;margin-top:.6rem}
+.fish li{break-inside:avoid;padding:.12rem 0}
+@media (max-width:860px){.lake-grid{grid-template-columns:1fr}}
+/* dock band */
+.dock{background:var(--lake);color:#eef3f5}
+.dock .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.dock h2{color:#fff}
+.dock ul{margin-top:1.1rem;padding-left:1.2rem}
+.dock li{padding:.25rem 0}
+.dock .ph figcaption{color:#c5d3da}
+.dock img{border-radius:.4rem}
+.link-light{display:inline-block;margin-top:1.4rem;font-weight:700;color:#fff;text-underline-offset:.25em}
+@media (max-width:860px){.dock .wrap{grid-template-columns:1fr}}
+/* base for the area */
+.base h2{color:var(--lake);max-width:20ch}
+.base-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 2.5rem;margin-top:1.8rem}
+.base-cols h3{font-size:1.15rem;color:var(--bark);margin-bottom:.4rem}
+.base-cols ul{padding-left:1.1rem}
+@media (max-width:860px){.base-cols{grid-template-columns:1fr}}
+/* contact band */
+.reach{background:var(--paper);border-top:4px solid var(--bark)}
+.reach .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center}
+.reach h2{color:var(--lake)}
+.reach dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.2rem;margin-top:1rem}
+.reach dt{font-weight:700}
+@media (max-width:860px){.reach .wrap{grid-template-columns:1fr}}
+/* inner pages */
+.page-head{padding:clamp(2rem,5vw,3.5rem) 0 1.5rem}
+.page-head h1{font-size:clamp(2.3rem,5vw,3.8rem);color:var(--lake)}
+.page-head p{margin-top:.7rem;font-size:1.1rem}
+.unit{padding:clamp(2.2rem,5vw,3.5rem) 0;border-top:1px solid var(--line)}
+.unit-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 2rem;margin-bottom:1.3rem}
+.unit-head h2{color:var(--lake)}
+.spec{font-weight:700;color:var(--bark)}
+.price{font-size:1.05rem}
+.price b{font-family:"Alfa Slab One",Georgia,serif;font-weight:400;font-size:1.5rem;color:var(--rail)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.grid2 img{width:100%;border-radius:.35rem;aspect-ratio:4/3;object-fit:cover}
+.grid2.wide img{aspect-ratio:5/2}
+@media (max-width:700px){.grid2{grid-template-columns:1fr}}
+.notes{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.note{background:var(--paper);border:1px solid var(--line);border-radius:.3rem;padding:.4rem .8rem;font-weight:600;font-size:.95rem}
+.ruled{list-style:none;padding:0;columns:2;column-gap:3rem;margin-top:1rem}
+.ruled li{break-inside:avoid;padding:.55rem 0;border-bottom:1px solid var(--line)}
+@media (max-width:700px){.ruled{columns:1}}
+table{border-collapse:collapse;width:100%;margin-top:1rem;background:var(--paper)}
+th,td{text-align:left;padding:.8rem 1rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700}
+td.r{text-align:right;font-family:"Alfa Slab One",Georgia,serif;color:var(--rail);font-size:1.2rem;white-space:nowrap}
+caption{text-align:left;font-weight:700;color:var(--muted);padding-bottom:.4rem}
+.rate-note{margin-top:1rem;font-weight:700;font-size:1.15rem;color:var(--lake)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+/* footer */
+.foot{background:var(--ink);color:#d9e1dc;padding:3rem 0 6rem;font-size:.95rem}
+.foot .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+.foot h2{font-size:1.25rem;color:#fff;margin-bottom:.6rem}
+.foot ul{list-style:none;padding:0}
+.foot li{padding:.2rem 0}
+.foot a{color:#fff;text-underline-offset:.2em}
+.foot .fine{grid-column:1/-1;border-top:1px solid #3a463f;padding-top:1.2rem;color:#aab7b0;font-size:.85rem}
+@media (max-width:760px){.foot .wrap{grid-template-columns:1fr}}
+/* sticky mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:.5rem;padding:.6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}
+.callbar.on{transform:none}
+.callbar .btn{flex:1}
+@media (max-width:860px){.callbar{display:flex}}
+@media (prefers-reduced-motion:reduce){.callbar{transition:none}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="North Country Cottages and Campgrounds | Black Lake, Hammond, NY">
+<meta property="og:description" content="Cottages, a mobile home and RV and tent sites on the shores of Black Lake in Hammond, New York, with deep water docking for private boats.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/north-country-cottages-hammond-ny/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/north-country-cottages-hammond-ny/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for North Country Cottages and Campgrounds. Not affiliated with or endorsed by North Country Cottages and Campgrounds.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/logo.webp" width="586" height="106" alt="North Country Cottages &amp; Campgrounds, home"></a>
+    <nav class="nav" aria-label="Main"><a href="stay.html">Cottages</a><a href="campground.html">Campground</a><a href="docks.html">Docks</a><a href="rates.html">Rates</a><a href="area.html">The area</a><a href="contact.html">Contact</a><a class="btn btn-call" href="tel:+13153754671"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call 315-375-4671</a></nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav class="menu-panel" aria-label="Main, mobile"><a href="index.html" aria-current="page">Home</a><a href="stay.html">Cottages</a><a href="campground.html">Campground</a><a href="docks.html">Docks</a><a href="rates.html">Rates</a><a href="area.html">The area</a><a href="contact.html">Contact</a><a class="btn btn-call" href="tel:+13153754671"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call 315-375-4671</a></nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero" aria-labelledby="h1" data-callbar-after>
+  <div class="wrap">
+    <div>
+      <p class="where">Black Lake Road, Hammond, New York</p>
+      <h1 id="h1">On the shores of beautiful Black Lake.</h1>
+      <p class="lede">Four cottages, a mobile home and an RV and tent campground, with deep water docking for your own boat.</p>
+      <div class="actions">
+        <a class="btn btn-call" href="tel:+13153754671"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call 315-375-4671</a>
+        <a class="btn btn-line" href="stay.html">See the cottages</a>
+      </div>
+    </div>
+    <figure class="hero-photo">
+      <picture>
+        <source media="(max-width: 860px)" srcset="img/hero-780.webp 780w" sizes="100vw" width="780" height="624">
+        <img src="img/c3-lake-950.webp" srcset="img/c3-lake-480.webp 480w, img/c3-lake-950.webp 950w" sizes="(max-width: 1240px) 52vw, 620px" width="950" height="712" alt="Black Lake seen from the lawn of Cottage 3, past the deck rail and an Adirondack chair" fetchpriority="high">
+      </picture>
+      <figcaption>Lake view from Cottage 3.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="board" aria-labelledby="board-h">
+  <div class="wrap">
+    <div class="board-head">
+      <h2 id="board-h">Pick your key.</h2>
+      <p>Four cottages, the mobile home and the campground. Each key opens its photos.</p>
+    </div>
+    <ul class="hooks"><li class="hook f-trim"><span class="peg" aria-hidden="true"></span><a class="fob" href="stay.html#cottage-1"><span class="ring" aria-hidden="true"></span><span class="tag"><span class="n">1</span><span class="k">Cottage</span><span class="s">2 bedrooms, A/C</span></span></a></li><li class="hook f-rail"><span class="peg" aria-hidden="true"></span><a class="fob" href="stay.html#cottage-2"><span class="ring" aria-hidden="true"></span><span class="tag"><span class="n">2</span><span class="k">Cottage</span><span class="s">2 bedrooms, A/C</span></span></a></li><li class="hook f-lake"><span class="peg" aria-hidden="true"></span><a class="fob" href="stay.html#cottage-3"><span class="ring" aria-hidden="true"></span><span class="tag"><span class="n">3</span><span class="k">Cottage</span><span class="s">3 bedrooms, central air</span></span></a></li><li class="hook f-trim"><span class="peg" aria-hidden="true"></span><a class="fob" href="stay.html#cottage-4"><span class="ring" aria-hidden="true"></span><span class="tag"><span class="n">4</span><span class="k">Cottage</span><span class="s">2 bedrooms, A/C</span></span></a></li><li class="hook f-bark"><span class="peg" aria-hidden="true"></span><a class="fob" href="stay.html#mobile-home"><span class="ring" aria-hidden="true"></span><span class="tag"><span class="n w">Mobile home</span><span class="k">14′ × 50′</span><span class="s">central air</span></span></a></li><li class="hook f-rail"><span class="peg" aria-hidden="true"></span><a class="fob" href="campground.html"><span class="ring" aria-hidden="true"></span><span class="tag"><span class="n w">RV &amp; tent</span><span class="k">Campground</span><span class="s">hook-up sites</span></span></a></li></ul>
+    <p class="board-note">Cottages and the mobile home are listed by the 4 weeks. <a href="rates.html">See the 2022 rates</a></p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="lake-h">
+  <div class="wrap lake-grid">
+    <div>
+      <h2 id="lake-h">Black Lake, the largest of the Indian River chain of lakes.</h2>
+      <p>Black Lake is an 11,000 acre lake with over 60 miles of shoreline. From its origin at the Indian River to its outlet into the Oswegatchie River it is nearly 20 miles long, with the widest point being 4 miles.</p>
+      <div class="fish">
+        <h3>Fish found in Black Lake</h3>
+        <ul><li>Walleye</li><li>Northern Pike</li><li>Largemouth Bass</li><li>Smallmouth Bass</li><li>Yellow Perch</li><li>Crappie</li><li>Sunfish</li><li>Rock Bass</li><li>Blue Gill</li><li>Brown Bullhead</li><li>Channel Cats</li><li>Muskalonge</li></ul>
+      </div>
+    </div>
+    <figure class="ph"><img src="img/crappie-950.webp" srcset="img/crappie-480.webp 480w, img/crappie-950.webp 950w" sizes="(max-width: 860px) calc(100vw - 2rem), 480px" width="950" height="636" alt="A stringer of crappie, from our photo gallery." loading="lazy" decoding="async"><figcaption>A stringer of crappie, from our photo gallery.</figcaption></figure>
+  </div>
+</section>
+
+<section class="dock sec" aria-labelledby="dock-h">
+  <div class="wrap">
+    <figure class="ph"><img src="img/dock-1-600.webp" srcset="img/dock-1-480.webp 480w, img/dock-1-600.webp 600w" sizes="(max-width: 860px) calc(100vw - 2rem), 580px" width="600" height="450" alt="Our docks on Black Lake." loading="lazy" decoding="async"><figcaption>Our docks on Black Lake.</figcaption></figure>
+    <div>
+      <h2 id="dock-h">Bring your boat.</h2>
+      <ul>
+        <li>Deep water docking facilities for all private boats</li>
+        <li>Screened in fish cleaning facility</li>
+        <li>Additional freezer space available</li>
+        <li>Coin operated laundry</li>
+      </ul>
+      <a class="link-light" href="docks.html">Docks and amenities</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec base" aria-labelledby="base-h">
+  <div class="wrap">
+    <h2 id="base-h">Let North Country Cottages be your base for venturing out.</h2>
+    <p style="margin-top:.8rem">Black Lake is just minutes away from many North Country attractions.</p>
+    <div class="base-cols">
+      <div><h3>On “The River”</h3><ul><li>The 1,000 Islands on the St Lawrence River</li><li>Boat tours of the American and Canadian sides</li><li>Boldt and Singer Castles</li></ul></div>
+      <div><h3>Museums</h3><ul><li>The Antique Boat Museum in Clayton</li><li>The Frederic Remington Art Museum in Ogdensburg</li><li>The Morristown and Hammond Museums</li></ul></div>
+      <div><h3>A short drive</h3><ul><li>The Eisenhower Locks in Massena</li><li>Gouverneur, birthplace of LifeSaver candies</li><li>The Adirondack Mountains</li></ul></div>
+    </div>
+    <a class="btn btn-line" style="margin-top:1.8rem" href="area.html">More about the area</a>
+  </div>
+</section>
+
+<section class="sec reach" aria-labelledby="reach-h">
+  <div class="wrap">
+    <div>
+      <h2 id="reach-h">Call for more information.</h2>
+      <dl><dt>Phone</dt><dd><a href="tel:+13153754671">315-375-4671</a></dd><dt>Email</dt><dd><a href="mailto:gscime@twcny.rr.com?subject=Question%20about%20North%20Country%20Cottages">gscime@twcny.rr.com</a></dd>
+      <dt>Address</dt><dd>2628 County Route 6, Black Lake Road, Hammond, New York 13646</dd></dl>
+    </div>
+    <div class="actions"><a class="btn btn-call" href="tel:+13153754671"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call 315-375-4671</a><a class="btn btn-line" href="mailto:gscime@twcny.rr.com?subject=Question%20about%20North%20Country%20Cottages">Email us</a></div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <h2>North Country Cottages and Campgrounds</h2>
+      <p>2628 County Route 6<br>Black Lake Road<br>Hammond, New York 13646</p>
+      <p style="margin-top:.6rem"><a href="tel:+13153754671">315-375-4671</a><br><a href="mailto:gscime@twcny.rr.com?subject=Question%20about%20North%20Country%20Cottages">gscime@twcny.rr.com</a></p>
+    </div>
+    <div><h2>Pages</h2><ul><li><a href="index.html">Home</a></li><li><a href="stay.html">Cottages</a></li><li><a href="campground.html">Campground</a></li><li><a href="docks.html">Docks</a></li><li><a href="rates.html">Rates</a></li><li><a href="area.html">The area</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h2>Stays</h2><ul>
+      <li><a href="stay.html#cottage-1">Cottage #1</a></li><li><a href="stay.html#cottage-2">Cottage #2</a></li>
+      <li><a href="stay.html#cottage-3">Cottage #3</a></li><li><a href="stay.html#cottage-4">Cottage #4</a></li>
+      <li><a href="stay.html#mobile-home">Mobile home</a></li><li><a href="campground.html">RV and tent sites</a></li></ul></div>
+    <p class="fine">Unofficial demo built by MHS Tecnologia for North Country Cottages and Campgrounds. Not affiliated with or endorsed by North Country Cottages and Campgrounds. Text and photos come from their own website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="callbar" id="callbar"><a class="btn btn-call" href="tel:+13153754671"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call 315-375-4671</a><a class="btn btn-line" href="mailto:gscime@twcny.rr.com?subject=Question%20about%20North%20Country%20Cottages">Email</a></div>
+<script>
+(()=>{const b=document.getElementById('callbar');const t=document.querySelector('[data-callbar-after]');
+if(!b)return;if(!t||!('IntersectionObserver'in window)){b.classList.add('on');return}
+new IntersectionObserver(([e])=>b.classList.toggle('on',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(t)})();
+</script>
+</body>
+</html>
