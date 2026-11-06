@@ -10,12 +10,13 @@
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preload" href="fonts/bigshoulders.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/atkinson.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/lane-800.webp" imagesrcset="img/lane-800.webp 800w, img/lane-1000.webp 1000w, img/lane-1400.webp 1400w" imagesizes="(min-width:1160px) 600px, (min-width:861px) 54vw, calc(100vw - 48px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/lane-800.webp" imagesrcset="img/lane-800.webp 800w, img/lane-1000.webp 1000w, img/lane-1400.webp 1400w" imagesizes="(min-width:1160px) max(calc(50vw - 12px), calc(100vh * 1.334 - 200px)), (min-width:861px) max(calc(100vw - 592px), 694px), calc(100vw - 48px)" fetchpriority="high">
 <style>
 @font-face{font-family:"Big Shoulders";src:url(fonts/bigshoulders.woff2) format("woff2");font-weight:600 900;font-display:swap}
+@font-face{font-family:Digits;src:url(fonts/hanken.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0030-0039}
 @font-face{font-family:Atkinson;src:url(fonts/atkinson.woff2) format("woff2");font-weight:200 800;font-display:swap}
 :root{--night:#18222f;--asphalt:#3b4654;--owl:#f7941d;--owl-t:#a35300;--redbud:#a2306a;--sky:#eaf1f5;--paper:#fff;--ink:#18222f;--muted:#4c5866;--line:#d3dce3;
---disp:"Big Shoulders",Impact,sans-serif;--sans:Atkinson,system-ui,sans-serif;--w:1160px}
+--disp:"Big Shoulders",Impact,sans-serif;--sans:Digits,Atkinson,system-ui,sans-serif;--w:1160px}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
@@ -53,8 +54,11 @@ p{margin:0 0 1em;max-width:62ch}
 @media (max-width:860px){.nav>a{display:none}.menu{display:block}.brand img{width:140px}.bar{min-height:62px}}
 
 /* home hero */
-.hero{padding:48px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1fr 1.22fr;gap:48px;align-items:center}
+.hero{padding:0}
+.hero .wrap{display:grid;grid-template-columns:minmax(320px,520px) 1fr;gap:48px;align-items:center;max-width:none;padding:0 0 0 max(24px,calc((100vw - 1160px)/2 + 24px))}
+.hero .shot img{height:clamp(520px,calc(100vh - 150px),780px);object-fit:cover;border-radius:0}
+.hero .shot figcaption{padding:0 24px 0 0}
+.hero .wrap>div{padding:40px 0}
 .where{font-weight:700;color:var(--redbud);margin:0 0 14px}
 .hero h1{margin-bottom:20px}
 .hero .lede{margin-bottom:26px}
@@ -65,7 +69,9 @@ p{margin:0 0 1em;max-width:62ch}
 .shot figcaption{font-size:.875rem;color:var(--muted);margin-top:8px}
 @media (max-width:860px){
  .hero{padding:22px 0 36px}
- .hero .wrap{grid-template-columns:1fr;gap:22px}
+ .hero .wrap{grid-template-columns:1fr;gap:22px;padding:0 24px}
+ .hero .wrap>div{padding:0}
+ .hero .shot img{height:auto;border-radius:4px}
  .hero h1{font-size:2.45rem;margin-bottom:12px}
  .hero .lede{font-size:1.05rem;margin-bottom:16px}
  .where{margin-bottom:8px;font-size:.95rem}
@@ -79,8 +85,6 @@ p{margin:0 0 1em;max-width:62ch}
 .loop h2{color:#fff}
 .loop p{color:#cfd9e1}
 .loop .rule{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--owl);margin-bottom:.6em}
-.counter{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
-.counter output{font-weight:700;color:#fff;font-size:1.1rem}
 .track{width:100%;height:auto}
 .track .note{fill:#9fb0bf;font:600 13px var(--sans)}
 @media (max-width:860px){.loop{padding:52px 0}.loop .wrap{grid-template-columns:1fr;gap:28px}}
@@ -160,8 +164,8 @@ p{margin:0 0 1em;max-width:62ch}
 <meta property="og:type" content="website">
 <meta property="og:title" content="Owl&rsquo;s Nest Campground, Junction City, Kansas">
 <meta property="og:description" content="RV campsites and two furnished cabins in Junction City, Kansas, minutes from Fort Riley. Open year round. Nightly, weekly and monthly stays.">
-<meta property="og:url" content="https://demo.mhstecnologia.com/owls-nest-campground-junction-city-ks/">
-<meta property="og:image" content="https://demo.mhstecnologia.com/owls-nest-campground-junction-city-ks/og.jpg">
+<meta property="og:url" content="https://previa.mhstecnologia.com/owls-nest-campground-junction-city-ks/">
+<meta property="og:image" content="https://previa.mhstecnologia.com/owls-nest-campground-junction-city-ks/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 </head>
@@ -185,8 +189,8 @@ p{margin:0 0 1em;max-width:62ch}
 <p class="hours">Office Monday to Friday, 8:30 to 5. After hours, see our camp host.</p>
 </div>
 <figure class="shot">
-<img src="img/lane-800.webp" srcset="img/lane-800.webp 800w, img/lane-1000.webp 1000w, img/lane-1400.webp 1400w" sizes="(min-width:1160px) 600px, (min-width:861px) 54vw, calc(100vw - 48px)" width="1400" height="1050" alt="Redbud trees in bloom along the campground road, with RVs parked at the sites" fetchpriority="high">
-<figcaption>Redbuds in bloom along the campground road.</figcaption>
+<img src="img/lane-800.webp" srcset="img/lane-800.webp 800w, img/lane-1000.webp 1000w, img/lane-1400.webp 1400w" sizes="(min-width:1160px) max(calc(50vw - 12px), calc(100vh * 1.334 - 200px)), (min-width:861px) max(calc(100vw - 592px), 694px), calc(100vw - 48px)" width="1400" height="1050" alt="Redbud trees in bloom along the campground road, with RVs parked at the sites" fetchpriority="high">
+<figcaption>The campground road in spring.</figcaption>
 </figure>
 </div>
 </section>
@@ -198,11 +202,10 @@ p{margin:0 0 1em;max-width:62ch}
 <p class="rule">Drive slow. One way road.</p>
 <p>Our entrance road runs one way, counter-clockwise, around the campsites. Back-in sites are angled off that direction, so it is easier to swing your camper onto the site.</p>
 <p>Out for a walk? Six laps around our campsites on the access road equals one mile.</p>
-<div class="counter"><button class="btn btn-owl" type="button" id="lapbtn">Walk a lap</button><output id="laps" aria-live="polite">0 laps so far</output></div>
 </div>
 <svg class="track" viewBox="0 0 600 360" role="img" aria-labelledby="trk-t">
 <title id="trk-t">Drawing of the one-way access road looping counter-clockwise around the campsites</title>
-<g fill="#a2306a" opacity=".9"><circle cx="196" cy="182" r="9"/><circle cx="286" cy="182" r="9"/><circle cx="376" cy="182" r="9"/><circle cx="34" cy="40" r="13"/><circle cx="566" cy="40" r="11"/><circle cx="566" cy="318" r="13"/><circle cx="34" cy="318" r="11"/></g>
+<g fill="#a2306a" opacity=".9"><circle cx="196" cy="182" r="9"/><circle cx="286" cy="182" r="9"/><circle cx="376" cy="182" r="9"/></g>
 <g fill="#5e6f80">
 <rect x="130" y="128" width="14" height="30" rx="3" transform="rotate(-30 137 143)"/><rect x="175" y="128" width="14" height="30" rx="3" transform="rotate(-30 182 143)"/><rect x="220" y="128" width="14" height="30" rx="3" transform="rotate(-30 227 143)"/><rect x="265" y="128" width="14" height="30" rx="3" transform="rotate(-30 272 143)"/><rect x="310" y="128" width="14" height="30" rx="3" transform="rotate(-30 317 143)"/><rect x="355" y="128" width="14" height="30" rx="3" transform="rotate(-30 362 143)"/><rect x="400" y="128" width="14" height="30" rx="3" transform="rotate(-30 407 143)"/>
 <rect x="160" y="205" width="14" height="30" rx="3" transform="rotate(30 167 220)"/><rect x="205" y="205" width="14" height="30" rx="3" transform="rotate(30 212 220)"/><rect x="250" y="205" width="14" height="30" rx="3" transform="rotate(30 257 220)"/><rect x="295" y="205" width="14" height="30" rx="3" transform="rotate(30 302 220)"/><rect x="340" y="205" width="14" height="30" rx="3" transform="rotate(30 347 220)"/><rect x="385" y="205" width="14" height="30" rx="3" transform="rotate(30 392 220)"/><rect x="430" y="205" width="14" height="30" rx="3" transform="rotate(30 437 220)"/>
@@ -294,15 +297,13 @@ p{margin:0 0 1em;max-width:62ch}
 </div>
 </section>
 <script>
-(function(){var p=document.getElementById('road'),d=document.getElementById('you'),btn=document.getElementById('lapbtn'),out=document.getElementById('laps');
-if(!p||!d)return;var L=p.getTotalLength(),still=matchMedia('(prefers-reduced-motion: reduce)').matches,busy=false,n=0;
-var words=['','1/6 of a mile','1/3 of a mile','half a mile','2/3 of a mile','5/6 of a mile','one mile'];
+(function(){var p=document.getElementById('road'),d=document.getElementById('you');
+if(!p||!d)return;var L=p.getTotalLength(),still=matchMedia('(prefers-reduced-motion: reduce)').matches,busy=false;
 function put(t){var q=p.getPointAtLength((t%1)*L);d.setAttribute('cx',q.x);d.setAttribute('cy',q.y)}
 function lap(ms,done){if(still||busy){done&&done();return}busy=true;var s=null;
 function f(ts){if(s===null)s=ts;var k=Math.min(1,(ts-s)/ms);k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;put(k);if(k<1)requestAnimationFrame(f);else{busy=false;put(0);done&&done()}}
 requestAnimationFrame(f)}
 if('IntersectionObserver'in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();lap(3600)}},{threshold:.5});io.observe(p.ownerSVGElement)}
-btn.addEventListener('click',function(){if(busy)return;lap(2200,function(){n=n>=6?1:n+1;out.textContent=n+(n===1?' lap':' laps')+' = '+words[n]+(n===6?'. Done.':'')})});
 })();
 </script>
 </main>

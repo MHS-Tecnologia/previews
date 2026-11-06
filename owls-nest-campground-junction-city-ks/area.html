@@ -12,9 +12,10 @@
 <link rel="preload" href="fonts/atkinson.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Big Shoulders";src:url(fonts/bigshoulders.woff2) format("woff2");font-weight:600 900;font-display:swap}
+@font-face{font-family:Digits;src:url(fonts/hanken.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0030-0039}
 @font-face{font-family:Atkinson;src:url(fonts/atkinson.woff2) format("woff2");font-weight:200 800;font-display:swap}
 :root{--night:#18222f;--asphalt:#3b4654;--owl:#f7941d;--owl-t:#a35300;--redbud:#a2306a;--sky:#eaf1f5;--paper:#fff;--ink:#18222f;--muted:#4c5866;--line:#d3dce3;
---disp:"Big Shoulders",Impact,sans-serif;--sans:Atkinson,system-ui,sans-serif;--w:1160px}
+--disp:"Big Shoulders",Impact,sans-serif;--sans:Digits,Atkinson,system-ui,sans-serif;--w:1160px}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
@@ -52,8 +53,11 @@ p{margin:0 0 1em;max-width:62ch}
 @media (max-width:860px){.nav>a{display:none}.menu{display:block}.brand img{width:140px}.bar{min-height:62px}}
 
 /* home hero */
-.hero{padding:48px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1fr 1.22fr;gap:48px;align-items:center}
+.hero{padding:0}
+.hero .wrap{display:grid;grid-template-columns:minmax(320px,520px) 1fr;gap:48px;align-items:center;max-width:none;padding:0 0 0 max(24px,calc((100vw - 1160px)/2 + 24px))}
+.hero .shot img{height:clamp(520px,calc(100vh - 150px),780px);object-fit:cover;border-radius:0}
+.hero .shot figcaption{padding:0 24px 0 0}
+.hero .wrap>div{padding:40px 0}
 .where{font-weight:700;color:var(--redbud);margin:0 0 14px}
 .hero h1{margin-bottom:20px}
 .hero .lede{margin-bottom:26px}
@@ -64,7 +68,9 @@ p{margin:0 0 1em;max-width:62ch}
 .shot figcaption{font-size:.875rem;color:var(--muted);margin-top:8px}
 @media (max-width:860px){
  .hero{padding:22px 0 36px}
- .hero .wrap{grid-template-columns:1fr;gap:22px}
+ .hero .wrap{grid-template-columns:1fr;gap:22px;padding:0 24px}
+ .hero .wrap>div{padding:0}
+ .hero .shot img{height:auto;border-radius:4px}
  .hero h1{font-size:2.45rem;margin-bottom:12px}
  .hero .lede{font-size:1.05rem;margin-bottom:16px}
  .where{margin-bottom:8px;font-size:.95rem}
@@ -78,8 +84,6 @@ p{margin:0 0 1em;max-width:62ch}
 .loop h2{color:#fff}
 .loop p{color:#cfd9e1}
 .loop .rule{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--owl);margin-bottom:.6em}
-.counter{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
-.counter output{font-weight:700;color:#fff;font-size:1.1rem}
 .track{width:100%;height:auto}
 .track .note{fill:#9fb0bf;font:600 13px var(--sans)}
 @media (max-width:860px){.loop{padding:52px 0}.loop .wrap{grid-template-columns:1fr;gap:28px}}
