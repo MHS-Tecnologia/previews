@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The House | Merchant’s House Museum</title>
+<meta name="description" content="Five floors of the Tredwells’ 1832 house, from the servants’ quarters to the kitchen.">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" href="fonts/oldstandardtt-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Old Standard";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/oldstandardtt-normal-400.woff2) format("woff2")}
+@font-face{font-family:"Old Standard";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/oldstandardtt-normal-700.woff2) format("woff2")}
+@font-face{font-family:"Old Standard";font-weight:400;font-style:italic;font-display:swap;src:url(fonts/oldstandardtt-italic-400.woff2) format("woff2")}
+@font-face{font-family:"Mulish";font-weight:400 800;font-display:swap;src:url(fonts/mulish-normal-400-800.woff2) format("woff2")}
+:root{--plaster:#f3f2ee;--paper:#fbfaf7;--ink:#1f1a17;--muted:#5a514b;--silk:#8c1c24;--silk-d:#6c121a;--mahog:#2a1a13;--brass:#d6b26f;--rule:#d5d0c7;--shutter:#2f4537;
+--serif:"Old Standard",Georgia,"Times New Roman",serif;--sans:"Mulish",system-ui,-apple-system,"Segoe UI",sans-serif;--w:1180px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{margin:0;background:var(--plaster);color:var(--ink);font:400 1.125rem/1.62 var(--serif);text-rendering:optimizeLegibility}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--silk)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--silk);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 32px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:8px 14px;z-index:99}
+.skip:focus{left:8px}
+.demo{background:var(--ink);color:#e9e4dc;font:500 .78rem/1.4 var(--sans);text-align:center;padding:7px 16px}
+/* header */
+.top{position:sticky;top:0;z-index:20;background:rgba(243,242,238,.96);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink);text-decoration:none;margin-right:auto}
+.brand img{width:56px;height:auto}
+.brand span{font:400 1.18rem/1.1 var(--serif);font-variant:small-caps;letter-spacing:.06em}
+.nav{display:flex;align-items:center;gap:22px}
+.nav > a{font:600 .92rem/1 var(--sans);color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current=page]{border-color:var(--silk)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:3px;font:700 .98rem/1 var(--sans);text-decoration:none;border:2px solid var(--silk);transition:background .15s,color .15s}
+.btn-p{background:var(--silk);color:#fff}
+.btn-p:hover{background:var(--silk-d);border-color:var(--silk-d)}
+.btn-s{background:transparent;color:var(--silk)}
+.btn-s:hover{background:var(--silk);color:#fff}
+.nav .btn{min-height:42px;padding:0 16px}
+.nav > a.btn-p{color:#fff;border:2px solid var(--silk)}
+.nav > a.btn-p:hover{background:var(--silk-d)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font:700 .95rem/1 var(--sans);padding:12px 14px;border:1.5px solid var(--ink);border-radius:3px}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + 8px);background:var(--paper);border:1px solid var(--rule);box-shadow:0 12px 30px rgba(31,26,23,.16);min-width:230px;padding:8px 0;display:flex;flex-direction:column}
+.menu nav a{font:600 1rem/1 var(--sans);color:var(--ink);text-decoration:none;padding:14px 20px}
+.menu nav a[aria-current=page]{color:var(--silk)}
+/* type */
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;margin:0;letter-spacing:-.005em;text-wrap:balance}
+h1{font-size:clamp(2.2rem,4.6vw,4rem)}
+h2{font-size:clamp(1.8rem,3.2vw,2.75rem)}
+h3,.h3{font-size:1.5rem;line-height:1.2}
+p{margin:0 0 1em}
+.lede{font-size:1.25rem;line-height:1.55;max-width:36em}
+.small{font:500 .95rem/1.5 var(--sans);color:var(--muted)}
+figure{margin:0}
+figcaption{font:italic 400 .95rem/1.45 var(--serif);color:var(--muted);margin-top:10px}
+section{padding:88px 0}
+/* hero */
+.hero{padding:56px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,7fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,3.9vw,3.4rem)}
+.hero h1{margin-bottom:22px}
+.hero .open{border-left:3px solid var(--silk);padding:4px 0 4px 14px;font:600 1rem/1.45 var(--sans);margin:22px 0}
+.hero .open b{color:var(--silk)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero figure img{width:100%}
+/* the house, floor by floor */
+.section-dwg{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.dwg-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:48px}
+.dwg-head p{margin:0}
+.floors{list-style:none;margin:0;padding:0;max-width:960px}
+.floor{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:40px}
+.fac{position:relative;border-left:2px solid var(--ink);border-right:2px solid var(--ink);border-bottom:1.5px solid var(--ink);padding:18px 0 22px;display:flex;justify-content:space-around;align-items:flex-start;min-height:140px;background:repeating-linear-gradient(0deg,transparent 0 13px,rgba(31,26,23,.06) 13px 14px)}
+.win{width:30px;height:58px;border:1.5px solid var(--ink);background:linear-gradient(var(--ink),var(--ink)) center/1.5px 100% no-repeat,linear-gradient(var(--ink),var(--ink)) center/100% 1.5px no-repeat,var(--paper)}
+.tall .win{height:78px}
+.door{width:34px;height:78px;border:1.5px solid var(--ink);border-radius:17px 17px 0 0;background:var(--paper)}
+.short .win{height:40px}
+.roof{display:block;width:200px;height:96px}
+.floor-roof .fac{border:0;padding:0;min-height:0;background:none;align-items:flex-end}
+.fac::after{content:"";position:absolute;left:76%;width:5px;background:var(--silk);transform-origin:top;top:0;bottom:0;display:none}
+.p-start .fac::after{display:block;top:46%}
+.p-mid .fac::after{display:block}
+.p-end .fac::after{display:block;bottom:30%}
+.p-end .fac::before{content:"";position:absolute;left:calc(76% - 6px);bottom:calc(30% - 2px);width:17px;height:5px;background:var(--silk)}
+.js .floors .fac::after{transform:scaleY(0)}
+.js .floors.go .fac::after{transform:scaleY(1);transition:transform .7s linear}
+.js .floors.go .p-mid .fac::after{transition-delay:.7s}
+.js .floors.go .p-end .fac::after{transition-delay:1.4s}
+.ftxt{padding:20px 0 24px;border-bottom:1px solid var(--rule);align-self:stretch}
+.ftxt h3{margin-bottom:6px}
+.ftxt h3 a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--silk)}
+.ftxt h3 a:hover{color:var(--silk)}
+.ftxt p{margin:0;max-width:34em}
+.ftxt .pass{color:var(--silk);font:700 .95rem/1.45 var(--sans);margin-top:8px}
+.ftxt.quiet h3{color:var(--muted);font-size:1.2rem}
+.street{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:40px}
+.street div{border-top:4px solid var(--ink)}
+/* passage band */
+.dark{background:var(--mahog);color:#efe7dc}
+.dark a{color:var(--brass)}
+.dark figcaption{color:#c9bcab}
+.dark .btn-s{color:var(--brass);border-color:var(--brass)}
+.dark .btn-s:hover{background:var(--brass);color:var(--mahog)}
+.pass-band h2{max-width:16em;margin-bottom:36px}
+.pass-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:40px}
+.facts{list-style:none;margin:0;padding:0;border-top:1px solid rgba(239,231,220,.25)}
+.facts li{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid rgba(239,231,220,.25)}
+.facts b{font:700 1.35rem/1.2 var(--serif);color:var(--brass)}
+blockquote{margin:0;font:italic 400 1.3rem/1.5 var(--serif)}
+blockquote footer{font:600 .92rem/1.4 var(--sans);font-style:normal;margin-top:12px;color:#c9bcab}
+/* events */
+.cal{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.cal li{display:grid;grid-template-columns:13rem minmax(0,1fr);gap:32px;padding:24px 0;border-bottom:1px solid var(--rule)}
+.cal time{font:700 1rem/1.4 var(--sans);color:var(--silk)}
+.cal h3,.cal .h3{margin-bottom:8px}
+.cal p{margin:0 0 .5em;max-width:40em}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;align-items:start}
+/* visit */
+.ticket{background:var(--paper);border:1px solid var(--rule);border-top:4px solid var(--silk);padding:28px}
+.ticket h3,.ticket .h3{margin-bottom:12px}
+table{border-collapse:collapse;width:100%;font:500 1rem/1.45 var(--sans)}
+th,td{text-align:left;padding:10px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+td:last-child{text-align:right;font-weight:700;white-space:nowrap;padding-left:16px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.dl dt{font:700 1rem/1.4 var(--sans);margin-top:16px}
+.dl dd{margin:4px 0 0}
+/* page heads */
+.phead{padding:64px 0 40px}
+.phead h1{max-width:14em;margin-bottom:20px}
+.rooms{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px 48px;align-items:start}
+.rooms .wide{grid-column:1/-1}
+.rooms .kitchen{max-width:900px}
+.ph img{width:100%}
+.ph.cap480{max-width:480px}
+.room-h{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;margin-bottom:36px;align-items:end}
+.room-h p{margin:0;max-width:36em}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:24px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.tl b{font:700 1.4rem/1.2 var(--serif);color:var(--silk)}
+.tl p{margin:0}
+.names{font:italic 400 1.6rem/1.4 var(--serif)}
+/* footer */
+.foot{background:var(--ink);color:#d9d2c8;padding:56px 0 28px;font:500 .95rem/1.6 var(--sans)}
+.foot a{color:#fff}
+.foot .cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr);gap:40px}
+.foot .name{font:400 1.3rem/1.2 var(--serif);font-variant:small-caps;letter-spacing:.06em;color:#fff;margin-bottom:10px}
+.foot nav{display:flex;flex-direction:column;gap:6px}
+.foot .legal{border-top:1px solid #4a423c;margin-top:40px;padding-top:20px;font-size:.85rem;color:#b9b0a5}
+.foot .legal p{margin:0 0 6px}
+.bar{display:none}
+@media (max-width:980px){
+ .nav > a{display:none}.menu{display:block}
+ .hero .wrap,.dwg-head,.pass-cols,.split,.two,.room-h,.foot .cols{grid-template-columns:minmax(0,1fr);gap:28px}
+ .three{grid-template-columns:minmax(0,1fr);gap:24px}
+}
+@media (max-width:760px){
+ body{font-size:1.06rem}
+ .wrap{padding:0 16px}
+ .top .wrap{min-height:62px;gap:12px}
+ .brand img{width:44px}
+ .brand span{font-size:1.02rem}
+ .nav .btn{display:none}
+ section{padding:60px 0}
+ .hero{padding:24px 0 40px}
+ .hero .wrap{gap:20px}
+ .hero h1{font-size:2.15rem;margin-bottom:14px}
+ .hero .lede{font-size:1.06rem}
+ .hero .open{margin:16px 0}
+ .hero .more{display:none}
+ .actions .btn{flex:1 1 auto}
+ .floor,.street{grid-template-columns:92px minmax(0,1fr);column-gap:18px}
+ .roof{width:92px;height:46px}
+ .fac{min-height:110px;padding:12px 0 14px}
+ .win{width:15px;height:30px}.tall .win{height:40px}.door{width:17px;height:40px}.short .win{height:22px}
+ .ftxt h3{font-size:1.3rem}
+ .rooms{grid-template-columns:minmax(0,1fr);gap:32px}
+ .cal li{grid-template-columns:minmax(0,1fr);gap:6px}
+ .facts li{grid-template-columns:5.5rem minmax(0,1fr)}
+ .tl li{grid-template-columns:4.5rem minmax(0,1fr);gap:14px}
+ .bar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(243,242,238,.97);border-top:1px solid var(--rule);transform:translateY(110%);transition:transform .2s}
+ .bar.on{transform:none}
+ .bar .btn{flex:1;min-height:46px}
+ .foot{padding-bottom:96px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.js .floors .fac::after{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Merchant’s House Museum. Not affiliated with or endorsed by Merchant’s House Museum.</div>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><img src="img/logo.png" width="150" height="136" alt=""><span>Merchant’s House Museum</span></a>
+<nav class="nav" aria-label="Main"><a href="house.html" aria-current=page>The House</a><a href="passage.html">The Passage</a><a href="story.html">Our Story</a><a href="events.html">Events</a><a href="visit.html">Visit</a><a class="btn btn-p" href="visit.html">Plan a visit</a></nav>
+<details class="menu"><summary>Menu</summary><nav aria-label="Main, mobile"><a href="index.html">Home</a><a href="house.html" aria-current=page>The House</a><a href="passage.html">The Passage</a><a href="story.html">Our Story</a><a href="events.html">Events</a><a href="visit.html">Visit</a><a href="tel:+12127771089">Call 212-777-1089</a></nav></details>
+</div></header>
+<main id="main">
+<div class="phead"><div class="wrap">
+<h1>The house, floor by floor.</h1>
+<p class="lede">An 1832 late-Federal brick exterior and Greek Revival rooms inside. In 1965 it was among the first 20 buildings designated under the city’s new landmarks law, and the very first in Manhattan. It is also a National Historic Landmark.</p>
+</div></div>
+
+<section id="fourth" style="padding-top:24px"><div class="wrap">
+<div class="room-h"><h2>Fourth floor</h2><p>The servants’ bedroom has two small metal beds, a worktable for mending clothes and a cast-iron coal stove. Only at the end of the day could the servants sew and mend their own clothes.</p></div>
+<div class="rooms">
+<figure class="ph"><img src="img/servant-vignette-700.webp" srcset="img/servant-vignette-1200.webp 1200w, img/servant-vignette-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1244px) calc(50vw - 56px), 566px" width="1200" height="800" alt="Clothing, a wooden darning egg and a pincushion laid on a small wooden worktable" loading="lazy" decoding="async"><figcaption>Servant bedroom. Photo by Max Touhey.</figcaption></figure>
+<figure class="ph cap480"><img src="img/servants-room-480.webp" width="480" height="334" alt="Two narrow iron beds, a worktable and a cast-iron stove under a sloped ceiling" loading="lazy" decoding="async"><figcaption>Servants’ fourth-floor bedroom.</figcaption></figure>
+</div>
+</div></section>
+
+<section id="bedroom" class="section-dwg"><div class="wrap">
+<div class="room-h"><h2>Bedroom floor</h2><p>The hidden passage begins here: a narrow passageway, about 2 feet square, beneath a built-in chest of drawers, descending 15 feet to the ground-floor pantry.</p></div>
+<div class="rooms">
+<figure class="ph cap480"><img src="img/stairs-560.webp" srcset="img/stairs-900.webp 900w, img/stairs-560.webp 560w" sizes="(max-width: 760px) calc(100vw - 32px), 480px" width="900" height="1350" alt="Looking down the curving mahogany stair rail through three floors" loading="lazy" decoding="async"><figcaption>Bedroom floor stairs. Photo by Max Touhey.</figcaption></figure>
+</div>
+</div></section>
+
+<section id="parlor"><div class="wrap">
+<div class="room-h"><h2>Parlor floor</h2><p>The Greek Revival double parlor, with red silk upholstered Rococo Revival furniture and red silk draperies. Each holiday season, A Christmas Carol is performed here. Outside, Ionic columns surround the front door.</p></div>
+<div class="rooms">
+<figure class="ph wide"><img src="img/parlor-900.webp" srcset="img/parlor-1400.webp 1400w, img/parlor-900.webp 900w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1244px) calc(100vw - 64px), 1116px" width="1400" height="933" alt="The front parlor with red silk furniture, draperies and a patterned carpet" loading="lazy" decoding="async"><figcaption>Front parlor. Photo by Denis Vlasov.</figcaption></figure>
+<figure class="ph"><img src="img/cornice-700.webp" srcset="img/cornice-1200.webp 1200w, img/cornice-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1244px) calc(50vw - 56px), 566px" width="1200" height="800" alt="White ornamental plaster cornice with leaf and egg-and-dart moldings" loading="lazy" decoding="async"><figcaption>The decorative plasterwork in these rooms is considered the finest example extant. Photo by Max Touhey.</figcaption></figure>
+<figure class="ph"><img src="img/column-700.webp" srcset="img/column-1200.webp 1200w, img/column-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1244px) calc(50vw - 56px), 566px" width="1200" height="900" alt="An Ionic column capital and carved plaster framing at the front door" loading="lazy" decoding="async"><figcaption>Front facade detail.</figcaption></figure>
+</div>
+</div></section>
+
+<section id="ground" class="section-dwg"><div class="wrap">
+<div class="room-h"><h2>Ground floor</h2><p>The kitchen, and the pantry where the hidden passage comes out, 15 feet below the bedroom floor.</p></div>
+<div class="rooms">
+<figure class="ph wide kitchen"><img src="img/kitchen-700.webp" srcset="img/kitchen-1100.webp 1100w, img/kitchen-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 32px), 900px" width="1100" height="825" alt="The kitchen with a brick hearth, cast-iron range, worktable and shelves of bowls" loading="lazy" decoding="async"><figcaption>Ground-floor kitchen.</figcaption></figure>
+</div>
+</div></section>
+
+<section id="more"><div class="wrap">
+<div class="room-h"><h2>Also on the tour</h2><p>Seabury Tredwell’s bedroom has a large mahogany four-post bed with red silk hangings and a writing desk by the window. Eliza Tredwell’s bed has chintz hangings, with matching draperies. The family took meals at a drop-leaf table, extended by raising both leaves, and a small study holds a dress from the 1820s.</p></div>
+<div class="rooms">
+<figure class="ph"><img src="img/front-bedroom-668.webp" width="668" height="596" alt="Seabury Tredwell's bedroom with a mahogany four-post bed hung in red silk" loading="lazy" decoding="async"><figcaption>Seabury Tredwell’s bedroom.</figcaption></figure>
+<figure class="ph"><img src="img/rear-bedroom-659.webp" width="659" height="526" alt="Eliza Tredwell's bedroom with a four-post bed in chintz hangings" loading="lazy" decoding="async"><figcaption>Eliza Tredwell’s bedroom.</figcaption></figure>
+<figure class="ph"><img src="img/family-room-700.webp" srcset="img/family-room-1200.webp 1200w, img/family-room-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1244px) calc(50vw - 56px), 566px" width="1200" height="801" alt="A room with a red sofa and a drop-leaf table under a green cloth" loading="lazy" decoding="async"><figcaption>The family took meals at the drop-leaf table. Photo by Patrick Blanc.</figcaption></figure>
+<figure class="ph"><img src="img/study-700.webp" srcset="img/study-1200.webp 1200w, img/study-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1244px) calc(50vw - 56px), 566px" width="1200" height="800" alt="A small study with a white 1820s dress on a form, a desk and framed paintings" loading="lazy" decoding="async"><figcaption>Study. Photo by Max Touhey.</figcaption></figure>
+</div>
+</div></section>
+
+<section id="garden"><div class="wrap two">
+<div><h2>The rear garden</h2><p class="lede" style="margin-top:18px">A bluestone path runs around the edge, with two raised bluestone parterres and plantings. Stone and cast-iron benches give you a place to sit. Both house tours include it.</p>
+<a class="btn btn-p" href="visit.html">Plan your visit</a></div>
+<figure class="ph cap480"><img src="img/garden-589.webp" width="589" height="785" alt="A leafy walled garden with a bluestone path, clipped shrubs and an iron bench" loading="lazy" decoding="async"><figcaption>Rear garden.</figcaption></figure>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap">
+<div class="cols">
+<div><p class="name">Merchant’s House Museum</p><p>29 East Fourth Street<br>New York, NY 10003<br>Between Lafayette Street and Bowery, NoHo</p>
+<p><a href="tel:+12127771089">212-777-1089</a><br><a href="mailto:nyc1832@merchantshouse.org">nyc1832@merchantshouse.org</a></p></div>
+<nav aria-label="Footer"><a href="index.html">Home</a><a href="house.html">The House</a><a href="passage.html">The Passage</a><a href="story.html">Our Story</a><a href="events.html">Events</a><a href="visit.html">Visit</a></nav>
+<div><p>Open Wednesday to Sunday. Self-guided visits 1 to 5 p.m., last entry 4:30. Guided tour at 12 p.m.</p>
+<p>During restoration, enter through Manuel Plaza, 35 East 4th Street.</p></div>
+</div>
+<div class="legal">
+<p>Photographs from merchantshouse.org, by Max Touhey, Denis Vlasov, Patrick Blanc and the museum, credited where shown.</p>
+<p>Unofficial demo built by MHS Tecnologia for Merchant’s House Museum. Not affiliated with or endorsed by Merchant’s House Museum.</p>
+<p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div>
+</div></footer>
+<div class="bar" aria-label="Quick actions"><a class="btn btn-s" href="tel:+12127771089">Call</a><a class="btn btn-p" href="visit.html">Plan a visit</a></div>
+<script>
+document.documentElement.classList.add('js');
+(function(){var f=document.querySelector('.floors');if(f&&'IntersectionObserver'in window){var o=new IntersectionObserver(function(e){if(e[0].isIntersecting){f.classList.add('go');o.disconnect()}},{threshold:.35});o.observe(f)}else if(f){f.classList.add('go')}
+var b=document.querySelector('.bar'),h=document.querySelector('[data-hero]');if(b&&h&&'IntersectionObserver'in window){new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting)}).observe(h)}})();
+</script>
+</body>
+</html>
