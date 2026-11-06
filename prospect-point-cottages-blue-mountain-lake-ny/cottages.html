@@ -37,7 +37,7 @@ p+p{margin-top:.8rem}
 header.top{background:var(--lake);color:#fff;position:relative;z-index:5}
 .bar{display:flex;align-items:center;gap:1.25rem;min-height:4.5rem}
 .logo{display:block;flex:none;margin-right:auto}
-.logo img{width:96px;height:auto}
+.logo img{width:128px;height:auto}
 .nav{display:flex;align-items:center;gap:1.6rem}
 .nav > a{text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent}
 .nav > a:hover,.nav > a[aria-current]{border-color:var(--butter)}
@@ -63,8 +63,8 @@ header.top{background:var(--lake);color:#fff;position:relative;z-index:5}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem}
 /* hero */
 .hero{padding:clamp(1.5rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4.5rem)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
-.hero h1{color:var(--lake)}
+.hero .wrap{max-width:96rem;display:grid;grid-template-columns:minmax(0,24rem) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{color:var(--lake);font-size:clamp(2.15rem,4vw,3.3rem)}
 .hero .lede{font-size:1.15rem;margin:1.1rem 0 1rem;max-width:34rem}
 .season{font-family:"Old Standard TT",Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--spruce);margin-bottom:1.4rem}
 .season b{font-style:normal}
@@ -219,12 +219,12 @@ footer.site nav a:hover{text-decoration:underline}
 <div><div class="map"><img src="img/map-400.webp" srcset="img/map-400.webp 400w, img/map-652.webp 652w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="652" height="619" alt="Hand-drawn camp map of Prospect Point with the cottage numbers" loading="lazy" decoding="async"></div><button class="zoom" type="button" data-open-map>Open the map larger</button></div>
 </div>
 
-<section class="group" aria-labelledby="g1"><h2 id="g1">On the water</h2><article class="cot" id="oak">
+<section class="group" aria-labelledby="g1"><h2 id="g1">On the water</h2><article class="cot withpic" id="oak"><figure><img src="img/oak-480.webp" srcset="img/oak-480.webp 480w, img/oak-610.webp 610w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="610" height="458" alt="Oak Cottage seen from the lake, rocks and a buoy in front" loading="lazy" decoding="async"></figure>
 <div><h3><span class="num">4</span>Oak</h3><p class="desc">Fully renovated. On the water. Spectacular views. 1 bedroom, living room with high-rise sleeper couch (2 separate beds), efficiency kitchen.</p></div>
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$225</span> per night (double occupancy), 2 night minimum</dd></div>
 <div><dt>Summer season</dt><dd><span class="amt">$1,700</span> per week (double occupancy)</dd></div>
-</dl></article><article class="cot" id="walnut">
+</dl></article><article class="cot withpic" id="walnut"><figure><img src="img/walnut-480.webp" srcset="img/walnut-480.webp 480w, img/walnut-610.webp 610w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="610" height="458" alt="Walnut Cottage among the trees above the water, Adirondack chairs on the lawn" loading="lazy" decoding="async"></figure>
 <div><h3><span class="num">5</span>Walnut</h3><p class="desc">Fully renovated. On the water. Spectacular views. 1 bedroom, living room with high-rise sleeper couch (2 separate beds), efficiency kitchen.</p></div>
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$225</span> per night (double occupancy), 2 night minimum</dd></div>
@@ -239,7 +239,7 @@ footer.site nav a:hover{text-decoration:underline}
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$250</span> per night (double occupancy), 2 night minimum</dd></div>
 <div><dt>Summer season</dt><dd><span class="amt">$1,800</span> per week (double occupancy)</dd></div>
-</dl></article><article class="cot" id="birch">
+</dl></article><article class="cot withpic" id="birch"><figure><img src="img/birch-480.webp" srcset="img/birch-480.webp 480w, img/birch-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="1000" height="750" alt="Birch&#x27;s picnic table, grill and Adirondack chairs on the lawn above the lake, Blue Mountain behind" loading="lazy" decoding="async"></figure>
 <div><h3><span class="num">8</span>Birch</h3><p class="desc">Fully renovated. On the water. Spectacular views. 1 bedroom, living room with high-rise sleeper couch (2 separate beds), efficiency kitchen.</p></div>
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$240</span> per night (double occupancy), 2 night minimum</dd></div>
@@ -249,7 +249,7 @@ footer.site nav a:hover{text-decoration:underline}
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$240</span> per night (double occupancy), 2 night minimum</dd></div>
 <div><dt>Summer season</dt><dd><span class="amt">$1,750</span> per week (double occupancy)</dd></div>
-</dl></article><article class="cot" id="hemlock">
+</dl></article><article class="cot withpic" id="hemlock"><figure><img src="img/hemlock-480.webp" srcset="img/hemlock-480.webp 480w, img/hemlock-800.webp 800w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="800" height="600" alt="Hemlock&#x27;s living room: skylight, knotty-pine walls, dining table and windows on the lake" loading="lazy" decoding="async"></figure>
 <div><h3><span class="num">10</span>Hemlock</h3><p class="desc">Fully renovated. On the water. Spectacular views. 2 bedrooms, living room with high-rise sleeper couch (2 separate beds), efficiency kitchen.</p></div>
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$275</span> per night (up to four people), 2 night minimum</dd></div>
@@ -265,7 +265,7 @@ footer.site nav a:hover{text-decoration:underline}
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$240</span> per night (double occupancy), 2 night minimum</dd></div>
 <div><dt>Summer season</dt><dd><span class="amt">$1,800</span> per week (double occupancy)</dd></div>
-</dl></article><article class="cot" id="elm">
+</dl></article><article class="cot withpic" id="elm"><figure><img src="img/elm-480.webp" srcset="img/elm-480.webp 480w, img/elm-610.webp 610w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="610" height="458" alt="Elm Cottage seen from the water, its reflection in the lake" loading="lazy" decoding="async"></figure>
 <div><h3><span class="num">3</span>Elm</h3><p class="desc">Fully renovated year-round cottage with rustic fireplace. Lovely views overlooking the water. 1 bedroom, living room with high-rise sleeper couch (2 separate beds), efficiency kitchen.</p></div>
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$240</span> per night (double occupancy), 2 night minimum</dd></div>
@@ -276,7 +276,7 @@ footer.site nav a:hover{text-decoration:underline}
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$275</span> per night (up to four people), 2 night minimum</dd></div>
 <div><dt>Summer season</dt><dd><span class="amt">$2,150</span> per week (up to four people)</dd></div>
 </dl></article></section>
-<section class="group" aria-labelledby="g3"><h2 id="g3">On the hillside</h2><article class="cot" id="spruce">
+<section class="group" aria-labelledby="g3"><h2 id="g3">On the hillside</h2><article class="cot withpic" id="spruce"><figure><img src="img/spruce-480.webp" srcset="img/spruce-480.webp 480w, img/spruce-610.webp 610w" sizes="(max-width: 860px) calc(100vw - 2rem), 440px" width="610" height="458" alt="Spruce&#x27;s living room: wood-paneled walls, a dining table and a sleeper couch" loading="lazy" decoding="async"></figure>
 <div><h3><span class="num">11</span>Spruce</h3><p class="desc">Older cottage, clean &amp; comfortable. On hillside, lake views. 2 bedrooms, living room with high-rise sleeper couch (2 separate beds), efficiency kitchen.</p></div>
 <dl class="rates">
 <div><dt>Spring &amp; fall</dt><dd><span class="amt">$220</span> per night (up to four people), 2 night minimum</dd></div>

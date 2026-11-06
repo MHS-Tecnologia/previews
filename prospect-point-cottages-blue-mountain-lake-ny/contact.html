@@ -37,7 +37,7 @@ p+p{margin-top:.8rem}
 header.top{background:var(--lake);color:#fff;position:relative;z-index:5}
 .bar{display:flex;align-items:center;gap:1.25rem;min-height:4.5rem}
 .logo{display:block;flex:none;margin-right:auto}
-.logo img{width:96px;height:auto}
+.logo img{width:128px;height:auto}
 .nav{display:flex;align-items:center;gap:1.6rem}
 .nav > a{text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent}
 .nav > a:hover,.nav > a[aria-current]{border-color:var(--butter)}
@@ -63,8 +63,8 @@ header.top{background:var(--lake);color:#fff;position:relative;z-index:5}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem}
 /* hero */
 .hero{padding:clamp(1.5rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4.5rem)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
-.hero h1{color:var(--lake)}
+.hero .wrap{max-width:96rem;display:grid;grid-template-columns:minmax(0,24rem) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{color:var(--lake);font-size:clamp(2.15rem,4vw,3.3rem)}
 .hero .lede{font-size:1.15rem;margin:1.1rem 0 1rem;max-width:34rem}
 .season{font-family:"Old Standard TT",Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--spruce);margin-bottom:1.4rem}
 .season b{font-style:normal}
