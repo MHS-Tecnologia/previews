@@ -80,8 +80,8 @@ figcaption{font-size:.9rem;color:var(--mute);margin-top:8px}
 .hero .ph img{width:100%;height:100%;object-fit:cover}
 @media (max-width:900px){.hero{padding:22px 0 28px}.hero .wrap{grid-template-columns:1fr;gap:22px}.hero h1{font-size:2.15rem;margin-bottom:12px}.hero .lede{font-size:1.06rem;margin-bottom:18px}.actions .btn{flex:1 1 100%}.hero .ph{aspect-ratio:5/4}}
 .finder{background:var(--paper)}
-.finder .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);grid-template-areas:'ctl map' 'tips map' '. map';grid-template-rows:auto auto 1fr;column-gap:56px;align-items:start}
-.finder .ctl{grid-area:ctl}.finder .tips{grid-area:tips}.finder figure{grid-area:map;min-width:0}
+.finder .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);grid-template-areas:'ctl map' 'res map' 'tips map' '. map';grid-template-rows:auto auto auto 1fr;column-gap:56px;align-items:start}
+.finder .ctl{grid-area:ctl}.finder .tips{grid-area:tips}.finder .result{grid-area:res}.finder figure{grid-area:map;min-width:0}
 .finder h2{margin-bottom:12px}
 .finder fieldset{border:0;padding:0;margin:22px 0 18px;display:flex;flex-wrap:wrap;gap:8px}
 .finder legend{font-weight:700;margin-bottom:10px;padding:0}
@@ -104,15 +104,21 @@ figcaption{font-size:.9rem;color:var(--mute);margin-top:8px}
 .map.filtering .base{opacity:.3;filter:grayscale(1)}
 .map.filtering .layer.fit{opacity:1}
 .mapnote{font-size:.875rem;color:var(--mute);margin-top:10px}
-@media (max-width:900px){.finder .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:'ctl' 'map' 'tips';grid-template-rows:auto;row-gap:24px}.mapscroll{overflow-x:auto;border-radius:14px;-webkit-overflow-scrolling:touch}.mapscroll .map{width:640px}.pan{display:block}}
-.pan{display:none;font-size:.875rem;color:var(--mute);margin:0 0 8px}
+.zbtn{display:none;align-items:center;min-height:44px;padding:0 16px;margin:0 0 10px;border-radius:999px;border:2px solid var(--pine);background:#fff;color:var(--pine);font:700 .95rem Atkinson,sans-serif;cursor:pointer}
+@media (max-width:900px){.finder{padding-bottom:calc(56px + var(--cb,0px))}.finder .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:'ctl' 'map' 'res' 'tips';grid-template-rows:auto;row-gap:16px}.finder fieldset{margin-bottom:0}.mapscroll{overflow-x:auto;border-radius:14px;-webkit-overflow-scrolling:touch}.mapscroll.zoom .map{width:720px}.zbtn{display:inline-flex}}
 .every{background:#fff;border-block:1px solid var(--line)}
 .every .wrap{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
-.every .q{margin:0;font-family:Caprasimo,Georgia,serif;font-size:clamp(1.45rem,2.4vw,2rem);line-height:1.3;color:var(--pine);max-width:34ch}
+.every .q{margin:0;font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.5;color:var(--ink);max-width:46ch;border-left:4px solid var(--gold);padding-left:20px}
+.every h2{margin-bottom:16px}
 .every .who{margin-top:16px;color:var(--mute);font-size:.95rem}
 .every .ph{aspect-ratio:3/2}
 .every .ph img{width:100%;height:100%;object-fit:cover}
 @media (max-width:900px){.every .wrap{grid-template-columns:1fr;gap:28px}}
+.strip{padding-bottom:16px}
+.strip .wrap{display:grid;grid-template-columns:7fr 5fr;grid-template-areas:'a b' 'a c' 'm m';gap:20px 24px}
+.strip .s1{grid-area:a}.strip .s2{grid-area:b}.strip .s3{grid-area:c}.strip .more{grid-area:m;margin:0}
+.strip .ph img{width:100%;height:100%;object-fit:cover}.strip .s1 .ph{height:calc(100% - 32px)}.strip .s2 .ph,.strip .s3 .ph{aspect-ratio:3/2}
+@media (max-width:760px){.strip .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:'a' 'b' 'c' 'm'}.strip .s1 .ph{height:auto;aspect-ratio:3/2}}
 .near .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
 .sign{background:var(--sign);color:#fff;border-radius:16px;padding:8px;box-shadow:0 2px 0 #0b3d24}
 .sign-in{border:3px solid #fff;border-radius:11px;padding:10px 22px}
@@ -120,7 +126,12 @@ figcaption{font-size:.9rem;color:var(--mute);margin-top:8px}
 .sign .row + .row{border-top:2px solid rgba(255,255,255,.35)}
 .sign .mi{white-space:nowrap;font-variant-numeric:tabular-nums}
 .near p.small{font-size:.95rem;color:var(--mute)}
-@media (max-width:900px){.near .wrap{grid-template-columns:1fr;gap:24px}.sign-in{padding:6px 16px}}
+@media (max-width:900px){.strip{padding-bottom:16px}
+.strip .wrap{display:grid;grid-template-columns:7fr 5fr;grid-template-areas:'a b' 'a c' 'm m';gap:20px 24px}
+.strip .s1{grid-area:a}.strip .s2{grid-area:b}.strip .s3{grid-area:c}.strip .more{grid-area:m;margin:0}
+.strip .ph img{width:100%;height:100%;object-fit:cover}.strip .s1 .ph{height:calc(100% - 32px)}.strip .s2 .ph,.strip .s3 .ph{aspect-ratio:3/2}
+@media (max-width:760px){.strip .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:'a' 'b' 'c' 'm'}.strip .s1 .ph{height:auto;aspect-ratio:3/2}}
+.near .wrap{grid-template-columns:1fr;gap:24px}.sign-in{padding:6px 16px}}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ozark Country Campground | Full hook-up RV park in Branson, MO">
@@ -147,7 +158,7 @@ figcaption{font-size:.9rem;color:var(--mute);margin-top:8px}
 </div>
 <div class="ph"><picture>
 <source media="(max-width: 700px)" srcset="img/hero-m-800.webp 800w" sizes="calc(100vw - 32px)">
-<img src="img/hero-1400.webp" srcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" sizes="(min-width: 1264px) 640px, 52vw" width="1400" height="788" alt="The grassy meadow and the pavilion at Ozark Country Campground, with the wooded Ozark ridge behind" fetchpriority="high">
+<img src="img/hero-1400.webp" srcset="img/hero-900.webp 900w, img/hero-1400.webp 1400w" sizes="(min-width: 1264px) 640px, 52vw" width="1400" height="788" alt="The gravel lane at Ozark Country Campground, with RVs parked on their sites under tall oaks" fetchpriority="high">
 </picture></div>
 </div></section>
 
@@ -156,26 +167,34 @@ figcaption{font-size:.9rem;color:var(--mute);margin-top:8px}
 <h2 id="map-h">Find a site long enough for your rig</h2>
 <p>Every site is on the park map below, colored by its length. Pick a length and the map keeps only the sites that size or longer.</p>
 <fieldset><legend>Site length</legend><label class="chip"><input type="radio" name="len" value="0" checked><span>All 70 sites</span></label><label class="chip"><input type="radio" name="len" value="30"><span><i style="background:#abb6d9"></i>30 ft or longer</span></label><label class="chip"><input type="radio" name="len" value="35"><span><i style="background:#fcd4c7"></i>35 ft or longer</span></label><label class="chip"><input type="radio" name="len" value="40"><span><i style="background:#fbb041"></i>40 ft or longer</span></label><label class="chip"><input type="radio" name="len" value="45"><span><i style="background:#ec008b"></i>45 ft</span></label></fieldset>
-<div class="result" aria-live="polite"><strong id="r-count">70 sites</strong><p id="r-list">From 28 ft to 45 ft. Call the office to reserve a specific site.</p></div>
 </div>
+<div class="result" aria-live="polite"><strong id="r-count">70 sites</strong><p id="r-list">From 28 ft to 45 ft. Call the office to reserve a specific site.</p></div>
 <ul class="tips">
 <li><b>Satellite dish?</b> Ask for the G side: all 50 amp pull-thrus, without trees.</li>
 <li><b>Want shade?</b> The A side is exceptionally shady, and the B section has 50 amp pull-thrus in the trees. Satellite does not reach there.</li>
 <li><b>Bringing a pet?</b> The grassy meadow is yours to walk them, on a leash.</li>
 </ul>
 <figure>
-<p class="pan" aria-hidden="true">Swipe sideways to see the whole map.</p><div class="mapscroll" tabindex="0" role="region" aria-label="Park map, scrollable"><div class="map" id="mapbox"><img class="base" src="img/map-base.webp" width="1200" height="1604" alt="Ozark Country Campground park map: sites around a central meadow with the pool, pavilion, bathhouse and laundry, the clubhouse and office by the entrance on Quebec Dr" loading="lazy" decoding="async"><img class="layer" data-ft="28" src="img/map-28.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="30" src="img/map-30.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="35" src="img/map-35.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="40" src="img/map-40.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="45" src="img/map-45.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"></div></div>
+<button type="button" class="zbtn" id="zoom" aria-pressed="false">Zoom in on the map</button><div class="mapscroll" tabindex="0" role="region" aria-label="Park map, scrollable"><div class="map" id="mapbox"><img class="base" src="img/map-base.webp" width="1200" height="1604" alt="Ozark Country Campground park map: sites around a central meadow with the pool, pavilion, bathhouse and laundry, the clubhouse and office by the entrance on Quebec Dr" loading="lazy" decoding="async"><img class="layer" data-ft="28" src="img/map-28.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="30" src="img/map-30.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="35" src="img/map-35.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="40" src="img/map-40.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"><img class="layer" data-ft="45" src="img/map-45.webp" width="1200" height="1604" alt="" loading="lazy" decoding="async"></div></div>
 <figcaption class="mapnote">Park map by Southeast Publications, from the campground's website. Sites marked *** are water and electric only.</figcaption>
 </figure>
 </div></section>
 
 <section class="every"><div class="wrap">
 <div>
+<h2>Room to spread out</h2>
 <p class="q">Our sites are wide enough for any number of slide outs and still leave room for the picnic table and grill located on each site. There is also plenty of room for a campfire, for chairs to relax, and of course a tree to lean your bicycle against.</p>
 <p class="who">Every site is a full hook-up: water, sewer, 30 or 50 amp electric, cable TV and free high speed wifi.</p>
 <p><a class="btn btn-line" href="sites.html">See the campsite sections</a></p>
 </div>
-<div class="ph"><img src="img/oaks-800.webp" srcset="img/oaks-800.webp 800w, img/oaks-1400.webp 1400w" sizes="(min-width: 1264px) 478px, (min-width: 901px) 38vw, calc(100vw - 32px)" width="1400" height="933" alt="RVs parked on gravel sites under tall oaks and cedars" loading="lazy" decoding="async"></div>
+<div class="ph"><img src="img/lane-800.webp" srcset="img/lane-800.webp 800w, img/lane-1400.webp 1400w" sizes="(min-width: 1264px) 478px, (min-width: 901px) 38vw, calc(100vw - 32px)" width="1400" height="933" alt="The gravel lane curving past the sites below the wooded ridge" loading="lazy" decoding="async"></div>
+</div></section>
+
+<section class="strip" aria-label="Around the campground"><div class="wrap">
+<figure class="s1"><div class="ph"><img src="img/pavilion-800.webp" srcset="img/pavilion-800.webp 800w, img/pavilion-1400.webp 1400w" sizes="(min-width: 1264px) 680px, (min-width: 761px) 56vw, calc(100vw - 32px)" width="1400" height="933" alt="The open-sided pavilion with picnic tables, in autumn" loading="lazy" decoding="async"></div><figcaption>The pavilion, with water, electric and lighting.</figcaption></figure>
+<figure class="s2"><div class="ph"><img src="img/pool-512.webp" srcset="img/pool-512.webp 512w" sizes="(min-width: 761px) 512px, calc(100vw - 32px)" width="512" height="342" alt="The swimming pool, with the wooded ridge behind" loading="lazy" decoding="async"></div><figcaption>The newly remodeled pool.</figcaption></figure>
+<figure class="s3"><div class="ph"><img src="img/autumn-800.webp" srcset="img/autumn-800.webp 800w, img/autumn-1400.webp 1400w" sizes="(min-width: 1264px) 496px, (min-width: 761px) 40vw, calc(100vw - 32px)" width="1400" height="933" alt="Motorhomes and fifth wheels on the open sites in autumn" loading="lazy" decoding="async"></div><figcaption>Open year round.</figcaption></figure>
+<p class="more"><a class="btn btn-line" href="photos.html">See all photos</a></p>
 </div></section>
 
 <section class="near"><div class="wrap">
@@ -214,6 +233,7 @@ var m=+r.value;box.classList.toggle('filtering',m>0);var n=[],g=[];
 layers.forEach(function(L){var f=+L.dataset.ft>=m;L.classList.toggle('fit',f);if(f){n=n.concat(S[L.dataset.ft]);g.push(L.dataset.ft+' ft: '+S[L.dataset.ft].join(', '))}});
 if(!m){c.textContent='70 sites';l.textContent='From 28 ft to 45 ft. Call the office to reserve a specific site.';return}
 c.textContent=n.length+' of 70 sites are '+(m<45?m+' ft or longer':'45 ft');
-l.textContent=g.join('. ')+'.'})});})();
+l.textContent=g.join('. ')+'.'})});var z=document.getElementById('zoom'),sc=box.parentNode;
+z.addEventListener('click',function(){var on=sc.classList.toggle('zoom');z.setAttribute('aria-pressed',on);z.textContent=on?'Fit the map to the screen':'Zoom in on the map';if(on)sc.scrollLeft=(sc.scrollWidth-sc.clientWidth)/2});})();
 </script></body>
 </html>
