@@ -76,31 +76,61 @@ p { max-width: 38em; }
 .btn.line:hover { background: var(--paper); }
 .btn svg { width: 1.1em; height: 1.1em; flex: none; }
 
-/* Home hero: words first, then the house. */
-.hero { padding: clamp(1.5rem, 5vw, 4.5rem) 0 clamp(2rem, 5vw, 4.5rem); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+/* Home hero: words first, then their porch, bleeding to the right edge. */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 46vw); min-height: min(42rem, calc(100svh - 6.5rem)); background: var(--pink); }
+.hero .copy { align-self: center; padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem) clamp(2rem, 5vw, 4rem) max(var(--pad), calc((100vw - var(--max)) / 2)); }
+.hero h1 { max-width: 13em; }
 .hero .lede { font-size: 1.15rem; margin-top: 1.1rem; color: var(--muted); max-width: 30em; }
+.hero .porch { position: relative; margin: 0; }
+.hero .porch img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
 .ctas { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
-.house-frame { background: var(--paper); padding: .7rem .7rem 0; border-radius: .25rem; box-shadow: 0 1px 0 var(--pink-2), 0 22px 50px -26px rgba(26, 63, 58, .55); }
-.house-frame img { width: 100%; border-radius: .15rem; }
-.house-frame figcaption { font-family: "Old Standard", Georgia, serif; font-style: italic; font-size: 1rem; color: var(--muted); padding: .65rem .2rem .8rem; }
 @media (max-width: 760px) {
-  .hero .wrap { grid-template-columns: 1fr; gap: 1.25rem; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero .copy { padding: 1.4rem var(--pad) 1.25rem; }
   .hero .lede { font-size: 1.04rem; margin-top: .7rem; }
   .ctas { margin-top: 1.1rem; }
   .ctas .btn { flex: 1 1 auto; }
-  .house-frame { padding: .45rem .45rem 0; }
+  .hero .porch img { position: static; height: auto; aspect-ratio: 3 / 2; }
 }
+
+/* The house plate: their facade beside the facts of its history, set like an engraved plate. */
+.plate-band { background: var(--pink-2); padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.plate-band .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 27rem); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.house-frame { background: var(--paper); padding: .7rem .7rem 0; border-radius: .25rem; box-shadow: 0 22px 50px -26px rgba(26, 63, 58, .55); margin: 0; }
+.house-frame img { width: 100%; border-radius: .15rem; }
+.house-frame figcaption { font-family: "Old Standard", Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--muted); padding: .65rem .2rem .8rem; }
+.plate { background: var(--green); color: #f6ece6; text-align: center; padding: .55rem; border-radius: 1.4rem; box-shadow: 0 2px 0 var(--green-deep), 0 24px 40px -24px rgba(26, 63, 58, .7); }
+.plate > div { border: 1.5px solid #d9c9a8; border-radius: 1rem; padding: clamp(1.4rem, 3vw, 2.2rem) clamp(1rem, 3vw, 2rem); }
+.plate .yr { font-family: "Old Standard", Georgia, serif; font-size: clamp(3.6rem, 7vw, 5rem); line-height: 1; color: #fff; }
+.plate .rose { width: 2.4rem; height: 2.4rem; margin: .8rem auto; border-radius: 50%; }
+.plate p { font-family: "Old Standard", Georgia, serif; font-size: 1.15rem; line-height: 1.45; margin: 0 auto; max-width: 21em; }
+.plate p + p { margin-top: .8rem; }
+.plate .bacon { color: #fff; font-size: 1.3rem; }
+@media (max-width: 760px) { .plate-band .wrap { grid-template-columns: 1fr; } .house-frame { padding: .45rem .45rem 0; } }
+
+/* Romance: their package and add-ons, priced as they list them. */
+.romance { background: var(--rose); color: #fff; padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.romance .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.romance h2 { color: #fff; }
+.romance p { margin-top: .8rem; color: #fbe3e6; }
+.romance .fine { font-size: .9rem; color: #f6cfd5; }
+.romance .btn.paper { background: #fff; color: var(--rose-deep); margin-top: 1.4rem; }
+.romance .btn.paper:hover { background: var(--pink); }
+.romance .addons li { border-bottom-color: rgba(255, 255, 255, .35); }
+.romance h3 { font-style: italic; color: #fff; }
+@media (max-width: 760px) { .romance .wrap { grid-template-columns: 1fr; } }
 
 /* The register: six rooms, each by name. */
 .register { background: var(--green-deep); color: #f3e9e5; padding: clamp(2.5rem, 6vw, 5rem) 0; }
 .register h2 { color: #fff; }
 .register .intro { color: #c9d9d4; margin-top: .7rem; }
-.reg { display: grid; grid-template-columns: minmax(0, 19rem) minmax(0, 700px); justify-content: space-between; gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: 2.2rem; align-items: start; }
+.reg { display: grid; grid-template-columns: minmax(0, 23rem) minmax(0, 700px); justify-content: space-between; gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: 2.2rem; align-items: start; }
 .names { display: grid; gap: .1rem; border-top: 1px solid #3f6a63; }
-.names button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: .6rem; padding: .7rem .2rem .7rem .9rem; border-bottom: 1px solid #3f6a63; border-left: 3px solid transparent; }
+.names button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 96px 1fr auto; align-items: baseline; gap: .6rem; padding: .7rem .2rem .7rem .9rem; border-bottom: 1px solid #3f6a63; border-left: 3px solid transparent; }
 .names button .n { font-family: "Old Standard", Georgia, serif; font-style: italic; font-size: 1.6rem; line-height: 1.2; }
-.names button .b { font-size: .85rem; color: #b8cdc7; }
+.names button .b { font-size: .85rem; color: #b8cdc7; white-space: nowrap; }
+.names button img { width: 96px; height: 72px; object-fit: cover; border-radius: .15rem; align-self: center; }
+.names button { align-items: center; }
 .names button:hover .n { color: #fff; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
 .names button[aria-selected="true"] { border-left-color: #f2a3ae; background: rgba(255, 255, 255, .06); }
 .names button:focus-visible { outline: 3px solid #f2a3ae; outline-offset: 2px; }
@@ -117,6 +147,7 @@ p { max-width: 38em; }
   .reg { grid-template-columns: 1fr; margin-top: 1.4rem; }
   .names { grid-template-columns: 1fr 1fr; gap: 0 .8rem; }
   .names button { padding: .55rem .2rem .55rem .6rem; grid-template-columns: 1fr; gap: 0; }
+  .names button img { display: none; }
   .names button .n { font-size: 1.3rem; }
   .names button .b { font-size: .8rem; }
 }
@@ -171,7 +202,7 @@ p { max-width: 38em; }
 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
 .two p + p { margin-top: 1rem; }
 .two figure img { width: 100%; border-radius: .2rem; }
-.two figure img.nat { max-width: 413px; }
+.two.narrow { grid-template-columns: minmax(0, 1fr) minmax(0, 413px); }
 @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
 .addons { list-style: none; padding: 0; margin-top: 1rem; }
 .addons li { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px dotted #d6b6ae; }
@@ -226,13 +257,13 @@ p { max-width: 38em; }
     </div>
     <figure><img src="img/spire-692.webp" width="692" height="614" loading="lazy" decoding="async" alt="The side of Rosehill Inn with its upper porches, and a church spire behind it"><figcaption>The house from the side.</figcaption></figure>
   </section>
-  <section class="section two">
+  <section class="section two narrow">
     <div>
       <h2>The foyer and parlors</h2>
       <p>Step through the front entry of this Victorian mansion and see the unique Italian marble fireplace, ten foot tall oak pocket doors, and a magnificent pulpit staircase in quarter-sawn white oak.</p>
       <p>Sink into one of the comfortable wing-back chairs in the red gentlemen’s parlor, stocked with books and a variety of magazines. A game table awaits for a game of chess or cards.</p>
     </div>
-    <figure><img class="nat" src="img/parlor-413.webp" width="413" height="310" loading="lazy" decoding="async" alt="The red parlor at Rosehill Inn, with a white fireplace and wing-back chairs"><figcaption>The red gentlemen’s parlor.</figcaption></figure>
+    <figure><img src="img/parlor-413.webp" width="413" height="310" loading="lazy" decoding="async" alt="The red parlor at Rosehill Inn, with a white fireplace and wing-back chairs"><figcaption>The red gentlemen’s parlor.</figcaption></figure>
   </section>
   <section class="section two">
     <div>
@@ -251,6 +282,7 @@ p { max-width: 38em; }
       <p>The wide wrap-around porch overlooks the original terraced gardens, which feature a fluted column pergola. From here you can catch the breezes blowing up the hill from the Cape Fear River or watch the sunsets.</p>
       <p>There are old fashioned porch swings and plenty of wicker chairs to relax.</p>
     </div>
+    <figure><img src="img/porch-630.webp" srcset="img/porch-420.webp 420w, img/porch-630.webp 630w" sizes="(max-width: 760px) calc(100vw - 2rem), 560px" width="630" height="630" loading="lazy" decoding="async" alt="The front porch of Rosehill Inn, with white columns and a hanging fern"><figcaption>The front porch.</figcaption></figure>
   </section>
 </div>
 </main>

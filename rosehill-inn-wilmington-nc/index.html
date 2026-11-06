@@ -9,8 +9,8 @@
 <meta name="theme-color" content="#265751">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/oldstandard.woff2" crossorigin>
-<link rel="preload" as="image" media="(max-width: 760px)" imagesrcset="img/house-m-480.webp 480w, img/house-m-720.webp 720w" imagesizes="calc(100vw - 2rem)" fetchpriority="high">
-<link rel="preload" as="image" media="(min-width: 761px)" imagesrcset="img/house-560.webp 560w, img/house-800.webp 800w" imagesizes="(max-width: 1100px) 46vw, 600px" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 760px)" imagesrcset="img/porch-m-420.webp 420w, img/porch-m-630.webp 630w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 761px)" imagesrcset="img/porch-420.webp 420w, img/porch-630.webp 630w" imagesizes="46vw" fetchpriority="high">
 <style>
 @font-face { font-family: "Old Standard"; font-weight: 400; font-style: normal; font-display: swap; src: url(fonts/oldstandard.woff2) format("woff2"); }
 @font-face { font-family: "Old Standard"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/oldstandard-italic.woff2) format("woff2"); }
@@ -78,31 +78,61 @@ p { max-width: 38em; }
 .btn.line:hover { background: var(--paper); }
 .btn svg { width: 1.1em; height: 1.1em; flex: none; }
 
-/* Home hero: words first, then the house. */
-.hero { padding: clamp(1.5rem, 5vw, 4.5rem) 0 clamp(2rem, 5vw, 4.5rem); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+/* Home hero: words first, then their porch, bleeding to the right edge. */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 46vw); min-height: min(42rem, calc(100svh - 6.5rem)); background: var(--pink); }
+.hero .copy { align-self: center; padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem) clamp(2rem, 5vw, 4rem) max(var(--pad), calc((100vw - var(--max)) / 2)); }
+.hero h1 { max-width: 13em; }
 .hero .lede { font-size: 1.15rem; margin-top: 1.1rem; color: var(--muted); max-width: 30em; }
+.hero .porch { position: relative; margin: 0; }
+.hero .porch img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
 .ctas { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
-.house-frame { background: var(--paper); padding: .7rem .7rem 0; border-radius: .25rem; box-shadow: 0 1px 0 var(--pink-2), 0 22px 50px -26px rgba(26, 63, 58, .55); }
-.house-frame img { width: 100%; border-radius: .15rem; }
-.house-frame figcaption { font-family: "Old Standard", Georgia, serif; font-style: italic; font-size: 1rem; color: var(--muted); padding: .65rem .2rem .8rem; }
 @media (max-width: 760px) {
-  .hero .wrap { grid-template-columns: 1fr; gap: 1.25rem; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero .copy { padding: 1.4rem var(--pad) 1.25rem; }
   .hero .lede { font-size: 1.04rem; margin-top: .7rem; }
   .ctas { margin-top: 1.1rem; }
   .ctas .btn { flex: 1 1 auto; }
-  .house-frame { padding: .45rem .45rem 0; }
+  .hero .porch img { position: static; height: auto; aspect-ratio: 3 / 2; }
 }
+
+/* The house plate: their facade beside the facts of its history, set like an engraved plate. */
+.plate-band { background: var(--pink-2); padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.plate-band .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 27rem); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.house-frame { background: var(--paper); padding: .7rem .7rem 0; border-radius: .25rem; box-shadow: 0 22px 50px -26px rgba(26, 63, 58, .55); margin: 0; }
+.house-frame img { width: 100%; border-radius: .15rem; }
+.house-frame figcaption { font-family: "Old Standard", Georgia, serif; font-style: italic; font-size: 1.05rem; color: var(--muted); padding: .65rem .2rem .8rem; }
+.plate { background: var(--green); color: #f6ece6; text-align: center; padding: .55rem; border-radius: 1.4rem; box-shadow: 0 2px 0 var(--green-deep), 0 24px 40px -24px rgba(26, 63, 58, .7); }
+.plate > div { border: 1.5px solid #d9c9a8; border-radius: 1rem; padding: clamp(1.4rem, 3vw, 2.2rem) clamp(1rem, 3vw, 2rem); }
+.plate .yr { font-family: "Old Standard", Georgia, serif; font-size: clamp(3.6rem, 7vw, 5rem); line-height: 1; color: #fff; }
+.plate .rose { width: 2.4rem; height: 2.4rem; margin: .8rem auto; border-radius: 50%; }
+.plate p { font-family: "Old Standard", Georgia, serif; font-size: 1.15rem; line-height: 1.45; margin: 0 auto; max-width: 21em; }
+.plate p + p { margin-top: .8rem; }
+.plate .bacon { color: #fff; font-size: 1.3rem; }
+@media (max-width: 760px) { .plate-band .wrap { grid-template-columns: 1fr; } .house-frame { padding: .45rem .45rem 0; } }
+
+/* Romance: their package and add-ons, priced as they list them. */
+.romance { background: var(--rose); color: #fff; padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.romance .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.romance h2 { color: #fff; }
+.romance p { margin-top: .8rem; color: #fbe3e6; }
+.romance .fine { font-size: .9rem; color: #f6cfd5; }
+.romance .btn.paper { background: #fff; color: var(--rose-deep); margin-top: 1.4rem; }
+.romance .btn.paper:hover { background: var(--pink); }
+.romance .addons li { border-bottom-color: rgba(255, 255, 255, .35); }
+.romance h3 { font-style: italic; color: #fff; }
+@media (max-width: 760px) { .romance .wrap { grid-template-columns: 1fr; } }
 
 /* The register: six rooms, each by name. */
 .register { background: var(--green-deep); color: #f3e9e5; padding: clamp(2.5rem, 6vw, 5rem) 0; }
 .register h2 { color: #fff; }
 .register .intro { color: #c9d9d4; margin-top: .7rem; }
-.reg { display: grid; grid-template-columns: minmax(0, 19rem) minmax(0, 700px); justify-content: space-between; gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: 2.2rem; align-items: start; }
+.reg { display: grid; grid-template-columns: minmax(0, 23rem) minmax(0, 700px); justify-content: space-between; gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: 2.2rem; align-items: start; }
 .names { display: grid; gap: .1rem; border-top: 1px solid #3f6a63; }
-.names button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: .6rem; padding: .7rem .2rem .7rem .9rem; border-bottom: 1px solid #3f6a63; border-left: 3px solid transparent; }
+.names button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 96px 1fr auto; align-items: baseline; gap: .6rem; padding: .7rem .2rem .7rem .9rem; border-bottom: 1px solid #3f6a63; border-left: 3px solid transparent; }
 .names button .n { font-family: "Old Standard", Georgia, serif; font-style: italic; font-size: 1.6rem; line-height: 1.2; }
-.names button .b { font-size: .85rem; color: #b8cdc7; }
+.names button .b { font-size: .85rem; color: #b8cdc7; white-space: nowrap; }
+.names button img { width: 96px; height: 72px; object-fit: cover; border-radius: .15rem; align-self: center; }
+.names button { align-items: center; }
 .names button:hover .n { color: #fff; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
 .names button[aria-selected="true"] { border-left-color: #f2a3ae; background: rgba(255, 255, 255, .06); }
 .names button:focus-visible { outline: 3px solid #f2a3ae; outline-offset: 2px; }
@@ -119,6 +149,7 @@ p { max-width: 38em; }
   .reg { grid-template-columns: 1fr; margin-top: 1.4rem; }
   .names { grid-template-columns: 1fr 1fr; gap: 0 .8rem; }
   .names button { padding: .55rem .2rem .55rem .6rem; grid-template-columns: 1fr; gap: 0; }
+  .names button img { display: none; }
   .names button .n { font-size: 1.3rem; }
   .names button .b { font-size: .8rem; }
 }
@@ -173,7 +204,7 @@ p { max-width: 38em; }
 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
 .two p + p { margin-top: 1rem; }
 .two figure img { width: 100%; border-radius: .2rem; }
-.two figure img.nat { max-width: 413px; }
+.two.narrow { grid-template-columns: minmax(0, 1fr) minmax(0, 413px); }
 @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
 .addons { list-style: none; padding: 0; margin-top: 1rem; }
 .addons li { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px dotted #d6b6ae; }
@@ -224,34 +255,65 @@ p { max-width: 38em; }
 </div></header>
 <main id="main">
 
-<section class="hero"><div class="wrap">
-  <div>
+<section class="hero">
+  <div class="copy">
     <h1>An 1848 house in Wilmington’s historic district, three blocks from the Cape Fear River</h1>
     <p class="lede">Rosehill Inn is a bed and breakfast with six guest rooms, each with its own private bath. Open year-round.</p>
     <div class="ctas" data-callmark><a class="btn rose" href="tel:+18008150250"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 1-800-815-0250</a><a class="btn line" href="mailto:rosehill@rosehill.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email the inn</a></div>
   </div>
-  <figure class="house-frame">
+  <figure class="porch">
     <picture>
-      <source media="(max-width: 760px)" srcset="img/house-m-480.webp 480w, img/house-m-720.webp 720w" sizes="calc(100vw - 2rem)">
-      <img src="img/house-800.webp" srcset="img/house-560.webp 560w, img/house-800.webp 800w" sizes="(max-width: 1100px) 46vw, 600px" width="800" height="530" fetchpriority="high" alt="Rosehill Inn, a white-columned house with a wide wrap-around porch on South Third Street">
+      <source media="(max-width: 760px)" srcset="img/porch-m-420.webp 420w, img/porch-m-630.webp 630w" sizes="100vw">
+      <img src="img/porch-630.webp" srcset="img/porch-420.webp 420w, img/porch-630.webp 630w" sizes="46vw" width="630" height="630" fetchpriority="high" alt="The front porch of Rosehill Inn, with white columns, a hanging fern and the flags">
     </picture>
-    <figcaption>114 South Third Street, Wilmington.</figcaption>
   </figure>
+</section>
+
+<section class="plate-band" aria-labelledby="plate-h"><div class="wrap">
+  <figure class="house-frame">
+    <img src="img/house-800.webp" srcset="img/house-560.webp 560w, img/house-800.webp 800w" sizes="(max-width: 760px) calc(100vw - 2rem), 640px" width="800" height="530" loading="lazy" decoding="async" alt="Rosehill Inn from South Third Street, with its wide wrap-around porch">
+    <figcaption>The large pink house, the third on the right side past Dock Street.</figcaption>
+  </figure>
+  <div class="plate"><div>
+    <h2 id="plate-h" class="yr">1848</h2>
+    <img class="rose" src="img/favicon.png" width="64" height="64" alt="">
+    <p>Built by Henry Russell Savage, a prominent Wilmington businessman and banker.</p>
+    <p class="bacon">Also the home of Henry Bacon Jr., architect of the Lincoln Memorial in Washington, D.C.</p>
+    <p>Renovated in 1909.</p>
+  </div></div>
 </div></section>
 
 <section class="register" aria-labelledby="rooms-h"><div class="wrap">
   <h2 id="rooms-h">Six rooms, each decorated its own way</h2>
   <p class="intro">Individually decorated and appointed with period antiques. Every room has its own private bath.</p>
   <div class="reg">
-    <div class="names" role="tablist" aria-label="Guest rooms" aria-orientation="vertical"><button role="tab" id="t-regency" aria-controls="p-regency" aria-selected="true" tabindex="0"><span class="n">Regency</span><span class="b">King bed</span></button><button role="tab" id="t-wedgewood" aria-controls="p-wedgewood" aria-selected="false" tabindex="-1"><span class="n">Wedgewood</span><span class="b">King bed</span></button><button role="tab" id="t-heritage" aria-controls="p-heritage" aria-selected="false" tabindex="-1"><span class="n">Heritage</span><span class="b">King bed</span></button><button role="tab" id="t-carolina" aria-controls="p-carolina" aria-selected="false" tabindex="-1"><span class="n">Carolina</span><span class="b">Queen bed</span></button><button role="tab" id="t-indochine" aria-controls="p-indochine" aria-selected="false" tabindex="-1"><span class="n">Indochine</span><span class="b">Queen bed</span></button><button role="tab" id="t-tea-rose" aria-controls="p-tea-rose" aria-selected="false" tabindex="-1"><span class="n">Tea Rose</span><span class="b">Queen bed</span></button></div>
-    <div><div class="room-panel" role="tabpanel" id="p-regency" aria-labelledby="t-regency"><img src="img/regency-700.webp" srcset="img/regency-420.webp 420w, img/regency-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 60vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Regency Room at Rosehill Inn"><div class="facts"><span>King bed</span><span>Whirlpool tub and shower/bath</span></div><p>The original master bedroom of the 1909 renovation, with its wardrobe closet, an ornate iron bed and a view of the Cape Fear River from an adjacent porch.</p><a class="more" href="rooms.html#regency">More about the Regency Room</a></div><div class="room-panel" role="tabpanel" id="p-wedgewood" aria-labelledby="t-wedgewood" hidden><img src="img/wedgewood-700.webp" srcset="img/wedgewood-420.webp 420w, img/wedgewood-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 60vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Wedgewood Room at Rosehill Inn"><div class="facts"><span>King bed</span><span>Claw-foot tub and shower/bath</span></div><p>Blue, yellow and white, filled with the afternoon sunlight, with a view of the garden and of the Cape Fear River from an adjacent porch.</p><a class="more" href="rooms.html#wedgewood">More about the Wedgewood Room</a></div><div class="room-panel" role="tabpanel" id="p-heritage" aria-labelledby="t-heritage" hidden><img src="img/heritage-700.webp" srcset="img/heritage-420.webp 420w, img/heritage-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 60vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Heritage Room at Rosehill Inn"><div class="facts"><span>King bed</span><span>Shower/bath</span></div><p>A large corner room in terra cotta, cream and blue, with a New Orleans-style iron “gate” bed and an antique gentlemen’s writing desk.</p><a class="more" href="rooms.html#heritage">More about the Heritage Room</a></div><div class="room-panel" role="tabpanel" id="p-carolina" aria-labelledby="t-carolina" hidden><img src="img/carolina-700.webp" srcset="img/carolina-420.webp 420w, img/carolina-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 60vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Carolina Room at Rosehill Inn"><div class="facts"><span>Queen bed</span><span>Shower/bath</span></div><p>On the second floor: an ornate iron bed, a staircase that leads to the bathroom, and a crewel-work loveseat in the bay window.</p><a class="more" href="rooms.html#carolina">More about the Carolina Room</a></div><div class="room-panel" role="tabpanel" id="p-indochine" aria-labelledby="t-indochine" hidden><img src="img/indochine-700.webp" srcset="img/indochine-420.webp 420w, img/indochine-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 60vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Indochine Room at Rosehill Inn"><div class="facts"><span>Queen bed</span><span>Shower/bath</span></div><p>A bright, sunny corner room with a four-poster cherry bed, Victorian reading chairs and hues of yellow and red.</p><a class="more" href="rooms.html#indochine">More about the Indochine Room</a></div><div class="room-panel" role="tabpanel" id="p-tea-rose" aria-labelledby="t-tea-rose" hidden><img src="img/tea-rose-700.webp" srcset="img/tea-rose-420.webp 420w, img/tea-rose-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 60vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Tea Rose Room at Rosehill Inn"><div class="facts"><span>Queen bed</span><span>Shower/bath</span></div><p>On the main floor, in shades of rose, teal and ivory, with large wing-back chairs in the bay window.</p><a class="more" href="rooms.html#tea-rose">More about the Tea Rose Room</a></div></div>
+    <div class="names" role="tablist" aria-label="Guest rooms" aria-orientation="vertical"><button role="tab" id="t-regency" aria-controls="p-regency" aria-selected="true" tabindex="0"><img src="img/regency-thumb.webp" width="176" height="132" alt="" loading="lazy" decoding="async"><span class="n">Regency</span><span class="b">King bed</span></button><button role="tab" id="t-wedgewood" aria-controls="p-wedgewood" aria-selected="false" tabindex="-1"><img src="img/wedgewood-thumb.webp" width="176" height="132" alt="" loading="lazy" decoding="async"><span class="n">Wedgewood</span><span class="b">King bed</span></button><button role="tab" id="t-heritage" aria-controls="p-heritage" aria-selected="false" tabindex="-1"><img src="img/heritage-thumb.webp" width="176" height="132" alt="" loading="lazy" decoding="async"><span class="n">Heritage</span><span class="b">King bed</span></button><button role="tab" id="t-carolina" aria-controls="p-carolina" aria-selected="false" tabindex="-1"><img src="img/carolina-thumb.webp" width="176" height="132" alt="" loading="lazy" decoding="async"><span class="n">Carolina</span><span class="b">Queen bed</span></button><button role="tab" id="t-indochine" aria-controls="p-indochine" aria-selected="false" tabindex="-1"><img src="img/indochine-thumb.webp" width="176" height="132" alt="" loading="lazy" decoding="async"><span class="n">Indochine</span><span class="b">Queen bed</span></button><button role="tab" id="t-tea-rose" aria-controls="p-tea-rose" aria-selected="false" tabindex="-1"><img src="img/tea-rose-thumb.webp" width="176" height="132" alt="" loading="lazy" decoding="async"><span class="n">Tea Rose</span><span class="b">Queen bed</span></button></div>
+    <div><div class="room-panel" role="tabpanel" id="p-regency" aria-labelledby="t-regency"><img src="img/regency-700.webp" srcset="img/regency-420.webp 420w, img/regency-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 55vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Regency Room at Rosehill Inn"><div class="facts"><span>King bed</span><span>Whirlpool tub and shower/bath</span></div><p>The original master bedroom of the 1909 renovation, with its wardrobe closet, an ornate iron bed and a view of the Cape Fear River from an adjacent porch.</p><a class="more" href="rooms.html#regency">More about the Regency Room</a></div><div class="room-panel" role="tabpanel" id="p-wedgewood" aria-labelledby="t-wedgewood" hidden><img src="img/wedgewood-700.webp" srcset="img/wedgewood-420.webp 420w, img/wedgewood-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 55vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Wedgewood Room at Rosehill Inn"><div class="facts"><span>King bed</span><span>Claw-foot tub and shower/bath</span></div><p>Blue, yellow and white, filled with the afternoon sunlight, with a view of the garden and of the Cape Fear River from an adjacent porch.</p><a class="more" href="rooms.html#wedgewood">More about the Wedgewood Room</a></div><div class="room-panel" role="tabpanel" id="p-heritage" aria-labelledby="t-heritage" hidden><img src="img/heritage-700.webp" srcset="img/heritage-420.webp 420w, img/heritage-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 55vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Heritage Room at Rosehill Inn"><div class="facts"><span>King bed</span><span>Shower/bath</span></div><p>A large corner room in terra cotta, cream and blue, with a New Orleans-style iron “gate” bed and an antique gentlemen’s writing desk.</p><a class="more" href="rooms.html#heritage">More about the Heritage Room</a></div><div class="room-panel" role="tabpanel" id="p-carolina" aria-labelledby="t-carolina" hidden><img src="img/carolina-700.webp" srcset="img/carolina-420.webp 420w, img/carolina-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 55vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Carolina Room at Rosehill Inn"><div class="facts"><span>Queen bed</span><span>Shower/bath</span></div><p>On the second floor: an ornate iron bed, a staircase that leads to the bathroom, and a crewel-work loveseat in the bay window.</p><a class="more" href="rooms.html#carolina">More about the Carolina Room</a></div><div class="room-panel" role="tabpanel" id="p-indochine" aria-labelledby="t-indochine" hidden><img src="img/indochine-700.webp" srcset="img/indochine-420.webp 420w, img/indochine-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 55vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Indochine Room at Rosehill Inn"><div class="facts"><span>Queen bed</span><span>Shower/bath</span></div><p>A bright, sunny corner room with a four-poster cherry bed, Victorian reading chairs and hues of yellow and red.</p><a class="more" href="rooms.html#indochine">More about the Indochine Room</a></div><div class="room-panel" role="tabpanel" id="p-tea-rose" aria-labelledby="t-tea-rose" hidden><img src="img/tea-rose-700.webp" srcset="img/tea-rose-420.webp 420w, img/tea-rose-700.webp 700w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1150px) 55vw, 700px" width="700" height="525" loading="lazy" decoding="async" alt="The Tea Rose Room at Rosehill Inn"><div class="facts"><span>Queen bed</span><span>Shower/bath</span></div><p>On the main floor, in shades of rose, teal and ivory, with large wing-back chairs in the bay window.</p><a class="more" href="rooms.html#tea-rose">More about the Tea Rose Room</a></div></div>
+  </div>
+</div></section>
+
+<section class="romance" aria-labelledby="rom-h"><div class="wrap">
+  <div>
+    <h2 id="rom-h">Romantic Escape Package</h2>
+    <p>Two nights accommodations and two full breakfasts each morning. Call for pricing.</p>
+    <p class="fine">Does not apply during holidays, festivals or in combination with third party bookings. Not valid with other promotions.</p>
+    <a class="btn paper" href="tel:+18008150250"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 1-800-815-0250</a>
+  </div>
+  <div>
+    <h3>Create a special night</h3>
+    <p>Arrange for these to be added to the room before your arrival, for an additional element of surprise and romance.</p>
+    <ul class="addons">
+      <li><span>Roses, fine chocolates, wine or champagne</span><span>$70</span></li>
+      <li><span>Bottle of champagne, wine or sparkling cider and fine chocolates</span><span>$50</span></li>
+      <li><span>Fresh roses</span><span>$30</span></li>
+      <li><span>Fine chocolates</span><span>$25</span></li>
+    </ul>
   </div>
 </div></section>
 
 <section class="house" aria-labelledby="house-h"><div class="wrap cols">
   <div>
-    <h2 id="house-h">Built in 1848 by Henry Russell Savage</h2>
-    <p>The house was built by a prominent Wilmington businessman and banker. It was also the home of Henry Bacon Jr., architect of the Lincoln Memorial in Washington, D.C.</p>
+    <h2 id="house-h">Inside the house</h2>
     <p>Step through the front entry and see the Italian marble fireplace, ten foot tall oak pocket doors, and a pulpit staircase in quarter-sawn white oak. The wide wrap-around porch overlooks the original terraced gardens, with old fashioned porch swings and plenty of wicker chairs.</p>
     <p><a href="house.html">The house, room by room</a></p>
     <div class="menu-card">
