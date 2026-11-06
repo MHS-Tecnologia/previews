@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lake Harmony Inn, waterfront lodging in Lake Harmony, PA</title>
+<meta name="description" content="Waterfront rooms, a 3 bedroom suite and houses on Lake Harmony in the Pocono Mountains, with two docks, boat rentals and watersports on site.">
+<meta name="theme-color" content="#eef2e6">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/jost.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-480.webp 480w, img/hero-m-640.webp 640w, img/hero-m-800.webp 800w" imagesizes="calc(100vw - 2rem)" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1100.webp" imagesrcset="img/hero-720.webp 720w, img/hero-1100.webp 1100w" imagesizes="(max-width: 1240px) 56vw, 700px" media="(min-width: 861px)" fetchpriority="high">
+<style>
+@font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost.woff2) format("woff2")}
+/* Colors taken from the inn's own illustrated map: its pale lawn paper, the lake, the teal of its logo, the brown roofs. */
+:root{--paper:#eef2e6;--paper-2:#e1e8d3;--ink:#123039;--muted:#3f5a60;--teal:#0d5e66;--teal-hi:#62d8d4;--lake:#1b5f86;--roof:#7c4f2e;--line:#c9d3bd;--pad:clamp(1rem,4vw,3rem);--max:75rem}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 Jost,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--teal);text-underline-offset:.2em}
+:focus-visible{outline:3px solid var(--lake);outline-offset:3px}
+h1,h2,h3{font-weight:400;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+h1{font-weight:300;font-size:clamp(2.35rem,5.4vw,4.4rem);letter-spacing:-.025em}
+h2{font-weight:300;font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:-.02em}
+h3{font-size:1.4rem;font-weight:500}
+p{max-width:38em}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.demo{background:var(--ink);color:#d6e2df;font-size:.8125rem;line-height:1.4;text-align:center;padding:.45rem 1rem}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.8rem;padding-bottom:.8rem;position:relative}
+.brand img{height:3.6rem;width:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;font-size:1rem;font-weight:500}
+.nav > a{color:var(--ink);text-decoration:none}
+.nav > a:hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-color:var(--teal-hi);text-decoration-thickness:3px;text-underline-offset:.45em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--teal);color:#fff;text-decoration:none;font-weight:500;font-size:1.0625rem;padding:.85rem 1.35rem;border-radius:999px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#0a4b52}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.nav > a.btn{color:#fff;padding:.6rem 1.05rem;font-size:.95rem;text-decoration:none}
+.menu{display:none}
+
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding-top:clamp(1rem,3vw,2.5rem);padding-bottom:clamp(2rem,4vw,3.5rem)}
+.hero .lede{font-size:1.2rem;color:var(--muted);margin:1.1rem 0 1.6rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero figure{position:relative}
+.hero img{border-radius:.5rem;width:100%}
+.hero figcaption,.cap{font-size:.9rem;color:var(--muted);margin-top:.55rem}
+.slogan{font-size:1rem;color:var(--teal);font-weight:500;margin-bottom:.9rem}
+
+/* The inn's map: buttons sit at percentages of the image box, so they stay on the drawing at any width. */
+.grounds{background:var(--paper-2);padding:clamp(2.5rem,6vw,4.5rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grounds-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.grounds-head p{color:var(--muted)}
+.mapgrid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(1.25rem,3vw,2.5rem);align-items:start}
+.map{position:relative;border-radius:.5rem;overflow:hidden;box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(18,48,57,.45)}
+.map img{width:100%}
+.pin{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:3px solid #fff;background:var(--roof);cursor:pointer;padding:0;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .2s}
+.pin::after{content:"";position:absolute;inset:5px;border-radius:50%;background:#fff;opacity:.9}
+.pin:hover{transform:scale(1.12)}
+.pin[aria-pressed=true]{background:var(--teal);transform:scale(1.2)}
+.pin[aria-pressed=true]::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid #fff;animation:ring 1.6s ease-out infinite}
+@keyframes ring{from{opacity:1;transform:scale(.7)}to{opacity:0;transform:scale(1.35)}}
+.places{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0 0;padding:0;list-style:none}
+.places button{font:500 .95rem Jost,sans-serif;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:.45rem .85rem;cursor:pointer}
+.places button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.card{background:var(--paper);border-radius:.5rem;overflow:hidden;border:1px solid var(--line)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card .body{padding:1.15rem 1.3rem 1.35rem}
+.card h3{margin-bottom:.4rem}
+.card p{color:var(--muted)}
+.card a{display:inline-block;margin-top:.8rem;font-weight:500}
+.walk{margin-top:1.4rem;font-size:.98rem;color:var(--muted)}
+
+.section{padding:clamp(2.5rem,6vw,4.5rem) 0}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.facts{list-style:none;padding:0;margin:1rem 0 0;columns:2;column-gap:2rem}
+.facts li{padding:.35rem 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.plain{list-style:none;padding:0;margin:1rem 0 0}
+.plain li{padding:.5rem 0;border-bottom:1px solid var(--line)}
+.lead-p{font-size:1.2rem;color:var(--muted);margin-top:1rem}
+.page-head{padding-top:clamp(1.5rem,4vw,3rem);padding-bottom:clamp(1.5rem,3vw,2.5rem)}
+.page-head p{margin-top:.9rem;font-size:1.2rem;color:var(--muted)}
+
+/* Rooms */
+.unit{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3rem);padding:clamp(2rem,5vw,3.5rem) 0;border-top:1px solid var(--line)}
+.unit .sleeps{font-size:1.05rem;color:var(--teal);font-weight:500;margin:.3rem 0 .9rem}
+img.lead{border-radius:.5rem;width:100%}
+.unit .lead{border-radius:.5rem;width:100%;aspect-ratio:3/2;object-fit:cover}
+.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem;margin-top:.5rem;padding:0;list-style:none}
+.thumbs button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:.35rem;overflow:hidden}
+.thumbs img{width:100%;aspect-ratio:1;object-fit:cover;transition:opacity .2s}
+.thumbs button:hover img{opacity:.85}
+.lb{margin:auto;padding:0;border:0;background:transparent;max-width:min(94vw,1100px);max-height:94vh;overflow:visible}
+.lb::backdrop{background:rgba(10,28,34,.88)}
+.lb img{max-width:min(94vw,1100px);max-height:82vh;width:auto;height:auto;border-radius:.35rem;margin:0 auto}
+.lb p{color:#e6efec;text-align:center;margin:.6rem auto 0}
+.lb .x{position:absolute;top:-3rem;right:0;background:#fff;color:var(--ink);border:0;border-radius:999px;padding:.45rem .9rem;font:500 .95rem Jost,sans-serif;cursor:pointer}
+
+/* Photo rows: everything at least ~400px wide on desktop. */
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:1.6rem}
+.photos figure img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:.5rem}
+.photos.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.photos.three figure img{aspect-ratio:3/4}
+.season{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:2rem}
+.season img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:.5rem}
+
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:1.5rem}
+.contact-grid > div{border-top:3px solid var(--teal-hi);padding-top:1rem}
+.contact-grid a{font-size:1.25rem;font-weight:500}
+.note{font-size:.95rem;color:var(--muted);margin-top:1rem}
+
+footer{background:var(--ink);color:#d6e2df;padding:3rem 0 6rem;margin-top:0}
+footer a{color:#fff}
+.foot{display:grid;grid-template-columns:auto 1fr 1fr;gap:2.5rem;align-items:start}
+.foot img{height:4.4rem;width:auto}
+.foot ul{list-style:none;padding:0}
+.foot li{padding:.2rem 0}
+.legal{margin-top:2.2rem;padding-top:1.2rem;border-top:1px solid #2c4a52;font-size:.85rem;color:#aac0bc}
+
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:15;display:none;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--ink);transform:translateY(110%);transition:transform .25s}
+.callbar.on{transform:none}
+.callbar a{flex:1;padding:.75rem;font-size:1rem}
+.callbar .line{color:#fff;box-shadow:inset 0 0 0 2px #fff}
+
+@media (max-width:860px){
+  .nav > a{display:none}
+  .menu{display:block}
+  .menu summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;font-weight:500;padding:.5rem .9rem;border:2px solid var(--ink);border-radius:999px}
+  .menu summary::-webkit-details-marker{display:none}
+  .menu summary::after{content:"";width:.9rem;height:2px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
+  .menu[open] summary{background:var(--ink);color:#fff}
+  .menu ul{position:absolute;z-index:12;top:100%;left:var(--pad);right:var(--pad);list-style:none;padding:.5rem;background:var(--ink);border-radius:.5rem;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+  .menu li a{display:block;padding:.8rem .9rem;color:#fff;text-decoration:none;font-size:1.1rem}
+  .menu li a[aria-current]{color:var(--teal-hi)}
+  .menu li + li a{border-top:1px solid #2c4a52}
+  .nav > .btn{display:none}
+  .brand img{height:3rem}
+  .hero{grid-template-columns:1fr;gap:1.1rem}
+  .hero .lede{font-size:1.08rem;margin:.75rem 0 1.1rem}
+  .slogan{margin-bottom:.5rem}
+  .mapgrid,.split,.unit{grid-template-columns:1fr}
+  .pin{display:none;width:24px;height:24px;margin:-12px 0 0 -12px;border-width:2px}
+  .pin[aria-pressed=true]{display:block}
+  .pin::after{inset:3px}
+  .pin[aria-pressed=true]::before{inset:-7px}
+  .contact-grid{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .season{grid-template-columns:1fr}
+  .season img{aspect-ratio:3/2}
+  .callbar{display:flex}
+}
+@media (max-width:520px){
+  .photos{grid-template-columns:1fr}
+  .facts{columns:1}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lake Harmony Inn, waterfront lodging in Lake Harmony, PA">
+<meta property="og:description" content="Waterfront rooms, a 3 bedroom suite and houses on Lake Harmony in the Pocono Mountains, with two docks, boat rentals and watersports on site.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/lake-harmony-inn-lake-harmony-pa/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/lake-harmony-inn-lake-harmony-pa/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Lake Harmony Inn. Not affiliated with or endorsed by Lake Harmony Inn.</div>
+<header class="wrap top">
+  <a class="brand" href="index.html" aria-label="Lake Harmony Inn, home"><img src="img/logo.png" width="259" height="126" alt="Lake Harmony Inn"></a>
+  <nav class="nav" aria-label="Main">
+    <a href="rooms.html">Rooms</a><a href="grounds.html">The grounds</a><a href="weddings.html">Weddings &amp; events</a><a href="contact.html">Contact</a>
+    <a class="btn" href="tel:+15707220522">Call (570) 722-0522</a>
+    <details class="menu"><summary>Menu</summary><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="grounds.html">The grounds</a></li><li><a href="weddings.html">Weddings &amp; events</a></li><li><a href="contact.html">Contact</a></li></ul></details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="wrap hero" data-hero>
+  <div>
+    <p class="slogan">The best view of Lake Harmony</p>
+    <h1>Waterfront rooms, a suite and houses on Lake Harmony.</h1>
+    <p class="lede">150 feet of lakefront with two docks, in the heart of the Pocono Mountains. Within a 2 hour drive of New York City, New Jersey and Philadelphia.</p>
+    <div class="ctas">
+      <a class="btn" href="tel:+15707220522" data-cta>Call (570) 722-0522</a>
+      <a class="btn line" href="rooms.html">See the rooms</a>
+    </div>
+  </div>
+  <figure>
+    <picture>
+      <source media="(max-width: 860px)" srcset="img/hero-m-480.webp 480w, img/hero-m-640.webp 640w, img/hero-m-800.webp 800w" sizes="calc(100vw - 2rem)" width="800" height="600">
+      <img src="img/hero-1100.webp" srcset="img/hero-720.webp 720w, img/hero-1100.webp 1100w" sizes="(max-width: 1240px) 56vw, 700px" width="1100" height="618" alt="Aerial view of Lake Harmony Inn: the docks, the lakefront lawn and the inn among the trees" fetchpriority="high">
+    </picture>
+    <figcaption>The inn from above: docks, lawn and rooms on the water.</figcaption>
+  </figure>
+</section>
+
+<section class="grounds" aria-labelledby="g-h">
+  <div class="wrap">
+    <div class="grounds-head">
+      <div>
+        <h2 id="g-h">Walk the grounds</h2>
+        <p>This is the inn's own map. Pick a spot to see it.</p>
+      </div>
+    </div>
+    <div class="mapgrid">
+      <div>
+        <div class="map">
+          <img src="img/map-480.webp" srcset="img/map-480.webp 480w, img/map-720.webp 720w, img/map-1035.webp 1035w" sizes="(max-width: 860px) calc(100vw - 2rem), 720px" width="1035" height="800" alt="Illustrated map of Lake Harmony Inn: docks and kayak rentals on the lake, the lakefront lawn, fire pits, the 2 bedroom house, single rooms, the 3 bedroom suite, the gazebo, parking and the 6 bedroom house, with restaurants nearby on N Lake Dr" loading="lazy" decoding="async">
+          <button class="pin" type="button" style="left:20.8%;top:36.2%" data-place="docks" aria-pressed="false" aria-label="Docks &amp; kayaks"></button><button class="pin" type="button" style="left:26.3%;top:31.4%" data-place="lawn" aria-pressed="false" aria-label="Lakefront lawn"></button><button class="pin" type="button" style="left:23.4%;top:12.6%" data-place="firepit" aria-pressed="false" aria-label="Fire pit by the water"></button><button class="pin" type="button" style="left:34.2%;top:17.4%" data-place="cottage" aria-pressed="false" aria-label="2 bedroom house"></button><button class="pin" type="button" style="left:38.8%;top:14.2%" data-place="single" aria-pressed="false" aria-label="Single rooms"></button><button class="pin" type="button" style="left:54.6%;top:7.2%" data-place="suite" aria-pressed="false" aria-label="3 bedroom suite"></button><button class="pin" type="button" style="left:47.4%;top:29.4%" data-place="gazebo" aria-pressed="false" aria-label="Gazebo, fire pit &amp; grill"></button><button class="pin" type="button" style="left:77.5%;top:13.6%" data-place="house" aria-pressed="false" aria-label="6 bedroom house"></button>
+        </div>
+        <ul class="places" aria-label="Places on the map"><li><button type="button" data-place="docks" aria-pressed="false">Docks &amp; kayaks</button></li><li><button type="button" data-place="lawn" aria-pressed="false">Lakefront lawn</button></li><li><button type="button" data-place="firepit" aria-pressed="false">Fire pit by the water</button></li><li><button type="button" data-place="cottage" aria-pressed="false">2 bedroom house</button></li><li><button type="button" data-place="single" aria-pressed="false">Single rooms</button></li><li><button type="button" data-place="suite" aria-pressed="false">3 bedroom suite</button></li><li><button type="button" data-place="gazebo" aria-pressed="false">Gazebo, fire pit &amp; grill</button></li><li><button type="button" data-place="house" aria-pressed="false">6 bedroom house</button></li></ul>
+      </div>
+      <article class="card" id="place" aria-live="polite">
+        <img id="place-img" src="img/kayaks-480.webp" srcset="img/kayaks-480.webp 480w, img/kayaks-800.webp 800w, img/kayaks-1100.webp 1100w" sizes="(max-width: 860px) calc(100vw - 2rem), 450px" width="1100" height="825" alt="Kids paddling kayaks on Lake Harmony beside the inn" loading="lazy" decoding="async">
+        <div class="body">
+          <h3 id="place-t">Two docks on the lake</h3>
+          <p id="place-p">Fish from the docks. Canoes, kayaks and stand up paddle boards rent right here, at additional cost.</p>
+          <a id="place-a" href="grounds.html#water">Boats and watersports</a>
+        </div>
+      </article>
+    </div>
+    <p class="walk">Lake Harmony's downtown is right outside: the inn is walking distance from four restaurants, bars and a night club.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>A four season destination</h2>
+    <p class="lead-p">Boats and watersports in summer. Jack Frost and Big Boulder ski resorts minutes away in winter. Ten minutes from I-80 (exit 284, PA 115) or PA 476 (exit 87, Route 903). <a href="grounds.html#nearby">What's nearby</a></p>
+    <div class="season">
+      <figure><img src="img/fall-480.webp" srcset="img/fall-480.webp 480w, img/fall-800.webp 800w, img/fall-960.webp 960w" sizes="(max-width: 860px) calc(100vw - 2rem), 395px" width="960" height="716" alt="Orange fall maple on the lawn" loading="lazy" decoding="async"><figcaption class="cap">Fall</figcaption></figure>
+      <figure><img src="img/winter-sign-480.webp" srcset="img/winter-sign-480.webp 480w, img/winter-sign-600.webp 600w" sizes="(max-width: 860px) calc(100vw - 2rem), 395px" width="600" height="800" alt="The inn sign under deep snow" loading="lazy" decoding="async"><figcaption class="cap">Winter</figcaption></figure>
+      <figure><img src="img/sup-480.webp" srcset="img/sup-480.webp 480w, img/sup-597.webp 597w" sizes="(max-width: 860px) calc(100vw - 2rem), 395px" width="597" height="800" alt="Stand up paddle boarding on the lake" loading="lazy" decoding="async"><figcaption class="cap">Summer</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <img src="img/logo-light.png" width="259" height="126" alt="Lake Harmony Inn" loading="lazy">
+      <div>
+        <p>37 N Lake Dr<br>Lake Harmony, PA 18624</p>
+        <p style="margin-top:.6rem"><a href="tel:+15707220522">(570) 722-0522</a><br><a href="mailto:lakeharmonyinn@gmail.com">lakeharmonyinn@gmail.com</a></p>
+      </div>
+      <ul><li><a href="index.html">Home</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="grounds.html">The grounds</a></li><li><a href="weddings.html">Weddings &amp; events</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Lake Harmony Inn. Not affiliated with or endorsed by Lake Harmony Inn. Photos and facts from the inn's own website. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="callbar" id="callbar" aria-hidden="true"><a class="btn" href="tel:+15707220522" tabindex="-1">Call the inn</a><a class="btn line" href="mailto:lakeharmonyinn@gmail.com" tabindex="-1">Email</a></div>
+<script>
+const bar=document.getElementById('callbar'),hero=document.querySelector('[data-hero]');
+if(bar&&hero&&'IntersectionObserver'in window){new IntersectionObserver(([e])=>{const on=!e.isIntersecting&&e.boundingClientRect.top<0;bar.classList.toggle('on',on);bar.setAttribute('aria-hidden',!on);bar.querySelectorAll('a').forEach(a=>a.tabIndex=on?0:-1)}).observe(hero)}
+const menu=document.querySelector('.menu');
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu&&menu.open){menu.open=false;menu.querySelector('summary').focus()}});
+const P={"docks": {"src": "img/kayaks-480.webp", "srcset": "img/kayaks-480.webp 480w, img/kayaks-800.webp 800w, img/kayaks-1100.webp 1100w", "alt": "Kids paddling kayaks on Lake Harmony beside the inn", "title": "Two docks on the lake", "text": "Fish from the docks. Canoes, kayaks and stand up paddle boards rent right here, at additional cost.", "link": "grounds.html#water", "lt": "Boats and watersports"}, "lawn": {"src": "img/volleyball-480.webp", "srcset": "img/volleyball-480.webp 480w, img/volleyball-800.webp 800w, img/volleyball-960.webp 960w", "alt": "Guests playing volleyball on the lawn by the lake", "title": "Lake front grass area", "text": "A large lawn with lounge chairs, a beach and swimming area, a volleyball net, a hammock and room for football or frisbee.", "link": "grounds.html", "lt": "Everything on the grounds"}, "firepit": {"src": "img/firepit-480.webp", "srcset": "img/firepit-480.webp 480w, img/firepit-600.webp 600w", "alt": "Chairs around a fire pit with the lake behind", "title": "Fire pit by the water", "text": "One of the three fire pits on the property. Guests make their own fire.", "link": "grounds.html", "lt": "Everything on the grounds"}, "cottage": {"src": "img/cottage-kitchen-480.webp", "srcset": "img/cottage-kitchen-480.webp 480w, img/cottage-kitchen-800.webp 800w, img/cottage-kitchen-1067.webp 1067w", "alt": "Kitchen island in the Linda Cottage", "title": "Linda Cottage, 2 bedrooms", "text": "A single standing house with 2 bedrooms, 2 bathrooms, a full kitchen and a washer and dryer. Sleeps 4.", "link": "rooms.html#cottage", "lt": "See the cottage"}, "single": {"src": "img/single-queen-480.webp", "srcset": "img/single-queen-480.webp 480w, img/single-queen-600.webp 600w", "alt": "Single room with a queen bed and a barn door", "title": "Single rooms", "text": "A queen bed, or a full and a twin. Air conditioning, flat screen TV, coffee maker and mini fridge. Sleeps 2 to 3.", "link": "rooms.html#single", "lt": "See the single rooms"}, "suite": {"src": "img/suite-living-480.webp", "srcset": "img/suite-living-480.webp 480w, img/suite-living-800.webp 800w, img/suite-living-1100.webp 1100w", "alt": "Living room of the 3 bedroom suite", "title": "3 bedroom, 3 bath suite", "text": "Full kitchen, an 8 person dining table, sitting rooms upstairs and down, and a washer and dryer. Sleeps 10.", "link": "rooms.html#suite", "lt": "See the suite"}, "gazebo": {"src": "img/gazebo-480.webp", "srcset": "img/gazebo-480.webp 480w, img/gazebo-800.webp 800w, img/gazebo-1067.webp 1067w", "alt": "The gazebo and fire pit area at night", "title": "Gazebo, fire pit and grill", "text": "Outdoor seating and picnic area, with propane and charcoal grills next to the fire pit.", "link": "grounds.html", "lt": "Everything on the grounds"}, "house": {"src": "img/house-outside-480.webp", "srcset": "img/house-outside-480.webp 480w, img/house-outside-800.webp 800w, img/house-outside-1067.webp 1067w", "alt": "The 6 bedroom house", "title": "6 bedroom, 5 bath house", "text": "A single standing house with a full kitchen and six bedrooms. Sleeps 16.", "link": "rooms.html#house", "lt": "See the house"}};
+const pi=document.getElementById('place-img'),pt=document.getElementById('place-t'),pp=document.getElementById('place-p'),pa=document.getElementById('place-a');
+function pick(id){const d=P[id];pi.srcset=d.srcset;pi.src=d.src;pi.alt=d.alt;pt.textContent=d.title;pp.textContent=d.text;pa.href=d.link;pa.textContent=d.lt;
+document.querySelectorAll('[data-place]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.place===id))}
+document.querySelectorAll('[data-place]').forEach(b=>b.addEventListener('click',()=>pick(b.dataset.place)));
+pick('docks');
+</script>
+</body>
+</html>
