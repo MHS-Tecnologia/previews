@@ -75,7 +75,7 @@ header.top{background:var(--spruce);color:#fff;position:relative;z-index:5}
 .way svg{display:block;width:100%;height:28px;margin-bottom:16px}
 .way h3{font-size:26px;margin-bottom:10px}
 .way p{max-width:52ch}
-.way img{width:100%;aspect-ratio:4/3;object-fit:cover;margin:22px 0 8px}
+.way img{width:100%;max-width:550px;aspect-ratio:4/3;object-fit:cover;margin:22px 0 8px}
 .dist{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:16px}
 @media (max-width:820px){.arrive{padding:52px 0 40px}.ways{grid-template-columns:1fr}.way + .way{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:30px;padding-top:30px}.way:first-child{padding-right:0}}
 /* rooms pair */
@@ -83,7 +83,7 @@ header.top{background:var(--spruce);color:#fff;position:relative;z-index:5}
 .rooms h2{font-size:clamp(28px,3.6vw,42px)}
 .rooms .intro{color:var(--muted);max-width:62ch;margin:12px 0 30px}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.room img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.room img{width:100%;max-width:550px;aspect-ratio:4/3;object-fit:cover}
 .room h3{font-size:28px;margin:18px 0 4px}
 .rate{font-weight:700;color:var(--cedar);margin-bottom:8px}
 .rate span{font-weight:400;color:var(--muted)}
@@ -91,11 +91,13 @@ header.top{background:var(--spruce);color:#fff;position:relative;z-index:5}
 .ticks li{padding:7px 0 7px 22px;border-top:1px solid #e3e8e5;position:relative}
 .ticks li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--glass);box-shadow:inset 0 0 0 2px var(--spruce)}
 .more{display:inline-block;margin-top:28px;font-weight:700}
+.ask{margin-top:30px;padding-top:24px;border-top:2px solid var(--ink);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.ask p{margin:0;font-size:18px;max-width:52ch}
 @media (max-width:820px){.rooms{padding:48px 0}.pair{grid-template-columns:minmax(0,1fr);gap:36px}}
 /* breakfast band */
 .band{background:var(--spruce);color:#e9eeeb;padding:64px 0}
 .band .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
-.band img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.band img{width:100%;max-width:550px;aspect-ratio:4/3;object-fit:cover}
 .band h2{color:#fff;font-size:clamp(28px,3.6vw,42px);margin-bottom:14px}
 .band p{color:#d5dfda;max-width:52ch}
 .band a{color:var(--gold)}
@@ -120,7 +122,7 @@ header.top{background:var(--spruce);color:#fff;position:relative;z-index:5}
 .sec h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:10px}
 .sec .sub{color:var(--muted);max-width:62ch}
 .split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:44px;align-items:start}
-.photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,550px));gap:16px 24px;margin-top:26px;align-items:start}
 .photos figure{margin:0}
 .photos img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .photos .tall img{aspect-ratio:3/4}
@@ -129,8 +131,9 @@ header.top{background:var(--spruce);color:#fff;position:relative;z-index:5}
 .cols li{break-inside:avoid}
 .plain{margin:0;padding-left:20px}
 .plain li{margin:0 0 8px}
+.split > img{width:100%;max-width:550px}
 .note{background:#fff;border-left:4px solid var(--roof);padding:16px 20px;max-width:68ch}
-@media (max-width:820px){.ph{padding:28px 0 24px}.ph h1{font-size:34px}.ph p{font-size:17px}.sec{padding:40px 0}.split{grid-template-columns:minmax(0,1fr);gap:24px}.photos{grid-template-columns:1fr}.cols{columns:1}}
+@media (max-width:820px){.photos{grid-template-columns:minmax(0,1fr)}.ph{padding:28px 0 24px}.ph h1{font-size:34px}.ph p{font-size:17px}.sec{padding:40px 0}.split{grid-template-columns:minmax(0,1fr);gap:24px}.photos{grid-template-columns:1fr}.cols{columns:1}}
 /* footer */
 footer.foot{background:var(--spruce);color:#cfdad4;padding:44px 0 28px;font-size:15.5px}
 .foot .grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
@@ -181,7 +184,7 @@ footer.foot{background:var(--spruce);color:#cfdad4;padding:44px 0 28px;font-size
 <h1>Two inn rooms on Skamokawa Creek</h1>
 <div>
 <p class="lede">Tie your boat at our dock, or drive up and park right by our front gate. A peaceful break in rural Skamokawa, Southwest Washington.</p>
-<div class="btns"><a class="btn btn-p" href="tel:+13607953942">Call 360-795-3942</a><a class="btn btn-s" href="mailto:info@twingables.net">Email us</a></div>
+<div class="btns"><a class="btn btn-p" href="tel:+13607953942">Call 360-795-3942</a><a class="btn btn-s" href="mailto:info@twingables.net?subject=Availability%20request">Email to check your dates</a></div>
 </div>
 </div>
 <figure>
@@ -204,7 +207,7 @@ footer.foot{background:var(--spruce);color:#cfdad4;padding:44px 0 28px;font-size
 <h3>By road</h3>
 <p>From Interstate 5, take the Longview exit and continue 30 miles west on State Route 4 until you reach Skamokawa. The highway crosses the Skamokawa Creek Bridge: first right after the bridge, at the shingled house with the red roof and white fence.</p>
 <p>Off-street parking is just outside our front gate. Locked storage is available for bicycles.</p>
-<img src="img/from-parking-800.webp" srcset="img/from-parking-480.webp 480w, img/from-parking-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Twin Gables behind its white fence, with the red roof" loading="lazy" decoding="async">
+<img src="img/from-parking-800.webp" srcset="img/from-parking-480.webp 480w, img/from-parking-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 550px" width="800" height="598" alt="Twin Gables behind its white fence, with the red roof" loading="lazy" decoding="async">
 <p class="cap">Twin Gables from the parking area.</p>
 </div>
 <div class="way">
@@ -212,7 +215,7 @@ footer.foot{background:var(--spruce);color:#cfdad4;padding:44px 0 28px;font-size
 <h3>By river</h3>
 <p>The Twin Gables private dock is just a few steps from the front door of the inn and 100 yards from the Columbia River. At 27 feet, it is the perfect platform for small cabin cruisers or fishing boats.</p>
 <p>A public launch ramp just across the road makes kayak launching easy, right from your car top or trailer. For day-long river paddles, we’ll pack you a lunch.</p>
-<img src="img/creek-mouth-800.webp" srcset="img/creek-mouth-480.webp 480w, img/creek-mouth-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="The mouth of Skamokawa Creek on the lower Columbia River, with houses on the hill" loading="lazy" decoding="async">
+<img src="img/creek-mouth-800.webp" srcset="img/creek-mouth-480.webp 480w, img/creek-mouth-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 550px" width="800" height="598" alt="The mouth of Skamokawa Creek on the lower Columbia River, with houses on the hill" loading="lazy" decoding="async">
 <p class="cap">The entrance to Skamokawa Creek, off the lower Columbia.</p>
 </div>
 </div>
@@ -226,25 +229,29 @@ footer.foot{background:var(--spruce);color:#cfdad4;padding:44px 0 28px;font-size
 <p class="intro">Our rooms are named for the daughters of Andrew and Hilma Peterson, who built and lived in their home on Skamokawa Creek in the 1890s. Both look out over the creek.</p>
 <div class="pair">
 <article class="room">
-<img src="img/agnes-1-800.webp" srcset="img/agnes-1-480.webp 480w, img/agnes-1-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Agnes’s Room: a queen bed with a star quilt, an oval mirror and two lamps" loading="lazy" decoding="async">
+<img src="img/agnes-1-800.webp" srcset="img/agnes-1-480.webp 480w, img/agnes-1-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 550px" width="800" height="598" alt="Agnes’s Room: a queen bed with a star quilt, an oval mirror and two lamps" loading="lazy" decoding="async">
 <h3>Agnes’s Room</h3>
 <p class="rate">$140 per night <span>not including taxes</span></p>
 <ul class="ticks"><li>Queen size bed and a storage chest at its foot</li><li>Private shower; the sink is in the bedroom</li><li>Looks out over Skamokawa Creek</li></ul>
 </article>
 <article class="room">
-<img src="img/edna-1-800.webp" srcset="img/edna-1-480.webp 480w, img/edna-1-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Edna’s Room: a four-poster queen bed with a pieced quilt" loading="lazy" decoding="async">
+<img src="img/edna-1-800.webp" srcset="img/edna-1-480.webp 480w, img/edna-1-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 550px" width="800" height="598" alt="Edna’s Room: a four-poster queen bed with a pieced quilt" loading="lazy" decoding="async">
 <h3>Edna’s Room</h3>
 <p class="rate">$150 per night <span>not including taxes</span></p>
 <ul class="ticks"><li>Four poster queen bed with high quality cotton linens</li><li>Private bathroom with shower</li><li>Looks out over Skamokawa Creek</li></ul>
 </article>
 </div>
 <a class="more" href="rooms.html">See both rooms</a>
+<div class="ask">
+<p>For one of the two inn rooms, or the vacation rental apartment next door, call or send a message.</p>
+<div class="btns"><a class="btn btn-p" href="tel:+13607953942">Call 360-795-3942</a><a class="btn btn-s" href="mailto:info@twingables.net?subject=Availability%20request">Email to check your dates</a></div>
+</div>
 </div>
 </section>
 
 <section class="band" aria-labelledby="food-h">
 <div class="wrap grid">
-<img src="img/pancakes-800.webp" srcset="img/pancakes-480.webp 480w, img/pancakes-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Blueberry pancakes with bacon on a blue willow plate, with fruit, juice and coffee" loading="lazy" decoding="async">
+<img src="img/pancakes-800.webp" srcset="img/pancakes-480.webp 480w, img/pancakes-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 550px" width="800" height="598" alt="Blueberry pancakes with bacon on a blue willow plate, with fruit, juice and coffee" loading="lazy" decoding="async">
 <div>
 <h2 id="food-h">Breakfast at the time you choose</h2>
 <blockquote>Need your breakfast at 5 am? – no problem!</blockquote>
