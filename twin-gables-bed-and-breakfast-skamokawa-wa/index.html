@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Twin Gables Bed & Breakfast · Skamokawa, WA</title>
+<meta name="description" content="Two inn rooms and a vacation rental apartment on Skamokawa Creek, on the lower Columbia Water Trail.">
+<meta name="theme-color" content="#1e3329">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231e3329'/%3E%3Cpath d='M6 50V30L18 14l12 16v20zM34 50V30l12-16 12 16v20z' fill='%23d8b867'/%3E%3Cpath d='M15 50V38h6v12zM43 50V38h6v12z' fill='%231e3329'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/gelasio.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/house-snow-m-800.webp 800w" imagesizes="100vw" media="(max-width: 820px)">
+<link rel="preload" as="image" type="image/webp" imagesrcset="img/house-snow-960.webp 960w, img/house-snow-1400.webp 1400w, img/house-snow-1920.webp 1920w" imagesizes="min(100vw - 32px, 1180px)" media="(min-width: 821px)">
+<style>
+@font-face{font-family:Gelasio;src:url(fonts/gelasio.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:Gelasio;src:url(fonts/gelasio-italic.woff2) format("woff2");font-weight:400 700;font-style:italic;font-display:swap}
+@font-face{font-family:"Red Hat Text";src:url(fonts/redhattext.woff2) format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+:root{--spruce:#1e3329;--spruce-2:#28443a;--fog:#eef1ef;--line:#cdd6d1;--ink:#1d2622;--muted:#4a5852;--roof:#8e2b25;--roof-d:#74221d;--cedar:#8f4f2e;--gold:#d8b867;--glass:#7cc2a8;--w:1180px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fog);color:var(--ink);font:400 17px/1.62 "Red Hat Text",system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--cedar);text-underline-offset:3px}
+a:hover{color:var(--roof)}
+:focus-visible{outline:3px solid var(--roof);outline-offset:3px}
+h1,h2,h3{font-family:Gelasio,Georgia,serif;font-weight:600;line-height:1.14;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0 0 1em}
+.wrap{width:min(100% - 32px,var(--w));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:9}
+.skip:focus{left:8px}
+.demo{background:#dfe5e1;color:#33413b;font-size:12.5px;line-height:1.4;padding:6px 16px;text-align:center}
+header.top{background:var(--spruce);color:#fff;position:relative;z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:block;flex:0 0 auto}
+.brand img{width:250px;height:auto}
+.nav{display:flex;align-items:center;gap:22px}
+.nav > a{color:#e7ece9;text-decoration:none;font-size:15.5px;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover{color:#fff;border-bottom-color:var(--gold)}
+.nav > a[aria-current=page]{color:#fff;border-bottom-color:var(--gold)}
+.nav > a.call,.call{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--spruce);font-weight:700;text-decoration:none;padding:9px 14px;border-radius:3px;font-size:15px;white-space:nowrap}
+.nav > a.call:hover,.call:hover{background:#e6cc85;color:var(--spruce);border-bottom-color:transparent}
+.nav > a.call{border-bottom:0;margin-left:6px}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;color:#fff;font-weight:600;padding:10px 12px;border:1px solid #4d6a5d;border-radius:3px;font-size:15px}
+.menu summary::-webkit-details-marker{display:none}
+.menu .panel{position:absolute;right:0;top:calc(100% + 8px);background:var(--spruce);border:1px solid #4d6a5d;border-radius:4px;padding:8px;min-width:220px;display:grid;box-shadow:0 12px 30px rgba(10,20,15,.35)}
+.menu .panel a{color:#fff;text-decoration:none;padding:11px 12px;border-radius:3px;font-size:16px}
+.menu .panel a:hover,.menu .panel a[aria-current=page]{background:var(--spruce-2)}
+.menu .panel a.p-call{color:var(--gold);font-weight:700}
+@media (max-width:980px){.nav > a{display:none}.menu{display:block}.brand img{width:178px}}
+@media (max-width:420px){.nav > a.call{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:3px;font-size:16.5px;line-height:1.2;min-height:48px}
+.btn-p{background:var(--roof);color:#fff}
+.btn-p:hover{background:var(--roof-d);color:#fff}
+.btn-s{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn-s:hover{background:var(--ink);color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+/* home hero */
+.hero{padding:34px 0 0}
+.hero-head{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:end;margin-bottom:26px}
+.hero h1{font-size:clamp(34px,5.4vw,64px)}
+.hero .lede{font-size:18.5px;color:var(--muted);margin:0 0 18px;max-width:46ch}
+.hero figure{margin:0}
+.hero picture img{width:100%;aspect-ratio:1920/800;object-fit:cover;border-radius:2px}
+.cap{font-size:14px;color:var(--muted);margin-top:8px}
+@media (max-width:820px){.hero{padding-top:20px}.hero-head{grid-template-columns:minmax(0,1fr);gap:12px;margin-bottom:18px}.hero h1{font-size:35px}.hero .lede{font-size:17px;margin-bottom:14px}.hero picture img{aspect-ratio:800/640}.btn{padding:12px 16px;font-size:16px}}
+/* arrive: the signature */
+.arrive{padding:72px 0 64px}
+.arrive h2{font-size:clamp(28px,3.6vw,42px);max-width:22ch}
+.arrive .intro{color:var(--muted);max-width:60ch;margin:12px 0 34px}
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--ink)}
+.way{padding:26px 0 0}
+.way + .way{padding-left:40px;border-left:1px solid var(--line)}
+.way:first-child{padding-right:40px}
+.way svg{display:block;width:100%;height:28px;margin-bottom:16px}
+.way h3{font-size:26px;margin-bottom:10px}
+.way p{max-width:52ch}
+.way img{width:100%;aspect-ratio:4/3;object-fit:cover;margin:22px 0 8px}
+.dist{margin-top:34px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:16px}
+@media (max-width:820px){.arrive{padding:52px 0 40px}.ways{grid-template-columns:1fr}.way + .way{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:30px;padding-top:30px}.way:first-child{padding-right:0}}
+/* rooms pair */
+.rooms{padding:64px 0;background:#fff;border-block:1px solid var(--line)}
+.rooms h2{font-size:clamp(28px,3.6vw,42px)}
+.rooms .intro{color:var(--muted);max-width:62ch;margin:12px 0 30px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.room h3{font-size:28px;margin:18px 0 4px}
+.rate{font-weight:700;color:var(--cedar);margin-bottom:8px}
+.rate span{font-weight:400;color:var(--muted)}
+.ticks{margin:0;padding:0;list-style:none}
+.ticks li{padding:7px 0 7px 22px;border-top:1px solid #e3e8e5;position:relative}
+.ticks li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--glass);box-shadow:inset 0 0 0 2px var(--spruce)}
+.more{display:inline-block;margin-top:28px;font-weight:700}
+@media (max-width:820px){.rooms{padding:48px 0}.pair{grid-template-columns:minmax(0,1fr);gap:36px}}
+/* breakfast band */
+.band{background:var(--spruce);color:#e9eeeb;padding:64px 0}
+.band .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.band img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.band h2{color:#fff;font-size:clamp(28px,3.6vw,42px);margin-bottom:14px}
+.band p{color:#d5dfda;max-width:52ch}
+.band a{color:var(--gold)}
+.band a:hover{color:#f0d993}
+.band blockquote{margin:0 0 18px;font-family:Gelasio,Georgia,serif;font-style:italic;font-size:24px;color:#fff;line-height:1.3}
+@media (max-width:820px){.band{padding:48px 0}.band .grid{grid-template-columns:minmax(0,1fr);gap:26px}}
+/* closing */
+.close{padding:64px 0 72px}
+.close .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+.close h2{font-size:clamp(28px,3.6vw,42px);margin-bottom:12px}
+.facts{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 20px;border-top:2px solid var(--ink);padding-top:16px}
+.facts dt{font-weight:700}
+.facts dd{margin:0;min-width:0;overflow-wrap:anywhere}
+@media (max-width:820px){.close{padding:48px 0}.close .grid{grid-template-columns:minmax(0,1fr);gap:28px}}
+/* inner pages */
+.ph{padding:40px 0 30px;border-bottom:1px solid var(--line)}
+.ph h1{font-size:clamp(34px,5vw,56px);margin-bottom:12px}
+.ph p{color:var(--muted);font-size:18px;max-width:60ch;margin:0}
+.ph .btns{margin-top:20px}
+.sec{padding:52px 0;border-bottom:1px solid var(--line)}
+.sec:last-of-type{border-bottom:0}
+.sec h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:10px}
+.sec .sub{color:var(--muted);max-width:62ch}
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:44px;align-items:start}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+.photos figure{margin:0}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.photos .tall img{aspect-ratio:3/4}
+.photos figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.cols{columns:2;column-gap:40px}
+.cols li{break-inside:avoid}
+.plain{margin:0;padding-left:20px}
+.plain li{margin:0 0 8px}
+.note{background:#fff;border-left:4px solid var(--roof);padding:16px 20px;max-width:68ch}
+@media (max-width:820px){.ph{padding:28px 0 24px}.ph h1{font-size:34px}.ph p{font-size:17px}.sec{padding:40px 0}.split{grid-template-columns:minmax(0,1fr);gap:24px}.photos{grid-template-columns:1fr}.cols{columns:1}}
+/* footer */
+footer.foot{background:var(--spruce);color:#cfdad4;padding:44px 0 28px;font-size:15.5px}
+.foot .grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+.foot h2{font-size:19px;color:#fff;margin-bottom:10px}
+.foot a{color:#f0dfae}
+.foot a:hover{color:#fff}
+.foot nav a{display:block;padding:3px 0;text-decoration:none}
+.foot .fine{margin-top:32px;padding-top:16px;border-top:1px solid #3c5a4d;font-size:13.5px;color:#b9c8c0}
+@media (max-width:820px){.foot .grid{grid-template-columns:minmax(0,1fr);gap:24px}}
+/* sticky mobile CTA */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:8;display:none;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(30,51,41,.97);border-top:1px solid #3c5a4d;transform:translateY(110%);transition:transform .25s ease}
+.dock .btn{flex:1;min-height:46px;padding:10px 12px}
+.dock .btn-s{color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.dock.on{transform:none}
+@media (max-width:820px){.dock{display:flex}body{padding-bottom:70px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Twin Gables Bed & Breakfast · Skamokawa, WA">
+<meta property="og:description" content="Two inn rooms and a vacation rental apartment on Skamokawa Creek, on the lower Columbia Water Trail.">
+<meta property="og:url" content="https://previa.mhstecnologia.com/twin-gables-bed-and-breakfast-skamokawa-wa/">
+<meta property="og:image" content="https://previa.mhstecnologia.com/twin-gables-bed-and-breakfast-skamokawa-wa/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Twin Gables Bed &amp; Breakfast. Not affiliated with or endorsed by Twin Gables Bed &amp; Breakfast.</p>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Twin Gables Bed and Breakfast Inn, home"><img src="img/logo.webp" alt="Twin Gables Bed &amp; Breakfast Inn" width="750" height="127"></a>
+<nav class="nav" aria-label="Main">
+<a href="rooms.html">Rooms</a><a href="apartment.html">Apartment</a><a href="food.html">Food</a><a href="area.html">Our area</a><a href="policies.html">Policies</a><a href="contact.html">Contact</a>
+<a class="call" href="tel:+13607953942">Call 360-795-3942</a>
+<details class="menu"><summary>Menu</summary><div class="panel">
+<a href="index.html" aria-current="page">Home</a>
+<a href="rooms.html">Rooms</a><a href="apartment.html">Apartment</a><a href="food.html">Food</a><a href="area.html">Our area</a><a href="policies.html">Policies</a><a href="contact.html">Contact</a>
+<a class="p-call" href="tel:+13607953942">Call 360-795-3942</a>
+<a class="p-call" href="mailto:info@twingables.net">Email info@twingables.net</a>
+</div></details>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="hero" data-hero>
+<div class="wrap">
+<div class="hero-head">
+<h1>Two inn rooms on Skamokawa Creek</h1>
+<div>
+<p class="lede">Tie your boat at our dock, or drive up and park right by our front gate. A peaceful break in rural Skamokawa, Southwest Washington.</p>
+<div class="btns"><a class="btn btn-p" href="tel:+13607953942">Call 360-795-3942</a><a class="btn btn-s" href="mailto:info@twingables.net">Email us</a></div>
+</div>
+</div>
+<figure>
+<picture>
+<source media="(max-width: 820px)" srcset="img/house-snow-m-800.webp 800w" sizes="calc(100vw - 32px)" width="800" height="640">
+<img src="img/house-snow-1400.webp" srcset="img/house-snow-960.webp 960w, img/house-snow-1400.webp 1400w, img/house-snow-1920.webp 1920w" sizes="min(100vw - 32px, 1180px)" width="1400" height="583" alt="Twin Gables, a cedar-shingled house with two gables and a long white porch, in winter snow" fetchpriority="high">
+</picture>
+<figcaption class="cap">Twin Gables in winter snow.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="arrive" aria-labelledby="arrive-h">
+<div class="wrap">
+<h2 id="arrive-h">Arrive by road, or by river</h2>
+<p class="intro">Twin Gables sits in the Skamokawa National Historic District, on the lower Columbia Water Trail, a short walk from all local attractions.</p>
+<div class="ways">
+<div class="way">
+<svg viewBox="0 0 400 28" preserveAspectRatio="none" aria-hidden="true"><rect x="0" y="4" width="400" height="20" fill="#3b4540"/><line x1="0" y1="14" x2="400" y2="14" stroke="#d8b867" stroke-width="2.5" stroke-dasharray="16 12"/></svg>
+<h3>By road</h3>
+<p>From Interstate 5, take the Longview exit and continue 30 miles west on State Route 4 until you reach Skamokawa. The highway crosses the Skamokawa Creek Bridge: first right after the bridge, at the shingled house with the red roof and white fence.</p>
+<p>Off-street parking is just outside our front gate. Locked storage is available for bicycles.</p>
+<img src="img/from-parking-800.webp" srcset="img/from-parking-480.webp 480w, img/from-parking-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Twin Gables behind its white fence, with the red roof" loading="lazy" decoding="async">
+<p class="cap">Twin Gables from the parking area.</p>
+</div>
+<div class="way">
+<svg viewBox="0 0 400 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14 Q25 2 50 14 T100 14 T150 14 T200 14 T250 14 T300 14 T350 14 T400 14" fill="none" stroke="#5f9e88" stroke-width="3"/><path d="M0 22 Q25 12 50 22 T100 22 T150 22 T200 22 T250 22 T300 22 T350 22 T400 22" fill="none" stroke="#9bc9b7" stroke-width="2"/></svg>
+<h3>By river</h3>
+<p>The Twin Gables private dock is just a few steps from the front door of the inn and 100 yards from the Columbia River. At 27 feet, it is the perfect platform for small cabin cruisers or fishing boats.</p>
+<p>A public launch ramp just across the road makes kayak launching easy, right from your car top or trailer. For day-long river paddles, we’ll pack you a lunch.</p>
+<img src="img/creek-mouth-800.webp" srcset="img/creek-mouth-480.webp 480w, img/creek-mouth-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="The mouth of Skamokawa Creek on the lower Columbia River, with houses on the hill" loading="lazy" decoding="async">
+<p class="cap">The entrance to Skamokawa Creek, off the lower Columbia.</p>
+</div>
+</div>
+<p class="dist">Just 3 hours south of Seattle, a little over 2 hours west of Portland, and about halfway between Longview, Washington and Astoria, Oregon. <a href="area.html#directions">Full directions</a></p>
+</div>
+</section>
+
+<section class="rooms" aria-labelledby="rooms-h">
+<div class="wrap">
+<h2 id="rooms-h">Agnes’s Room and Edna’s Room</h2>
+<p class="intro">Our rooms are named for the daughters of Andrew and Hilma Peterson, who built and lived in their home on Skamokawa Creek in the 1890s. Both look out over the creek.</p>
+<div class="pair">
+<article class="room">
+<img src="img/agnes-1-800.webp" srcset="img/agnes-1-480.webp 480w, img/agnes-1-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Agnes’s Room: a queen bed with a star quilt, an oval mirror and two lamps" loading="lazy" decoding="async">
+<h3>Agnes’s Room</h3>
+<p class="rate">$140 per night <span>not including taxes</span></p>
+<ul class="ticks"><li>Queen size bed and a storage chest at its foot</li><li>Private shower; the sink is in the bedroom</li><li>Looks out over Skamokawa Creek</li></ul>
+</article>
+<article class="room">
+<img src="img/edna-1-800.webp" srcset="img/edna-1-480.webp 480w, img/edna-1-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Edna’s Room: a four-poster queen bed with a pieced quilt" loading="lazy" decoding="async">
+<h3>Edna’s Room</h3>
+<p class="rate">$150 per night <span>not including taxes</span></p>
+<ul class="ticks"><li>Four poster queen bed with high quality cotton linens</li><li>Private bathroom with shower</li><li>Looks out over Skamokawa Creek</li></ul>
+</article>
+</div>
+<a class="more" href="rooms.html">See both rooms</a>
+</div>
+</section>
+
+<section class="band" aria-labelledby="food-h">
+<div class="wrap grid">
+<img src="img/pancakes-800.webp" srcset="img/pancakes-480.webp 480w, img/pancakes-800.webp 800w" sizes="(max-width: 820px) calc(100vw - 32px), 570px" width="800" height="598" alt="Blueberry pancakes with bacon on a blue willow plate, with fruit, juice and coffee" loading="lazy" decoding="async">
+<div>
+<h2 id="food-h">Breakfast at the time you choose</h2>
+<blockquote>Need your breakfast at 5 am? – no problem!</blockquote>
+<p>Fresh ground and brewed coffee is delivered outside your door an hour before breakfast. Then a starter of fruit salad, and a main course such as French toast or a savory egg dish, with home made bread.</p>
+<p>Hot beverages are available 24 hours, and you’ll find a welcoming snack in your room on arrival. Optional lunches and dinners are available at an extra charge.</p>
+<p><a href="food.html">Breakfast, Simple Suppers and more</a></p>
+</div>
+</div>
+</section>
+
+<section class="close" aria-labelledby="close-h">
+<div class="wrap grid">
+<div>
+<h2 id="close-h">Your innkeepers are Kathleen and Stevan Morgain</h2>
+<p>We restored this historic home in Skamokawa with the aim of sharing the experience of rural life in our tiny corner of the world. With just two inn rooms, you’ll enjoy attentive service from friendly but not obtrusive innkeepers.</p>
+<p>For families with children and/or pets, and those who prefer to do their own cooking, we also offer a <a href="apartment.html">separate vacation rental apartment</a> next door to the inn.</p>
+<div class="btns"><a class="btn btn-p" href="tel:+13607953942">Call 360-795-3942</a><a class="btn btn-s" href="mailto:info@twingables.net">Email us</a></div>
+</div>
+<dl class="facts">
+<dt>Address</dt><dd>1416 West State Route 4, Skamokawa, WA 98647</dd>
+<dt>Phone</dt><dd><a href="tel:+13607953942">360-795-3942</a></dd>
+<dt>Email</dt><dd><a href="mailto:info@twingables.net">info@twingables.net</a></dd>
+<dt>Check-in</dt><dd>Starts at 3:00 PM</dd>
+<dt>Check-out</dt><dd>11:00 AM</dd>
+<dt>WiFi</dt><dd>Free, throughout the property</dd>
+</dl>
+</div>
+</section>
+</main>
+<footer class="foot">
+<div class="wrap">
+<div class="grid">
+<div>
+<h2>Twin Gables Bed &amp; Breakfast</h2>
+<p>1416 West State Route 4<br>Skamokawa, Washington 98647</p>
+<p><a href="tel:+13607953942">360-795-3942</a><br><a href="mailto:info@twingables.net">info@twingables.net</a></p>
+<p>Kathleen Morgain, Innkeeper</p>
+</div>
+<div><h2>Pages</h2><nav aria-label="Footer"><a href="index.html">Home</a><a href="rooms.html">Rooms</a><a href="apartment.html">Apartment</a><a href="food.html">Food</a><a href="area.html">Our area</a><a href="policies.html">Policies</a><a href="contact.html">Contact</a></nav></div>
+<div><h2>Stays</h2><p>Check-in starts at 3:00 PM.<br>Check-out: 11:00 AM.</p><p>Quiet hours after 10 pm.</p></div>
+</div>
+<p class="fine">Unofficial demo built by MHS Tecnologia for Twin Gables Bed &amp; Breakfast. Not affiliated with or endorsed by Twin Gables Bed &amp; Breakfast. Text and photos come from twingables.net. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div>
+</footer>
+<div class="dock" aria-label="Contact Twin Gables"><a class="btn btn-p" href="tel:+13607953942">Call 360-795-3942</a><a class="btn btn-s" href="mailto:info@twingables.net">Email us</a></div>
+<script>
+(function(){var d=document.querySelector('.dock'),h=document.querySelector('[data-hero]');if(!d||!h||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){d.classList.toggle('on',!e[0].isIntersecting)},{rootMargin:'0px 0px -40% 0px'}).observe(h);})();
+</script>
+</body>
+</html>
