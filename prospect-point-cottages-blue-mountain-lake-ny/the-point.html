@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Life on the Point · Prospect Point Cottages</title>
+<meta name="description" content="Amenities at Prospect Point Cottages and things to do around Blue Mountain Lake.">
+<meta name="theme-color" content="#15324c">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="font" type="font/woff2" href="fonts/oldstandard-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/librefranklin.woff2" crossorigin>
+<style>
+@font-face{font-family:"Old Standard TT";font-weight:400;font-display:swap;src:url(fonts/oldstandard-400.woff2) format("woff2")}
+@font-face{font-family:"Old Standard TT";font-weight:700;font-display:swap;src:url(fonts/oldstandard-700.woff2) format("woff2")}
+@font-face{font-family:"Old Standard TT";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/oldstandard-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Libre Franklin";font-weight:100 900;font-display:swap;src:url(fonts/librefranklin.woff2) format("woff2")}
+/* Butter and spruce from their oval logo, the lake at dusk, the brick-red
+   numbers of their camp map, a cool birch-white page. */
+:root{--paper:#f3f5f0;--mist:#e4eae5;--ink:#17222d;--muted:#46525c;--lake:#15324c;--lake2:#1f4868;--butter:#f1dc76;--spruce:#23502f;--brick:#8c2f1f;--line:#c9d3cc;--max:76rem;--pad:clamp(1rem,4vw,2.5rem)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 "Libre Franklin",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:"Old Standard TT",Georgia,serif;font-weight:700;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(2.15rem,5.2vw,3.9rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.85rem,3.6vw,2.7rem);margin-bottom:.8rem}
+h3{font-size:1.5rem;margin-bottom:.25rem}
+p+p{margin-top:.8rem}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:#fff;padding:.5rem 1rem}
+:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+.demo{background:#0e2133;color:#d5dee6;font-size:.8125rem;line-height:1.4;padding:.45rem var(--pad);text-align:center}
+/* header */
+header.top{background:var(--lake);color:#fff;position:relative;z-index:5}
+.bar{display:flex;align-items:center;gap:1.25rem;min-height:4.5rem}
+.logo{display:block;flex:none;margin-right:auto}
+.logo img{width:96px;height:auto}
+.nav{display:flex;align-items:center;gap:1.6rem}
+.nav > a{text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-color:var(--butter)}
+.nav > a.call{padding:.6rem 1rem;border:0}
+.call{background:var(--butter);color:var(--lake);text-decoration:none;font-weight:700;padding:.6rem 1rem;border-radius:3px;white-space:nowrap}
+.call:hover{background:#fff}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;padding:.55rem .8rem;border:1px solid rgba(255,255,255,.5);border-radius:3px;font-weight:600}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:calc(100% + .5rem);background:#fff;color:var(--ink);min-width:15rem;padding:.5rem;border-radius:4px;box-shadow:0 12px 30px rgba(10,25,40,.3)}
+.menu nav a{display:block;padding:.75rem .9rem;text-decoration:none;font-weight:600}
+.menu nav a:hover{background:var(--mist)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.7rem 1.25rem;border-radius:3px;font-weight:700;text-decoration:none;border:2px solid transparent}
+.btn.primary{background:var(--spruce);color:#fff}
+.btn.primary:hover{background:#183a21}
+.btn.ghost{border-color:var(--spruce);color:var(--spruce)}
+.btn.ghost:hover{background:var(--mist)}
+.btn.butter{background:var(--butter);color:var(--lake)}
+.btn.butter:hover{background:#fff}
+.btn.line{border-color:rgba(255,255,255,.7);color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.1)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+/* hero */
+.hero{padding:clamp(1.5rem,4vw,3.5rem) 0 clamp(2.5rem,5vw,4.5rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hero h1{color:var(--lake)}
+.hero .lede{font-size:1.15rem;margin:1.1rem 0 1rem;max-width:34rem}
+.season{font-family:"Old Standard TT",Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--spruce);margin-bottom:1.4rem}
+.season b{font-style:normal}
+.hero figure{position:relative}
+.hero figure img{width:100%;border-radius:2px}
+figcaption{font-size:.875rem;color:var(--muted);margin-top:.55rem}
+/* the map */
+.mapsec{background:var(--butter);padding:clamp(3rem,6vw,5.5rem) 0;color:var(--ink)}
+.mapsec .head{max-width:44rem;margin-bottom:2rem}
+.mapgrid{display:grid;grid-template-columns:minmax(0,652px) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.map{position:relative;background:#fbf6d9;border:1px solid #c9b45a;padding:0;line-height:0}
+.map img{width:100%}
+.ring{position:absolute;width:2.2rem;height:2.2rem;margin:-1.1rem 0 0 -1.1rem;border:3px solid var(--brick);border-radius:50%;opacity:0;transform:scale(1.6);transition:opacity .25s,transform .25s;pointer-events:none}
+.map[data-on] .ring.on{opacity:1;transform:scale(1)}
+.zoom{margin-top:.8rem;background:none;border:0;font:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer;color:var(--ink);padding:.3rem 0}
+.key{columns:2;column-gap:1.5rem;list-style:none;padding:0}
+.key li{break-inside:avoid}
+.key a{display:flex;gap:.7rem;align-items:baseline;padding:.42rem 0;text-decoration:none;border-bottom:1px solid rgba(23,34,45,.15)}
+.key a:hover .kname{text-decoration:underline}
+.num{font-family:"Old Standard TT",Georgia,serif;font-weight:700;color:var(--brick);min-width:1.6rem;text-align:right;font-variant-numeric:lining-nums}
+.kname{font-weight:600}
+.ksub{display:block;font-size:.85rem;color:#3d4650;font-weight:400}
+.keynote{margin-top:1.2rem;font-size:.95rem}
+dialog{margin:auto;padding:0;border:0;max-width:min(96vw,820px);max-height:92vh;background:#fbf6d9;border-radius:4px;overflow:auto}
+dialog::backdrop{background:rgba(8,20,32,.75)}
+dialog img{width:800px;max-width:none}
+dialog .close{position:sticky;top:.5rem;left:100%;float:right;margin:.5rem;background:var(--lake);color:#fff;border:0;border-radius:3px;font:inherit;font-weight:700;padding:.55rem .9rem;cursor:pointer}
+/* water */
+.water{padding:clamp(3rem,6vw,5.5rem) 0}
+.water .cols{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:end}
+.water .text p{max-width:36rem}
+.big{font-family:"Old Standard TT",Georgia,serif;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.3;color:var(--lake);margin-bottom:1rem}
+/* history band */
+.hist{background:var(--lake);color:#e9eef2;padding:clamp(3rem,6vw,5.5rem) 0}
+.hist .cols{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.hist h2{color:#fff}
+.hist .paper{background:#f6eedb;padding:clamp(.6rem,1.5vw,1rem);border-radius:2px}
+.hist figcaption{color:#c4d0da}
+.year{font-family:"Old Standard TT",Georgia,serif;font-size:clamp(3.5rem,8vw,6rem);line-height:1;color:var(--butter)}
+.hist a.more{color:var(--butter);font-weight:700}
+/* quotes */
+.said{padding:clamp(3rem,6vw,5.5rem) 0}
+.qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem);margin-top:1.5rem}
+blockquote p{font-family:"Old Standard TT",Georgia,serif;font-style:italic;font-size:1.25rem;line-height:1.45}
+blockquote footer{margin-top:.7rem;font-size:.92rem;color:var(--muted)}
+.qs blockquote{border-top:3px solid var(--spruce);padding-top:1rem}
+/* contact band */
+.reach{background:var(--mist);padding:clamp(3rem,6vw,5rem) 0}
+.reach .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:start}
+.reach address{font-style:normal;line-height:1.7}
+.reach .tel{font-family:"Old Standard TT",Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;color:var(--lake);text-decoration:none;display:inline-block;margin:.2rem 0 .4rem}
+/* inner pages */
+.phead{background:var(--lake);color:#fff;padding:clamp(2.2rem,5vw,4rem) 0 clamp(2rem,4vw,3rem)}
+.phead p{max-width:44rem;margin-top:.9rem;color:#dbe4eb;font-size:1.1rem}
+.sec{padding-top:clamp(2.5rem,5vw,4.5rem);padding-bottom:clamp(2.5rem,5vw,4.5rem)}
+.sec + .sec{padding-top:0}
+.ratenote{background:var(--mist);border-left:4px solid var(--spruce);padding:1rem 1.2rem;margin:1.5rem 0 0;max-width:52rem}
+.group{margin-top:clamp(2.5rem,5vw,4rem)}
+.group > h2{border-bottom:2px solid var(--lake);padding-bottom:.5rem}
+.group > p{max-width:46rem;margin-bottom:1rem}
+.cot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,19rem);gap:1.5rem 2.5rem;padding:1.6rem 0;border-bottom:1px solid var(--line);scroll-margin-top:1rem}
+.cot.withpic{grid-template-columns:minmax(0,440px) minmax(0,1fr) minmax(0,17rem)}
+.cot h3 .num{margin-right:.45rem;font-size:1.2rem}
+.cot .desc{max-width:36rem}
+.cot figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.cot .quote{font-family:"Old Standard TT",Georgia,serif;font-style:italic;margin-top:.6rem;color:var(--spruce)}
+.cot:target{background:linear-gradient(var(--butter),var(--butter)) 0 0/6px 100% no-repeat;padding-left:1.2rem}
+.rates{font-size:.95rem;display:grid;gap:.6rem;align-content:start}
+.rates dt{font-weight:700;color:var(--lake)}
+.rates dd{margin:0}
+.rates .amt{font-family:"Old Standard TT",Georgia,serif;font-size:1.35rem;font-weight:700}
+.lodgepic{display:grid;grid-template-columns:minmax(0,600px) minmax(0,1fr);gap:2rem;align-items:center;margin:1rem 0 .5rem}
+details.pol{border-top:1px solid var(--line);padding:1rem 0}
+details.pol summary{cursor:pointer;font-weight:700;font-size:1.1rem}
+details.pol[open] summary{margin-bottom:.8rem}
+details.pol p{max-width:48rem}
+.list{columns:2;column-gap:2.5rem;padding-left:1.1rem}
+.list li{margin-bottom:.45rem;break-inside:avoid}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.two.wide{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.come{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem 2rem}
+.come b{display:block;font-family:"Old Standard TT",Georgia,serif;font-size:1.35rem;color:var(--lake)}
+.lead{font-family:"Old Standard TT",Georgia,serif;font-size:clamp(1.35rem,2.4vw,1.75rem);line-height:1.35;color:var(--lake);max-width:46rem}
+.names{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;font-family:"Old Standard TT",Georgia,serif;font-size:1.3rem}
+.press{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.8rem 2.5rem}
+.press blockquote{border-left:3px solid var(--butter);padding-left:1.1rem}
+.press blockquote p{font-size:1.15rem}
+.route{border-top:1px solid var(--line);padding:.9rem 0}
+.route summary{cursor:pointer;font-weight:700;font-size:1.1rem}
+.route ol{margin-top:.7rem;padding-left:1.4rem}
+.route li{margin-bottom:.3rem}
+.facts{display:grid;gap:1.4rem}
+.facts h3{font-size:1.2rem}
+.cta-band{background:var(--lake);color:#fff;padding:clamp(2.5rem,5vw,4rem) 0}
+.cta-band h2{color:#fff}
+.cta-band p{color:#dbe4eb;margin-bottom:1.3rem}
+/* footer */
+footer.site{background:#0e2133;color:#c9d4dd;padding:2.5rem 0 6rem;font-size:.92rem}
+footer.site .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+footer.site a{color:#fff}
+footer.site h2{font-size:1.2rem;color:#fff;margin-bottom:.5rem}
+footer.site nav a{display:block;padding:.15rem 0;text-decoration:none}
+footer.site nav a:hover{text-decoration:underline}
+.fine{margin-top:2rem;border-top:1px solid rgba(255,255,255,.15);padding-top:1.2rem;color:#aebbc6}
+/* sticky mobile CTA */
+.sticky{display:none}
+@media (max-width:860px){
+  .nav > a{display:none}
+  .nav .call{display:none}
+  .menu{display:block}
+  .bar{min-height:4rem}
+  .logo img{width:78px}
+  .hero{padding-top:1.1rem}
+  .hero .wrap,.mapgrid,.water .cols,.hist .cols,.reach .cols,.two,.two.wide,.lodgepic{grid-template-columns:minmax(0,1fr)}
+  .hero .lede{font-size:1.05rem;margin:.75rem 0 .6rem}
+  .season{font-size:1.08rem;margin-bottom:1rem}
+  .actions .btn{flex:1 1 auto}
+  .qs{grid-template-columns:minmax(0,1fr)}
+  .key{columns:2;column-gap:1rem}
+  .ksub{display:none}
+  .cot,.cot.withpic{grid-template-columns:minmax(0,1fr)}
+  .list{columns:1}
+  .come{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .press{grid-template-columns:minmax(0,1fr)}
+  footer.site .cols{grid-template-columns:1fr}
+  .sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:.5rem;padding:.6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom));background:rgba(21,50,76,.97);transform:translateY(110%);transition:transform .25s}
+  .sticky.show{transform:none}
+  .sticky .btn{flex:1;min-height:2.9rem}
+}
+@media (max-width:420px){.come{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Prospect Point Cottages. Not affiliated with or endorsed by Prospect Point Cottages.</div>
+<header class="top"><div class="wrap bar">
+<a class="logo" href="index.html" aria-label="Prospect Point Cottages, home"><img src="img/logo-240.webp" width="240" height="160" alt="Prospect Point Cottages, Blue Mountain Lake, NY"></a>
+<div class="nav"><a href="cottages.html">Cottages & rates</a><a href="the-point.html" aria-current="page">Life on the Point</a><a href="history.html">History</a><a href="contact.html">Directions & contact</a><a class="call" href="tel:+15183527378">Call (518) 352-7378</a>
+<details class="menu"><summary>Menu</summary><nav aria-label="Main"><a href="index.html">Home</a><a href="cottages.html">Cottages & rates</a><a href="the-point.html">Life on the Point</a><a href="history.html">History</a><a href="contact.html">Directions & contact</a><a href="tel:+15183527378">Call (518) 352-7378</a></nav></details></div>
+</div></header>
+<main id="main">
+<section class="phead" data-hero><div class="wrap"><h1>Life on the Point</h1>
+<p>At Prospect Point, there is no regimen or set time; instead, an atmosphere of relaxation and warmth pervades.</p></div></section>
+<div class="wrap sec two wide">
+<div><h2>At every cottage</h2>
+<ul class="list">
+<li>Porch, grill, picnic table and campfire ring</li>
+<li>Fully equipped kitchen: oven, stove, full-sized fridge, microwave, toaster, coffee maker, dishes, pots, pans and cutlery</li>
+<li>All linens and bath towels</li>
+<li>Free cable TV in your cottage, free wireless internet in designated areas</li>
+<li>Some have fireplaces</li>
+<li>Many cottages are wheelchair friendly; Moose Lodge is fully wheelchair accessible</li>
+<li>Hypoallergenic, smoke-free and pet-free, with non-feather pillows</li>
+</ul></div>
+<figure><img src="img/porch-view-480.webp" srcset="img/porch-view-480.webp 480w, img/porch-view-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 2rem), 500px" width="1000" height="750" alt="View from a cottage porch: a red picnic table on the lawn and the lake beyond" loading="lazy" decoding="async"></figure>
+</div>
+<div class="wrap sec two">
+<figure><img src="img/prospect-room-509.webp" width="509" height="676" alt="The Prospect Room: a stone fireplace, a piano and log furniture" loading="lazy" decoding="async"><figcaption>The Prospect Room, where books and beauty abound.</figcaption></figure>
+<div><h2>On the Point</h2>
+<ul class="list" style="columns:1">
+<li>Private sandy beach, 150 feet long</li>
+<li>Canoes, rowboats and paddle boats, free to all guests</li>
+<li>Badminton, horseshoes and lawn games on the hillside lawn</li>
+<li>A map of nearby hiking trails, on request</li>
+<li>Community room with piano, fireplace and library</li>
+</ul>
+<p class="lead" style="margin-top:1.4rem">Kick off your shoes, pull a book from the shelf, and enjoy an evening by the fire while friends tickle the ivories on the vintage 19th-century Steinway.</p></div>
+</div>
+<div class="wrap sec">
+<h2>Around the lake</h2>
+<div class="two">
+<ul class="list" style="columns:1">
+<li>Tennis is right in town and free for all to enjoy: just bring your own balls and rackets.</li>
+<li>The Adirondack Lakes Center for the Arts hosts concerts, classes, plays and exhibits.</li>
+<li>The Adirondack Museum, called "the best of its kind in the world" by the NY Times, is just across the lake.</li>
+<li>A guided historic cruise down the chain of lakes in an antique powerboat departs several times daily from the Boat Livery right in town. You can also rent a power boat there, a short walk up the road.</li>
+<li>Great Camp Sagamore, the northwoods retreat of the Vanderbilts and a National Historic Landmark, offers tours.</li>
+<li>Sightseeing, buffet or dinner cruises aboard the W W Durant on nearby Raquette Lake.</li>
+<li>The Wild Center, natural history museum of the Adirondacks, on Tupper Lake: just 30 minutes.</li>
+<li>Seaplane flights over the region with Helms Aero Service on Long Lake, only 11 miles away.</li>
+</ul>
+<figure><img src="img/castle-rock-400.webp" width="400" height="269" alt="Blue Mountain and the lake seen from Castle Rock, autumn color on the hills" loading="lazy" decoding="async"><figcaption>Blue Mountain, from Castle Rock.</figcaption></figure>
+</div></div>
+<div class="wrap sec">
+<h2>So come!</h2>
+<ul class="come">
+<li><b>Swim</b>the spring-fed waters of a crystal-clear lake.</li>
+<li><b>Fish</b>for bass, lake trout, brook trout and salmon.</li>
+<li><b>Sail</b>past picturesque islands of birch and cedar.</li>
+<li><b>Hike</b>up Castle Rock or Blue Mountain, or take a leisurely trail through the deep forest.</li>
+<li><b>Dine</b>at charming restaurants in the lovely hamlets of the park.</li>
+<li><b>Shop</b>for rustic treasures.</li>
+</ul>
+<p class="lead" style="margin-top:2rem">At Prospect Point, the wilderness is never far away. It is just outside your cabin door . . .</p>
+</div>
+<section class="cta-band"><div class="wrap"><h2>Pick your cottage</h2><p>Open May 20th to November 1st. During the summer, weekly rentals only.</p>
+<div class="actions"><a class="btn butter" href="tel:+15183527378">Call (518) 352-7378</a><a class="btn line" href="cottages.html">Cottages &amp; rates</a></div></div></section>
+</main>
+<footer class="site"><div class="wrap">
+<div class="cols">
+<div><h2>Prospect Point Cottages</h2><p>3381 New York Route 28<br>Post Office Box 113<br>Blue Mountain Lake, NY 12812</p><p>Tel <a href="tel:+15183527378">(518) 352-7378</a> · Fax (518) 352-7677<br><a href="mailto:info@prospectpt.com?subject=Cottage%20question">info@prospectpt.com</a></p></div>
+<nav aria-label="Footer"><a href="index.html">Home</a><a href="cottages.html">Cottages & rates</a><a href="the-point.html">Life on the Point</a><a href="history.html">History</a><a href="contact.html">Directions & contact</a></nav>
+<div><p>Open May 20th to November 1st.<br>During the summer, weekly rentals only.</p><p>Visa / Mastercard / Amex</p></div>
+</div>
+<p class="fine">Text, photographs and drawings copyright Prospect Point Cottages, LLC. Unofficial demo built by MHS Tecnologia for Prospect Point Cottages. Not affiliated with or endorsed by Prospect Point Cottages. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div></footer>
+<div class="sticky" aria-label="Contact"><a class="btn butter" href="tel:+15183527378">Call</a><a class="btn line" href="mailto:info@prospectpt.com?subject=Cottage%20availability">Email</a></div>
+
+<script>
+(function(){
+  var m=document.querySelector('.map');
+  if(m){document.querySelectorAll('[data-spot]').forEach(function(a){
+    var on=function(){m.querySelectorAll('.ring').forEach(function(r){r.classList.toggle('on',r.dataset.ring===a.dataset.spot)});m.setAttribute('data-on','')};
+    var off=function(){m.removeAttribute('data-on')};
+    a.addEventListener('mouseenter',on);a.addEventListener('focus',on);a.addEventListener('mouseleave',off);a.addEventListener('blur',off);});}
+  var d=document.getElementById('mapdlg');
+  document.querySelectorAll('[data-open-map]').forEach(function(b){b.addEventListener('click',function(){d.showModal()})});
+  if(d){d.querySelector('.close').addEventListener('click',function(){d.close()});d.addEventListener('click',function(ev){if(ev.target===d)d.close()});}
+  var s=document.querySelector('.sticky'),h=document.querySelector('[data-hero]');
+  if(s&&h&&'IntersectionObserver' in window){new IntersectionObserver(function(en){s.classList.toggle('show',!en[0].isIntersecting)}).observe(h)}
+})();
+</script>
+</body>
+</html>
