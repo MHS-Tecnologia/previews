@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Owl&rsquo;s Nest Campground, Junction City, Kansas</title>
+<meta name="description" content="RV campsites and two furnished cabins in Junction City, Kansas, minutes from Fort Riley. Open year round. Nightly, weekly and monthly stays.">
+<meta name="theme-color" content="#18222f">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" href="fonts/bigshoulders.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/atkinson.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/lane-800.webp" imagesrcset="img/lane-800.webp 800w, img/lane-1000.webp 1000w, img/lane-1400.webp 1400w" imagesizes="(min-width:1160px) 600px, (min-width:861px) 54vw, calc(100vw - 48px)" fetchpriority="high">
+<style>
+@font-face{font-family:"Big Shoulders";src:url(fonts/bigshoulders.woff2) format("woff2");font-weight:600 900;font-display:swap}
+@font-face{font-family:Atkinson;src:url(fonts/atkinson.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--night:#18222f;--asphalt:#3b4654;--owl:#f7941d;--owl-t:#a35300;--redbud:#a2306a;--sky:#eaf1f5;--paper:#fff;--ink:#18222f;--muted:#4c5866;--line:#d3dce3;
+--disp:"Big Shoulders",Impact,sans-serif;--sans:Atkinson,system-ui,sans-serif;--w:1160px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--owl-t);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--redbud);outline-offset:3px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1;letter-spacing:.005em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.6rem,5vw,4.4rem);max-width:16ch}
+h2{font-size:clamp(2rem,3.4vw,2.9rem);margin-bottom:.45em}
+h3{font-size:1.6rem;font-weight:750;margin-bottom:.3em}
+p{margin:0 0 1em;max-width:62ch}
+.lede{font-size:1.2rem;color:var(--muted)}
+.demo{max-width:none;margin:0;background:var(--night);color:#e6edf2;font-size:.8125rem;line-height:1.4;text-align:center;padding:7px 16px}
+.top{border-bottom:1px solid var(--line);background:var(--paper)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{display:block;flex:none}
+.brand img{width:172px;height:auto;border-radius:3px}
+.nav{display:flex;align-items:center;gap:26px}
+.nav>a{color:var(--ink);text-decoration:none;font-weight:600}
+.nav>a:hover{color:var(--owl-t)}
+.nav>a[aria-current]{box-shadow:inset 0 -3px var(--owl)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:0 22px;border-radius:999px;font:700 1.0625rem/1 var(--sans);text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-owl{background:var(--owl);color:var(--night)}
+.btn-owl:hover{background:#ffa83e}
+.btn-line{border-color:var(--night);color:var(--night);background:transparent}
+.btn-line:hover{background:var(--night);color:#fff}
+.nav .btn{min-height:44px;padding:0 18px}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:700;padding:10px 14px;border:2px solid var(--night);border-radius:999px}
+.menu summary::-webkit-details-marker{display:none}
+.menu div{position:absolute;right:0;top:calc(100% + 8px);background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 30px rgba(24,34,47,.18);padding:8px;min-width:220px;z-index:20}
+.menu div a{display:block;padding:12px 14px;color:var(--ink);text-decoration:none;font-weight:600;border-radius:6px}
+.menu div a:hover{background:var(--sky)}
+@media (max-width:860px){.nav>a{display:none}.menu{display:block}.brand img{width:140px}.bar{min-height:62px}}
+
+/* home hero */
+.hero{padding:48px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.22fr;gap:48px;align-items:center}
+.where{font-weight:700;color:var(--redbud);margin:0 0 14px}
+.hero h1{margin-bottom:20px}
+.hero .lede{margin-bottom:26px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hours{font-size:.95rem;color:var(--muted);margin:18px 0 0}
+.shot{margin:0}
+.shot img{width:100%;border-radius:4px}
+.shot figcaption{font-size:.875rem;color:var(--muted);margin-top:8px}
+@media (max-width:860px){
+ .hero{padding:22px 0 36px}
+ .hero .wrap{grid-template-columns:1fr;gap:22px}
+ .hero h1{font-size:2.45rem;margin-bottom:12px}
+ .hero .lede{font-size:1.05rem;margin-bottom:16px}
+ .where{margin-bottom:8px;font-size:.95rem}
+ .hero .actions .btn{flex:1 1 auto;padding:0 16px}
+ .hours{margin-top:12px}
+}
+
+/* the loop */
+.loop{background:var(--night);color:#e6edf2;padding:72px 0}
+.loop .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:48px;align-items:center}
+.loop h2{color:#fff}
+.loop p{color:#cfd9e1}
+.loop .rule{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--owl);margin-bottom:.6em}
+.counter{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px}
+.counter output{font-weight:700;color:#fff;font-size:1.1rem}
+.track{width:100%;height:auto}
+.track .note{fill:#9fb0bf;font:600 13px var(--sans)}
+@media (max-width:860px){.loop{padding:52px 0}.loop .wrap{grid-template-columns:1fr;gap:28px}}
+
+/* sections */
+.band{padding:72px 0}
+.band.sky{background:var(--sky)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.split.mid{align-items:center}
+@media (max-width:860px){.band{padding:52px 0}.split{grid-template-columns:1fr;gap:28px}}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{padding:12px 0 12px 30px;border-top:1px solid var(--line);position:relative}
+.facts li:last-child{border-bottom:1px solid var(--line)}
+.facts li::before{content:"";position:absolute;left:4px;top:21px;width:12px;height:12px;border-radius:50%;background:var(--owl)}
+.facts small{display:block;color:var(--muted);font-size:.9rem}
+.cols2{columns:2;column-gap:40px}
+.cols2 li{break-inside:avoid}
+@media (max-width:640px){.cols2{columns:1}}
+
+/* rate board */
+.rates{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;background:var(--paper);border-radius:8px;overflow:hidden}
+.rates th,.rates td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:baseline}
+.rates thead th{background:var(--night);color:#fff;font-weight:700;font-size:.95rem}
+.rates td.n{font-family:var(--disp);font-weight:800;font-size:2rem;line-height:1;white-space:nowrap}
+.rates tr:last-child td,.rates tr:last-child th{border-bottom:0}
+.small{font-size:.95rem;color:var(--muted)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+
+/* cabins teaser */
+.cabin-pair{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.cabin-pair img{max-width:none;border-radius:4px;width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){.cabin-pair{grid-template-columns:1fr}}
+
+/* directions */
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;padding:10px 0 10px 48px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:32px;height:32px;border-radius:50%;background:var(--night);color:#fff;font:800 1.05rem/32px var(--disp);text-align:center}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px}
+.card h3{margin-top:0}
+.contact-lines a{font-weight:700}
+
+/* page heads */
+.phead{padding:44px 0 34px;border-bottom:1px solid var(--line)}
+.phead h1{max-width:18ch;margin-bottom:14px}
+.phead .lede{margin:0}
+@media (max-width:860px){.phead{padding:28px 0 24px}.phead h1{font-size:2.5rem}}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin:0;padding:0;list-style:none}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.gallery figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
+@media (max-width:640px){.gallery{grid-template-columns:1fr}}
+
+.more summary{cursor:pointer;display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border:2px solid var(--night);border-radius:999px;font-weight:700;margin-bottom:20px}
+.more[open] summary{margin-bottom:24px}
+.warn{border-left:6px solid var(--redbud);background:#fbeef4;padding:22px 24px;border-radius:0 8px 8px 0}
+.warn h3{color:var(--redbud)}
+
+/* footer */
+.foot{background:var(--night);color:#cfd9e1;padding:52px 0 110px;font-size:.95rem}
+.foot .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+.foot a{color:#fff}
+.foot h2{font-size:1.4rem;color:#fff;margin-bottom:.5em}
+.foot .legal{grid-column:1/-1;border-top:1px solid #33414f;padding-top:20px;color:#a9b6c2;font-size:.85rem}
+.foot .legal p{max-width:none;margin:0 0 .4em}
+@media (max-width:860px){.foot .wrap{grid-template-columns:1fr}}
+@media (min-width:861px){.foot{padding-bottom:52px}}
+
+/* mobile call bar */
+.mcta{position:fixed;left:0;right:0;bottom:0;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);z-index:30;transform:translateY(110%);transition:transform .25s ease}
+.mcta .btn{flex:1;min-height:48px}
+.mcta.on{transform:none}
+@media (max-width:860px){.mcta{display:flex}}
+@media (prefers-reduced-motion:reduce){.mcta{transition:none}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Owl&rsquo;s Nest Campground, Junction City, Kansas">
+<meta property="og:description" content="RV campsites and two furnished cabins in Junction City, Kansas, minutes from Fort Riley. Open year round. Nightly, weekly and monthly stays.">
+<meta property="og:url" content="https://demo.mhstecnologia.com/owls-nest-campground-junction-city-ks/">
+<meta property="og:image" content="https://demo.mhstecnologia.com/owls-nest-campground-junction-city-ks/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Owl&rsquo;s Nest Campground. Not affiliated with or endorsed by Owl&rsquo;s Nest Campground.</p>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html"><img src="img/logo.webp" width="450" height="126" alt="Owl&rsquo;s Nest Campground"></a>
+<nav class="nav" aria-label="Main"><a href="campground.html">Campground</a><a href="cabins.html">Cabins</a><a href="area.html">Around town</a><a href="contact.html">Reserve</a><a class="btn btn-owl" href="tel:+17852380778">Call 785-238-0778</a>
+<details class="menu"><summary>Menu</summary><div><a href="index.html">Home</a><a href="campground.html">Campground</a><a href="cabins.html">Cabins</a><a href="area.html">Around town</a><a href="contact.html">Reserve</a><a href="tel:+17852380778">Call 785-238-0778</a></div></details></nav>
+</div>
+</header>
+<main>
+<section class="hero" data-hero>
+<div class="wrap">
+<div>
+<p class="where">Junction City, Kansas. Open year round.</p>
+<h1>Larger&#8209;than&#8209;most campsites, minutes from Fort&nbsp;Riley.</h1>
+<p class="lede">Grass, trees and picnic tables, 30 or 50 amp hook-ups, water and sewer. Stay a night, a week or a month, or take one of our two furnished cabins.</p>
+<div class="actions"><a class="btn btn-owl" href="tel:+17852380778">Call 785-238-0778</a><a class="btn btn-line" href="mailto:info@owlsnestcampground.com">Email us</a></div>
+<p class="hours">Office Monday to Friday, 8:30 to 5. After hours, see our camp host.</p>
+</div>
+<figure class="shot">
+<img src="img/lane-800.webp" srcset="img/lane-800.webp 800w, img/lane-1000.webp 1000w, img/lane-1400.webp 1400w" sizes="(min-width:1160px) 600px, (min-width:861px) 54vw, calc(100vw - 48px)" width="1400" height="1050" alt="Redbud trees in bloom along the campground road, with RVs parked at the sites" fetchpriority="high">
+<figcaption>Redbuds in bloom along the campground road.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="loop" aria-labelledby="loop-h">
+<div class="wrap">
+<div>
+<h2 id="loop-h">Six laps make a mile.</h2>
+<p class="rule">Drive slow. One way road.</p>
+<p>Our entrance road runs one way, counter-clockwise, around the campsites. Back-in sites are angled off that direction, so it is easier to swing your camper onto the site.</p>
+<p>Out for a walk? Six laps around our campsites on the access road equals one mile.</p>
+<div class="counter"><button class="btn btn-owl" type="button" id="lapbtn">Walk a lap</button><output id="laps" aria-live="polite">0 laps so far</output></div>
+</div>
+<svg class="track" viewBox="0 0 600 360" role="img" aria-labelledby="trk-t">
+<title id="trk-t">Drawing of the one-way access road looping counter-clockwise around the campsites</title>
+<g fill="#a2306a" opacity=".9"><circle cx="196" cy="182" r="9"/><circle cx="286" cy="182" r="9"/><circle cx="376" cy="182" r="9"/><circle cx="34" cy="40" r="13"/><circle cx="566" cy="40" r="11"/><circle cx="566" cy="318" r="13"/><circle cx="34" cy="318" r="11"/></g>
+<g fill="#5e6f80">
+<rect x="130" y="128" width="14" height="30" rx="3" transform="rotate(-30 137 143)"/><rect x="175" y="128" width="14" height="30" rx="3" transform="rotate(-30 182 143)"/><rect x="220" y="128" width="14" height="30" rx="3" transform="rotate(-30 227 143)"/><rect x="265" y="128" width="14" height="30" rx="3" transform="rotate(-30 272 143)"/><rect x="310" y="128" width="14" height="30" rx="3" transform="rotate(-30 317 143)"/><rect x="355" y="128" width="14" height="30" rx="3" transform="rotate(-30 362 143)"/><rect x="400" y="128" width="14" height="30" rx="3" transform="rotate(-30 407 143)"/>
+<rect x="160" y="205" width="14" height="30" rx="3" transform="rotate(30 167 220)"/><rect x="205" y="205" width="14" height="30" rx="3" transform="rotate(30 212 220)"/><rect x="250" y="205" width="14" height="30" rx="3" transform="rotate(30 257 220)"/><rect x="295" y="205" width="14" height="30" rx="3" transform="rotate(30 302 220)"/><rect x="340" y="205" width="14" height="30" rx="3" transform="rotate(30 347 220)"/><rect x="385" y="205" width="14" height="30" rx="3" transform="rotate(30 392 220)"/><rect x="430" y="205" width="14" height="30" rx="3" transform="rotate(30 437 220)"/>
+</g>
+<path id="road" d="M300,290 H410 A110,110 0 0 0 410,70 H190 A110,110 0 0 0 190,290 Z" fill="none" stroke="#3b4654" stroke-width="34" stroke-linejoin="round"/>
+<path d="M300,290 H410 A110,110 0 0 0 410,70 H190 A110,110 0 0 0 190,290 Z" fill="none" stroke="#f7941d" stroke-width="2" stroke-dasharray="10 12" opacity=".75"/>
+<g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="292,282 302,290 292,298"/><polyline points="512,188 520,178 528,188"/><polyline points="308,62 298,70 308,78"/><polyline points="72,172 80,182 88,172"/>
+</g>
+<circle id="you" cx="300" cy="290" r="10" fill="#f7941d" stroke="#fff" stroke-width="3"/>
+<text class="note" x="300" y="342" text-anchor="middle">One way, counter-clockwise. Drawing not to scale.</text>
+</svg>
+</div>
+</section>
+
+<section class="band" aria-labelledby="site-h">
+<div class="wrap split mid">
+<figure class="shot">
+<img src="img/row-800.webp" srcset="img/row-800.webp 800w, img/row-1200.webp 1200w" sizes="(min-width:1160px) 532px, (min-width:861px) 46vw, calc(100vw - 48px)" width="1200" height="900" loading="lazy" alt="A paved lane between campsites lined with young trees and RVs">
+</figure>
+<div>
+<h2 id="site-h">At your site</h2>
+<ul class="facts">
+<li>30 or 50 amp electrical hook-ups, water and sewer</li>
+<li>Grass, trees and a picnic table</li>
+<li>Paved and nearly level<small>Boards for your jacks are in a box on the north side of the office.</small></li>
+<li>Room for two additional vehicles</li>
+<li>High speed wireless internet, included with your reservation</li>
+<li>Cable at long-term sites<small>Check out a cable box from the office.</small></li>
+</ul>
+<p style="margin-top:18px"><a href="campground.html">Everything on the grounds</a></p>
+</div>
+</div>
+</section>
+
+<section class="band sky" aria-labelledby="rate-h">
+<div class="wrap split">
+<div>
+<h2 id="rate-h">Rates</h2>
+<p>Pay at the office, with the camp host after hours, or online. We take credit and debit cards, checks with proper identification, and cash.</p>
+<p>Not sure how long you will stay? Once you decide, we will work with you on any credits or adjustments so you get the best rate possible.</p>
+<p><strong>We stay fairly full, so reserve your campsite today.</strong></p>
+<div class="actions"><a class="btn btn-owl" href="tel:+17852380778">Call 785-238-0778</a></div>
+</div>
+<div class="tablewrap"><table class="rates">
+<caption class="small" style="caption-side:bottom;text-align:left;padding:12px 18px">Monthly is plus your electric usage. Additional charges apply for multiple occupants and pets.</caption>
+<thead><tr><th scope="col">RV camping</th><th scope="col">Rate</th></tr></thead>
+<tbody>
+<tr><th scope="row">Nightly</th><td class="n">$50</td></tr>
+<tr><th scope="row">Weekly</th><td class="n">$300</td></tr>
+<tr><th scope="row">Monthly, plus electric</th><td class="n">$480</td></tr>
+<tr><th scope="row">Tent camping</th><td class="n">$20</td></tr>
+</tbody></table></div>
+</div>
+</section>
+
+<section class="band" aria-labelledby="cab-h">
+<div class="wrap split mid">
+<div>
+<h2 id="cab-h">Two fully furnished cabins</h2>
+<p>Our cabin has a screened-in porch and a sleeping loft. Inside you will find gas heat, central air, a stove, refrigerator and a bathroom with shower, plus a cozy bedroom with a full size bed.</p>
+<p>Nightly from $55, weekly from $300.</p>
+<p><a href="cabins.html">Cabin rates and details</a></p>
+</div>
+<div class="cabin-pair">
+<img src="img/cabin-700.webp" srcset="img/cabin-700.webp 700w, img/cabin-1100.webp 1100w" sizes="(min-width:1160px) 300px, (min-width:861px) 26vw, calc(100vw - 48px)" width="1100" height="825" loading="lazy" alt="Cabin with a covered porch and a picnic table on the lawn">
+<img src="img/cabin-inside.webp" sizes="(min-width:1160px) 240px, (min-width:861px) 21vw, calc(100vw - 48px)" width="987" height="417" loading="lazy" alt="Cabin interior: wood-paneled room with a stair to the loft, a dining table and the bedroom beyond">
+</div>
+</div>
+</section>
+
+<section class="band sky" aria-labelledby="dir-h">
+<div class="wrap split">
+<div>
+<h2 id="dir-h">Getting here from I-70</h2>
+<ol class="steps">
+<li>Take exit 295, US-77/KS-18 W, from either direction.</li>
+<li>Go south on US-77 for about 100 yards.</li>
+<li>Turn right (west) on Old Highway 40.</li>
+<li>We are on the right, just past Champions Car Wash and AA Self Storage.</li>
+</ol>
+</div>
+<div class="card">
+<h3>Owl&rsquo;s Nest Campground</h3>
+<p>1912 Old Highway 40, Junction City, KS 66441</p>
+<p class="contact-lines"><a href="tel:+17852380778">785-238-0778</a><br><a href="mailto:info@owlsnestcampground.com">info@owlsnestcampground.com</a></p>
+<p class="small" style="margin:0">Office Monday to Friday, 8:30 to 5. For reservations or payments after hours or on weekends, please see our camp host.</p>
+</div>
+</div>
+</section>
+<script>
+(function(){var p=document.getElementById('road'),d=document.getElementById('you'),btn=document.getElementById('lapbtn'),out=document.getElementById('laps');
+if(!p||!d)return;var L=p.getTotalLength(),still=matchMedia('(prefers-reduced-motion: reduce)').matches,busy=false,n=0;
+var words=['','1/6 of a mile','1/3 of a mile','half a mile','2/3 of a mile','5/6 of a mile','one mile'];
+function put(t){var q=p.getPointAtLength((t%1)*L);d.setAttribute('cx',q.x);d.setAttribute('cy',q.y)}
+function lap(ms,done){if(still||busy){done&&done();return}busy=true;var s=null;
+function f(ts){if(s===null)s=ts;var k=Math.min(1,(ts-s)/ms);k=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;put(k);if(k<1)requestAnimationFrame(f);else{busy=false;put(0);done&&done()}}
+requestAnimationFrame(f)}
+if('IntersectionObserver'in window){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();lap(3600)}},{threshold:.5});io.observe(p.ownerSVGElement)}
+btn.addEventListener('click',function(){if(busy)return;lap(2200,function(){n=n>=6?1:n+1;out.textContent=n+(n===1?' lap':' laps')+' = '+words[n]+(n===6?'. Done.':'')})});
+})();
+</script>
+</main>
+<footer class="foot">
+<div class="wrap">
+<div>
+<h2>Owl&rsquo;s Nest Campground</h2>
+<p>1912 Old Highway 40, Junction City, KS 66441<br>Open year round. Just a few minutes from Fort Riley.</p>
+</div>
+<div>
+<h2>Office</h2>
+<p>Monday to Friday, 8:30 to 5.<br>After hours and on weekends, see our camp host for reservations or payments.</p>
+</div>
+<div>
+<h2>Reach us</h2>
+<p><a href="tel:+17852380778">785-238-0778</a><br><a href="mailto:info@owlsnestcampground.com">info@owlsnestcampground.com</a></p>
+</div>
+<div class="legal">
+<p>Unofficial demo built by MHS Tecnologia for Owl&rsquo;s Nest Campground. Not affiliated with or endorsed by Owl&rsquo;s Nest Campground. Facts and photos come from owlsnestcampground.com.</p>
+<p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div>
+</div>
+</footer>
+<div class="mcta" id="mcta"><a class="btn btn-owl" href="tel:+17852380778">Call to reserve</a><a class="btn btn-line" href="mailto:info@owlsnestcampground.com">Email</a></div>
+<script>
+(function(){var b=document.getElementById('mcta'),h=document.querySelector('[data-hero]');if(!b||!('IntersectionObserver'in window))return;
+if(!h){b.classList.add('on');return}
+new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting)}).observe(h)})();
+</script>
+</body>
+</html>
