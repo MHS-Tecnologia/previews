@@ -152,7 +152,7 @@ dl.facts dd{margin:0;color:var(--muted)}
 .units b.no{font:700 1.25rem/1.3 Corben,Georgia,serif;color:var(--ink)}
 .units .new{font-weight:700;color:var(--pine)}
 .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
-.pics .wide{grid-column:1 / -1}
+.pics .wide{grid-column:1 / -1}.pics.side{display:block;margin-top:1.4rem}
 .zoom{display:block;width:100%;padding:0;border:0;background:#0c1d25;cursor:zoom-in;position:relative}
 .zoom img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .pics .wide .zoom img{aspect-ratio:16/9}
@@ -176,6 +176,7 @@ ul.tick li{margin:.35rem 0}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.2rem;margin-top:2.4rem}
 .cols ul{list-style:none;padding:0}
 .cols li{padding:.45rem 0;border-top:1px solid var(--line)}
+.areaphoto{margin:3rem 0 0}.areaphoto img{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:4px}.areaphoto figcaption{font-size:.9rem;color:var(--muted);margin-top:.5rem}
 .note{font-size:.95rem;color:var(--muted);margin-top:1.4rem;max-width:46rem}
 @media (max-width:899px){.split{grid-template-columns:1fr;gap:1.6rem}}
 footer.foot{background:#0c1d25;color:#aebfc6;padding:2.8rem 0 2.8rem;font-size:.95rem}
@@ -236,9 +237,9 @@ footer.foot .legal{grid-column:1 / -1;border-top:1px solid rgba(255,255,255,.15)
   <div>
    <h2 id="t-ca"><i class="i-ca" aria-hidden="true"></i>Cabins</h2>
    <p class="all">Cabins B, C, D, E, F and G. One double bed and a bathroom with shower, with an air conditioner, a TV and a refrigerator. Guests share a communal kitchen for coffee and meals.</p>
+   <div class="pics side"><figure class="wide"><button class="zoom" type="button" data-full="img/cabins-1280.webp" data-cap="The cabins." aria-label="Enlarge photo: A row of small dark-brown cabins with striped awnings under tall trees"><img src="img/cabins-640.webp" srcset="img/cabins-480.webp 480w, img/cabins-640.webp 640w, img/cabins-960.webp 960w, img/cabins-1280.webp 1280w" sizes="(min-width: 1260px) 470px, (min-width: 900px) 38vw, 100vw" width="1280" height="960" alt="A row of small dark-brown cabins with striped awnings under tall trees" loading="lazy" decoding="async"></button><figcaption>The cabins.</figcaption></figure></div>
   </div>
   <div class="pics">
-   <figure class="wide"><button class="zoom" type="button" data-full="img/cabins-1280.webp" data-cap="The cabins." aria-label="Enlarge photo: A row of small dark-brown cabins with striped awnings under tall trees"><img src="img/cabins-640.webp" srcset="img/cabins-480.webp 480w, img/cabins-640.webp 640w, img/cabins-960.webp 960w, img/cabins-1280.webp 1280w" sizes="(min-width: 1260px) 690px, (min-width: 900px) 56vw, 100vw" width="1280" height="960" alt="A row of small dark-brown cabins with striped awnings under tall trees" loading="lazy" decoding="async"></button><figcaption>The cabins.</figcaption></figure>
    <figure><button class="zoom" type="button" data-full="img/cabin-bed-640.webp" data-cap="Cabin bedroom" aria-label="Enlarge photo: Double bed in a wood-paneled cabin"><img src="img/cabin-bed-640.webp" srcset="img/cabin-bed-480.webp 480w, img/cabin-bed-640.webp 640w" sizes="(min-width: 1260px) 340px, (min-width: 900px) 28vw, 100vw" width="640" height="480" alt="Double bed in a wood-paneled cabin" loading="lazy" decoding="async"></button><figcaption>Cabin bedroom</figcaption></figure>
    <figure><button class="zoom" type="button" data-full="img/cabin-area-640.webp" data-cap="Inside a cabin" aria-label="Enlarge photo: Desk, chair and TV in a cabin"><img src="img/cabin-area-640.webp" srcset="img/cabin-area-480.webp 480w, img/cabin-area-640.webp 640w" sizes="(min-width: 1260px) 340px, (min-width: 900px) 28vw, 100vw" width="640" height="480" alt="Desk, chair and TV in a cabin" loading="lazy" decoding="async"></button><figcaption>Inside a cabin</figcaption></figure>
   </div>
@@ -247,6 +248,7 @@ footer.foot .legal{grid-column:1 / -1;border-top:1px solid rgba(255,255,255,.15)
   <div>
    <h2 id="t-ef"><i class="i-ef" aria-hidden="true"></i>The efficiency</h2>
    <p class="all">Unit 10 is one of a kind: one king bed, a bathroom with shower, a kitchenette and dining area, an air conditioner, a TV and a refrigerator.</p>
+   <a class="btn btn-sign" href="tel:+15182815061"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Ask about unit 10</a>
   </div>
   <div class="pics">
    <figure><button class="zoom" type="button" data-full="img/eff-kitchen-640.webp" data-cap="Kitchenette" aria-label="Enlarge photo: Kitchenette with microwave and small refrigerator"><img src="img/eff-kitchen-640.webp" srcset="img/eff-kitchen-480.webp 480w, img/eff-kitchen-640.webp 640w" sizes="(min-width: 1260px) 340px, (min-width: 900px) 28vw, 100vw" width="640" height="480" alt="Kitchenette with microwave and small refrigerator" loading="lazy" decoding="async"></button><figcaption>Kitchenette</figcaption></figure>

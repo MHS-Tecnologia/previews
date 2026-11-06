@@ -152,7 +152,7 @@ dl.facts dd{margin:0;color:var(--muted)}
 .units b.no{font:700 1.25rem/1.3 Corben,Georgia,serif;color:var(--ink)}
 .units .new{font-weight:700;color:var(--pine)}
 .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
-.pics .wide{grid-column:1 / -1}
+.pics .wide{grid-column:1 / -1}.pics.side{display:block;margin-top:1.4rem}
 .zoom{display:block;width:100%;padding:0;border:0;background:#0c1d25;cursor:zoom-in;position:relative}
 .zoom img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .pics .wide .zoom img{aspect-ratio:16/9}
@@ -176,6 +176,7 @@ ul.tick li{margin:.35rem 0}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2.2rem;margin-top:2.4rem}
 .cols ul{list-style:none;padding:0}
 .cols li{padding:.45rem 0;border-top:1px solid var(--line)}
+.areaphoto{margin:3rem 0 0}.areaphoto img{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:4px}.areaphoto figcaption{font-size:.9rem;color:var(--muted);margin-top:.5rem}
 .note{font-size:.95rem;color:var(--muted);margin-top:1.4rem;max-width:46rem}
 @media (max-width:899px){.split{grid-template-columns:1fr;gap:1.6rem}}
 footer.foot{background:#0c1d25;color:#aebfc6;padding:2.8rem 0 2.8rem;font-size:.95rem}
@@ -217,6 +218,7 @@ footer.foot .legal{grid-column:1 / -1;border-top:1px solid rgba(255,255,255,.15)
    <p>Delis and restaurants are within walking distance. On Route 9N it takes less than ten minutes to reach the well-known places to eat in Lake George and Lake Luzerne, and there is entertainment and dancing nearby every night.</p>
   </div>
  </div>
+ <figure class="areaphoto"><img src="img/fall-640.webp" srcset="img/fall-480.webp 480w, img/fall-640.webp 640w, img/fall-960.webp 960w, img/fall-1280.webp 1280w" sizes="(min-width: 1260px) 1150px, 100vw" width="1280" height="960" alt="Red and orange fall trees on the Lake Vanare shore, reflected in still water" loading="lazy" decoding="async"><figcaption>Fall color on Lake Vanare.</figcaption></figure>
  <div class="cols">
   <div><h3>Family days</h3><ul><li>The Great Escape &amp; Splash Water Kingdom</li><li>Magic Forest</li><li>Wild West Ranch &amp; Western Town</li><li>Painted Pony Championship Rodeo</li><li>Upper Hudson River Railroad</li><li>Pirate's Cove Miniature Golf</li></ul></div>
   <div><h3>History and views</h3><ul><li>Fort William Henry</li><li>Fort Ticonderoga</li><li>Adirondack Museum</li><li>Prospect Mountain 100-Mile View</li><li>Natural Stone Bridge &amp; Caves</li><li>Ausable Chasm</li></ul></div>
