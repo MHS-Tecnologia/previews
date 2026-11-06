@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/besley.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" imagesrcset="img/hero-m-800.webp 800w" imagesizes="100vw" media="(max-width: 760px)">
-<link rel="preload" as="image" imagesrcset="img/hero-760.webp 760w, img/hero-1100.webp 1100w, img/hero-1520.webp 1520w" imagesizes="(min-width: 1240px) 600px, 50vw" media="(min-width: 761px)">
+<link rel="preload" as="image" imagesrcset="img/hero-760.webp 760w, img/hero-1100.webp 1100w, img/hero-1500.webp 1500w" imagesizes="(min-width: 1240px) 560px, 46vw" media="(min-width: 761px)">
 <style>@font-face{font-family:"Besley";font-weight:400 900;font-display:swap;src:url(fonts/besley.woff2) format("woff2")}
 @font-face{font-family:"Public Sans";font-weight:100 900;font-display:swap;src:url(fonts/publicsans.woff2) format("woff2")}
 :root{
@@ -77,7 +77,7 @@ figure{margin:0}
 
 /* hero */
 .hero{padding:clamp(28px,5vw,64px) 0 clamp(40px,6vw,80px)}
-.hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:clamp(32px,5vw,72px);align-items:center}
+.hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:clamp(32px,5vw,72px);align-items:center}
 .hero-text{display:grid;grid-template-columns:auto 1fr;gap:28px}
 .route-hero{flex-direction:column;align-items:center;gap:10px;writing-mode:horizontal-tb}
 .route-hero .rail{flex-direction:column;width:2px;min-width:0}
@@ -89,8 +89,9 @@ figure{margin:0}
 .hero h1{font-size:clamp(2.1rem,1.2rem + 2.6vw,3.4rem);line-height:1.06;font-weight:800;letter-spacing:-.02em;max-width:11em}
 .hero .lede{margin-top:1.25rem}
 .toll{margin:.9rem 0 0;color:var(--ink-2);font-size:.9375rem}
+.book-note{margin:.35rem 0 0;color:var(--ink-2);font-size:.875rem}
 .hero-photo{position:relative}
-.hero-photo img{width:100%;border-radius:4px;aspect-ratio:4/3;object-fit:cover}
+.hero-photo img{width:100%;border-radius:4px}
 .hero-photo figcaption,.reach-photo figcaption{margin-top:8px;font-size:.875rem;color:var(--ink-2)}
 
 /* front desk */
@@ -115,9 +116,9 @@ figure{margin:0}
 .room-types a:hover{color:var(--blue)}
 
 /* valley */
-.valley{background:var(--sky);padding-bottom:clamp(48px,7vw,96px)}
+.valley{background:var(--sky);padding:clamp(48px,7vw,96px) 0}
 .valley-photo img{width:100%;height:clamp(260px,38vw,560px);object-fit:cover}
-.valley-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(28px,5vw,72px);align-items:center;padding-top:clamp(36px,5vw,64px)}
+.valley-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(28px,5vw,72px);align-items:center}
 .valley-copy p{margin-top:1rem;color:var(--ink-2);max-width:34em}
 .valley-copy .btn{margin-top:.5rem}
 
@@ -169,15 +170,16 @@ figure{margin:0}
 .amen-list li{break-inside:avoid;padding:10px 0 10px 22px;border-bottom:1px solid var(--line);position:relative}
 .amen-list li::before{content:"";position:absolute;left:2px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--gold)}
 .tale{padding:clamp(40px,6vw,80px) 0}
-.tale-in{display:grid;grid-template-columns:minmax(0,700px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.tale-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:clamp(28px,5vw,64px);align-items:center}
 .tale-photo img{border-radius:4px;width:100%}
 .tale-copy p{margin-top:1rem;color:var(--ink-2)}
 .harmony img{width:100%;height:clamp(240px,36vw,520px);object-fit:cover}
 .harmony figcaption{max-width:calc(var(--wrap) + 2*var(--gut));margin:8px auto 0;padding:0 var(--gut);font-size:.875rem;color:var(--ink-2)}
 .near{padding:clamp(44px,6vw,80px) 0}
-.near-in{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:clamp(28px,5vw,64px);align-items:start;margin-top:1.5rem}
+.near-in{margin-top:1.5rem;max-width:760px}
 .near-list{list-style:none;margin:0;padding:0;border-top:2px solid var(--gold)}
-.near-list li{font-family:var(--serif);font-weight:700;font-size:clamp(1.25rem,1rem + .9vw,1.6rem);padding:16px 0;border-bottom:1px solid var(--line)}
+.near-list{columns:2;column-gap:40px}
+.near-list li{break-inside:avoid;font-family:var(--serif);font-weight:700;font-size:1.1875rem;padding:12px 0;border-bottom:1px solid var(--line)}
 .near-photo img{border-radius:4px;width:100%}
 .near-ask{margin-top:1.75rem;font-weight:600}
 .reach{padding:clamp(36px,5vw,64px) 0}
@@ -206,7 +208,6 @@ figure{margin:0}
 
 @media (max-width:900px){
   .rooms-in,.valley-in,.find-in,.tale-in,.amen-in,.reach-in,.desk-in,.near-in{grid-template-columns:minmax(0,1fr)}
-  .near-photo{max-width:400px}
   .foot-in{grid-template-columns:1fr 1fr}
   .foot-in > div:first-child{grid-column:1/-1}
 }
@@ -232,10 +233,11 @@ figure{margin:0}
   .actions{margin-top:1.1rem}
   .actions .btn{flex:1 1 auto}
   .toll{display:none}
-  .hero-photo img{aspect-ratio:3/2}
   .room-pics{grid-template-columns:minmax(0,1fr)}
   .room-grid{grid-template-columns:minmax(0,1fr)}
   .amen-list ul{columns:1}
+  .near-list{columns:1}
+  .book-note{margin-top:.6rem}
   .reach-list div{grid-template-columns:minmax(0,1fr);gap:2px}
   .foot-in{grid-template-columns:minmax(0,1fr)}
   .dock{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--ink);transform:translateY(110%);transition:transform .25s ease}
@@ -305,14 +307,15 @@ figure{margin:0}
           <a class="btn btn-line" href="mailto:tulipinn@hotmail.com?subject=Room%20request">Email the front desk</a>
         </div>
         <p class="toll">Toll free <a href="tel:+18005995969">800.599.5969</a></p>
+        <p class="book-note">Instant on-line reservations are also available on the inn&rsquo;s current website.</p>
       </div>
     </div>
     <figure class="hero-photo">
       <picture>
-        <source media="(max-width: 760px)" srcset="img/hero-m-800.webp 800w" sizes="100vw" width="800" height="533">
-        <img src="img/hero-1100.webp" srcset="img/hero-760.webp 760w, img/hero-1100.webp 1100w, img/hero-1520.webp 1520w" sizes="(min-width: 1240px) 600px, 50vw" width="1520" height="1140" alt="Queen room at Tulip INN: bed with a red runner, lamp and work desk" fetchpriority="high">
+        <source media="(max-width: 760px)" srcset="img/hero-m-800.webp 800w" sizes="100vw" width="800" height="600">
+        <img src="img/hero-1100.webp" srcset="img/hero-760.webp 760w, img/hero-1100.webp 1100w, img/hero-1500.webp 1500w" sizes="(min-width: 1240px) 560px, 46vw" width="1500" height="1300" alt="The tall Tulip INN sign in front of the inn, a two-story building with a metal roof, on Freeway Drive" fetchpriority="high">
       </picture>
-      <figcaption>Queen single room</figcaption>
+      <figcaption>The inn and its sign at 2200 Freeway Drive</figcaption>
     </figure>
   </div>
 </section>
@@ -352,9 +355,6 @@ figure{margin:0}
 </section>
 
 <section class="valley" aria-labelledby="valley-h">
-  <figure class="valley-photo">
-    <img src="img/tulips-sunset-800.webp" srcset="img/tulips-sunset-480.webp 480w, img/tulips-sunset-800.webp 800w, img/tulips-sunset-1200.webp 1200w" sizes="100vw" width="1200" height="697" alt="Rows of orange tulips running to the horizon at sunset" loading="lazy" decoding="async">
-  </figure>
   <div class="wrap valley-in">
     <div class="valley-copy">
       <h2 id="valley-h">Skagit Valley is often called &ldquo;Little Holland&rdquo;</h2>
@@ -385,9 +385,12 @@ figure{margin:0}
         <a class="btn btn-line" href="contact.html">All the ways to reach us</a>
       </div>
     </div>
-    <figure class="find-photo">
-      <img src="img/entrance-900.webp" srcset="img/entrance-600.webp 600w, img/entrance-900.webp 900w, img/entrance-1400.webp 1400w" sizes="(min-width: 1240px) 560px, (min-width: 900px) 46vw, 100vw" width="1400" height="1104" alt="The Tulip INN sign and two-story building from the driveway" loading="lazy" decoding="async">
-    </figure>
+    <dl class="reach-list find-desk">
+      <div><dt>Phone</dt><dd><a href="tel:+13604285969">360.428.5969</a></dd></div>
+      <div><dt>Toll free</dt><dd><a href="tel:+18005995969">800.599.5969</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:tulipinn@hotmail.com?subject=Room%20request">tulipinn@hotmail.com</a></dd></div>
+      <div><dt>Fax</dt><dd>360.424.6069</dd></div>
+    </dl>
   </div>
 </section>
 
