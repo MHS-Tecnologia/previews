@@ -64,7 +64,7 @@ p{margin:0 0 1em}
 .actions{display:flex;flex-wrap:wrap;gap:10px}
 .book-note{font-size:.95rem;color:var(--muted);margin:14px 0 0}
 .hero figure{margin:clamp(22px,3vw,40px) 0 0}
-.hero figure img{width:100%;aspect-ratio:2800/836;object-fit:cover;border-radius:6px}
+.hero figure img{width:100%;aspect-ratio:2224/836;object-fit:cover;border-radius:6px}
 .hero figcaption,.cap{font-size:.92rem;color:var(--muted);margin-top:8px}
 /* river story: the signature */
 .story{padding:clamp(56px,8vw,110px) 0}
@@ -93,8 +93,8 @@ p{margin:0 0 1em}
 @keyframes draw{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
 /* the stay */
 .band{padding:clamp(48px,7vw,96px) 0;background:var(--paper)}
-.stay{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
-.stay figure{margin:0}
+.stay{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,64px);align-items:start}
+.stay figure{margin:0;max-width:460px}
 .stay figure img{width:100%;border-radius:6px}
 .facts{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line)}
 .facts li{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:10.5rem 1fr;gap:12px}
@@ -113,7 +113,7 @@ p{margin:0 0 1em}
 .season .btn-line{border-color:#fff;color:#fff}
 .season .btn-line:hover{background:rgba(255,255,255,.1)}
 /* inner pages */
-.page-head{padding:clamp(28px,5vw,64px) 0 clamp(20px,3vw,32px)}
+.page-head{padding-block:clamp(28px,5vw,64px) clamp(20px,3vw,32px)}
 .page-head p{font-size:1.2rem;color:var(--muted);max-width:52ch;margin:14px 0 0}
 .page-photo{margin-top:0;margin-bottom:clamp(36px,5vw,64px)}
 .page-photo img{width:100%;border-radius:6px;object-fit:cover}
