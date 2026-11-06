@@ -11,7 +11,7 @@
 <link rel="preload" href="fonts/bree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/redhattext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" media="(max-width: 760px)" imagesrcset="img/pond-m.webp 800w" imagesizes="calc(100vw - 32px)" fetchpriority="high">
-<link rel="preload" as="image" media="(min-width: 761px)" imagesrcset="img/pond-900.webp 900w, img/pond-1240.webp 1240w" imagesizes="(max-width: 760px) calc(100vw - 32px), (min-width: 1240px) 655px, 55vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 761px)" imagesrcset="img/pond-900.webp 900w, img/pond-1240.webp 1240w" imagesizes="(max-width: 760px) calc(100vw - 32px), calc(100vw - 560px)" fetchpriority="high">
 <style>@font-face{font-family:"Bree Serif";src:url(fonts/bree.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Red Hat Text";src:url(fonts/redhattext.woff2) format("woff2");font-weight:400 700;font-display:swap}
 :root{--pine:#1E3A2B;--pine2:#2B4C39;--paper:#F3F4EE;--card:#FFFFFF;--ink:#1B2420;--muted:#4A5650;--red:#C0272D;--red2:#A21F25;--blue:#2A579F;--lime:#C3DA55;--line:#D6DACB;--w:1200px;--g:clamp(16px,4vw,40px)}
@@ -55,22 +55,24 @@ p{margin:0 0 1em}
 @media (max-width:980px){.nav > a{display:none}.menu{display:block}.nav .btn{display:none}}
 /* hero */
 .hero{padding:clamp(28px,5vw,64px) 0 clamp(36px,5vw,72px)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,11fr) minmax(0,13fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,470px) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center;max-width:none;padding-right:0;padding-left:max(var(--g),calc((100vw - var(--w))/2 + var(--g)))}
+.hero figcaption{padding-right:var(--g)}
 .place{font-weight:600;color:var(--muted);margin:0 0 14px;font-size:1rem}
 .hero h1{font-size:clamp(2.35rem,4.9vw,4.25rem);letter-spacing:-.01em}
 .hero h1 span{display:block;color:var(--blue);font-size:.5em;text-wrap:balance;margin-top:.35em;line-height:1.15}
 .lede{font-size:1.15rem;margin:22px 0 26px;max-width:34ch;color:var(--ink)}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 .hero figure{margin:0}
-.hero figure img{width:100%;border-radius:18px;aspect-ratio:4/3;object-fit:cover}
+.hero figure img{width:100%;border-radius:18px 0 0 18px;aspect-ratio:4/3;object-fit:cover}
 figcaption{font-size:.9rem;color:var(--muted);margin-top:10px}
 @media (max-width:760px){
  .hero{padding-top:22px}
- .hero .wrap{grid-template-columns:1fr;gap:22px}
+ .hero .wrap{grid-template-columns:1fr;gap:22px;padding:0 var(--g)}
+ .hero figcaption{padding-right:0}
  .hero h1{font-size:2.3rem}
  .lede{font-size:1.05rem;margin:14px 0 18px}
  .actions .btn{flex:1 1 100%}
- .hero figure img{aspect-ratio:auto}
+ .hero figure img{aspect-ratio:auto;border-radius:18px}
 }
 /* seasonal band */
 .seasonal{background:var(--pine);color:#EEF2E8}
@@ -113,9 +115,10 @@ figcaption{font-size:.9rem;color:var(--muted);margin-top:10px}
 }
 /* legend: amenities */
 .acres{padding:0 0 clamp(56px,7vw,96px)}
-.acres .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
+.acres .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
 .acres figure{margin:0}
-.acres figure img{border-radius:16px}
+.acres figure img{border-radius:16px;width:100%}
+@media (max-width:820px){.acres figure img{aspect-ratio:4/3;object-fit:cover}}
 .legend{list-style:none;margin:18px 0 22px;padding:0}
 .legend li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line)}
 .legend li em{font-style:normal;color:var(--muted);text-align:right;white-space:nowrap}
@@ -194,11 +197,11 @@ details.all li{margin:0 0 12px;max-width:75ch}
 <p class="notice">Unofficial demo built by MHS Tecnologia for Highland Campground. Not affiliated with or endorsed by Highland Campground.</p>
 <header class="top">
 <div class="wrap">
-<a class="brand" href="index.html"><img src="img/logo.webp" width="66" height="64" alt="Highland Campground logo"><span>Highland Campground<small>Scotland, Connecticut</small></span></a>
+<a class="brand" href="index.html"><img src="img/logo.webp" width="66" height="64" alt="Highland Campground logo" loading="eager" decoding="sync"><span>Highland Campground<small>Scotland, Connecticut</small></span></a>
 <div class="nav">
-<a href="camping.html">Sites &amp; facilities</a><a href="rates.html">Rates</a><a href="map.html">Map &amp; directions</a><a href="guidelines.html">Guidelines</a>
+<a href="activities.html">Activities</a><a href="camping.html">Sites &amp; facilities</a><a href="rates.html">Rates</a><a href="map.html">Map &amp; directions</a><a href="guidelines.html">Guidelines</a>
 <a class="btn btn-red" href="tel:+18604235684"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>(860) 423-5684</a>
-<details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html" aria-current="page">Home</a><a href="camping.html">Sites &amp; facilities</a><a href="rates.html">Rates</a><a href="map.html">Map &amp; directions</a><a href="guidelines.html">Guidelines</a><a href="tel:+18604235684">Call (860) 423-5684</a><a href="mailto:HighlandCMPG@AOL.com">Email the office</a></nav></details>
+<details class="menu"><summary>Menu</summary><nav aria-label="Pages"><a href="index.html" aria-current="page">Home</a><a href="activities.html">Activities</a><a href="camping.html">Sites &amp; facilities</a><a href="rates.html">Rates</a><a href="map.html">Map &amp; directions</a><a href="guidelines.html">Guidelines</a><a href="tel:+18604235684">Call (860) 423-5684</a><a href="mailto:HighlandCMPG@AOL.com">Email the office</a></nav></details>
 </div>
 </div>
 </header>
@@ -213,8 +216,8 @@ details.all li{margin:0 0 12px;max-width:75ch}
 </div>
 <figure>
 <picture>
-<source media="(max-width: 760px)" srcset="img/pond-m.webp 800w" sizes="calc(100vw - 32px)" width="800" height="553">
-<img src="img/pond-1240.webp" srcset="img/pond-900.webp 900w, img/pond-1240.webp 1240w" sizes="(max-width: 760px) calc(100vw - 32px), (min-width: 1240px) 655px, 55vw" width="1240" height="930" alt="The gazebo beside the fishing pond, with campers parked under the trees beyond" fetchpriority="high">
+<source media="(max-width: 760px)" srcset="img/pond-m.webp" width="800" height="553">
+<img src="img/pond-1240.webp" srcset="img/pond-900.webp 900w, img/pond-1240.webp 1240w" sizes="(max-width: 760px) calc(100vw - 32px), calc(100vw - 560px)" width="1240" height="930" alt="The gazebo beside the fishing pond, with campers parked under the trees beyond" fetchpriority="high">
 </picture>
 <figcaption>The gazebo and the stocked fishing pond.</figcaption>
 </figure>
@@ -229,7 +232,7 @@ details.all li{margin:0 0 12px;max-width:75ch}
 </section>
 <section class="season" aria-labelledby="season-h">
 <div class="wrap">
-<header><div><h2 id="season-h">The 2026 season, weekend by weekend</h2><p>Planned activities every weekend from May 1 to October 12: sports, games, entertainment and potlucks.</p></div><p class="key"><i></i>Holiday weekend</p></header>
+<header><div><h2 id="season-h">The 2026 season, weekend by weekend</h2><p>Planned activities every weekend from May 1 to October 12: sports, games, entertainment, and other planned activities.</p></div><p class="key"><i></i>Holiday weekend</p></header>
 <p class="swipe">Swipe through the months.</p>
 <div class="board" role="region" aria-label="2026 schedule highlights" tabindex="0"><div class="month"><h3>May</h3><span class="n">5 weekends</span><ol><li><b>May 1–3</b><span>Opening Weekend</span></li><li><b>May 8–10</b><span>Welcome Meeting, coffee and donuts</span></li><li><b>May 15–17</b><span>Potluck Supper and Game Night</span></li><li class="hol"><b>May 22–25</b><span>Memorial Day Weekend</span></li><li><b>May 29–31</b><span>Potluck Breakfast Weekend</span></li></ol></div><div class="month"><h3>June</h3><span class="n">4 weekends</span><ol><li><b>June 5–7</b><span>Redneck Golf Carts</span></li><li><b>June 12–14</b><span>Music Bingo</span></li><li><b>June 19–21</b><span>Music with Gary Pomo</span></li><li><b>June 26–28</b><span>School&#x27;s Out: Kids Pizza Party</span></li></ol></div><div class="month"><h3>July</h3><span class="n">5 weekends</span><ol><li class="hol"><b>July 3–5</b><span>Independence Day Picnic</span></li><li><b>July 10–12</b><span>Trivia Game Night</span></li><li><b>July 17–19</b><span>Adult Pool Party “Jaws 2”</span></li><li><b>July 24–26</b><span>Christmas in July</span></li><li><b>July 31–Aug 1</b><span>Music Bingo</span></li></ol></div><div class="month"><h3>August</h3><span class="n">4 weekends</span><ol><li><b>Aug 7–9</b><span>Classic Car Cruise</span></li><li><b>Aug 14–16</b><span>Nerf Gun and Wand Water Fights</span></li><li><b>Aug 21–23</b><span>Trivia Game Night</span></li><li><b>Aug 28–30</b><span>Kids Carnival</span></li></ol></div><div class="month"><h3>September</h3><span class="n">4 weekends</span><ol><li class="hol"><b>Sept 4–7</b><span>Labor Day Weekend</span></li><li><b>Sept 11–13</b><span>Seasonal Thanksgiving Dinner</span></li><li><b>Sept 18–20</b><span>Halloween Weekend</span></li><li><b>Sept 25–27</b><span>Souper Supper Weekend</span></li></ol></div><div class="month"><h3>October</h3><span class="n">2 weekends</span><ol><li><b>Oct 2–4</b><span>Campfire Chatter</span></li><li class="hol"><b>Oct 9–12</b><span>Columbus Day Weekend</span></li></ol></div></div>
 </div>
@@ -237,7 +240,7 @@ details.all li{margin:0 0 12px;max-width:75ch}
 
 <section class="acres" aria-labelledby="acres-h">
 <div class="wrap">
-<figure><img src="img/sites-1240.webp" srcset="img/sites-640.webp 640w, img/sites-1240.webp 1240w" sizes="(max-width: 820px) calc(100vw - 32px), (min-width: 1240px) 572px, 46vw" width="1240" height="930" alt="Campers and trailers on wooded sites under tall trees" loading="lazy" decoding="async"><figcaption>Sites under the trees.</figcaption></figure>
+<figure><img src="img/sites-tall.webp" width="744" height="930" alt="Campers and trailers on wooded sites under tall trees" loading="lazy" decoding="async"><figcaption>Sites under the trees.</figcaption></figure>
 <div>
 <h2 id="acres-h">Forest camping, modern facilities</h2>
 <p style="margin-top:14px">Sit around a campfire, fish the stocked pond or take a dip in the pool. The rest is on the list below.</p>
@@ -254,7 +257,7 @@ details.all li{margin:0 0 12px;max-width:75ch}
 <address class="addr" style="font-size:1rem">42 Toleration Road, PO Box 305<br>Scotland, CT 06264<br><a href="tel:+18604235684">(860) 423-5684</a> · <a href="mailto:HighlandCMPG@AOL.com">HighlandCMPG@AOL.com</a></address>
 <p>2026 season: May 1 to October 12. MasterCard &amp; Visa accepted.</p>
 </div>
-<nav aria-label="Footer"><a href="index.html">Home</a><a href="camping.html">Sites &amp; facilities</a><a href="rates.html">Rates</a><a href="map.html">Map &amp; directions</a><a href="guidelines.html">Guidelines</a></nav>
+<nav aria-label="Footer"><a href="index.html">Home</a><a href="activities.html">Activities</a><a href="camping.html">Sites &amp; facilities</a><a href="rates.html">Rates</a><a href="map.html">Map &amp; directions</a><a href="guidelines.html">Guidelines</a></nav>
 <div><p>Call for more info:<br><a href="tel:+18604235684">(860) 423-5684</a></p></div>
 <p class="legal">Unofficial demo built by MHS Tecnologia for Highland Campground. Not affiliated with or endorsed by Highland Campground. Photos, logo, map and text come from highlandcampground.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
 </div>
