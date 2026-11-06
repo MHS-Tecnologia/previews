@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cabin rates | Gander Island Cabins</title>
+<meta name="description" content="Nightly and weekly rates, deposit and cancellation terms for the four Gander Island cabins.">
+<meta name="theme-color" content="#f3f4ef">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+@font-face { font-family: "Literata"; font-weight: 400 700; font-display: swap; src: url(fonts/literata.woff2) format("woff2"); }
+@font-face { font-family: "Figtree"; font-weight: 400 700; font-display: swap; src: url(fonts/figtree.woff2) format("woff2"); }
+
+/* Their navy and goose, the green metal roofs on every cabin, cedar siding, the gravel drive. */
+:root {
+  --paper: #f3f4ef;
+  --paper-2: #e6e9e1;
+  --ink: #1a2330;
+  --muted: #4b5563;
+  --navy: #14294a;
+  --navy-2: #1d3a66;
+  --roof: #2f5a46;
+  --cedar: #9b5426;
+  --gravel: #c9c8bf;
+  --pad: clamp(1.25rem, 4vw, 2.5rem);
+  --max: 72rem;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 "Figtree", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cedar); outline-offset: 3px; }
+h1, h2, h3, .serif { font-family: "Literata", Georgia, serif; font-weight: 600; line-height: 1.08; letter-spacing: -0.012em; font-variation-settings: "opsz" 60; }
+h1 { font-size: clamp(2.25rem, 5.4vw, 4.1rem); text-wrap: balance; }
+h2 { font-size: clamp(1.85rem, 3.6vw, 2.8rem); text-wrap: balance; }
+h3 { font-size: 1.45rem; }
+p + p { margin-top: .9em; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin-inline: auto; padding-inline: var(--pad); }
+.lede { font-size: 1.2rem; color: var(--muted); max-width: 36rem; }
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: 1rem; z-index: 50; background: #fff; padding: .5rem 1rem; }
+
+.demo { background: var(--ink); color: #e9ece6; font-size: .8rem; line-height: 1.35; text-align: center; padding: .45rem var(--pad); }
+
+/* Header */
+.top { position: relative; z-index: 9; background: var(--paper); border-bottom: 1px solid var(--paper-2); }
+.top .wrap { display: flex; align-items: center; gap: 1.25rem; min-height: 4.25rem; }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; margin-right: auto; }
+.brand img { width: 2.1rem; height: auto; }
+.brand span { font-family: "Literata", Georgia, serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); letter-spacing: -0.01em; }
+.nav { display: flex; align-items: center; gap: 1.35rem; font-size: .98rem; font-weight: 500; }
+.nav > a { text-decoration: none; color: var(--ink); padding: .3rem 0; border-bottom: 2px solid transparent; }
+.nav > a:hover { border-color: var(--gravel); }
+.nav > a[aria-current] { border-color: var(--roof); color: var(--roof); }
+.call { text-decoration: none; font-weight: 600; background: var(--navy); color: #fff; padding: .55rem 1rem; border-radius: 99px; white-space: nowrap; }
+.call:hover { background: var(--navy-2); }
+.menu { display: none; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: .7rem 1.35rem; border-radius: 99px; font-weight: 600; text-decoration: none; font-size: 1.05rem; }
+.btn-main { background: var(--navy); color: #fff; }
+.btn-main:hover { background: var(--navy-2); }
+.btn-line { border: 2px solid var(--navy); color: var(--navy); }
+.btn-line:hover { background: #fff; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+
+/* Home hero: words left, one photo right */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 4vw, 3.5rem); align-items: center; padding-block: clamp(2.5rem, 5vw, 4rem); }
+.hero p.where { color: var(--roof); font-weight: 600; margin-bottom: 1rem; }
+.hero .lede { margin-top: 1.25rem; }
+.hero figure img { border-radius: .5rem; width: 100%; }
+@media (min-width: 900.02px) {
+  .hero .wrap { min-height: calc(100svh - 6.5rem); padding-block: 2rem; }
+  .hero figure img { height: min(calc(100svh - 12rem), 46rem); min-height: 30rem; object-fit: cover; }
+}
+.hero figcaption, .cap { font-size: .88rem; color: var(--muted); margin-top: .55rem; }
+
+section { padding-block: clamp(3.5rem, 7vw, 6rem); }
+
+/* The property */
+.land { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+.land h2 { margin-bottom: 1.2rem; }
+.land dl { margin-top: 1.8rem; border-top: 1px solid var(--gravel); }
+.land dl div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--gravel); align-items: baseline; }
+.land dt { font-family: "Literata", Georgia, serif; font-size: 1.55rem; font-weight: 600; color: var(--navy); line-height: 1.1; }
+.land img { border-radius: .5rem; }
+
+/* Signature: Ganders Drive */
+.drive { background: var(--navy); color: #eef1ec; }
+.drive h2 { color: #fff; max-width: 40rem; }
+.drive .intro { color: #c9d3e2; max-width: 38rem; margin-top: 1rem; }
+.drive .meadow { margin-top: 2.5rem; border-radius: .5rem; width: 100%; }
+.road { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 3.5rem minmax(0, 1fr); gap: 0 1.5rem; margin-top: 3rem; padding-top: 2.6rem; }
+.road::before { content: ""; position: absolute; top: 0; left: 0; right: calc(20% + 3rem); height: .55rem; border-radius: 99px; background: var(--gravel); background-image: radial-gradient(#a9a79b 1px, transparent 1.3px); background-size: 7px 7px; }
+.road::after { content: ""; position: absolute; top: .2rem; right: 0; width: calc(20% - .5rem); height: .15rem; background: repeating-linear-gradient(90deg, var(--gravel) 0 .5rem, transparent .5rem .9rem); }
+.road .gap { align-self: start; margin-top: -2.35rem; font-size: .8rem; color: #c9d3e2; line-height: 1.3; text-align: center; }
+.stop { position: relative; text-decoration: none; color: inherit; display: block; }
+.stop::before { content: ""; position: absolute; left: 1.4rem; top: -2.6rem; width: 3px; height: 2.6rem; background: var(--gravel); }
+.plate { display: inline-block; position: relative; background: #fff; color: var(--navy); font-family: "Literata", Georgia, serif; font-weight: 700; font-size: 2.3rem; line-height: 1; padding: .35rem .7rem .4rem; border-radius: .35rem; box-shadow: inset 0 0 0 3px var(--navy), inset 0 0 0 5px #fff, inset 0 0 0 6px #b9c3d3; font-variant-numeric: lining-nums; letter-spacing: .01em; }
+.stop .street { display: block; font-size: .85rem; color: #c9d3e2; margin-top: .45rem; }
+.stop img { border-radius: .4rem; margin-top: 1rem; width: 100%; }
+.stop h3 { color: #fff; margin-top: .9rem; font-size: 1.4rem; }
+.stop p { color: #d6dde8; font-size: .96rem; margin-top: .3rem; }
+.stop .rate { color: #fff; font-weight: 600; }
+.stop:hover h3, .stop:focus-visible h3 { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 2px; }
+
+/* River */
+.river { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.river img { border-radius: .5rem; }
+.river h2, .hosts h2 { margin-bottom: 1.1rem; }
+.river ul { margin-top: 1.2rem; padding-left: 1.1rem; }
+.river li + li { margin-top: .4rem; }
+.note { margin-top: 1.4rem; padding: 1rem 1.15rem; border-left: 4px solid var(--cedar); background: #fff; font-size: .95rem; border-radius: 0 .4rem .4rem 0; }
+
+/* Guest book */
+.book { background: var(--paper-2); }
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3.5rem; margin-top: 2.5rem; }
+.quotes blockquote p { font-family: "Literata", Georgia, serif; font-size: 1.3rem; line-height: 1.45; font-variation-settings: "opsz" 24; }
+.quotes footer { margin-top: .7rem; color: var(--muted); font-size: .95rem; }
+
+/* Hosts */
+.hosts { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.hosts img { border-radius: .5rem; }
+.hosts h2 { margin-bottom: 1.1rem; }
+
+/* Closing call to action */
+.ask { background: var(--roof); color: #fff; }
+.ask .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 2rem; }
+.ask p { color: #dbe7df; max-width: 34rem; margin-top: .8rem; }
+.ask .btn-main { background: #fff; color: var(--roof); }
+.ask .btn-main:hover { background: var(--paper); }
+.ask .btn-line { border-color: #fff; color: #fff; }
+.ask .btn-line:hover { background: rgba(255,255,255,.1); }
+
+/* Inner pages */
+.head { padding-block: clamp(2.25rem, 5vw, 3.75rem) 0; }
+.head p.kicker { color: var(--roof); font-weight: 600; margin-bottom: .7rem; }
+.head .lede { margin-top: 1rem; }
+.cabin { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; padding-top: 2.5rem; }
+.cabin .lead-photo { border-radius: .5rem; }
+.facts { background: #fff; border-radius: .5rem; padding: 1.4rem 1.5rem; border: 1px solid var(--paper-2); }
+.facts h2 { font-size: 1.35rem; }
+.facts dl div { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--paper-2); }
+.facts dt { color: var(--muted); }
+.facts dd { font-weight: 600; text-align: right; }
+.facts .btn { width: 100%; margin-top: 1.1rem; }
+.facts .small { font-size: .85rem; color: var(--muted); margin-top: .8rem; }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
+.cols ul { padding-left: 1.1rem; margin-top: .7rem; }
+.cols li + li { margin-top: .25rem; }
+.gal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.gal img { border-radius: .4rem; width: 100%; }
+.more-btn { display: none; font: inherit; background: none; cursor: pointer; margin-top: 1.25rem; font-weight: 600; color: var(--navy); border: 2px solid var(--navy); border-radius: 99px; padding: .6rem 1.2rem; }
+details.more > summary { list-style: none; cursor: pointer; display: inline-flex; margin-top: 1.25rem; font-weight: 600; color: var(--navy); border: 2px solid var(--navy); border-radius: 99px; padding: .6rem 1.2rem; }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more[open] > summary { display: none; }
+.next { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border-top: 1px solid var(--gravel); padding-top: 1.5rem; margin-top: 3rem; }
+.next a { color: var(--navy); font-weight: 600; }
+
+/* Rates */
+.rates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+.rate-card { background: #fff; border: 1px solid var(--paper-2); border-radius: .5rem; padding: 1.5rem; }
+.rate-card h2 { font-size: 1.6rem; }
+.rate-card table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+.rate-card th, .rate-card td { text-align: left; padding: .7rem 0; border-bottom: 1px solid var(--paper-2); vertical-align: top; }
+.rate-card th { font-weight: 500; padding-right: 1rem; }
+.rate-card th small { display: block; color: var(--muted); font-size: .85rem; }
+.rate-card td { font-family: "Literata", Georgia, serif; font-weight: 600; font-size: 1.25rem; color: var(--navy); white-space: nowrap; text-align: right; }
+.rate-card td.call-for { font-family: inherit; font-size: .95rem; font-weight: 500; color: var(--muted); }
+.rate-card p { font-size: .93rem; color: var(--muted); margin-top: .8rem; }
+.policy { margin-top: 3rem; max-width: 46rem; }
+.policy ul { padding-left: 1.1rem; margin-top: 1rem; }
+.policy li + li { margin-top: .45rem; }
+
+/* Area */
+.near { margin-top: 2.25rem; border-top: 1px solid var(--gravel); max-width: 52rem; }
+.near div { display: grid; grid-template-columns: 9rem 1fr; gap: 1.25rem; padding: 1rem 0; border-bottom: 1px solid var(--gravel); }
+.near dt { font-family: "Literata", Georgia, serif; font-weight: 600; font-size: 1.3rem; color: var(--navy); }
+.az { columns: 3 15rem; column-gap: 2.5rem; margin-top: 1.5rem; }
+.az section { break-inside: avoid; padding: 0 0 1.4rem; }
+.az h3 { font-family: "Figtree", system-ui, sans-serif; font-size: 1rem; font-weight: 700; color: var(--roof); margin-bottom: .3rem; letter-spacing: 0; }
+.az p { font-size: .95rem; margin: 0; }
+.az p + p { margin-top: .15rem; }
+.az span { color: var(--muted); white-space: nowrap; }
+
+/* Contact */
+.reach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; max-width: 46rem; }
+.reach a { display: block; background: var(--navy); color: #fff; text-decoration: none; border-radius: .5rem; padding: 1.2rem 1.35rem; }
+.reach a:hover { background: var(--navy-2); }
+.reach small { display: block; color: #c9d3e2; font-size: .9rem; }
+.reach strong { font-size: 1.2rem; font-weight: 600; overflow-wrap: anywhere; }
+.addr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.addr div { border-top: 3px solid var(--navy); padding-top: .8rem; }
+.addr strong { font-family: "Literata", Georgia, serif; font-size: 1.2rem; display: block; }
+.routes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; margin-top: 2rem; }
+.routes h3 { font-size: 1.2rem; margin-bottom: .4rem; }
+
+/* Footer */
+.foot { background: var(--ink); color: #cfd5dd; padding-block: 3rem 6rem; font-size: .95rem; }
+.foot .wrap { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+.foot strong { color: #fff; font-family: "Literata", Georgia, serif; font-size: 1.2rem; font-weight: 600; display: block; margin-bottom: .4rem; }
+.foot a { color: #fff; }
+.foot ul { list-style: none; padding: 0; }
+.foot li + li { margin-top: .3rem; }
+.foot .legal { grid-column: 1 / -1; border-top: 1px solid #344052; padding-top: 1.25rem; font-size: .85rem; color: #aab3bf; }
+
+/* Sticky mobile bar, after the hero */
+.bar { display: none; }
+
+@media (max-width: 980px) {
+  .road { grid-template-columns: 1fr 1fr; gap: 2.5rem 1.5rem; padding-top: 0; }
+  .road::before, .road::after, .stop::before, .road .gap { display: none; }
+}
+@media (max-width: 900px) {
+  .nav > a { display: none; }
+  .menu { display: block; position: static; }
+  .menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; padding: .5rem .9rem; border: 2px solid var(--navy); color: var(--navy); border-radius: 99px; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu summary::after { content: ""; width: .9rem; height: 2px; background: currentColor; box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor; }
+  .menu[open] summary { background: var(--navy); color: #fff; }
+  .menu ul { position: absolute; top: 100%; left: var(--pad); right: var(--pad); list-style: none; padding: .5rem; background: var(--navy); border-radius: .5rem; box-shadow: 0 14px 30px rgba(20,41,74,.35); }
+  .menu li a { display: block; padding: .8rem .9rem; color: #fff; text-decoration: none; font-weight: 600; font-size: 1.05rem; border-radius: .3rem; }
+  .menu li a[aria-current] { background: var(--navy-2); }
+  .menu li + li a { border-top: 1px solid #2a4675; }
+  .call { display: none; }
+  .hero .wrap, .land, .river, .hosts, .cabin { grid-template-columns: 1fr; }
+  .hero .wrap { padding-block: 1.6rem 2.5rem; gap: 1.5rem; }
+  .river figure { order: 2; }
+  .quotes, .rates, .routes { grid-template-columns: 1fr; }
+  .addr { grid-template-columns: 1fr 1fr; }
+  .foot .wrap { grid-template-columns: 1fr; }
+  .bar { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; padding: .65rem var(--pad) calc(.65rem + env(safe-area-inset-bottom)); background: rgba(243,244,239,.97); border-top: 1px solid var(--gravel); transform: translateY(110%); transition: transform .25s ease; }
+  .bar.on { transform: none; }
+  .bar .btn { min-height: 2.9rem; font-size: 1rem; }
+}
+@media (max-width: 600px) {
+  .hero p.where { margin-bottom: .6rem; font-size: .95rem; }
+  .demo { font-size: .72rem; padding-block: .35rem; }
+  .brand span { font-size: 1.08rem; white-space: nowrap; }
+  .brand img { width: 1.7rem; }
+  .top .wrap { gap: .75rem; }
+  .hero .lede { font-size: 1.05rem; margin-top: .8rem; }
+  .actions { margin-top: 1.2rem; }
+  .actions .btn { flex: 1 1 auto; }
+  .road { grid-template-columns: 1fr; }
+  .stop { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0 1rem; align-items: start; }
+  .stop img { grid-row: 1 / span 4; grid-column: 1; margin-top: 0; }
+  .stop .plate { font-size: 1.7rem; justify-self: start; }
+  .stop h3 { margin-top: .5rem; font-size: 1.2rem; }
+  .stop .street, .stop h3, .stop p { grid-column: 2; }
+  .stop p { font-size: .9rem; }
+  .land dl div { grid-template-columns: 6.5rem 1fr; }
+  .gal { grid-template-columns: 1fr; }
+  .gal.cut img:nth-child(n+4) { display: none; }
+  .gal.cut + .more-btn { display: inline-flex; }
+  .cols { grid-template-columns: 1fr; gap: 1.5rem; }
+  .near div { grid-template-columns: 7rem 1fr; gap: .75rem; }
+  .near dt { font-size: 1.1rem; white-space: nowrap; }
+  .reach { grid-template-columns: 1fr; }
+  .addr { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .bar { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for Gander Island Cabins. Not affiliated with or endorsed by Gander Island Cabins.</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/goose.png" width="67" height="74" alt=""><span>Gander Island Cabins</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="mother-goose.html">Mother Goose</a><a href="goose-and-gander.html">Goose &amp; Gander</a><a href="outpost.html">The Outpost</a><a href="rates.html" aria-current=page>Rates</a><a href="area.html">The area</a><a href="contact.html">Contact</a>
+      <details class="menu"><summary>Menu</summary><ul><li><a href="index.html">Home</a></li><li><a href="mother-goose.html">Mother Goose</a></li><li><a href="goose-and-gander.html">Goose &amp; Gander</a></li><li><a href="outpost.html">The Outpost</a></li><li><a href="rates.html" aria-current=page>Rates</a></li><li><a href="area.html">The area</a></li><li><a href="contact.html">Contact</a></li></ul></details>
+    </nav>
+    <a class="call" href="tel:+15402449180">Call (540) 244-9180</a>
+  </div>
+</header>
+<main id="main">
+<div class="head">
+  <div class="wrap">
+    <h1>Cabin rates</h1>
+    <p class="lede">Every cabin sleeps up to 4 guests. Please make reservations well in advance, and call or email for other quotes.</p>
+  </div>
+</div>
+<div class="wrap">
+  <div class="rates" data-bar>
+    <div class="rate-card">
+      <h2>Mother Goose &amp; Outpost</h2>
+      <p style="margin-top:.3rem"><a href="mother-goose.html">The Mother Goose</a> and <a href="outpost.html">the Outpost</a></p>
+      <table>
+        <tr><th>Weekends<small>Friday and Saturday, 2 night minimum. Holiday weekends, 3 night minimum.</small></th><td>$235</td></tr>
+        <tr><th>Midweek<small>Sunday through Thursday</small></th><td>$215</td></tr>
+        <tr><th>Sunday to Sunday<small>7 nights</small></th><td>$1,400</td></tr>
+        <tr><th>Monday to Friday<small>4 nights, partial week</small></th><td class="call-for">Call for a quote</td></tr>
+      </table>
+      <p>Per night unless noted, excludes holidays. Pets are permitted at $20 a night each.</p>
+    </div>
+    <div class="rate-card">
+      <h2>Goose &amp; Gander</h2>
+      <p style="margin-top:.3rem"><a href="goose-and-gander.html">The Goose and the Gander</a></p>
+      <table>
+        <tr><th>Weekends<small>Friday and Saturday, 2 night minimum. Holiday weekends, 3 night minimum.</small></th><td>$185</td></tr>
+        <tr><th>Midweek<small>Sunday through Thursday</small></th><td>$175</td></tr>
+        <tr><th>Sunday to Sunday<small>7 nights</small></th><td>$1,400</td></tr>
+        <tr><th>Monday to Friday<small>4 nights, partial week</small></th><td class="call-for">Call for a quote</td></tr>
+      </table>
+      <p>Per night unless noted, excludes holidays. Pets are permitted at $15 a night each.</p>
+    </div>
+  </div>
+  <div class="policy">
+    <h2>Good to know</h2>
+    <ul>
+      <li>Linens and towels: $50 add-on fee.</li>
+      <li>Taxes are not included in the rates.</li>
+      <li>Required deposit: one half of the rental fee. Full payment 2 weeks in advance. Credit cards accepted.</li>
+      <li>Cancellation fee: $40. The deposit is refundable up to two weeks in advance. Half of the full payment is refunded if you cancel between 14 and 7 days before arrival. No refund in the last week before arrival.</li>
+      <li>If necessary, a damage or excessive cleaning charge of $100 minimum.</li>
+      <li>Maximum of 4 people in each cabin. No camping at the cabins. No smoking in the cabins.</li>
+    </ul>
+    <p style="margin-top:1.25rem;color:var(--muted)">Availability calendars for all four cabins are on the cabins’ online booking system. You can also simply email or call with your dates.</p>
+  </div>
+</div>
+<div style="height:4rem"></div>
+<section class="ask" data-bar>
+  <div class="wrap">
+    <div>
+      <h2>Pick your dates and ask us</h2>
+      <p>Tell the Gander family which cabin and which nights. Please make reservations well in advance; they will get back with you as soon as possible.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-main" href="mailto:rentals@ganderislandcabins.com?subject=Cabin%20Inquiry">Email rentals@ganderislandcabins.com</a>
+      <a class="btn btn-line" href="tel:+15402449180">Call (540) 244-9180</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <strong>Gander Island Cabins</strong>
+      <p>Cabins along the Shenandoah River, 5 minutes from the town of Luray, Virginia. Hosted by the Gander family.</p>
+    </div>
+    <div>
+      <ul>
+        <li><a href="tel:+15402449180">(540) 244-9180</a></li>
+        <li><a href="mailto:rentals@ganderislandcabins.com?subject=Cabin%20Inquiry">rentals@ganderislandcabins.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li><a href="mother-goose.html">Mother Goose</a></li>
+        <li><a href="goose-and-gander.html">Goose &amp; Gander</a></li>
+        <li><a href="outpost.html">The Outpost</a></li>
+        <li><a href="rates.html">Rates</a></li>
+        <li><a href="area.html">The area</a></li>
+        <li><a href="contact.html">Contact &amp; directions</a></li>
+      </ul>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia, not affiliated with or endorsed by Gander Island Cabins. Text and photos come from Gander Island Cabins’ public website; their online booking calendars are mentioned here but not linked. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a>.</p>
+  </div>
+</footer>
+<div class="bar" aria-hidden="true">
+  <a class="btn btn-main" href="mailto:rentals@ganderislandcabins.com?subject=Cabin%20Inquiry" tabindex="-1">Email us</a>
+  <a class="btn btn-line" href="tel:+15402449180" tabindex="-1">Call</a>
+</div>
+<script>
+(() => {
+  const menu = document.querySelector('.menu')
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus() } })
+  document.addEventListener('click', (e) => { if (menu.open && !menu.contains(e.target)) menu.open = false })
+  document.querySelectorAll('.more-btn').forEach((b) => b.addEventListener('click', () => { b.previousElementSibling.classList.remove('cut'); b.remove() }))
+  const az = document.querySelector('.az-fold')
+  if (az && matchMedia('(max-width: 600px)').matches) az.open = false
+  const bar = document.querySelector('.bar'), mark = document.querySelector('[data-bar]')
+  if (bar && mark && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([en]) => bar.classList.toggle('on', !en.isIntersecting && en.boundingClientRect.top < 0)).observe(mark)
+  }
+})()
+</script>
+</body>
+</html>
