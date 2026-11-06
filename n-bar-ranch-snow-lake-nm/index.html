@@ -175,6 +175,10 @@ dialog.lb button{appearance:none;border:2px solid var(--hay);background:none;col
 .hero.inner .lede{font-size:1.0625rem}
 @media(max-width:1023px){.hero.inner{padding:22px 0 12px}.hero.inner figure img{aspect-ratio:2/1;object-fit:cover}}
 @media(min-width:1024px){.hero.inner{padding:44px 0 48px}.hero.inner figure img{aspect-ratio:4/3;object-fit:cover}}
+.band{background:var(--pine)}
+.band img{width:100%;aspect-ratio:2000/850;object-fit:cover;object-position:50% 50%}
+@media(max-width:767px){.band img{aspect-ratio:4/3}}
+@media(max-width:1023px){.hero:not(.inner){padding:20px 0 28px}.hero:not(.inner) .wrap{gap:16px}.hero:not(.inner) .lede{margin:10px 0 16px}.hero .ctas{flex-wrap:nowrap}.hero .num{display:none}.hero:not(.inner) figcaption{display:none}}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:title" content="N Bar Ranch | Ride the Gila National Forest, New Mexico">
@@ -188,7 +192,7 @@ dialog.lb button{appearance:none;border:2px solid var(--hay);background:none;col
 <a class="skip" href="#main">Skip to content</a>
 <div class="demo">Unofficial demo built by MHS Tecnologia for N Bar Ranch. Not affiliated with or endorsed by N Bar Ranch.</div>
 <header class="top"><div class="wrap">
-<a class="mark" href="index.html" aria-label="N Bar Ranch, home">N Bar Ranch <small>New Mexico</small></a>
+<a class="mark" href="index.html" aria-label="N Bar Ranch New Mexico, home">N Bar Ranch <small>New Mexico</small></a>
 <nav class="nav" aria-label="Main"><a href="rent-the-ranch.html">Rent the ranch</a><a href="guest-cabin.html">Guest cabin</a><a href="plan-your-week.html">Plan your week</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a class="btn" href="mailto:nbarranch1@gmail.com">Email the ranch</a>
 <details class="menu"><summary>Menu</summary><nav aria-label="Mobile"><a href="index.html" aria-current="page">Home</a><a href="rent-the-ranch.html">Rent the ranch</a><a href="guest-cabin.html">Guest cabin</a><a href="plan-your-week.html">Plan your week</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="mailto:nbarranch1@gmail.com">Email the ranch</a><a href="tel:+15755336253">Call 575-533-6253</a></nav></details>
 </nav></div></header>
@@ -197,12 +201,12 @@ dialog.lb button{appearance:none;border:2px solid var(--hay);background:none;col
 <section class="hero" data-hero><div class="wrap">
 <div>
 <h1>Ever thought you were born a hundred years too late?</h1>
-<p class="lede">Ride back in time for a week at the N Bar Ranch, a century old working cattle and horse ranch at 8,000 feet, surrounded by the 3 million acre Gila National Forest in western New Mexico.</p>
-<div class="ctas"><a class="btn" href="mailto:nbarranch1@gmail.com">Email the ranch</a><a class="btn ghost" href="tel:+15755336253">Call 575-533-6253</a></div>
+<p class="lede">Ride back in time for a week at a century old working ranch, 8,000 feet up in the Gila National Forest of New Mexico.</p>
+<div class="ctas"><a class="btn" href="mailto:nbarranch1@gmail.com">Email the ranch</a><a class="btn ghost" href="tel:+15755336253">Call<span class="num"> 575-533-6253</span></a></div>
 </div>
 <figure>
 <picture>
-<source media="(max-width:1023px)" srcset="img/hero-m.webp 800w" sizes="calc(100vw - 32px)" width="800" height="400">
+<source media="(max-width:1023px)" srcset="img/hero-m.webp 800w" sizes="calc(100vw - 32px)" width="800" height="720">
 <img src="img/hero-960.webp" srcset="img/hero-640.webp 640w, img/hero-960.webp 960w" sizes="(min-width:1280px) 653px, calc((100vw - 120px) * 0.583)" width="960" height="720" alt="Eight riders on horseback waving their hats behind the N Bar Ranch sign, on gold grass with pine hills behind" fetchpriority="high">
 </picture>
 <figcaption>Riders at the N Bar Ranch sign.</figcaption>
@@ -228,6 +232,8 @@ dialog.lb button{appearance:none;border:2px solid var(--hay);background:none;col
 </article>
 </div></div></section>
 
+<div class="band"><img src="img/band-1400.webp" srcset="img/band-800.webp 800w, img/band-1400.webp 1400w, img/band-2000.webp 2000w" sizes="100vw" width="2000" height="850" alt="The sun setting between dark forested hills, with a lone pine on the ridge" loading="lazy" decoding="async"></div>
+
 <section class="alm" aria-labelledby="alm-h"><div class="wrap">
 <div class="head"><h2 id="alm-h">Which week? Here is what each month brings.</h2>
 <p class="intro">The season runs May through September, and weeks start on Sunday. The ranch sits at 8,000 feet and rides go up to 10,000, so it is not the New Mexico summer you may picture.</p></div>
@@ -238,7 +244,7 @@ dialog.lb button{appearance:none;border:2px solid var(--hay);background:none;col
 <section class="creed"><div class="wrap">
 <div>
 <h2>We ain&#8217;t no dude ranch</h2>
-<p>That is their line, not ours. Come for a week only if:</p>
+<p>Come for a week only if:</p>
 <ul class="musts">
 <li>You are at least an intermediate rider, able to saddle and mount unassisted.</li>
 <li>You are in good physical shape. The ranch is at 8,000 feet and three hours from the nearest hospital.</li>
