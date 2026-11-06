@@ -53,7 +53,8 @@ p{max-width:38em}
 .muted{color:var(--ring)}
 .sec{padding-top:clamp(3rem,7vw,5rem);padding-bottom:clamp(3rem,7vw,5rem)}
 .sec + .sec{padding-top:0}
-.price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.price{white-space:nowrap;font-weight:700}
+.num{font-family:Besley,Georgia,serif;font-weight:600}
 figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
 .foot{background:var(--river-2);color:#dfe5ec;margin-top:2rem;padding:2.5rem 0 3rem;font-size:.95rem}
 .foot a{color:#fff}
@@ -150,9 +151,9 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
     <div>
       <h2 id="new-h">New and featured</h2>
       <ul class="list">
-        <li><span>The Esham Family Genealogy Book (new)</span><span class="price">$35.00 + $8.00 p&amp;h</span></li>
-        <li><span>Lewis County Kentucky Medical Pioneers</span><span class="price">$30.00 + $6.00 p&amp;h</span></li>
-        <li><span>&quot;Lewis County History&quot; by Regan, on CD</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
+        <li><span>The Esham Family Genealogy Book (new)</span><span class="price"><span class="num">$35.00</span> + <span class="num">$8.00</span> p&amp;h</span></li>
+        <li><span>Lewis County Kentucky Medical Pioneers</span><span class="price"><span class="num">$30.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+        <li><span>&quot;Lewis County History&quot; by Regan, on CD</span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
       </ul>
     </div>
   </div>
@@ -160,12 +161,12 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
 
 <section class="sec wrap" id="cemeteries" aria-labelledby="cem-h">
   <h2 id="cem-h">Lewis County Cemetery Books</h2>
-  <p class="intro">A collection of 25 books, <span class="price">$12.00 each + $4.00 p&amp;h</span>. Search for a cemetery, or open a book to see what it holds.</p>
+  <p class="intro">A collection of 25 books, <span class="price"><span class="num">$12.00</span> each + <span class="num">$4.00</span> p&amp;h</span>. Search for a cemetery, or open a book to see what it holds.</p>
   
 <section class="finder" id="finder2" aria-labelledby="finder2-h">
   <div>
     <h2 id="finder2-h">Which book has your family's cemetery?</h2>
-    <p>The 25 Lewis County Cemetery Books list 225 cemeteries; a few names appear in more than one book. Each book gives the name of the cemetery and, where the stones can be read, each person's name, birth date and death date.</p>
+    <p>The 25 Lewis County Cemetery Books list 225 cemetery listings; a few names appear in more than one book. Each book gives the name of the cemetery and, where the stones can be read, each person's name, birth date and death date.</p>
     <label for="finder2-q">Cemetery name</label>
     <input id="finder2-q" type="search" autocomplete="off" spellcheck="false" placeholder="Try Woodland" aria-controls="finder2-list">
     <p class="hint">Or try: <button type="button" data-try="Mt. Zion">Mt. Zion</button>, <button type="button" data-try="Esham">Esham</button>, <button type="button" data-try="Quincy">Quincy</button></p>
@@ -176,7 +177,7 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
       <ol id="finder2-list"></ol>
       <button type="button" class="more" hidden>Show all</button>
     </div>
-    <p class="order">Cemetery books are $12.00 each + $4.00 postage and handling. To order, mail a check or money order to the Lewis County Historical Society, P. O. Box 362, Vanceburg, KY 41179, or <a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">email the society</a>.</p>
+    <p class="order">Cemetery books are <span class="num">$12.00</span> each + <span class="num">$4.00</span> postage and handling. To order, mail a check or money order to the Lewis County Historical Society, P. O. Box 362, Vanceburg, KY 41179, or <a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">email the society</a>.</p>
   </div>
 </section>
   <div class="volumes" style="margin-top:2rem">
@@ -189,7 +190,7 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
     <details><summary>Book Seven<span>5 cemeteries</span></summary><p>Evans Cemetery, Abbot Cemetery, Silvey Cemetery, Rhoden Cemetery, Clarksburg Cemetery</p></details>
     <details><summary>Book Eight<span>1 cemetery</span></summary><p>Woodland (or Woodlawn as some folks call it) Cemetery</p></details>
     <details><summary>Book Nine<span>25 cemeteries</span></summary><p>Stallcup Cemetery, Flinders Cemetery, Allis Cemetery, Bivens Cemetery, Fairmont Cemetery, Kissick Cemetery, Doyle Cemetery, Gilbert Cemetery, Muses Cemetery, Carrs Methodist Cemetery, Bedinger Cemetery, Corns Cemetery, Stevenson Cemetery, Moore Family Cemetery (graveyard), McClurg Cemetery, Vance-Ruark Cemetery, Pine Grove Cemetery, Shelton-Himes Cemetery, Collins Cemetery, Lane-Lang Cemetery, Meyers Cemetery, Hendrickson Cemetery, Ellis Cemetery, Wilson Cemetery, Nash Cemetery</p></details>
-    <details><summary>Book Ten<span>10 cemeteries</span></summary><p>Cedar Grove Cemetery, Conley Cemetery (On Holly Creek), William Hardy Family Cemetery, McEldowney Cemetery, Esham Cemetery, Crawford Cemetery, Sargent Branch Cemetery, Meadows Cemetery, Stidham Cemetery, Aldridge Cemetery</p></details>
+    <details><summary>Book Ten<span><span class="num">10</span> cemeteries</span></summary><p>Cedar Grove Cemetery, Conley Cemetery (On Holly Creek), William Hardy Family Cemetery, McEldowney Cemetery, Esham Cemetery, Crawford Cemetery, Sargent Branch Cemetery, Meadows Cemetery, Stidham Cemetery, Aldridge Cemetery</p></details>
     <details><summary>Book Eleven<span>15 cemeteries</span></summary><p>Mt. Zion Cemetery, Ackley or Mineer Cemetery, Indian Creek Cemetery, Gulley Cemetery, Stamm Cemetery, Thomas Perry McCleese Cemetery, Crawford Cemetery, Kinder or Brown Cemetery, Rose Cemetery, Stamper Cemetery, Oak Ridge Baptist Church Cemetery, Donaldson Grove Cemetery, County Cemetery, Smith-Burton Cemetery, Holland Cemetery</p></details>
     <details><summary>Book Twelve<span>17 cemeteries</span></summary><p>Pleasant Ridge Cemetery, Valley Cemetery, Mefford Farm Cemetery, Middleton Cemetery, Tancray Cemetery, McDaniel Cemetery, Riggs Cemetery, McCoy Cemetery, William-Esham Family Cemetery, Hackworth Cemetery, Toller Cemetery, Our Lady (or Lourdes) Cemetery, Kilfillin Cemetery, Million Cemetery, Jones Cemetery, Happy Hollow Cemetery, Webster Cemetery</p></details>
     <details><summary>Book Thirteen<span>19 cemeteries</span></summary><p>Teager Cemetery, Tollesboro Cemetery, Debell-Singleton Cemetery, Galilee Christian Church Cemetery, Carr Cemetery, Thropp Cemetery, Kelty Cemetery, Davis Cemetery, Hamrick Cemetery, Grigsby Cemetery, Pollitt Cemetery, Hinton Cemetery, Burtonville Cemetery, Gillespie Cemetery, Applegate Cemetery, Trussell Cemetery, Ruggles Cemetery, Plummer Cemetery, Canaan Cemetery</p></details>
@@ -204,13 +205,13 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
     <details><summary>Book Twenty Two<span>4 cemeteries</span></summary><p>Concord Cemetery, Ebenezer Church Cemetery, Ebenezer Cemetery, Salem Church Cemetery</p></details>
     <details><summary>Book Twenty Three<span>8 cemeteries</span></summary><p>Dummitt Cemetery, Delphine Cemetery, Roy Werline Farm Cemetery (Sandhill), Heath Cemetery, Bloomfield Cemetery, Lewis Cemetery (Scotts Branch), Mt. Carmel Cemetery, Thomas Cemetery</p></details>
     <details><summary>Book Twenty Four<span>4 cemeteries</span></summary><p>Collier Cemetery, Hillcrest Cemetery, Maysville Cemetery, Olivet Cemetery</p></details>
-    <details><summary>Book Twenty Five<span>11 cemeteries</span></summary><p>Davis Cemetery (Ben and Lorraine Rice Farm), Hord Family Cemetery (located KY 1443 Eastern Mason County), Wilson Family Cemetery (located KY 1443 Eastern Mason County), Stubblefield Cemetery (located #546), Flat Fork Cemetery, Stander Cemetery, Bald Point Cemetery, Jordan Cemetery (Route 1068), Sunset Cemetery (Edward Cemetery), Wilson Family Cemetery (located in Quincy), Horsley Cemetery (located at Tar Fork)</p></details>
+    <details><summary>Book Twenty Five<span>11 cemeteries</span></summary><p>Davis Cemetery (Ben and Lorraine Rice Farm), Hord Family Cemetery (located KY 1443 Eastern Mason County), Wilson Family Cemetery (located KY 1443 Eastern Mason County), Stubblefield Cemetery (located #546), Flat Fork Cemetery, Stander Cemetery, Bald Point Cemetery, Jordan Cemetery (Route <span class="num">1068</span>), Sunset Cemetery (Edward Cemetery), Wilson Family Cemetery (located in Quincy), Horsley Cemetery (located at Tar Fork)</p></details>
   </div>
   <h3 style="margin:2.2rem 0 .8rem">Cemetery CDs and photo collections</h3>
   <ul class="list">
-    <li><span>Mt. Zion Cemetery CD: pictures of the stones, with names and information</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
-    <li><span>Hackworth-Ginn Cemetery CD (at Heselton): documentation and photos of the stones<span class="note">Made available through the hard work of Carolyn and David Hilliard.</span></span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
-    <li><span>Evans Cemetery Photo Collection (Town Branch Hill): a picture of every tombstone<span class="note">Made available through the hard work of Billy Bond.</span></span><span class="price">$20.00 + $6.00 p&amp;h</span></li>
+    <li><span>Mt. Zion Cemetery CD: pictures of the stones, with names and information</span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Hackworth-Ginn Cemetery CD (at Heselton): documentation and photos of the stones<span class="note">Made available through the hard work of Carolyn and David Hilliard.</span></span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Evans Cemetery Photo Collection (Town Branch Hill): a picture of every tombstone<span class="note">Made available through the hard work of Billy Bond.</span></span><span class="price"><span class="num">$20.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
   </ul>
 </section>
 
@@ -218,40 +219,40 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
   <h2 id="mar-h">Lewis County Marriage Books</h2>
   <p class="intro">Marriage information about couples married in Lewis County, Kentucky.</p>
   <ul class="list">
-    <li><span>1806–1900, three books<span class="note">Book One: 1806–1851 · Book Two: 1852–1880 · Book Three: 1881–1900</span></span><span class="price">$25.00 each + $5.00 p&amp;h</span></li>
-    <li><span>1900–1962, eight books by surname<span class="note">A–B · C–D · E–G · H–K · L, P, Q, U, Y, Z · R, V, W · M, O · S, T</span></span><span class="price">$10.00 each + $4.00 p&amp;h</span></li>
+    <li><span><span class="num">1806–1900</span>, three books<span class="note">Book One: <span class="num">1806–1851</span> · Book Two: <span class="num">1852–1880</span> · Book Three: <span class="num">1881–1900</span></span></span><span class="price"><span class="num">$25.00</span> each + <span class="num">$5.00</span> p&amp;h</span></li>
+    <li><span><span class="num">1900–1962</span>, eight books by surname<span class="note">A–B · C–D · E–G · H–K · L, P, Q, U, Y, Z · R, V, W · M, O · S, T</span></span><span class="price"><span class="num">$10.00</span> each + <span class="num">$4.00</span> p&amp;h</span></li>
   </ul>
 </section>
 
 <section class="sec wrap" id="census" aria-labelledby="cen-h">
   <h2 id="cen-h">Federal Census Books</h2>
   <ul class="list">
-    <li><span>1850, 1860 and 1870 Census, three books</span><span class="price">$25.00 each + $4.00 p&amp;h</span></li>
-    <li><span>1880 to 1930 Census, nineteen books<span class="note">1880: four books · 1900–1910: five books · 1920: five books · 1930: five books</span></span><span class="price">$10.00 each + $4.00 p&amp;h</span></li>
+    <li><span><span class="num">1850</span>, <span class="num">1860</span> and <span class="num">1870</span> Census, three books</span><span class="price"><span class="num">$25.00</span> each + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span><span class="num">1880</span> to <span class="num">1930</span> Census, nineteen books<span class="note"><span class="num">1880</span>: four books · <span class="num">1900–1910</span>: five books · <span class="num">1920</span>: five books · <span class="num">1930</span>: five books</span></span><span class="price"><span class="num">$10.00</span> each + <span class="num">$4.00</span> p&amp;h</span></li>
   </ul>
 </section>
 
 <section class="sec wrap" id="more" aria-labelledby="more-h">
   <h2 id="more-h">Local history, stories and cookbooks</h2>
   <ul class="list">
-    <li><span>Civil War Stories (five-book collection)</span><span class="price">$10.00 each + $4.00 p&amp;h</span></li>
-    <li><span>Precinct #5 Hunnewell Furnace, Greenup County, Kentucky, July 1870 Census</span><span class="price">$10.00 + $6.00 p&amp;h</span></li>
-    <li><span>Precinct #6 Bellefonte Furnace, Greenup County, Kentucky, August 2, 1870 Census</span><span class="price">$10.00 + $6.00 p&amp;h</span></li>
-    <li><span>Kentucky Vital Birth Records</span><span class="price">$30.00 + $6.00 p&amp;h</span></li>
-    <li><span>Kentucky Vital Marriage Records</span><span class="price">$15.00 + $6.00 p&amp;h</span></li>
-    <li><span>Kentucky Vital Death Records</span><span class="price">$15.00 + $6.00 p&amp;h</span></li>
-    <li><span>Vanceburg, Kentucky 200 Years, 1797–1997</span><span class="price">$20.00 + $4.00 p&amp;h</span></li>
-    <li><span>Vanceburg 1937 Flood Views</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
-    <li><span>Old Remedies and Old Sayings</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
-    <li><span>Stories Of and About Lewis County</span><span class="price">$20.00 + $4.00 p&amp;h</span></li>
-    <li><span>History of Muses Chapel Church, 1894–1994</span><span class="price">$6.00 + $4.00 p&amp;h</span></li>
-    <li><span>The Circuit Riders Legacy</span><span class="price">$25.00 + $6.00 p&amp;h</span></li>
-    <li><span>Family History Stories</span><span class="price">$15.00 + $6.00 p&amp;h</span></li>
-    <li><span>Canning Book</span><span class="price">$12.00 + $4.00 p&amp;h</span></li>
-    <li><span>Uses for Salt, Vinegar &amp; Baking Soda</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
-    <li><span>Cook book: What's Cooking in Lewis County, Kentucky, With a Dab of History on the Side</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
-    <li><span>Cook book: Lewis County, Kentucky, Celebrating 200 Years, 1806–2006</span><span class="price">$10.00 + $4.00 p&amp;h</span></li>
-    <li><span>Cooking Up Some History: A Pinch of This and a Dab of That, State Cookie Book</span><span class="price">$5.00 + $4.00 p&amp;h</span></li>
+    <li><span>Civil War Stories (five-book collection)</span><span class="price"><span class="num">$10.00</span> each + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Precinct #5 Hunnewell Furnace, Greenup County, Kentucky, July <span class="num">1870</span> Census</span><span class="price"><span class="num">$10.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+    <li><span>Precinct #6 Bellefonte Furnace, Greenup County, Kentucky, August 2, <span class="num">1870</span> Census</span><span class="price"><span class="num">$10.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+    <li><span>Kentucky Vital Birth Records</span><span class="price"><span class="num">$30.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+    <li><span>Kentucky Vital Marriage Records</span><span class="price"><span class="num">$15.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+    <li><span>Kentucky Vital Death Records</span><span class="price"><span class="num">$15.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+    <li><span>Vanceburg, Kentucky <span class="num">200</span> Years, 1797–1997</span><span class="price"><span class="num">$20.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Vanceburg 1937 Flood Views</span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Old Remedies and Old Sayings</span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Stories Of and About Lewis County</span><span class="price"><span class="num">$20.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>History of Muses Chapel Church, 1894–1994</span><span class="price"><span class="num">$6.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>The Circuit Riders Legacy</span><span class="price"><span class="num">$25.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+    <li><span>Family History Stories</span><span class="price"><span class="num">$15.00</span> + <span class="num">$6.00</span> p&amp;h</span></li>
+    <li><span>Canning Book</span><span class="price"><span class="num">$12.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Uses for Salt, Vinegar &amp; Baking Soda</span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Cook book: What's Cooking in Lewis County, Kentucky, With a Dab of History on the Side</span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Cook book: Lewis County, Kentucky, Celebrating <span class="num">200</span> Years, <span class="num">1806–2006</span></span><span class="price"><span class="num">$10.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
+    <li><span>Cooking Up Some History: A Pinch of This and a Dab of That, State Cookie Book</span><span class="price"><span class="num">$5.00</span> + <span class="num">$4.00</span> p&amp;h</span></li>
   </ul>
 </section>
 

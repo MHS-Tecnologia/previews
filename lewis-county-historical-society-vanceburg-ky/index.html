@@ -55,7 +55,8 @@ p{max-width:38em}
 .muted{color:var(--ring)}
 .sec{padding-top:clamp(3rem,7vw,5rem);padding-bottom:clamp(3rem,7vw,5rem)}
 .sec + .sec{padding-top:0}
-.price{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.price{white-space:nowrap;font-weight:700}
+.num{font-family:Besley,Georgia,serif;font-weight:600}
 figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
 .foot{background:var(--river-2);color:#dfe5ec;margin-top:2rem;padding:2.5rem 0 3rem;font-size:.95rem}
 .foot a{color:#fff}
@@ -171,7 +172,7 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
 <section class="finder" id="finder" aria-labelledby="finder-h">
   <div>
     <h2 id="finder-h">Which book has your family's cemetery?</h2>
-    <p>The 25 Lewis County Cemetery Books list 225 cemeteries; a few names appear in more than one book. Each book gives the name of the cemetery and, where the stones can be read, each person's name, birth date and death date.</p>
+    <p>The 25 Lewis County Cemetery Books list 225 cemetery listings; a few names appear in more than one book. Each book gives the name of the cemetery and, where the stones can be read, each person's name, birth date and death date.</p>
     <label for="finder-q">Cemetery name</label>
     <input id="finder-q" type="search" autocomplete="off" spellcheck="false" placeholder="Try Woodland" aria-controls="finder-list">
     <p class="hint">Or try: <button type="button" data-try="Mt. Zion">Mt. Zion</button>, <button type="button" data-try="Esham">Esham</button>, <button type="button" data-try="Quincy">Quincy</button></p>
@@ -182,7 +183,7 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
       <ol id="finder-list"></ol>
       <button type="button" class="more" hidden>Show all</button>
     </div>
-    <p class="order">Cemetery books are $12.00 each + $4.00 postage and handling. To order, mail a check or money order to the Lewis County Historical Society, P. O. Box 362, Vanceburg, KY 41179, or <a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">email the society</a>.</p>
+    <p class="order">Cemetery books are <span class="num">$12.00</span> each + <span class="num">$4.00</span> postage and handling. To order, mail a check or money order to the Lewis County Historical Society, P. O. Box 362, Vanceburg, KY 41179, or <a href="mailto:lewiscountykyhistoricalsociety@yahoo.com">email the society</a>.</p>
   </div>
 </section></div>
 
@@ -190,8 +191,8 @@ figure figcaption{font-size:.9rem;color:var(--ring);margin-top:.5rem}
   <h2 id="shelf-h">On the shelves</h2>
   <div class="shelf">
     <a href="books.html#cemeteries"><h3>Cemetery books</h3><p>25 books of Lewis County cemeteries, plus CDs and photo collections of the stones.</p></a>
-    <a href="books.html#marriages"><h3>Marriage books</h3><p>Lewis County marriages from 1806 to 1962, in eleven volumes.</p></a>
-    <a href="books.html#census"><h3>Federal census</h3><p>The 1850 through 1930 census, transcribed in book collections.</p></a>
+    <a href="books.html#marriages"><h3>Marriage books</h3><p>Lewis County marriages from <span class="num">1806</span> to 1962, in eleven volumes.</p></a>
+    <a href="books.html#census"><h3>Federal census</h3><p>The <span class="num">1850</span> through <span class="num">1930</span> census, transcribed in book collections.</p></a>
     <a href="books.html#more"><h3>Stories and history</h3><p>Civil War stories, the 1937 flood, old remedies, family histories and cookbooks.</p></a>
   </div>
 </section>
