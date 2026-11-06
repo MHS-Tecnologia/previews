@@ -173,7 +173,7 @@ dialog.caixa::backdrop{background:rgba(24,25,29,.86)}
   .hero .acoes{flex-wrap:nowrap}
   .hero .btn-wa{flex:1;justify-content:center;padding-inline:1rem}
   .hero .btn-linha{padding-inline:1rem}
-  .tel-num{display:none}
+  .tel-num{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .hero .btn-linha{width:52px;padding:0;justify-content:center;flex:none}
   .hero-grade,.prov-grade,.faixa-grade,.sobre-grade,.pe-grade{grid-template-columns:1fr}
   .hero{padding-top:1.4rem}
