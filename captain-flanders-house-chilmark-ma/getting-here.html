@@ -10,11 +10,12 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/caslon-display.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/caslon.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/caslon-italic.woff2" crossorigin>
 <style>
-@font-face { font-family: "Caslon Display"; font-weight: 400; font-display: swap; src: url(fonts/caslon-display.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 400; font-display: swap; src: url(fonts/caslon.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/caslon-italic.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 700; font-display: swap; src: url(fonts/caslon-bold.woff2) format("woff2"); }
+@font-face { font-family: "Caslon Display"; font-weight: 400; font-display: optional; src: url(fonts/caslon-display.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 400; font-display: optional; src: url(fonts/caslon.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 400; font-style: italic; font-display: optional; src: url(fonts/caslon-italic.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 700; font-display: optional; src: url(fonts/caslon-bold.woff2) format("woff2"); }
 
 /* Whitewashed trim, the spruce-dark ink of an old deed, the slate blue the inn
    already uses on its room labels and emblem, and the lichen on Chilmark's stone walls. */
@@ -125,10 +126,10 @@ em, .it { font-style: italic; }
 
 /* Weddings band: the night tent photo sits on the inn's own slate. */
 .wed { background: var(--slate-deep); color: #eef0ea; }
-.wed .wrap { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); display: grid; grid-template-columns: 7fr 5fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.wed .wrap { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); display: grid; grid-template-columns: 6fr 5fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .wed p { color: #d9ddd4; margin: 1rem 0 1.6rem; }
-.wed figure { justify-self: center; margin: 0; }
-.wed figure img { border: 8px solid #eef0ea; }
+.wed figure { margin: 0; width: 100%; }
+.wed figure img { width: 100%; max-width: 420px; aspect-ratio: 274 / 200; }
 .wed figcaption { font-style: italic; font-size: .9rem; color: #c9cec4; margin-top: .6rem; }
 
 /* Contact block */
@@ -150,6 +151,7 @@ em, .it { font-style: italic; }
 .room-entry dd { margin: 0; }
 .room-entry .extra { margin-top: 1.2rem; font-size: .98rem; color: var(--ink-2); }
 .room-entry .ask { margin-top: 1.5rem; }
+.room-entry .rate-note { margin-top: .9rem; font-size: .88rem; font-style: italic; color: var(--ink-2); }
 .pics { display: grid; grid-template-columns: 1fr; gap: .8rem; }
 .pics img { width: 100%; }
 .pics img + img { width: 62%; justify-self: end; }
@@ -205,7 +207,7 @@ em, .it { font-style: italic; }
   .bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; display: flex; gap: .6rem; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(245, 246, 242, .97); border-top: 1px solid var(--rule); transform: translateY(110%); transition: transform .25s; }
   .bar.show { transform: none; }
   .bar .btn { flex: 1; min-height: 2.9rem; }
-  body { padding-bottom: 4.5rem; }
+  body { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
 }
 @media (max-width: 420px) {
   .hero h1 { font-size: 2.3rem; }

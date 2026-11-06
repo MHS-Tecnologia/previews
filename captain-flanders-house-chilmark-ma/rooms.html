@@ -10,11 +10,12 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/caslon-display.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/caslon.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/caslon-italic.woff2" crossorigin>
 <style>
-@font-face { font-family: "Caslon Display"; font-weight: 400; font-display: swap; src: url(fonts/caslon-display.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 400; font-display: swap; src: url(fonts/caslon.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/caslon-italic.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 700; font-display: swap; src: url(fonts/caslon-bold.woff2) format("woff2"); }
+@font-face { font-family: "Caslon Display"; font-weight: 400; font-display: optional; src: url(fonts/caslon-display.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 400; font-display: optional; src: url(fonts/caslon.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 400; font-style: italic; font-display: optional; src: url(fonts/caslon-italic.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 700; font-display: optional; src: url(fonts/caslon-bold.woff2) format("woff2"); }
 
 /* Whitewashed trim, the spruce-dark ink of an old deed, the slate blue the inn
    already uses on its room labels and emblem, and the lichen on Chilmark's stone walls. */
@@ -125,10 +126,10 @@ em, .it { font-style: italic; }
 
 /* Weddings band: the night tent photo sits on the inn's own slate. */
 .wed { background: var(--slate-deep); color: #eef0ea; }
-.wed .wrap { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); display: grid; grid-template-columns: 7fr 5fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.wed .wrap { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); display: grid; grid-template-columns: 6fr 5fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .wed p { color: #d9ddd4; margin: 1rem 0 1.6rem; }
-.wed figure { justify-self: center; margin: 0; }
-.wed figure img { border: 8px solid #eef0ea; }
+.wed figure { margin: 0; width: 100%; }
+.wed figure img { width: 100%; max-width: 420px; aspect-ratio: 274 / 200; }
 .wed figcaption { font-style: italic; font-size: .9rem; color: #c9cec4; margin-top: .6rem; }
 
 /* Contact block */
@@ -150,6 +151,7 @@ em, .it { font-style: italic; }
 .room-entry dd { margin: 0; }
 .room-entry .extra { margin-top: 1.2rem; font-size: .98rem; color: var(--ink-2); }
 .room-entry .ask { margin-top: 1.5rem; }
+.room-entry .rate-note { margin-top: .9rem; font-size: .88rem; font-style: italic; color: var(--ink-2); }
 .pics { display: grid; grid-template-columns: 1fr; gap: .8rem; }
 .pics img { width: 100%; }
 .pics img + img { width: 62%; justify-self: end; }
@@ -205,7 +207,7 @@ em, .it { font-style: italic; }
   .bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; display: flex; gap: .6rem; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(245, 246, 242, .97); border-top: 1px solid var(--rule); transform: translateY(110%); transition: transform .25s; }
   .bar.show { transform: none; }
   .bar .btn { flex: 1; min-height: 2.9rem; }
-  body { padding-bottom: 4.5rem; }
+  body { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
 }
 @media (max-width: 420px) {
   .hero h1 { font-size: 2.3rem; }
@@ -327,13 +329,15 @@ em, .it { font-style: italic; }
     </svg><svg class="tall" viewBox="0 0 400 612" role="group" aria-label="Plan of the homestead: four rooms in the main house, two cottages behind it">
       <line class="stroke" x1="0" y1="362" x2="400" y2="362"/>
       <rect class="stroke" x="252" y="58" width="24" height="56" style="fill:var(--paper-2)"/>
-      <a class="room" href="#sky"><polygon class="area" points="20,222 200,72 200,222"/><text class="lbl" x="140" y="196">Sky Room</text></a>
-      <a class="room" href="#wind"><polygon class="area" points="200,72 380,222 200,222"/><text class="lbl" x="260" y="196">Wind Room</text></a>
-      <a class="room" href="#pond"><rect class="area" x="40" y="222" width="160" height="140"/><text class="lbl" x="120" y="290">Pond Room</text></a>
-      <a class="room" href="#field"><rect class="area" x="200" y="222" width="160" height="140"/><text class="lbl" x="280" y="290">Field Room</text></a>
+      <a class="room" href="#sky"><polygon class="area" points="20,222 200,72 200,222"/><text class="lbl" x="145" y="178">Sky Room</text><text class="sub" x="145" y="197">king bed</text><text class="sub" x="145" y="213">private bath</text></a>
+      <a class="room" href="#wind"><polygon class="area" points="200,72 380,222 200,222"/><text class="lbl" x="255" y="178">Wind Room</text><text class="sub" x="255" y="197">king bed</text><text class="sub" x="255" y="213">private bath</text></a>
+      <a class="room" href="#pond"><rect class="area" x="40" y="222" width="160" height="140"/><text class="lbl" x="120" y="278">Pond Room</text><text class="sub" x="120" y="297">queen bed</text><text class="sub" x="120" y="313">shared bath</text></a>
+      <a class="room" href="#field"><rect class="area" x="200" y="222" width="160" height="140"/><text class="lbl" x="280" y="278">Field Room</text><text class="sub" x="280" y="297">twin beds</text><text class="sub" x="280" y="313">shared bath</text></a>
+      <text class="note" transform="translate(16 172) rotate(-90)" text-anchor="middle">upstairs</text>
+      <text class="note" transform="translate(28 292) rotate(-90)" text-anchor="middle">downstairs</text>
       <text class="note" x="200" y="420" text-anchor="middle">behind the main house</text>
-      <a class="room" href="#stone"><path class="area" d="M30 552 V472 L110 430 L190 472 V552 Z"/><text class="lbl" x="110" y="518">Stone Cottage</text></a>
-      <a class="room" href="#wood"><path class="area" d="M210 552 V472 L290 430 L370 472 V552 Z"/><text class="lbl" x="290" y="518">Wood Cottage</text></a>
+      <a class="room" href="#stone"><path class="area" d="M30 552 V472 L110 430 L190 472 V552 Z"/><text class="lbl" x="110" y="494">Stone Cottage</text><text class="sub" x="110" y="513">queen bed</text><text class="sub" x="110" y="529">private bath</text></a>
+      <a class="room" href="#wood"><path class="area" d="M210 552 V472 L290 430 L370 472 V552 Z"/><text class="lbl" x="290" y="494">Wood Cottage</text><text class="sub" x="290" y="513">full bed</text><text class="sub" x="290" y="529">private bath</text></a>
       <line class="stroke" x1="0" y1="552" x2="400" y2="552"/>
       <ellipse class="wall-stone" style="--i:0" cx="12.9" cy="572.1" rx="12.9" ry="8.6"/>
       <ellipse class="wall-stone" style="--i:1" cx="44.6" cy="570.7" rx="16.0" ry="7.5"/>
@@ -367,8 +371,8 @@ em, .it { font-style: italic; }
     <div>
       <p class="where">Main house, first floor</p>
       <h2 id="pond-h">Pond Room</h2>
-      <dl><dt>Bed</dt><dd>Queen</dd><dt>Bath</dt><dd>Shared</dd></dl>
-      
+      <dl><dt>Rate</dt><dd>$225 a night</dd><dt>Bed</dt><dd>Queen</dd><dt>Bath</dt><dd>Shared</dd></dl>
+      <p class="rate-note">Rates as listed on the inn&rsquo;s room sheet, posted November 2021. Call or email to confirm.</p>
       <p class="ask"><a class="btn line" href="mailto:mail@captainflandersinn.com?subject=Pond%20Room%20at%20the%20Captain%20Flanders%20House"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Ask about the Pond Room</a></p>
     </div>
     <div class="pics"><img src="img/r17-700.webp" srcset="img/r17-700.webp 700w, img/r17-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 48rem" width="1200" height="797" alt="The Pond Room: a four-poster queen bed with a floral quilt between two tall windows" loading="lazy" decoding="async"><img src="img/r18-700.webp" srcset="img/r18-700.webp 700w, img/r18-1200.webp 1200w" sizes="(max-width: 860px) 62vw, 30rem" width="1200" height="797" alt="The Pond Room washstand, with pitcher, bowl and folded towels" loading="lazy" decoding="async"></div>
@@ -379,8 +383,8 @@ em, .it { font-style: italic; }
     <div>
       <p class="where">Main house, first floor</p>
       <h2 id="field-h">Field Room</h2>
-      <dl><dt>Beds</dt><dd>Twin</dd><dt>Bath</dt><dd>Shared</dd></dl>
-      
+      <dl><dt>Rate</dt><dd>$225 a night</dd><dt>Beds</dt><dd>Twin</dd><dt>Bath</dt><dd>Shared</dd></dl>
+      <p class="rate-note">Rates as listed on the inn&rsquo;s room sheet, posted November 2021. Call or email to confirm.</p>
       <p class="ask"><a class="btn line" href="mailto:mail@captainflandersinn.com?subject=Field%20Room%20at%20the%20Captain%20Flanders%20House"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Ask about the Field Room</a></p>
     </div>
     <div class="pics one"><img src="img/r19-700.webp" srcset="img/r19-700.webp 700w, img/r19-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 48rem" width="1200" height="797" alt="The Field Room: two twin beds with turned posts and striped covers" loading="lazy" decoding="async"></div>
@@ -391,8 +395,8 @@ em, .it { font-style: italic; }
     <div>
       <p class="where">Main house, second floor</p>
       <h2 id="sky-h">Sky Room</h2>
-      <dl><dt>Bed</dt><dd>King</dd><dt>Bath</dt><dd>Private</dd></dl>
-      
+      <dl><dt>Rate</dt><dd>$275 a night</dd><dt>Bed</dt><dd>King</dd><dt>Bath</dt><dd>Private</dd></dl>
+      <p class="rate-note">Rates as listed on the inn&rsquo;s room sheet, posted November 2021. Call or email to confirm.</p>
       <p class="ask"><a class="btn line" href="mailto:mail@captainflandersinn.com?subject=Sky%20Room%20at%20the%20Captain%20Flanders%20House"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Ask about the Sky Room</a></p>
     </div>
     <div class="pics one"><img src="img/r21-700.webp" srcset="img/r21-700.webp 700w, img/r21-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 48rem" width="1200" height="797" alt="The Sky Room under the eaves, with a king bed and a chest of drawers" loading="lazy" decoding="async"></div>
@@ -403,8 +407,8 @@ em, .it { font-style: italic; }
     <div>
       <p class="where">Main house, second floor</p>
       <h2 id="wind-h">Wind Room</h2>
-      <dl><dt>Bed</dt><dd>King</dd><dt>Bath</dt><dd>Private</dd></dl>
-      
+      <dl><dt>Rate</dt><dd>$275 a night</dd><dt>Bed</dt><dd>King</dd><dt>Bath</dt><dd>Private</dd></dl>
+      <p class="rate-note">Rates as listed on the inn&rsquo;s room sheet, posted November 2021. Call or email to confirm.</p>
       <p class="ask"><a class="btn line" href="mailto:mail@captainflandersinn.com?subject=Wind%20Room%20at%20the%20Captain%20Flanders%20House"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Ask about the Wind Room</a></p>
     </div>
     <div class="pics"><img src="img/r24-700.webp" srcset="img/r24-700.webp 700w, img/r24-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 48rem" width="1200" height="797" alt="The Wind Room: a white iron king bed and a red rug" loading="lazy" decoding="async"><img src="img/r23-700.webp" srcset="img/r23-700.webp 700w, img/r23-1200.webp 1200w" sizes="(max-width: 860px) 62vw, 30rem" width="1200" height="797" alt="Robes hanging on the Wind Room door" loading="lazy" decoding="async"></div>
@@ -415,8 +419,8 @@ em, .it { font-style: italic; }
     <div>
       <p class="where">Cottage, behind the main house</p>
       <h2 id="stone-h">Stone Cottage</h2>
-      <dl><dt>Bed</dt><dd>Queen</dd><dt>Bath</dt><dd>Private</dd><dt>Also</dt><dd>Small refrigerator</dd></dl>
-      <p class="extra">Chilmark is known for its rambling stone walls. The Stone Cottage was created by artist and stone mason Lew French, inspired by that tradition.</p>
+      <dl><dt>Rate</dt><dd>$350 a night</dd><dt>Bed</dt><dd>Queen</dd><dt>Bath</dt><dd>Private</dd><dt>Also</dt><dd>Small refrigerator</dd></dl>
+      <p class="extra">Chilmark is known for its rambling stone walls. The Stone Cottage was created by artist and stone mason Lew French, inspired by that tradition.</p><p class="rate-note">Rates as listed on the inn&rsquo;s room sheet, posted November 2021. Call or email to confirm.</p>
       <p class="ask"><a class="btn line" href="mailto:mail@captainflandersinn.com?subject=Stone%20Cottage%20at%20the%20Captain%20Flanders%20House"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Ask about the Stone Cottage</a></p>
     </div>
     <div class="pics"><img src="img/r26-700.webp" srcset="img/r26-700.webp 700w, img/r26-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 48rem" width="1200" height="797" alt="The Stone Cottage: a fieldstone cottage with a white door, stepping stones and a low stone wall" loading="lazy" decoding="async"><img src="img/r27-700.webp" srcset="img/r27-700.webp 700w, img/r27-1200.webp 1200w" sizes="(max-width: 860px) 62vw, 30rem" width="1200" height="797" alt="Inside the Stone Cottage: a queen canopy bed under exposed beams" loading="lazy" decoding="async"></div>
@@ -427,8 +431,8 @@ em, .it { font-style: italic; }
     <div>
       <p class="where">Cottage, behind the main house</p>
       <h2 id="wood-h">Wood Cottage</h2>
-      <dl><dt>Bed</dt><dd>Full</dd><dt>Bath</dt><dd>Private</dd><dt>Also</dt><dd>Small sitting area with sofa and love seat</dd></dl>
-      <p class="extra">The sofa and love seat do not pull out into sofa beds.</p>
+      <dl><dt>Rate</dt><dd>$350 a night</dd><dt>Bed</dt><dd>Full</dd><dt>Bath</dt><dd>Private</dd><dt>Also</dt><dd>Small sitting area with sofa and love seat</dd></dl>
+      <p class="extra">The sofa and love seat do not pull out into sofa beds.</p><p class="rate-note">Rates as listed on the inn&rsquo;s room sheet, posted November 2021. Call or email to confirm.</p>
       <p class="ask"><a class="btn line" href="mailto:mail@captainflandersinn.com?subject=Wood%20Cottage%20at%20the%20Captain%20Flanders%20House"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Ask about the Wood Cottage</a></p>
     </div>
     <div class="pics"><img src="img/r33-700.webp" srcset="img/r33-700.webp 700w, img/r33-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 48rem" width="1200" height="797" alt="The Wood Cottage: a shingled cottage in long grass under old trees" loading="lazy" decoding="async"><img src="img/r35-700.webp" srcset="img/r35-700.webp 700w, img/r35-1200.webp 1200w" sizes="(max-width: 860px) 62vw, 30rem" width="1200" height="797" alt="The Wood Cottage sitting area, with pine walls and tall windows" loading="lazy" decoding="async"></div>

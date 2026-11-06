@@ -10,13 +10,14 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/caslon-display.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/caslon.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/caslon-italic.woff2" crossorigin>
 <link rel="preload" as="image" href="img/hero-m-780.webp" imagesrcset="img/hero-m-780.webp 780w" imagesizes="calc(100vw - 2rem)" media="(max-width: 860px)" fetchpriority="high">
 <link rel="preload" as="image" href="img/hero-900.webp" imagesrcset="img/hero-900.webp 900w, img/hero-1284.webp 1284w" imagesizes="min(56vw, 663px)" media="(min-width: 861px)" fetchpriority="high">
 <style>
-@font-face { font-family: "Caslon Display"; font-weight: 400; font-display: swap; src: url(fonts/caslon-display.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 400; font-display: swap; src: url(fonts/caslon.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/caslon-italic.woff2) format("woff2"); }
-@font-face { font-family: "Caslon"; font-weight: 700; font-display: swap; src: url(fonts/caslon-bold.woff2) format("woff2"); }
+@font-face { font-family: "Caslon Display"; font-weight: 400; font-display: optional; src: url(fonts/caslon-display.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 400; font-display: optional; src: url(fonts/caslon.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 400; font-style: italic; font-display: optional; src: url(fonts/caslon-italic.woff2) format("woff2"); }
+@font-face { font-family: "Caslon"; font-weight: 700; font-display: optional; src: url(fonts/caslon-bold.woff2) format("woff2"); }
 
 /* Whitewashed trim, the spruce-dark ink of an old deed, the slate blue the inn
    already uses on its room labels and emblem, and the lichen on Chilmark's stone walls. */
@@ -127,10 +128,10 @@ em, .it { font-style: italic; }
 
 /* Weddings band: the night tent photo sits on the inn's own slate. */
 .wed { background: var(--slate-deep); color: #eef0ea; }
-.wed .wrap { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); display: grid; grid-template-columns: 7fr 5fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.wed .wrap { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: clamp(3rem, 7vw, 5.5rem); display: grid; grid-template-columns: 6fr 5fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .wed p { color: #d9ddd4; margin: 1rem 0 1.6rem; }
-.wed figure { justify-self: center; margin: 0; }
-.wed figure img { border: 8px solid #eef0ea; }
+.wed figure { margin: 0; width: 100%; }
+.wed figure img { width: 100%; max-width: 420px; aspect-ratio: 274 / 200; }
 .wed figcaption { font-style: italic; font-size: .9rem; color: #c9cec4; margin-top: .6rem; }
 
 /* Contact block */
@@ -152,6 +153,7 @@ em, .it { font-style: italic; }
 .room-entry dd { margin: 0; }
 .room-entry .extra { margin-top: 1.2rem; font-size: .98rem; color: var(--ink-2); }
 .room-entry .ask { margin-top: 1.5rem; }
+.room-entry .rate-note { margin-top: .9rem; font-size: .88rem; font-style: italic; color: var(--ink-2); }
 .pics { display: grid; grid-template-columns: 1fr; gap: .8rem; }
 .pics img { width: 100%; }
 .pics img + img { width: 62%; justify-self: end; }
@@ -207,7 +209,7 @@ em, .it { font-style: italic; }
   .bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; display: flex; gap: .6rem; padding: .6rem 1rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(245, 246, 242, .97); border-top: 1px solid var(--rule); transform: translateY(110%); transition: transform .25s; }
   .bar.show { transform: none; }
   .bar .btn { flex: 1; min-height: 2.9rem; }
-  body { padding-bottom: 4.5rem; }
+  body { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
 }
 @media (max-width: 420px) {
   .hero h1 { font-size: 2.3rem; }
@@ -253,7 +255,7 @@ em, .it { font-style: italic; }
 <section class="hero" data-hero>
   <div>
     <h1>A whaling captain&rsquo;s farmhouse in Chilmark</h1>
-    <p class="lede">Built by Captain Richard Flanders in the late 1700s and renovated as a bed and breakfast, on 60 acres of rolling pasture overlooking Bliss Pond, Martha&rsquo;s Vineyard.</p>
+    <p class="lede">A renovated farmhouse built by whaling Captain Richard Flanders in the late 1700s, on 60 acres of rolling pasture overlooking Bliss Pond, Martha&rsquo;s Vineyard.</p>
     <div class="ctas">
       <a class="btn" href="mailto:mail@captainflandersinn.com?subject=A%20stay%20at%20the%20Captain%20Flanders%20House"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg>Ask about a stay</a>
       <a class="btn line" href="tel:+15086453123"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6.6 3.5 9.5 3l1.6 4.4-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4.4 1.6-.5 2.9A2 2 0 0 1 18.5 19 15.5 15.5 0 0 1 5 5.5a2 2 0 0 1 1.6-2Z"/></svg>(508) 645-3123</a>
@@ -354,13 +356,15 @@ em, .it { font-style: italic; }
     </svg><svg class="tall" viewBox="0 0 400 612" role="group" aria-label="Plan of the homestead: four rooms in the main house, two cottages behind it">
       <line class="stroke" x1="0" y1="362" x2="400" y2="362"/>
       <rect class="stroke" x="252" y="58" width="24" height="56" style="fill:var(--paper-2)"/>
-      <a class="room" href="rooms.html#sky"><polygon class="area" points="20,222 200,72 200,222"/><text class="lbl" x="140" y="196">Sky Room</text></a>
-      <a class="room" href="rooms.html#wind"><polygon class="area" points="200,72 380,222 200,222"/><text class="lbl" x="260" y="196">Wind Room</text></a>
-      <a class="room" href="rooms.html#pond"><rect class="area" x="40" y="222" width="160" height="140"/><text class="lbl" x="120" y="290">Pond Room</text></a>
-      <a class="room" href="rooms.html#field"><rect class="area" x="200" y="222" width="160" height="140"/><text class="lbl" x="280" y="290">Field Room</text></a>
+      <a class="room" href="rooms.html#sky"><polygon class="area" points="20,222 200,72 200,222"/><text class="lbl" x="145" y="178">Sky Room</text><text class="sub" x="145" y="197">king bed</text><text class="sub" x="145" y="213">private bath</text></a>
+      <a class="room" href="rooms.html#wind"><polygon class="area" points="200,72 380,222 200,222"/><text class="lbl" x="255" y="178">Wind Room</text><text class="sub" x="255" y="197">king bed</text><text class="sub" x="255" y="213">private bath</text></a>
+      <a class="room" href="rooms.html#pond"><rect class="area" x="40" y="222" width="160" height="140"/><text class="lbl" x="120" y="278">Pond Room</text><text class="sub" x="120" y="297">queen bed</text><text class="sub" x="120" y="313">shared bath</text></a>
+      <a class="room" href="rooms.html#field"><rect class="area" x="200" y="222" width="160" height="140"/><text class="lbl" x="280" y="278">Field Room</text><text class="sub" x="280" y="297">twin beds</text><text class="sub" x="280" y="313">shared bath</text></a>
+      <text class="note" transform="translate(16 172) rotate(-90)" text-anchor="middle">upstairs</text>
+      <text class="note" transform="translate(28 292) rotate(-90)" text-anchor="middle">downstairs</text>
       <text class="note" x="200" y="420" text-anchor="middle">behind the main house</text>
-      <a class="room" href="rooms.html#stone"><path class="area" d="M30 552 V472 L110 430 L190 472 V552 Z"/><text class="lbl" x="110" y="518">Stone Cottage</text></a>
-      <a class="room" href="rooms.html#wood"><path class="area" d="M210 552 V472 L290 430 L370 472 V552 Z"/><text class="lbl" x="290" y="518">Wood Cottage</text></a>
+      <a class="room" href="rooms.html#stone"><path class="area" d="M30 552 V472 L110 430 L190 472 V552 Z"/><text class="lbl" x="110" y="494">Stone Cottage</text><text class="sub" x="110" y="513">queen bed</text><text class="sub" x="110" y="529">private bath</text></a>
+      <a class="room" href="rooms.html#wood"><path class="area" d="M210 552 V472 L290 430 L370 472 V552 Z"/><text class="lbl" x="290" y="494">Wood Cottage</text><text class="sub" x="290" y="513">full bed</text><text class="sub" x="290" y="529">private bath</text></a>
       <line class="stroke" x1="0" y1="552" x2="400" y2="552"/>
       <ellipse class="wall-stone" style="--i:0" cx="12.9" cy="572.1" rx="12.9" ry="8.6"/>
       <ellipse class="wall-stone" style="--i:1" cx="44.6" cy="570.7" rx="16.0" ry="7.5"/>
@@ -422,7 +426,7 @@ em, .it { font-style: italic; }
     </div>
     <figure>
       <img src="img/tent-274.webp" width="274" height="200" alt="A lit reception tent at dusk" loading="lazy">
-      <figcaption>From the inn&rsquo;s events page.</figcaption>
+      <figcaption>Photo by Jocelyn Filley, from the inn&rsquo;s events page.</figcaption>
     </figure>
   </div>
 </section>
