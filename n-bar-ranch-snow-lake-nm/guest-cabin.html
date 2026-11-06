@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guest Cabin | N Bar Ranch</title>
+<meta name="description" content="The N Bar Ranch guest cabin: two bedrooms, four people and four equines, at the ranch headquarters.">
+<meta name="theme-color" content="#1E2A1F">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bigshoulders.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Big Shoulders";src:url(fonts/bigshoulders.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:Literata;src:url(fonts/literata.woff2) format("woff2");font-weight:400 600;font-display:swap}
+@font-face{font-family:Literata;src:url(fonts/literata-italic.woff2) format("woff2");font-style:italic;font-weight:400;font-display:swap}
+:root{--fog:#EDEEE6;--paper:#F7F7F2;--pine:#1E2A1F;--pine2:#2C3B2D;--hay:#D9C188;--saddle:#7A4A1E;--red:#8C2F22;--muted:#4A5547;--line:#C9CCBD;--w:1240px;--g:16px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fog);color:var(--pine);font:400 1.0625rem/1.65 Literata,Georgia,serif;font-optical-sizing:auto}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,.disp{font-family:"Big Shoulders",Impact,"Arial Narrow",sans-serif;font-weight:800;line-height:.95;letter-spacing:.005em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+h3{font-size:1.75rem;line-height:1}
+p{margin:0 0 1em}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 var(--g)}
+@media(min-width:768px){:root{--g:32px}}
+.skip{position:absolute;left:-999px;top:0;background:var(--pine);color:#fff;padding:8px 12px;z-index:30}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.demo{background:var(--pine);color:#E9E6D6;font-size:.8125rem;line-height:1.4;text-align:center;padding:6px var(--g)}
+/* header */
+.top{background:var(--fog);border-bottom:1px solid var(--line);position:relative;z-index:20}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:16px}
+.mark{font-family:"Big Shoulders",Impact,sans-serif;font-weight:900;font-size:1.9rem;text-decoration:none;line-height:1;display:flex;align-items:baseline;gap:.35em;white-space:nowrap}
+.mark small{font-family:Literata,serif;font-weight:400;font-size:.8rem;color:var(--muted);letter-spacing:0}
+.nav{display:flex;align-items:center;gap:22px}
+.nav>a{text-decoration:none;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav>a:hover,.nav>a[aria-current]{border-bottom-color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:3px;background:var(--red);color:#fff;text-decoration:none;font-family:"Big Shoulders",Impact,sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:.02em;line-height:1}
+.btn:hover{background:#74251A}
+.btn.ghost{background:transparent;color:var(--pine);box-shadow:inset 0 0 0 2px var(--pine)}
+.btn.ghost:hover{background:var(--pine);color:var(--fog)}
+.nav>a.btn{padding:0 18px;min-height:42px;border:0;color:#fff}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-family:"Big Shoulders",Impact,sans-serif;font-weight:800;font-size:1.3rem;padding:10px 14px;border:2px solid var(--pine);border-radius:3px;line-height:1}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--pine);color:var(--fog)}
+.menu nav{position:absolute;right:0;top:calc(100% + 10px);background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 30px rgba(30,42,31,.18);min-width:240px;padding:8px 0;display:flex;flex-direction:column}
+.menu nav a{padding:12px 20px;text-decoration:none;font-size:1.05rem}
+.menu nav a[aria-current]{color:var(--red);font-weight:600}
+@media(max-width:1079px){.nav>a{display:none}.menu{display:block}}
+/* hero */
+.hero{padding:28px 0 40px}
+.hero .wrap{display:grid;gap:22px}
+.hero h1{font-size:clamp(2.6rem,10.4vw,5.6rem);font-weight:900}
+.lede{font-size:1.125rem;max-width:34em;margin:14px 0 20px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero figure{margin:0}
+.hero figure img{width:100%;border-radius:3px}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:8px;font-style:italic}
+@media(min-width:1024px){.hero{padding:56px 0 64px}.hero .wrap{grid-template-columns:5fr 7fr;align-items:center;gap:56px}.hero h1{font-size:clamp(3.6rem,5.4vw,5.4rem)}}
+/* page head (inner pages) */
+.phead{padding:36px 0 28px}
+.phead h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:900;max-width:14ch}
+.phead p{max-width:40em;font-size:1.125rem;margin-top:14px}
+/* stays */
+.stays{padding:24px 0 72px}
+.stays h2{margin-bottom:28px}
+.stays .grid{display:grid;gap:40px}
+@media(min-width:900px){.stays .grid{grid-template-columns:1fr 1fr;gap:48px}}
+.stay img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.stay h3{font-size:2.2rem;margin:18px 0 6px}
+.price{font-family:"Big Shoulders",Impact,sans-serif;font-weight:800;font-size:1.6rem;color:var(--saddle);margin:0 0 10px;line-height:1.1}
+.price span{font-family:Literata,serif;font-weight:400;font-size:1rem;color:var(--muted)}
+.more{font-weight:600;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--red)}
+/* almanac — the signature */
+.alm{background:var(--pine);color:#E9E6D6;padding:64px 0 72px}
+.alm h2{color:var(--hay);max-width:16ch}
+.alm .intro{max-width:38em;margin:14px 0 30px;color:#D7D5C6}
+@media(min-width:900px){.alm .head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}.alm .intro{margin:0 0 36px}.alm h2{margin-bottom:36px}}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--hay)}
+.tabs button{appearance:none;background:none;border:0;color:#BFC3B2;cursor:pointer;text-align:left;padding:12px 4px 14px;font:inherit;border-top:6px solid transparent;margin-top:-2px}
+.tabs button b{display:block;font-family:"Big Shoulders",Impact,sans-serif;font-weight:900;font-size:clamp(1.6rem,6.4vw,4.4rem);line-height:.9;color:inherit}
+.tabs button span{display:block;font-size:.8rem;line-height:1.3;margin-top:4px}
+.tabs button[aria-selected=true]{color:var(--hay);border-top-color:var(--hay)}
+.tabs button:hover{color:#fff}
+.panel{display:grid;gap:22px;margin-top:22px}
+.panel[hidden]{display:none}
+.panel img{width:100%;border-radius:3px;aspect-ratio:3/2;object-fit:cover}
+.panel h3{color:var(--hay);font-size:2.2rem;margin-bottom:12px}
+.temps{font-family:"Big Shoulders",Impact,sans-serif;font-weight:700;font-size:1.35rem;color:#fff;margin-bottom:12px}
+@media(min-width:900px){.panel{grid-template-columns:7fr 5fr;gap:48px;align-items:center}}
+@media(max-width:600px){.tabs button .tag{display:none}}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(prefers-reduced-motion:no-preference){.panel:not([hidden]){animation:fade .35s ease-out}@keyframes fade{from{opacity:0}to{opacity:1}}}
+/* creed + booking */
+.creed{padding:72px 0}
+.creed .wrap{display:grid;gap:48px}
+@media(min-width:960px){.creed .wrap{grid-template-columns:1fr 1fr;gap:72px}}
+.creed h2{font-size:clamp(2.8rem,7vw,5rem);color:var(--red)}
+.musts{list-style:none;padding:0;margin:20px 0}
+.musts li{padding:10px 0;border-bottom:1px solid var(--line);font-size:1.1rem}
+.steps{counter-reset:s;list-style:none;padding:0;margin:20px 0 24px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:"Big Shoulders",Impact,sans-serif;font-weight:900;font-size:2rem;line-height:1;color:var(--saddle)}
+.note{background:var(--paper);border-left:4px solid var(--saddle);padding:14px 18px;font-size:.98rem}
+/* inner content */
+.sec{padding:40px 0 56px}
+.sec+.sec{border-top:1px solid var(--line)}
+.prose{max-width:40em}
+.split{display:grid;gap:32px}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;gap:56px;align-items:start}}
+.split img{width:100%;border-radius:3px}
+.facts{display:grid;gap:28px;margin-top:28px}
+@media(min-width:760px){.facts{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.facts.three{grid-template-columns:repeat(3,1fr)}}
+.fact img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;margin-bottom:12px}
+.fact h3{margin-bottom:6px}
+.pricebox{background:var(--pine);color:#E9E6D6;padding:26px;border-radius:3px}
+.pricebox .disp{color:var(--hay);font-size:3.4rem;line-height:1}
+.pricebox p{margin:8px 0 0}
+.gates{display:grid;gap:2px;margin-top:24px}
+@media(min-width:760px){.gates{grid-template-columns:1fr 1fr}}
+.gate{background:var(--paper);padding:26px}
+.gate h3{font-size:2rem;color:var(--saddle)}
+blockquote{margin:0;font-style:italic;font-size:1.25rem;line-height:1.5;max-width:34em}
+blockquote footer{font-style:normal;font-size:.95rem;color:var(--muted);margin-top:10px}
+.cols{columns:2 260px;column-gap:40px}
+.cols li{break-inside:avoid;margin-bottom:6px}
+details.q{border-bottom:1px solid var(--line)}
+details.q summary{cursor:pointer;padding:16px 36px 16px 0;font-weight:600;font-size:1.1rem;list-style:none;position:relative}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+";position:absolute;right:6px;top:10px;font-family:"Big Shoulders",Impact,sans-serif;font-size:2rem;color:var(--red)}
+details.q[open] summary::after{content:"\2212"}
+details.q div{padding:0 0 18px;max-width:42em}
+.month{display:grid;grid-template-columns:1fr;gap:4px;padding:16px 0;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.month{grid-template-columns:200px 1fr;gap:24px}}
+.month h3{color:var(--saddle)}
+/* photo grid + lightbox */
+.pgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));margin-top:24px}
+.ph{appearance:none;border:0;padding:0;background:none;cursor:zoom-in;display:block;width:100%;text-align:left;font:inherit;color:inherit}
+.ph img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.ph:hover img{filter:brightness(1.06)}
+.ph span{display:block;font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px}
+dialog.lb{margin:auto;border:0;padding:0;background:var(--pine);color:#E9E6D6;max-width:min(1200px,94vw);max-height:92vh;border-radius:4px}
+dialog.lb::backdrop{background:rgba(14,20,15,.86)}
+dialog.lb img{max-width:100%;max-height:calc(92vh - 64px);width:auto;margin:0 auto}
+dialog.lb .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px}
+dialog.lb button{appearance:none;border:2px solid var(--hay);background:none;color:var(--hay);font:800 1.1rem "Big Shoulders",Impact,sans-serif;padding:8px 14px;border-radius:3px;cursor:pointer}
+/* contact */
+.cardlist{display:grid;gap:2px;margin-top:20px}
+@media(min-width:760px){.cardlist{grid-template-columns:1fr 1fr}}
+.card{background:var(--paper);padding:24px}
+.card h3{font-size:1.6rem;margin-bottom:8px}
+.big{font-family:"Big Shoulders",Impact,sans-serif;font-weight:800;font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.1;word-break:break-word}
+/* footer */
+.foot{background:var(--pine);color:#D7D5C6;padding:48px 0 28px;font-size:.95rem}
+.foot .wrap{display:grid;gap:28px}
+@media(min-width:900px){.foot .wrap{grid-template-columns:2fr 1fr 1fr}}
+.foot .mark{color:var(--hay);font-size:2.4rem}
+.foot a{color:#fff}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin:6px 0}
+.legal{grid-column:1/-1;border-top:1px solid #3A4A3B;padding-top:18px;font-size:.85rem;color:#BFC3B2}
+/* sticky mobile cta */
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:25;display:flex;gap:8px;padding:10px var(--g) calc(10px + env(safe-area-inset-bottom));background:var(--fog);border-top:1px solid var(--line);transform:translateY(110%);visibility:hidden}
+.stick.on{transform:none;visibility:visible}
+.stick .btn{flex:1;min-height:46px;font-size:1.15rem}
+@media(prefers-reduced-motion:no-preference){.stick{transition:transform .25s ease,visibility .25s}}
+@media(max-width:1023px){body{padding-bottom:72px}}
+@media(min-width:1024px){.stick{display:none}}
+.hero.inner h1{font-size:clamp(2.6rem,10vw,4.6rem)}
+.hero.inner .lede{font-size:1.0625rem}
+@media(max-width:1023px){.hero.inner{padding:22px 0 12px}.hero.inner figure img{aspect-ratio:2/1;object-fit:cover}}
+@media(min-width:1024px){.hero.inner{padding:44px 0 48px}.hero.inner figure img{aspect-ratio:4/3;object-fit:cover}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo">Unofficial demo built by MHS Tecnologia for N Bar Ranch. Not affiliated with or endorsed by N Bar Ranch.</div>
+<header class="top"><div class="wrap">
+<a class="mark" href="index.html" aria-label="N Bar Ranch, home">N Bar Ranch <small>New Mexico</small></a>
+<nav class="nav" aria-label="Main"><a href="rent-the-ranch.html">Rent the ranch</a><a href="guest-cabin.html" aria-current="page">Guest cabin</a><a href="plan-your-week.html">Plan your week</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a class="btn" href="mailto:nbarranch1@gmail.com">Email the ranch</a>
+<details class="menu"><summary>Menu</summary><nav aria-label="Mobile"><a href="index.html">Home</a><a href="rent-the-ranch.html">Rent the ranch</a><a href="guest-cabin.html" aria-current="page">Guest cabin</a><a href="plan-your-week.html">Plan your week</a><a href="about.html">About</a><a href="gallery.html">Gallery</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="mailto:nbarranch1@gmail.com">Email the ranch</a><a href="tel:+15755336253">Call 575-533-6253</a></nav></details>
+</nav></div></header>
+<main id="main">
+
+<section class="hero inner" data-hero><div class="wrap"><div><h1>Rent the guest cabin</h1><p class="lede">Lots of folks don&#8217;t have 12 traveling friends to rent the ranch, and some just don&#8217;t like a crowd. The guest cabin sits away from the guest ranch, down in the main part of the ranch headquarters.</p><div class="ctas"><a class="btn" href="mailto:nbarranch1@gmail.com">Email the ranch</a><a class="btn ghost" href="tel:+15755336253">Call 575-533-6253</a></div></div><figure><img src="img/p22-800.webp" srcset="img/p22-480.webp 480w, img/p22-800.webp 800w, img/p22-1400.webp 1400w" sizes="(min-width:1280px) 653px, (min-width:1024px) calc((100vw - 120px) * 0.583), calc(100vw - 32px)" width="1400" height="1050" alt="The guest cabin: a wooden cabin with a long front porch and a metal roof" fetchpriority="high"><figcaption>The guest cabin.</figcaption></figure></div></section>
+<section class="sec"><div class="wrap split">
+<div class="prose">
+<h2>Inside the cabin</h2>
+<ul style="margin-top:16px">
+<li>Two bedrooms: the large one has a queen bed and a sitting area, the small one a set of twin bunk beds.</li>
+<li>A fully stocked kitchen with a 4 burner gas stove and oven, and a mid sized refrigerator with a small freezer. No microwave.</li>
+<li>A living room with comfortable chairs and a sofa around the pellet stove, which heats the entire cabin.</li>
+<li>A full bath with a shower and tub.</li>
+<li>Porches front and back over the ranch and pastures: one for morning coffee, the other for that evening beverage.</li>
+</ul>
+<p>Just renovated, very clean and comfortable, decorated in a western style. Use of a 60 foot panel round pen and a 45&#8217;x80&#8217; new board corral next to the cabin comes with the rental.</p>
+</div>
+<div class="pricebox">
+<p class="disp">$1,200 per week</p>
+<p>A 6-night week, Sunday through Saturday, for four people and four equines.</p>
+<p>Each equine needs health papers and a Coggins. The physical address your vet will need: N Bar Ranch, 34 N Bar Ranch Rd., Reserve, N.M. 87830.</p>
+<p>Booking for the guest cabin opens November 2nd at 10am Mountain Time, by email.</p>
+</div>
+</div></section>
+<section class="sec"><div class="wrap">
+<h2>Photos of the cabin</h2>
+<div class="pgrid"><button type="button" class="ph" data-full="img/p22-1400.webp" data-cap="The guest cabin."><img src="img/p22-800.webp" srcset="img/p22-480.webp 480w, img/p22-800.webp 800w, img/p22-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="The guest cabin with its long front porch" loading="lazy" decoding="async"><span>The guest cabin.</span></button><button type="button" class="ph" data-full="img/p23-1400.webp" data-cap="The large bedroom, with a queen bed."><img src="img/p23-800.webp" srcset="img/p23-480.webp 480w, img/p23-800.webp 800w, img/p23-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="Queen bed against a weathered wood wall with a red painted wall beside it" loading="lazy" decoding="async"><span>The large bedroom, with a queen bed.</span></button><button type="button" class="ph" data-full="img/p24-1400.webp" data-cap="The sitting area in the large bedroom."><img src="img/p24-800.webp" srcset="img/p24-480.webp 480w, img/p24-800.webp 800w, img/p24-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="Two leather chairs and a small table by a bright window" loading="lazy" decoding="async"><span>The sitting area in the large bedroom.</span></button><button type="button" class="ph" data-full="img/p25-1400.webp" data-cap="The small bedroom, with twin bunk beds."><img src="img/p25-800.webp" srcset="img/p25-480.webp 480w, img/p25-800.webp 800w, img/p25-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="A set of twin bunk beds by a window" loading="lazy" decoding="async"><span>The small bedroom, with twin bunk beds.</span></button><button type="button" class="ph" data-full="img/p26-1400.webp" data-cap="The kitchen."><img src="img/p26-800.webp" srcset="img/p26-480.webp 480w, img/p26-800.webp 800w, img/p26-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="Kitchen with a gas stove, wooden cabinets and a sink" loading="lazy" decoding="async"><span>The kitchen.</span></button><button type="button" class="ph" data-full="img/p27-1400.webp" data-cap="The living room and pellet stove."><img src="img/p27-800.webp" srcset="img/p27-480.webp 480w, img/p27-800.webp 800w, img/p27-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="Living room with armchairs, a wagon-wheel coffee table and a pellet stove" loading="lazy" decoding="async"><span>The living room and pellet stove.</span></button><button type="button" class="ph" data-full="img/p28-1400.webp" data-cap="The view from the back porch."><img src="img/p28-800.webp" srcset="img/p28-480.webp 480w, img/p28-800.webp 800w, img/p28-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="Green pasture and a pine forest under a blue sky" loading="lazy" decoding="async"><span>The view from the back porch.</span></button><button type="button" class="ph" data-full="img/p29-1400.webp" data-cap="The round pen next to the guest house."><img src="img/p29-800.webp" srcset="img/p29-480.webp 480w, img/p29-800.webp 800w, img/p29-1400.webp 1400w" sizes="(min-width:1280px) 384px, (min-width:1100px) 33vw, (min-width:760px) 50vw, calc(100vw - 32px)" width="1400" height="1050" alt="A round pen and barns across a green pasture" loading="lazy" decoding="async"><span>The round pen next to the guest house.</span></button></div>
+</div></section>
+
+</main>
+<footer class="foot"><div class="wrap">
+<div><p class="mark">N Bar Ranch</p>
+<p>A century old working cattle and horse ranch at 8,000 feet in the Gila National Forest, near Snow Lake, New Mexico.</p>
+<p>Email or messenger is the best way to reach the ranch. They are not often near the phone and have no office staff.</p></div>
+<div><ul><li><a href="rent-the-ranch.html">Rent the ranch</a></li><li><a href="guest-cabin.html">Guest cabin</a></li><li><a href="plan-your-week.html">Plan your week</a></li><li><a href="about.html">About</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><p><a href="mailto:nbarranch1@gmail.com">nbarranch1@gmail.com</a><br><a href="tel:+15755336253">575-533-6253</a></p>
+<p>P.O. Box 409<br>Reserve, New Mexico 87830</p></div>
+<p class="legal">Unofficial demo built by MHS Tecnologia for N Bar Ranch. Not affiliated with or endorsed by N Bar Ranch. Photos and text from nbarranch.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+</div></footer>
+<div class="stick" id="stick"><a class="btn" href="mailto:nbarranch1@gmail.com">Email the ranch</a><a class="btn ghost" href="tel:+15755336253">Call</a></div>
+<dialog class="lb" id="lb" aria-label="Photo"><div class="bar"><span id="lbcap"></span><button type="button" id="lbx">Close</button></div><img id="lbimg" alt=""></dialog>
+<script>
+(function(){
+var s=document.getElementById('stick'),h=document.querySelector('[data-hero]');
+if(s&&h&&'IntersectionObserver' in window){new IntersectionObserver(function(e){s.classList.toggle('on',!e[0].isIntersecting)}).observe(h)}
+var tabs=document.querySelectorAll('[role=tab]');
+function pick(t,focus){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=!on});if(focus)t.focus()}
+tabs.forEach(function(b,i){b.addEventListener('click',function(){pick(b)});b.addEventListener('keydown',function(e){var k=e.key,n=null;if(k==='ArrowRight')n=tabs[(i+1)%tabs.length];if(k==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];if(k==='Home')n=tabs[0];if(k==='End')n=tabs[tabs.length-1];if(n){e.preventDefault();pick(n,true)}})});
+var d=document.getElementById('lb');
+document.querySelectorAll('.ph').forEach(function(b){b.addEventListener('click',function(){var i=document.getElementById('lbimg');i.src=b.dataset.full;i.alt=b.querySelector('img').alt;document.getElementById('lbcap').textContent=b.dataset.cap;d.showModal()})});
+document.getElementById('lbx').addEventListener('click',function(){d.close()});
+d.addEventListener('click',function(e){if(e.target===d)d.close()});
+})();
+</script>
+</body>
+</html>
