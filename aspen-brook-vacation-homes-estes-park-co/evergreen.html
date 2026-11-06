@@ -11,8 +11,9 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/alegreyasans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/alegreyasans-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" type="image/webp" imagesrcset="img/eg-ext-700.webp 700w, img/eg-ext-1200.webp 1200w" imagesizes="(min-width: 1240px) 680px, (min-width: 900px) calc(58vw - 48px), calc(100vw - 32px)">
-<style>@font-face{font-family:Alegreya;src:url(fonts/alegreya.woff2) format("woff2");font-weight:400 800;font-display:swap}
+<style>@font-face{font-family:Alegreya;src:url(fonts/alegreya.woff2) format("woff2");font-weight:400 800;font-display:optional}
 @font-face{font-family:"Alegreya Sans";src:url(fonts/alegreyasans-400.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Alegreya Sans";src:url(fonts/alegreyasans-700.woff2) format("woff2");font-weight:700;font-display:swap}
 :root{--forest:#014c23;--forest2:#0d3b22;--gold:#e8a317;--river:#1d6673;--bark:#f1f3ee;--ink:#16241b;--stone:#4c584f;--line:#d3dad1;--paper:#fff;--w:1200px}
@@ -69,18 +70,23 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offs
 
 /* hero */
 .hero{padding:24px 0 0}
-.hero .wrap{display:grid;gap:22px}
-.hero .lede{font-size:1.18rem;color:var(--stone)}
-.hero figure{margin:0}
-.hero figure img{width:100%;border-radius:4px;aspect-ratio:4/3;object-fit:cover}
-figcaption{font-size:.95rem;color:var(--stone);margin-top:8px}
+.hero .wrap{display:grid;gap:4px}
+.hero h1{margin-bottom:.3em}
+.hero .lede{font-size:1.15rem;color:var(--stone);margin-bottom:0}
+.hero .actions{margin:16px 0 8px}
+.hero .note{display:none}
+.pano{margin:20px 0 0}
+.pano img{width:100%;aspect-ratio:25/16;object-fit:cover}
+@media(max-width:699px){.hero .btn-line{min-height:0;padding:0;border:0;text-decoration:underline;color:var(--river)}.hero .btn-line:hover{background:none;color:var(--river)}}
+@media(min-width:700px){.pano img{aspect-ratio:3/1;max-height:520px}.hero .note{display:block}}
 @media(min-width:1000px){
-  .hero{padding:56px 0 0}
-  .hero .wrap{grid-template-columns:5fr 7fr;gap:52px;align-items:center}
+  .hero{padding:48px 0 0}
+  .hero .wrap{grid-template-columns:7fr 5fr;gap:56px;align-items:end}
+  .hero h1{margin:0}
+  .pano{margin-top:36px}
 }
-
 /* signature: three miles either way */
-.miles{background:var(--forest);color:#eef3ec;padding:44px 0 52px;margin-top:48px}
+.miles{background:var(--forest);color:#eef3ec;padding:44px 0 52px}
 .miles h2{font-size:clamp(1.7rem,1.3rem + 1.5vw,2.45rem);margin-bottom:26px}
 .line{list-style:none;margin:0;padding:0;display:grid;position:relative}
 .stop{position:relative;padding:0 0 0 52px;min-height:60px;z-index:1}
@@ -108,6 +114,15 @@ figcaption{font-size:.95rem;color:var(--stone);margin-top:8px}
   .stop.home::before{left:50%;top:-10px;width:46px;height:46px}
   .seg{height:auto;padding:30px 0 0;display:block;text-align:center}
 }
+/* seasons strip */
+.strip{padding:56px 0 64px;background:var(--paper)}
+.strip-row{list-style:none;margin:0 auto;padding:0 16px;max-width:1440px;display:grid;gap:16px}
+@media(min-width:800px){.strip-row{grid-template-columns:repeat(3,1fr);padding:0 32px}}
+.strip-row a{display:block;position:relative;color:var(--ink);text-decoration:none;font-family:Alegreya,Georgia,serif;font-weight:700;font-size:1.35rem}
+.strip-row img{width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:4px}
+.strip-row span{display:block;padding-top:8px}
+.strip-row a:hover span{text-decoration:underline;text-underline-offset:.18em}
+
 /* sections */
 .sec{padding:56px 0}
 .sec.paper{background:var(--paper)}
