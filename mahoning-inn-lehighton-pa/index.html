@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Mahoning Inn | Lehighton, PA, gateway to the Poconos</title>
+<title>Mahoning Inn | Lehighton, PA, in the Western Poconos</title>
 <meta name="description" content="34 non-smoking rooms in Lehighton, PA, with a mountain view out back. 2.5 miles from Turnpike Exit 74, 4 miles from Jim Thorpe.">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -88,7 +88,7 @@ p { max-width: 64ch; }
 .row .gap { min-width: .45em; }
 .post { width: .7rem; height: 2.4rem; margin: 0 auto; background: var(--blue); }
 @media (prefers-reduced-motion: no-preference) {
-  .row span { animation: slot .42s cubic-bezier(.2, .8, .3, 1.2) both; animation-delay: calc(var(--i) * 38ms + 250ms); }
+  .row span { animation: slot .22s cubic-bezier(.2, .8, .3, 1.2) both; animation-delay: calc(var(--i) * 9ms + 20ms); }
   @keyframes slot { from { transform: translateY(-.55em); opacity: 0; } to { transform: none; opacity: 1; } }
 }
 
@@ -120,6 +120,7 @@ p { max-width: 64ch; }
 .seasons button[aria-selected="true"] { background: var(--ink); color: #fff; }
 .pane { margin: 0; }
 .pane[hidden] { display: none; }
+.pane figure { margin: 0; }
 .pane img { width: 100%; max-width: var(--w); border-radius: .25rem; }
 .note { font-size: .95rem; color: var(--soft); margin-top: 1rem; }
 
@@ -223,10 +224,15 @@ p { max-width: 64ch; }
   .hero { padding-top: 1rem; }
   .hero-copy { gap: .9rem; }
   .sign { margin: 0 auto; }
-  .sign-name { font-size: 2.45rem; border-width: 5px; }
-  .post { height: .9rem; }
-  .lead { font-size: 1.02rem; }
-  .actions .btn { flex: 1 1 auto; }
+  .sign-name { font-size: 2.1rem; border-width: 4px; padding: .25rem .4rem .3rem; }
+  .sign-name small { font-size: .85rem; margin-top: .1rem; }
+  .board { margin-top: .3rem; border-width: 4px; padding: .15rem .4rem; }
+  .row { font-size: 1.05rem; padding: .2rem 0 .22rem; }
+  .post { height: .5rem; }
+  .lead { font-size: 1rem; line-height: 1.5; }
+  .actions { flex-wrap: nowrap; }
+  .actions .btn { flex: 1 1 auto; padding-left: .8rem; padding-right: .8rem; }
+  .hero figcaption { margin-top: .35rem; }
   .cards { grid-template-columns: minmax(0, 1fr); }
   .doors { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .doors b { font-size: 1.8rem; }
@@ -236,7 +242,7 @@ p { max-width: 64ch; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .dock { transition: none; } }
 </style>
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mahoning Inn | Lehighton, PA, gateway to the Poconos">
+<meta property="og:title" content="Mahoning Inn | Lehighton, PA, in the Western Poconos">
 <meta property="og:description" content="34 non-smoking rooms in Lehighton, PA, with a mountain view out back. 2.5 miles from Turnpike Exit 74, 4 miles from Jim Thorpe.">
 <meta property="og:url" content="https://demo.mhstecnologia.com/mahoning-inn-lehighton-pa/">
 <meta property="og:image" content="https://demo.mhstecnologia.com/mahoning-inn-lehighton-pa/og.jpg">
@@ -264,9 +270,9 @@ p { max-width: 64ch; }
     <div class="actions"><a class="btn btn-red" href="tel:+16103771600" data-dock><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 610-377-1600</a><a class="btn btn-line" href="mailto:mahoninginn@yahoo.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email us</a></div>
   </div>
   <figure><picture>
-  <source media="(max-width: 640px)" srcset="img/hero-m-800.webp" width="800" height="624">
-  <img src="img/hero-1000.webp" srcset="img/hero-1400.webp 1400w, img/hero-1000.webp 1000w" sizes="(max-width: 960px) calc(100vw - 2rem), (max-width: 1184px) calc(100vw - 25rem - 9rem), 720px" width="1400" height="934" alt="The open door of Room 14 on the covered balcony walkway, with chairs and trees beyond the railing" fetchpriority="high">
-</picture><figcaption>Room 14, a double room on the balcony walkway.</figcaption></figure>
+  <source media="(max-width: 640px)" srcset="img/hero-m-800.webp" width="800" height="600">
+  <img src="img/hero-1000.webp" srcset="img/hero-1400.webp 1400w, img/hero-1000.webp 1000w" sizes="(max-width: 960px) calc(100vw - 2rem), (max-width: 1184px) calc(100vw - 25rem - 9rem), 720px" width="1400" height="934" alt="Suite 43: a king bed, a sleeper sofa and a table by the large window onto the wooded mountainside" fetchpriority="high">
+</picture><figcaption>Suite 43, with a beautiful large mountain view.</figcaption></figure>
 </div></section>
 
 <section class="sec sec-white" aria-labelledby="h-view"><div class="wrap view">
@@ -281,9 +287,9 @@ p { max-width: 64ch; }
       <button type="button" role="tab" id="t-au" aria-controls="p-au" aria-selected="false" tabindex="-1">Autumn</button>
       <button type="button" role="tab" id="t-wi" aria-controls="p-wi" aria-selected="false" tabindex="-1">Winter</button>
     </div>
-    <figure class="pane" id="p-su" role="tabpanel" aria-labelledby="t-su" style="--w:490px"><img src="img/view-summer-490.webp" width="490" height="367" alt="Green wooded mountainside behind the inn in summer" loading="lazy" decoding="async"><figcaption class="cap">The green mountains of summer.</figcaption></figure>
-    <figure class="pane" id="p-au" role="tabpanel" aria-labelledby="t-au" style="--w:481px" hidden><img src="img/view-autumn-481.webp" width="481" height="340" alt="The mountain ridge in autumn colors" loading="lazy" decoding="async"><figcaption class="cap">Autumn's mountain splendor.</figcaption></figure>
-    <figure class="pane" id="p-wi" role="tabpanel" aria-labelledby="t-wi" style="--w:568px" hidden><img src="img/view-winter-568.webp" width="568" height="363" alt="Snow covered hills and valley under a blue winter sky" loading="lazy" decoding="async"><figcaption class="cap">Snow covered winter mountains.</figcaption></figure>
+    <div class="pane" id="p-su" role="tabpanel" aria-labelledby="t-su"><figure style="--w:490px"><img src="img/view-summer-490.webp" width="490" height="367" alt="Green wooded mountainside behind the inn in summer" loading="lazy" decoding="async"><figcaption class="cap">The green mountains of summer.</figcaption></figure></div>
+    <div class="pane" id="p-au" role="tabpanel" aria-labelledby="t-au" hidden><figure style="--w:481px"><img src="img/view-autumn-481.webp" width="481" height="340" alt="The mountain ridge in autumn colors" loading="lazy" decoding="async"><figcaption class="cap">Autumn's mountain splendor.</figcaption></figure></div>
+    <div class="pane" id="p-wi" role="tabpanel" aria-labelledby="t-wi" hidden><figure style="--w:568px"><img src="img/view-winter-568.webp" width="568" height="363" alt="Snow covered hills and valley under a blue winter sky" loading="lazy" decoding="async"><figcaption class="cap">Snow covered winter mountains.</figcaption></figure></div>
   </div>
 </div></section>
 
@@ -309,7 +315,7 @@ p { max-width: 64ch; }
     <div>
       <h2 id="h-lobby" style="margin-bottom:1rem">Included with every stay</h2>
       <ul class="ticks">
-        <li>Continental breakfast and coffee in the lobby</li>
+        <li>Continental breakfast in the lobby area</li>
         <li>Free Wi-Fi internet</li>
         <li>Free HBO</li>
         <li>Free local calls</li>

@@ -86,7 +86,7 @@ p { max-width: 64ch; }
 .row .gap { min-width: .45em; }
 .post { width: .7rem; height: 2.4rem; margin: 0 auto; background: var(--blue); }
 @media (prefers-reduced-motion: no-preference) {
-  .row span { animation: slot .42s cubic-bezier(.2, .8, .3, 1.2) both; animation-delay: calc(var(--i) * 38ms + 250ms); }
+  .row span { animation: slot .22s cubic-bezier(.2, .8, .3, 1.2) both; animation-delay: calc(var(--i) * 9ms + 20ms); }
   @keyframes slot { from { transform: translateY(-.55em); opacity: 0; } to { transform: none; opacity: 1; } }
 }
 
@@ -118,6 +118,7 @@ p { max-width: 64ch; }
 .seasons button[aria-selected="true"] { background: var(--ink); color: #fff; }
 .pane { margin: 0; }
 .pane[hidden] { display: none; }
+.pane figure { margin: 0; }
 .pane img { width: 100%; max-width: var(--w); border-radius: .25rem; }
 .note { font-size: .95rem; color: var(--soft); margin-top: 1rem; }
 
@@ -221,10 +222,15 @@ p { max-width: 64ch; }
   .hero { padding-top: 1rem; }
   .hero-copy { gap: .9rem; }
   .sign { margin: 0 auto; }
-  .sign-name { font-size: 2.45rem; border-width: 5px; }
-  .post { height: .9rem; }
-  .lead { font-size: 1.02rem; }
-  .actions .btn { flex: 1 1 auto; }
+  .sign-name { font-size: 2.1rem; border-width: 4px; padding: .25rem .4rem .3rem; }
+  .sign-name small { font-size: .85rem; margin-top: .1rem; }
+  .board { margin-top: .3rem; border-width: 4px; padding: .15rem .4rem; }
+  .row { font-size: 1.05rem; padding: .2rem 0 .22rem; }
+  .post { height: .5rem; }
+  .lead { font-size: 1rem; line-height: 1.5; }
+  .actions { flex-wrap: nowrap; }
+  .actions .btn { flex: 1 1 auto; padding-left: .8rem; padding-right: .8rem; }
+  .hero figcaption { margin-top: .35rem; }
   .cards { grid-template-columns: minmax(0, 1fr); }
   .doors { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .doors b { font-size: 1.8rem; }
