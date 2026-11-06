@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The farm · Rose River Farm</title>
+<meta name="description" content="Rose River Farm is a working Black Angus cattle farm with peach orchards in Madison County, Virginia, and the National Home Waters of Project Healing Waters.">
+<meta name="theme-color" content="#16232a">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" href="fonts/petrona.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/commissioner.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:Petrona;src:url(fonts/petrona.woff2) format("woff2");font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:Petrona;src:url(fonts/petrona-italic.woff2) format("woff2");font-weight:400 800;font-style:italic;font-display:swap}
+@font-face{font-family:Commissioner;src:url(fonts/commissioner.woff2) format("woff2");font-weight:300 700;font-style:normal;font-display:swap}
+:root{--mist:#e8ece5;--paper:#f5f7f2;--forest:#14432b;--forest-2:#1d5a3b;--peach:#f3ae7a;--peach-2:#f7c49c;--dusk:#16232a;--dusk-2:#203139;--ink:#1c2622;--muted:#4a5650;--line:#c9d1c6;--wrap:1120px;--g:16px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--mist);color:var(--ink);font:400 1.0625rem/1.6 Commissioner,system-ui,sans-serif}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--forest)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--forest);outline-offset:3px;border-radius:4px}
+.hero a:focus-visible,.dark a:focus-visible,.dark button:focus-visible{outline-color:var(--peach)}
+h1,h2,h3{font-family:Petrona,Georgia,serif;font-weight:650;line-height:1.12;margin:0 0 .5em;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(1.75rem,1.2rem + 2vw,2.5rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:66ch}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--g)}
+@media(min-width:760px){:root{--g:32px}}
+.skip{position:absolute;left:-999px;top:0;background:var(--paper);padding:8px 12px;z-index:30}
+.skip:focus{left:8px;top:8px}
+.demo{max-width:none;background:var(--dusk);color:#d9e2de;font-size:.8125rem;line-height:1.4;padding:8px var(--g);text-align:center}
+/* header */
+.top{background:var(--paper);border-bottom:1px solid var(--line);position:relative;z-index:20}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand img{width:56px;height:53px}
+.brand span{font-family:Petrona,Georgia,serif;font-weight:700;font-size:1.25rem;line-height:1.1}
+.brand small{display:block;font-family:Commissioner,sans-serif;font-weight:400;font-size:.75rem;color:var(--muted);letter-spacing:.01em}
+.nav{display:flex;align-items:center;gap:22px}
+.nav > a{color:var(--ink);text-decoration:none;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover{border-color:var(--peach)}
+.nav > a.btn{color:#fff;border:0}
+.nav > a[aria-current=page]{border-color:var(--forest);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;line-height:1.1;white-space:nowrap}
+.btn-peach{background:var(--peach);color:#17251d}
+.btn-peach:hover{background:var(--peach-2)}
+.btn-line{border:1.5px solid currentColor;color:inherit}
+.btn-forest{background:var(--forest);color:#fff}
+.btn-forest:hover{background:var(--forest-2)}
+.nav .btn{min-height:42px;padding:10px 16px;font-size:.95rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;min-height:44px;padding:10px 14px;border:1.5px solid var(--forest);border-radius:999px;font-weight:600;color:var(--forest)}
+.menu summary::-webkit-details-marker{display:none}
+.menu[open] summary{background:var(--forest);color:#fff}
+.menu .panel{position:absolute;right:0;top:calc(100% + 10px);width:min(280px,calc(100vw - 32px));background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(22,35,42,.18);padding:8px;display:grid}
+.menu .panel a{padding:12px 14px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:1.0625rem}
+.menu .panel a:hover{background:var(--mist)}
+.menu .panel a[aria-current=page]{font-weight:700;color:var(--forest)}
+@media(max-width:899px){.nav > a{display:none}.menu{display:block}.nav .btn{display:none}}
+/* hero */
+.hero{background:var(--dusk);color:#eef2ee}
+.hero .wrap{display:grid;gap:22px;padding-top:26px;padding-bottom:28px}
+.hero h1{font-size:clamp(2.05rem,1.4rem + 2.9vw,3.6rem);font-weight:600;margin-bottom:.4em}
+.hero .lede{color:#cbd6d2;font-size:1.0625rem;margin-bottom:1.1em;max-width:44ch}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.hero figure{margin:0}
+.hero figure img{width:100%;border-radius:6px;aspect-ratio:5/4;object-fit:cover}
+.hero figcaption{font-family:Petrona,Georgia,serif;font-style:italic;color:#aebdb8;font-size:.95rem;margin-top:8px}
+@media(min-width:700px){.hero figure img{aspect-ratio:3/2}}
+@media(min-width:900px){
+ .hero .wrap{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:56px;padding-top:56px;padding-bottom:64px}
+ .hero .lede{font-size:1.15rem}
+}
+/* page head (inner pages) */
+.phead{background:var(--dusk);color:#eef2ee;padding:34px 0 30px}
+.phead h1{font-size:clamp(2rem,1.4rem + 2.4vw,3.1rem);font-weight:600;max-width:22ch}
+.phead p{color:#cbd6d2;font-size:1.1rem;max-width:58ch;margin:0}
+/* sections */
+.sec{padding:56px 0}
+.sec:not(.dark) + .sec:not(.dark){padding-top:8px}
+@media(min-width:900px){.sec{padding:84px 0}.sec:not(.dark) + .sec:not(.dark){padding-top:12px}}
+.lead{font-size:1.15rem;color:var(--muted)}
+.two{display:grid;gap:28px}
+@media(min-width:900px){.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}}
+/* the rules, set like the notice at the fishing gazebo */
+.rules{list-style:none;margin:0;padding:0;border-top:2px solid var(--forest)}
+.rules li{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;padding:14px 0;border-bottom:1px solid var(--line)}
+.rules b{font-family:Petrona,Georgia,serif;font-size:1.3rem;font-weight:650;color:var(--forest);line-height:1.2}
+.rules span{color:var(--muted);font-size:1rem}
+@media(min-width:900px){.rules li{grid-template-columns:minmax(0,14ch) minmax(0,1fr);gap:24px;align-items:baseline}}
+/* the fly box */
+.dark{background:var(--dusk);color:#eef2ee}
+.dark .lead{color:#c3cfcb}
+.flyhead{display:grid;gap:8px;margin-bottom:26px}
+@media(min-width:900px){.flyhead{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:40px}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tabs button{font:600 1rem Commissioner,sans-serif;min-height:44px;padding:10px 18px;border-radius:999px;border:1.5px solid #6f8580;background:transparent;color:#eef2ee;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--peach);border-color:var(--peach);color:#17251d}
+.box{border-radius:22px;padding:14px;background:linear-gradient(160deg,#d5dad8,#9aa3a1 55%,#c3c9c7);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 20px 50px rgba(0,0,0,.35)}
+.foam{border-radius:12px;background:repeating-linear-gradient(to bottom,#2c3433 0 34px,#20272a 34px 36px);padding:0 16px 12px}
+.panel-s{display:grid;gap:0 32px}
+@media(min-width:760px){.panel-s{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.fly{display:flex;justify-content:space-between;align-items:center;gap:12px;height:36px;padding:0 0 2px;color:#f1f4f1}
+.fly i{font-family:Petrona,Georgia,serif;font-size:1.15rem}
+.fly small{font-size:.85rem;color:var(--peach-2);white-space:nowrap}
+.foam .note{grid-column:1/-1;color:#d5ddda;font-size:.95rem;margin:12px -16px -12px;padding:12px 16px 14px;background:#20272a;border-radius:0 0 12px 12px;max-width:none}
+.tackle{margin-top:18px;color:#c3cfcb;font-size:.98rem}
+.js .panel-s[hidden]{display:none}
+@media(prefers-reduced-motion:no-preference){.panel-s.show{animation:fade .22s ease-out}@keyframes fade{from{opacity:0}to{opacity:1}}}
+/* photo blocks */
+.ph{margin:0}
+.ph img{width:100%;border-radius:6px;background:var(--line)}
+.ph figcaption{font-family:Petrona,Georgia,serif;font-style:italic;color:var(--muted);font-size:.95rem;margin-top:8px}
+.grid2{display:grid;gap:28px}
+@media(min-width:760px){.grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.facts{list-style:none;padding:0;margin:0 0 1.2em;display:grid;gap:8px}
+.facts li{padding-left:18px;position:relative}
+.facts li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--peach);box-shadow:0 0 0 1.5px var(--forest)}
+.quote{margin:0;padding:0}
+.quote p{font-family:Petrona,Georgia,serif;font-size:clamp(1.3rem,1rem + 1.2vw,1.85rem);line-height:1.35;font-style:italic;max-width:40ch}
+.quote cite{font-style:normal;font-weight:600;color:var(--muted)}
+.cabin{display:grid;gap:18px;padding:28px 0;border-top:1px solid var(--line)}
+@media(min-width:900px){.cabin{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:center}}
+.note-plain{font-size:.95rem;color:var(--muted);border-left:3px solid var(--peach);padding:4px 0 4px 14px;max-width:62ch}
+details.dir{border-top:1px solid var(--line)}
+details.dir:last-of-type{border-bottom:1px solid var(--line)}
+details.dir summary{cursor:pointer;padding:16px 0;font-weight:600;font-size:1.1rem;list-style-position:outside}
+details.dir p{margin:0 0 18px}
+.press{display:grid;gap:36px}
+.press article{border-top:2px solid var(--forest);padding-top:16px}
+.press .src{font-weight:600;color:var(--forest);margin:0 0 6px}
+.press .when{color:var(--muted);font-size:.9rem;margin:0 0 10px}
+.press blockquote{margin:0;font-family:Petrona,Georgia,serif;font-size:1.2rem;line-height:1.45}
+@media(min-width:900px){.press{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px 56px}}
+.contact-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px}
+.contact-card p{margin:0 0 .6em}
+.big{font-family:Petrona,Georgia,serif;font-size:1.5rem;font-weight:650}
+/* band + footer */
+.band{background:var(--forest);color:#eef2ee;padding:48px 0}
+.band .wrap{display:grid;gap:18px}
+.band h2{margin:0}
+.band p{color:#cfe0d5;margin:0}
+@media(min-width:900px){.band .wrap{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:40px}}
+.foot{background:var(--dusk);color:#c3cfcb;padding:40px 0 calc(40px + env(safe-area-inset-bottom));font-size:.95rem}
+.foot .wrap{display:grid;gap:22px}
+@media(min-width:900px){.foot .wrap{grid-template-columns:2fr 1fr 1fr}}
+.foot a{color:#eef2ee}
+.foot nav{display:grid;gap:6px}
+.foot .legal{grid-column:1/-1;border-top:1px solid #34474c;padding-top:16px;font-size:.85rem;color:#a7b6b2}
+/* sticky mobile CTA */
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:25;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(22,35,42,.96);transform:translateY(110%);transition:transform .2s ease}
+.stick .btn{flex:1}
+.stick.on{transform:none}
+@media(min-width:900px){.stick{display:none}}
+@media(prefers-reduced-motion:reduce){.stick{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo" role="note" style="margin:0">Unofficial demo built by MHS Tecnologia for Rose River Farm. Not affiliated with or endorsed by Rose River Farm.</p>
+<header class="top">
+ <div class="wrap">
+  <a class="brand" href="index.html"><img src="img/logo.webp" width="138" height="131" alt="Rose River Farm emblem"><span>Rose River Farm<small>Syria, Madison County, Virginia</small></span></a>
+  <nav class="nav" aria-label="Main"><a href="fishing.html">Fishing</a><a href="cabins.html">Cabins</a><a href="farm.html" aria-current=page>The farm</a><a href="news.html">In the news</a><a href="contact.html">Contact</a><a class="btn btn-forest" href="mailto:roseriverfarm@gmail.com?subject=Booking%20a%20day%20at%20Rose%20River%20Farm">Email to book</a>
+   <details class="menu"><summary>Menu</summary><div class="panel"><a href="index.html">Home</a><a href="fishing.html">Fishing</a><a href="cabins.html">Cabins</a><a href="farm.html" aria-current=page>The farm</a><a href="news.html">In the news</a><a href="contact.html">Contact</a><a href="mailto:roseriverfarm@gmail.com?subject=Booking%20a%20day%20at%20Rose%20River%20Farm">Email to book</a><a href="tel:+17039308229">Call 703.930.8229</a></div></details>
+  </nav>
+ </div>
+</header>
+<main id="main">
+
+<section class="phead" data-stick-after><div class="wrap"><h1>A working farm on the Rose River</h1><p>Black Angus cattle, peach orchards, hay fields and wildlife habitat, farmed in environmentally sensitive ways to keep the land pristine for generations.</p></div></section>
+
+<section class="sec">
+ <div class="wrap two">
+  <div>
+   <h2>Why the farm exists</h2>
+   <p>The farm was the idea of Douglas Dear, a fly fisherman, bird hunter and outdoorsman most of his life. He, his wife Jennifer and their two boys bought the land and made it what it is today. A former real estate investment banking executive, now a private investor and outdoor writer, he saw the need for an uncrowded fly fishing getaway close to Washington, DC, like the fishing he traveled to Colorado and Montana for.</p>
+   <p>A fly fishing trip to Patagonia prompted the cabins, completed in 2011.</p>
+  </div>
+  <figure class="ph"><img src="img/p19-500.webp" srcset="img/p19-500.webp 500w" sizes="(min-width: 900px) 500px, calc(100vw - 32px)" width="500" height="332" alt="Peach trees in pink bloom below a wooded mountain" loading="lazy" decoding="async"><figcaption>Peach orchards below the mountains.</figcaption></figure>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap two">
+  <div>
+   <h2>Sharing the water</h2>
+   <p>From the beginning, sharing the farm has mattered. It is regularly donated for use by Project Healing Waters, Casting for Recovery, Trout Unlimited’s Youth Conservation Camp, the Boys and Girls Club and the Boy Scouts of America.</p>
+   <p>In 2011 the farm was named the National Home Waters of Project Healing Waters, to mark the 5th Annual 2-Fly Tournament held there. The same year Douglas was recognized as a national LL Bean Outdoor Hero for his work as Chairman of the Board of Project Healing Waters.</p>
+  </div>
+  <blockquote class="quote"><p>“Many large, beautiful fish were caught (and gently released) by the campers, and it was an experience for them which we could not provide without your help.”</p><cite>Trout Unlimited Conservation and Fishing Camp</cite></blockquote>
+ </div>
+</section>
+
+<section class="sec dark">
+ <div class="wrap two">
+  <div>
+   <h2>Rose River beef</h2>
+   <p class="lead">A limited number of sides and quarter sides of the farm’s Black Angus steers.</p>
+   <p>No manufactured hormones or unnecessary antibiotics. The cattle graze the farm’s pastures on red and white clover and orchard grass, and drink from cool spring-fed troughs. They are processed at 900 to 1,000 lbs instead of the commercial 1,200 to 1,400, by a certified butcher who ages and flash freezes the beef.</p>
+  </div>
+  <div>
+   <ul class="rules" style="border-color:var(--peach)">
+    <li><b style="color:var(--peach)">A side</b><span style="color:#c3cfcb">around 400 lbs, every cut from T-bone steaks to hamburger</span></li>
+    <li><b style="color:var(--peach)">A half side</b><span style="color:#c3cfcb">around 200 lbs</span></li>
+   </ul>
+   <p style="margin-top:20px">To get on the reservation list, email <a style="color:var(--peach-2)" href="mailto:info@roseriverfarm.com">info@roseriverfarm.com</a>.</p>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <div class="wrap">
+  <div><h2>Fishing is by reservation only</h2><p>No drop-ins. Email or call to ask about dates, guides, lessons and the cabins.</p></div>
+  <div class="actions"><a class="btn btn-peach" href="mailto:roseriverfarm@gmail.com?subject=Booking%20a%20day%20at%20Rose%20River%20Farm">Email roseriverfarm@gmail.com</a><a class="btn btn-line" href="tel:+17039308229">Call 703.930.8229</a></div>
+ </div>
+</section>
+</main>
+<footer class="foot">
+ <div class="wrap">
+  <div><p class="big" style="color:#eef2ee;margin:0 0 6px">Rose River Farm</p><p style="margin:0">3099 Old Blue Ridge Turnpike (Rt. 670)<br>Syria, Virginia 22743</p></div>
+  <nav aria-label="Footer"><a href="index.html">Home</a><a href="fishing.html">Fishing</a><a href="cabins.html">Cabins</a><a href="farm.html">The farm</a><a href="news.html">In the news</a><a href="contact.html">Contact</a></nav>
+  <div><p style="margin:0 0 6px"><a href="mailto:roseriverfarm@gmail.com">roseriverfarm@gmail.com</a></p><p style="margin:0"><a href="tel:+17039308229">703.930.8229</a></p></div>
+  <p class="legal">Unofficial demo built by MHS Tecnologia for Rose River Farm. Not affiliated with or endorsed by Rose River Farm. Text and photos are from roseriverfarm.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+ </div>
+</footer>
+<div class="stick" id="stick" aria-hidden="true"><a class="btn btn-peach" href="mailto:roseriverfarm@gmail.com?subject=Booking%20a%20day%20at%20Rose%20River%20Farm" tabindex="-1">Email to book</a><a class="btn btn-line" style="color:#eef2ee" href="tel:+17039308229" tabindex="-1">Call</a></div>
+<script>
+(function(){
+ document.documentElement.classList.add('js');
+ var s=document.getElementById('stick'),t=document.querySelector('[data-stick-after]');
+ if(s&&t&&'IntersectionObserver' in window){new IntersectionObserver(function(e){var on=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;s.classList.toggle('on',on);s.setAttribute('aria-hidden',on?'false':'true');s.querySelectorAll('a').forEach(function(a){a.tabIndex=on?0:-1})}).observe(t)}
+ var tabs=document.querySelectorAll('[role=tab]');
+ if(tabs.length){
+  function pick(b){tabs.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;var p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;p.classList.toggle('show',on)})}
+  tabs.forEach(function(b,i){b.addEventListener('click',function(){pick(b)});b.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){var n=tabs[(i+d+tabs.length)%tabs.length];n.focus();pick(n)}})});
+  var m=new Date().getMonth(),k=m<2||m===11?'winter':m<5?'spring':m>7?'fall':'year';
+  pick(document.getElementById('t-'+k));
+ }
+})();
+</script>
+</body>
+</html>
