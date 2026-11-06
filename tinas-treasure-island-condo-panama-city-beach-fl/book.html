@@ -81,17 +81,20 @@ p { margin: 0 0 1em; }
 .hero figure img { width: 100%; border-radius: 18px; aspect-ratio: 3065 / 1080; object-fit: cover; }
 figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 
-/* Signature: the balcony panorama */
-.balcony { padding: 88px 0 72px; }
-.balcony .head { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; margin-bottom: 28px; }
-.balcony .head p { color: var(--soft); max-width: 58ch; margin: 0; }
-.pano { position: relative; }
-.pano .strip { overflow-x: auto; border-radius: 18px; background: var(--foam); scrollbar-width: thin; }
+/* Signature: the balcony panorama, at full width */
+.balcony { padding: 96px 0 84px; }
+.balcony .head { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: end; margin-bottom: 36px; }
+.balcony h2 { font-size: clamp(36px, 4.4vw, 60px); max-width: 16ch; }
+.balcony .head p { color: var(--soft); max-width: 46ch; margin: 0; }
+.pano { max-width: 1400px; margin: 0 auto; }
+.pano .strip { overflow-x: auto; background: var(--foam); scrollbar-width: thin; }
 .pano .strip img { width: 100%; max-width: none; aspect-ratio: 2251 / 850; }
 .pano .hint { display: none; }
-.sights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 28px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.sights li { padding: 16px 18px 0 0; font-size: 15px; color: var(--soft); }
-.sights b { display: block; font: 400 22px/1.2 Gloock, Georgia, serif; color: var(--deep); margin-bottom: 2px; }
+/* A dimension line under the photo, like the floor plan on their site */
+.dim { position: relative; margin: 18px 24px 0; height: 22px; border-left: 2px solid var(--deep); border-right: 2px solid var(--deep); }
+.dim::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--deep); }
+.dim span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--paper); padding: 0 14px; font: 400 20px/1 Gloock, Georgia, serif; white-space: nowrap; color: var(--deep); }
+@media (min-width: 1401px) { .pano .strip { border-radius: 18px; } .dim { margin-left: 0; margin-right: 0; } }
 
 /* Inside */
 .inside { background: var(--sand); padding: 80px 0; }
@@ -215,12 +218,14 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
   .hero figure img { border-radius: 0; aspect-ratio: 4 / 3; }
   .hero figcaption { padding: 0 16px; }
   .balcony { padding: 60px 0 52px; }
-  .pano { margin: 0 -16px; }
   .dusk { padding: 56px 0 60px; margin-bottom: 56px; }
   .reel { margin: 0 -16px; padding: 0 16px 12px; scroll-padding: 0 16px; }
   .reel figure { flex-basis: 300px; }
   .pano .strip { border-radius: 0; }
   .pano .strip img { width: auto; height: 300px; }
+  .dim { margin: 14px 16px 0; }
+  .dim span { font-size: 16px; }
+  .balcony h2 { font-size: 32px; }
   .pano .hint { display: block; font-size: 14px; color: var(--soft); padding: 10px 16px 0; }
   .sights { margin-top: 18px; }
   .inside, .guests { padding: 56px 0; }
@@ -268,7 +273,7 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 
 <section class="room" aria-labelledby="s-h"><div class="wrap">
 <div class="head"><h2 id="s-h">Weekly rates, by season</h2><div>
-<p style="margin-bottom:18px">Weekly rates as listed on ti612.com (2021 rates). Confirm this year&#8217;s rate with Tina. Until confirmed, rates are subject to change without notice.</p>
+<p style="margin-bottom:18px">As listed on ti612.com. Confirm this year&#8217;s rate with Tina. Until confirmed, rates are subject to change without notice.</p>
 <ul class="seasons"><li><span>High Spring</span><b>$1,895 to $2,495</b></li><li><span>Low Spring</span><b>$1,295 to $2,095</b></li><li><span>Early Summer</span><b>$1,995 to $2,995</b></li><li><span>Peak Summer</span><b>$2,195 to $2,995</b></li><li><span>July 4 week</span><b>$3,495</b></li><li><span>Late Summer</span><b>$1,995 to $2,995</b></li><li><span>Fall</span><b>$1,595 to $2,195</b></li><li><span>Late Fall</span><b>$1,495 to $1,895</b></li><li><span>Winter</span><b>$995 to $1,595 (call for monthly winter rates)</b></li></ul>
 </div></div>
 </div></section>

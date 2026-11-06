@@ -81,17 +81,20 @@ p { margin: 0 0 1em; }
 .hero figure img { width: 100%; border-radius: 18px; aspect-ratio: 3065 / 1080; object-fit: cover; }
 figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 
-/* Signature: the balcony panorama */
-.balcony { padding: 88px 0 72px; }
-.balcony .head { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; margin-bottom: 28px; }
-.balcony .head p { color: var(--soft); max-width: 58ch; margin: 0; }
-.pano { position: relative; }
-.pano .strip { overflow-x: auto; border-radius: 18px; background: var(--foam); scrollbar-width: thin; }
+/* Signature: the balcony panorama, at full width */
+.balcony { padding: 96px 0 84px; }
+.balcony .head { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: end; margin-bottom: 36px; }
+.balcony h2 { font-size: clamp(36px, 4.4vw, 60px); max-width: 16ch; }
+.balcony .head p { color: var(--soft); max-width: 46ch; margin: 0; }
+.pano { max-width: 1400px; margin: 0 auto; }
+.pano .strip { overflow-x: auto; background: var(--foam); scrollbar-width: thin; }
 .pano .strip img { width: 100%; max-width: none; aspect-ratio: 2251 / 850; }
 .pano .hint { display: none; }
-.sights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 28px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.sights li { padding: 16px 18px 0 0; font-size: 15px; color: var(--soft); }
-.sights b { display: block; font: 400 22px/1.2 Gloock, Georgia, serif; color: var(--deep); margin-bottom: 2px; }
+/* A dimension line under the photo, like the floor plan on their site */
+.dim { position: relative; margin: 18px 24px 0; height: 22px; border-left: 2px solid var(--deep); border-right: 2px solid var(--deep); }
+.dim::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--deep); }
+.dim span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--paper); padding: 0 14px; font: 400 20px/1 Gloock, Georgia, serif; white-space: nowrap; color: var(--deep); }
+@media (min-width: 1401px) { .pano .strip { border-radius: 18px; } .dim { margin-left: 0; margin-right: 0; } }
 
 /* Inside */
 .inside { background: var(--sand); padding: 80px 0; }
@@ -215,12 +218,14 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
   .hero figure img { border-radius: 0; aspect-ratio: 4 / 3; }
   .hero figcaption { padding: 0 16px; }
   .balcony { padding: 60px 0 52px; }
-  .pano { margin: 0 -16px; }
   .dusk { padding: 56px 0 60px; margin-bottom: 56px; }
   .reel { margin: 0 -16px; padding: 0 16px 12px; scroll-padding: 0 16px; }
   .reel figure { flex-basis: 300px; }
   .pano .strip { border-radius: 0; }
   .pano .strip img { width: auto; height: 300px; }
+  .dim { margin: 14px 16px 0; }
+  .dim span { font-size: 16px; }
+  .balcony h2 { font-size: 32px; }
   .pano .hint { display: block; font-size: 14px; color: var(--soft); padding: 10px 16px 0; }
   .sights { margin-top: 18px; }
   .inside, .guests { padding: 56px 0; }
@@ -264,12 +269,12 @@ figcaption { font-size: 14px; color: var(--soft); margin-top: 10px; }
 
 <section class="room" id="pool" aria-labelledby="pool-h"><div class="wrap">
 <div class="head"><h2 id="pool-h">Pool deck</h2><p>The tropical beachfront pool area has a 120 ft long heated pool, a separate children&#8217;s pool, lounges, deck chairs and gazebos. A BBQ and picnic area sits at the east end of the pool deck, with gas grills for guests.</p></div>
-<div class="shots"><figure class="wide"><img src="img/pool-beach-900.webp" srcset="img/pool-beach-480.webp 480w, img/pool-beach-900.webp 900w, img/pool-beach-1380.webp 1380w" sizes="(min-width: 1240px) 1192px, (min-width: 720px) calc(100vw - 48px), calc(100vw - 32px)" width="1380" height="920" alt="The curved pool, deck chairs and rows of beach umbrellas, seen from above" loading="lazy" decoding="async"><figcaption>The pool and beach, from the balcony.</figcaption></figure><figure><img src="img/bbq-900.webp" srcset="img/bbq-480.webp 480w, img/bbq-900.webp 900w, img/bbq-1000.webp 1000w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1000" height="667" alt="Picnic table and gas grills at the end of the pool deck by the dunes" loading="lazy" decoding="async"><figcaption>BBQ and picnic area at the east end of the pool deck.</figcaption></figure><figure><img src="img/pool-900.webp" srcset="img/pool-480.webp 480w, img/pool-900.webp 900w, img/pool-1400.webp 1400w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1400" height="700" alt="The pool and gazebo at dusk" loading="lazy" decoding="async"><figcaption>The pool at dusk.</figcaption></figure></div>
+<div class="shots"><figure class="wide"><img src="img/pool-beach-900.webp" srcset="img/pool-beach-480.webp 480w, img/pool-beach-900.webp 900w, img/pool-beach-1275.webp 1275w" sizes="(min-width: 1240px) 1192px, (min-width: 720px) calc(100vw - 48px), calc(100vw - 32px)" width="1275" height="850" alt="The curved pool, deck chairs and rows of beach umbrellas, seen from above" loading="lazy" decoding="async"><figcaption>The pool and beach, from the balcony.</figcaption></figure><figure><img src="img/bbq-900.webp" srcset="img/bbq-480.webp 480w, img/bbq-900.webp 900w, img/bbq-1000.webp 1000w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1000" height="667" alt="Picnic table and gas grills at the end of the pool deck by the dunes" loading="lazy" decoding="async"><figcaption>BBQ and picnic area at the east end of the pool deck.</figcaption></figure><figure><img src="img/pool-900.webp" srcset="img/pool-480.webp 480w, img/pool-900.webp 900w, img/pool-1400.webp 1400w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1400" height="700" alt="The pool and gazebo at dusk" loading="lazy" decoding="async"><figcaption>The pool at dusk.</figcaption></figure></div>
 </div></section>
 
 <section class="room" id="beach" aria-labelledby="beach-h"><div class="wrap">
 <div class="head"><h2 id="beach-h">Beach</h2><p>Step down to 420 feet of white sand beach on the emerald water, with parasailing, windsurfing, jet skis and banana boats. From early March through mid-October, renters get free use of the beach service: two lounge chairs with an umbrella on the sand.</p></div>
-<div class="shots"><figure class="wide"><img src="img/beach-900.webp" srcset="img/beach-480.webp 480w, img/beach-900.webp 900w, img/beach-1380.webp 1380w" sizes="(min-width: 1240px) 1192px, (min-width: 720px) calc(100vw - 48px), calc(100vw - 32px)" width="1380" height="920" alt="Long white beach curving away along deep blue and emerald water" loading="lazy" decoding="async"></figure><figure><img src="img/parasail-900.webp" srcset="img/parasail-480.webp 480w, img/parasail-900.webp 900w, img/parasail-1000.webp 1000w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1000" height="825" alt="A parasailer in front of the Treasure Island tower, labeled Treasure Island and our condo" loading="lazy" decoding="async"><figcaption>Parasailing in the Gulf in front of 612.</figcaption></figure><figure><img src="img/ourcondo-900.webp" srcset="img/ourcondo-480.webp 480w, img/ourcondo-900.webp 900w, img/ourcondo-1068.webp 1068w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1068" height="800" alt="The Treasure Island tower from the beach, labeled Our Condo" loading="lazy" decoding="async"><figcaption>The building from the beach.</figcaption></figure></div>
+<div class="shots"><figure class="wide"><img src="img/beach-900.webp" srcset="img/beach-480.webp 480w, img/beach-900.webp 900w, img/beach-1260.webp 1260w" sizes="(min-width: 1240px) 1192px, (min-width: 720px) calc(100vw - 48px), calc(100vw - 32px)" width="1260" height="840" alt="Long white beach curving away along deep blue and emerald water" loading="lazy" decoding="async"></figure><figure><img src="img/parasail-900.webp" srcset="img/parasail-480.webp 480w, img/parasail-900.webp 900w, img/parasail-1000.webp 1000w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1000" height="825" alt="A parasailer in front of the Treasure Island tower, labeled Treasure Island and our condo" loading="lazy" decoding="async"><figcaption>Parasailing in the Gulf in front of 612.</figcaption></figure><figure><img src="img/ourcondo-900.webp" srcset="img/ourcondo-480.webp 480w, img/ourcondo-900.webp 900w, img/ourcondo-1068.webp 1068w" sizes="(min-width: 1240px) 589px, (min-width: 720px) calc(50vw - 31px), calc(100vw - 32px)" width="1068" height="800" alt="The Treasure Island tower from the beach, labeled Our Condo" loading="lazy" decoding="async"><figcaption>The building from the beach.</figcaption></figure></div>
 </div></section>
 
 <section class="room" id="building" aria-labelledby="building-h"><div class="wrap">
