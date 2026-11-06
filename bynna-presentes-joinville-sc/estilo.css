@@ -1,0 +1,175 @@
+/* Bynna Artigos e Presentes — papel de seda, fita dourada e etiqueta kraft. */
+@font-face{font-family:"Imbue";font-weight:300 700;font-display:swap;src:url(fonts/imbue.woff2) format("woff2")}
+@font-face{font-family:"Onest";font-weight:100 900;font-display:swap;src:url(fonts/onest.woff2) format("woff2")}
+:root{
+  --papel:#f2f4ef;--branco:#fff;--tinta:#17372b;--tinta-2:#46584e;
+  --fita:#c8942a;--fita-escura:#9a6e17;--kraft:#dcc196;--kraft-2:#c9a874;
+  --linha:#d9ddd3;--max:1160px;--pad:16px
+}
+@media (min-width:700px){:root{--pad:32px}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 1.0625rem/1.6 "Onest",system-ui,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--tinta)}
+h1,h2,h3{font-family:"Imbue",Georgia,serif;font-weight:500;line-height:1.02;margin:0 0 .4em;letter-spacing:-.01em}
+h1{font-size:clamp(2.7rem,9vw,5.4rem)}
+h2{font-size:clamp(2.1rem,5.5vw,3.4rem)}
+p{margin:0 0 1em}
+.caixa{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.salto{position:absolute;left:-999px;top:0;background:var(--tinta);color:#fff;padding:.6em 1em;z-index:50}
+.salto:focus{left:8px;top:8px}
+:focus-visible{outline:3px solid var(--fita-escura);outline-offset:3px}
+.ico{width:1.15em;height:1.15em;flex:none}
+
+.aviso{background:var(--tinta);color:#e9eee9;font-size:.82rem;line-height:1.45;padding:.55em var(--pad);text-align:center}
+.aviso a{color:#fff}
+.nq{white-space:nowrap}
+
+/* topo */
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--max);margin:0 auto;padding:14px var(--pad)}
+.marca{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.marca-nome{font-family:"Imbue",Georgia,serif;font-size:2.1rem;font-weight:600;letter-spacing:.01em}
+.marca-sub{font-size:.8rem;color:var(--tinta-2);margin-top:2px}
+.nav{display:flex;align-items:center;gap:22px}
+.nav > a:not(.nav-wa){text-decoration:none;font-weight:500;padding:.4em 0;border-bottom:2px solid transparent}
+.nav > a[aria-current]{border-bottom-color:var(--fita)}
+.nav > a:not(.nav-wa):hover{border-bottom-color:var(--kraft-2)}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;font-weight:600;padding:.55em .9em;border:1.5px solid var(--tinta);border-radius:999px}
+.menu summary::-webkit-details-marker{display:none}
+.menu-lista{position:absolute;right:0;top:calc(100% + 8px);background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:8px;min-width:230px;z-index:30;box-shadow:0 14px 30px rgba(23,55,43,.16)}
+.menu-lista a{display:block;padding:.75em .9em;text-decoration:none;font-weight:500;border-radius:8px}
+.menu-lista a:hover{background:var(--papel)}
+@media (max-width:899px){
+  .nav > a:not(.nav-wa){display:none}
+  .menu{display:block}
+  .nav{gap:10px}
+  .nav-wa{padding:.55em .9em}
+}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;gap:.5em;font:600 1rem/1.2 "Onest",sans-serif;padding:.95em 1.35em;border-radius:999px;text-decoration:none;border:1.5px solid var(--tinta)}
+.btn-p{background:var(--tinta);color:#fff}
+.btn-p:hover{background:#0f281f}
+.btn-s{background:transparent;color:var(--tinta)}
+.btn-s:hover{background:var(--branco)}
+.lk{font-weight:600;text-underline-offset:3px}
+
+/* etiqueta kraft: o elemento da casa */
+.etiqueta{position:relative;display:inline-block;background:var(--kraft);color:var(--tinta);font-family:"Imbue",Georgia,serif;font-weight:600;font-size:1.55rem;line-height:1;padding:.42em .9em .42em 1.7em;clip-path:polygon(18px 0,100% 0,100% 100%,18px 100%,0 50%);transform:rotate(-2.5deg)}
+.etiqueta::before{content:"";position:absolute;left:13px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--papel);box-shadow:inset 0 0 0 1.5px var(--kraft-2)}
+.etiqueta.mini{font-size:1.05rem;padding:.38em .75em .38em 1.45em;clip-path:polygon(13px 0,100% 0,100% 100%,13px 100%,0 50%)}
+.etiqueta.mini::before{left:9px;width:7px;height:7px;margin-top:-3.5px}
+
+/* herói */
+.heroi{padding:18px 0 40px}
+.heroi-grade{display:grid;gap:22px}
+.heroi h1{max-width:12ch}
+@media (min-width:900px){.heroi h1{max-width:15ch;font-size:clamp(3.4rem,5.4vw,4.9rem)}}
+.sub{font-size:1.1rem;color:var(--tinta-2);max-width:52ch}
+.acoes{display:flex;flex-wrap:wrap;gap:10px}
+.heroi-foto{position:relative;margin:0}
+.heroi-foto img{width:100%;border-radius:6px;background:#fff;padding:8px;box-shadow:0 2px 0 var(--linha),0 22px 40px -18px rgba(23,55,43,.45)}
+.heroi-etq{position:absolute;right:-4px;top:22px;transform:rotate(4deg)}
+.heroi-etq::after{content:"";position:absolute;left:12px;top:50%;width:40px;height:1.5px;background:var(--fita-escura);transform-origin:left;transform:rotate(200deg) translateX(-2px)}
+@media (min-width:900px){
+  .heroi{padding:36px 0 70px}
+  .heroi-grade{grid-template-columns:1fr 420px;align-items:center;gap:60px}
+  .heroi-foto img{transform:rotate(1.5deg)}
+  .heroi-etq{right:auto;left:-46px;top:auto;bottom:70px;font-size:2rem;transform:rotate(-6deg)}
+}
+
+/* calendário: a fita */
+.calendario{padding:56px 0 64px;background:var(--branco);border-block:1px solid var(--linha)}
+.intro{color:var(--tinta-2);max-width:60ch}
+.fita{list-style:none;margin:30px auto 0;padding:0 var(--pad);max-width:var(--max);position:relative;display:grid;gap:0}
+.fita::before{content:"";position:absolute;left:calc(var(--pad) + 13px);top:0;bottom:0;width:12px;background:linear-gradient(90deg,var(--fita-escura),var(--fita) 35%,#e2b75a 55%,var(--fita))}
+.no{position:relative;padding:0 0 30px 56px;display:grid;justify-items:start}
+.no-laco{position:absolute;left:5px;top:2px;width:28px;height:28px;border-radius:50%;background:var(--fita);box-shadow:inset 0 0 0 3px var(--fita-escura),0 0 0 5px var(--branco)}
+.no-quando{font-size:.92rem;color:var(--tinta-2)}
+.no-nome{font-family:"Imbue",Georgia,serif;font-size:2rem;font-weight:500;line-height:1.05}
+.no-proxima{display:none;margin:.5em 0 .2em}
+.no[data-proxima] .no-proxima{display:block}
+.no[data-proxima] .no-laco{background:var(--tinta);box-shadow:inset 0 0 0 3px var(--fita),0 0 0 5px var(--branco)}
+.no-acoes{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:.35em}
+.no-acoes a{white-space:nowrap;font-weight:600;text-underline-offset:3px;padding:.3em 0}
+@media (min-width:900px){
+  .fita{grid-template-columns:repeat(5,1fr);margin-top:44px}
+  .fita::before{left:var(--pad);right:var(--pad);top:15px;bottom:auto;width:auto;height:12px;background:linear-gradient(180deg,var(--fita-escura),var(--fita) 35%,#e2b75a 55%,var(--fita))}
+  .no{padding:52px 18px 0 0}
+  .no-laco{left:0;top:7px}
+  .no-nome{font-size:2.15rem}
+}
+
+/* vitrine e grupos */
+.vitrine{padding:64px 0 40px}
+.grupo{margin:38px 0 10px}
+.grupo-cab{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;margin-bottom:20px}
+.pecas{list-style:none;margin:0;padding:0;display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+.peca{scroll-snap-align:start;display:flex;flex-direction:column}
+.abre{display:block;padding:0;border:0;background:#fff;cursor:zoom-in;border-radius:6px;overflow:hidden;aspect-ratio:3/4;width:100%}
+.abre img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.abre:hover img{transform:scale(1.03)}
+.peca-nome{font-weight:600;margin:.7em 0 .15em}
+.lk-wa{display:inline-flex;align-items:center;gap:.4em;font-weight:500;color:var(--tinta-2);text-underline-offset:3px;padding:.35em 0;align-self:flex-start}
+.lk-wa:hover{color:var(--tinta)}
+@media (min-width:700px){
+  .pecas{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible}
+}
+@media (min-width:1100px){.pag-cab ~ .caixa .pecas{grid-template-columns:repeat(4,1fr)}}
+.mais{margin-top:36px}
+
+/* faixa da loja */
+.loja-faixa{padding:56px 0 72px;background:var(--tinta);color:#eef2ee}
+.loja-faixa a{color:#fff}
+.loja-faixa .btn-p{background:var(--kraft);color:var(--tinta);border-color:var(--kraft)}
+.loja-faixa .btn-p:hover{background:#e7d0aa}
+.loja-grade{display:grid;gap:30px;align-items:center}
+.tres{list-style:none;padding:0;margin:0 0 26px;display:flex;flex-wrap:wrap;gap:8px 26px;font-family:"Imbue",Georgia,serif;font-size:2rem}
+.loja-foto{margin:0}
+.loja-foto img{border-radius:6px}
+.loja-foto figcaption{font-size:.9rem;color:#c9d4cd;margin-top:.6em}
+.loja-faixa .lk{margin-left:12px;display:inline-block;padding:.6em 0}
+@media (min-width:900px){.loja-grade{grid-template-columns:1fr 520px;gap:60px}}
+
+/* páginas internas */
+.pag-cab{padding:24px 0 10px}
+.pag-cab h1{font-size:clamp(2.6rem,8vw,4.6rem)}
+.pulos{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 10px}
+.pulos a{text-decoration:none;font-weight:500;padding:.5em 1em;border:1.5px solid var(--linha);border-radius:999px;background:var(--branco)}
+.pulos a:hover{border-color:var(--tinta)}
+.outras{margin:50px 0 70px;padding:28px;background:var(--branco);border-radius:10px;border:1px solid var(--linha)}
+.outras h2{font-size:clamp(1.8rem,4.5vw,2.6rem)}
+.loja-pag{display:grid;gap:44px;padding-bottom:70px}
+.endereco address{font-style:normal;font-family:"Imbue",Georgia,serif;font-size:2.1rem;line-height:1.12;margin:18px 0 14px}
+.como ol{padding-left:1.3em;max-width:60ch}
+.como li{margin-bottom:.8em}
+@media (min-width:900px){.loja-pag{grid-template-columns:1fr 1fr}.na-loja{grid-column:1/-1}}
+
+/* rodapé */
+.rodape{background:#0f281f;color:#d7e0da;padding:44px 0 110px;font-size:.95rem}
+.rodape a{color:#fff}
+.rodape-grade{display:grid;gap:28px}
+.rodape-marca{font-family:"Imbue",Georgia,serif;font-size:2rem;color:#fff;margin:0}
+.rodape nav{display:flex;flex-direction:column;gap:2px}
+.rodape nav a{padding:.35em 0}
+.legal{font-size:.85rem;color:#b9c6be}
+@media (min-width:900px){.rodape{padding-bottom:44px}.rodape-grade{grid-template-columns:1.2fr .6fr 1.2fr}}
+
+/* botão fixo no celular */
+.fixo{position:fixed;left:12px;right:12px;bottom:12px;z-index:20;display:flex;justify-content:center;align-items:center;gap:.5em;background:var(--tinta);color:#fff;font-weight:600;text-decoration:none;padding:1em;border-radius:999px;box-shadow:0 10px 26px rgba(15,40,31,.35);transform:translateY(150%);transition:transform .3s ease}
+.fixo.ver{transform:none}
+@media (min-width:900px){.fixo{display:none}}
+
+/* caixa de foto */
+.caixa-foto{border:0;padding:0;border-radius:10px;max-width:min(560px,calc(100vw - 24px));width:100%;background:var(--branco);color:var(--tinta)}
+.caixa-foto::backdrop{background:rgba(15,40,31,.78)}
+.cf-img{width:100%;max-height:72vh;object-fit:contain;background:#fff}
+.cf-rodape{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:14px 16px}
+.cf-titulo{margin:0;font-weight:600}
+.cf-fechar{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;border:0;background:var(--branco);color:var(--tinta);font-size:1.8rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.caixa-foto{position:fixed}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
