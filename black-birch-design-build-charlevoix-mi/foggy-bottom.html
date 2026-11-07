@@ -91,6 +91,14 @@ p { max-width: 64ch; }
 .sheet .meta { font-size: .9rem; color: var(--graphite); margin-top: .15rem; }
 .sheet:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .25em; }
 
+.cover-sheet { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 1.5rem 3rem; align-items: start; margin-bottom: 2.5rem; }
+.cover-sheet p { color: var(--graphite); margin-top: .6rem; }
+.index { width: 100%; border-collapse: collapse; border: var(--rule); font-size: .95rem; }
+.index caption { text-align: left; font-size: .8rem; color: var(--graphite); padding-bottom: .4rem; }
+.index th { text-align: left; font-weight: 500; font-size: .8rem; color: var(--graphite); padding: .45rem .8rem; border-bottom: var(--rule); }
+.index td { padding: .5rem .8rem; border-top: 1px solid #9a9c96; }
+.index td.k { font-size: .8rem; background: var(--ink); color: #fff; width: 4.5rem; border-top-color: #444; }
+.index a { font-family: "Krona One", sans-serif; font-size: .8rem; }
 /* Process on home */
 .proc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3.5rem; align-items: start; }
 .proc img { width: 100%; }
@@ -98,9 +106,8 @@ p { max-width: 64ch; }
 .steps li { counter-increment: s; display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid #9a9c96; }
 .steps li::before { content: counter(s, decimal-leading-zero); font-family: "Krona One", sans-serif; font-size: .8rem; padding-top: .2rem; }
 
-.press { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: var(--rule); list-style: none; padding: 0; }
-.press li { padding: 1.25rem 1.4rem 1.5rem; border-left: var(--rule); }
-.press li:first-child { border-left: 0; }
+.press { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 3rem; list-style: none; padding: 0; }
+.press li { padding: 0; }
 .press .k { font-size: .8rem; display: block; margin-bottom: .5rem; }
 .press q { quotes: none; font-size: 1.05rem; }
 
@@ -170,18 +177,19 @@ p { max-width: 64ch; }
 @media (max-width: 900px) {
   .nav > a { display: none; }
   .menu { display: block; }
-  .hero, .proc, .proj-top, .story { grid-template-columns: 1fr; }
+  .hero, .proc, .proj-top, .story, .cover-sheet { grid-template-columns: 1fr; }
   .offices { grid-template-columns: 1fr 1fr; }
   .press { grid-template-columns: 1fr; }
-  .press li { border-left: 0; border-top: var(--rule); }
-  .press li:first-child { border-top: 0; }
   .plist > li { grid-template-columns: 3rem minmax(0, 1fr); }
   .plist > li > img, .plist > li > a { grid-column: 2; max-width: 26rem; }
 }
 @media (max-width: 760px) {
   body { font-size: 1rem; }
   .brand img { width: 10.5rem; }
-  .hero-copy .intro { font-size: 1.0625rem; }
+  .hero-copy .intro { font-size: 1rem; margin-top: .8rem; }
+  .hero { gap: 1.25rem; padding-top: 1rem; }
+  .hero .actions { margin-top: 1rem; }
+  .hero .actions .more { display: none; }
   .hero-fig { margin-left: calc(-1 * var(--pad)); margin-right: calc(-1 * var(--pad)); }
   .hero-fig .tb { width: auto; margin: 0 var(--pad); }
   .tb, .proj-top .tb { grid-template-columns: auto minmax(0, 1fr); }
@@ -198,6 +206,8 @@ p { max-width: 64ch; }
   .actions .btn { flex: 1 1 auto; }
   .pager { flex-direction: column; }
   .pager a { max-width: none; }
+  .index th:nth-child(3), .index td:nth-child(3) { display: none; }
+  .index td, .index th { padding: .5rem .6rem; }
   .callbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; gap: .5rem; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: var(--paper); border-top: var(--rule); transform: translateY(110%); transition: transform .25s ease; }
   .callbar .btn { flex: 1; min-height: 2.9rem; }
   .callbar.on { transform: none; }
@@ -221,7 +231,7 @@ p { max-width: 64ch; }
 
 <section class="wrap" data-hero>
   <div class="proj-top">
-    <div><p style="color:var(--graphite)"><a href="projects.html">Projects</a> / New custom home</p><h1 style="margin-top:.5rem">Foggy Bottom</h1></div>
+    <div><p style="color:var(--graphite)"><a href="projects.html">Projects</a> / Sheet 02 of 06</p><h1 style="margin-top:.5rem">Foggy Bottom</h1></div>
     <div class="tb" style="--cells:3"><div class="no"><span class="l">Sheet</span><span class="v">02</span><span class="l">of 06</span></div><div class="w"><span class="l">Water</span><span class="v">Lake Charlevoix</span></div><div class="t"><span class="l">Town</span><span class="v">Charlevoix, Michigan</span></div><div class="c"><span class="l">Completed</span><span class="v">Fall 2022</span></div></div>
   </div>
   <figure class="cover" style="margin-top:1.5rem"><img src="img/fb-1-1400.webp" srcset="img/fb-1-800.webp 800w, img/fb-1-1400.webp 1400w" sizes="(max-width: 1344px) calc(100vw - 2rem), 1280px" width="1400" height="933" alt="Foggy Bottom: black siding, deep roof overhangs and a planted entry walk" fetchpriority="high"></figure>
