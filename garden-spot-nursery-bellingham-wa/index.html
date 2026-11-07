@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Garden Spot Nursery, Bellingham WA</title>
+<meta name="description" content="Locally owned neighborhood nursery in Bellingham’s Sunnyland neighborhood. Open every day, 10am–5pm, at 900 Alabama Street.">
+<meta name="theme-color" content="#f4f6f0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/rozha-one.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/jost.woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-800.webp" imagesrcset="img/hero-m-800.webp 800w" imagesizes="calc(100vw - 2rem)" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1400.webp" imagesrcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" imagesizes="(max-width: 1400px) 54vw, 44rem" media="(min-width: 861px)" fetchpriority="high">
+<style>
+@font-face{font-family:"Rozha One";font-weight:400;font-display:swap;src:url(fonts/rozha-one.woff2) format("woff2")}
+@font-face{font-family:Jost;font-weight:300 700;font-display:swap;src:url(fonts/jost.woff2) format("woff2")}
+@font-face{font-family:"Patrick Hand";font-weight:400;font-display:swap;src:url(fonts/patrickhand.woff2) format("woff2")}
+/* Taken from the shop itself: the yellow wall, the mint roof, the dark green window trim, the gravel paths. */
+:root{--wall:#f2c230;--wall-deep:#d9a70f;--roof:#a9d3a7;--trim:#1d4a33;--trim-2:#2c6446;--paper:#f4f6f0;--gravel:#e3e7dd;--muted:#465a4d;--pad:clamp(1rem,4vw,3rem);--max:82rem}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--paper);color:var(--trim);font:400 1.0625rem/1.65 Jost,"Avenir Next",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--trim);outline-offset:3px}
+h1,h2,.display{font-family:"Rozha One",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+h3{font-size:1.25rem;line-height:1.25;font-weight:600}
+.skip{position:absolute;left:-999px;top:.5rem;background:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:.5rem}
+.wrap{max-width:var(--max);margin:0 auto}
+section{padding:clamp(3.5rem,7vw,6rem) var(--pad)}
+.lede{font-size:clamp(1.08rem,1.4vw,1.22rem);max-width:38rem;color:var(--muted)}
+.demo{background:var(--trim);color:#dfe9e1;font-size:.8125rem;line-height:1.4;text-align:center;padding:.5rem 1rem}
+
+/* Header */
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem var(--pad);max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;position:relative}
+.brand img{height:4.4rem;width:auto}
+.nav{display:flex;align-items:center;gap:1.6rem;font-weight:500}
+.nav > a{text-decoration:none}
+.nav > a:not(.btn):hover,.nav > a[aria-current]{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--wall);text-underline-offset:7px}
+.menu{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.75rem 1.35rem;border-radius:2rem;font-weight:600;text-decoration:none;background:var(--wall);color:var(--trim);box-shadow:inset 0 -3px 0 var(--wall-deep);transition:background-color .15s}
+.btn:hover{background:#ffd04a}
+.btn.green{background:var(--trim);color:#fff;box-shadow:none}
+.btn.green:hover{background:var(--trim-2)}
+.btn.line{background:transparent;box-shadow:inset 0 0 0 2px var(--trim)}
+.btn.line:hover{background:var(--trim);color:#fff}
+.nav .btn{min-height:2.6rem;padding:.5rem 1.1rem}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+@media (max-width:860px){
+ .nav > a{display:none}
+ .menu{display:block}
+ .menu summary{list-style:none;cursor:pointer;font-weight:600;padding:.6rem 1rem;border:2px solid var(--trim);border-radius:2rem}
+ .menu summary::-webkit-details-marker{display:none}
+ .menu[open] summary{background:var(--trim);color:#fff}
+ .menu .panel{position:absolute;right:var(--pad);left:var(--pad);top:100%;z-index:15;background:#fff;border-radius:.6rem;box-shadow:0 12px 30px rgba(29,74,51,.18);padding:.5rem;display:grid}
+ .menu .panel a{padding:.85rem 1rem;text-decoration:none;font-weight:500;border-radius:.4rem}
+ .menu .panel a:hover,.menu .panel a[aria-current]{background:var(--gravel)}
+ .brand img{height:3.5rem}
+}
+
+/* Plant tag: the white stake label stuck in every pot at the nursery. */
+.tag{position:relative;background:#fff;color:var(--trim);padding:.9rem 1rem 2.4rem;clip-path:polygon(0 .5rem,.5rem 0,calc(100% - .5rem) 0,100% .5rem,100% 74%,58% 86%,54% 100%,46% 100%,42% 86%,0 74%)}
+.tag b{display:block;font-weight:600;font-size:1.1rem;line-height:1.25}
+.tag .hand{display:block;font-family:"Patrick Hand","Comic Sans MS",cursive;font-size:1.65rem;line-height:1.1;color:var(--trim-2);margin-top:.35rem}
+.tag-wrap{filter:drop-shadow(0 2px 1px rgba(29,74,51,.18))}
+
+/* Page heads */
+.page-head{padding:clamp(1.8rem,4vw,3.6rem) var(--pad) clamp(1.8rem,3vw,2.6rem);max-width:calc(var(--max) + 2*var(--pad));margin:0 auto}
+.page-head h1{font-size:clamp(2.5rem,5.6vw,4.6rem);max-width:18ch}
+.page-head .lede{margin-top:1rem}
+.crumb{font-size:.9rem;color:var(--muted);margin-bottom:.8rem}
+
+/* Footer */
+footer{background:var(--trim);color:#e6efe8;padding:3.5rem var(--pad) 2rem}
+footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem}
+footer h2{font-size:1.6rem;color:#fff;margin-bottom:.7rem}
+footer a{color:#fff}
+footer ul{list-style:none;padding:0;display:grid;gap:.35rem}
+footer .logo{background:#fff;display:inline-block;padding:.6rem .9rem;border-radius:.5rem;margin-bottom:1rem}
+footer .logo img{height:3rem;width:auto}
+footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.2);font-size:.85rem;color:#c5d6ca;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
+@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
+
+/* Sticky call bar on phones, after the hero */
+.callbar{display:none}
+@media (max-width:860px){
+ .callbar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:12;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(244,246,240,.97);box-shadow:0 -6px 20px rgba(29,74,51,.14);transform:translateY(110%);transition:transform .25s}
+ .callbar.on{transform:none}
+ .callbar .btn{min-height:2.9rem;padding:.6rem .8rem}
+ body{padding-bottom:4.5rem}
+}
+
+.hero{padding:clamp(1.2rem,2.4vw,2rem) var(--pad) clamp(2rem,3vw,2.5rem)}
+.walk{padding-top:clamp(2rem,4vw,3.5rem)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.2fr);grid-template-areas:"text photo" "rate photo";column-gap:clamp(2rem,4vw,4rem);align-items:center}
+.hero .text{grid-area:text;align-self:end}
+.hero figure{grid-area:photo}
+.hero .rating{grid-area:rate;align-self:start}
+.nw{white-space:nowrap}
+.hero h1{font-size:clamp(2.2rem,4.2vw,3.9rem)}
+.hero .lede{margin-top:1.2rem}
+.hero .where{margin-top:1.2rem;font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.hero figure{position:relative}
+.hero figure img{border-radius:.5rem;width:100%;aspect-ratio:1400/976;object-fit:cover}
+.hero figure .tag-wrap{position:absolute;left:1.2rem;bottom:1.2rem;width:11.5rem;transform:rotate(-3deg)}
+.rating{margin-top:1.3rem;font-size:.95rem;color:var(--muted)}
+.rating strong{color:var(--trim)}
+@media (max-width:860px){
+ .hero .wrap{grid-template-columns:1fr;grid-template-areas:"text" "photo" "rate";row-gap:1.3rem}
+ .hero h1{font-size:2.15rem}
+ .hero .lede{font-size:1.05rem;margin-top:.8rem}
+ .hero .where{margin-top:.8rem;font-size:1rem}
+ .actions{margin-top:1.1rem}
+ .actions .btn{flex:1 1 100%}
+ .hero .rating{margin-top:0}
+ .hero figure img{aspect-ratio:800/533}
+ .hero figure .tag-wrap{left:.7rem;bottom:.7rem;width:9.6rem}
+ .hero figure .tag{padding:.7rem .8rem 2rem}
+ .hero figure .tag .hand{font-size:1.25rem}
+}
+
+.walk .head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2rem}
+.walk .head p{max-width:30rem;color:var(--muted)}
+.tiles{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.tiles img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:.4rem}
+.tiles h3{margin-top:.8rem;font-size:1.3rem}
+.tiles p{color:var(--muted);font-size:1rem}
+@media (max-width:1100px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.tiles{grid-template-columns:1fr;gap:1.6rem}.tiles img{aspect-ratio:3/2}}
+
+.ask{background:var(--wall)}
+.ask .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem 4rem;align-items:end;margin-bottom:2.6rem}
+.ask blockquote{font-family:"Patrick Hand","Comic Sans MS",cursive;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.2}
+.ask blockquote cite{display:block;font-family:Jost,sans-serif;font-style:normal;font-size:.95rem;margin-top:.6rem}
+.ask .intro p{margin-top:1rem;max-width:34rem}
+.tags{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:1.8rem 1.4rem}
+.tags li:nth-child(4n+1){transform:rotate(-1.6deg)}
+.tags li:nth-child(4n+2){transform:rotate(1.2deg) translateY(.4rem)}
+.tags li:nth-child(4n+3){transform:rotate(-.6deg)}
+.tags li:nth-child(4n){transform:rotate(1.8deg) translateY(.2rem)}
+.more-btn{display:none}
+@media (max-width:760px){
+ .ask .intro{grid-template-columns:1fr}
+ .tags{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem .8rem}
+ .tags:not(.open) li.extra{display:none}
+ .more-btn{display:flex;margin:1.8rem auto 0}
+}
+
+.soon .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem)}
+.party{background:var(--trim);color:#fff;border-radius:.6rem;padding:clamp(1.6rem,3vw,2.6rem);align-self:start}
+.party .when{font-family:"Patrick Hand",cursive;font-size:1.6rem;color:var(--wall)}
+.party h2{color:#fff;margin:.3rem 0 .9rem}
+.party p{color:#dfe9e1}
+.party p + p{margin-top:.8rem}
+.classes{list-style:none;padding:0;margin-top:1.4rem}
+.classes li{display:grid;grid-template-columns:6.5rem 1fr auto;gap:1rem;padding:1rem 0;border-top:2px solid var(--gravel);align-items:baseline}
+.classes .d{font-weight:600}
+.classes .fee{color:var(--muted);font-size:.95rem;text-align:right}
+.soon .actions{margin-top:1.4rem}
+@media (max-width:860px){.soon .wrap{grid-template-columns:1fr}}
+@media (max-width:480px){.classes li{grid-template-columns:5.2rem 1fr}.classes .fee{grid-column:2;text-align:left;margin-top:-.5rem}}
+
+.visit{background:var(--gravel)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.visit dl{display:grid;grid-template-columns:7rem 1fr;gap:.8rem 1rem;margin-top:1.6rem}
+.visit dt{font-weight:600}
+.visit figure img{border-radius:.5rem;width:100%;aspect-ratio:4/3;object-fit:cover}
+.visit blockquote{margin-top:1.6rem;font-size:1.15rem;max-width:32rem}
+.visit blockquote footer{background:none;padding:0;color:var(--muted);font-size:.9rem;margin-top:.4rem}
+@media (max-width:860px){.visit .wrap{grid-template-columns:1fr}.visit dl{grid-template-columns:5.5rem 1fr}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Garden Spot Nursery, Bellingham WA">
+<meta property="og:description" content="Locally owned neighborhood nursery in Bellingham’s Sunnyland neighborhood. Open every day, 10am–5pm, at 900 Alabama Street.">
+<meta property="og:url" content="https://previa.mhstecnologia.com/garden-spot-nursery-bellingham-wa/">
+<meta property="og:image" content="https://previa.mhstecnologia.com/garden-spot-nursery-bellingham-wa/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Garden Spot Nursery. Not affiliated with or endorsed by Garden Spot Nursery.</p>
+<header class="top">
+ <a class="brand" href="index.html" aria-label="Garden Spot Nursery, home"><img src="img/logo.webp" width="480" height="227" alt="Garden Spot Nursery. We grow better together."></a>
+ <nav class="nav" aria-label="Main">
+  <a href="index.html" aria-current="page">Home</a><a href="classes.html">Classes</a><a href="story.html">Our story</a><a href="visit.html">Visit</a>
+  <a class="btn" href="tel:+13606765480"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>360-676-5480</span></a>
+  <details class="menu"><summary>Menu</summary><div class="panel"><a href="index.html" aria-current="page">Home</a><a href="classes.html">Classes</a><a href="story.html">Our story</a><a href="visit.html">Visit</a><a href="tel:+13606765480">Call 360-676-5480</a><a href="mailto:gardenspot@garden-spot.com">Email us</a></div></details>
+ </nav>
+</header>
+<main id="main">
+
+<section class="hero" aria-labelledby="h1">
+ <div class="wrap">
+  <div class="text">
+   <h1 id="h1">Bellingham&rsquo;s neighborhood nursery, at Alabama and King.</h1>
+   <p class="lede">Locally owned and open year-round in Sunnyland: outdoor plants, houseplants, pottery, garden art, gifts and locally made treasures, with a team that knows them.</p>
+   <p class="where">900 Alabama Street. <span class="nw">Open every day, 10am&ndash;5pm.</span></p>
+   <div class="actions" data-callbar-after>
+    <a class="btn" href="tel:+13606765480"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>Call 360-676-5480</span></a>
+    <a class="btn line" href="classes.html">See upcoming classes</a>
+   </div>
+  </div>
+  <p class="rating">Proud to be rated <strong>4.9 / 5</strong> out of over 200 Google reviews.</p>
+  <figure>
+   <picture>
+    <source media="(max-width: 860px)" srcset="img/hero-m-800.webp" width="800" height="533">
+    <img src="img/hero-1400.webp" srcset="img/hero-1000.webp 1000w, img/hero-1400.webp 1400w" sizes="(max-width: 1400px) 54vw, 44rem" width="1400" height="976" alt="The yellow Garden Spot shop with its mint green roof, string lights and a path lined with dahlias" fetchpriority="high">
+   </picture>
+   <div class="tag-wrap" aria-hidden="true"><div class="tag"><b>Open every day</b><span class="hand">10am &ndash; 5pm</span></div></div>
+  </figure>
+ </div>
+</section>
+
+<section class="walk" aria-labelledby="walk-h">
+ <div class="wrap">
+  <div class="head">
+   <h2 id="walk-h">What you&rsquo;ll find on the gravel</h2>
+   <p>Wonderful place to get plants and flowers of all kinds, one customer wrote, plus seeds, vegetable starts, pots, garden decorations and so much more.</p>
+  </div>
+  <ul class="tiles"><li><img src="img/outdoor-600.webp" srcset="img/outdoor-600.webp 600w, img/outdoor-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2.5rem), 27rem" width="600" height="760" alt="Rows of perennials, grasses and flowering plants on the nursery gravel" loading="lazy" decoding="async"><h3>Outdoor plants</h3><p>Trees, shrubs, perennials and vegetable starts.</p></li><li><img src="img/houseplants-600.webp" srcset="img/houseplants-600.webp 600w, img/houseplants-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2.5rem), 27rem" width="600" height="797" alt="Hanging and potted houseplants filling a bright greenhouse" loading="lazy" decoding="async"><h3>Houseplants</h3><p>Hanging, trailing and potted, all year round.</p></li><li><img src="img/pottery-600.webp" srcset="img/pottery-600.webp 600w, img/pottery-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2.5rem), 27rem" width="600" height="778" alt="Glazed and terracotta pots lined up outside at sunset" loading="lazy" decoding="async"><h3>Pottery</h3><p>Glazed and terracotta, from small to very large.</p></li><li><img src="img/gardenart-600.webp" srcset="img/gardenart-600.webp 600w, img/gardenart-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2.5rem), 27rem" width="600" height="600" alt="Stone statuary among the plants: a cat, a dragon and a figure on a moon" loading="lazy" decoding="async"><h3>Garden art</h3><p>Our statuary collection, cats and dragons included.</p></li><li><img src="img/tools-600.webp" srcset="img/tools-600.webp 600w, img/tools-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2.5rem), 27rem" width="600" height="451" alt="A wall of garden tools beside shelves of soil and fertilizer" loading="lazy" decoding="async"><h3>Tools, soil and fertilizer</h3><p>What it takes to keep everything growing.</p></li><li><img src="img/fall-600.webp" srcset="img/fall-600.webp 600w, img/fall-1200.webp 1200w" sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1100px) calc(50vw - 2.5rem), 27rem" width="600" height="797" alt="Pumpkins, orange mums and a stone gargoyle at the nursery in fall" loading="lazy" decoding="async"><h3>Every season</h3><p>Pumpkins in fall, Christmas trees in winter.</p></li></ul>
+ </div>
+</section>
+
+<section class="ask" aria-labelledby="ask-h">
+ <div class="wrap">
+  <div class="intro">
+   <div>
+    <h2 id="ask-h">Everyone here has a plant they light up about.</h2>
+    <p>Find the one you&rsquo;re wondering about, then ask for them by name at the nursery. Or call, and we&rsquo;ll pass it along.</p>
+   </div>
+   <blockquote>&ldquo;Gardenia question in the store.&rdquo; The call goes out over the radio at the nursery&hellip;
+    <cite>From &ldquo;Gardenia Guy&rdquo;, by Paige Lanham, on our blog</cite></blockquote>
+  </div>
+  <ul class="tags" id="tags"><li class="tag-wrap"><div class="tag"><b>Gardenias</b><span class="hand">Ask Aaron</span></div></li><li class="tag-wrap"><div class="tag"><b>Japanese maples &amp; shade plants</b><span class="hand">Ask Angela</span></div></li><li class="tag-wrap"><div class="tag"><b>Composting &amp; earthworms</b><span class="hand">Ask Paige</span></div></li><li class="tag-wrap"><div class="tag"><b>Grasses &amp; prairie plants</b><span class="hand">Ask Hay</span></div></li><li class="tag-wrap"><div class="tag"><b>Terrariums &amp; bonsai</b><span class="hand">Ask Evan</span></div></li><li class="tag-wrap"><div class="tag"><b>Houseplants &amp; statuary</b><span class="hand">Ask Zack</span></div></li><li class="tag-wrap"><div class="tag"><b>Ferns</b><span class="hand">Ask Ari</span></div></li><li class="tag-wrap"><div class="tag"><b>Veggies</b><span class="hand">Ask Tiffany</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Conifers</b><span class="hand">Ask Aaron</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Tomatoes</b><span class="hand">Ask Paige</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Heuchera</b><span class="hand">Ask Malcolm</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Saving your own seeds</b><span class="hand">Ask Laurie</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Putting colors &amp; textures together</b><span class="hand">Ask Debra</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Wreaths &amp; driftwood displays</b><span class="hand">Ask Debbie</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Flowers for a patio garden</b><span class="hand">Ask Heidi</span></div></li><li class="tag-wrap extra"><div class="tag"><b>Morale</b><span class="hand">Ask Poppy, our dog</span></div></li></ul>
+  <button class="btn green more-btn" type="button" aria-expanded="false" aria-controls="tags" data-n="16">Show all 16</button>
+ </div>
+</section>
+
+<section class="soon" aria-labelledby="soon-h">
+ <div class="wrap">
+  <div class="party">
+   <p class="when">November 14, 11am&ndash;5pm</p>
+   <h2 id="soon-h">Holiday Open House &amp; Gift Market</h2>
+   <p>Welcome the new season our favorite way, with a party: treats, music, local gift vendors and fun holiday activities, with the lights and decorations up.</p>
+   <p>Lots of photo spots, so dress up and bring the family. The event is free.</p>
+  </div>
+  <div>
+   <h2>Make and take classes</h2>
+   <p class="lede" style="margin-top:.8rem">Hands-on, at the nursery, and you leave with what you made. Sign up by phone to reserve your spot.</p>
+   <ul class="classes"><li><span class="d">Nov 7</span><span><b>Lasagna Bulb Planter Make and Take</b><br><span style="color:var(--muted);font-size:.95rem">10am</span></span><span class="fee">$49.99</span></li><li><span class="d">Nov 21</span><span><b>Holiday Centerpiece Make and Take</b><br><span style="color:var(--muted);font-size:.95rem">10am</span></span><span class="fee">$19.99&ndash;$59.99</span></li><li><span class="d">Nov 28</span><span><b>Wreath Decorating Make and Take</b><br><span style="color:var(--muted);font-size:.95rem">10am</span></span><span class="fee">$59.99</span></li><li><span class="d">Dec 19</span><span><b>Living Ornament Make and Take</b><br><span style="color:var(--muted);font-size:.95rem">10am &amp; 12pm</span></span><span class="fee">$19.99</span></li></ul>
+   <div class="actions"><a class="btn green" href="tel:+13606765480"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>Call to sign up</span></a><a class="btn line" href="classes.html">Class details</a></div>
+  </div>
+ </div>
+</section>
+
+<section class="visit" aria-labelledby="visit-h">
+ <div class="wrap">
+  <div>
+   <h2 id="visit-h">Come walk the nursery.</h2>
+   <dl>
+    <dt>Where</dt><dd>900 Alabama Street, Bellingham WA 98225, on the corner of Alabama and King Street</dd>
+    <dt>Hours</dt><dd>Every day, 10am&ndash;5pm</dd>
+    <dt>Phone</dt><dd><a href="tel:+13606765480">360-676-5480</a></dd>
+    <dt>Email</dt><dd><a href="mailto:gardenspot@garden-spot.com">gardenspot@garden-spot.com</a></dd>
+   </dl>
+   <blockquote>&ldquo;Everyone is always so helpful and the layout of the nursery just makes sense. It feels very relaxing and low stress.&rdquo;<footer>A customer, from our testimonials</footer></blockquote>
+  </div>
+  <figure><img src="img/patio-600.webp" srcset="img/patio-600.webp 600w, img/patio-1200.webp 1200w" sizes="(max-width: 860px) calc(100vw - 2rem), 37rem" width="600" height="450" alt="Glazed pots, hydrangeas and fall color under the nursery pergola" loading="lazy" decoding="async"></figure>
+ </div>
+</section>
+
+</main>
+<footer>
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <span class="logo"><img src="img/logo.webp" width="480" height="227" alt="Garden Spot Nursery" loading="lazy"></span>
+    <p>Your locally owned neighborhood nursery in Bellingham&rsquo;s Sunnyland neighborhood.</p>
+   </div>
+   <div>
+    <h2>Visit</h2>
+    <p>900 Alabama Street<br>Bellingham WA 98225</p>
+    <p style="margin-top:.6rem">Open every day, 10am&ndash;5pm</p>
+   </div>
+   <div>
+    <h2>Get in touch</h2>
+    <ul><li><a href="tel:+13606765480">360-676-5480</a></li><li><a href="mailto:gardenspot@garden-spot.com">gardenspot@garden-spot.com</a></li></ul>
+    <ul style="margin-top:1rem"><li><a href="classes.html">Classes</a></li><li><a href="story.html">Our story</a></li><li><a href="visit.html">Visit</a></li></ul>
+   </div>
+  </div>
+  <div class="legal">
+   <p>Unofficial demo built by MHS Tecnologia for Garden Spot Nursery. Not affiliated with or endorsed by Garden Spot Nursery.</p>
+   <p>Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+ </div>
+</footer>
+<div class="callbar" id="callbar"><a class="btn" href="tel:+13606765480"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>Call</span></a><a class="btn green" href="mailto:gardenspot@garden-spot.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Email</span></a></div>
+<script>
+(function(){var bar=document.getElementById('callbar');var mark=document.querySelector('[data-callbar-after]');
+if(!mark||!('IntersectionObserver' in window)){bar.classList.add('on');return}
+new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(mark);
+var t=document.querySelector('.more-btn');if(t)t.addEventListener('click',function(){var l=document.getElementById('tags');var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'Show fewer':'Show all {n}'.replace('{n}',t.dataset.n);});})();
+</script>
+</body>
+</html>
