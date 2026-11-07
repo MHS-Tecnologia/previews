@@ -165,18 +165,15 @@ p { max-width: 64ch; }
 .team a { font-size: .9rem; overflow-wrap: anywhere; }
 
 .foot { border-top: var(--rule); padding: 2.5rem 0 2rem; font-size: .95rem; }
-.foot-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 2rem; }
+.foot-row { display: flex; justify-content: space-between; align-items: center; gap: 1.25rem 2rem; flex-wrap: wrap; }
+.foot-row ul { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
 .foot img { width: 11rem; height: auto; }
 .foot ul { list-style: none; padding: 0; }
-.foot li + li { margin-top: .3rem; }
-.foot h2 { font-family: "Instrument Sans", sans-serif; font-size: .95rem; font-weight: 600; letter-spacing: 0; margin-bottom: .5rem; }
-.foot address { font-style: normal; }
 .notice { max-width: none; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #9a9c96; font-size: .85rem; color: var(--graphite); }
 
 .callbar { display: none; }
 @media (max-width: 1080px) {
   .team { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .foot-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 900px) {
   .nav > a { display: none; }
@@ -217,7 +214,6 @@ p { max-width: 64ch; }
   .g2, .g3, .g3.two, .team { grid-template-columns: 1fr; }
   .team { grid-template-columns: 1fr 1fr; }
   .offices { grid-template-columns: 1fr; }
-  .foot-grid { grid-template-columns: 1fr; }
   .actions .btn { flex: 1 1 auto; }
   .pager { flex-direction: column; }
   .pager a { max-width: none; }
@@ -256,11 +252,9 @@ p { max-width: 64ch; }
 </main>
 <footer class="foot">
   <div class="wrap">
-    <div class="foot-grid">
-      <div><img src="img/logo.webp" width="640" height="110" alt="Black Birch Design + Build" loading="lazy"><p style="margin-top:.9rem">Architect and builder serving Petoskey, Walloon Lake, Boyne City, Charlevoix, Lake Charlevoix, East Jordan, Torch Lake and Bellaire.</p></div>
-      <div><h2>Lake Charlevoix Headquarters</h2><address>913 Water St.<br>East Jordan, MI 49727</address></div>
-      <div><h2>Marina District Field Office</h2><address>200 W. Lake St., Suite 17<br>Petoskey, MI 49770</address></div>
-      <div><h2>Reach the office</h2><ul><li>Office <a href="tel:+12314958233">231.495.8233</a></li><li>Mobile <a href="tel:+12316753789">231.675.3789</a></li><li><a href="mailto:info@blackbirchdesignbuild.com">info@blackbirchdesignbuild.com</a></li></ul><ul style="margin-top:1rem"><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="process.html">Process</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="foot-row">
+      <img src="img/logo.webp" width="640" height="110" alt="Black Birch Design + Build" loading="lazy">
+      <nav aria-label="Footer"><ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="process.html">Process</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
     </div>
     <p class="notice">Unofficial demo built by MHS Tecnologia for Black Birch Design + Build, from the photos and text on their own website. Not affiliated with or endorsed by Black Birch Design + Build. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
   </div>
