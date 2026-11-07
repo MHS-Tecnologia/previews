@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Process | Black Birch Design + Build</title>
+<meta name="description" content="Eight steps, one team: from land selection and zoning research to construction, move-in and estate management.">
+<meta name="theme-color" content="#ecede9">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/krona.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/instrument-sans.woff2" crossorigin>
+<style>
+@font-face { font-family: "Krona One"; font-weight: 400; font-display: optional; src: url(fonts/krona.woff2) format("woff2"); }
+@font-face { font-family: "Instrument Sans"; font-weight: 400 700; font-display: optional; src: url(fonts/instrument-sans.woff2) format("woff2"); }
+/* Birch bark, their black, cedar from the cladding, Lake Charlevoix green. */
+:root { --paper: #ecede9; --paper-2: #e0e2dc; --ink: #000; --graphite: #4b4d48; --cedar: #8a5530; --lake: #135a57;
+  --pad: clamp(1rem, 3vw, 2rem); --max: 80rem; --rule: 1.5px solid var(--ink); }
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 "Instrument Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--lake); outline-offset: 3px; }
+h1, h2, h3, .k { font-family: "Krona One", "Arial Black", sans-serif; font-weight: 400; letter-spacing: -.01em; }
+h1 { font-size: clamp(1.5rem, 3.9vw, 3.35rem); line-height: 1.12; text-wrap: balance; }
+h2 { font-size: clamp(1.3rem, 2.4vw, 2rem); line-height: 1.18; text-wrap: balance; }
+h3 { font-size: 1rem; line-height: 1.3; }
+p { max-width: 64ch; }
+.wrap { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; padding: 0 var(--pad); }
+.skip { position: absolute; left: -999px; top: .5rem; background: #fff; padding: .5rem 1rem; z-index: 20; }
+.skip:focus { left: .5rem; }
+.demo { max-width: none; background: var(--ink); color: #d6d8d2; font-size: .8125rem; line-height: 1.4; text-align: center; padding: .45rem var(--pad); }
+
+/* Header */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: .9rem; padding-bottom: .9rem; }
+.brand img { width: 13.5rem; height: auto; }
+.nav { display: flex; align-items: center; gap: 1.6rem; font-size: .975rem; font-weight: 500; }
+.nav > a:not(.btn) { text-decoration: none; padding: .3rem 0; border-bottom: 2px solid transparent; }
+.nav > a:not(.btn):hover, .nav > a[aria-current] { border-bottom-color: var(--ink); }
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; font-weight: 600; padding: .55rem .9rem; border: var(--rule); }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { background: var(--ink); color: #fff; }
+.menu-panel { position: absolute; right: 0; top: calc(100% + .5rem); background: #fff; border: var(--rule); min-width: 15rem; padding: .4rem 0; z-index: 30; }
+.menu-panel a { display: block; padding: .8rem 1.1rem; text-decoration: none; font-weight: 500; }
+.menu-panel a[aria-current] { text-decoration: underline; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 3rem; padding: .7rem 1.3rem; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; border: var(--rule); transition: background-color .15s; }
+.btn:hover { background: var(--lake); border-color: var(--lake); }
+.btn.line { background: transparent; color: var(--ink); }
+.btn.line:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn svg { width: 1.1rem; height: 1.1rem; flex: none; }
+
+/* The title block: the one recurring device. Sheet, project, water, town, completed. */
+.tb { display: grid; grid-template-columns: auto repeat(var(--cells, 3), minmax(0, 1fr)); border: var(--rule); background: var(--paper); }
+.tb > div { padding: .55rem .8rem .6rem; border-left: var(--rule); min-width: 0; }
+.tb > div:first-child { border-left: 0; }
+.tb dt, .tb .l { display: block; font-size: .75rem; line-height: 1.2; color: var(--graphite); }
+.tb dd, .tb .v { display: block; margin: .2rem 0 0; font-family: "Krona One", sans-serif; font-size: .8rem; line-height: 1.3; }
+.tb .no { display: flex; flex-direction: column; justify-content: center; text-align: center; background: var(--ink); color: #fff; padding: .45rem .9rem; }
+.tb .no .l { color: #c9cbc5; }
+.tb .no .v { font-size: 1.35rem; line-height: 1.1; margin-top: .1rem; }
+
+/* Home hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 2rem 3.5rem; align-items: center; padding-top: clamp(1.25rem, 3vw, 2.25rem); }
+.hero h1 { font-size: clamp(1.5rem, 3.1vw, 2.85rem); }
+.hero-copy .intro { font-size: 1.125rem; color: var(--graphite); margin-top: 1.4rem; }
+.hero-copy .intro strong { color: var(--ink); font-weight: 600; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.hero-fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.hero-fig .tb { border-top: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-fig .tb { animation: draw .8s .25s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+}
+
+.band { padding: clamp(3rem, 7vw, 6rem) 0; }
+.band.alt { background: var(--paper-2); }
+.head { display: flex; justify-content: space-between; align-items: end; gap: 1rem 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.head p { color: var(--graphite); }
+
+/* The drawing set: one sheet per project */
+.set { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem 1.5rem; list-style: none; padding: 0; }
+.sheet { display: block; text-decoration: none; }
+.sheet img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.sheet .tb { --cells: 1; border-top: 0; }
+.sheet h3 { font-size: .95rem; }
+.sheet .meta { font-size: .9rem; color: var(--graphite); margin-top: .15rem; }
+.sheet:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .25em; }
+
+/* Process on home */
+.proc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem 3.5rem; align-items: start; }
+.proc img { width: 100%; }
+.steps { list-style: none; padding: 0; counter-reset: s; border-top: var(--rule); }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid #9a9c96; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: "Krona One", sans-serif; font-size: .8rem; padding-top: .2rem; }
+
+.press { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: var(--rule); list-style: none; padding: 0; }
+.press li { padding: 1.25rem 1.4rem 1.5rem; border-left: var(--rule); }
+.press li:first-child { border-left: 0; }
+.press .k { font-size: .8rem; display: block; margin-bottom: .5rem; }
+.press q { quotes: none; font-size: 1.05rem; }
+
+.offices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) minmax(0, .9fr); gap: 2rem; }
+.offices h3 { font-size: .9rem; margin-bottom: .5rem; }
+.offices address { font-style: normal; }
+.offices p + p { margin-top: .35rem; }
+.towns { max-width: none; margin-top: 2.5rem; padding-top: 1.25rem; border-top: var(--rule); color: var(--graphite); }
+
+/* Inner pages */
+.page-head { padding-top: clamp(1.5rem, 4vw, 3rem); padding-bottom: 1.5rem; }
+.page-head p { color: var(--graphite); font-size: 1.125rem; margin-top: .9rem; }
+.proj-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem 3rem; align-items: end; padding-top: clamp(1.5rem, 4vw, 3rem); }
+.proj-top .tb { --cells: 3; }
+.cover img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.5rem 3rem; padding: clamp(2rem, 5vw, 3.5rem) 0; }
+.story p { font-size: 1.125rem; }
+.g2, .g3 { display: grid; gap: 1.25rem; list-style: none; padding: 0; }
+.g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1.25rem; }
+.g3.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.g3.two img { aspect-ratio: 4 / 5; }
+.g2 img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.g3 img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+.pager { display: flex; justify-content: space-between; gap: 1rem; padding: 2rem 0 0; margin-top: 3rem; border-top: var(--rule); }
+.pager a { text-decoration: none; display: block; max-width: 48%; }
+.pager .l { display: block; font-size: .8rem; color: var(--graphite); }
+.pager .k { font-size: .95rem; }
+.pager a:hover .k { text-decoration: underline; }
+.pager .next { text-align: right; margin-left: auto; }
+
+.ask { background: var(--ink); color: #fff; }
+.ask .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem 3rem; flex-wrap: wrap; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.ask p { color: #d6d8d2; margin-top: .4rem; }
+.ask .btn { background: #fff; color: var(--ink); border-color: #fff; }
+.ask .btn:hover { background: var(--paper-2); }
+.ask .btn.line { background: transparent; color: #fff; }
+.ask .btn.line:hover { background: #fff; color: var(--ink); }
+
+.plist { list-style: none; padding: 0; border-top: var(--rule); counter-reset: s; }
+.plist > li { counter-increment: s; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr) minmax(0, 26rem); gap: 1rem 2rem; padding: 1.4rem 0; border-bottom: 1px solid #9a9c96; align-items: start; }
+.plist > li::before { content: counter(s, decimal-leading-zero); font-family: "Krona One", sans-serif; font-size: 1.4rem; line-height: 1.2; }
+.plist h2 { font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
+.plist img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+
+.team { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem 1.25rem; list-style: none; padding: 0; }
+.team img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #222; }
+.team h3 { font-size: .9rem; margin-top: .8rem; }
+.team p { font-size: .95rem; color: var(--graphite); }
+.team a { font-size: .9rem; overflow-wrap: anywhere; }
+
+.foot { border-top: var(--rule); padding: 2.5rem 0 2rem; font-size: .95rem; }
+.foot-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 2rem; }
+.foot img { width: 11rem; height: auto; }
+.foot ul { list-style: none; padding: 0; }
+.foot li + li { margin-top: .3rem; }
+.foot h2 { font-family: "Instrument Sans", sans-serif; font-size: .95rem; font-weight: 600; letter-spacing: 0; margin-bottom: .5rem; }
+.foot address { font-style: normal; }
+.notice { max-width: none; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #9a9c96; font-size: .85rem; color: var(--graphite); }
+
+.callbar { display: none; }
+@media (max-width: 1080px) {
+  .set { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .nav > a { display: none; }
+  .menu { display: block; }
+  .hero, .proc, .proj-top, .story { grid-template-columns: 1fr; }
+  .offices { grid-template-columns: 1fr 1fr; }
+  .press { grid-template-columns: 1fr; }
+  .press li { border-left: 0; border-top: var(--rule); }
+  .press li:first-child { border-top: 0; }
+  .plist > li { grid-template-columns: 3rem minmax(0, 1fr); }
+  .plist > li > img, .plist > li > a { grid-column: 2; max-width: 26rem; }
+}
+@media (max-width: 760px) {
+  body { font-size: 1rem; }
+  .brand img { width: 10.5rem; }
+  .hero-copy .intro { font-size: 1.0625rem; }
+  .hero-fig { margin-left: calc(-1 * var(--pad)); margin-right: calc(-1 * var(--pad)); }
+  .hero-fig .tb { width: auto; margin: 0 var(--pad); }
+  .tb, .proj-top .tb { grid-template-columns: auto minmax(0, 1fr); }
+  .tb > div:not(.no) { grid-column: 2; border-left: var(--rule); padding: .4rem .8rem .45rem; }
+  .tb > div:not(.no) + div { border-top: var(--rule); }
+  .tb .no { grid-row: 1 / span 3; }
+  .tb > div:not(.no):has(> .l) { display: flex; align-items: baseline; gap: .75rem; }
+  .tb > div:not(.no) > .l { flex: 0 0 4.6rem; }
+  .tb > div:not(.no) > .v { margin-top: 0; }
+  .set, .g2, .g3, .g3.two, .team { grid-template-columns: 1fr; }
+  .team { grid-template-columns: 1fr 1fr; }
+  .offices { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .actions .btn { flex: 1 1 auto; }
+  .pager { flex-direction: column; }
+  .pager a { max-width: none; }
+  .callbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; gap: .5rem; padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom)); background: var(--paper); border-top: var(--rule); transform: translateY(110%); transition: transform .25s ease; }
+  .callbar .btn { flex: 1; min-height: 2.9rem; }
+  .callbar.on { transform: none; }
+  .foot { padding-bottom: 5.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .callbar { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<p class="demo">Unofficial demo built by MHS Tecnologia for Black Birch Design + Build. Not affiliated with or endorsed by Black Birch Design + Build.</p>
+<header class="wrap top">
+  <a class="brand" href="index.html" aria-label="Black Birch Design + Build, home"><img src="img/logo.webp" width="640" height="110" alt="Black Birch Design + Build"></a>
+  <nav class="nav" aria-label="Main">
+    <a href="projects.html">Projects</a><a href="process.html" aria-current="page">Process</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+    <a class="btn" href="tel:+12314958233"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>231.495.8233</a>
+    <details class="menu"><summary>Menu</summary><div class="menu-panel"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="process.html" aria-current="page">Process</a><a href="team.html">Team</a><a href="contact.html">Contact</a><a href="tel:+12314958233">Call 231.495.8233</a><a href="mailto:info@blackbirchdesignbuild.com">Email the office</a></div></details>
+  </nav>
+</header>
+<main id="main">
+
+<section class="wrap page-head" data-hero><h1>Process</h1><p>Black Birch is a Northern Michigan based Design + Build team specializing in new homes, major additions and renovations. Our mission is to realize your goals as a collaborator, from concept to completion.</p><p>We are a single source to craft a product that meets your needs and budget. We are creative, inventive designers and technical craftsmen.</p></section>
+<section class="wrap" style="padding-bottom:4rem"><ol class="plist"><li><div><h2>Land selection and zoning research</h2></div></li><li><div><h2>Program, budget and inspiration</h2></div></li><li><div><h2>Sketching, 3D design and landscapes</h2></div><img src="img/step-03-600.webp" srcset="img/step-03-600.webp 600w" sizes="(max-width: 900px) min(26rem, calc(100vw - 6rem)), 416px" width="600" height="600" alt="Hand sketches and plan drawings on the drafting table" loading="lazy" decoding="async"></li><li><div><h2>Interiors, material selection and furniture design</h2></div><img src="img/step-04-600.webp" srcset="img/step-04-600.webp 600w" sizes="(max-width: 900px) min(26rem, calc(100vw - 6rem)), 416px" width="600" height="600" alt="Stone and tile samples laid out for selection" loading="lazy" decoding="async"></li><li><div><h2>Bidding, permitting and scheduling</h2></div></li><li><div><h2>Construction</h2></div><img src="img/step-06-600.webp" srcset="img/step-06-600.webp 600w" sizes="(max-width: 900px) min(26rem, calc(100vw - 6rem)), 416px" width="600" height="600" alt="A finished lake house seen from the water" loading="lazy" decoding="async"></li><li><div><h2>Move in</h2></div><img src="img/step-07-600.webp" srcset="img/step-07-600.webp 600w" sizes="(max-width: 900px) min(26rem, calc(100vw - 6rem)), 416px" width="600" height="600" alt="A finished living room with a fireplace and tall windows" loading="lazy" decoding="async"></li><li><div><h2>Estate management</h2></div></li></ol></section>
+<section class="ask" aria-label="Contact Black Birch"><div class="wrap"><div><h2>Have land in mind, or still looking?</h2><p>One team designs it and builds it. Start with a call or an email.</p></div><div class="actions" style="margin-top:0"><a class="btn" href="tel:+12314958233"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call 231.495.8233</a><a class="btn line" href="mailto:info@blackbirchdesignbuild.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14"/><path d="m3 6 9 7 9-7"/></svg>info@blackbirchdesignbuild.com</a></div></div></section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><img src="img/logo.webp" width="640" height="110" alt="Black Birch Design + Build" loading="lazy"><p style="margin-top:.9rem">Architect and builder serving Petoskey, Walloon Lake, Boyne City, Charlevoix, Lake Charlevoix, East Jordan, Torch Lake and Bellaire.</p></div>
+      <div><h2>Lake Charlevoix Headquarters</h2><address>913 Water St.<br>East Jordan, MI 49727</address></div>
+      <div><h2>Marina District Field Office</h2><address>200 W. Lake St., Suite 17<br>Petoskey, MI 49770</address></div>
+      <div><h2>Reach the office</h2><ul><li>Office <a href="tel:+12314958233">231.495.8233</a></li><li>Mobile <a href="tel:+12316753789">231.675.3789</a></li><li><a href="mailto:info@blackbirchdesignbuild.com">info@blackbirchdesignbuild.com</a></li></ul><ul style="margin-top:1rem"><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="process.html">Process</a></li><li><a href="team.html">Team</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <p class="notice">Unofficial demo built by MHS Tecnologia for Black Birch Design + Build, from the photos and text on their own website. Not affiliated with or endorsed by Black Birch Design + Build. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="callbar" aria-label="Contact"><a class="btn" href="tel:+12314958233"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call the office</a><a class="btn line" href="mailto:info@blackbirchdesignbuild.com"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14"/><path d="m3 6 9 7 9-7"/></svg>Email</a></div>
+<script>
+(function(){var b=document.querySelector('.callbar'),h=document.querySelector('[data-hero]');
+if(!b)return;if(!h||!('IntersectionObserver' in window)){b.classList.add('on');return;}
+new IntersectionObserver(function(e){b.classList.toggle('on',!e[0].isIntersecting);}).observe(h);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.querySelector('.menu[open]');if(m){m.removeAttribute('open');m.querySelector('summary').focus();}}});})();
+</script>
+</body>
+</html>
