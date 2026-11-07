@@ -24,6 +24,7 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{background:var(--paper);color:var(--trim);font:400 1.0625rem/1.65 Jost,"Avenir Next",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
+button{font:inherit;cursor:pointer;border:0}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--trim);outline-offset:3px}
 h1,h2,.display{font-family:"Rozha One",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
@@ -49,6 +50,7 @@ section{padding:clamp(3.5rem,7vw,6rem) var(--pad)}
 .btn.green:hover{background:var(--trim-2)}
 .btn.line{background:transparent;box-shadow:inset 0 0 0 2px var(--trim)}
 .btn.line:hover{background:var(--trim);color:#fff}
+.btn.more-btn{display:none}
 .nav .btn{min-height:2.6rem;padding:.5rem 1.1rem}
 .btn svg{width:1.1em;height:1.1em;flex:none}
 @media (max-width:860px){
@@ -101,6 +103,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
 .hero .text{grid-area:text;align-self:end}
 .hero figure{grid-area:photo}
 .hero .rating{grid-area:rate;align-self:start}
+.hero .m{display:none}
 .nw{white-space:nowrap}
 .hero h1{font-size:clamp(2.2rem,4.2vw,3.9rem)}
 .hero .lede{margin-top:1.2rem}
@@ -114,13 +117,19 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
 @media (max-width:860px){
  .hero .wrap{grid-template-columns:1fr;grid-template-areas:"text" "photo" "rate";row-gap:1.3rem}
  .hero h1{font-size:2.15rem}
+ .hero .lede{font-size:1rem;line-height:1.5}
+ .hero .long,.hero .wide{display:none}
+ .hero .m{display:inline}
+ .hero .where{font-size:.95rem;margin-top:.6rem}
+ .hero .where .nw{white-space:normal}
  .hero .lede{font-size:1.05rem;margin-top:.8rem}
  .hero .where{margin-top:.8rem;font-size:1rem}
  .actions{margin-top:1.1rem}
- .actions .btn{flex:1 1 100%}
+ .actions .btn{flex:1 1 auto}
+ .hero .actions .btn.line{flex:0 0 auto}
  .hero .rating{margin-top:0}
  .hero figure img{aspect-ratio:800/533}
- .hero figure .tag-wrap{left:.7rem;bottom:.7rem;width:9.6rem}
+ .hero figure .tag-wrap{left:.7rem;bottom:.7rem;width:11.5rem}
  .hero figure .tag{padding:.7rem .8rem 2rem}
  .hero figure .tag .hand{font-size:1.25rem}
 }
@@ -144,12 +153,12 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
 .tags li:nth-child(4n+2){transform:rotate(1.2deg) translateY(.4rem)}
 .tags li:nth-child(4n+3){transform:rotate(-.6deg)}
 .tags li:nth-child(4n){transform:rotate(1.8deg) translateY(.2rem)}
-.more-btn{display:none}
+@media (min-width:761px){.tags{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (max-width:760px){
  .ask .intro{grid-template-columns:1fr}
  .tags{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem .8rem}
  .tags:not(.open) li.extra{display:none}
- .more-btn{display:flex;margin:1.8rem auto 0}
+ .ask .btn.more-btn{display:flex;margin:1.8rem auto 0}
 }
 
 .soon .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem)}
@@ -200,11 +209,11 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
  <div class="wrap">
   <div class="text">
    <h1 id="h1">Bellingham&rsquo;s neighborhood nursery, at Alabama and King.</h1>
-   <p class="lede">Locally owned and open year-round in Sunnyland: outdoor plants, houseplants, pottery, garden art, gifts and locally made treasures, with a team that knows them.</p>
-   <p class="where">900 Alabama Street. <span class="nw">Open every day, 10am&ndash;5pm.</span></p>
+   <p class="lede">Locally owned and open year-round in Sunnyland: outdoor plants, houseplants, pottery, garden art, gifts<span class="long"> and locally made treasures, with a team that knows them</span>.</p>
+   <p class="where">900 Alabama Street<span class="wide">. <span class="nw">Open every day, 10am&ndash;5pm.</span></span></p>
    <div class="actions" data-callbar-after>
     <a class="btn" href="tel:+13606765480"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg><span>Call 360-676-5480</span></a>
-    <a class="btn line" href="classes.html">See upcoming classes</a>
+    <a class="btn line" href="classes.html"><span class="wide">See upcoming classes</span><span class="m">Classes</span></a>
    </div>
   </div>
   <p class="rating">Proud to be rated <strong>4.9 / 5</strong> out of over 200 Google reviews.</p>
@@ -306,7 +315,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
 (function(){var bar=document.getElementById('callbar');var mark=document.querySelector('[data-callbar-after]');
 if(!mark||!('IntersectionObserver' in window)){bar.classList.add('on');return}
 new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(mark);
-var t=document.querySelector('.more-btn');if(t)t.addEventListener('click',function(){var l=document.getElementById('tags');var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'Show fewer':'Show all {n}'.replace('{n}',t.dataset.n);});})();
+document.querySelectorAll('.more-btn').forEach(function(t){var lab=t.textContent;t.addEventListener('click',function(){var l=document.getElementById(t.getAttribute('aria-controls'));var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'Show fewer':lab;})});})();
 </script>
 </body>
 </html>

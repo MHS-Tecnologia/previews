@@ -22,6 +22,7 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{background:var(--paper);color:var(--trim);font:400 1.0625rem/1.65 Jost,"Avenir Next",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
+button{font:inherit;cursor:pointer;border:0}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--trim);outline-offset:3px}
 h1,h2,.display{font-family:"Rozha One",Georgia,serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
@@ -47,6 +48,7 @@ section{padding:clamp(3.5rem,7vw,6rem) var(--pad)}
 .btn.green:hover{background:var(--trim-2)}
 .btn.line{background:transparent;box-shadow:inset 0 0 0 2px var(--trim)}
 .btn.line:hover{background:var(--trim);color:#fff}
+.btn.more-btn{display:none}
 .nav .btn{min-height:2.6rem;padding:.5rem 1.1rem}
 .btn svg{width:1.1em;height:1.1em;flex:none}
 @media (max-width:860px){
@@ -113,7 +115,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
 .team figure{margin-top:1rem}
 .team figure img{border-radius:.5rem;width:100%;max-height:34rem;object-fit:cover}
 @media (max-width:1000px){.team .grid{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.team .grid{grid-template-columns:1fr}}
+@media (max-width:760px){.team .grid{grid-template-columns:1fr 1fr;gap:1.2rem 1rem}.team .grid h3{font-size:1.3rem}.team .grid p{font-size:.92rem}.team .grid:not(.open) li.extra{display:none}.team .btn.more-btn{display:flex;margin:1.8rem auto 0}}
 .give{background:var(--trim);color:#e6efe8}
 .give h2{color:#fff}
 .give .wrap > p{max-width:42rem;margin-top:1rem}
@@ -168,7 +170,8 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
  <div class="wrap">
   <h2 id="team-h">The team</h2>
   <figure><img src="img/team-600.webp" srcset="img/team-600.webp 600w, img/team-1200.webp 1200w" sizes="(max-width: 1400px) calc(100vw - 2rem), 82rem" width="600" height="442" alt="The Garden Spot team together on the gravel in front of the pergola" loading="lazy" decoding="async"></figure>
-  <ul class="grid"><li><h3>Paige</h3><p class="since">Owner since January 2021</p><p>Started as a cashier in 2012. Studied Biology at WWU, raises and studies earthworms, and grows hundreds of tomatoes every summer.</p></li><li><h3>Aaron</h3><p class="since">Full-time since spring 2021</p><p>Especially loves conifers and Japanese maples. Favorite plant: the Chief Joseph Pine, and anything from the Dan Hinkley Collection.</p></li><li><h3>Debra</h3><p class="since">On the team since 2002</p><p>Loves bringing plants together in a cohesive design, playing with colors, textures, and shapes.</p></li><li><h3>Angela</h3><p class="since">Since spring 2018</p><p>Grew up with more plants than people. Usually found among the Japanese maples and shade plants.</p></li><li><h3>Tiffany</h3><p class="since">Since 2021</p><p>Houseplants are her happy place. Especially enjoys the veggie section, and grows aquaponic vegetables at home.</p></li><li><h3>Evan</h3><p class="since">Since March 2022</p><p>Our terrariums wizard, whose true passion is bonsai. Favorite plant to bonsai: the ficus.</p></li><li><h3>Zack</h3><p class="since">Since May 2023</p><p>Loves houseplants, the greenhouse, and our statuary collection. Used to work full-time as a photographer.</p></li><li><h3>Heidi</h3><p class="since">Since February 2024</p><p>Deep love for flowers, a magical patio garden, and a collection of 45 houseplants.</p></li><li><h3>Hay</h3><p class="since">Since March 2025</p><p>A unique appreciation for grasses and prairie plants, grown while doing research for the USDA.</p></li><li><h3>Laurie</h3><p class="since">Since March 2025</p><p>Loves ALL plants, with a special fondness for growing from seeds she saved herself.</p></li><li><h3>Ari</h3><p class="since">Since March 2025</p><p>A big fern enthusiast who loves meeting the dogs that come in. Some of her crafts are for sale in the store.</p></li><li><h3>Debbie</h3><p class="since">On her 5th season</p><p>Our resident crafter: driftwood displays, wreaths and furniture. Pick: flowering perennials.</p></li><li><h3>Malcolm</h3><p class="since">Since May 2026</p><p>Has already lifted his way through most of the pots in the nursery. Favorite plant: heuchera.</p></li><li><h3>Poppy</h3><p class="since">Since January 2023</p><p>Started as an intern, now Chief morale officer. Hangs out in receiving and hides toys and treats.</p></li></ul>
+  <ul class="grid" id="team-list"><li><h3>Paige</h3><p class="since">Owner since January 2021</p><p>Started as a cashier in 2012. Studied Biology at WWU, raises and studies earthworms, and grows hundreds of tomatoes every summer.</p></li><li><h3>Aaron</h3><p class="since">Full-time since spring 2021</p><p>Especially loves conifers and Japanese maples. Favorite plant: the Chief Joseph Pine, and anything from the Dan Hinkley Collection.</p></li><li><h3>Debra</h3><p class="since">On the team since 2002</p><p>Loves bringing plants together in a cohesive design, playing with colors, textures, and shapes.</p></li><li><h3>Angela</h3><p class="since">Since spring 2018</p><p>Grew up with more plants than people. Usually found among the Japanese maples and shade plants.</p></li><li><h3>Tiffany</h3><p class="since">Since 2021</p><p>Houseplants are her happy place. Especially enjoys the veggie section, and grows aquaponic vegetables at home.</p></li><li><h3>Evan</h3><p class="since">Since March 2022</p><p>Our terrariums wizard, whose true passion is bonsai. Favorite plant to bonsai: the ficus.</p></li><li class="extra"><h3>Zack</h3><p class="since">Since May 2023</p><p>Loves houseplants, the greenhouse, and our statuary collection. Used to work full-time as a photographer.</p></li><li class="extra"><h3>Heidi</h3><p class="since">Since February 2024</p><p>Deep love for flowers, a magical patio garden, and a collection of 45 houseplants.</p></li><li class="extra"><h3>Hay</h3><p class="since">Since March 2025</p><p>A unique appreciation for grasses and prairie plants, grown while doing research for the USDA.</p></li><li class="extra"><h3>Laurie</h3><p class="since">Since March 2025</p><p>Loves ALL plants, with a special fondness for growing from seeds she saved herself.</p></li><li class="extra"><h3>Ari</h3><p class="since">Since March 2025</p><p>A big fern enthusiast who loves meeting the dogs that come in. Some of her crafts are for sale in the store.</p></li><li class="extra"><h3>Debbie</h3><p class="since">On her 5th season</p><p>Our resident crafter: driftwood displays, wreaths and furniture. Pick: flowering perennials.</p></li><li class="extra"><h3>Malcolm</h3><p class="since">Since May 2026</p><p>Has already lifted his way through most of the pots in the nursery. Favorite plant: heuchera.</p></li><li class="extra"><h3>Poppy</h3><p class="since">Since January 2023</p><p>Started as an intern, now Chief morale officer. Hangs out in receiving and hides toys and treats.</p></li></ul>
+  <button class="btn green more-btn" type="button" aria-expanded="false" aria-controls="team-list">Meet all 14</button>
  </div>
 </section>
 <section class="give" aria-labelledby="give-h">
@@ -210,7 +213,7 @@ footer .legal{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(255
 (function(){var bar=document.getElementById('callbar');var mark=document.querySelector('[data-callbar-after]');
 if(!mark||!('IntersectionObserver' in window)){bar.classList.add('on');return}
 new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(mark);
-var t=document.querySelector('.more-btn');if(t)t.addEventListener('click',function(){var l=document.getElementById('tags');var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'Show fewer':'Show all {n}'.replace('{n}',t.dataset.n);});})();
+document.querySelectorAll('.more-btn').forEach(function(t){var lab=t.textContent;t.addEventListener('click',function(){var l=document.getElementById(t.getAttribute('aria-controls'));var o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'Show fewer':lab;})});})();
 </script>
 </body>
 </html>
