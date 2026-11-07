@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Honeybee Homes | Home remodeling in Mooresville, NC</title>
+<meta name="description" content="Kitchen and bathroom remodels, new construction, roofing and home additions from a family-owned team in Mooresville, NC.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preload" href="fonts/forum.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" media="(max-width: 860px)" imagesrcset="img/kitchen-m-800.webp 800w" imagesizes="calc(100vw - 48px)">
+<link rel="preload" as="image" type="image/webp" media="(min-width: 861px)" imagesrcset="img/kitchen-900.webp 900w, img/kitchen-1400.webp 1400w" imagesizes="(max-width: 1248px) 56vw, 684px">
+<style>
+@font-face{font-family:Forum;src:url(fonts/forum.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Mulish;src:url(fonts/mulish.woff2) format("woff2");font-weight:400 800;font-display:swap}
+/* Shiplap white and black window frames from their photos; honey from the logo; oak from the beams; Lake Norman slate. */
+:root{--paper:#f6f7f5;--white:#fff;--ink:#1f2326;--muted:#4f565b;--line:#d9ddd8;--honey:#d6a02e;--honey-soft:#f3e3bb;--honey-ink:#7a5410;--oak:#9b6f45;--lake:#2c4753;--lake-deep:#21363f;--max:1200px}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 Mulish,system-ui,sans-serif}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Forum,Georgia,serif;font-weight:400;line-height:1.08;margin:0;letter-spacing:.005em}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--honey);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:8px 12px;z-index:50}
+.skip:focus{left:8px}
+.demo{background:var(--ink);color:#e9ebe8;font-size:.8125rem;line-height:1.4;padding:7px 24px;text-align:center}
+.top{background:var(--white);border-bottom:1px solid var(--line);position:relative;z-index:10}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:84px}
+.brand img{width:132px;height:auto}
+.nav{display:flex;align-items:center;gap:28px;font-weight:600;font-size:.98rem}
+.nav > a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav > a:hover,.nav > a[aria-current]{border-bottom-color:var(--honey)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;background:var(--honey);color:var(--ink);font-weight:800;text-decoration:none;font-size:1rem;border:2px solid var(--honey)}
+.btn:hover{background:#e3b14a;border-color:#e3b14a}
+.btn.ghost{background:transparent;border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+.nav .btn{min-height:44px;padding:0 18px}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;min-height:44px;padding:0 16px;border:2px solid var(--ink);border-radius:999px;display:flex;align-items:center;font-weight:700}
+.menu summary::-webkit-details-marker{display:none}
+.menu div{position:absolute;right:0;top:54px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px;width:250px;box-shadow:0 18px 40px rgba(31,35,38,.16)}
+.menu div a{display:block;padding:11px 12px;text-decoration:none;font-weight:600;border-radius:8px}
+.menu div a:hover{background:var(--paper)}
+.menu div a.btn{margin-top:6px;display:flex;color:var(--ink);white-space:nowrap;padding:0 16px}
+@media (max-width:860px){.nav > a{display:none}.nav > .btn{display:none}.menu{display:block}.top .wrap{min-height:68px}.brand img{width:104px}}
+
+/* hero */
+.hero{padding:56px 0 64px;background:var(--white)}
+.hero .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,1.2rem + 3.6vw,4.25rem)}
+.hero .lede{font-size:1.15rem;color:var(--muted);max-width:34ch;margin:22px 0 28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .note{margin:18px 0 0;font-size:.95rem;color:var(--muted)}
+.hero figure{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:3/2;background:#e8e9e6}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.hero{padding:22px 0 28px}.hero .wrap{grid-template-columns:1fr;gap:22px}.hero .lede{margin:14px 0 18px;font-size:1.05rem}.hero figure{aspect-ratio:4/3}.hero .note{margin-top:12px}}
+
+/* sections */
+section{padding:88px 0}
+.kicker{font-weight:700;color:var(--honey-ink);margin:0 0 12px;font-size:1rem}
+h2{font-size:clamp(2rem,1.3rem + 2.2vw,3.1rem)}
+.intro{display:grid;grid-template-columns:5fr 7fr;gap:56px}
+.intro p.big{font-size:1.25rem;line-height:1.6}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin:36px 0 0;padding:0}
+.values dt{font-weight:800;margin-bottom:4px}
+.values dd{margin:0;color:var(--muted)}
+.svc-list{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid var(--line)}
+.svc-list a{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr) auto;gap:32px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.svc-list h3{font-size:clamp(1.6rem,1.2rem + 1.2vw,2.2rem)}
+.svc-list p{margin:0;color:var(--muted)}
+.svc-list .more{font-weight:700;color:var(--honey-ink);white-space:nowrap;text-decoration:underline;text-underline-offset:4px}
+.svc-list a:hover h3{color:var(--honey-ink)}
+@media (max-width:860px){section{padding:60px 0}.intro{grid-template-columns:1fr;gap:20px}.values{grid-template-columns:1fr}.svc-list a{grid-template-columns:1fr;gap:6px;padding:20px 0}}
+
+/* the hive: the towns they serve, laid out roughly as they sit around Lake Norman */
+.areas{background:var(--white)}
+.areas .wrap{display:grid;grid-template-columns:4fr 7fr;gap:48px;align-items:center}
+.hive{width:100%;max-width:620px;justify-self:end}
+.hive .cell polygon{fill:var(--white);stroke:var(--honey);stroke-width:2.5}
+.hive .cell text{font:700 13.5px Mulish,sans-serif;fill:var(--ink);text-anchor:middle}
+.hive .cell.base polygon{fill:var(--honey);stroke:var(--honey)}
+.hive .cell.base text.sub{font-weight:600;font-size:12.5px}
+.hive .lake polygon{fill:var(--lake);stroke:var(--lake);stroke-width:2.5}
+.hive .lake text{font:italic 400 16px Forum,serif;fill:#e7eef0;text-anchor:middle}
+.hive .ghost polygon{fill:none;stroke:var(--line);stroke-width:2}
+.hive.go .cell:not(.base) polygon{animation:fill .5s ease-out both;animation-delay:calc(var(--d) * 110ms + 200ms)}
+@keyframes fill{from{fill:var(--white)}to{fill:var(--honey-soft)}}
+.hive.done .cell:not(.base) polygon,.hive.go .cell:not(.base) polygon{fill:var(--honey-soft)}
+.areas .towns{columns:2;padding:0;margin:24px 0 0;list-style:none;color:var(--muted)}
+.areas .scale{font-size:.9rem;color:var(--muted);margin-top:14px}
+@media (max-width:860px){.areas .wrap{grid-template-columns:1fr;gap:28px}.hive{justify-self:center}.areas .towns{display:none}}
+
+/* reviews */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.quotes blockquote{margin:0;padding-top:20px;border-top:3px solid var(--honey)}
+.quotes p{font-family:Forum,Georgia,serif;font-size:1.45rem;line-height:1.35;margin:0 0 14px}
+.quotes footer{font-size:.95rem;color:var(--muted)}
+@media (max-width:860px){.quotes{grid-template-columns:1fr;gap:30px}}
+
+/* closing band */
+.close{background:var(--lake);color:#eef2f3}
+.close .wrap{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center}
+.close h2{color:#fff}
+.close p{color:#d5dfe2;font-size:1.1rem;max-width:46ch}
+.close dl{margin:0;display:grid;gap:18px}
+.close dt{font-weight:700;color:#ebc46a}
+.close dd{margin:0;font-size:1.1rem}
+.close .btn{margin-top:8px}
+@media (max-width:860px){.close .wrap{grid-template-columns:1fr;gap:32px}}
+
+/* inner pages */
+.pagehead{background:var(--white);padding:56px 0 48px;border-bottom:1px solid var(--line)}
+.pagehead h1{font-size:clamp(2.4rem,1.4rem + 3vw,4rem);max-width:18ch}
+.pagehead p{font-size:1.15rem;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.svc{padding:72px 0;border-bottom:1px solid var(--line)}
+.svc .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+.svc figure{margin:0;border-radius:6px;overflow:hidden;background:#e8e9e6}
+.svc figure.tall{aspect-ratio:4/5}
+.svc figure.tall img{width:100%;height:100%;object-fit:cover}
+.svc h2{margin-bottom:20px}
+.svc ul{padding-left:1.1em;margin:0 0 24px}
+.svc li{margin-bottom:6px}
+.svc li::marker{color:var(--honey)}
+@media (max-width:860px){.svc{padding:48px 0}.svc .wrap{grid-template-columns:1fr;gap:24px}.svc figure.tall{aspect-ratio:4/3}}
+.about .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+.about figure{margin:0;border-radius:6px;overflow:hidden;max-width:460px}
+@media (max-width:860px){.about .wrap{grid-template-columns:1fr;gap:28px}}
+.faq{max-width:820px}
+.faq h2{margin:56px 0 16px;font-size:clamp(1.8rem,1.3rem + 1.6vw,2.5rem)}
+.faq h2:first-child{margin-top:0}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:18px 36px 18px 0;font-weight:700;font-size:1.08rem;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;border-right:2.5px solid var(--honey-ink);border-bottom:2.5px solid var(--honey-ink);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{color:var(--muted);margin:0 0 20px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.contact-grid h2{font-size:1.9rem;margin-bottom:12px}
+.contact-grid .phone{font-size:1.6rem;font-weight:800;text-decoration:none;display:inline-block;margin-bottom:12px}
+.contact-grid ul{padding:0;list-style:none;margin:0;columns:2}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+
+/* footer */
+.foot{background:var(--lake-deep);color:#cdd8db;padding:56px 0 32px;font-size:.95rem}
+.foot .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.foot .flogo{background:#fff;border-radius:6px;padding:10px 14px;display:inline-block}
+.foot .flogo img{width:120px}
+.foot h2{font:700 1rem Mulish,sans-serif;color:#fff;margin:0 0 10px}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin-bottom:6px}
+.foot a{color:#fff}
+.foot .legal{border-top:1px solid #3a5560;margin-top:40px;padding-top:20px;font-size:.85rem;color:#b5c3c7}
+@media (max-width:860px){.foot .cols{grid-template-columns:1fr;gap:28px}}
+
+/* sticky call bar on phones, after the hero */
+.callbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none}
+.callbar .btn{width:100%;box-shadow:0 10px 28px rgba(31,35,38,.3)}
+@media (max-width:860px){.callbar{display:block;transform:translateY(140%);transition:transform .25s}.callbar.on{transform:none}body{padding-bottom:84px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Honeybee Homes | Home remodeling in Mooresville, NC">
+<meta property="og:description" content="Kitchen and bathroom remodels, new construction, roofing and home additions from a family-owned team in Mooresville, NC.">
+<meta property="og:url" content="https://previa.mhstecnologia.com/honeybee-homes-mooresville-nc/">
+<meta property="og:image" content="https://previa.mhstecnologia.com/honeybee-homes-mooresville-nc/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo" role="note">Unofficial demo built by MHS Tecnologia for Honeybee Homes. Not affiliated with or endorsed by Honeybee Homes.</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Honeybee Homes, home"><img src="img/logo.webp" width="440" height="257" alt="Honeybee Homes"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="services.html">Services</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+      <a class="btn" href="tel:+17043978876"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>(704) 397-8876</a>
+      <details class="menu">
+        <summary>Menu</summary>
+        <div><a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a class="btn" href="tel:+17043978876"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (704) 397-8876</a></div>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Transforming homes with integrity and excellence.</h1>
+      <p class="lede">Kitchen and bathroom remodels, new homes, roofing and additions, from a family-owned team in Mooresville, NC.</p>
+      <div class="ctas"><a class="btn" href="tel:+17043978876"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call for a free estimate</a><a class="btn ghost" href="services.html">See our services</a></div>
+      <p class="note">(704) 397-8876. Mon to Fri, 8 am to 5 pm.</p>
+    </div>
+    <figure>
+      <picture>
+        <source media="(max-width: 860px)" srcset="img/kitchen-m-800.webp 800w" sizes="calc(100vw - 48px)">
+        <img src="img/kitchen-1400.webp" srcset="img/kitchen-900.webp 900w, img/kitchen-1400.webp 1400w" sizes="(max-width: 1248px) 56vw, 684px" width="1400" height="933" alt="Bright kitchen with a beamed vaulted ceiling, white cabinets and a large island" fetchpriority="high">
+      </picture>
+    </figure>
+  </div>
+</section>
+<div data-callbar-after></div>
+<section>
+  <div class="wrap intro">
+    <div>
+      <h2>A local, family-owned company</h2>
+    </div>
+    <div>
+      <p class="big">Honeybee Homes is based in Mooresville and works with neighbors around Lake Norman. Our founder brings over 20 years of experience, and the team covers kitchens, bathrooms, renovations, roofing, additions and plumbing.</p>
+      <dl class="values">
+        <div><dt>Integrity in every project</dt><dd>Honesty and transparency in all our dealings.</dd></div>
+        <div><dt>Family-owned local expertise</dt><dd>We know the needs of our community and tailor our work to them.</dd></div>
+        <div><dt>Commitment to excellence</dt><dd>A skilled team dedicated to high-quality results.</dd></div>
+        <div><dt>Specialists in luxury remodels</dt><dd>Spaces that blend beauty with functionality.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Five ways we can help</h2>
+    <ul class="svc-list">
+      <li><a href="services.html#kitchens"><h3>Kitchen remodels</h3><p>We guide you through planning, then handle everything from demolition to appliance installation.</p><span class="more">Details</span></a></li>
+      <li><a href="services.html#bathrooms"><h3>Bathroom remodels</h3><p>Plumbing, electrical work and luxury tubs and showers, from first consultation to final touches.</p><span class="more">Details</span></a></li>
+      <li><a href="services.html#new-construction"><h3>New home construction and renovations</h3><p>From new construction to room additions, from the foundation to the finishing touches.</p><span class="more">Details</span></a></li>
+      <li><a href="services.html#roofing"><h3>Roofing services</h3><p>Shingle replacement, roof removal and metal or tin roofs, with complete debris cleanup.</p><span class="more">Details</span></a></li>
+      <li><a href="services.html#additions"><h3>Home additions</h3><p>Bedrooms, bathrooms, living rooms and offices, with permits and construction handled for you.</p><span class="more">Details</span></a></li>
+    </ul>
+  </div>
+</section>
+<section class="areas">
+  <div class="wrap">
+    <div>
+      <h2>Mooresville and the Lake Norman area</h2>
+      <p style="margin-top:18px;color:var(--muted)">From our home base in Mooresville, we take on projects in these thirteen towns around the lake.</p>
+      <ul class="towns"><li>Hickory, NC</li><li>Conover, NC</li><li>Statesville, NC</li><li>Newton, NC</li><li>Claremont, NC</li><li>Troutman, NC</li><li>Maiden, NC</li><li>Sherrills Ford, NC</li><li>Mooresville, NC</li><li>Denver, NC</li><li>Davidson, NC</li><li>Cornelius, NC</li><li>Huntersville, NC</li></ul>
+    </div>
+    <div style="display:grid">
+      <svg class="hive" viewBox="0 0 462 557" role="img" aria-label="Towns served around Lake Norman: Hickory, Conover, Statesville, Newton, Claremont, Troutman, Maiden, Sherrills Ford, Mooresville, Denver, Davidson, Cornelius, Huntersville."><g class="ghost"><polygon points="256.0,6.3 304.3,34.1 304.3,89.9 256.0,117.7 207.7,89.9 207.7,34.1"/></g><g class="ghost"><polygon points="156.0,352.7 204.3,380.5 204.3,436.3 156.0,464.1 107.7,436.3 107.7,380.5"/></g><g class="ghost"><polygon points="406.0,92.9 454.3,120.7 454.3,176.5 406.0,204.3 357.7,176.5 357.7,120.7"/></g><g class="lake"><polygon points="256.0,179.5 304.3,207.3 304.3,263.1 256.0,290.9 207.7,263.1 207.7,207.3"/></g><g class="lake"><polygon points="306.0,266.1 354.3,293.9 354.3,349.7 306.0,377.5 257.7,349.7 257.7,293.9"/><text x="306" y="319.8076211353316">Lake</text><text x="306" y="337.8076211353316">Norman</text></g><g class="lake"><polygon points="256.0,352.7 304.3,380.5 304.3,436.3 256.0,464.1 207.7,436.3 207.7,380.5"/></g><g class="cell" style="--d:5"><polygon points="56.0,6.3 104.3,34.1 104.3,89.9 56.0,117.7 7.7,89.9 7.7,34.1"/><text x="56" y="67.0">Hickory</text></g><g class="cell" style="--d:4"><polygon points="156.0,6.3 204.3,34.1 204.3,89.9 156.0,117.7 107.7,89.9 107.7,34.1"/><text x="156" y="67.0">Conover</text></g><g class="cell" style="--d:3"><polygon points="356.0,6.3 404.3,34.1 404.3,89.9 356.0,117.7 307.7,89.9 307.7,34.1"/><text x="356" y="67.0">Statesville</text></g><g class="cell" style="--d:4"><polygon points="106.0,92.9 154.3,120.7 154.3,176.5 106.0,204.3 57.7,176.5 57.7,120.7"/><text x="106" y="153.6">Newton</text></g><g class="cell" style="--d:3"><polygon points="206.0,92.9 254.3,120.7 254.3,176.5 206.0,204.3 157.7,176.5 157.7,120.7"/><text x="206" y="153.6">Claremont</text></g><g class="cell" style="--d:2"><polygon points="306.0,92.9 354.3,120.7 354.3,176.5 306.0,204.3 257.7,176.5 257.7,120.7"/><text x="306" y="153.6">Troutman</text></g><g class="cell" style="--d:4"><polygon points="56.0,179.5 104.3,207.3 104.3,263.1 56.0,290.9 7.7,263.1 7.7,207.3"/><text x="56" y="240.2">Maiden</text></g><g class="cell" style="--d:3"><polygon points="156.0,179.5 204.3,207.3 204.3,263.1 156.0,290.9 107.7,263.1 107.7,207.3"/><text x="156" y="232.2">Sherrills</text><text x="156" y="248.2">Ford</text></g><g class="cell base" style="--d:0"><polygon points="356.0,179.5 404.3,207.3 404.3,263.1 356.0,290.9 307.7,263.1 307.7,207.3"/><text x="356" y="233.20508075688775">Mooresville</text><text class="sub" x="356" y="250.20508075688775">based here</text></g><g class="cell" style="--d:3"><polygon points="206.0,266.1 254.3,293.9 254.3,349.7 206.0,377.5 157.7,349.7 157.7,293.9"/><text x="206" y="326.8">Denver</text></g><g class="cell" style="--d:2"><polygon points="406.0,266.1 454.3,293.9 454.3,349.7 406.0,377.5 357.7,349.7 357.7,293.9"/><text x="406" y="326.8">Davidson</text></g><g class="cell" style="--d:3"><polygon points="356.0,352.7 404.3,380.5 404.3,436.3 356.0,464.1 307.7,436.3 307.7,380.5"/><text x="356" y="413.4">Cornelius</text></g><g class="cell" style="--d:4"><polygon points="406.0,439.3 454.3,467.1 454.3,522.9 406.0,550.7 357.7,522.9 357.7,467.1"/><text x="406" y="500.0">Huntersville</text></g></svg>
+      <p class="scale" style="justify-self:end">Map is schematic, not to scale.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <h2>In our clients' words</h2>
+    <div class="quotes">
+      <blockquote><p>Sam does wonderful work. He's competent in many different areas of building and remodeling. He has great attention to detail and organizational skills.</p><footer>Client testimonial</footer></blockquote>
+      <blockquote><p>Honey Bee Homes helped my husband level out our basement floor. They were very knowledgeable and communication was great!</p><footer>Client testimonial</footer></blockquote>
+      <blockquote><p>We did an entire house remodel with Honey Bee Homes. They were great to work with and communicative.</p><footer>Client testimonial</footer></blockquote>
+    </div>
+  </div>
+</section>
+<section class="close">
+  <div class="wrap">
+    <div>
+      <h2>Ready to start your home transformation?</h2>
+      <p style="margin-top:18px">Estimates are free, and financing is available. Call us to talk through your project.</p>
+      <a class="btn" href="tel:+17043978876"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call (704) 397-8876</a>
+    </div>
+    <dl>
+      <div><dt>Hours</dt><dd>Monday to Friday, 8:00 am to 5:00 pm</dd></div>
+      <div><dt>Based in</dt><dd>Mooresville, NC 28117</dd></div>
+      <div><dt>Serving</dt><dd>Mooresville and the Lake Norman area</dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="flogo"><img src="img/logo.webp" width="440" height="257" alt="Honeybee Homes" loading="lazy"></span>
+        <p style="margin-top:16px;max-width:40ch">Honeybee Homes, LLC. A family-owned remodeling and construction company in Mooresville, NC, serving the Lake Norman area.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <ul><li><a href="tel:+17043978876">(704) 397-8876</a></li><li>Mooresville, NC 28117</li><li>Mon to Fri, 8:00 am to 5:00 pm</li><li>Sat and Sun, closed</li></ul>
+      </div>
+    </div>
+    <p class="legal">Unofficial demo built by MHS Tecnologia for Honeybee Homes. Not affiliated with or endorsed by Honeybee Homes. Text and photos come from honeybeehomesnc.com. Removed on request: <a href="mailto:contato@mhstecnologia.com.br">contato@mhstecnologia.com.br</a></p>
+  </div>
+</footer>
+<div class="callbar" id="callbar"><a class="btn" href="tel:+17043978876"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call for a free estimate</a></div>
+<script>
+(function(){
+  var bar=document.getElementById('callbar'),mark=document.querySelector('[data-callbar-after]');
+  if(bar&&mark&&'IntersectionObserver' in window){new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(mark)}
+  else if(bar){bar.classList.add('on')}
+  var hive=document.querySelector('.hive');
+  if(hive){
+    if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){hive.classList.add('done')}
+    else{var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){hive.classList.add('go');io.disconnect()}},{threshold:.35});io.observe(hive)}
+  }
+})();
+</script>
+</body>
+</html>
