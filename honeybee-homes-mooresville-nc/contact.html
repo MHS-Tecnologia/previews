@@ -115,6 +115,19 @@ h2{font-size:clamp(2rem,1.3rem + 2.2vw,3.1rem)}
 .pagehead{background:var(--white);padding:56px 0 48px;border-bottom:1px solid var(--line)}
 .pagehead h1{font-size:clamp(2.4rem,1.4rem + 3vw,4rem);max-width:18ch}
 .pagehead p{font-size:1.15rem;color:var(--muted);max-width:60ch;margin:18px 0 0}
+.pagehead.has-photo{padding:48px 0}
+.pagehead.has-photo .wrap{display:grid;grid-template-columns:6fr 5fr;gap:56px;align-items:center}
+.pagehead figure{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:#e8e9e6}
+.pagehead figure img{width:100%;height:100%;object-fit:cover}
+@media (max-width:860px){.pagehead.has-photo{padding:28px 0 32px}.pagehead.has-photo .wrap{grid-template-columns:1fr;gap:22px}}
+.work .grid{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
+.work figure{margin:0}
+.work figure img{border-radius:6px;aspect-ratio:3/2;width:100%;object-fit:cover;background:#e8e9e6}
+.work figcaption{margin-top:10px;font-size:.95rem;color:var(--muted)}
+.work .lede{color:var(--muted);margin-top:16px;max-width:60ch}
+@media (max-width:860px){.work .grid{grid-template-columns:1fr;gap:22px}}
+.close .mail{margin-top:16px;font-size:1rem}
+.close .mail a{color:#fff}
 .svc{padding:72px 0;border-bottom:1px solid var(--line)}
 .svc .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
 .svc figure{margin:0;border-radius:6px;overflow:hidden;background:#e8e9e6}
@@ -179,7 +192,7 @@ h2{font-size:clamp(2rem,1.3rem + 2.2vw,3.1rem)}
   </div>
 </header>
 <main id="main">
-<div class="pagehead"><div class="wrap"><h1>Ready to transform your home?</h1><p>Tell us about your project and let us help you bring your vision to life. Estimates are free.</p></div></div>
+<div class="pagehead has-photo"><div class="wrap"><div><h1>Ready to transform your home?</h1><p>Tell us about your project and let us help you bring your vision to life. Estimates are free.</p></div><figure><img src="img/head-contact-1000.webp" srcset="img/head-contact-640.webp 640w, img/head-contact-1000.webp 1000w" sizes="(max-width: 860px) calc(100vw - 48px), (max-width: 1248px) 40vw, 480px" width="1000" height="750" alt="Kitchen with a pro range and a window over the lake" fetchpriority="high"></figure></div></div>
 <div data-callbar-after></div>
 <section>
   <div class="wrap contact-grid">
@@ -187,6 +200,7 @@ h2{font-size:clamp(2rem,1.3rem + 2.2vw,3.1rem)}
       <h2>Call us</h2>
       <a class="phone" href="tel:+17043978876">(704) 397-8876</a>
       <p>Monday to Friday, 8:00 am to 5:00 pm.<br>Saturday and Sunday, closed.</p>
+      <p>Or email <a href="mailto:honeybeehomesllc@gmail.com">honeybeehomesllc@gmail.com</a></p>
     </div>
     <div>
       <h2>Our location</h2>
@@ -204,7 +218,7 @@ h2{font-size:clamp(2rem,1.3rem + 2.2vw,3.1rem)}
     <div>
       <h2>What we can help with</h2>
       <ul style="margin-top:18px;padding-left:1.1em"><li><a href="services.html#kitchens">Kitchen remodels</a></li><li><a href="services.html#bathrooms">Bathroom remodels</a></li><li><a href="services.html#new-construction">New home construction and renovations</a></li><li><a href="services.html#roofing">Roofing services</a></li><li><a href="services.html#additions">Home additions</a></li></ul>
-      <p style="color:var(--muted)">Financing is available. Ask about it when you call.</p>
+      <p style="color:var(--muted)">We offer financing services. Ask about them when you call.</p>
     </div>
     <div style="display:grid">
       <svg class="hive" viewBox="0 0 462 557" role="img" aria-label="Towns served around Lake Norman: Hickory, Conover, Statesville, Newton, Claremont, Troutman, Maiden, Sherrills Ford, Mooresville, Denver, Davidson, Cornelius, Huntersville."><g class="ghost"><polygon points="256.0,6.3 304.3,34.1 304.3,89.9 256.0,117.7 207.7,89.9 207.7,34.1"/></g><g class="ghost"><polygon points="156.0,352.7 204.3,380.5 204.3,436.3 156.0,464.1 107.7,436.3 107.7,380.5"/></g><g class="ghost"><polygon points="406.0,92.9 454.3,120.7 454.3,176.5 406.0,204.3 357.7,176.5 357.7,120.7"/></g><g class="lake"><polygon points="256.0,179.5 304.3,207.3 304.3,263.1 256.0,290.9 207.7,263.1 207.7,207.3"/></g><g class="lake"><polygon points="306.0,266.1 354.3,293.9 354.3,349.7 306.0,377.5 257.7,349.7 257.7,293.9"/><text x="306" y="319.8076211353316">Lake</text><text x="306" y="337.8076211353316">Norman</text></g><g class="lake"><polygon points="256.0,352.7 304.3,380.5 304.3,436.3 256.0,464.1 207.7,436.3 207.7,380.5"/></g><g class="cell" style="--d:5"><polygon points="56.0,6.3 104.3,34.1 104.3,89.9 56.0,117.7 7.7,89.9 7.7,34.1"/><text x="56" y="67.0">Hickory</text></g><g class="cell" style="--d:4"><polygon points="156.0,6.3 204.3,34.1 204.3,89.9 156.0,117.7 107.7,89.9 107.7,34.1"/><text x="156" y="67.0">Conover</text></g><g class="cell" style="--d:3"><polygon points="356.0,6.3 404.3,34.1 404.3,89.9 356.0,117.7 307.7,89.9 307.7,34.1"/><text x="356" y="67.0">Statesville</text></g><g class="cell" style="--d:4"><polygon points="106.0,92.9 154.3,120.7 154.3,176.5 106.0,204.3 57.7,176.5 57.7,120.7"/><text x="106" y="153.6">Newton</text></g><g class="cell" style="--d:3"><polygon points="206.0,92.9 254.3,120.7 254.3,176.5 206.0,204.3 157.7,176.5 157.7,120.7"/><text x="206" y="153.6">Claremont</text></g><g class="cell" style="--d:2"><polygon points="306.0,92.9 354.3,120.7 354.3,176.5 306.0,204.3 257.7,176.5 257.7,120.7"/><text x="306" y="153.6">Troutman</text></g><g class="cell" style="--d:4"><polygon points="56.0,179.5 104.3,207.3 104.3,263.1 56.0,290.9 7.7,263.1 7.7,207.3"/><text x="56" y="240.2">Maiden</text></g><g class="cell" style="--d:3"><polygon points="156.0,179.5 204.3,207.3 204.3,263.1 156.0,290.9 107.7,263.1 107.7,207.3"/><text x="156" y="232.2">Sherrills</text><text x="156" y="248.2">Ford</text></g><g class="cell base" style="--d:0"><polygon points="356.0,179.5 404.3,207.3 404.3,263.1 356.0,290.9 307.7,263.1 307.7,207.3"/><text x="356" y="233.20508075688775">Mooresville</text><text class="sub" x="356" y="250.20508075688775">based here</text></g><g class="cell" style="--d:3"><polygon points="206.0,266.1 254.3,293.9 254.3,349.7 206.0,377.5 157.7,349.7 157.7,293.9"/><text x="206" y="326.8">Denver</text></g><g class="cell" style="--d:2"><polygon points="406.0,266.1 454.3,293.9 454.3,349.7 406.0,377.5 357.7,349.7 357.7,293.9"/><text x="406" y="326.8">Davidson</text></g><g class="cell" style="--d:3"><polygon points="356.0,352.7 404.3,380.5 404.3,436.3 356.0,464.1 307.7,436.3 307.7,380.5"/><text x="356" y="413.4">Cornelius</text></g><g class="cell" style="--d:4"><polygon points="406.0,439.3 454.3,467.1 454.3,522.9 406.0,550.7 357.7,522.9 357.7,467.1"/><text x="406" y="500.0">Huntersville</text></g></svg>
@@ -235,7 +249,7 @@ h2{font-size:clamp(2rem,1.3rem + 2.2vw,3.1rem)}
 <div class="callbar" id="callbar"><a class="btn" href="tel:+17043978876"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call for a free estimate</a></div>
 <script>
 (function(){
-  var bar=document.getElementById('callbar'),mark=document.querySelector('[data-callbar-after]');
+  var bar=document.getElementById('callbar'),mark=document.querySelector('.hero .btn')||document.querySelector('[data-callbar-after]');
   if(bar&&mark&&'IntersectionObserver' in window){new IntersectionObserver(function(e){bar.classList.toggle('on',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(mark)}
   else if(bar){bar.classList.add('on')}
   var hive=document.querySelector('.hive');
